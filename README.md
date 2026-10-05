@@ -3,7 +3,8 @@
 **A complete, evidence-bearing model of one small firm, built from its own records, so
 that an agent can answer, act and refuse.**
 
-Kyle Nix. Working paper, October 2026. The paper is
+Kyle Nix. Working paper, October 2026. SSRN abstract 7563158
+(https://papers.ssrn.com/sol3/papers.cfm?abstract_id=7563158). The paper is
 [`build/living-business-ontologies.pdf`](build/living-business-ontologies.pdf); this
 repository is everything it rests on: the reference implementation, three synthetic
 firms, every run, the scorer, and the typesetter that refuses a page whose numbers have
@@ -198,6 +199,6 @@ Code under the [MIT License](LICENSE). The manuscript and the PDF under
   title  = {Living Business Ontologies for Accountable Automated Work},
   year   = {2026},
   month  = {October},
-  note   = {Working paper. Code and data: https://github.com/kixiktech/living-business-ontologies}
+  note   = {Working paper, SSRN abstract 7563158. Code and data: https://github.com/kixiktech/living-business-ontologies}
 }
 ```

@@ -1,0 +1,40 @@
+{
+ "available_hours": 520.0,
+ "channels": {
+  "A": {
+   "job_margin": 8000.0,
+   "job_margin_per_job": 400.0,
+   "jobs": 20,
+   "leads": 100,
+   "net_contribution": 7000.0,
+   "net_per_lead": 70.0,
+   "spend": 1000.0
+  },
+  "B": {
+   "job_margin": 10800.0,
+   "job_margin_per_job": 600.0,
+   "jobs": 18,
+   "leads": 40,
+   "net_contribution": 10000.0,
+   "net_per_lead": 250.0,
+   "spend": 800.0
+  }
+ },
+ "constraint_certification": "backflow-tester",
+ "constraint_service_line": "backflow",
+ "constraint_tech": "T3",
+ "focal_quarter": "2026Q2",
+ "marginal_job_margin": 600.0,
+ "projected_naive_return_on_800": 10000.0,
+ "realistic_return_on_800": -200.0,
+ "remaining_hours": 31.2,
+ "remaining_jobs_capacity": 5,
+ "scheduled_vs_performed_divergences": [
+  "J00098",
+  "J00103"
+ ],
+ "stale_certification_left_on": "2026-02-28",
+ "stale_certification_tech": "T5",
+ "t3_scheduled_hours": 488.8,
+ "utilisation_pct": 94.0
+}

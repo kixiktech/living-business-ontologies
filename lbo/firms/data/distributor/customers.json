@@ -1,0 +1,648 @@
+{
+ "name": "customers",
+ "exported_at": "2026-07-01T08:00:00",
+ "records": [
+  {
+   "customer_no": "CU-0001",
+   "name": "Hilltop Market",
+   "terms_days": 30,
+   "credit_limit": 16300.0,
+   "route": "R1",
+   "email": "ap0@example.com"
+  },
+  {
+   "customer_no": "CU-0002",
+   "name": "Crest Market",
+   "terms_days": 30,
+   "credit_limit": 29900.0,
+   "route": "R2",
+   "email": "ap1@example.com"
+  },
+  {
+   "customer_no": "CU-0003",
+   "name": "Delta Grocers",
+   "terms_days": 30,
+   "credit_limit": 29900.0,
+   "route": "R3",
+   "email": "ap2@example.com"
+  },
+  {
+   "customer_no": "CU-0004",
+   "name": "Elm Street Deli",
+   "terms_days": 30,
+   "credit_limit": 35200.0,
+   "route": "R1",
+   "email": "ap3@example.com"
+  },
+  {
+   "customer_no": "CU-0005",
+   "name": "Fjord Cafe",
+   "terms_days": 30,
+   "credit_limit": 13900.0,
+   "route": "R2",
+   "email": "ap4@example.com"
+  },
+  {
+   "customer_no": "CU-0006",
+   "name": "Granite Bistro",
+   "terms_days": 30,
+   "credit_limit": 15400.0,
+   "route": "R3",
+   "email": "ap5@example.com"
+  },
+  {
+   "customer_no": "CU-0007",
+   "name": "Baylor Foods",
+   "terms_days": 30,
+   "credit_limit": 12700.0,
+   "route": "R1",
+   "email": "ap6@example.com"
+  },
+  {
+   "customer_no": "CU-0008",
+   "name": "Iris Bakery",
+   "terms_days": 30,
+   "credit_limit": 15200.0,
+   "route": "R2",
+   "email": "ap7@example.com"
+  },
+  {
+   "customer_no": "CU-0009",
+   "name": "Juniper Foods",
+   "terms_days": 30,
+   "credit_limit": 31500.0,
+   "route": "R3",
+   "email": "ap8@example.com"
+  },
+  {
+   "customer_no": "CU-0010",
+   "name": "Kestrel Catering",
+   "terms_days": 30,
+   "credit_limit": 12200.0,
+   "route": "R1",
+   "email": "ap9@example.com"
+  },
+  {
+   "customer_no": "CU-0011",
+   "name": "Hilltop Market 2",
+   "terms_days": 30,
+   "credit_limit": 25000.0,
+   "route": "R2",
+   "email": "ap10@example.com"
+  },
+  {
+   "customer_no": "CU-0012",
+   "name": "Crest Market 2",
+   "terms_days": 30,
+   "credit_limit": 14800.0,
+   "route": "R3",
+   "email": "ap11@example.com"
+  },
+  {
+   "customer_no": "CU-0013",
+   "name": "Delta Grocers 2",
+   "terms_days": 30,
+   "credit_limit": 17400.0,
+   "route": "R1",
+   "email": "ap12@example.com"
+  },
+  {
+   "customer_no": "CU-0014",
+   "name": "Elm Street Deli 2",
+   "terms_days": 30,
+   "credit_limit": 21800.0,
+   "route": "R2",
+   "email": "ap13@example.com"
+  },
+  {
+   "customer_no": "CU-0015",
+   "name": "Fjord Cafe 2",
+   "terms_days": 30,
+   "credit_limit": 34800.0,
+   "route": "R3",
+   "email": "ap14@example.com"
+  },
+  {
+   "customer_no": "CU-0016",
+   "name": "Granite Bistro 2",
+   "terms_days": 30,
+   "credit_limit": 27500.0,
+   "route": "R1",
+   "email": "ap15@example.com"
+  },
+  {
+   "customer_no": "CU-0017",
+   "name": "Baylor Foods 2",
+   "terms_days": 30,
+   "credit_limit": 8500.0,
+   "route": "R2",
+   "email": "ap16@example.com"
+  },
+  {
+   "customer_no": "CU-0018",
+   "name": "Iris Bakery 2",
+   "terms_days": 30,
+   "credit_limit": 16800.0,
+   "route": "R3",
+   "email": "ap17@example.com"
+  },
+  {
+   "customer_no": "CU-0019",
+   "name": "Juniper Foods 2",
+   "terms_days": 30,
+   "credit_limit": 12000.0,
+   "route": "R1",
+   "email": "ap18@example.com"
+  },
+  {
+   "customer_no": "CU-0020",
+   "name": "Kestrel Catering 2",
+   "terms_days": 30,
+   "credit_limit": 12700.0,
+   "route": "R2",
+   "email": "ap19@example.com"
+  },
+  {
+   "customer_no": "CU-0021",
+   "name": "Hilltop Market 3",
+   "terms_days": 30,
+   "credit_limit": 35900.0,
+   "route": "R3",
+   "email": "ap20@example.com"
+  },
+  {
+   "customer_no": "CU-0022",
+   "name": "Crest Market 3",
+   "terms_days": 30,
+   "credit_limit": 33900.0,
+   "route": "R1",
+   "email": "ap21@example.com"
+  },
+  {
+   "customer_no": "CU-0023",
+   "name": "Delta Grocers 3",
+   "terms_days": 30,
+   "credit_limit": 33800.0,
+   "route": "R2",
+   "email": "ap22@example.com"
+  },
+  {
+   "customer_no": "CU-0024",
+   "name": "Elm Street Deli 3",
+   "terms_days": 30,
+   "credit_limit": 34400.0,
+   "route": "R3",
+   "email": "ap23@example.com"
+  },
+  {
+   "customer_no": "CU-0025",
+   "name": "Fjord Cafe 3",
+   "terms_days": 30,
+   "credit_limit": 31800.0,
+   "route": "R1",
+   "email": "ap24@example.com"
+  },
+  {
+   "customer_no": "CU-0026",
+   "name": "Granite Bistro 3",
+   "terms_days": 30,
+   "credit_limit": 38400.0,
+   "route": "R2",
+   "email": "ap25@example.com"
+  },
+  {
+   "customer_no": "CU-0027",
+   "name": "Baylor Foods 3",
+   "terms_days": 30,
+   "credit_limit": 33400.0,
+   "route": "R3",
+   "email": "ap26@example.com"
+  },
+  {
+   "customer_no": "CU-0028",
+   "name": "Iris Bakery 3",
+   "terms_days": 30,
+   "credit_limit": 16200.0,
+   "route": "R1",
+   "email": "ap27@example.com"
+  },
+  {
+   "customer_no": "CU-0029",
+   "name": "Juniper Foods 3",
+   "terms_days": 30,
+   "credit_limit": 35200.0,
+   "route": "R2",
+   "email": "ap28@example.com"
+  },
+  {
+   "customer_no": "CU-0030",
+   "name": "Kestrel Catering 3",
+   "terms_days": 30,
+   "credit_limit": 23600.0,
+   "route": "R3",
+   "email": "ap29@example.com"
+  },
+  {
+   "customer_no": "CU-0031",
+   "name": "Hilltop Market 4",
+   "terms_days": 30,
+   "credit_limit": 32200.0,
+   "route": "R1",
+   "email": "ap30@example.com"
+  },
+  {
+   "customer_no": "CU-0032",
+   "name": "Crest Market 4",
+   "terms_days": 30,
+   "credit_limit": 26100.0,
+   "route": "R2",
+   "email": "ap31@example.com"
+  },
+  {
+   "customer_no": "CU-0033",
+   "name": "Delta Grocers 4",
+   "terms_days": 30,
+   "credit_limit": 21700.0,
+   "route": "R3",
+   "email": "ap32@example.com"
+  },
+  {
+   "customer_no": "CU-0034",
+   "name": "Elm Street Deli 4",
+   "terms_days": 30,
+   "credit_limit": 19700.0,
+   "route": "R1",
+   "email": "ap33@example.com"
+  },
+  {
+   "customer_no": "CU-0035",
+   "name": "Fjord Cafe 4",
+   "terms_days": 30,
+   "credit_limit": 21800.0,
+   "route": "R2",
+   "email": "ap34@example.com"
+  },
+  {
+   "customer_no": "CU-0036",
+   "name": "Granite Bistro 4",
+   "terms_days": 30,
+   "credit_limit": 18000.0,
+   "route": "R3",
+   "email": "ap35@example.com"
+  },
+  {
+   "customer_no": "CU-0037",
+   "name": "Baylor Foods 4",
+   "terms_days": 30,
+   "credit_limit": 11800.0,
+   "route": "R1",
+   "email": "ap36@example.com"
+  },
+  {
+   "customer_no": "CU-0038",
+   "name": "Iris Bakery 4",
+   "terms_days": 30,
+   "credit_limit": 34200.0,
+   "route": "R2",
+   "email": "ap37@example.com"
+  },
+  {
+   "customer_no": "CU-0039",
+   "name": "Juniper Foods 4",
+   "terms_days": 30,
+   "credit_limit": 33500.0,
+   "route": "R3",
+   "email": "ap38@example.com"
+  },
+  {
+   "customer_no": "CU-0040",
+   "name": "Kestrel Catering 4",
+   "terms_days": 30,
+   "credit_limit": 39500.0,
+   "route": "R1",
+   "email": "ap39@example.com"
+  },
+  {
+   "customer_no": "CU-0041",
+   "name": "Hilltop Market 5",
+   "terms_days": 30,
+   "credit_limit": 30100.0,
+   "route": "R2",
+   "email": "ap40@example.com"
+  },
+  {
+   "customer_no": "CU-0042",
+   "name": "Crest Market 5",
+   "terms_days": 30,
+   "credit_limit": 25700.0,
+   "route": "R3",
+   "email": "ap41@example.com"
+  },
+  {
+   "customer_no": "CU-0043",
+   "name": "Delta Grocers 5",
+   "terms_days": 30,
+   "credit_limit": 31900.0,
+   "route": "R1",
+   "email": "ap42@example.com"
+  },
+  {
+   "customer_no": "CU-0044",
+   "name": "Elm Street Deli 5",
+   "terms_days": 30,
+   "credit_limit": 12300.0,
+   "route": "R2",
+   "email": "ap43@example.com"
+  },
+  {
+   "customer_no": "CU-0045",
+   "name": "Fjord Cafe 5",
+   "terms_days": 30,
+   "credit_limit": 29700.0,
+   "route": "R3",
+   "email": "ap44@example.com"
+  },
+  {
+   "customer_no": "CU-0046",
+   "name": "Granite Bistro 5",
+   "terms_days": 30,
+   "credit_limit": 22200.0,
+   "route": "R1",
+   "email": "ap45@example.com"
+  },
+  {
+   "customer_no": "CU-0047",
+   "name": "Baylor Foods 5",
+   "terms_days": 30,
+   "credit_limit": 13700.0,
+   "route": "R2",
+   "email": "ap46@example.com"
+  },
+  {
+   "customer_no": "CU-0048",
+   "name": "Iris Bakery 5",
+   "terms_days": 30,
+   "credit_limit": 14500.0,
+   "route": "R3",
+   "email": "ap47@example.com"
+  },
+  {
+   "customer_no": "CU-0049",
+   "name": "Juniper Foods 5",
+   "terms_days": 30,
+   "credit_limit": 24700.0,
+   "route": "R1",
+   "email": "ap48@example.com"
+  },
+  {
+   "customer_no": "CU-0050",
+   "name": "Kestrel Catering 5",
+   "terms_days": 30,
+   "credit_limit": 16100.0,
+   "route": "R2",
+   "email": "ap49@example.com"
+  },
+  {
+   "customer_no": "CU-0051",
+   "name": "Hilltop Market 6",
+   "terms_days": 30,
+   "credit_limit": 22700.0,
+   "route": "R3",
+   "email": "ap50@example.com"
+  },
+  {
+   "customer_no": "CU-0052",
+   "name": "Crest Market 6",
+   "terms_days": 30,
+   "credit_limit": 27400.0,
+   "route": "R1",
+   "email": "ap51@example.com"
+  },
+  {
+   "customer_no": "CU-0053",
+   "name": "Delta Grocers 6",
+   "terms_days": 30,
+   "credit_limit": 20700.0,
+   "route": "R2",
+   "email": "ap52@example.com"
+  },
+  {
+   "customer_no": "CU-0054",
+   "name": "Elm Street Deli 6",
+   "terms_days": 30,
+   "credit_limit": 12200.0,
+   "route": "R3",
+   "email": "ap53@example.com"
+  },
+  {
+   "customer_no": "CU-0055",
+   "name": "Fjord Cafe 6",
+   "terms_days": 30,
+   "credit_limit": 23700.0,
+   "route": "R1",
+   "email": "ap54@example.com"
+  },
+  {
+   "customer_no": "CU-0056",
+   "name": "Granite Bistro 6",
+   "terms_days": 30,
+   "credit_limit": 15500.0,
+   "route": "R2",
+   "email": "ap55@example.com"
+  },
+  {
+   "customer_no": "CU-0057",
+   "name": "Baylor Foods 6",
+   "terms_days": 30,
+   "credit_limit": 15500.0,
+   "route": "R3",
+   "email": "ap56@example.com"
+  },
+  {
+   "customer_no": "CU-0058",
+   "name": "Iris Bakery 6",
+   "terms_days": 30,
+   "credit_limit": 14200.0,
+   "route": "R1",
+   "email": "ap57@example.com"
+  },
+  {
+   "customer_no": "CU-0059",
+   "name": "Juniper Foods 6",
+   "terms_days": 30,
+   "credit_limit": 19700.0,
+   "route": "R2",
+   "email": "ap58@example.com"
+  },
+  {
+   "customer_no": "CU-0060",
+   "name": "Kestrel Catering 6",
+   "terms_days": 30,
+   "credit_limit": 10300.0,
+   "route": "R3",
+   "email": "ap59@example.com"
+  },
+  {
+   "customer_no": "CU-0061",
+   "name": "Hilltop Market 7",
+   "terms_days": 30,
+   "credit_limit": 28800.0,
+   "route": "R1",
+   "email": "ap60@example.com"
+  },
+  {
+   "customer_no": "CU-0062",
+   "name": "Crest Market 7",
+   "terms_days": 30,
+   "credit_limit": 38500.0,
+   "route": "R2",
+   "email": "ap61@example.com"
+  },
+  {
+   "customer_no": "CU-0063",
+   "name": "Delta Grocers 7",
+   "terms_days": 30,
+   "credit_limit": 20500.0,
+   "route": "R3",
+   "email": "ap62@example.com"
+  },
+  {
+   "customer_no": "CU-0064",
+   "name": "Elm Street Deli 7",
+   "terms_days": 30,
+   "credit_limit": 31000.0,
+   "route": "R1",
+   "email": "ap63@example.com"
+  },
+  {
+   "customer_no": "CU-0065",
+   "name": "Fjord Cafe 7",
+   "terms_days": 30,
+   "credit_limit": 37900.0,
+   "route": "R2",
+   "email": "ap64@example.com"
+  },
+  {
+   "customer_no": "CU-0066",
+   "name": "Granite Bistro 7",
+   "terms_days": 30,
+   "credit_limit": 9400.0,
+   "route": "R3",
+   "email": "ap65@example.com"
+  },
+  {
+   "customer_no": "CU-0067",
+   "name": "Baylor Foods 7",
+   "terms_days": 30,
+   "credit_limit": 12500.0,
+   "route": "R1",
+   "email": "ap66@example.com"
+  },
+  {
+   "customer_no": "CU-0068",
+   "name": "Iris Bakery 7",
+   "terms_days": 30,
+   "credit_limit": 33800.0,
+   "route": "R2",
+   "email": "ap67@example.com"
+  },
+  {
+   "customer_no": "CU-0069",
+   "name": "Juniper Foods 7",
+   "terms_days": 30,
+   "credit_limit": 34800.0,
+   "route": "R3",
+   "email": "ap68@example.com"
+  },
+  {
+   "customer_no": "CU-0070",
+   "name": "Kestrel Catering 7",
+   "terms_days": 30,
+   "credit_limit": 28400.0,
+   "route": "R1",
+   "email": "ap69@example.com"
+  },
+  {
+   "customer_no": "CU-0071",
+   "name": "Hilltop Market 8",
+   "terms_days": 30,
+   "credit_limit": 13100.0,
+   "route": "R2",
+   "email": "ap70@example.com"
+  },
+  {
+   "customer_no": "CU-0072",
+   "name": "Crest Market 8",
+   "terms_days": 30,
+   "credit_limit": 21200.0,
+   "route": "R3",
+   "email": "ap71@example.com"
+  },
+  {
+   "customer_no": "CU-0073",
+   "name": "Delta Grocers 8",
+   "terms_days": 30,
+   "credit_limit": 35800.0,
+   "route": "R1",
+   "email": "ap72@example.com"
+  },
+  {
+   "customer_no": "CU-0074",
+   "name": "Elm Street Deli 8",
+   "terms_days": 30,
+   "credit_limit": 36400.0,
+   "route": "R2",
+   "email": "ap73@example.com"
+  },
+  {
+   "customer_no": "CU-0075",
+   "name": "Fjord Cafe 8",
+   "terms_days": 30,
+   "credit_limit": 33700.0,
+   "route": "R3",
+   "email": "ap74@example.com"
+  },
+  {
+   "customer_no": "CU-0076",
+   "name": "Granite Bistro 8",
+   "terms_days": 30,
+   "credit_limit": 14500.0,
+   "route": "R1",
+   "email": "ap75@example.com"
+  },
+  {
+   "customer_no": "CU-0077",
+   "name": "Baylor Foods 8",
+   "terms_days": 30,
+   "credit_limit": 35300.0,
+   "route": "R2",
+   "email": "ap76@example.com"
+  },
+  {
+   "customer_no": "CU-0078",
+   "name": "Iris Bakery 8",
+   "terms_days": 30,
+   "credit_limit": 20000.0,
+   "route": "R3",
+   "email": "ap77@example.com"
+  },
+  {
+   "customer_no": "CU-0079",
+   "name": "Juniper Foods 8",
+   "terms_days": 30,
+   "credit_limit": 30900.0,
+   "route": "R1",
+   "email": "ap78@example.com"
+  },
+  {
+   "customer_no": "CU-0080",
+   "name": "Kestrel Catering 8",
+   "terms_days": 30,
+   "credit_limit": 12400.0,
+   "route": "R2",
+   "email": "ap79@example.com"
+  }
+ ],
+ "id_field": "customer_no",
+ "description": "customers with terms, credit limit and route"
+}

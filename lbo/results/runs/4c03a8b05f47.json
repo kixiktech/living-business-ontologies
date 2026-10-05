@@ -1,0 +1,36 @@
+{
+ "hash": "4c03a8b05f47",
+ "task": "r_margin_owner_msg",
+ "firm": "retail",
+ "arm": "A",
+ "ablation": "none",
+ "model": "claude-sonnet-5",
+ "seed_index": 1,
+ "score": {
+  "S": 1,
+  "P": 1,
+  "E": 0,
+  "C": 1,
+  "R": 0,
+  "failure": "invented_number",
+  "notes": [
+   "gp_focal=8200.0 is not in any tool result, nor one step from two that are, nor a figure the request or the executed payload supplied"
+  ]
+ },
+ "cost_usd": 0.09986919999999999,
+ "num_turns": 12,
+ "ended_by": "completed",
+ "date": "2026-09-29",
+ "rescored_at": "2026-09-29T13:04:16",
+ "score_before_rescore": {
+  "S": 1,
+  "P": 1,
+  "E": 0,
+  "C": 1,
+  "R": 0,
+  "failure": "invented_number",
+  "notes": [
+   "gp_focal=8200.0 is not in any tool result, nor one step from two that are, nor a figure the request or the executed payload supplied"
+  ]
+ }
+}

@@ -1,0 +1,50 @@
+{
+ "aging": {
+  "1-30": 38956.34,
+  "31-60": 0.0,
+  "61-90": 0.0,
+  "90+": 0.0,
+  "current": 107666.26
+ },
+ "dso_days": 41.3,
+ "focal_quarter": "2026Q2",
+ "long_lead_days": 45,
+ "long_lead_sku": "SKU-D14",
+ "losing_route": "R3",
+ "losing_route_cost": 6500.0,
+ "losing_route_gp": 4200.02,
+ "open_receivables": 146622.6,
+ "over_limit_customer": "CU-0019",
+ "over_limit_limit": 12000.0,
+ "over_limit_open": 14300.0,
+ "pending_order_no": "SO-2026-0611",
+ "route_contribution": {
+  "R1": {
+   "contribution": 32830.99,
+   "gross_profit": 38030.99,
+   "route_cost": 5200.0
+  },
+  "R2": {
+   "contribution": 9724.92,
+   "gross_profit": 14664.92,
+   "route_cost": 4940.0
+  },
+  "R3": {
+   "contribution": -2299.98,
+   "gross_profit": 4200.02,
+   "route_cost": 6500.0
+  }
+ },
+ "stock_cover_days": 20,
+ "top5": [
+  "CU-0007",
+  "CU-0002",
+  "CU-0003",
+  "CU-0004",
+  "CU-0005"
+ ],
+ "top_customer": "CU-0007",
+ "top_customer_avg_days_to_pay": 62.0,
+ "top_customer_pct": 38.0,
+ "top_customer_terms_days": 30
+}

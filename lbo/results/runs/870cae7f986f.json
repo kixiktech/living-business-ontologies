@@ -1,0 +1,37 @@
+{
+ "hash": "870cae7f986f",
+ "task": "f_channel_owner_msg",
+ "firm": "fieldservice",
+ "arm": "B",
+ "ablation": "none",
+ "model": "claude-sonnet-5",
+ "seed_index": 1,
+ "score": {
+  "S": 0,
+  "P": 1,
+  "E": 1,
+  "C": 1,
+  "R": 0,
+  "failure": "wrong_number",
+  "notes": [
+   "net_per_lead_b: no reported figure within 0.01 of 250.0, nor two that sum or differ to it",
+   "realistic_return: no reported figure within 1.0 of -200.0, nor two that sum or differ to it"
+  ]
+ },
+ "cost_usd": 0.2230248,
+ "num_turns": 24,
+ "ended_by": "completed",
+ "date": "2026-09-29",
+ "rescored_at": "2026-09-29T13:04:16",
+ "score_before_rescore": {
+  "S": 0,
+  "P": 1,
+  "E": 1,
+  "C": 1,
+  "R": 0,
+  "failure": "wrong_number",
+  "notes": [
+   "net_per_lead_b: no reported figure within 0.01 of 250.0, nor two that sum or differ to it"
+  ]
+ }
+}

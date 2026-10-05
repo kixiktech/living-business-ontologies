@@ -1,0 +1,115 @@
+{
+ "firm": "distributor",
+ "arm": "build",
+ "task": "ingest",
+ "model": "none",
+ "date": "2026-07-01",
+ "turns": [
+  {
+   "role": "tool",
+   "kind": "tool_result",
+   "text": "80 records -> 80 entities, 640 assertions",
+   "name": "customers"
+  },
+  {
+   "role": "tool",
+   "kind": "tool_result",
+   "text": "3 records -> 0 entities, 6 assertions",
+   "name": "routes"
+  },
+  {
+   "role": "tool",
+   "kind": "tool_result",
+   "text": "40 records -> 46 entities, 412 assertions",
+   "name": "products"
+  },
+  {
+   "role": "tool",
+   "kind": "tool_result",
+   "text": "40 records -> 0 entities, 80 assertions",
+   "name": "supplier_leadtimes"
+  },
+  {
+   "role": "tool",
+   "kind": "tool_result",
+   "text": "1406 records -> 0 entities, 11248 assertions",
+   "name": "erp_invoices"
+  },
+  {
+   "role": "tool",
+   "kind": "tool_result",
+   "text": "1328 records -> 0 entities, 5312 assertions",
+   "name": "erp_payments"
+  },
+  {
+   "role": "tool",
+   "kind": "tool_result",
+   "text": "19 records -> 0 entities, 22 assertions",
+   "name": "ledger"
+  },
+  {
+   "role": "reflect",
+   "kind": "message",
+   "text": "no ambiguous matches",
+   "name": "identity review"
+  },
+  {
+   "role": "monitor",
+   "kind": "message",
+   "text": "agent may chase_payment scope={'channel': 'email'} limits={'max_days_overdue': 90}\nagent may hold_order scope={} limits={}",
+   "name": "grants"
+  },
+  {
+   "role": "agent",
+   "kind": "message",
+   "text": "Cobalt Provisions: 17728 assertions from 7 sources; 10 relation types in use; 0 identity candidates for review; 0 schema problems",
+   "name": ""
+  }
+ ],
+ "score": {},
+ "meta": {
+  "fingerprint": "3d76a42ec4b9"
+ },
+ "hash": "f4ea37b8da80",
+ "stats": {
+  "assertions": 17728,
+  "assertions_by_subject_type": {
+   "party": 480,
+   "credit_terms": 160,
+   "route": 24,
+   "product": 280,
+   "supplier": 12,
+   "stock_position": 120,
+   "supplier_lead_time": 80,
+   "invoice": 11248,
+   "payment": 5312,
+   "sales_order": 4,
+   "grant": 8
+  },
+  "relation_types_used": 10,
+  "review_queue": 0,
+  "sources": 7,
+  "records_per_source": {
+   "erp_invoices": 1406,
+   "erp_payments": 1328,
+   "customers": 80,
+   "routes": 3,
+   "supplier_leadtimes": 40,
+   "products": 40,
+   "ledger": 19
+  },
+  "schema_counts": {
+   "core": {
+    "entities": 15,
+    "relations": 17
+   },
+   "distributor": {
+    "entities": 5,
+    "relations": 6
+   }
+  },
+  "grants": 2,
+  "problems": 0
+ },
+ "problems": []
+}

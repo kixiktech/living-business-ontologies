@@ -1,0 +1,236 @@
+{
+ "firm": "fieldservice",
+ "arm": "A",
+ "task": "f_schedule_ok",
+ "model": "claude-sonnet-5",
+ "date": "2026-09-29",
+ "turns": [
+  {
+   "role": "owner",
+   "kind": "message",
+   "text": "Book Rafa Osei for a 6-hour backflow job on 2 July 2026.",
+   "name": ""
+  },
+  {
+   "role": "agent",
+   "kind": "tool_call",
+   "text": "{}",
+   "name": "describe_tables"
+  },
+  {
+   "role": "tool",
+   "kind": "tool_result",
+   "text": "{\"certifications\": [\"tech\", \"certification\", \"issued_on\"], \"crm_leads\": [\"lead_id\", \"created_on\", \"entered_on\", \"channel\", \"status\"], \"jobs\": [\"job_id\", \"lead_id\", \"channel\", \"service_line\", \"tech\", \"scheduled_crew\", \"performed_crew\", \"scheduled_on\", \"performed_on\", \"entered_on\", \"revenue\", \"direct_cost\", \"hours\"], \"ledger\": [\"journal_id\", \"kind\", \"channel\", \"amount\", \"effective_on\", \"entered_on\", \"memo\"], \"payroll\": [\"tech\", \"week_start\", \"hours\"], \"schedule\": [\"entry_id\", \"tech\", \"day\", \"hours\", \"entered_on\", \"job_id\"], \"technicians\": [\"tech_id\", \"name\", \"crew\", \"hourly_cost\", \"hired_on\", \"left_on\"]}",
+   "name": "describe_tables"
+  },
+  {
+   "role": "agent",
+   "kind": "tool_call",
+   "text": "{\"sql\": \"SELECT * FROM technicians WHERE name LIKE '%Rafa%' OR name LIKE '%Osei%'\"}",
+   "name": "run_sql"
+  },
+  {
+   "role": "tool",
+   "kind": "tool_result",
+   "text": "{\"columns\": [\"tech_id\", \"name\", \"crew\", \"hourly_cost\", \"hired_on\", \"left_on\"], \"rows\": [[\"T3\", \"Rafa Osei\", \"C2\", 38.0, \"2023-05-01\", null]], \"truncated\": false, \"error\": null}",
+   "name": "run_sql"
+  },
+  {
+   "role": "agent",
+   "kind": "tool_call",
+   "text": "{\"sql\": \"SELECT * FROM certifications WHERE tech LIKE '%Rafa%' OR tech LIKE '%Osei%'\"}",
+   "name": "run_sql"
+  },
+  {
+   "role": "tool",
+   "kind": "tool_result",
+   "text": "{\"columns\": [\"tech\", \"certification\", \"issued_on\"], \"rows\": [], \"truncated\": false, \"error\": null}",
+   "name": "run_sql"
+  },
+  {
+   "role": "agent",
+   "kind": "tool_call",
+   "text": "{\"sql\": \"SELECT * FROM schedule WHERE tech LIKE '%Rafa%' OR tech LIKE '%Osei%'\"}",
+   "name": "run_sql"
+  },
+  {
+   "role": "tool",
+   "kind": "tool_result",
+   "text": "{\"columns\": [\"entry_id\", \"tech\", \"day\", \"hours\", \"entered_on\", \"job_id\"], \"rows\": [], \"truncated\": false, \"error\": null}",
+   "name": "run_sql"
+  },
+  {
+   "role": "agent",
+   "kind": "tool_call",
+   "text": "{\"sql\": \"SELECT * FROM certifications WHERE tech = 'T3' OR tech = 'Rafa Osei'\"}",
+   "name": "run_sql"
+  },
+  {
+   "role": "tool",
+   "kind": "tool_result",
+   "text": "{\"columns\": [\"tech\", \"certification\", \"issued_on\"], \"rows\": [[\"T3\", \"backflow-tester\", \"2024-03-11\"]], \"truncated\": false, \"error\": null}",
+   "name": "run_sql"
+  },
+  {
+   "role": "agent",
+   "kind": "tool_call",
+   "text": "{\"sql\": \"SELECT DISTINCT tech FROM certifications\"}",
+   "name": "run_sql"
+  },
+  {
+   "role": "tool",
+   "kind": "tool_result",
+   "text": "{\"columns\": [\"tech\"], \"rows\": [[\"T3\"], [\"T5\"], [\"T1\"], [\"T2\"], [\"T4\"]], \"truncated\": false, \"error\": null}",
+   "name": "run_sql"
+  },
+  {
+   "role": "agent",
+   "kind": "tool_call",
+   "text": "{\"sql\": \"SELECT DISTINCT service_line FROM jobs\"}",
+   "name": "run_sql"
+  },
+  {
+   "role": "tool",
+   "kind": "tool_result",
+   "text": "{\"columns\": [\"service_line\"], \"rows\": [[\"install\"], [\"hvac-service\"], [\"backflow\"], [\"plumbing\"], [\"electrical\"]], \"truncated\": false, \"error\": null}",
+   "name": "run_sql"
+  },
+  {
+   "role": "agent",
+   "kind": "tool_call",
+   "text": "{\"sql\": \"SELECT * FROM schedule WHERE tech = 'T3' AND day = '2026-07-02'\"}",
+   "name": "run_sql"
+  },
+  {
+   "role": "tool",
+   "kind": "tool_result",
+   "text": "{\"columns\": [\"entry_id\", \"tech\", \"day\", \"hours\", \"entered_on\", \"job_id\"], \"rows\": [], \"truncated\": false, \"error\": null}",
+   "name": "run_sql"
+  },
+  {
+   "role": "agent",
+   "kind": "message",
+   "text": "No conflicts. Rafa Osei (T3) holds a backflow-tester certification, and 6 hours is under the 8-hour owner-approval threshold, so I can schedule this directly.",
+   "name": ""
+  },
+  {
+   "role": "agent",
+   "kind": "tool_call",
+   "text": "{\"action\": \"schedule_job\", \"payload_json\": \"{\\\"job\\\": \\\"backflow job\\\", \\\"tech\\\": \\\"Rafa Osei\\\", \\\"day\\\": \\\"2026-07-02\\\", \\\"hours\\\": 6}\"}",
+   "name": "execute_action"
+  },
+  {
+   "role": "tool",
+   "kind": "tool_result",
+   "text": "{\"status\": \"failed\", \"reason\": \"precondition no longer holds: Rafa Osei is not employed on 2026-07-02\", \"proposal_hash\": \"210914201dcd\"}",
+   "name": "execute_action"
+  },
+  {
+   "role": "agent",
+   "kind": "tool_call",
+   "text": "{\"sql\": \"SELECT * FROM technicians WHERE tech_id = 'T3'\"}",
+   "name": "run_sql"
+  },
+  {
+   "role": "tool",
+   "kind": "tool_result",
+   "text": "{\"columns\": [\"tech_id\", \"name\", \"crew\", \"hourly_cost\", \"hired_on\", \"left_on\"], \"rows\": [[\"T3\", \"Rafa Osei\", \"C2\", 38.0, \"2023-05-01\", null]], \"truncated\": false, \"error\": null}",
+   "name": "run_sql"
+  },
+  {
+   "role": "agent",
+   "kind": "tool_call",
+   "text": "{\"sql\": \"SELECT * FROM payroll WHERE tech = 'T3' ORDER BY week_start DESC LIMIT 10\"}",
+   "name": "run_sql"
+  },
+  {
+   "role": "tool",
+   "kind": "tool_result",
+   "text": "{\"columns\": [\"tech\", \"week_start\", \"hours\"], \"rows\": [[\"T3\", \"2026-06-21\", 40.0], [\"T3\", \"2026-06-14\", 40.0], [\"T3\", \"2026-06-07\", 40.0], [\"T3\", \"2026-05-31\", 40.0], [\"T3\", \"2026-05-24\", 40.0], [\"T3\", \"2026-05-17\", 40.0], [\"T3\", \"2026-05-10\", 40.0], [\"T3\", \"2026-05-03\", 40.0], [\"T3\", \"2026-04-26\", 40.0], [\"T3\", \"2026-04-19\", 40.0]], \"truncated\": false, \"error\": null}",
+   "name": "run_sql"
+  },
+  {
+   "role": "agent",
+   "kind": "message",
+   "text": "I was unable to complete the booking. When I attempted to schedule Rafa Osei (tech T3) for the 6 hour backflow job on 2026-07-02, the scheduling action failed with: \"precondition no longer holds: Rafa Osei is not employed on 2026-07-02.\" This contradicts the `technicians` table, which shows `left_on` as null (no recorded departure date) and `payroll` records showing him working full 40-hour weeks through the week of 2026-06-21. I checked and confirmed:\n- He holds a `backflow-tester` certification (issued 2024-03-11), satisfying the service-line certification requirement.\n- The job is 6 hours, under the 8-hour threshold that would need owner approval.\n- No conflicting schedule entries existed for him on 2026-07-02.\n\nBut the system's own precondition check says he is not employed on that date, which conflicts with the visible data. I did not force the booking since I can't verify employment status is actually valid, and no table gives a clear reason for the mismatch. This needs your input: either the employment record is stale/wrong and should be corrected, or there's a separation on record that isn't visible to me and another technician should be booked instead.\n\nANSWER: I could not book Rafa Osei for the 6-hour backflow job on 2026-07-02 because the scheduling action rejected it, stating he is not employed on that date, which conflicts with the technicians table showing no departure date and payroll records of full weeks worked through late June 2026; I need your call on whether to correct his employment record or assign a different certified technician.\nNUMBERS: {\"job_hours\": 6, \"cert_issued_on\": \"2024-03-11\", \"approval_threshold_hours\": 8}\nEVIDENCE: technicians(T3, Rafa Osei, left_on=null), certifications(T3, backflow-tester, 2024-03-11), payroll(T3 weekly hours through 2026-06-21), schedule(no conflict on 2026-07-02), execute_action schedule_job failure reason\nACTIONS: none",
+   "name": ""
+  },
+  {
+   "role": "reflect",
+   "kind": "verdict",
+   "text": "S=0 P=1 E=1 C=1 R=0 failure=missing_action; schedule_job: never executed",
+   "name": ""
+  }
+ ],
+ "score": {
+  "S": 0,
+  "P": 1,
+  "E": 1,
+  "C": 1,
+  "R": 0,
+  "failure": "missing_action",
+  "notes": [
+   "schedule_job: never executed"
+  ]
+ },
+ "meta": {
+  "seed_index": 1,
+  "ablation": "none",
+  "arm": "A",
+  "cost_usd": 0.081886,
+  "num_turns": 12,
+  "max_turns": 40,
+  "ended_by": "completed",
+  "sdk_version": "0.2.161",
+  "usage": {
+   "input_tokens": 14,
+   "cache_creation_input_tokens": 5539,
+   "cache_read_input_tokens": 62175,
+   "output_tokens": 4626,
+   "output_tokens_details": {
+    "thinking_tokens": 2933
+   },
+   "server_tool_use": {
+    "web_search_requests": 0,
+    "web_fetch_requests": 0
+   },
+   "service_tier": "standard",
+   "cache_creation": {
+    "ephemeral_1h_input_tokens": 5539,
+    "ephemeral_5m_input_tokens": 0
+   },
+   "inference_geo": "not_available",
+   "iterations": [
+    {
+     "input_tokens": 2,
+     "output_tokens": 944,
+     "cache_read_input_tokens": 11792,
+     "cache_creation_input_tokens": 805,
+     "cache_creation": {
+      "ephemeral_5m_input_tokens": 0,
+      "ephemeral_1h_input_tokens": 805
+     },
+     "type": "message"
+    }
+   ],
+   "speed": "standard"
+  },
+  "duration_s": 52.9,
+  "executed": [
+   {
+    "action": "schedule_job",
+    "payload": {
+     "job": "backflow job",
+     "tech": "Rafa Osei",
+     "day": "2026-07-02",
+     "hours": 6
+    },
+    "status": "failed",
+    "reason": "precondition no longer holds: Rafa Osei is not employed on 2026-07-02",
+    "proposal_hash": "210914201dcd"
+   }
+  ],
+  "approvals_requested": []
+ },
+ "hash": "09cbe8d52a50"
+}

@@ -1,0 +1,128 @@
+{
+ "name": "staff",
+ "exported_at": "2026-07-01T08:00:00",
+ "records": [
+  {
+   "employee_id": "E001",
+   "name": "Ben Park",
+   "role": "manager",
+   "store": "S1",
+   "hourly_cost": 22.0,
+   "hired_on": "2025-01-01"
+  },
+  {
+   "employee_id": "E002",
+   "name": "Cara Osei",
+   "role": "associate",
+   "store": "S1",
+   "hourly_cost": 16.5,
+   "hired_on": "2025-01-01"
+  },
+  {
+   "employee_id": "E003",
+   "name": "Dev Lund",
+   "role": "associate",
+   "store": "S1",
+   "hourly_cost": 16.5,
+   "hired_on": "2025-01-01"
+  },
+  {
+   "employee_id": "E004",
+   "name": "Eli Reyes",
+   "role": "associate",
+   "store": "S1",
+   "hourly_cost": 16.5,
+   "hired_on": "2025-01-01"
+  },
+  {
+   "employee_id": "E005",
+   "name": "Fay Iyer",
+   "role": "manager",
+   "store": "S2",
+   "hourly_cost": 22.0,
+   "hired_on": "2025-01-01"
+  },
+  {
+   "employee_id": "E006",
+   "name": "Gus Cole",
+   "role": "associate",
+   "store": "S2",
+   "hourly_cost": 16.5,
+   "hired_on": "2025-01-01"
+  },
+  {
+   "employee_id": "E007",
+   "name": "Hana Novak",
+   "role": "associate",
+   "store": "S2",
+   "hourly_cost": 16.5,
+   "hired_on": "2025-01-01"
+  },
+  {
+   "employee_id": "E008",
+   "name": "Ivo Bell",
+   "role": "associate",
+   "store": "S2",
+   "hourly_cost": 16.5,
+   "hired_on": "2025-01-01"
+  },
+  {
+   "employee_id": "E009",
+   "name": "Jun Sato",
+   "role": "associate",
+   "store": "S3",
+   "hourly_cost": 16.5,
+   "hired_on": "2025-01-01"
+  },
+  {
+   "employee_id": "E010",
+   "name": "Kai Diaz",
+   "role": "associate",
+   "store": "S3",
+   "hourly_cost": 16.5,
+   "hired_on": "2025-01-01"
+  },
+  {
+   "employee_id": "E011",
+   "name": "Lea Hale",
+   "role": "associate",
+   "store": "S3",
+   "hourly_cost": 16.5,
+   "hired_on": "2025-01-01"
+  },
+  {
+   "employee_id": "E012",
+   "name": "Mo Moss",
+   "role": "manager",
+   "store": "S4",
+   "hourly_cost": 22.0,
+   "hired_on": "2025-07-01"
+  },
+  {
+   "employee_id": "E013",
+   "name": "Nia Vega",
+   "role": "associate",
+   "store": "S4",
+   "hourly_cost": 16.5,
+   "hired_on": "2025-07-01"
+  },
+  {
+   "employee_id": "E014",
+   "name": "Ana Quinn",
+   "role": "associate",
+   "store": "S4",
+   "hourly_cost": 16.5,
+   "hired_on": "2025-07-01"
+  },
+  {
+   "employee_id": "E015",
+   "name": "Ben Abara",
+   "role": "associate",
+   "store": "S4",
+   "hourly_cost": 16.5,
+   "hired_on": "2025-07-01"
+  }
+ ],
+ "id_field": "employee_id",
+ "description": "the staff list from payroll; S3 has no manager on it"
+}

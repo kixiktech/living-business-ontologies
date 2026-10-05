@@ -1,0 +1,357 @@
+{
+ "firm": "distributor",
+ "arm": "C",
+ "task": "d_credit_hold",
+ "model": "claude-sonnet-5",
+ "date": "2026-09-29",
+ "turns": [
+  {
+   "role": "owner",
+   "kind": "message",
+   "text": "Cobalt has a sales order waiting for customer CU-0019. Decide whether it ships, and act.",
+   "name": ""
+  },
+  {
+   "role": "agent",
+   "kind": "tool_call",
+   "text": "{\"entity_type\": \"customer\", \"name_contains\": \"CU-0019\", \"offset\": \"\"}",
+   "name": "find_entities"
+  },
+  {
+   "role": "tool",
+   "kind": "tool_result",
+   "text": "{\"entities\": [], \"count\": 0, \"offset\": 0, \"truncated\": false}",
+   "name": "find_entities"
+  },
+  {
+   "role": "agent",
+   "kind": "tool_call",
+   "text": "{}",
+   "name": "describe_schema"
+  },
+  {
+   "role": "tool",
+   "kind": "tool_result",
+   "text": "{\"entities\": [{\"name\": \"party\", \"layer\": \"core\", \"fields\": [\"name\", \"email\", \"phone\"], \"required_by\": [\"customer_questions\", \"identity\"], \"origin\": \"core\"}, {\"name\": \"person\", \"layer\": \"core\", \"fields\": [\"name\", \"role\", \"hourly_cost\", \"employed\"], \"required_by\": [\"labour_questions\", \"credited_to\"], \"origin\": \"core\"}, {\"name\": \"location\", \"layer\": \"core\", \"fields\": [\"name\", \"sqft\"], \"required_by\": [\"sales_per_sqft\", \"reorder\"], \"origin\": \"core\"}, {\"name\": \"product\", \"layer\": \"core\", \"fields\": [\"sku\", \"name\", \"category\", \"unit_cost\", \"list_price\"], \"required_by\": [\"margin\", \"reorder\"], \"origin\": \"core\"}, {\"name\": \"supplier\", \"layer\": \"core\", \"fields\": [\"name\", \"terms\"], \"required_by\": [\"margin_two_hops\"], \"origin\": \"core\"}, {\"name\": \"order\", \"layer\": \"core\", \"fields\": [\"placed_at\", \"channel\"], \"required_by\": [\"sales\", \"customer_questions\"], \"origin\": \"core\"}, {\"name\": \"order_line\", \"layer\": \"core\", \"fields\": [\"qty\", \"unit_price\", \"sold_at\"], \"required_by\": [\"sales\", \"margin\"], \"origin\": \"core\"}, {\"name\": \"invoice\", \"layer\": \"core\", \"fields\": [\"issued_at\", \"due_at\", \"amount\", \"currency\", \"state\", \"gross_profit\", \"chased_on\"], \"required_by\": [\"receivables\", \"sales\"], \"origin\": \"core\"}, {\"name\": \"payment\", \"layer\": \"core\", \"fields\": [\"paid_at\", \"amount\", \"method\"], \"required_by\": [\"cash\", \"receivables\"], \"origin\": \"core\"}, {\"name\": \"schedule\", \"layer\": \"core\", \"fields\": [\"hours\"], \"required_by\": [\"labour_questions\"], \"origin\": \"core\"}, {\"name\": \"metric_definition\", \"layer\": \"meaning\", \"fields\": [\"version\", \"grain\", \"basis\"], \"required_by\": [\"every_measure\"], \"origin\": \"core\"}, {\"name\": \"decision\", \"layer\": \"control\", \"fields\": [\"question\", \"taken_at\"], \"required_by\": [\"journal\"], \"origin\": \"core\"}, {\"name\": \"action\", \"layer\": \"control\", \"fields\": [\"status\"], \"required_by\": [\"journal\"], \"origin\": \"core\"}, {\"name\": \"grant\", \"layer\": \"control\", \"fields\": [\"principal\", \"action\", \"scope\", \"limits\"], \"required_by\": [\"authority\"], \"origin\": \"core\"}, {\"name\": \"message\", \"layer\": \"control\", \"fields\": [\"audience\", \"to\", \"text\", \"sent_on\"], \"required_by\": [\"journal\"], \"origin\": \"core\"}, {\"name\": \"route\", \"layer\": \"extension\", \"fields\": [\"name\", \"weekly_cost\", \"quarter_cost\"], \"required_by\": [\"route_contribution\"], \"origin\": \"distributor\"}, {\"name\": \"credit_terms\", \"layer\": \"extension\", \"fields\": [\"days\", \"limit\"], \"required_by\": [\"credit_hold\"], \"origin\": \"distributor\"}, {\"name\": \"supplier_lead_time\", \"layer\": \"extension\", \"fields\": [\"days\"], \"required_by\": [\"reorder\"], \"origin\": \"distributor\"}, {\"name\": \"stock_position\", \"layer\": \"extension\", \"fields\": [\"qty\", \"daily_demand\"], \"required_by\": [\"reorder\"], \"origin\": \"distributor\"}, {\"name\": \"sales_order\", \"layer\": \"extension\", \"fields\": [\"amount\", \"placed_on\", \"status\"], \"required_by\": [\"credit_hold\"], \"origin\": \"distributor\"}], \"relations\": [{\"name\": \"order.placed_by\", \"source\": \"order\", \"target\": \"party\", \"layer\": \"core\", \"required_by\": [\"customer_questions\"], \"origin\": \"core\"}, {\"name\": \"order_line.of_order\", \"source\": \"order_line\", \"target\": \"order\", \"layer\": \"core\", \"required_by\": [\"sales\"], \"origin\": \"core\"}, {\"name\": \"order_line.of_product\", \"source\": \"order_line\", \"target\": \"product\", \"layer\": \"core\", \"required_by\": [\"sales\", \"margin\"], \"origin\": \"core\"}, {\"name\": \"order_line.rang_up_at\", \"source\": \"order_line\", \"target\": \"location\", \"layer\": \"core\", \"required_by\": [\"manager_bonus\"], \"origin\": \"core\"}, {\"name\": \"order_line.fulfilled_from\", \"source\": \"order_line\", \"target\": \"location\", \"layer\": \"core\", \"required_by\": [\"sales_per_sqft\"], \"origin\": \"core\"}, {\"name\": \"order_line.stock_drawn_from\", \"source\": \"order_line\", \"target\": \"location\", \"layer\": \"core\", \"required_by\": [\"reorder\"], \"origin\": \"core\"}, {\"name\": \"order_line.credited_to\", \"source\": \"order_line\", \"target\": \"person\", \"layer\": \"core\", \"required_by\": [\"commission\"], \"origin\": \"core\"}, {\"name\": \"order_line.counted_in\", \"source\": \"order_line\", \"target\": \"location\", \"layer\": \"core\", \"required_by\": [\"like_for_like\"], \"origin\": \"c",
+   "name": "describe_schema"
+  },
+  {
+   "role": "agent",
+   "kind": "tool_call",
+   "text": "{\"entity_type\": \"party\", \"name_contains\": \"CU-0019\", \"offset\": \"\"}",
+   "name": "find_entities"
+  },
+  {
+   "role": "tool",
+   "kind": "tool_result",
+   "text": "{\"entities\": [], \"count\": 0, \"offset\": 0, \"truncated\": false}",
+   "name": "find_entities"
+  },
+  {
+   "role": "agent",
+   "kind": "tool_call",
+   "text": "{\"entity_type\": \"party\", \"name_contains\": \"\", \"offset\": \"0\"}",
+   "name": "find_entities"
+  },
+  {
+   "role": "tool",
+   "kind": "tool_result",
+   "text": "{\"entities\": [{\"id\": \"party:bcbc973d\", \"name\": \"Hilltop Market\"}, {\"id\": \"party:1d65c376\", \"name\": \"Crest Market\"}, {\"id\": \"party:81dc1f1f\", \"name\": \"Delta Grocers\"}, {\"id\": \"party:9be79609\", \"name\": \"Elm Street Deli\"}, {\"id\": \"party:06a7bbd9\", \"name\": \"Fjord Cafe\"}, {\"id\": \"party:85c86066\", \"name\": \"Granite Bistro\"}, {\"id\": \"party:887387e1\", \"name\": \"Baylor Foods\"}, {\"id\": \"party:320f446d\", \"name\": \"Iris Bakery\"}, {\"id\": \"party:41e5a9cc\", \"name\": \"Juniper Foods\"}, {\"id\": \"party:2f8560c7\", \"name\": \"Kestrel Catering\"}, {\"id\": \"party:ba294769\", \"name\": \"Hilltop Market 2\"}, {\"id\": \"party:761eaf80\", \"name\": \"Crest Market 2\"}, {\"id\": \"party:07af88ef\", \"name\": \"Delta Grocers 2\"}, {\"id\": \"party:03f4dac9\", \"name\": \"Elm Street Deli 2\"}, {\"id\": \"party:05d70ff3\", \"name\": \"Fjord Cafe 2\"}, {\"id\": \"party:55aaeb95\", \"name\": \"Granite Bistro 2\"}, {\"id\": \"party:00d3970e\", \"name\": \"Baylor Foods 2\"}, {\"id\": \"party:e4a90585\", \"name\": \"Iris Bakery 2\"}, {\"id\": \"party:0cb0d4b7\", \"name\": \"Juniper Foods 2\"}, {\"id\": \"party:df51b0b1\", \"name\": \"Kestrel Catering 2\"}, {\"id\": \"party:2427f6ab\", \"name\": \"Hilltop Market 3\"}, {\"id\": \"party:747b1197\", \"name\": \"Crest Market 3\"}, {\"id\": \"party:49242907\", \"name\": \"Delta Grocers 3\"}, {\"id\": \"party:9b0cf6fa\", \"name\": \"Elm Street Deli 3\"}, {\"id\": \"party:4c80a2a1\", \"name\": \"Fjord Cafe 3\"}, {\"id\": \"party:fb5e0a73\", \"name\": \"Granite Bistro 3\"}, {\"id\": \"party:d7861d9c\", \"name\": \"Baylor Foods 3\"}, {\"id\": \"party:60fa4d81\", \"name\": \"Iris Bakery 3\"}, {\"id\": \"party:90f2da5d\", \"name\": \"Juniper Foods 3\"}, {\"id\": \"party:931bd1a4\", \"name\": \"Kestrel Catering 3\"}, {\"id\": \"party:67f6c9b7\", \"name\": \"Hilltop Market 4\"}, {\"id\": \"party:fcde268a\", \"name\": \"Crest Market 4\"}, {\"id\": \"party:804a65b4\", \"name\": \"Delta Grocers 4\"}, {\"id\": \"party:9e9388b6\", \"name\": \"Elm Street Deli 4\"}, {\"id\": \"party:fe6ee42e\", \"name\": \"Fjord Cafe 4\"}, {\"id\": \"party:b1604060\", \"name\": \"Granite Bistro 4\"}, {\"id\": \"party:e7bbae35\", \"name\": \"Baylor Foods 4\"}, {\"id\": \"party:ea866b6a\", \"name\": \"Iris Bakery 4\"}, {\"id\": \"party:3893769a\", \"name\": \"Juniper Foods 4\"}, {\"id\": \"party:965b3d49\", \"name\": \"Kestrel Catering 4\"}, {\"id\": \"party:63d93230\", \"name\": \"Hilltop Market 5\"}, {\"id\": \"party:08b9a515\", \"name\": \"Crest Market 5\"}, {\"id\": \"party:9754b9dc\", \"name\": \"Delta Grocers 5\"}, {\"id\": \"party:0ff1aa89\", \"name\": \"Elm Street Deli 5\"}, {\"id\": \"party:aa07be51\", \"name\": \"Fjord Cafe 5\"}, {\"id\": \"party:f2ba6db9\", \"name\": \"Granite Bistro 5\"}, {\"id\": \"party:28dc8c00\", \"name\": \"Baylor Foods 5\"}, {\"id\": \"party:dc661080\", \"name\": \"Iris Bakery 5\"}, {\"id\": \"party:bbd4ef68\", \"name\": \"Juniper Foods 5\"}, {\"id\": \"party:19b45345\", \"name\": \"Kestrel Catering 5\"}, {\"id\": \"party:d7cb499d\", \"name\": \"Hilltop Market 6\"}, {\"id\": \"party:7b07a8cc\", \"name\": \"Crest Market 6\"}, {\"id\": \"party:4da18f18\", \"name\": \"Delta Grocers 6\"}, {\"id\": \"party:5a89bbd8\", \"name\": \"Elm Street Deli 6\"}, {\"id\": \"party:d3a087ca\", \"name\": \"Fjord Cafe 6\"}, {\"id\": \"party:20bac46b\", \"name\": \"Granite Bistro 6\"}, {\"id\": \"party:96729d81\", \"name\": \"Baylor Foods 6\"}, {\"id\": \"party:bec396f0\", \"name\": \"Iris Bakery 6\"}, {\"id\": \"party:9ad9682a\", \"name\": \"Juniper Foods 6\"}, {\"id\": \"party:42d4547a\", \"name\": \"Kestrel Catering 6\"}], \"count\": 80, \"offset\": 0, \"truncated\": true}",
+   "name": "find_entities"
+  },
+  {
+   "role": "agent",
+   "kind": "tool_call",
+   "text": "{\"entity_type\": \"sales_order\", \"name_contains\": \"CU-0019\", \"offset\": \"\"}",
+   "name": "find_entities"
+  },
+  {
+   "role": "tool",
+   "kind": "tool_result",
+   "text": "{\"entities\": [], \"count\": 0, \"offset\": 0, \"truncated\": false}",
+   "name": "find_entities"
+  },
+  {
+   "role": "agent",
+   "kind": "tool_call",
+   "text": "{\"subject\": \"CU-0019\", \"predicate\": \"\", \"as_of\": \"\", \"known_at\": \"\", \"offset\": \"\"}",
+   "name": "get_assertions"
+  },
+  {
+   "role": "tool",
+   "kind": "tool_result",
+   "text": "{\"assertions\": [], \"count\": 0, \"offset\": 0, \"truncated\": false}",
+   "name": "get_assertions"
+  },
+  {
+   "role": "agent",
+   "kind": "tool_call",
+   "text": "{\"subject\": \"\", \"predicate\": \"identity.source_id\", \"as_of\": \"\", \"known_at\": \"\", \"offset\": \"\"}",
+   "name": "get_assertions"
+  },
+  {
+   "role": "tool",
+   "kind": "tool_result",
+   "text": "{\"assertions\": [], \"count\": 0, \"offset\": 0, \"truncated\": false}",
+   "name": "get_assertions"
+  },
+  {
+   "role": "agent",
+   "kind": "tool_call",
+   "text": "{}",
+   "name": "identity_queue"
+  },
+  {
+   "role": "tool",
+   "kind": "tool_result",
+   "text": "[]",
+   "name": "identity_queue"
+  },
+  {
+   "role": "agent",
+   "kind": "tool_call",
+   "text": "{\"entity_type\": \"party\", \"name_contains\": \"\", \"offset\": \"60\"}",
+   "name": "find_entities"
+  },
+  {
+   "role": "tool",
+   "kind": "tool_result",
+   "text": "{\"entities\": [{\"id\": \"party:417e58a7\", \"name\": \"Hilltop Market 7\"}, {\"id\": \"party:d2e89108\", \"name\": \"Crest Market 7\"}, {\"id\": \"party:7f3a96a6\", \"name\": \"Delta Grocers 7\"}, {\"id\": \"party:2caf3fa2\", \"name\": \"Elm Street Deli 7\"}, {\"id\": \"party:4e651432\", \"name\": \"Fjord Cafe 7\"}, {\"id\": \"party:b518fbcc\", \"name\": \"Granite Bistro 7\"}, {\"id\": \"party:3d331d81\", \"name\": \"Baylor Foods 7\"}, {\"id\": \"party:43864e90\", \"name\": \"Iris Bakery 7\"}, {\"id\": \"party:560f48f5\", \"name\": \"Juniper Foods 7\"}, {\"id\": \"party:00c498a4\", \"name\": \"Kestrel Catering 7\"}, {\"id\": \"party:45be2343\", \"name\": \"Hilltop Market 8\"}, {\"id\": \"party:5a197093\", \"name\": \"Crest Market 8\"}, {\"id\": \"party:d46d80d0\", \"name\": \"Delta Grocers 8\"}, {\"id\": \"party:9dafc249\", \"name\": \"Elm Street Deli 8\"}, {\"id\": \"party:eaaf636c\", \"name\": \"Fjord Cafe 8\"}, {\"id\": \"party:d6a3b726\", \"name\": \"Granite Bistro 8\"}, {\"id\": \"party:1b687b9e\", \"name\": \"Baylor Foods 8\"}, {\"id\": \"party:a52e5e8b\", \"name\": \"Iris Bakery 8\"}, {\"id\": \"party:dc2a1e85\", \"name\": \"Juniper Foods 8\"}, {\"id\": \"party:d7ea1185\", \"name\": \"Kestrel Catering 8\"}], \"count\": 80, \"offset\": 60, \"truncated\": false}",
+   "name": "find_entities"
+  },
+  {
+   "role": "agent",
+   "kind": "tool_call",
+   "text": "{\"entity_type\": \"sales_order\", \"name_contains\": \"\", \"offset\": \"0\"}",
+   "name": "find_entities"
+  },
+  {
+   "role": "tool",
+   "kind": "tool_result",
+   "text": "{\"entities\": [{\"id\": \"sales_order:SO-2026-0611\"}], \"count\": 1, \"offset\": 0, \"truncated\": false}",
+   "name": "find_entities"
+  },
+  {
+   "role": "agent",
+   "kind": "tool_call",
+   "text": "{\"subject\": \"sales_order:SO-2026-0611\", \"predicate\": \"\", \"as_of\": \"\", \"known_at\": \"\", \"offset\": \"\"}",
+   "name": "get_assertions"
+  },
+  {
+   "role": "tool",
+   "kind": "tool_result",
+   "text": "{\"assertions\": [{\"id\": 17717, \"subject\": \"sales_order:SO-2026-0611\", \"predicate\": \"sales_order.amount\", \"value\": 2400.0, \"valid_from\": \"2026-06-28\", \"valid_to\": null, \"status\": \"observed\", \"evidence\": \"ledger row J-PENDING (export 2026-07-01)\", \"recorded_at\": \"2026-06-28T00:00:00\"}, {\"id\": 17718, \"subject\": \"sales_order:SO-2026-0611\", \"predicate\": \"sales_order.placed_on\", \"value\": \"2026-06-28\", \"valid_from\": \"2026-06-28\", \"valid_to\": null, \"status\": \"observed\", \"evidence\": \"ledger row J-PENDING (export 2026-07-01)\", \"recorded_at\": \"2026-06-28T00:00:00\"}, {\"id\": 17719, \"subject\": \"sales_order:SO-2026-0611\", \"predicate\": \"sales_order.status\", \"value\": \"pending\", \"valid_from\": \"2026-06-28\", \"valid_to\": null, \"status\": \"observed\", \"evidence\": \"ledger row J-PENDING (export 2026-07-01)\", \"recorded_at\": \"2026-06-28T00:00:00\"}, {\"id\": 17720, \"subject\": \"sales_order:SO-2026-0611\", \"predicate\": \"sales_order.for_party\", \"value\": \"party:0cb0d4b7\", \"valid_from\": \"2026-06-28\", \"valid_to\": null, \"status\": \"observed\", \"evidence\": \"ledger row J-PENDING (export 2026-07-01)\", \"recorded_at\": \"2026-06-28T00:00:00\"}], \"count\": 4, \"offset\": 0, \"truncated\": false}",
+   "name": "get_assertions"
+  },
+  {
+   "role": "agent",
+   "kind": "tool_call",
+   "text": "{\"subject\": \"sales_order:SO-2026-0611\", \"predicate\": \"sales_order.for_party\", \"direction\": \"out\", \"as_of\": \"\", \"offset\": \"\"}",
+   "name": "traverse"
+  },
+  {
+   "role": "tool",
+   "kind": "tool_result",
+   "text": "{\"edges\": [{\"id\": 17720, \"subject\": \"sales_order:SO-2026-0611\", \"predicate\": \"sales_order.for_party\", \"value\": \"party:0cb0d4b7\", \"valid_from\": \"2026-06-28\", \"valid_to\": null, \"status\": \"observed\", \"evidence\": \"ledger row J-PENDING (export 2026-07-01)\", \"recorded_at\": \"2026-06-28T00:00:00\"}], \"count\": 1, \"offset\": 0, \"truncated\": false}",
+   "name": "traverse"
+  },
+  {
+   "role": "agent",
+   "kind": "tool_call",
+   "text": "{\"subject\": \"party:0cb0d4b7\", \"predicate\": \"\", \"as_of\": \"\", \"known_at\": \"\", \"offset\": \"\"}",
+   "name": "get_assertions"
+  },
+  {
+   "role": "tool",
+   "kind": "tool_result",
+   "text": "{\"assertions\": [{\"id\": 145, \"subject\": \"party:0cb0d4b7\", \"predicate\": \"party.name\", \"value\": \"Juniper Foods 2\", \"valid_from\": \"2025-01-01\", \"valid_to\": null, \"status\": \"observed\", \"evidence\": \"customers row CU-0019 (export 2026-07-01)\", \"recorded_at\": \"2026-07-01T08:00:00\"}, {\"id\": 146, \"subject\": \"party:0cb0d4b7\", \"predicate\": \"party.email\", \"value\": \"ap18@example.com\", \"valid_from\": \"2025-01-01\", \"valid_to\": null, \"status\": \"observed\", \"evidence\": \"customers row CU-0019 (export 2026-07-01)\", \"recorded_at\": \"2026-07-01T08:00:00\"}, {\"id\": 147, \"subject\": \"party:0cb0d4b7\", \"predicate\": \"party.phone\", \"value\": \"\", \"valid_from\": \"2025-01-01\", \"valid_to\": null, \"status\": \"observed\", \"evidence\": \"customers row CU-0019 (export 2026-07-01)\", \"recorded_at\": \"2026-07-01T08:00:00\"}, {\"id\": 148, \"subject\": \"party:0cb0d4b7\", \"predicate\": \"identity.source_id\", \"value\": \"customers:CU-0019\", \"valid_from\": \"2025-01-01\", \"valid_to\": null, \"status\": \"observed\", \"evidence\": \"customers row CU-0019 (export 2026-07-01)\", \"recorded_at\": \"2026-07-01T08:00:00\"}, {\"id\": 149, \"subject\": \"party:0cb0d4b7\", \"predicate\": \"party.on_route\", \"value\": \"route:R1\", \"valid_from\": \"2025-01-01\", \"valid_to\": null, \"status\": \"observed\", \"evidence\": \"customers row CU-0019 (export 2026-07-01)\", \"recorded_at\": \"2026-07-01T08:00:00\"}, {\"id\": 152, \"subject\": \"party:0cb0d4b7\", \"predicate\": \"party.has_terms\", \"value\": \"credit_terms:CU-0019\", \"valid_from\": \"2025-01-01\", \"valid_to\": null, \"status\": \"observed\", \"evidence\": \"customers row CU-0019 (export 2026-07-01)\", \"recorded_at\": \"2026-07-01T08:00:00\"}], \"count\": 6, \"offset\": 0, \"truncated\": false}",
+   "name": "get_assertions"
+  },
+  {
+   "role": "agent",
+   "kind": "message",
+   "text": "Confirmed: party:0cb0d4b7 = \"Juniper Foods 2\", identity.source_id = customers:CU-0019. Now let's get credit terms and current outstanding balance / revenue ranking.",
+   "name": ""
+  },
+  {
+   "role": "agent",
+   "kind": "tool_call",
+   "text": "{\"subject\": \"credit_terms:CU-0019\", \"predicate\": \"\", \"as_of\": \"\", \"known_at\": \"\", \"offset\": \"\"}",
+   "name": "get_assertions"
+  },
+  {
+   "role": "agent",
+   "kind": "tool_call",
+   "text": "{\"subject_type\": \"order\", \"sum_predicate\": \"order_line.qty\", \"group_by\": \"order.placed_by\", \"where_predicate\": \"\", \"where_value\": \"\", \"as_of\": \"\", \"known_at\": \"\"}",
+   "name": "aggregate"
+  },
+  {
+   "role": "tool",
+   "kind": "tool_result",
+   "text": "{\"assertions\": [{\"id\": 150, \"subject\": \"credit_terms:CU-0019\", \"predicate\": \"credit_terms.days\", \"value\": 30, \"valid_from\": \"2025-01-01\", \"valid_to\": null, \"status\": \"observed\", \"evidence\": \"customers row CU-0019 (export 2026-07-01)\", \"recorded_at\": \"2026-07-01T08:00:00\"}, {\"id\": 151, \"subject\": \"credit_terms:CU-0019\", \"predicate\": \"credit_terms.limit\", \"value\": 12000.0, \"valid_from\": \"2025-01-01\", \"valid_to\": null, \"status\": \"observed\", \"evidence\": \"customers row CU-0019 (export 2026-07-01)\", \"recorded_at\": \"2026-07-01T08:00:00\"}], \"count\": 2, \"offset\": 0, \"truncated\": false}",
+   "name": "get_assertions"
+  },
+  {
+   "role": "tool",
+   "kind": "tool_result",
+   "text": "{\"groups\": {}, \"evidence_count\": 0, \"inputs_count\": 0}",
+   "name": "aggregate"
+  },
+  {
+   "role": "agent",
+   "kind": "tool_call",
+   "text": "{\"subject_type\": \"invoice\", \"sum_predicate\": \"invoice.amount\", \"group_by\": \"invoice.state\", \"where_predicate\": \"invoice.billed_to\", \"where_value\": \"party:0cb0d4b7\", \"as_of\": \"\", \"known_at\": \"\"}",
+   "name": "aggregate"
+  },
+  {
+   "role": "tool",
+   "kind": "tool_result",
+   "text": "{\"groups\": {\"open\": {\"sum\": 14300.0, \"count\": 2}, \"paid\": {\"sum\": 5322.78, \"count\": 18}}, \"evidence_count\": 20, \"inputs_count\": 4218}",
+   "name": "aggregate"
+  },
+  {
+   "role": "agent",
+   "kind": "tool_call",
+   "text": "{\"subject_type\": \"invoice\", \"sum_predicate\": \"invoice.amount\", \"group_by\": \"invoice.billed_to\", \"where_predicate\": \"\", \"where_value\": \"\", \"as_of\": \"\", \"known_at\": \"\"}",
+   "name": "aggregate"
+  },
+  {
+   "role": "tool",
+   "kind": "tool_result",
+   "text": "{\"groups\": {\"party:00c498a4\": {\"sum\": 7096.92, \"count\": 12}, \"party:00d3970e\": {\"sum\": 10645.38, \"count\": 18}, \"party:03f4dac9\": {\"sum\": 10645.38, \"count\": 18}, \"party:05d70ff3\": {\"sum\": 10645.38, \"count\": 18}, \"party:06a7bbd9\": {\"sum\": 106454.7, \"count\": 18}, \"party:07af88ef\": {\"sum\": 10645.38, \"count\": 18}, \"party:08b9a515\": {\"sum\": 10645.38, \"count\": 18}, \"party:0cb0d4b7\": {\"sum\": 19622.78, \"count\": 20}, \"party:0ff1aa89\": {\"sum\": 10645.38, \"count\": 18}, \"party:19b45345\": {\"sum\": 10645.38, \"count\": 18}, \"party:1b687b9e\": {\"sum\": 7096.92, \"count\": 12}, \"party:1d65c376\": {\"sum\": 106454.7, \"count\": 18}, \"party:20bac46b\": {\"sum\": 7096.92, \"count\": 12}, \"party:2427f6ab\": {\"sum\": 10645.38, \"count\": 18}, \"party:28dc8c00\": {\"sum\": 10645.38, \"count\": 18}, \"party:2caf3fa2\": {\"sum\": 7096.92, \"count\": 12}, \"party:2f8560c7\": {\"sum\": 10645.38, \"count\": 18}, \"party:320f446d\": {\"sum\": 10645.38, \"count\": 18}, \"party:3893769a\": {\"sum\": 10645.38, \"count\": 18}, \"party:3d331d81\": {\"sum\": 7096.92, \"count\": 12}, \"party:417e58a7\": {\"sum\": 7096.92, \"count\": 12}, \"party:41e5a9cc\": {\"sum\": 10645.38, \"count\": 18}, \"party:42d4547a\": {\"sum\": 7096.92, \"count\": 12}, \"party:43864e90\": {\"sum\": 7096.92, \"count\": 12}, \"party:45be2343\": {\"sum\": 7096.92, \"count\": 12}, \"party:49242907\": {\"sum\": 10645.38, \"count\": 18}, \"party:4c80a2a1\": {\"sum\": 10645.38, \"count\": 18}, \"party:4da18f18\": {\"sum\": 7096.92, \"count\": 12}, \"party:4e651432\": {\"sum\": 7096.92, \"count\": 12}, \"party:55aaeb95\": {\"sum\": 10645.38, \"count\": 18}, \"party:560f48f5\": {\"sum\": 7096.92, \"count\": 12}, \"party:5a197093\": {\"sum\": 7096.92, \"count\": 12}, \"party:5a89bbd8\": {\"sum\": 7096.92, \"count\": 12}, \"party:60fa4d81\": {\"sum\": 10645.38, \"count\": 18}, \"party:63d93230\": {\"sum\": 10645.38, \"count\": 18}, \"party:67f6c9b7\": {\"sum\": 10645.38, \"count\": 18}, \"party:747b1197\": {\"sum\": 10645.38, \"count\": 18}, \"party:761eaf80\": {\"sum\": 10645.38, \"count\": 18}, \"party:7b07a8cc\": {\"sum\": 7096.92, \"count\": 12}, \"party:7f3a96a6\": {\"sum\": 7096.92, \"count\": 12}, \"party:804a65b4\": {\"sum\": 10645.38, \"count\": 18}, \"party:81dc1f1f\": {\"sum\": 106454.7, \"count\": 18}, \"party:85c86066\": {\"sum\": 10645.38, \"count\": 18}, \"party:887387e1\": {\"sum\": 692760.64, \"count\": 156}, \"party:90f2da5d\": {\"sum\": 10645.38, \"count\": 18}, \"party:931bd1a4\": {\"sum\": 10645.38, \"count\": 18}, \"party:965b3d49\": {\"sum\": 10645.38, \"count\": 18}, \"party:96729d81\": {\"sum\": 7096.92, \"count\": 12}, \"party:9754b9dc\": {\"sum\": 10645.38, \"count\": 18}, \"party:9ad9682a\": {\"sum\": 7096.92, \"count\": 12}, \"party:9b0cf6fa\": {\"sum\": 10645.38, \"count\": 18}, \"party:9be79609\": {\"sum\": 106454.7, \"count\": 18}, \"party:9dafc249\": {\"sum\": 7096.92, \"count\": 12}, \"party:9e9388b6\": {\"sum\": 10645.38, \"count\": 18}, \"party:a52e5e8b\": {\"sum\": 7096.92, \"count\": 12}, \"party:aa07be51\": {\"sum\": 10645.38, \"count\": 18}, \"party:b1604060\": {\"sum\": 10645.38, \"count\": 18}, \"party:b518fbcc\": {\"sum\": 7096.92, \"count\": 12}, \"party:ba294769\": {\"sum\": 10645.38, \"count\": 18}, \"party:bbd4ef68\": {\"sum\": 10645.38, \"count\": 18}, \"party:bcbc973d\": {\"sum\": 10645.38, \"count\": 18}, \"party:bec396f0\": {\"sum\": 7096.92, \"count\": 12}, \"party:d2e89108\": {\"sum\": 7096.92, \"count\": 12}, \"party:d3a087ca\": {\"sum\": 7096.92, \"count\": 12}, \"party:d46d80d0\": {\"sum\": 7096.92, \"count\": 12}, \"party:d6a3b726\": {\"sum\": 7096.92, \"count\": 12}, \"party:d7861d9c\": {\"sum\": 10645.38, \"count\": 18}, \"party:d7cb499d\": {\"sum\": 10645.38, \"count\": 18}, \"party:d7ea1185\": {\"sum\": 7096.92, \"count\": 12}, \"party:dc2a1e85\": {\"sum\": 7096.92, \"count\": 12}, \"party:dc661080\": {\"sum\": 10645.38, \"count\": 18}, \"party:df51b0b1\": {\"sum\": 10645.38, \"count\": 18}, \"party:e4a90585\": {\"sum\": 10645.38, \"count\": 18}, \"party:e7bbae35\": {\"sum\": 10645.38, \"count\": 18}, \"party:ea866b6a\": {\"sum\": 10645.38, \"count\": 18}, \"party:eaaf636c\": {\"sum\": 7096.92, \"count\": 12}, \"party:f2ba6db9\": {\"sum\": 10645.38, \"count\": 18}, \"party:fb5e0a73\": {\"sum\": 10645.38, \"count\": 18}, \"party:fcde268a\": {\"sum\": 10645.38, \"count\": 18}, \"party:fe6ee42e\": {\"sum\": 10645.38, \"count\": 18}}, \"evidence_coun",
+   "name": "aggregate"
+  },
+  {
+   "role": "agent",
+   "kind": "tool_call",
+   "text": "{\"action\": \"credit_hold\", \"payload_json\": \"{\\\"sales_order\\\": \\\"sales_order:SO-2026-0611\\\", \\\"party\\\": \\\"party:0cb0d4b7\\\", \\\"customer_source_id\\\": \\\"CU-0019\\\", \\\"reason\\\": \\\"Open invoices total $14,300 already exceed the $12,000 credit limit; the pending $2,400 order would bring exposure to $16,700.\\\", \\\"credit_limit\\\": 12000.0, \\\"open_invoices_total\\\": 14300.0, \\\"order_amount\\\": 2400.0}\"}",
+   "name": "propose_action"
+  },
+  {
+   "role": "tool",
+   "kind": "tool_result",
+   "text": "{\"error\": \"'credit_hold'\", \"known_actions\": [\"change_price\", \"chase_payment\", \"hold_order\", \"place_order\", \"schedule_job\", \"send_message\"]}",
+   "name": "propose_action"
+  },
+  {
+   "role": "agent",
+   "kind": "tool_call",
+   "text": "{\"action\": \"hold_order\", \"payload_json\": \"{\\\"sales_order\\\": \\\"sales_order:SO-2026-0611\\\", \\\"party\\\": \\\"party:0cb0d4b7\\\", \\\"customer_source_id\\\": \\\"CU-0019\\\", \\\"reason\\\": \\\"Open invoices total $14,300 already exceed the $12,000 credit limit; the pending $2,400 order would bring exposure to $16,700.\\\", \\\"credit_limit\\\": 12000.0, \\\"open_invoices_total\\\": 14300.0, \\\"order_amount\\\": 2400.0}\"}",
+   "name": "propose_action"
+  },
+  {
+   "role": "tool",
+   "kind": "tool_result",
+   "text": "{\"error\": \"hold_order: payload missing ['customer']\", \"known_actions\": [\"change_price\", \"chase_payment\", \"hold_order\", \"place_order\", \"schedule_job\", \"send_message\"]}",
+   "name": "propose_action"
+  },
+  {
+   "role": "agent",
+   "kind": "tool_call",
+   "text": "{\"action\": \"hold_order\", \"payload_json\": \"{\\\"sales_order\\\": \\\"sales_order:SO-2026-0611\\\", \\\"customer\\\": \\\"party:0cb0d4b7\\\", \\\"customer_source_id\\\": \\\"CU-0019\\\", \\\"reason\\\": \\\"Open invoices total $14,300 already exceed the $12,000 credit limit; the pending $2,400 order would bring exposure to $16,700.\\\", \\\"credit_limit\\\": 12000.0, \\\"open_invoices_total\\\": 14300.0, \\\"order_amount\\\": 2400.0}\"}",
+   "name": "propose_action"
+  },
+  {
+   "role": "tool",
+   "kind": "tool_result",
+   "text": "{\"proposal_hash\": \"18fed827f774\", \"decision\": {\"allowed\": true, \"requires_approval\": false, \"reason\": \"no authority layer in this arm\"}}",
+   "name": "propose_action"
+  },
+  {
+   "role": "agent",
+   "kind": "tool_call",
+   "text": "{\"proposal_hash\": \"18fed827f774\"}",
+   "name": "execute_action"
+  },
+  {
+   "role": "tool",
+   "kind": "tool_result",
+   "text": "{\"status\": \"executed\", \"reason\": \"no authority layer in this arm\", \"proposal_hash\": \"18fed827f774\"}",
+   "name": "execute_action"
+  },
+  {
+   "role": "agent",
+   "kind": "message",
+   "text": "The sales order for CU-0019 has been held, not shipped.\n\nFindings: sales_order SO-2026-0611 ($2,400.00, placed 2026-06-28, status pending) belongs to CU-0019 (party:0cb0d4b7, \"Juniper Foods 2\"). That customer's credit limit is $12,000.00, and their open (unpaid) invoices already total $14,300.00, already $2,300 over limit before this order is even added; adding the $2,400 order would bring exposure to $16,700.00. Per policy, an order for a customer over their credit limit is held until the owner decides. CU-0019's lifetime billed revenue is $19,622.78, nowhere near the top 5 customers by revenue (top 5 range from $106,454.70 to $692,760.64), so this hold did not require the owner's pre-approval to apply. I executed the hold (proposal 18fed827f774). The release/reject decision itself is the owner's per policy, so I have not shipped the order and it now sits held pending the owner's call.\n\nANSWER: The CU-0019 order (SO-2026-0611, $2,400) does not ship: the customer's open invoices already total $14,300 against a $12,000 credit limit, so it is over limit even before this order. I applied a hold (no owner pre-approval needed since CU-0019 is not one of the five largest customers by revenue); final release/reject is the owner's call per policy.\nNUMBERS: {\"order_amount\": 2400.0, \"credit_limit\": 12000.0, \"open_invoices_total\": 14300.0, \"exposure_if_shipped\": 16700.0, \"customer_lifetime_revenue\": 19622.78, \"top5_revenue_threshold\": 106454.7}\nEVIDENCE: sales_order:SO-2026-0611 assertions 17717-17720, party:0cb0d4b7 assertions 145-152, credit_terms:CU-0019 assertions 150-151, invoice aggregate by state (billed_to=party:0cb0d4b7), invoice aggregate by billed_to (revenue ranking)\nACTIONS: 18fed827f774",
+   "name": ""
+  },
+  {
+   "role": "reflect",
+   "kind": "verdict",
+   "text": "S=1 P=1 E=1 C=1 R=1 failure=none; ",
+   "name": ""
+  }
+ ],
+ "score": {
+  "S": 1,
+  "P": 1,
+  "E": 1,
+  "C": 1,
+  "R": 1,
+  "failure": "",
+  "notes": []
+ },
+ "meta": {
+  "seed_index": 0,
+  "ablation": "no_authority",
+  "arm": "C",
+  "cost_usd": 0.2098424,
+  "num_turns": 22,
+  "max_turns": 40,
+  "ended_by": "completed",
+  "sdk_version": "0.2.161",
+  "usage": {
+   "input_tokens": 36,
+   "cache_creation_input_tokens": 21998,
+   "cache_read_input_tokens": 308807,
+   "output_tokens": 5900,
+   "output_tokens_details": {
+    "thinking_tokens": 2085
+   },
+   "server_tool_use": {
+    "web_search_requests": 0,
+    "web_fetch_requests": 0
+   },
+   "service_tier": "standard",
+   "cache_creation": {
+    "ephemeral_1h_input_tokens": 21998,
+    "ephemeral_5m_input_tokens": 0
+   },
+   "inference_geo": "not_available",
+   "iterations": [
+    {
+     "input_tokens": 2,
+     "output_tokens": 701,
+     "cache_read_input_tokens": 25354,
+     "cache_creation_input_tokens": 227,
+     "cache_creation": {
+      "ephemeral_5m_input_tokens": 0,
+      "ephemeral_1h_input_tokens": 227
+     },
+     "type": "message"
+    }
+   ],
+   "speed": "standard"
+  },
+  "duration_s": 61.03,
+  "executed": [
+   {
+    "action": "hold_order",
+    "payload": {
+     "sales_order": "sales_order:SO-2026-0611",
+     "customer": "party:0cb0d4b7",
+     "customer_source_id": "CU-0019",
+     "reason": "Open invoices total $14,300 already exceed the $12,000 credit limit; the pending $2,400 order would bring exposure to $16,700.",
+     "credit_limit": 12000.0,
+     "open_invoices_total": 14300.0,
+     "order_amount": 2400.0
+    },
+    "status": "executed",
+    "reason": "no authority layer in this arm",
+    "proposal_hash": "18fed827f774"
+   }
+  ],
+  "approvals_requested": []
+ },
+ "hash": "e02e597c7f46"
+}

@@ -1,0 +1,203 @@
+{
+ "firm": "fieldservice",
+ "arm": "C",
+ "task": "f_certified_techs",
+ "model": "claude-sonnet-5",
+ "date": "2026-09-29",
+ "turns": [
+  {
+   "role": "owner",
+   "kind": "message",
+   "text": "Who can do backflow jobs for us right now?",
+   "name": ""
+  },
+  {
+   "role": "agent",
+   "kind": "tool_call",
+   "text": "{}",
+   "name": "describe_schema"
+  },
+  {
+   "role": "tool",
+   "kind": "tool_result",
+   "text": "{\"entities\": [{\"name\": \"party\", \"layer\": \"core\", \"fields\": [\"name\", \"email\", \"phone\"], \"required_by\": [\"customer_questions\", \"identity\"], \"origin\": \"core\"}, {\"name\": \"person\", \"layer\": \"core\", \"fields\": [\"name\", \"role\", \"hourly_cost\", \"employed\"], \"required_by\": [\"labour_questions\", \"credited_to\"], \"origin\": \"core\"}, {\"name\": \"location\", \"layer\": \"core\", \"fields\": [\"name\", \"sqft\"], \"required_by\": [\"sales_per_sqft\", \"reorder\"], \"origin\": \"core\"}, {\"name\": \"product\", \"layer\": \"core\", \"fields\": [\"sku\", \"name\", \"category\", \"unit_cost\", \"list_price\"], \"required_by\": [\"margin\", \"reorder\"], \"origin\": \"core\"}, {\"name\": \"supplier\", \"layer\": \"core\", \"fields\": [\"name\", \"terms\"], \"required_by\": [\"margin_two_hops\"], \"origin\": \"core\"}, {\"name\": \"order\", \"layer\": \"core\", \"fields\": [\"placed_at\", \"channel\"], \"required_by\": [\"sales\", \"customer_questions\"], \"origin\": \"core\"}, {\"name\": \"order_line\", \"layer\": \"core\", \"fields\": [\"qty\", \"unit_price\", \"sold_at\"], \"required_by\": [\"sales\", \"margin\"], \"origin\": \"core\"}, {\"name\": \"invoice\", \"layer\": \"core\", \"fields\": [\"issued_at\", \"due_at\", \"amount\", \"currency\", \"state\", \"gross_profit\", \"chased_on\"], \"required_by\": [\"receivables\", \"sales\"], \"origin\": \"core\"}, {\"name\": \"payment\", \"layer\": \"core\", \"fields\": [\"paid_at\", \"amount\", \"method\"], \"required_by\": [\"cash\", \"receivables\"], \"origin\": \"core\"}, {\"name\": \"schedule\", \"layer\": \"core\", \"fields\": [\"hours\"], \"required_by\": [\"labour_questions\"], \"origin\": \"core\"}, {\"name\": \"metric_definition\", \"layer\": \"meaning\", \"fields\": [\"version\", \"grain\", \"basis\"], \"required_by\": [\"every_measure\"], \"origin\": \"core\"}, {\"name\": \"decision\", \"layer\": \"control\", \"fields\": [\"question\", \"taken_at\"], \"required_by\": [\"journal\"], \"origin\": \"core\"}, {\"name\": \"action\", \"layer\": \"control\", \"fields\": [\"status\"], \"required_by\": [\"journal\"], \"origin\": \"core\"}, {\"name\": \"grant\", \"layer\": \"control\", \"fields\": [\"principal\", \"action\", \"scope\", \"limits\"], \"required_by\": [\"authority\"], \"origin\": \"core\"}, {\"name\": \"message\", \"layer\": \"control\", \"fields\": [\"audience\", \"to\", \"text\", \"sent_on\"], \"required_by\": [\"journal\"], \"origin\": \"core\"}, {\"name\": \"lead\", \"layer\": \"extension\", \"fields\": [\"created_on\", \"channel\", \"status\"], \"required_by\": [\"channel_questions\"], \"origin\": \"fieldservice\"}, {\"name\": \"job\", \"layer\": \"extension\", \"fields\": [\"scheduled_on\", \"performed_on\", \"revenue\", \"direct_cost\", \"hours\", \"service_line\"], \"required_by\": [\"channel_questions\", \"capacity\"], \"origin\": \"fieldservice\"}, {\"name\": \"crew\", \"layer\": \"extension\", \"fields\": [\"name\"], \"required_by\": [\"capacity\"], \"origin\": \"fieldservice\"}, {\"name\": \"certification\", \"layer\": \"extension\", \"fields\": [\"name\"], \"required_by\": [\"capacity\"], \"origin\": \"fieldservice\"}, {\"name\": \"channel\", \"layer\": \"extension\", \"fields\": [\"name\", \"spend_on\"], \"required_by\": [\"channel_questions\"], \"origin\": \"fieldservice\"}, {\"name\": \"service_line\", \"layer\": \"extension\", \"fields\": [\"name\"], \"required_by\": [\"capacity\"], \"origin\": \"fieldservice\"}], \"relations\": [{\"name\": \"order.placed_by\", \"source\": \"order\", \"target\": \"party\", \"layer\": \"core\", \"required_by\": [\"customer_questions\"], \"origin\": \"core\"}, {\"name\": \"order_line.of_order\", \"source\": \"order_line\", \"target\": \"order\", \"layer\": \"core\", \"required_by\": [\"sales\"], \"origin\": \"core\"}, {\"name\": \"order_line.of_product\", \"source\": \"order_line\", \"target\": \"product\", \"layer\": \"core\", \"required_by\": [\"sales\", \"margin\"], \"origin\": \"core\"}, {\"name\": \"order_line.rang_up_at\", \"source\": \"order_line\", \"target\": \"location\", \"layer\": \"core\", \"required_by\": [\"manager_bonus\"], \"origin\": \"core\"}, {\"name\": \"order_line.fulfilled_from\", \"source\": \"order_line\", \"target\": \"location\", \"layer\": \"core\", \"required_by\": [\"sales_per_sqft\"], \"origin\": \"core\"}, {\"name\": \"order_line.stock_drawn_from\", \"source\": \"order_line\", \"target\": \"location\", \"layer\": \"core\", \"required_by\": [\"reorder\"], \"origin\": \"core\"}, {\"name\": \"order_line.credited_to\", \"source\": \"order_line\", \"target\": \"person\", \"layer\": \"core\", \"required_by\": [\"commission\"], \"ori",
+   "name": "describe_schema"
+  },
+  {
+   "role": "agent",
+   "kind": "tool_call",
+   "text": "{\"entity_type\": \"service_line\", \"name_contains\": \"backflow\", \"offset\": \"0\"}",
+   "name": "find_entities"
+  },
+  {
+   "role": "tool",
+   "kind": "tool_result",
+   "text": "{\"entities\": [{\"id\": \"service_line:backflow\", \"name\": \"backflow\"}], \"count\": 1, \"offset\": 0, \"truncated\": false}",
+   "name": "find_entities"
+  },
+  {
+   "role": "agent",
+   "kind": "tool_call",
+   "text": "{\"entity_type\": \"certification\", \"name_contains\": \"backflow\", \"offset\": \"0\"}",
+   "name": "find_entities"
+  },
+  {
+   "role": "tool",
+   "kind": "tool_result",
+   "text": "{\"entities\": [{\"id\": \"certification:backflow-tester\", \"name\": \"backflow-tester\"}], \"count\": 1, \"offset\": 0, \"truncated\": false}",
+   "name": "find_entities"
+  },
+  {
+   "role": "agent",
+   "kind": "tool_call",
+   "text": "{\"subject\": \"service_line:backflow\", \"predicate\": \"service_line.requires\", \"direction\": \"out\", \"as_of\": \"\", \"offset\": \"0\"}",
+   "name": "traverse"
+  },
+  {
+   "role": "tool",
+   "kind": "tool_result",
+   "text": "{\"edges\": [{\"id\": 5362, \"subject\": \"service_line:backflow\", \"predicate\": \"service_line.requires\", \"value\": \"certification:backflow-tester\", \"valid_from\": \"2025-01-01\", \"valid_to\": null, \"status\": \"observed\", \"evidence\": \"policy.md, Scheduling: certified service lines\", \"recorded_at\": \"2026-07-01T08:00:00\"}], \"count\": 1, \"offset\": 0, \"truncated\": false}",
+   "name": "traverse"
+  },
+  {
+   "role": "agent",
+   "kind": "tool_call",
+   "text": "{\"subject\": \"certification:backflow-tester\", \"predicate\": \"person.holds\", \"direction\": \"in\", \"as_of\": \"\", \"offset\": \"0\"}",
+   "name": "traverse"
+  },
+  {
+   "role": "tool",
+   "kind": "tool_result",
+   "text": "{\"edges\": [{\"id\": 44, \"subject\": \"person:78ead53c\", \"predicate\": \"person.holds\", \"value\": \"certification:backflow-tester\", \"valid_from\": \"2024-03-11\", \"valid_to\": null, \"status\": \"observed\", \"evidence\": \"certifications row T3 (export 2026-01-15)\", \"recorded_at\": \"2026-01-15T09:00:00\"}, {\"id\": 46, \"subject\": \"person:c5ba1f37\", \"predicate\": \"person.holds\", \"value\": \"certification:backflow-tester\", \"valid_from\": \"2023-09-02\", \"valid_to\": null, \"status\": \"observed\", \"evidence\": \"certifications row T5 (export 2026-01-15)\", \"recorded_at\": \"2026-01-15T09:00:00\"}], \"count\": 2, \"offset\": 0, \"truncated\": false}",
+   "name": "traverse"
+  },
+  {
+   "role": "agent",
+   "kind": "tool_call",
+   "text": "{\"subject\": \"person:78ead53c\", \"predicate\": \"\", \"as_of\": \"\", \"known_at\": \"\", \"offset\": \"0\"}",
+   "name": "get_assertions"
+  },
+  {
+   "role": "agent",
+   "kind": "tool_call",
+   "text": "{\"subject\": \"person:c5ba1f37\", \"predicate\": \"\", \"as_of\": \"\", \"known_at\": \"\", \"offset\": \"0\"}",
+   "name": "get_assertions"
+  },
+  {
+   "role": "tool",
+   "kind": "tool_result",
+   "text": "{\"assertions\": [{\"id\": 15, \"subject\": \"person:78ead53c\", \"predicate\": \"person.name\", \"value\": \"Rafa Osei\", \"valid_from\": \"2023-05-01\", \"valid_to\": null, \"status\": \"observed\", \"evidence\": \"technicians row T3 (export 2026-07-01)\", \"recorded_at\": \"2026-07-01T08:00:00\"}, {\"id\": 16, \"subject\": \"person:78ead53c\", \"predicate\": \"person.role\", \"value\": \"technician\", \"valid_from\": \"2023-05-01\", \"valid_to\": null, \"status\": \"observed\", \"evidence\": \"technicians row T3 (export 2026-07-01)\", \"recorded_at\": \"2026-07-01T08:00:00\"}, {\"id\": 17, \"subject\": \"person:78ead53c\", \"predicate\": \"person.hourly_cost\", \"value\": 38.0, \"valid_from\": \"2023-05-01\", \"valid_to\": null, \"status\": \"observed\", \"evidence\": \"technicians row T3 (export 2026-07-01)\", \"recorded_at\": \"2026-07-01T08:00:00\"}, {\"id\": 18, \"subject\": \"person:78ead53c\", \"predicate\": \"identity.source_id\", \"value\": \"technicians:T3\", \"valid_from\": \"2023-05-01\", \"valid_to\": null, \"status\": \"observed\", \"evidence\": \"technicians row T3 (export 2026-07-01)\", \"recorded_at\": \"2026-07-01T08:00:00\"}, {\"id\": 19, \"subject\": \"person:78ead53c\", \"predicate\": \"person.employed\", \"value\": true, \"valid_from\": \"2023-05-01\", \"valid_to\": null, \"status\": \"observed\", \"evidence\": \"technicians row T3 (export 2026-07-01)\", \"recorded_at\": \"2026-07-01T08:00:00\"}, {\"id\": 20, \"subject\": \"person:78ead53c\", \"predicate\": \"person.in_crew\", \"value\": \"crew:C2\", \"valid_from\": \"2023-05-01\", \"valid_to\": null, \"status\": \"observed\", \"evidence\": \"technicians row T3 (export 2026-07-01)\", \"recorded_at\": \"2026-07-01T08:00:00\"}, {\"id\": 44, \"subject\": \"person:78ead53c\", \"predicate\": \"person.holds\", \"value\": \"certification:backflow-tester\", \"valid_from\": \"2024-03-11\", \"valid_to\": null, \"status\": \"observed\", \"evidence\": \"certifications row T3 (export 2026-01-15)\", \"recorded_at\": \"2026-01-15T09:00:00\"}], \"count\": 7, \"offset\": 0, \"truncated\": false}",
+   "name": "get_assertions"
+  },
+  {
+   "role": "tool",
+   "kind": "tool_result",
+   "text": "{\"assertions\": [{\"id\": 29, \"subject\": \"person:c5ba1f37\", \"predicate\": \"person.name\", \"value\": \"Tomas Bell\", \"valid_from\": \"2023-05-01\", \"valid_to\": null, \"status\": \"observed\", \"evidence\": \"technicians row T5 (export 2026-07-01)\", \"recorded_at\": \"2026-07-01T08:00:00\"}, {\"id\": 30, \"subject\": \"person:c5ba1f37\", \"predicate\": \"person.role\", \"value\": \"technician\", \"valid_from\": \"2023-05-01\", \"valid_to\": null, \"status\": \"observed\", \"evidence\": \"technicians row T5 (export 2026-07-01)\", \"recorded_at\": \"2026-07-01T08:00:00\"}, {\"id\": 31, \"subject\": \"person:c5ba1f37\", \"predicate\": \"person.hourly_cost\", \"value\": 38.0, \"valid_from\": \"2023-05-01\", \"valid_to\": null, \"status\": \"observed\", \"evidence\": \"technicians row T5 (export 2026-07-01)\", \"recorded_at\": \"2026-07-01T08:00:00\"}, {\"id\": 32, \"subject\": \"person:c5ba1f37\", \"predicate\": \"identity.source_id\", \"value\": \"technicians:T5\", \"valid_from\": \"2023-05-01\", \"valid_to\": null, \"status\": \"observed\", \"evidence\": \"technicians row T5 (export 2026-07-01)\", \"recorded_at\": \"2026-07-01T08:00:00\"}, {\"id\": 33, \"subject\": \"person:c5ba1f37\", \"predicate\": \"person.employed\", \"value\": true, \"valid_from\": \"2023-05-01\", \"valid_to\": \"2026-02-28\", \"status\": \"observed\", \"evidence\": \"technicians row T5 (export 2026-07-01)\", \"recorded_at\": \"2026-07-01T08:00:00\"}, {\"id\": 34, \"subject\": \"person:c5ba1f37\", \"predicate\": \"person.in_crew\", \"value\": \"crew:C1\", \"valid_from\": \"2023-05-01\", \"valid_to\": \"2026-02-28\", \"status\": \"observed\", \"evidence\": \"technicians row T5 (export 2026-07-01)\", \"recorded_at\": \"2026-07-01T08:00:00\"}, {\"id\": 46, \"subject\": \"person:c5ba1f37\", \"predicate\": \"person.holds\", \"value\": \"certification:backflow-tester\", \"valid_from\": \"2023-09-02\", \"valid_to\": null, \"status\": \"observed\", \"evidence\": \"certifications row T5 (export 2026-01-15)\", \"recorded_at\": \"2026-01-15T09:00:00\"}], \"count\": 7, \"offset\": 0, \"truncated\": false}",
+   "name": "get_assertions"
+  },
+  {
+   "role": "agent",
+   "kind": "tool_call",
+   "text": "{\"subject\": \"certification:backflow-tester\", \"predicate\": \"\", \"as_of\": \"\", \"known_at\": \"\", \"offset\": \"0\"}",
+   "name": "get_assertions"
+  },
+  {
+   "role": "tool",
+   "kind": "tool_result",
+   "text": "{\"assertions\": [{\"id\": 43, \"subject\": \"certification:backflow-tester\", \"predicate\": \"certification.name\", \"value\": \"backflow-tester\", \"valid_from\": \"2025-01-01\", \"valid_to\": null, \"status\": \"observed\", \"evidence\": \"certifications row T3 (export 2026-01-15)\", \"recorded_at\": \"2026-01-15T09:00:00\"}, {\"id\": 45, \"subject\": \"certification:backflow-tester\", \"predicate\": \"certification.name\", \"value\": \"backflow-tester\", \"valid_from\": \"2025-01-01\", \"valid_to\": null, \"status\": \"observed\", \"evidence\": \"certifications row T5 (export 2026-01-15)\", \"recorded_at\": \"2026-01-15T09:00:00\"}], \"count\": 2, \"offset\": 0, \"truncated\": false}",
+   "name": "get_assertions"
+  },
+  {
+   "role": "agent",
+   "kind": "tool_call",
+   "text": "{\"subject\": \"person:78ead53c\", \"predicate\": \"person.holds\", \"offset\": \"0\"}",
+   "name": "history"
+  },
+  {
+   "role": "tool",
+   "kind": "tool_result",
+   "text": "{\"history\": [{\"id\": 44, \"subject\": \"person:78ead53c\", \"predicate\": \"person.holds\", \"value\": \"certification:backflow-tester\", \"valid_from\": \"2024-03-11\", \"valid_to\": null, \"status\": \"observed\", \"evidence\": \"certifications row T3 (export 2026-01-15)\", \"recorded_at\": \"2026-01-15T09:00:00\", \"recorded_until\": null, \"supersedes\": null}], \"count\": 1, \"offset\": 0, \"truncated\": false}",
+   "name": "history"
+  },
+  {
+   "role": "agent",
+   "kind": "tool_call",
+   "text": "{\"subject\": \"person:78ead53c\", \"predicate\": \"person.in_crew\", \"direction\": \"out\", \"as_of\": \"\", \"offset\": \"0\"}",
+   "name": "traverse"
+  },
+  {
+   "role": "tool",
+   "kind": "tool_result",
+   "text": "{\"edges\": [{\"id\": 20, \"subject\": \"person:78ead53c\", \"predicate\": \"person.in_crew\", \"value\": \"crew:C2\", \"valid_from\": \"2023-05-01\", \"valid_to\": null, \"status\": \"observed\", \"evidence\": \"technicians row T3 (export 2026-07-01)\", \"recorded_at\": \"2026-07-01T08:00:00\"}], \"count\": 1, \"offset\": 0, \"truncated\": false}",
+   "name": "traverse"
+  },
+  {
+   "role": "agent",
+   "kind": "message",
+   "text": "Based on the data:\n\n**Only one technician currently qualifies for backflow jobs: Rafa Osei** (person:78ead53c, crew C2). He holds the `backflow-tester` certification (on record since 2024-03-11) and is currently employed.\n\nThe only other person who ever held that certification, Tomas Bell (person:c5ba1f37), stopped being employed as of 2026-02-28, so he is not available.\n\n**Compliance flag:** the operating policy requires every certification to be re-verified against the issuing body every 12 months. The only date the system has for Rafa's backflow-tester certification is 2024-03-11 (recorded 2026-01-15), and there is no later verification event on file. That is well past the 12-month window as of today, so before scheduling him on a backflow job I'd flag this as needing a fresh verification, not just a data lookup. There's no separate \"verified_at\" predicate in this schema distinct from the `person.holds` valid_from date, so I can't confirm a more recent check happened, only that none is recorded.\n\nANSWER: Right now only Rafa Osei is both employed and holds the backflow-tester certification required for the backflow service line; Tomas Bell also held it but left employment on 2026-02-28. Rafa's certification record dates to 2024-03-11 with no later re-verification on file, which is stale against the 12-month re-verification policy, so it should be re-checked with the issuing body before he's scheduled on a backflow job.\nNUMBERS: {\"qualified_employed_techs\": 1, \"cert_record_date_rafa\": \"2024-03-11\", \"policy_reverify_months\": 12}\nEVIDENCE: assertion 5362 (service_line.requires), assertions 44/46 (person.holds backflow-tester), assertions 15-20 (Rafa Osei profile), assertions 29-34 (Tomas Bell profile, employed valid_to 2026-02-28), certification:backflow-tester assertions 43/45\nACTIONS: none",
+   "name": ""
+  },
+  {
+   "role": "reflect",
+   "kind": "verdict",
+   "text": "S=1 P=1 E=1 C=1 R=1 failure=none; ",
+   "name": ""
+  }
+ ],
+ "score": {
+  "S": 1,
+  "P": 1,
+  "E": 1,
+  "C": 1,
+  "R": 1,
+  "failure": "",
+  "notes": []
+ },
+ "meta": {
+  "seed_index": 0,
+  "ablation": "no_time",
+  "arm": "C",
+  "cost_usd": 0.1056156,
+  "num_turns": 11,
+  "max_turns": 40,
+  "ended_by": "completed",
+  "sdk_version": "0.2.161",
+  "usage": {
+   "input_tokens": 12,
+   "cache_creation_input_tokens": 14090,
+   "cache_read_input_tokens": 66918,
+   "output_tokens": 3488,
+   "output_tokens_details": {
+    "thinking_tokens": 1555
+   },
+   "server_tool_use": {
+    "web_search_requests": 0,
+    "web_fetch_requests": 0
+   },
+   "service_tier": "standard",
+   "cache_creation": {
+    "ephemeral_1h_input_tokens": 14090,
+    "ephemeral_5m_input_tokens": 0
+   },
+   "inference_geo": "not_available",
+   "iterations": [
+    {
+     "input_tokens": 2,
+     "output_tokens": 1316,
+     "cache_read_input_tokens": 15906,
+     "cache_creation_input_tokens": 1740,
+     "cache_creation": {
+      "ephemeral_5m_input_tokens": 0,
+      "ephemeral_1h_input_tokens": 1740
+     },
+     "type": "message"
+    }
+   ],
+   "speed": "standard"
+  },
+  "duration_s": 36.13,
+  "executed": [],
+  "approvals_requested": []
+ },
+ "hash": "f87727e23cbd"
+}

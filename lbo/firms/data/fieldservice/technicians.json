@@ -1,0 +1,56 @@
+{
+ "name": "technicians",
+ "exported_at": "2026-07-01T08:00:00",
+ "records": [
+  {
+   "tech_id": "T1",
+   "name": "Owen Marsh",
+   "crew": "C1",
+   "hourly_cost": 38.0,
+   "hired_on": "2023-05-01",
+   "left_on": null
+  },
+  {
+   "tech_id": "T2",
+   "name": "Pia Lund",
+   "crew": "C1",
+   "hourly_cost": 38.0,
+   "hired_on": "2023-05-01",
+   "left_on": null
+  },
+  {
+   "tech_id": "T3",
+   "name": "Rafa Osei",
+   "crew": "C2",
+   "hourly_cost": 38.0,
+   "hired_on": "2023-05-01",
+   "left_on": null
+  },
+  {
+   "tech_id": "T4",
+   "name": "Sam Iyer",
+   "crew": "C2",
+   "hourly_cost": 38.0,
+   "hired_on": "2023-05-01",
+   "left_on": null
+  },
+  {
+   "tech_id": "T5",
+   "name": "Tomas Bell",
+   "crew": "C1",
+   "hourly_cost": 38.0,
+   "hired_on": "2023-05-01",
+   "left_on": "2026-02-28"
+  },
+  {
+   "tech_id": "T6",
+   "name": "Uma Sato",
+   "crew": "C2",
+   "hourly_cost": 38.0,
+   "hired_on": "2023-05-01",
+   "left_on": null
+  }
+ ],
+ "id_field": "tech_id",
+ "description": "the technician roster with hire and leave dates"
+}

@@ -1,0 +1,62 @@
+{
+ "columns": [
+  "Ablation",
+  "Target tasks",
+  "Ablated pass^1",
+  "Full model, same tasks",
+  "Delta",
+  "Main failure"
+ ],
+ "rows": [
+  [
+   "none (full model)",
+   "25",
+   "70",
+   "",
+   "",
+   "wrong number"
+  ],
+  [
+   "no identity",
+   "3",
+   "66.67",
+   "100",
+   "-33.33",
+   "wrong number"
+  ],
+  [
+   "no evidence",
+   "2",
+   "0",
+   "25",
+   "-25",
+   "wrong number"
+  ],
+  [
+   "no time",
+   "3",
+   "66.67",
+   "66.67",
+   "+0",
+   "missing communication"
+  ],
+  [
+   "no authority",
+   "6",
+   "83.33",
+   "66.67",
+   "+16.66",
+   "wrong number"
+  ]
+ ],
+ "bold": [],
+ "align": [
+  "l",
+  "r",
+  "r",
+  "r",
+  "r",
+  "l"
+ ],
+ "caption": "Arm C with one part of the model removed, one trial per task. Each removal is scored only on the tasks that probe it, so the matched column is the full model on those same tasks and the delta is the like-for-like difference; rows are ordered by that difference. The first row is the full model over the whole suite. At two to six runs a row, a difference of one run is the whole delta."
+}

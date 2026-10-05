@@ -1,0 +1,107 @@
+{
+ "firm": "fieldservice",
+ "arm": "A",
+ "task": "f_divergence",
+ "model": "claude-sonnet-5",
+ "date": "2026-09-29",
+ "turns": [
+  {
+   "role": "owner",
+   "kind": "message",
+   "text": "Which jobs in the second quarter of 2026 were done by a different crew than the one scheduled?",
+   "name": ""
+  },
+  {
+   "role": "agent",
+   "kind": "tool_call",
+   "text": "{}",
+   "name": "describe_tables"
+  },
+  {
+   "role": "tool",
+   "kind": "tool_result",
+   "text": "{\"certifications\": [\"tech\", \"certification\", \"issued_on\"], \"crm_leads\": [\"lead_id\", \"created_on\", \"entered_on\", \"channel\", \"status\"], \"jobs\": [\"job_id\", \"lead_id\", \"channel\", \"service_line\", \"tech\", \"scheduled_crew\", \"performed_crew\", \"scheduled_on\", \"performed_on\", \"entered_on\", \"revenue\", \"direct_cost\", \"hours\"], \"ledger\": [\"journal_id\", \"kind\", \"channel\", \"amount\", \"effective_on\", \"entered_on\", \"memo\"], \"payroll\": [\"tech\", \"week_start\", \"hours\"], \"schedule\": [\"entry_id\", \"tech\", \"day\", \"hours\", \"entered_on\", \"job_id\"], \"technicians\": [\"tech_id\", \"name\", \"crew\", \"hourly_cost\", \"hired_on\", \"left_on\"]}",
+   "name": "describe_tables"
+  },
+  {
+   "role": "agent",
+   "kind": "tool_call",
+   "text": "{\"sql\": \"SELECT job_id, service_line, tech, scheduled_crew, performed_crew, scheduled_on, performed_on, revenue, hours\\nFROM jobs\\nWHERE performed_on >= '2026-04-01' AND performed_on <= '2026-06-30'\\nAND scheduled_crew IS NOT NULL AND performed_crew IS NOT NULL\\nAND scheduled_crew <> performed_crew\\nORDER BY performed_on\"}",
+   "name": "run_sql"
+  },
+  {
+   "role": "tool",
+   "kind": "tool_result",
+   "text": "{\"columns\": [\"job_id\", \"service_line\", \"tech\", \"scheduled_crew\", \"performed_crew\", \"scheduled_on\", \"performed_on\", \"revenue\", \"hours\"], \"rows\": [[\"J00098\", \"hvac-service\", \"T1\", \"C1\", \"C2\", \"2026-04-20\", \"2026-04-20\", 1000.0, 4.0], [\"J00103\", \"plumbing\", \"T2\", \"C1\", \"C2\", \"2026-05-12\", \"2026-05-12\", 1000.0, 4.0]], \"truncated\": false, \"error\": null}",
+   "name": "run_sql"
+  },
+  {
+   "role": "agent",
+   "kind": "message",
+   "text": "Found two Q2 2026 jobs where the crew that performed the work differs from the crew scheduled.\n\n**J00098** — hvac-service, tech T1, performed 2026-04-20: scheduled crew C1, actually performed by crew C2. Revenue $1,000, 4 hours.\n\n**J00103** — plumbing, tech T2, performed 2026-05-12: scheduled crew C1, actually performed by crew C2. Revenue $1,000, 4 hours.\n\nNo other jobs in the 2026-04-01 to 2026-06-30 window (based on `performed_on`) show a scheduled_crew/performed_crew mismatch.\n\nANSWER: In Q2 2026, two jobs were performed by a different crew than scheduled: J00098 (hvac-service, 2026-04-20) and J00103 (plumbing, 2026-05-12), both scheduled to crew C1 but actually performed by crew C2.\nNUMBERS: {\"mismatched_jobs_q2_2026\": 2, \"J00098_revenue\": 1000.0, \"J00098_hours\": 4.0, \"J00103_revenue\": 1000.0, \"J00103_hours\": 4.0}\nEVIDENCE: jobs table (scheduled_crew, performed_crew, performed_on columns), rows J00098 and J00103\nACTIONS: none",
+   "name": ""
+  },
+  {
+   "role": "reflect",
+   "kind": "verdict",
+   "text": "S=1 P=1 E=1 C=1 R=1 failure=none; ",
+   "name": ""
+  }
+ ],
+ "score": {
+  "S": 1,
+  "P": 1,
+  "E": 1,
+  "C": 1,
+  "R": 1,
+  "failure": "",
+  "notes": []
+ },
+ "meta": {
+  "seed_index": 1,
+  "ablation": "none",
+  "arm": "A",
+  "cost_usd": 0.0160978,
+  "num_turns": 3,
+  "max_turns": 40,
+  "ended_by": "completed",
+  "sdk_version": "0.2.161",
+  "usage": {
+   "input_tokens": 6,
+   "cache_creation_input_tokens": 899,
+   "cache_read_input_tokens": 21604,
+   "output_tokens": 716,
+   "output_tokens_details": {
+    "thinking_tokens": 28
+   },
+   "server_tool_use": {
+    "web_search_requests": 0,
+    "web_fetch_requests": 0
+   },
+   "service_tier": "standard",
+   "cache_creation": {
+    "ephemeral_1h_input_tokens": 899,
+    "ephemeral_5m_input_tokens": 0
+   },
+   "inference_geo": "not_available",
+   "iterations": [
+    {
+     "input_tokens": 2,
+     "output_tokens": 445,
+     "cache_read_input_tokens": 7484,
+     "cache_creation_input_tokens": 475,
+     "cache_creation": {
+      "ephemeral_5m_input_tokens": 0,
+      "ephemeral_1h_input_tokens": 475
+     },
+     "type": "message"
+    }
+   ],
+   "speed": "standard"
+  },
+  "duration_s": 15.57,
+  "executed": [],
+  "approvals_requested": []
+ },
+ "hash": "436081ac8821"
+}

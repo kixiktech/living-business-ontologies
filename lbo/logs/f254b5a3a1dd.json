@@ -1,0 +1,107 @@
+{
+ "firm": "fieldservice",
+ "arm": "B",
+ "task": "f_divergence",
+ "model": "claude-sonnet-5",
+ "date": "2026-09-29",
+ "turns": [
+  {
+   "role": "owner",
+   "kind": "message",
+   "text": "Which jobs in the second quarter of 2026 were done by a different crew than the one scheduled?",
+   "name": ""
+  },
+  {
+   "role": "agent",
+   "kind": "tool_call",
+   "text": "{}",
+   "name": "describe_tables"
+  },
+  {
+   "role": "tool",
+   "kind": "tool_result",
+   "text": "{\"certifications\": [\"tech\", \"certification\", \"issued_on\"], \"crm_leads\": [\"lead_id\", \"created_on\", \"entered_on\", \"channel\", \"status\"], \"jobs\": [\"job_id\", \"lead_id\", \"channel\", \"service_line\", \"tech\", \"scheduled_crew\", \"performed_crew\", \"scheduled_on\", \"performed_on\", \"entered_on\", \"revenue\", \"direct_cost\", \"hours\"], \"jobs_n\": [\"job_id\", \"lead_id\", \"channel\", \"service_line\", \"tech\", \"scheduled_crew\", \"performed_crew\", \"scheduled_on\", \"performed_on\", \"entered_on\", \"revenue\", \"direct_cost\", \"hours\", \"lead_created_on\", \"lead_status\", \"job_margin\"], \"ledger\": [\"journal_id\", \"kind\", \"channel\", \"amount\", \"effective_on\", \"entered_on\", \"memo\"], \"payroll\": [\"tech\", \"week_start\", \"hours\"], \"schedule\": [\"entry_id\", \"tech\", \"day\", \"hours\", \"entered_on\", \"job_id\"], \"technicians\": [\"tech_id\", \"name\", \"crew\", \"hourly_cost\", \"hired_on\", \"left_on\"]}",
+   "name": "describe_tables"
+  },
+  {
+   "role": "agent",
+   "kind": "tool_call",
+   "text": "{\"sql\": \"SELECT job_id, tech, service_line, scheduled_crew, performed_crew, scheduled_on, performed_on, revenue, hours\\nFROM jobs\\nWHERE performed_on >= '2026-04-01' AND performed_on < '2026-07-01'\\nAND scheduled_crew IS NOT NULL AND performed_crew IS NOT NULL\\nAND scheduled_crew <> performed_crew\\nORDER BY performed_on\"}",
+   "name": "run_sql"
+  },
+  {
+   "role": "tool",
+   "kind": "tool_result",
+   "text": "{\"columns\": [\"job_id\", \"tech\", \"service_line\", \"scheduled_crew\", \"performed_crew\", \"scheduled_on\", \"performed_on\", \"revenue\", \"hours\"], \"rows\": [[\"J00098\", \"T1\", \"hvac-service\", \"C1\", \"C2\", \"2026-04-20\", \"2026-04-20\", 1000.0, 4.0], [\"J00103\", \"T2\", \"plumbing\", \"C1\", \"C2\", \"2026-05-12\", \"2026-05-12\", 1000.0, 4.0]], \"truncated\": false, \"error\": null}",
+   "name": "run_sql"
+  },
+  {
+   "role": "agent",
+   "kind": "message",
+   "text": "Found two jobs in Q2 2026 where the crew that performed the work differed from the crew that was scheduled.\n\nDetails (basis: `jobs` table, `performed_on` in [2026-04-01, 2026-07-01)):\n- **J00098**: hvac-service, tech T1, scheduled crew C1, performed by crew C2, on 2026-04-20, revenue $1,000, 4.0 hours.\n- **J00103**: plumbing, tech T2, scheduled crew C1, performed by crew C2, on 2026-05-12, revenue $1,000, 4.0 hours.\n\nNo other jobs in the quarter showed a crew mismatch (all other rows had scheduled_crew = performed_crew or missing crew data was excluded).\n\nANSWER: In Q2 2026 (2026-04-01 to 2026-06-30, by performed_on date), two jobs were performed by a crew different from the one originally scheduled: J00098 (hvac-service, 2026-04-20, scheduled C1 but performed by C2) and J00103 (plumbing, 2026-05-12, scheduled C1 but performed by C2).\nNUMBERS: {\"jobs_with_crew_mismatch_q2_2026\": 2, \"J00098_scheduled_crew\": \"C1\", \"J00098_performed_crew\": \"C2\", \"J00103_scheduled_crew\": \"C1\", \"J00103_performed_crew\": \"C2\"}\nEVIDENCE: jobs table (job_id J00098, J00103)\nACTIONS: none",
+   "name": ""
+  },
+  {
+   "role": "reflect",
+   "kind": "verdict",
+   "text": "S=1 P=1 E=1 C=1 R=1 failure=none; ",
+   "name": ""
+  }
+ ],
+ "score": {
+  "S": 1,
+  "P": 1,
+  "E": 1,
+  "C": 1,
+  "R": 1,
+  "failure": "",
+  "notes": []
+ },
+ "meta": {
+  "seed_index": 0,
+  "ablation": "none",
+  "arm": "B",
+  "cost_usd": 0.0410768,
+  "num_turns": 3,
+  "max_turns": 40,
+  "ended_by": "completed",
+  "sdk_version": "0.2.161",
+  "usage": {
+   "input_tokens": 8,
+   "cache_creation_input_tokens": 6683,
+   "cache_read_input_tokens": 25149,
+   "output_tokens": 829,
+   "output_tokens_details": {
+    "thinking_tokens": 70
+   },
+   "server_tool_use": {
+    "web_search_requests": 0,
+    "web_fetch_requests": 0
+   },
+   "service_tier": "standard",
+   "cache_creation": {
+    "ephemeral_1h_input_tokens": 6683,
+    "ephemeral_5m_input_tokens": 0
+   },
+   "inference_geo": "not_available",
+   "iterations": [
+    {
+     "input_tokens": 2,
+     "output_tokens": 506,
+     "cache_read_input_tokens": 8352,
+     "cache_creation_input_tokens": 0,
+     "cache_creation": {
+      "ephemeral_5m_input_tokens": 0,
+      "ephemeral_1h_input_tokens": 0
+     },
+     "type": "message"
+    }
+   ],
+   "speed": "standard"
+  },
+  "duration_s": 13.13,
+  "executed": [],
+  "approvals_requested": []
+ },
+ "hash": "f254b5a3a1dd"
+}

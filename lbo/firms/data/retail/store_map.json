@@ -1,0 +1,36 @@
+{
+ "name": "store_map",
+ "exported_at": "2026-07-01T08:00:00",
+ "records": [
+  {
+   "store": "S1",
+   "name": "Harbor",
+   "opened_on": "2025-01-01",
+   "sqft": 2400,
+   "counted_in_2025": "S1"
+  },
+  {
+   "store": "S2",
+   "name": "Midtown",
+   "opened_on": "2025-01-01",
+   "sqft": 3100,
+   "counted_in_2025": "S2"
+  },
+  {
+   "store": "S3",
+   "name": "Eastgate",
+   "opened_on": "2025-01-01",
+   "sqft": 1800,
+   "counted_in_2025": "S3"
+  },
+  {
+   "store": "S4",
+   "name": "Northside",
+   "opened_on": "2025-07-01",
+   "sqft": 2000,
+   "counted_in_2025": "S2"
+  }
+ ],
+ "id_field": "store",
+ "description": "stores, opening dates, floor area, and where each store's sales were counted last year; week conventions: accounting=Sunday, operations=Saturday"
+}

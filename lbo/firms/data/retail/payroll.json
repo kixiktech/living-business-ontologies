@@ -1,0 +1,6314 @@
+{
+ "name": "payroll",
+ "exported_at": "2026-07-01T08:00:00",
+ "records": [
+  {
+   "employee_id": "E001",
+   "week_start": "2025-01-05",
+   "hours": 28.0,
+   "store": "S1"
+  },
+  {
+   "employee_id": "E002",
+   "week_start": "2025-01-05",
+   "hours": 28.7,
+   "store": "S1"
+  },
+  {
+   "employee_id": "E003",
+   "week_start": "2025-01-05",
+   "hours": 27.8,
+   "store": "S1"
+  },
+  {
+   "employee_id": "E004",
+   "week_start": "2025-01-05",
+   "hours": 33.4,
+   "store": "S1"
+  },
+  {
+   "employee_id": "E005",
+   "week_start": "2025-01-05",
+   "hours": 28.1,
+   "store": "S2"
+  },
+  {
+   "employee_id": "E006",
+   "week_start": "2025-01-05",
+   "hours": 30.7,
+   "store": "S2"
+  },
+  {
+   "employee_id": "E007",
+   "week_start": "2025-01-05",
+   "hours": 26.1,
+   "store": "S2"
+  },
+  {
+   "employee_id": "E008",
+   "week_start": "2025-01-05",
+   "hours": 38.6,
+   "store": "S2"
+  },
+  {
+   "employee_id": "E009",
+   "week_start": "2025-01-05",
+   "hours": 29.7,
+   "store": "S3"
+  },
+  {
+   "employee_id": "E010",
+   "week_start": "2025-01-05",
+   "hours": 31.3,
+   "store": "S3"
+  },
+  {
+   "employee_id": "E011",
+   "week_start": "2025-01-05",
+   "hours": 33.3,
+   "store": "S3"
+  },
+  {
+   "employee_id": "E001",
+   "week_start": "2025-01-12",
+   "hours": 38.5,
+   "store": "S1"
+  },
+  {
+   "employee_id": "E002",
+   "week_start": "2025-01-12",
+   "hours": 30.7,
+   "store": "S1"
+  },
+  {
+   "employee_id": "E003",
+   "week_start": "2025-01-12",
+   "hours": 38.7,
+   "store": "S1"
+  },
+  {
+   "employee_id": "E004",
+   "week_start": "2025-01-12",
+   "hours": 32.0,
+   "store": "S1"
+  },
+  {
+   "employee_id": "E005",
+   "week_start": "2025-01-12",
+   "hours": 32.5,
+   "store": "S2"
+  },
+  {
+   "employee_id": "E006",
+   "week_start": "2025-01-12",
+   "hours": 32.4,
+   "store": "S2"
+  },
+  {
+   "employee_id": "E007",
+   "week_start": "2025-01-12",
+   "hours": 24.3,
+   "store": "S2"
+  },
+  {
+   "employee_id": "E008",
+   "week_start": "2025-01-12",
+   "hours": 31.0,
+   "store": "S2"
+  },
+  {
+   "employee_id": "E009",
+   "week_start": "2025-01-12",
+   "hours": 26.9,
+   "store": "S3"
+  },
+  {
+   "employee_id": "E010",
+   "week_start": "2025-01-12",
+   "hours": 24.1,
+   "store": "S3"
+  },
+  {
+   "employee_id": "E011",
+   "week_start": "2025-01-12",
+   "hours": 36.8,
+   "store": "S3"
+  },
+  {
+   "employee_id": "E001",
+   "week_start": "2025-01-19",
+   "hours": 26.8,
+   "store": "S1"
+  },
+  {
+   "employee_id": "E002",
+   "week_start": "2025-01-19",
+   "hours": 31.6,
+   "store": "S1"
+  },
+  {
+   "employee_id": "E003",
+   "week_start": "2025-01-19",
+   "hours": 35.6,
+   "store": "S1"
+  },
+  {
+   "employee_id": "E004",
+   "week_start": "2025-01-19",
+   "hours": 32.9,
+   "store": "S1"
+  },
+  {
+   "employee_id": "E005",
+   "week_start": "2025-01-19",
+   "hours": 29.2,
+   "store": "S2"
+  },
+  {
+   "employee_id": "E006",
+   "week_start": "2025-01-19",
+   "hours": 32.3,
+   "store": "S2"
+  },
+  {
+   "employee_id": "E007",
+   "week_start": "2025-01-19",
+   "hours": 32.9,
+   "store": "S2"
+  },
+  {
+   "employee_id": "E008",
+   "week_start": "2025-01-19",
+   "hours": 36.5,
+   "store": "S2"
+  },
+  {
+   "employee_id": "E009",
+   "week_start": "2025-01-19",
+   "hours": 25.7,
+   "store": "S3"
+  },
+  {
+   "employee_id": "E010",
+   "week_start": "2025-01-19",
+   "hours": 33.0,
+   "store": "S3"
+  },
+  {
+   "employee_id": "E011",
+   "week_start": "2025-01-19",
+   "hours": 28.0,
+   "store": "S3"
+  },
+  {
+   "employee_id": "E001",
+   "week_start": "2025-01-26",
+   "hours": 28.4,
+   "store": "S1"
+  },
+  {
+   "employee_id": "E002",
+   "week_start": "2025-01-26",
+   "hours": 36.4,
+   "store": "S1"
+  },
+  {
+   "employee_id": "E003",
+   "week_start": "2025-01-26",
+   "hours": 32.1,
+   "store": "S1"
+  },
+  {
+   "employee_id": "E004",
+   "week_start": "2025-01-26",
+   "hours": 33.0,
+   "store": "S1"
+  },
+  {
+   "employee_id": "E005",
+   "week_start": "2025-01-26",
+   "hours": 36.2,
+   "store": "S2"
+  },
+  {
+   "employee_id": "E006",
+   "week_start": "2025-01-26",
+   "hours": 38.6,
+   "store": "S2"
+  },
+  {
+   "employee_id": "E007",
+   "week_start": "2025-01-26",
+   "hours": 31.1,
+   "store": "S2"
+  },
+  {
+   "employee_id": "E008",
+   "week_start": "2025-01-26",
+   "hours": 33.8,
+   "store": "S2"
+  },
+  {
+   "employee_id": "E009",
+   "week_start": "2025-01-26",
+   "hours": 32.1,
+   "store": "S3"
+  },
+  {
+   "employee_id": "E010",
+   "week_start": "2025-01-26",
+   "hours": 32.2,
+   "store": "S3"
+  },
+  {
+   "employee_id": "E011",
+   "week_start": "2025-01-26",
+   "hours": 35.1,
+   "store": "S3"
+  },
+  {
+   "employee_id": "E001",
+   "week_start": "2025-02-02",
+   "hours": 31.2,
+   "store": "S1"
+  },
+  {
+   "employee_id": "E002",
+   "week_start": "2025-02-02",
+   "hours": 32.5,
+   "store": "S1"
+  },
+  {
+   "employee_id": "E003",
+   "week_start": "2025-02-02",
+   "hours": 31.6,
+   "store": "S1"
+  },
+  {
+   "employee_id": "E004",
+   "week_start": "2025-02-02",
+   "hours": 39.1,
+   "store": "S1"
+  },
+  {
+   "employee_id": "E005",
+   "week_start": "2025-02-02",
+   "hours": 35.2,
+   "store": "S2"
+  },
+  {
+   "employee_id": "E006",
+   "week_start": "2025-02-02",
+   "hours": 38.0,
+   "store": "S2"
+  },
+  {
+   "employee_id": "E007",
+   "week_start": "2025-02-02",
+   "hours": 39.1,
+   "store": "S2"
+  },
+  {
+   "employee_id": "E008",
+   "week_start": "2025-02-02",
+   "hours": 28.2,
+   "store": "S2"
+  },
+  {
+   "employee_id": "E009",
+   "week_start": "2025-02-02",
+   "hours": 33.0,
+   "store": "S3"
+  },
+  {
+   "employee_id": "E010",
+   "week_start": "2025-02-02",
+   "hours": 39.1,
+   "store": "S3"
+  },
+  {
+   "employee_id": "E011",
+   "week_start": "2025-02-02",
+   "hours": 37.4,
+   "store": "S3"
+  },
+  {
+   "employee_id": "E001",
+   "week_start": "2025-02-09",
+   "hours": 26.2,
+   "store": "S1"
+  },
+  {
+   "employee_id": "E002",
+   "week_start": "2025-02-09",
+   "hours": 25.9,
+   "store": "S1"
+  },
+  {
+   "employee_id": "E003",
+   "week_start": "2025-02-09",
+   "hours": 31.1,
+   "store": "S1"
+  },
+  {
+   "employee_id": "E004",
+   "week_start": "2025-02-09",
+   "hours": 25.2,
+   "store": "S1"
+  },
+  {
+   "employee_id": "E005",
+   "week_start": "2025-02-09",
+   "hours": 27.9,
+   "store": "S2"
+  },
+  {
+   "employee_id": "E006",
+   "week_start": "2025-02-09",
+   "hours": 25.2,
+   "store": "S2"
+  },
+  {
+   "employee_id": "E007",
+   "week_start": "2025-02-09",
+   "hours": 34.7,
+   "store": "S2"
+  },
+  {
+   "employee_id": "E008",
+   "week_start": "2025-02-09",
+   "hours": 36.5,
+   "store": "S2"
+  },
+  {
+   "employee_id": "E009",
+   "week_start": "2025-02-09",
+   "hours": 38.4,
+   "store": "S3"
+  },
+  {
+   "employee_id": "E010",
+   "week_start": "2025-02-09",
+   "hours": 26.5,
+   "store": "S3"
+  },
+  {
+   "employee_id": "E011",
+   "week_start": "2025-02-09",
+   "hours": 35.5,
+   "store": "S3"
+  },
+  {
+   "employee_id": "E001",
+   "week_start": "2025-02-16",
+   "hours": 34.6,
+   "store": "S1"
+  },
+  {
+   "employee_id": "E002",
+   "week_start": "2025-02-16",
+   "hours": 26.3,
+   "store": "S1"
+  },
+  {
+   "employee_id": "E003",
+   "week_start": "2025-02-16",
+   "hours": 38.1,
+   "store": "S1"
+  },
+  {
+   "employee_id": "E004",
+   "week_start": "2025-02-16",
+   "hours": 39.5,
+   "store": "S1"
+  },
+  {
+   "employee_id": "E005",
+   "week_start": "2025-02-16",
+   "hours": 27.5,
+   "store": "S2"
+  },
+  {
+   "employee_id": "E006",
+   "week_start": "2025-02-16",
+   "hours": 39.2,
+   "store": "S2"
+  },
+  {
+   "employee_id": "E007",
+   "week_start": "2025-02-16",
+   "hours": 30.4,
+   "store": "S2"
+  },
+  {
+   "employee_id": "E008",
+   "week_start": "2025-02-16",
+   "hours": 31.8,
+   "store": "S2"
+  },
+  {
+   "employee_id": "E009",
+   "week_start": "2025-02-16",
+   "hours": 39.8,
+   "store": "S3"
+  },
+  {
+   "employee_id": "E010",
+   "week_start": "2025-02-16",
+   "hours": 37.3,
+   "store": "S3"
+  },
+  {
+   "employee_id": "E011",
+   "week_start": "2025-02-16",
+   "hours": 26.6,
+   "store": "S3"
+  },
+  {
+   "employee_id": "E001",
+   "week_start": "2025-02-23",
+   "hours": 30.9,
+   "store": "S1"
+  },
+  {
+   "employee_id": "E002",
+   "week_start": "2025-02-23",
+   "hours": 32.2,
+   "store": "S1"
+  },
+  {
+   "employee_id": "E003",
+   "week_start": "2025-02-23",
+   "hours": 29.4,
+   "store": "S1"
+  },
+  {
+   "employee_id": "E004",
+   "week_start": "2025-02-23",
+   "hours": 27.1,
+   "store": "S1"
+  },
+  {
+   "employee_id": "E005",
+   "week_start": "2025-02-23",
+   "hours": 29.1,
+   "store": "S2"
+  },
+  {
+   "employee_id": "E006",
+   "week_start": "2025-02-23",
+   "hours": 35.6,
+   "store": "S2"
+  },
+  {
+   "employee_id": "E007",
+   "week_start": "2025-02-23",
+   "hours": 24.3,
+   "store": "S2"
+  },
+  {
+   "employee_id": "E008",
+   "week_start": "2025-02-23",
+   "hours": 32.9,
+   "store": "S2"
+  },
+  {
+   "employee_id": "E009",
+   "week_start": "2025-02-23",
+   "hours": 31.0,
+   "store": "S3"
+  },
+  {
+   "employee_id": "E010",
+   "week_start": "2025-02-23",
+   "hours": 24.3,
+   "store": "S3"
+  },
+  {
+   "employee_id": "E011",
+   "week_start": "2025-02-23",
+   "hours": 29.3,
+   "store": "S3"
+  },
+  {
+   "employee_id": "E001",
+   "week_start": "2025-03-02",
+   "hours": 34.0,
+   "store": "S1"
+  },
+  {
+   "employee_id": "E002",
+   "week_start": "2025-03-02",
+   "hours": 32.2,
+   "store": "S1"
+  },
+  {
+   "employee_id": "E003",
+   "week_start": "2025-03-02",
+   "hours": 25.0,
+   "store": "S1"
+  },
+  {
+   "employee_id": "E004",
+   "week_start": "2025-03-02",
+   "hours": 39.8,
+   "store": "S1"
+  },
+  {
+   "employee_id": "E005",
+   "week_start": "2025-03-02",
+   "hours": 36.6,
+   "store": "S2"
+  },
+  {
+   "employee_id": "E006",
+   "week_start": "2025-03-02",
+   "hours": 39.5,
+   "store": "S2"
+  },
+  {
+   "employee_id": "E007",
+   "week_start": "2025-03-02",
+   "hours": 25.7,
+   "store": "S2"
+  },
+  {
+   "employee_id": "E008",
+   "week_start": "2025-03-02",
+   "hours": 28.2,
+   "store": "S2"
+  },
+  {
+   "employee_id": "E009",
+   "week_start": "2025-03-02",
+   "hours": 24.6,
+   "store": "S3"
+  },
+  {
+   "employee_id": "E010",
+   "week_start": "2025-03-02",
+   "hours": 36.5,
+   "store": "S3"
+  },
+  {
+   "employee_id": "E011",
+   "week_start": "2025-03-02",
+   "hours": 28.3,
+   "store": "S3"
+  },
+  {
+   "employee_id": "E001",
+   "week_start": "2025-03-09",
+   "hours": 26.1,
+   "store": "S1"
+  },
+  {
+   "employee_id": "E002",
+   "week_start": "2025-03-09",
+   "hours": 30.8,
+   "store": "S1"
+  },
+  {
+   "employee_id": "E003",
+   "week_start": "2025-03-09",
+   "hours": 38.6,
+   "store": "S1"
+  },
+  {
+   "employee_id": "E004",
+   "week_start": "2025-03-09",
+   "hours": 37.1,
+   "store": "S1"
+  },
+  {
+   "employee_id": "E005",
+   "week_start": "2025-03-09",
+   "hours": 28.1,
+   "store": "S2"
+  },
+  {
+   "employee_id": "E006",
+   "week_start": "2025-03-09",
+   "hours": 26.4,
+   "store": "S2"
+  },
+  {
+   "employee_id": "E007",
+   "week_start": "2025-03-09",
+   "hours": 38.7,
+   "store": "S2"
+  },
+  {
+   "employee_id": "E008",
+   "week_start": "2025-03-09",
+   "hours": 33.1,
+   "store": "S2"
+  },
+  {
+   "employee_id": "E009",
+   "week_start": "2025-03-09",
+   "hours": 35.2,
+   "store": "S3"
+  },
+  {
+   "employee_id": "E010",
+   "week_start": "2025-03-09",
+   "hours": 25.4,
+   "store": "S3"
+  },
+  {
+   "employee_id": "E011",
+   "week_start": "2025-03-09",
+   "hours": 24.9,
+   "store": "S3"
+  },
+  {
+   "employee_id": "E001",
+   "week_start": "2025-03-16",
+   "hours": 35.0,
+   "store": "S1"
+  },
+  {
+   "employee_id": "E002",
+   "week_start": "2025-03-16",
+   "hours": 30.8,
+   "store": "S1"
+  },
+  {
+   "employee_id": "E003",
+   "week_start": "2025-03-16",
+   "hours": 25.2,
+   "store": "S1"
+  },
+  {
+   "employee_id": "E004",
+   "week_start": "2025-03-16",
+   "hours": 39.0,
+   "store": "S1"
+  },
+  {
+   "employee_id": "E005",
+   "week_start": "2025-03-16",
+   "hours": 34.2,
+   "store": "S2"
+  },
+  {
+   "employee_id": "E006",
+   "week_start": "2025-03-16",
+   "hours": 36.8,
+   "store": "S2"
+  },
+  {
+   "employee_id": "E007",
+   "week_start": "2025-03-16",
+   "hours": 25.3,
+   "store": "S2"
+  },
+  {
+   "employee_id": "E008",
+   "week_start": "2025-03-16",
+   "hours": 37.7,
+   "store": "S2"
+  },
+  {
+   "employee_id": "E009",
+   "week_start": "2025-03-16",
+   "hours": 25.1,
+   "store": "S3"
+  },
+  {
+   "employee_id": "E010",
+   "week_start": "2025-03-16",
+   "hours": 37.8,
+   "store": "S3"
+  },
+  {
+   "employee_id": "E011",
+   "week_start": "2025-03-16",
+   "hours": 31.3,
+   "store": "S3"
+  },
+  {
+   "employee_id": "E001",
+   "week_start": "2025-03-23",
+   "hours": 29.4,
+   "store": "S1"
+  },
+  {
+   "employee_id": "E002",
+   "week_start": "2025-03-23",
+   "hours": 32.8,
+   "store": "S1"
+  },
+  {
+   "employee_id": "E003",
+   "week_start": "2025-03-23",
+   "hours": 38.8,
+   "store": "S1"
+  },
+  {
+   "employee_id": "E004",
+   "week_start": "2025-03-23",
+   "hours": 28.3,
+   "store": "S1"
+  },
+  {
+   "employee_id": "E005",
+   "week_start": "2025-03-23",
+   "hours": 26.1,
+   "store": "S2"
+  },
+  {
+   "employee_id": "E006",
+   "week_start": "2025-03-23",
+   "hours": 32.4,
+   "store": "S2"
+  },
+  {
+   "employee_id": "E007",
+   "week_start": "2025-03-23",
+   "hours": 27.8,
+   "store": "S2"
+  },
+  {
+   "employee_id": "E008",
+   "week_start": "2025-03-23",
+   "hours": 25.8,
+   "store": "S2"
+  },
+  {
+   "employee_id": "E009",
+   "week_start": "2025-03-23",
+   "hours": 26.6,
+   "store": "S3"
+  },
+  {
+   "employee_id": "E010",
+   "week_start": "2025-03-23",
+   "hours": 24.8,
+   "store": "S3"
+  },
+  {
+   "employee_id": "E011",
+   "week_start": "2025-03-23",
+   "hours": 27.2,
+   "store": "S3"
+  },
+  {
+   "employee_id": "E001",
+   "week_start": "2025-03-30",
+   "hours": 29.0,
+   "store": "S1"
+  },
+  {
+   "employee_id": "E002",
+   "week_start": "2025-03-30",
+   "hours": 28.9,
+   "store": "S1"
+  },
+  {
+   "employee_id": "E003",
+   "week_start": "2025-03-30",
+   "hours": 36.2,
+   "store": "S1"
+  },
+  {
+   "employee_id": "E004",
+   "week_start": "2025-03-30",
+   "hours": 28.6,
+   "store": "S1"
+  },
+  {
+   "employee_id": "E005",
+   "week_start": "2025-03-30",
+   "hours": 32.0,
+   "store": "S2"
+  },
+  {
+   "employee_id": "E006",
+   "week_start": "2025-03-30",
+   "hours": 26.8,
+   "store": "S2"
+  },
+  {
+   "employee_id": "E007",
+   "week_start": "2025-03-30",
+   "hours": 29.6,
+   "store": "S2"
+  },
+  {
+   "employee_id": "E008",
+   "week_start": "2025-03-30",
+   "hours": 24.3,
+   "store": "S2"
+  },
+  {
+   "employee_id": "E009",
+   "week_start": "2025-03-30",
+   "hours": 28.0,
+   "store": "S3"
+  },
+  {
+   "employee_id": "E010",
+   "week_start": "2025-03-30",
+   "hours": 24.2,
+   "store": "S3"
+  },
+  {
+   "employee_id": "E011",
+   "week_start": "2025-03-30",
+   "hours": 35.7,
+   "store": "S3"
+  },
+  {
+   "employee_id": "E001",
+   "week_start": "2025-04-06",
+   "hours": 32.8,
+   "store": "S1"
+  },
+  {
+   "employee_id": "E002",
+   "week_start": "2025-04-06",
+   "hours": 27.0,
+   "store": "S1"
+  },
+  {
+   "employee_id": "E003",
+   "week_start": "2025-04-06",
+   "hours": 31.6,
+   "store": "S1"
+  },
+  {
+   "employee_id": "E004",
+   "week_start": "2025-04-06",
+   "hours": 39.0,
+   "store": "S1"
+  },
+  {
+   "employee_id": "E005",
+   "week_start": "2025-04-06",
+   "hours": 25.7,
+   "store": "S2"
+  },
+  {
+   "employee_id": "E006",
+   "week_start": "2025-04-06",
+   "hours": 37.1,
+   "store": "S2"
+  },
+  {
+   "employee_id": "E007",
+   "week_start": "2025-04-06",
+   "hours": 30.9,
+   "store": "S2"
+  },
+  {
+   "employee_id": "E008",
+   "week_start": "2025-04-06",
+   "hours": 31.9,
+   "store": "S2"
+  },
+  {
+   "employee_id": "E009",
+   "week_start": "2025-04-06",
+   "hours": 37.4,
+   "store": "S3"
+  },
+  {
+   "employee_id": "E010",
+   "week_start": "2025-04-06",
+   "hours": 30.3,
+   "store": "S3"
+  },
+  {
+   "employee_id": "E011",
+   "week_start": "2025-04-06",
+   "hours": 32.1,
+   "store": "S3"
+  },
+  {
+   "employee_id": "E001",
+   "week_start": "2025-04-13",
+   "hours": 35.0,
+   "store": "S1"
+  },
+  {
+   "employee_id": "E002",
+   "week_start": "2025-04-13",
+   "hours": 39.7,
+   "store": "S1"
+  },
+  {
+   "employee_id": "E003",
+   "week_start": "2025-04-13",
+   "hours": 29.5,
+   "store": "S1"
+  },
+  {
+   "employee_id": "E004",
+   "week_start": "2025-04-13",
+   "hours": 37.3,
+   "store": "S1"
+  },
+  {
+   "employee_id": "E005",
+   "week_start": "2025-04-13",
+   "hours": 35.3,
+   "store": "S2"
+  },
+  {
+   "employee_id": "E006",
+   "week_start": "2025-04-13",
+   "hours": 34.2,
+   "store": "S2"
+  },
+  {
+   "employee_id": "E007",
+   "week_start": "2025-04-13",
+   "hours": 30.5,
+   "store": "S2"
+  },
+  {
+   "employee_id": "E008",
+   "week_start": "2025-04-13",
+   "hours": 29.6,
+   "store": "S2"
+  },
+  {
+   "employee_id": "E009",
+   "week_start": "2025-04-13",
+   "hours": 24.9,
+   "store": "S3"
+  },
+  {
+   "employee_id": "E010",
+   "week_start": "2025-04-13",
+   "hours": 26.1,
+   "store": "S3"
+  },
+  {
+   "employee_id": "E011",
+   "week_start": "2025-04-13",
+   "hours": 25.1,
+   "store": "S3"
+  },
+  {
+   "employee_id": "E001",
+   "week_start": "2025-04-20",
+   "hours": 35.9,
+   "store": "S1"
+  },
+  {
+   "employee_id": "E002",
+   "week_start": "2025-04-20",
+   "hours": 28.1,
+   "store": "S1"
+  },
+  {
+   "employee_id": "E003",
+   "week_start": "2025-04-20",
+   "hours": 26.6,
+   "store": "S1"
+  },
+  {
+   "employee_id": "E004",
+   "week_start": "2025-04-20",
+   "hours": 25.4,
+   "store": "S1"
+  },
+  {
+   "employee_id": "E005",
+   "week_start": "2025-04-20",
+   "hours": 37.5,
+   "store": "S2"
+  },
+  {
+   "employee_id": "E006",
+   "week_start": "2025-04-20",
+   "hours": 37.9,
+   "store": "S2"
+  },
+  {
+   "employee_id": "E007",
+   "week_start": "2025-04-20",
+   "hours": 34.7,
+   "store": "S2"
+  },
+  {
+   "employee_id": "E008",
+   "week_start": "2025-04-20",
+   "hours": 28.5,
+   "store": "S2"
+  },
+  {
+   "employee_id": "E009",
+   "week_start": "2025-04-20",
+   "hours": 27.9,
+   "store": "S3"
+  },
+  {
+   "employee_id": "E010",
+   "week_start": "2025-04-20",
+   "hours": 28.7,
+   "store": "S3"
+  },
+  {
+   "employee_id": "E011",
+   "week_start": "2025-04-20",
+   "hours": 31.4,
+   "store": "S3"
+  },
+  {
+   "employee_id": "E001",
+   "week_start": "2025-04-27",
+   "hours": 26.5,
+   "store": "S1"
+  },
+  {
+   "employee_id": "E002",
+   "week_start": "2025-04-27",
+   "hours": 31.1,
+   "store": "S1"
+  },
+  {
+   "employee_id": "E003",
+   "week_start": "2025-04-27",
+   "hours": 28.2,
+   "store": "S1"
+  },
+  {
+   "employee_id": "E004",
+   "week_start": "2025-04-27",
+   "hours": 39.4,
+   "store": "S1"
+  },
+  {
+   "employee_id": "E005",
+   "week_start": "2025-04-27",
+   "hours": 39.6,
+   "store": "S2"
+  },
+  {
+   "employee_id": "E006",
+   "week_start": "2025-04-27",
+   "hours": 32.8,
+   "store": "S2"
+  },
+  {
+   "employee_id": "E007",
+   "week_start": "2025-04-27",
+   "hours": 27.9,
+   "store": "S2"
+  },
+  {
+   "employee_id": "E008",
+   "week_start": "2025-04-27",
+   "hours": 39.5,
+   "store": "S2"
+  },
+  {
+   "employee_id": "E009",
+   "week_start": "2025-04-27",
+   "hours": 29.0,
+   "store": "S3"
+  },
+  {
+   "employee_id": "E010",
+   "week_start": "2025-04-27",
+   "hours": 29.7,
+   "store": "S3"
+  },
+  {
+   "employee_id": "E011",
+   "week_start": "2025-04-27",
+   "hours": 24.0,
+   "store": "S3"
+  },
+  {
+   "employee_id": "E001",
+   "week_start": "2025-05-04",
+   "hours": 30.1,
+   "store": "S1"
+  },
+  {
+   "employee_id": "E002",
+   "week_start": "2025-05-04",
+   "hours": 31.6,
+   "store": "S1"
+  },
+  {
+   "employee_id": "E003",
+   "week_start": "2025-05-04",
+   "hours": 32.0,
+   "store": "S1"
+  },
+  {
+   "employee_id": "E004",
+   "week_start": "2025-05-04",
+   "hours": 27.2,
+   "store": "S1"
+  },
+  {
+   "employee_id": "E005",
+   "week_start": "2025-05-04",
+   "hours": 32.1,
+   "store": "S2"
+  },
+  {
+   "employee_id": "E006",
+   "week_start": "2025-05-04",
+   "hours": 24.1,
+   "store": "S2"
+  },
+  {
+   "employee_id": "E007",
+   "week_start": "2025-05-04",
+   "hours": 28.2,
+   "store": "S2"
+  },
+  {
+   "employee_id": "E008",
+   "week_start": "2025-05-04",
+   "hours": 25.4,
+   "store": "S2"
+  },
+  {
+   "employee_id": "E009",
+   "week_start": "2025-05-04",
+   "hours": 30.4,
+   "store": "S3"
+  },
+  {
+   "employee_id": "E010",
+   "week_start": "2025-05-04",
+   "hours": 24.7,
+   "store": "S3"
+  },
+  {
+   "employee_id": "E011",
+   "week_start": "2025-05-04",
+   "hours": 24.4,
+   "store": "S3"
+  },
+  {
+   "employee_id": "E001",
+   "week_start": "2025-05-11",
+   "hours": 28.9,
+   "store": "S1"
+  },
+  {
+   "employee_id": "E002",
+   "week_start": "2025-05-11",
+   "hours": 27.7,
+   "store": "S1"
+  },
+  {
+   "employee_id": "E003",
+   "week_start": "2025-05-11",
+   "hours": 33.4,
+   "store": "S1"
+  },
+  {
+   "employee_id": "E004",
+   "week_start": "2025-05-11",
+   "hours": 32.5,
+   "store": "S1"
+  },
+  {
+   "employee_id": "E005",
+   "week_start": "2025-05-11",
+   "hours": 36.0,
+   "store": "S2"
+  },
+  {
+   "employee_id": "E006",
+   "week_start": "2025-05-11",
+   "hours": 34.5,
+   "store": "S2"
+  },
+  {
+   "employee_id": "E007",
+   "week_start": "2025-05-11",
+   "hours": 35.5,
+   "store": "S2"
+  },
+  {
+   "employee_id": "E008",
+   "week_start": "2025-05-11",
+   "hours": 38.1,
+   "store": "S2"
+  },
+  {
+   "employee_id": "E009",
+   "week_start": "2025-05-11",
+   "hours": 30.2,
+   "store": "S3"
+  },
+  {
+   "employee_id": "E010",
+   "week_start": "2025-05-11",
+   "hours": 29.2,
+   "store": "S3"
+  },
+  {
+   "employee_id": "E011",
+   "week_start": "2025-05-11",
+   "hours": 39.8,
+   "store": "S3"
+  },
+  {
+   "employee_id": "E001",
+   "week_start": "2025-05-18",
+   "hours": 26.4,
+   "store": "S1"
+  },
+  {
+   "employee_id": "E002",
+   "week_start": "2025-05-18",
+   "hours": 35.6,
+   "store": "S1"
+  },
+  {
+   "employee_id": "E003",
+   "week_start": "2025-05-18",
+   "hours": 34.3,
+   "store": "S1"
+  },
+  {
+   "employee_id": "E004",
+   "week_start": "2025-05-18",
+   "hours": 24.7,
+   "store": "S1"
+  },
+  {
+   "employee_id": "E005",
+   "week_start": "2025-05-18",
+   "hours": 37.4,
+   "store": "S2"
+  },
+  {
+   "employee_id": "E006",
+   "week_start": "2025-05-18",
+   "hours": 38.3,
+   "store": "S2"
+  },
+  {
+   "employee_id": "E007",
+   "week_start": "2025-05-18",
+   "hours": 34.0,
+   "store": "S2"
+  },
+  {
+   "employee_id": "E008",
+   "week_start": "2025-05-18",
+   "hours": 35.7,
+   "store": "S2"
+  },
+  {
+   "employee_id": "E009",
+   "week_start": "2025-05-18",
+   "hours": 37.0,
+   "store": "S3"
+  },
+  {
+   "employee_id": "E010",
+   "week_start": "2025-05-18",
+   "hours": 26.2,
+   "store": "S3"
+  },
+  {
+   "employee_id": "E011",
+   "week_start": "2025-05-18",
+   "hours": 32.4,
+   "store": "S3"
+  },
+  {
+   "employee_id": "E001",
+   "week_start": "2025-05-25",
+   "hours": 32.1,
+   "store": "S1"
+  },
+  {
+   "employee_id": "E002",
+   "week_start": "2025-05-25",
+   "hours": 37.4,
+   "store": "S1"
+  },
+  {
+   "employee_id": "E003",
+   "week_start": "2025-05-25",
+   "hours": 36.9,
+   "store": "S1"
+  },
+  {
+   "employee_id": "E004",
+   "week_start": "2025-05-25",
+   "hours": 37.2,
+   "store": "S1"
+  },
+  {
+   "employee_id": "E005",
+   "week_start": "2025-05-25",
+   "hours": 33.3,
+   "store": "S2"
+  },
+  {
+   "employee_id": "E006",
+   "week_start": "2025-05-25",
+   "hours": 38.3,
+   "store": "S2"
+  },
+  {
+   "employee_id": "E007",
+   "week_start": "2025-05-25",
+   "hours": 34.9,
+   "store": "S2"
+  },
+  {
+   "employee_id": "E008",
+   "week_start": "2025-05-25",
+   "hours": 35.1,
+   "store": "S2"
+  },
+  {
+   "employee_id": "E009",
+   "week_start": "2025-05-25",
+   "hours": 27.7,
+   "store": "S3"
+  },
+  {
+   "employee_id": "E010",
+   "week_start": "2025-05-25",
+   "hours": 24.5,
+   "store": "S3"
+  },
+  {
+   "employee_id": "E011",
+   "week_start": "2025-05-25",
+   "hours": 26.1,
+   "store": "S3"
+  },
+  {
+   "employee_id": "E001",
+   "week_start": "2025-06-01",
+   "hours": 29.8,
+   "store": "S1"
+  },
+  {
+   "employee_id": "E002",
+   "week_start": "2025-06-01",
+   "hours": 25.7,
+   "store": "S1"
+  },
+  {
+   "employee_id": "E003",
+   "week_start": "2025-06-01",
+   "hours": 37.4,
+   "store": "S1"
+  },
+  {
+   "employee_id": "E004",
+   "week_start": "2025-06-01",
+   "hours": 32.9,
+   "store": "S1"
+  },
+  {
+   "employee_id": "E005",
+   "week_start": "2025-06-01",
+   "hours": 34.0,
+   "store": "S2"
+  },
+  {
+   "employee_id": "E006",
+   "week_start": "2025-06-01",
+   "hours": 34.0,
+   "store": "S2"
+  },
+  {
+   "employee_id": "E007",
+   "week_start": "2025-06-01",
+   "hours": 34.9,
+   "store": "S2"
+  },
+  {
+   "employee_id": "E008",
+   "week_start": "2025-06-01",
+   "hours": 31.8,
+   "store": "S2"
+  },
+  {
+   "employee_id": "E009",
+   "week_start": "2025-06-01",
+   "hours": 24.1,
+   "store": "S3"
+  },
+  {
+   "employee_id": "E010",
+   "week_start": "2025-06-01",
+   "hours": 36.8,
+   "store": "S3"
+  },
+  {
+   "employee_id": "E011",
+   "week_start": "2025-06-01",
+   "hours": 36.0,
+   "store": "S3"
+  },
+  {
+   "employee_id": "E001",
+   "week_start": "2025-06-08",
+   "hours": 32.0,
+   "store": "S1"
+  },
+  {
+   "employee_id": "E002",
+   "week_start": "2025-06-08",
+   "hours": 32.6,
+   "store": "S1"
+  },
+  {
+   "employee_id": "E003",
+   "week_start": "2025-06-08",
+   "hours": 34.5,
+   "store": "S1"
+  },
+  {
+   "employee_id": "E004",
+   "week_start": "2025-06-08",
+   "hours": 25.1,
+   "store": "S1"
+  },
+  {
+   "employee_id": "E005",
+   "week_start": "2025-06-08",
+   "hours": 35.8,
+   "store": "S2"
+  },
+  {
+   "employee_id": "E006",
+   "week_start": "2025-06-08",
+   "hours": 28.0,
+   "store": "S2"
+  },
+  {
+   "employee_id": "E007",
+   "week_start": "2025-06-08",
+   "hours": 25.2,
+   "store": "S2"
+  },
+  {
+   "employee_id": "E008",
+   "week_start": "2025-06-08",
+   "hours": 28.2,
+   "store": "S2"
+  },
+  {
+   "employee_id": "E009",
+   "week_start": "2025-06-08",
+   "hours": 35.7,
+   "store": "S3"
+  },
+  {
+   "employee_id": "E010",
+   "week_start": "2025-06-08",
+   "hours": 27.3,
+   "store": "S3"
+  },
+  {
+   "employee_id": "E011",
+   "week_start": "2025-06-08",
+   "hours": 35.8,
+   "store": "S3"
+  },
+  {
+   "employee_id": "E001",
+   "week_start": "2025-06-15",
+   "hours": 39.6,
+   "store": "S1"
+  },
+  {
+   "employee_id": "E002",
+   "week_start": "2025-06-15",
+   "hours": 31.9,
+   "store": "S1"
+  },
+  {
+   "employee_id": "E003",
+   "week_start": "2025-06-15",
+   "hours": 30.1,
+   "store": "S1"
+  },
+  {
+   "employee_id": "E004",
+   "week_start": "2025-06-15",
+   "hours": 31.7,
+   "store": "S1"
+  },
+  {
+   "employee_id": "E005",
+   "week_start": "2025-06-15",
+   "hours": 34.9,
+   "store": "S2"
+  },
+  {
+   "employee_id": "E006",
+   "week_start": "2025-06-15",
+   "hours": 36.3,
+   "store": "S2"
+  },
+  {
+   "employee_id": "E007",
+   "week_start": "2025-06-15",
+   "hours": 33.9,
+   "store": "S2"
+  },
+  {
+   "employee_id": "E008",
+   "week_start": "2025-06-15",
+   "hours": 34.3,
+   "store": "S2"
+  },
+  {
+   "employee_id": "E009",
+   "week_start": "2025-06-15",
+   "hours": 25.2,
+   "store": "S3"
+  },
+  {
+   "employee_id": "E010",
+   "week_start": "2025-06-15",
+   "hours": 26.4,
+   "store": "S3"
+  },
+  {
+   "employee_id": "E011",
+   "week_start": "2025-06-15",
+   "hours": 28.1,
+   "store": "S3"
+  },
+  {
+   "employee_id": "E001",
+   "week_start": "2025-06-22",
+   "hours": 35.9,
+   "store": "S1"
+  },
+  {
+   "employee_id": "E002",
+   "week_start": "2025-06-22",
+   "hours": 28.9,
+   "store": "S1"
+  },
+  {
+   "employee_id": "E003",
+   "week_start": "2025-06-22",
+   "hours": 33.1,
+   "store": "S1"
+  },
+  {
+   "employee_id": "E004",
+   "week_start": "2025-06-22",
+   "hours": 24.2,
+   "store": "S1"
+  },
+  {
+   "employee_id": "E005",
+   "week_start": "2025-06-22",
+   "hours": 25.0,
+   "store": "S2"
+  },
+  {
+   "employee_id": "E006",
+   "week_start": "2025-06-22",
+   "hours": 28.3,
+   "store": "S2"
+  },
+  {
+   "employee_id": "E007",
+   "week_start": "2025-06-22",
+   "hours": 34.8,
+   "store": "S2"
+  },
+  {
+   "employee_id": "E008",
+   "week_start": "2025-06-22",
+   "hours": 35.1,
+   "store": "S2"
+  },
+  {
+   "employee_id": "E009",
+   "week_start": "2025-06-22",
+   "hours": 34.8,
+   "store": "S3"
+  },
+  {
+   "employee_id": "E010",
+   "week_start": "2025-06-22",
+   "hours": 28.7,
+   "store": "S3"
+  },
+  {
+   "employee_id": "E011",
+   "week_start": "2025-06-22",
+   "hours": 32.3,
+   "store": "S3"
+  },
+  {
+   "employee_id": "E001",
+   "week_start": "2025-06-29",
+   "hours": 31.4,
+   "store": "S1"
+  },
+  {
+   "employee_id": "E002",
+   "week_start": "2025-06-29",
+   "hours": 31.5,
+   "store": "S1"
+  },
+  {
+   "employee_id": "E003",
+   "week_start": "2025-06-29",
+   "hours": 25.9,
+   "store": "S1"
+  },
+  {
+   "employee_id": "E004",
+   "week_start": "2025-06-29",
+   "hours": 38.3,
+   "store": "S1"
+  },
+  {
+   "employee_id": "E005",
+   "week_start": "2025-06-29",
+   "hours": 27.2,
+   "store": "S2"
+  },
+  {
+   "employee_id": "E006",
+   "week_start": "2025-06-29",
+   "hours": 39.7,
+   "store": "S2"
+  },
+  {
+   "employee_id": "E007",
+   "week_start": "2025-06-29",
+   "hours": 39.0,
+   "store": "S2"
+  },
+  {
+   "employee_id": "E008",
+   "week_start": "2025-06-29",
+   "hours": 24.3,
+   "store": "S2"
+  },
+  {
+   "employee_id": "E009",
+   "week_start": "2025-06-29",
+   "hours": 31.3,
+   "store": "S3"
+  },
+  {
+   "employee_id": "E010",
+   "week_start": "2025-06-29",
+   "hours": 37.1,
+   "store": "S3"
+  },
+  {
+   "employee_id": "E011",
+   "week_start": "2025-06-29",
+   "hours": 39.5,
+   "store": "S3"
+  },
+  {
+   "employee_id": "E001",
+   "week_start": "2025-07-06",
+   "hours": 31.2,
+   "store": "S1"
+  },
+  {
+   "employee_id": "E002",
+   "week_start": "2025-07-06",
+   "hours": 28.3,
+   "store": "S1"
+  },
+  {
+   "employee_id": "E003",
+   "week_start": "2025-07-06",
+   "hours": 27.4,
+   "store": "S1"
+  },
+  {
+   "employee_id": "E004",
+   "week_start": "2025-07-06",
+   "hours": 39.1,
+   "store": "S1"
+  },
+  {
+   "employee_id": "E005",
+   "week_start": "2025-07-06",
+   "hours": 27.4,
+   "store": "S2"
+  },
+  {
+   "employee_id": "E006",
+   "week_start": "2025-07-06",
+   "hours": 33.3,
+   "store": "S2"
+  },
+  {
+   "employee_id": "E007",
+   "week_start": "2025-07-06",
+   "hours": 26.3,
+   "store": "S2"
+  },
+  {
+   "employee_id": "E008",
+   "week_start": "2025-07-06",
+   "hours": 32.4,
+   "store": "S2"
+  },
+  {
+   "employee_id": "E009",
+   "week_start": "2025-07-06",
+   "hours": 39.2,
+   "store": "S3"
+  },
+  {
+   "employee_id": "E010",
+   "week_start": "2025-07-06",
+   "hours": 26.1,
+   "store": "S3"
+  },
+  {
+   "employee_id": "E011",
+   "week_start": "2025-07-06",
+   "hours": 37.1,
+   "store": "S3"
+  },
+  {
+   "employee_id": "E012",
+   "week_start": "2025-07-06",
+   "hours": 32.1,
+   "store": "S4"
+  },
+  {
+   "employee_id": "E013",
+   "week_start": "2025-07-06",
+   "hours": 38.2,
+   "store": "S4"
+  },
+  {
+   "employee_id": "E014",
+   "week_start": "2025-07-06",
+   "hours": 35.3,
+   "store": "S4"
+  },
+  {
+   "employee_id": "E015",
+   "week_start": "2025-07-06",
+   "hours": 27.7,
+   "store": "S4"
+  },
+  {
+   "employee_id": "E001",
+   "week_start": "2025-07-13",
+   "hours": 38.4,
+   "store": "S1"
+  },
+  {
+   "employee_id": "E002",
+   "week_start": "2025-07-13",
+   "hours": 31.8,
+   "store": "S1"
+  },
+  {
+   "employee_id": "E003",
+   "week_start": "2025-07-13",
+   "hours": 24.4,
+   "store": "S1"
+  },
+  {
+   "employee_id": "E004",
+   "week_start": "2025-07-13",
+   "hours": 24.1,
+   "store": "S1"
+  },
+  {
+   "employee_id": "E005",
+   "week_start": "2025-07-13",
+   "hours": 31.9,
+   "store": "S2"
+  },
+  {
+   "employee_id": "E006",
+   "week_start": "2025-07-13",
+   "hours": 31.2,
+   "store": "S2"
+  },
+  {
+   "employee_id": "E007",
+   "week_start": "2025-07-13",
+   "hours": 28.8,
+   "store": "S2"
+  },
+  {
+   "employee_id": "E008",
+   "week_start": "2025-07-13",
+   "hours": 26.3,
+   "store": "S2"
+  },
+  {
+   "employee_id": "E009",
+   "week_start": "2025-07-13",
+   "hours": 29.5,
+   "store": "S3"
+  },
+  {
+   "employee_id": "E010",
+   "week_start": "2025-07-13",
+   "hours": 29.1,
+   "store": "S3"
+  },
+  {
+   "employee_id": "E011",
+   "week_start": "2025-07-13",
+   "hours": 37.4,
+   "store": "S3"
+  },
+  {
+   "employee_id": "E012",
+   "week_start": "2025-07-13",
+   "hours": 24.0,
+   "store": "S4"
+  },
+  {
+   "employee_id": "E013",
+   "week_start": "2025-07-13",
+   "hours": 36.0,
+   "store": "S4"
+  },
+  {
+   "employee_id": "E014",
+   "week_start": "2025-07-13",
+   "hours": 37.4,
+   "store": "S4"
+  },
+  {
+   "employee_id": "E015",
+   "week_start": "2025-07-13",
+   "hours": 25.9,
+   "store": "S4"
+  },
+  {
+   "employee_id": "E001",
+   "week_start": "2025-07-20",
+   "hours": 38.8,
+   "store": "S1"
+  },
+  {
+   "employee_id": "E002",
+   "week_start": "2025-07-20",
+   "hours": 35.4,
+   "store": "S1"
+  },
+  {
+   "employee_id": "E003",
+   "week_start": "2025-07-20",
+   "hours": 38.4,
+   "store": "S1"
+  },
+  {
+   "employee_id": "E004",
+   "week_start": "2025-07-20",
+   "hours": 28.6,
+   "store": "S1"
+  },
+  {
+   "employee_id": "E005",
+   "week_start": "2025-07-20",
+   "hours": 30.0,
+   "store": "S2"
+  },
+  {
+   "employee_id": "E006",
+   "week_start": "2025-07-20",
+   "hours": 30.3,
+   "store": "S2"
+  },
+  {
+   "employee_id": "E007",
+   "week_start": "2025-07-20",
+   "hours": 40.0,
+   "store": "S2"
+  },
+  {
+   "employee_id": "E008",
+   "week_start": "2025-07-20",
+   "hours": 33.4,
+   "store": "S2"
+  },
+  {
+   "employee_id": "E009",
+   "week_start": "2025-07-20",
+   "hours": 29.8,
+   "store": "S3"
+  },
+  {
+   "employee_id": "E010",
+   "week_start": "2025-07-20",
+   "hours": 30.8,
+   "store": "S3"
+  },
+  {
+   "employee_id": "E011",
+   "week_start": "2025-07-20",
+   "hours": 28.4,
+   "store": "S3"
+  },
+  {
+   "employee_id": "E012",
+   "week_start": "2025-07-20",
+   "hours": 24.8,
+   "store": "S4"
+  },
+  {
+   "employee_id": "E013",
+   "week_start": "2025-07-20",
+   "hours": 25.6,
+   "store": "S4"
+  },
+  {
+   "employee_id": "E014",
+   "week_start": "2025-07-20",
+   "hours": 37.4,
+   "store": "S4"
+  },
+  {
+   "employee_id": "E015",
+   "week_start": "2025-07-20",
+   "hours": 28.6,
+   "store": "S4"
+  },
+  {
+   "employee_id": "E001",
+   "week_start": "2025-07-27",
+   "hours": 39.0,
+   "store": "S1"
+  },
+  {
+   "employee_id": "E002",
+   "week_start": "2025-07-27",
+   "hours": 28.0,
+   "store": "S1"
+  },
+  {
+   "employee_id": "E003",
+   "week_start": "2025-07-27",
+   "hours": 28.3,
+   "store": "S1"
+  },
+  {
+   "employee_id": "E004",
+   "week_start": "2025-07-27",
+   "hours": 32.2,
+   "store": "S1"
+  },
+  {
+   "employee_id": "E005",
+   "week_start": "2025-07-27",
+   "hours": 27.0,
+   "store": "S2"
+  },
+  {
+   "employee_id": "E006",
+   "week_start": "2025-07-27",
+   "hours": 30.0,
+   "store": "S2"
+  },
+  {
+   "employee_id": "E007",
+   "week_start": "2025-07-27",
+   "hours": 39.3,
+   "store": "S2"
+  },
+  {
+   "employee_id": "E008",
+   "week_start": "2025-07-27",
+   "hours": 38.1,
+   "store": "S2"
+  },
+  {
+   "employee_id": "E009",
+   "week_start": "2025-07-27",
+   "hours": 37.0,
+   "store": "S3"
+  },
+  {
+   "employee_id": "E010",
+   "week_start": "2025-07-27",
+   "hours": 34.1,
+   "store": "S3"
+  },
+  {
+   "employee_id": "E011",
+   "week_start": "2025-07-27",
+   "hours": 38.6,
+   "store": "S3"
+  },
+  {
+   "employee_id": "E012",
+   "week_start": "2025-07-27",
+   "hours": 39.1,
+   "store": "S4"
+  },
+  {
+   "employee_id": "E013",
+   "week_start": "2025-07-27",
+   "hours": 32.8,
+   "store": "S4"
+  },
+  {
+   "employee_id": "E014",
+   "week_start": "2025-07-27",
+   "hours": 35.5,
+   "store": "S4"
+  },
+  {
+   "employee_id": "E015",
+   "week_start": "2025-07-27",
+   "hours": 24.8,
+   "store": "S4"
+  },
+  {
+   "employee_id": "E001",
+   "week_start": "2025-08-03",
+   "hours": 35.7,
+   "store": "S1"
+  },
+  {
+   "employee_id": "E002",
+   "week_start": "2025-08-03",
+   "hours": 31.2,
+   "store": "S1"
+  },
+  {
+   "employee_id": "E003",
+   "week_start": "2025-08-03",
+   "hours": 36.0,
+   "store": "S1"
+  },
+  {
+   "employee_id": "E004",
+   "week_start": "2025-08-03",
+   "hours": 34.3,
+   "store": "S1"
+  },
+  {
+   "employee_id": "E005",
+   "week_start": "2025-08-03",
+   "hours": 28.6,
+   "store": "S2"
+  },
+  {
+   "employee_id": "E006",
+   "week_start": "2025-08-03",
+   "hours": 24.8,
+   "store": "S2"
+  },
+  {
+   "employee_id": "E007",
+   "week_start": "2025-08-03",
+   "hours": 38.8,
+   "store": "S2"
+  },
+  {
+   "employee_id": "E008",
+   "week_start": "2025-08-03",
+   "hours": 26.0,
+   "store": "S2"
+  },
+  {
+   "employee_id": "E009",
+   "week_start": "2025-08-03",
+   "hours": 31.6,
+   "store": "S3"
+  },
+  {
+   "employee_id": "E010",
+   "week_start": "2025-08-03",
+   "hours": 29.5,
+   "store": "S3"
+  },
+  {
+   "employee_id": "E011",
+   "week_start": "2025-08-03",
+   "hours": 28.8,
+   "store": "S3"
+  },
+  {
+   "employee_id": "E012",
+   "week_start": "2025-08-03",
+   "hours": 35.8,
+   "store": "S4"
+  },
+  {
+   "employee_id": "E013",
+   "week_start": "2025-08-03",
+   "hours": 39.6,
+   "store": "S4"
+  },
+  {
+   "employee_id": "E014",
+   "week_start": "2025-08-03",
+   "hours": 28.2,
+   "store": "S4"
+  },
+  {
+   "employee_id": "E015",
+   "week_start": "2025-08-03",
+   "hours": 34.5,
+   "store": "S4"
+  },
+  {
+   "employee_id": "E001",
+   "week_start": "2025-08-10",
+   "hours": 28.8,
+   "store": "S1"
+  },
+  {
+   "employee_id": "E002",
+   "week_start": "2025-08-10",
+   "hours": 32.9,
+   "store": "S1"
+  },
+  {
+   "employee_id": "E003",
+   "week_start": "2025-08-10",
+   "hours": 30.3,
+   "store": "S1"
+  },
+  {
+   "employee_id": "E004",
+   "week_start": "2025-08-10",
+   "hours": 26.7,
+   "store": "S1"
+  },
+  {
+   "employee_id": "E005",
+   "week_start": "2025-08-10",
+   "hours": 26.6,
+   "store": "S2"
+  },
+  {
+   "employee_id": "E006",
+   "week_start": "2025-08-10",
+   "hours": 27.3,
+   "store": "S2"
+  },
+  {
+   "employee_id": "E007",
+   "week_start": "2025-08-10",
+   "hours": 38.5,
+   "store": "S2"
+  },
+  {
+   "employee_id": "E008",
+   "week_start": "2025-08-10",
+   "hours": 32.0,
+   "store": "S2"
+  },
+  {
+   "employee_id": "E009",
+   "week_start": "2025-08-10",
+   "hours": 27.5,
+   "store": "S3"
+  },
+  {
+   "employee_id": "E010",
+   "week_start": "2025-08-10",
+   "hours": 38.5,
+   "store": "S3"
+  },
+  {
+   "employee_id": "E011",
+   "week_start": "2025-08-10",
+   "hours": 39.9,
+   "store": "S3"
+  },
+  {
+   "employee_id": "E012",
+   "week_start": "2025-08-10",
+   "hours": 31.2,
+   "store": "S4"
+  },
+  {
+   "employee_id": "E013",
+   "week_start": "2025-08-10",
+   "hours": 26.2,
+   "store": "S4"
+  },
+  {
+   "employee_id": "E014",
+   "week_start": "2025-08-10",
+   "hours": 27.1,
+   "store": "S4"
+  },
+  {
+   "employee_id": "E015",
+   "week_start": "2025-08-10",
+   "hours": 25.5,
+   "store": "S4"
+  },
+  {
+   "employee_id": "E001",
+   "week_start": "2025-08-17",
+   "hours": 29.5,
+   "store": "S1"
+  },
+  {
+   "employee_id": "E002",
+   "week_start": "2025-08-17",
+   "hours": 25.5,
+   "store": "S1"
+  },
+  {
+   "employee_id": "E003",
+   "week_start": "2025-08-17",
+   "hours": 27.8,
+   "store": "S1"
+  },
+  {
+   "employee_id": "E004",
+   "week_start": "2025-08-17",
+   "hours": 28.1,
+   "store": "S1"
+  },
+  {
+   "employee_id": "E005",
+   "week_start": "2025-08-17",
+   "hours": 33.1,
+   "store": "S2"
+  },
+  {
+   "employee_id": "E006",
+   "week_start": "2025-08-17",
+   "hours": 38.2,
+   "store": "S2"
+  },
+  {
+   "employee_id": "E007",
+   "week_start": "2025-08-17",
+   "hours": 36.0,
+   "store": "S2"
+  },
+  {
+   "employee_id": "E008",
+   "week_start": "2025-08-17",
+   "hours": 30.6,
+   "store": "S2"
+  },
+  {
+   "employee_id": "E009",
+   "week_start": "2025-08-17",
+   "hours": 30.6,
+   "store": "S3"
+  },
+  {
+   "employee_id": "E010",
+   "week_start": "2025-08-17",
+   "hours": 32.4,
+   "store": "S3"
+  },
+  {
+   "employee_id": "E011",
+   "week_start": "2025-08-17",
+   "hours": 30.0,
+   "store": "S3"
+  },
+  {
+   "employee_id": "E012",
+   "week_start": "2025-08-17",
+   "hours": 29.4,
+   "store": "S4"
+  },
+  {
+   "employee_id": "E013",
+   "week_start": "2025-08-17",
+   "hours": 25.0,
+   "store": "S4"
+  },
+  {
+   "employee_id": "E014",
+   "week_start": "2025-08-17",
+   "hours": 28.4,
+   "store": "S4"
+  },
+  {
+   "employee_id": "E015",
+   "week_start": "2025-08-17",
+   "hours": 39.5,
+   "store": "S4"
+  },
+  {
+   "employee_id": "E001",
+   "week_start": "2025-08-24",
+   "hours": 26.0,
+   "store": "S1"
+  },
+  {
+   "employee_id": "E002",
+   "week_start": "2025-08-24",
+   "hours": 32.1,
+   "store": "S1"
+  },
+  {
+   "employee_id": "E003",
+   "week_start": "2025-08-24",
+   "hours": 34.1,
+   "store": "S1"
+  },
+  {
+   "employee_id": "E004",
+   "week_start": "2025-08-24",
+   "hours": 37.8,
+   "store": "S1"
+  },
+  {
+   "employee_id": "E005",
+   "week_start": "2025-08-24",
+   "hours": 27.5,
+   "store": "S2"
+  },
+  {
+   "employee_id": "E006",
+   "week_start": "2025-08-24",
+   "hours": 28.3,
+   "store": "S2"
+  },
+  {
+   "employee_id": "E007",
+   "week_start": "2025-08-24",
+   "hours": 28.0,
+   "store": "S2"
+  },
+  {
+   "employee_id": "E008",
+   "week_start": "2025-08-24",
+   "hours": 30.4,
+   "store": "S2"
+  },
+  {
+   "employee_id": "E009",
+   "week_start": "2025-08-24",
+   "hours": 31.1,
+   "store": "S3"
+  },
+  {
+   "employee_id": "E010",
+   "week_start": "2025-08-24",
+   "hours": 39.3,
+   "store": "S3"
+  },
+  {
+   "employee_id": "E011",
+   "week_start": "2025-08-24",
+   "hours": 37.6,
+   "store": "S3"
+  },
+  {
+   "employee_id": "E012",
+   "week_start": "2025-08-24",
+   "hours": 38.0,
+   "store": "S4"
+  },
+  {
+   "employee_id": "E013",
+   "week_start": "2025-08-24",
+   "hours": 24.3,
+   "store": "S4"
+  },
+  {
+   "employee_id": "E014",
+   "week_start": "2025-08-24",
+   "hours": 24.5,
+   "store": "S4"
+  },
+  {
+   "employee_id": "E015",
+   "week_start": "2025-08-24",
+   "hours": 35.4,
+   "store": "S4"
+  },
+  {
+   "employee_id": "E001",
+   "week_start": "2025-08-31",
+   "hours": 38.3,
+   "store": "S1"
+  },
+  {
+   "employee_id": "E002",
+   "week_start": "2025-08-31",
+   "hours": 31.6,
+   "store": "S1"
+  },
+  {
+   "employee_id": "E003",
+   "week_start": "2025-08-31",
+   "hours": 33.4,
+   "store": "S1"
+  },
+  {
+   "employee_id": "E004",
+   "week_start": "2025-08-31",
+   "hours": 24.0,
+   "store": "S1"
+  },
+  {
+   "employee_id": "E005",
+   "week_start": "2025-08-31",
+   "hours": 30.3,
+   "store": "S2"
+  },
+  {
+   "employee_id": "E006",
+   "week_start": "2025-08-31",
+   "hours": 38.8,
+   "store": "S2"
+  },
+  {
+   "employee_id": "E007",
+   "week_start": "2025-08-31",
+   "hours": 37.2,
+   "store": "S2"
+  },
+  {
+   "employee_id": "E008",
+   "week_start": "2025-08-31",
+   "hours": 37.7,
+   "store": "S2"
+  },
+  {
+   "employee_id": "E009",
+   "week_start": "2025-08-31",
+   "hours": 39.6,
+   "store": "S3"
+  },
+  {
+   "employee_id": "E010",
+   "week_start": "2025-08-31",
+   "hours": 28.0,
+   "store": "S3"
+  },
+  {
+   "employee_id": "E011",
+   "week_start": "2025-08-31",
+   "hours": 25.7,
+   "store": "S3"
+  },
+  {
+   "employee_id": "E012",
+   "week_start": "2025-08-31",
+   "hours": 26.5,
+   "store": "S4"
+  },
+  {
+   "employee_id": "E013",
+   "week_start": "2025-08-31",
+   "hours": 32.4,
+   "store": "S4"
+  },
+  {
+   "employee_id": "E014",
+   "week_start": "2025-08-31",
+   "hours": 34.9,
+   "store": "S4"
+  },
+  {
+   "employee_id": "E015",
+   "week_start": "2025-08-31",
+   "hours": 39.1,
+   "store": "S4"
+  },
+  {
+   "employee_id": "E001",
+   "week_start": "2025-09-07",
+   "hours": 35.5,
+   "store": "S1"
+  },
+  {
+   "employee_id": "E002",
+   "week_start": "2025-09-07",
+   "hours": 34.4,
+   "store": "S1"
+  },
+  {
+   "employee_id": "E003",
+   "week_start": "2025-09-07",
+   "hours": 36.2,
+   "store": "S1"
+  },
+  {
+   "employee_id": "E004",
+   "week_start": "2025-09-07",
+   "hours": 31.3,
+   "store": "S1"
+  },
+  {
+   "employee_id": "E005",
+   "week_start": "2025-09-07",
+   "hours": 32.8,
+   "store": "S2"
+  },
+  {
+   "employee_id": "E006",
+   "week_start": "2025-09-07",
+   "hours": 24.6,
+   "store": "S2"
+  },
+  {
+   "employee_id": "E007",
+   "week_start": "2025-09-07",
+   "hours": 36.5,
+   "store": "S2"
+  },
+  {
+   "employee_id": "E008",
+   "week_start": "2025-09-07",
+   "hours": 27.7,
+   "store": "S2"
+  },
+  {
+   "employee_id": "E009",
+   "week_start": "2025-09-07",
+   "hours": 38.7,
+   "store": "S3"
+  },
+  {
+   "employee_id": "E010",
+   "week_start": "2025-09-07",
+   "hours": 34.3,
+   "store": "S3"
+  },
+  {
+   "employee_id": "E011",
+   "week_start": "2025-09-07",
+   "hours": 28.9,
+   "store": "S3"
+  },
+  {
+   "employee_id": "E012",
+   "week_start": "2025-09-07",
+   "hours": 26.0,
+   "store": "S4"
+  },
+  {
+   "employee_id": "E013",
+   "week_start": "2025-09-07",
+   "hours": 28.0,
+   "store": "S4"
+  },
+  {
+   "employee_id": "E014",
+   "week_start": "2025-09-07",
+   "hours": 34.2,
+   "store": "S4"
+  },
+  {
+   "employee_id": "E015",
+   "week_start": "2025-09-07",
+   "hours": 35.2,
+   "store": "S4"
+  },
+  {
+   "employee_id": "E001",
+   "week_start": "2025-09-14",
+   "hours": 25.8,
+   "store": "S1"
+  },
+  {
+   "employee_id": "E002",
+   "week_start": "2025-09-14",
+   "hours": 25.1,
+   "store": "S1"
+  },
+  {
+   "employee_id": "E003",
+   "week_start": "2025-09-14",
+   "hours": 32.4,
+   "store": "S1"
+  },
+  {
+   "employee_id": "E004",
+   "week_start": "2025-09-14",
+   "hours": 33.3,
+   "store": "S1"
+  },
+  {
+   "employee_id": "E005",
+   "week_start": "2025-09-14",
+   "hours": 30.2,
+   "store": "S2"
+  },
+  {
+   "employee_id": "E006",
+   "week_start": "2025-09-14",
+   "hours": 27.6,
+   "store": "S2"
+  },
+  {
+   "employee_id": "E007",
+   "week_start": "2025-09-14",
+   "hours": 33.6,
+   "store": "S2"
+  },
+  {
+   "employee_id": "E008",
+   "week_start": "2025-09-14",
+   "hours": 24.2,
+   "store": "S2"
+  },
+  {
+   "employee_id": "E009",
+   "week_start": "2025-09-14",
+   "hours": 28.8,
+   "store": "S3"
+  },
+  {
+   "employee_id": "E010",
+   "week_start": "2025-09-14",
+   "hours": 31.4,
+   "store": "S3"
+  },
+  {
+   "employee_id": "E011",
+   "week_start": "2025-09-14",
+   "hours": 39.3,
+   "store": "S3"
+  },
+  {
+   "employee_id": "E012",
+   "week_start": "2025-09-14",
+   "hours": 34.3,
+   "store": "S4"
+  },
+  {
+   "employee_id": "E013",
+   "week_start": "2025-09-14",
+   "hours": 38.1,
+   "store": "S4"
+  },
+  {
+   "employee_id": "E014",
+   "week_start": "2025-09-14",
+   "hours": 31.6,
+   "store": "S4"
+  },
+  {
+   "employee_id": "E015",
+   "week_start": "2025-09-14",
+   "hours": 27.8,
+   "store": "S4"
+  },
+  {
+   "employee_id": "E001",
+   "week_start": "2025-09-21",
+   "hours": 28.0,
+   "store": "S1"
+  },
+  {
+   "employee_id": "E002",
+   "week_start": "2025-09-21",
+   "hours": 39.4,
+   "store": "S1"
+  },
+  {
+   "employee_id": "E003",
+   "week_start": "2025-09-21",
+   "hours": 35.3,
+   "store": "S1"
+  },
+  {
+   "employee_id": "E004",
+   "week_start": "2025-09-21",
+   "hours": 28.9,
+   "store": "S1"
+  },
+  {
+   "employee_id": "E005",
+   "week_start": "2025-09-21",
+   "hours": 24.3,
+   "store": "S2"
+  },
+  {
+   "employee_id": "E006",
+   "week_start": "2025-09-21",
+   "hours": 32.0,
+   "store": "S2"
+  },
+  {
+   "employee_id": "E007",
+   "week_start": "2025-09-21",
+   "hours": 34.8,
+   "store": "S2"
+  },
+  {
+   "employee_id": "E008",
+   "week_start": "2025-09-21",
+   "hours": 30.7,
+   "store": "S2"
+  },
+  {
+   "employee_id": "E009",
+   "week_start": "2025-09-21",
+   "hours": 28.1,
+   "store": "S3"
+  },
+  {
+   "employee_id": "E010",
+   "week_start": "2025-09-21",
+   "hours": 34.7,
+   "store": "S3"
+  },
+  {
+   "employee_id": "E011",
+   "week_start": "2025-09-21",
+   "hours": 38.8,
+   "store": "S3"
+  },
+  {
+   "employee_id": "E012",
+   "week_start": "2025-09-21",
+   "hours": 27.6,
+   "store": "S4"
+  },
+  {
+   "employee_id": "E013",
+   "week_start": "2025-09-21",
+   "hours": 24.5,
+   "store": "S4"
+  },
+  {
+   "employee_id": "E014",
+   "week_start": "2025-09-21",
+   "hours": 29.4,
+   "store": "S4"
+  },
+  {
+   "employee_id": "E015",
+   "week_start": "2025-09-21",
+   "hours": 30.7,
+   "store": "S4"
+  },
+  {
+   "employee_id": "E001",
+   "week_start": "2025-09-28",
+   "hours": 34.9,
+   "store": "S1"
+  },
+  {
+   "employee_id": "E002",
+   "week_start": "2025-09-28",
+   "hours": 27.2,
+   "store": "S1"
+  },
+  {
+   "employee_id": "E003",
+   "week_start": "2025-09-28",
+   "hours": 36.8,
+   "store": "S1"
+  },
+  {
+   "employee_id": "E004",
+   "week_start": "2025-09-28",
+   "hours": 35.8,
+   "store": "S1"
+  },
+  {
+   "employee_id": "E005",
+   "week_start": "2025-09-28",
+   "hours": 32.1,
+   "store": "S2"
+  },
+  {
+   "employee_id": "E006",
+   "week_start": "2025-09-28",
+   "hours": 27.3,
+   "store": "S2"
+  },
+  {
+   "employee_id": "E007",
+   "week_start": "2025-09-28",
+   "hours": 39.5,
+   "store": "S2"
+  },
+  {
+   "employee_id": "E008",
+   "week_start": "2025-09-28",
+   "hours": 29.0,
+   "store": "S2"
+  },
+  {
+   "employee_id": "E009",
+   "week_start": "2025-09-28",
+   "hours": 37.1,
+   "store": "S3"
+  },
+  {
+   "employee_id": "E010",
+   "week_start": "2025-09-28",
+   "hours": 27.7,
+   "store": "S3"
+  },
+  {
+   "employee_id": "E011",
+   "week_start": "2025-09-28",
+   "hours": 27.5,
+   "store": "S3"
+  },
+  {
+   "employee_id": "E012",
+   "week_start": "2025-09-28",
+   "hours": 36.2,
+   "store": "S4"
+  },
+  {
+   "employee_id": "E013",
+   "week_start": "2025-09-28",
+   "hours": 28.7,
+   "store": "S4"
+  },
+  {
+   "employee_id": "E014",
+   "week_start": "2025-09-28",
+   "hours": 39.2,
+   "store": "S4"
+  },
+  {
+   "employee_id": "E015",
+   "week_start": "2025-09-28",
+   "hours": 31.9,
+   "store": "S4"
+  },
+  {
+   "employee_id": "E001",
+   "week_start": "2025-10-05",
+   "hours": 27.0,
+   "store": "S1"
+  },
+  {
+   "employee_id": "E002",
+   "week_start": "2025-10-05",
+   "hours": 27.6,
+   "store": "S1"
+  },
+  {
+   "employee_id": "E003",
+   "week_start": "2025-10-05",
+   "hours": 30.7,
+   "store": "S1"
+  },
+  {
+   "employee_id": "E004",
+   "week_start": "2025-10-05",
+   "hours": 34.6,
+   "store": "S1"
+  },
+  {
+   "employee_id": "E005",
+   "week_start": "2025-10-05",
+   "hours": 39.2,
+   "store": "S2"
+  },
+  {
+   "employee_id": "E006",
+   "week_start": "2025-10-05",
+   "hours": 26.3,
+   "store": "S2"
+  },
+  {
+   "employee_id": "E007",
+   "week_start": "2025-10-05",
+   "hours": 30.3,
+   "store": "S2"
+  },
+  {
+   "employee_id": "E008",
+   "week_start": "2025-10-05",
+   "hours": 27.4,
+   "store": "S2"
+  },
+  {
+   "employee_id": "E009",
+   "week_start": "2025-10-05",
+   "hours": 39.6,
+   "store": "S3"
+  },
+  {
+   "employee_id": "E010",
+   "week_start": "2025-10-05",
+   "hours": 26.3,
+   "store": "S3"
+  },
+  {
+   "employee_id": "E011",
+   "week_start": "2025-10-05",
+   "hours": 24.8,
+   "store": "S3"
+  },
+  {
+   "employee_id": "E012",
+   "week_start": "2025-10-05",
+   "hours": 25.0,
+   "store": "S4"
+  },
+  {
+   "employee_id": "E013",
+   "week_start": "2025-10-05",
+   "hours": 30.3,
+   "store": "S4"
+  },
+  {
+   "employee_id": "E014",
+   "week_start": "2025-10-05",
+   "hours": 38.4,
+   "store": "S4"
+  },
+  {
+   "employee_id": "E015",
+   "week_start": "2025-10-05",
+   "hours": 38.1,
+   "store": "S4"
+  },
+  {
+   "employee_id": "E001",
+   "week_start": "2025-10-12",
+   "hours": 35.7,
+   "store": "S1"
+  },
+  {
+   "employee_id": "E002",
+   "week_start": "2025-10-12",
+   "hours": 40.0,
+   "store": "S1"
+  },
+  {
+   "employee_id": "E003",
+   "week_start": "2025-10-12",
+   "hours": 38.9,
+   "store": "S1"
+  },
+  {
+   "employee_id": "E004",
+   "week_start": "2025-10-12",
+   "hours": 29.3,
+   "store": "S1"
+  },
+  {
+   "employee_id": "E005",
+   "week_start": "2025-10-12",
+   "hours": 27.0,
+   "store": "S2"
+  },
+  {
+   "employee_id": "E006",
+   "week_start": "2025-10-12",
+   "hours": 39.0,
+   "store": "S2"
+  },
+  {
+   "employee_id": "E007",
+   "week_start": "2025-10-12",
+   "hours": 35.9,
+   "store": "S2"
+  },
+  {
+   "employee_id": "E008",
+   "week_start": "2025-10-12",
+   "hours": 24.5,
+   "store": "S2"
+  },
+  {
+   "employee_id": "E009",
+   "week_start": "2025-10-12",
+   "hours": 34.6,
+   "store": "S3"
+  },
+  {
+   "employee_id": "E010",
+   "week_start": "2025-10-12",
+   "hours": 30.1,
+   "store": "S3"
+  },
+  {
+   "employee_id": "E011",
+   "week_start": "2025-10-12",
+   "hours": 30.0,
+   "store": "S3"
+  },
+  {
+   "employee_id": "E012",
+   "week_start": "2025-10-12",
+   "hours": 29.3,
+   "store": "S4"
+  },
+  {
+   "employee_id": "E013",
+   "week_start": "2025-10-12",
+   "hours": 26.7,
+   "store": "S4"
+  },
+  {
+   "employee_id": "E014",
+   "week_start": "2025-10-12",
+   "hours": 24.0,
+   "store": "S4"
+  },
+  {
+   "employee_id": "E015",
+   "week_start": "2025-10-12",
+   "hours": 28.5,
+   "store": "S4"
+  },
+  {
+   "employee_id": "E001",
+   "week_start": "2025-10-19",
+   "hours": 29.6,
+   "store": "S1"
+  },
+  {
+   "employee_id": "E002",
+   "week_start": "2025-10-19",
+   "hours": 39.3,
+   "store": "S1"
+  },
+  {
+   "employee_id": "E003",
+   "week_start": "2025-10-19",
+   "hours": 26.0,
+   "store": "S1"
+  },
+  {
+   "employee_id": "E004",
+   "week_start": "2025-10-19",
+   "hours": 39.4,
+   "store": "S1"
+  },
+  {
+   "employee_id": "E005",
+   "week_start": "2025-10-19",
+   "hours": 27.3,
+   "store": "S2"
+  },
+  {
+   "employee_id": "E006",
+   "week_start": "2025-10-19",
+   "hours": 29.7,
+   "store": "S2"
+  },
+  {
+   "employee_id": "E007",
+   "week_start": "2025-10-19",
+   "hours": 37.1,
+   "store": "S2"
+  },
+  {
+   "employee_id": "E008",
+   "week_start": "2025-10-19",
+   "hours": 37.2,
+   "store": "S2"
+  },
+  {
+   "employee_id": "E009",
+   "week_start": "2025-10-19",
+   "hours": 30.9,
+   "store": "S3"
+  },
+  {
+   "employee_id": "E010",
+   "week_start": "2025-10-19",
+   "hours": 24.8,
+   "store": "S3"
+  },
+  {
+   "employee_id": "E011",
+   "week_start": "2025-10-19",
+   "hours": 31.6,
+   "store": "S3"
+  },
+  {
+   "employee_id": "E012",
+   "week_start": "2025-10-19",
+   "hours": 30.0,
+   "store": "S4"
+  },
+  {
+   "employee_id": "E013",
+   "week_start": "2025-10-19",
+   "hours": 38.7,
+   "store": "S4"
+  },
+  {
+   "employee_id": "E014",
+   "week_start": "2025-10-19",
+   "hours": 27.1,
+   "store": "S4"
+  },
+  {
+   "employee_id": "E015",
+   "week_start": "2025-10-19",
+   "hours": 29.8,
+   "store": "S4"
+  },
+  {
+   "employee_id": "E001",
+   "week_start": "2025-10-26",
+   "hours": 38.4,
+   "store": "S1"
+  },
+  {
+   "employee_id": "E002",
+   "week_start": "2025-10-26",
+   "hours": 24.5,
+   "store": "S1"
+  },
+  {
+   "employee_id": "E003",
+   "week_start": "2025-10-26",
+   "hours": 30.6,
+   "store": "S1"
+  },
+  {
+   "employee_id": "E004",
+   "week_start": "2025-10-26",
+   "hours": 37.0,
+   "store": "S1"
+  },
+  {
+   "employee_id": "E005",
+   "week_start": "2025-10-26",
+   "hours": 36.3,
+   "store": "S2"
+  },
+  {
+   "employee_id": "E006",
+   "week_start": "2025-10-26",
+   "hours": 24.7,
+   "store": "S2"
+  },
+  {
+   "employee_id": "E007",
+   "week_start": "2025-10-26",
+   "hours": 24.6,
+   "store": "S2"
+  },
+  {
+   "employee_id": "E008",
+   "week_start": "2025-10-26",
+   "hours": 25.0,
+   "store": "S2"
+  },
+  {
+   "employee_id": "E009",
+   "week_start": "2025-10-26",
+   "hours": 38.7,
+   "store": "S3"
+  },
+  {
+   "employee_id": "E010",
+   "week_start": "2025-10-26",
+   "hours": 28.1,
+   "store": "S3"
+  },
+  {
+   "employee_id": "E011",
+   "week_start": "2025-10-26",
+   "hours": 36.0,
+   "store": "S3"
+  },
+  {
+   "employee_id": "E012",
+   "week_start": "2025-10-26",
+   "hours": 38.4,
+   "store": "S4"
+  },
+  {
+   "employee_id": "E013",
+   "week_start": "2025-10-26",
+   "hours": 29.4,
+   "store": "S4"
+  },
+  {
+   "employee_id": "E014",
+   "week_start": "2025-10-26",
+   "hours": 28.4,
+   "store": "S4"
+  },
+  {
+   "employee_id": "E015",
+   "week_start": "2025-10-26",
+   "hours": 39.3,
+   "store": "S4"
+  },
+  {
+   "employee_id": "E001",
+   "week_start": "2025-11-02",
+   "hours": 33.9,
+   "store": "S1"
+  },
+  {
+   "employee_id": "E002",
+   "week_start": "2025-11-02",
+   "hours": 28.2,
+   "store": "S1"
+  },
+  {
+   "employee_id": "E003",
+   "week_start": "2025-11-02",
+   "hours": 35.5,
+   "store": "S1"
+  },
+  {
+   "employee_id": "E004",
+   "week_start": "2025-11-02",
+   "hours": 29.1,
+   "store": "S1"
+  },
+  {
+   "employee_id": "E005",
+   "week_start": "2025-11-02",
+   "hours": 28.4,
+   "store": "S2"
+  },
+  {
+   "employee_id": "E006",
+   "week_start": "2025-11-02",
+   "hours": 24.1,
+   "store": "S2"
+  },
+  {
+   "employee_id": "E007",
+   "week_start": "2025-11-02",
+   "hours": 36.1,
+   "store": "S2"
+  },
+  {
+   "employee_id": "E008",
+   "week_start": "2025-11-02",
+   "hours": 38.7,
+   "store": "S2"
+  },
+  {
+   "employee_id": "E009",
+   "week_start": "2025-11-02",
+   "hours": 34.1,
+   "store": "S3"
+  },
+  {
+   "employee_id": "E010",
+   "week_start": "2025-11-02",
+   "hours": 39.1,
+   "store": "S3"
+  },
+  {
+   "employee_id": "E011",
+   "week_start": "2025-11-02",
+   "hours": 24.4,
+   "store": "S3"
+  },
+  {
+   "employee_id": "E012",
+   "week_start": "2025-11-02",
+   "hours": 27.7,
+   "store": "S4"
+  },
+  {
+   "employee_id": "E013",
+   "week_start": "2025-11-02",
+   "hours": 31.6,
+   "store": "S4"
+  },
+  {
+   "employee_id": "E014",
+   "week_start": "2025-11-02",
+   "hours": 39.3,
+   "store": "S4"
+  },
+  {
+   "employee_id": "E015",
+   "week_start": "2025-11-02",
+   "hours": 39.3,
+   "store": "S4"
+  },
+  {
+   "employee_id": "E001",
+   "week_start": "2025-11-09",
+   "hours": 30.2,
+   "store": "S1"
+  },
+  {
+   "employee_id": "E002",
+   "week_start": "2025-11-09",
+   "hours": 28.0,
+   "store": "S1"
+  },
+  {
+   "employee_id": "E003",
+   "week_start": "2025-11-09",
+   "hours": 30.9,
+   "store": "S1"
+  },
+  {
+   "employee_id": "E004",
+   "week_start": "2025-11-09",
+   "hours": 31.9,
+   "store": "S1"
+  },
+  {
+   "employee_id": "E005",
+   "week_start": "2025-11-09",
+   "hours": 38.8,
+   "store": "S2"
+  },
+  {
+   "employee_id": "E006",
+   "week_start": "2025-11-09",
+   "hours": 26.9,
+   "store": "S2"
+  },
+  {
+   "employee_id": "E007",
+   "week_start": "2025-11-09",
+   "hours": 36.8,
+   "store": "S2"
+  },
+  {
+   "employee_id": "E008",
+   "week_start": "2025-11-09",
+   "hours": 35.8,
+   "store": "S2"
+  },
+  {
+   "employee_id": "E009",
+   "week_start": "2025-11-09",
+   "hours": 37.2,
+   "store": "S3"
+  },
+  {
+   "employee_id": "E010",
+   "week_start": "2025-11-09",
+   "hours": 36.4,
+   "store": "S3"
+  },
+  {
+   "employee_id": "E011",
+   "week_start": "2025-11-09",
+   "hours": 33.7,
+   "store": "S3"
+  },
+  {
+   "employee_id": "E012",
+   "week_start": "2025-11-09",
+   "hours": 29.2,
+   "store": "S4"
+  },
+  {
+   "employee_id": "E013",
+   "week_start": "2025-11-09",
+   "hours": 29.1,
+   "store": "S4"
+  },
+  {
+   "employee_id": "E014",
+   "week_start": "2025-11-09",
+   "hours": 29.8,
+   "store": "S4"
+  },
+  {
+   "employee_id": "E015",
+   "week_start": "2025-11-09",
+   "hours": 36.5,
+   "store": "S4"
+  },
+  {
+   "employee_id": "E001",
+   "week_start": "2025-11-16",
+   "hours": 25.3,
+   "store": "S1"
+  },
+  {
+   "employee_id": "E002",
+   "week_start": "2025-11-16",
+   "hours": 27.2,
+   "store": "S1"
+  },
+  {
+   "employee_id": "E003",
+   "week_start": "2025-11-16",
+   "hours": 36.0,
+   "store": "S1"
+  },
+  {
+   "employee_id": "E004",
+   "week_start": "2025-11-16",
+   "hours": 28.0,
+   "store": "S1"
+  },
+  {
+   "employee_id": "E005",
+   "week_start": "2025-11-16",
+   "hours": 25.0,
+   "store": "S2"
+  },
+  {
+   "employee_id": "E006",
+   "week_start": "2025-11-16",
+   "hours": 24.5,
+   "store": "S2"
+  },
+  {
+   "employee_id": "E007",
+   "week_start": "2025-11-16",
+   "hours": 32.8,
+   "store": "S2"
+  },
+  {
+   "employee_id": "E008",
+   "week_start": "2025-11-16",
+   "hours": 29.2,
+   "store": "S2"
+  },
+  {
+   "employee_id": "E009",
+   "week_start": "2025-11-16",
+   "hours": 39.7,
+   "store": "S3"
+  },
+  {
+   "employee_id": "E010",
+   "week_start": "2025-11-16",
+   "hours": 38.1,
+   "store": "S3"
+  },
+  {
+   "employee_id": "E011",
+   "week_start": "2025-11-16",
+   "hours": 39.8,
+   "store": "S3"
+  },
+  {
+   "employee_id": "E012",
+   "week_start": "2025-11-16",
+   "hours": 28.2,
+   "store": "S4"
+  },
+  {
+   "employee_id": "E013",
+   "week_start": "2025-11-16",
+   "hours": 25.3,
+   "store": "S4"
+  },
+  {
+   "employee_id": "E014",
+   "week_start": "2025-11-16",
+   "hours": 25.5,
+   "store": "S4"
+  },
+  {
+   "employee_id": "E015",
+   "week_start": "2025-11-16",
+   "hours": 32.0,
+   "store": "S4"
+  },
+  {
+   "employee_id": "E001",
+   "week_start": "2025-11-23",
+   "hours": 35.4,
+   "store": "S1"
+  },
+  {
+   "employee_id": "E002",
+   "week_start": "2025-11-23",
+   "hours": 31.2,
+   "store": "S1"
+  },
+  {
+   "employee_id": "E003",
+   "week_start": "2025-11-23",
+   "hours": 27.7,
+   "store": "S1"
+  },
+  {
+   "employee_id": "E004",
+   "week_start": "2025-11-23",
+   "hours": 30.7,
+   "store": "S1"
+  },
+  {
+   "employee_id": "E005",
+   "week_start": "2025-11-23",
+   "hours": 33.9,
+   "store": "S2"
+  },
+  {
+   "employee_id": "E006",
+   "week_start": "2025-11-23",
+   "hours": 34.8,
+   "store": "S2"
+  },
+  {
+   "employee_id": "E007",
+   "week_start": "2025-11-23",
+   "hours": 36.0,
+   "store": "S2"
+  },
+  {
+   "employee_id": "E008",
+   "week_start": "2025-11-23",
+   "hours": 37.6,
+   "store": "S2"
+  },
+  {
+   "employee_id": "E009",
+   "week_start": "2025-11-23",
+   "hours": 34.6,
+   "store": "S3"
+  },
+  {
+   "employee_id": "E010",
+   "week_start": "2025-11-23",
+   "hours": 25.9,
+   "store": "S3"
+  },
+  {
+   "employee_id": "E011",
+   "week_start": "2025-11-23",
+   "hours": 37.5,
+   "store": "S3"
+  },
+  {
+   "employee_id": "E012",
+   "week_start": "2025-11-23",
+   "hours": 28.7,
+   "store": "S4"
+  },
+  {
+   "employee_id": "E013",
+   "week_start": "2025-11-23",
+   "hours": 33.1,
+   "store": "S4"
+  },
+  {
+   "employee_id": "E014",
+   "week_start": "2025-11-23",
+   "hours": 30.0,
+   "store": "S4"
+  },
+  {
+   "employee_id": "E015",
+   "week_start": "2025-11-23",
+   "hours": 35.8,
+   "store": "S4"
+  },
+  {
+   "employee_id": "E001",
+   "week_start": "2025-11-30",
+   "hours": 27.2,
+   "store": "S1"
+  },
+  {
+   "employee_id": "E002",
+   "week_start": "2025-11-30",
+   "hours": 28.0,
+   "store": "S1"
+  },
+  {
+   "employee_id": "E003",
+   "week_start": "2025-11-30",
+   "hours": 27.9,
+   "store": "S1"
+  },
+  {
+   "employee_id": "E004",
+   "week_start": "2025-11-30",
+   "hours": 26.5,
+   "store": "S1"
+  },
+  {
+   "employee_id": "E005",
+   "week_start": "2025-11-30",
+   "hours": 38.1,
+   "store": "S2"
+  },
+  {
+   "employee_id": "E006",
+   "week_start": "2025-11-30",
+   "hours": 33.3,
+   "store": "S2"
+  },
+  {
+   "employee_id": "E007",
+   "week_start": "2025-11-30",
+   "hours": 29.2,
+   "store": "S2"
+  },
+  {
+   "employee_id": "E008",
+   "week_start": "2025-11-30",
+   "hours": 30.3,
+   "store": "S2"
+  },
+  {
+   "employee_id": "E009",
+   "week_start": "2025-11-30",
+   "hours": 39.9,
+   "store": "S3"
+  },
+  {
+   "employee_id": "E010",
+   "week_start": "2025-11-30",
+   "hours": 32.1,
+   "store": "S3"
+  },
+  {
+   "employee_id": "E011",
+   "week_start": "2025-11-30",
+   "hours": 27.7,
+   "store": "S3"
+  },
+  {
+   "employee_id": "E012",
+   "week_start": "2025-11-30",
+   "hours": 36.9,
+   "store": "S4"
+  },
+  {
+   "employee_id": "E013",
+   "week_start": "2025-11-30",
+   "hours": 34.5,
+   "store": "S4"
+  },
+  {
+   "employee_id": "E014",
+   "week_start": "2025-11-30",
+   "hours": 39.9,
+   "store": "S4"
+  },
+  {
+   "employee_id": "E015",
+   "week_start": "2025-11-30",
+   "hours": 25.6,
+   "store": "S4"
+  },
+  {
+   "employee_id": "E001",
+   "week_start": "2025-12-07",
+   "hours": 31.6,
+   "store": "S1"
+  },
+  {
+   "employee_id": "E002",
+   "week_start": "2025-12-07",
+   "hours": 37.1,
+   "store": "S1"
+  },
+  {
+   "employee_id": "E003",
+   "week_start": "2025-12-07",
+   "hours": 37.4,
+   "store": "S1"
+  },
+  {
+   "employee_id": "E004",
+   "week_start": "2025-12-07",
+   "hours": 38.6,
+   "store": "S1"
+  },
+  {
+   "employee_id": "E005",
+   "week_start": "2025-12-07",
+   "hours": 24.6,
+   "store": "S2"
+  },
+  {
+   "employee_id": "E006",
+   "week_start": "2025-12-07",
+   "hours": 28.7,
+   "store": "S2"
+  },
+  {
+   "employee_id": "E007",
+   "week_start": "2025-12-07",
+   "hours": 25.9,
+   "store": "S2"
+  },
+  {
+   "employee_id": "E008",
+   "week_start": "2025-12-07",
+   "hours": 27.0,
+   "store": "S2"
+  },
+  {
+   "employee_id": "E009",
+   "week_start": "2025-12-07",
+   "hours": 39.6,
+   "store": "S3"
+  },
+  {
+   "employee_id": "E010",
+   "week_start": "2025-12-07",
+   "hours": 33.3,
+   "store": "S3"
+  },
+  {
+   "employee_id": "E011",
+   "week_start": "2025-12-07",
+   "hours": 38.9,
+   "store": "S3"
+  },
+  {
+   "employee_id": "E012",
+   "week_start": "2025-12-07",
+   "hours": 30.0,
+   "store": "S4"
+  },
+  {
+   "employee_id": "E013",
+   "week_start": "2025-12-07",
+   "hours": 37.9,
+   "store": "S4"
+  },
+  {
+   "employee_id": "E014",
+   "week_start": "2025-12-07",
+   "hours": 31.2,
+   "store": "S4"
+  },
+  {
+   "employee_id": "E015",
+   "week_start": "2025-12-07",
+   "hours": 28.2,
+   "store": "S4"
+  },
+  {
+   "employee_id": "E001",
+   "week_start": "2025-12-14",
+   "hours": 36.4,
+   "store": "S1"
+  },
+  {
+   "employee_id": "E002",
+   "week_start": "2025-12-14",
+   "hours": 39.1,
+   "store": "S1"
+  },
+  {
+   "employee_id": "E003",
+   "week_start": "2025-12-14",
+   "hours": 25.7,
+   "store": "S1"
+  },
+  {
+   "employee_id": "E004",
+   "week_start": "2025-12-14",
+   "hours": 33.5,
+   "store": "S1"
+  },
+  {
+   "employee_id": "E005",
+   "week_start": "2025-12-14",
+   "hours": 33.9,
+   "store": "S2"
+  },
+  {
+   "employee_id": "E006",
+   "week_start": "2025-12-14",
+   "hours": 27.5,
+   "store": "S2"
+  },
+  {
+   "employee_id": "E007",
+   "week_start": "2025-12-14",
+   "hours": 29.9,
+   "store": "S2"
+  },
+  {
+   "employee_id": "E008",
+   "week_start": "2025-12-14",
+   "hours": 26.3,
+   "store": "S2"
+  },
+  {
+   "employee_id": "E009",
+   "week_start": "2025-12-14",
+   "hours": 27.3,
+   "store": "S3"
+  },
+  {
+   "employee_id": "E010",
+   "week_start": "2025-12-14",
+   "hours": 28.1,
+   "store": "S3"
+  },
+  {
+   "employee_id": "E011",
+   "week_start": "2025-12-14",
+   "hours": 33.6,
+   "store": "S3"
+  },
+  {
+   "employee_id": "E012",
+   "week_start": "2025-12-14",
+   "hours": 34.4,
+   "store": "S4"
+  },
+  {
+   "employee_id": "E013",
+   "week_start": "2025-12-14",
+   "hours": 27.3,
+   "store": "S4"
+  },
+  {
+   "employee_id": "E014",
+   "week_start": "2025-12-14",
+   "hours": 24.2,
+   "store": "S4"
+  },
+  {
+   "employee_id": "E015",
+   "week_start": "2025-12-14",
+   "hours": 29.2,
+   "store": "S4"
+  },
+  {
+   "employee_id": "E001",
+   "week_start": "2025-12-21",
+   "hours": 34.9,
+   "store": "S1"
+  },
+  {
+   "employee_id": "E002",
+   "week_start": "2025-12-21",
+   "hours": 27.0,
+   "store": "S1"
+  },
+  {
+   "employee_id": "E003",
+   "week_start": "2025-12-21",
+   "hours": 29.0,
+   "store": "S1"
+  },
+  {
+   "employee_id": "E004",
+   "week_start": "2025-12-21",
+   "hours": 27.3,
+   "store": "S1"
+  },
+  {
+   "employee_id": "E005",
+   "week_start": "2025-12-21",
+   "hours": 36.7,
+   "store": "S2"
+  },
+  {
+   "employee_id": "E006",
+   "week_start": "2025-12-21",
+   "hours": 32.8,
+   "store": "S2"
+  },
+  {
+   "employee_id": "E007",
+   "week_start": "2025-12-21",
+   "hours": 25.0,
+   "store": "S2"
+  },
+  {
+   "employee_id": "E008",
+   "week_start": "2025-12-21",
+   "hours": 25.6,
+   "store": "S2"
+  },
+  {
+   "employee_id": "E009",
+   "week_start": "2025-12-21",
+   "hours": 30.3,
+   "store": "S3"
+  },
+  {
+   "employee_id": "E010",
+   "week_start": "2025-12-21",
+   "hours": 32.8,
+   "store": "S3"
+  },
+  {
+   "employee_id": "E011",
+   "week_start": "2025-12-21",
+   "hours": 34.2,
+   "store": "S3"
+  },
+  {
+   "employee_id": "E012",
+   "week_start": "2025-12-21",
+   "hours": 25.5,
+   "store": "S4"
+  },
+  {
+   "employee_id": "E013",
+   "week_start": "2025-12-21",
+   "hours": 26.6,
+   "store": "S4"
+  },
+  {
+   "employee_id": "E014",
+   "week_start": "2025-12-21",
+   "hours": 35.1,
+   "store": "S4"
+  },
+  {
+   "employee_id": "E015",
+   "week_start": "2025-12-21",
+   "hours": 30.6,
+   "store": "S4"
+  },
+  {
+   "employee_id": "E001",
+   "week_start": "2025-12-28",
+   "hours": 28.5,
+   "store": "S1"
+  },
+  {
+   "employee_id": "E002",
+   "week_start": "2025-12-28",
+   "hours": 28.9,
+   "store": "S1"
+  },
+  {
+   "employee_id": "E003",
+   "week_start": "2025-12-28",
+   "hours": 39.3,
+   "store": "S1"
+  },
+  {
+   "employee_id": "E004",
+   "week_start": "2025-12-28",
+   "hours": 29.0,
+   "store": "S1"
+  },
+  {
+   "employee_id": "E005",
+   "week_start": "2025-12-28",
+   "hours": 33.1,
+   "store": "S2"
+  },
+  {
+   "employee_id": "E006",
+   "week_start": "2025-12-28",
+   "hours": 29.7,
+   "store": "S2"
+  },
+  {
+   "employee_id": "E007",
+   "week_start": "2025-12-28",
+   "hours": 30.7,
+   "store": "S2"
+  },
+  {
+   "employee_id": "E008",
+   "week_start": "2025-12-28",
+   "hours": 37.8,
+   "store": "S2"
+  },
+  {
+   "employee_id": "E009",
+   "week_start": "2025-12-28",
+   "hours": 39.9,
+   "store": "S3"
+  },
+  {
+   "employee_id": "E010",
+   "week_start": "2025-12-28",
+   "hours": 29.8,
+   "store": "S3"
+  },
+  {
+   "employee_id": "E011",
+   "week_start": "2025-12-28",
+   "hours": 27.2,
+   "store": "S3"
+  },
+  {
+   "employee_id": "E012",
+   "week_start": "2025-12-28",
+   "hours": 35.6,
+   "store": "S4"
+  },
+  {
+   "employee_id": "E013",
+   "week_start": "2025-12-28",
+   "hours": 27.3,
+   "store": "S4"
+  },
+  {
+   "employee_id": "E014",
+   "week_start": "2025-12-28",
+   "hours": 24.1,
+   "store": "S4"
+  },
+  {
+   "employee_id": "E015",
+   "week_start": "2025-12-28",
+   "hours": 38.4,
+   "store": "S4"
+  },
+  {
+   "employee_id": "E001",
+   "week_start": "2026-01-04",
+   "hours": 30.8,
+   "store": "S1"
+  },
+  {
+   "employee_id": "E002",
+   "week_start": "2026-01-04",
+   "hours": 37.1,
+   "store": "S1"
+  },
+  {
+   "employee_id": "E003",
+   "week_start": "2026-01-04",
+   "hours": 30.5,
+   "store": "S1"
+  },
+  {
+   "employee_id": "E004",
+   "week_start": "2026-01-04",
+   "hours": 38.1,
+   "store": "S1"
+  },
+  {
+   "employee_id": "E005",
+   "week_start": "2026-01-04",
+   "hours": 31.4,
+   "store": "S2"
+  },
+  {
+   "employee_id": "E006",
+   "week_start": "2026-01-04",
+   "hours": 26.6,
+   "store": "S2"
+  },
+  {
+   "employee_id": "E007",
+   "week_start": "2026-01-04",
+   "hours": 24.2,
+   "store": "S2"
+  },
+  {
+   "employee_id": "E008",
+   "week_start": "2026-01-04",
+   "hours": 32.8,
+   "store": "S2"
+  },
+  {
+   "employee_id": "E009",
+   "week_start": "2026-01-04",
+   "hours": 34.3,
+   "store": "S3"
+  },
+  {
+   "employee_id": "E010",
+   "week_start": "2026-01-04",
+   "hours": 38.6,
+   "store": "S3"
+  },
+  {
+   "employee_id": "E011",
+   "week_start": "2026-01-04",
+   "hours": 25.4,
+   "store": "S3"
+  },
+  {
+   "employee_id": "E012",
+   "week_start": "2026-01-04",
+   "hours": 34.0,
+   "store": "S4"
+  },
+  {
+   "employee_id": "E013",
+   "week_start": "2026-01-04",
+   "hours": 29.9,
+   "store": "S4"
+  },
+  {
+   "employee_id": "E014",
+   "week_start": "2026-01-04",
+   "hours": 32.1,
+   "store": "S4"
+  },
+  {
+   "employee_id": "E015",
+   "week_start": "2026-01-04",
+   "hours": 26.3,
+   "store": "S4"
+  },
+  {
+   "employee_id": "E001",
+   "week_start": "2026-01-11",
+   "hours": 28.5,
+   "store": "S1"
+  },
+  {
+   "employee_id": "E002",
+   "week_start": "2026-01-11",
+   "hours": 32.3,
+   "store": "S1"
+  },
+  {
+   "employee_id": "E003",
+   "week_start": "2026-01-11",
+   "hours": 38.8,
+   "store": "S1"
+  },
+  {
+   "employee_id": "E004",
+   "week_start": "2026-01-11",
+   "hours": 25.7,
+   "store": "S1"
+  },
+  {
+   "employee_id": "E005",
+   "week_start": "2026-01-11",
+   "hours": 31.8,
+   "store": "S2"
+  },
+  {
+   "employee_id": "E006",
+   "week_start": "2026-01-11",
+   "hours": 36.9,
+   "store": "S2"
+  },
+  {
+   "employee_id": "E007",
+   "week_start": "2026-01-11",
+   "hours": 39.5,
+   "store": "S2"
+  },
+  {
+   "employee_id": "E008",
+   "week_start": "2026-01-11",
+   "hours": 27.2,
+   "store": "S2"
+  },
+  {
+   "employee_id": "E009",
+   "week_start": "2026-01-11",
+   "hours": 26.0,
+   "store": "S3"
+  },
+  {
+   "employee_id": "E010",
+   "week_start": "2026-01-11",
+   "hours": 39.1,
+   "store": "S3"
+  },
+  {
+   "employee_id": "E011",
+   "week_start": "2026-01-11",
+   "hours": 39.6,
+   "store": "S3"
+  },
+  {
+   "employee_id": "E012",
+   "week_start": "2026-01-11",
+   "hours": 31.7,
+   "store": "S4"
+  },
+  {
+   "employee_id": "E013",
+   "week_start": "2026-01-11",
+   "hours": 24.9,
+   "store": "S4"
+  },
+  {
+   "employee_id": "E014",
+   "week_start": "2026-01-11",
+   "hours": 38.8,
+   "store": "S4"
+  },
+  {
+   "employee_id": "E015",
+   "week_start": "2026-01-11",
+   "hours": 30.2,
+   "store": "S4"
+  },
+  {
+   "employee_id": "E001",
+   "week_start": "2026-01-18",
+   "hours": 38.5,
+   "store": "S1"
+  },
+  {
+   "employee_id": "E002",
+   "week_start": "2026-01-18",
+   "hours": 33.9,
+   "store": "S1"
+  },
+  {
+   "employee_id": "E003",
+   "week_start": "2026-01-18",
+   "hours": 37.2,
+   "store": "S1"
+  },
+  {
+   "employee_id": "E004",
+   "week_start": "2026-01-18",
+   "hours": 26.6,
+   "store": "S1"
+  },
+  {
+   "employee_id": "E005",
+   "week_start": "2026-01-18",
+   "hours": 36.6,
+   "store": "S2"
+  },
+  {
+   "employee_id": "E006",
+   "week_start": "2026-01-18",
+   "hours": 27.6,
+   "store": "S2"
+  },
+  {
+   "employee_id": "E007",
+   "week_start": "2026-01-18",
+   "hours": 30.5,
+   "store": "S2"
+  },
+  {
+   "employee_id": "E008",
+   "week_start": "2026-01-18",
+   "hours": 37.5,
+   "store": "S2"
+  },
+  {
+   "employee_id": "E009",
+   "week_start": "2026-01-18",
+   "hours": 37.3,
+   "store": "S3"
+  },
+  {
+   "employee_id": "E010",
+   "week_start": "2026-01-18",
+   "hours": 26.9,
+   "store": "S3"
+  },
+  {
+   "employee_id": "E011",
+   "week_start": "2026-01-18",
+   "hours": 27.5,
+   "store": "S3"
+  },
+  {
+   "employee_id": "E012",
+   "week_start": "2026-01-18",
+   "hours": 30.4,
+   "store": "S4"
+  },
+  {
+   "employee_id": "E013",
+   "week_start": "2026-01-18",
+   "hours": 32.3,
+   "store": "S4"
+  },
+  {
+   "employee_id": "E014",
+   "week_start": "2026-01-18",
+   "hours": 30.1,
+   "store": "S4"
+  },
+  {
+   "employee_id": "E015",
+   "week_start": "2026-01-18",
+   "hours": 26.0,
+   "store": "S4"
+  },
+  {
+   "employee_id": "E001",
+   "week_start": "2026-01-25",
+   "hours": 28.0,
+   "store": "S1"
+  },
+  {
+   "employee_id": "E002",
+   "week_start": "2026-01-25",
+   "hours": 35.6,
+   "store": "S1"
+  },
+  {
+   "employee_id": "E003",
+   "week_start": "2026-01-25",
+   "hours": 38.4,
+   "store": "S1"
+  },
+  {
+   "employee_id": "E004",
+   "week_start": "2026-01-25",
+   "hours": 24.7,
+   "store": "S1"
+  },
+  {
+   "employee_id": "E005",
+   "week_start": "2026-01-25",
+   "hours": 33.0,
+   "store": "S2"
+  },
+  {
+   "employee_id": "E006",
+   "week_start": "2026-01-25",
+   "hours": 36.1,
+   "store": "S2"
+  },
+  {
+   "employee_id": "E007",
+   "week_start": "2026-01-25",
+   "hours": 24.6,
+   "store": "S2"
+  },
+  {
+   "employee_id": "E008",
+   "week_start": "2026-01-25",
+   "hours": 37.4,
+   "store": "S2"
+  },
+  {
+   "employee_id": "E009",
+   "week_start": "2026-01-25",
+   "hours": 25.9,
+   "store": "S3"
+  },
+  {
+   "employee_id": "E010",
+   "week_start": "2026-01-25",
+   "hours": 33.6,
+   "store": "S3"
+  },
+  {
+   "employee_id": "E011",
+   "week_start": "2026-01-25",
+   "hours": 32.8,
+   "store": "S3"
+  },
+  {
+   "employee_id": "E012",
+   "week_start": "2026-01-25",
+   "hours": 34.0,
+   "store": "S4"
+  },
+  {
+   "employee_id": "E013",
+   "week_start": "2026-01-25",
+   "hours": 28.9,
+   "store": "S4"
+  },
+  {
+   "employee_id": "E014",
+   "week_start": "2026-01-25",
+   "hours": 30.7,
+   "store": "S4"
+  },
+  {
+   "employee_id": "E015",
+   "week_start": "2026-01-25",
+   "hours": 33.3,
+   "store": "S4"
+  },
+  {
+   "employee_id": "E001",
+   "week_start": "2026-02-01",
+   "hours": 30.8,
+   "store": "S1"
+  },
+  {
+   "employee_id": "E002",
+   "week_start": "2026-02-01",
+   "hours": 34.5,
+   "store": "S1"
+  },
+  {
+   "employee_id": "E003",
+   "week_start": "2026-02-01",
+   "hours": 31.1,
+   "store": "S1"
+  },
+  {
+   "employee_id": "E004",
+   "week_start": "2026-02-01",
+   "hours": 31.0,
+   "store": "S1"
+  },
+  {
+   "employee_id": "E005",
+   "week_start": "2026-02-01",
+   "hours": 24.4,
+   "store": "S2"
+  },
+  {
+   "employee_id": "E006",
+   "week_start": "2026-02-01",
+   "hours": 33.9,
+   "store": "S2"
+  },
+  {
+   "employee_id": "E007",
+   "week_start": "2026-02-01",
+   "hours": 31.8,
+   "store": "S2"
+  },
+  {
+   "employee_id": "E008",
+   "week_start": "2026-02-01",
+   "hours": 27.8,
+   "store": "S2"
+  },
+  {
+   "employee_id": "E009",
+   "week_start": "2026-02-01",
+   "hours": 36.2,
+   "store": "S3"
+  },
+  {
+   "employee_id": "E010",
+   "week_start": "2026-02-01",
+   "hours": 36.5,
+   "store": "S3"
+  },
+  {
+   "employee_id": "E011",
+   "week_start": "2026-02-01",
+   "hours": 31.3,
+   "store": "S3"
+  },
+  {
+   "employee_id": "E012",
+   "week_start": "2026-02-01",
+   "hours": 26.9,
+   "store": "S4"
+  },
+  {
+   "employee_id": "E013",
+   "week_start": "2026-02-01",
+   "hours": 31.6,
+   "store": "S4"
+  },
+  {
+   "employee_id": "E014",
+   "week_start": "2026-02-01",
+   "hours": 25.7,
+   "store": "S4"
+  },
+  {
+   "employee_id": "E015",
+   "week_start": "2026-02-01",
+   "hours": 26.1,
+   "store": "S4"
+  },
+  {
+   "employee_id": "E001",
+   "week_start": "2026-02-08",
+   "hours": 30.9,
+   "store": "S1"
+  },
+  {
+   "employee_id": "E002",
+   "week_start": "2026-02-08",
+   "hours": 25.5,
+   "store": "S1"
+  },
+  {
+   "employee_id": "E003",
+   "week_start": "2026-02-08",
+   "hours": 31.1,
+   "store": "S1"
+  },
+  {
+   "employee_id": "E004",
+   "week_start": "2026-02-08",
+   "hours": 32.2,
+   "store": "S1"
+  },
+  {
+   "employee_id": "E005",
+   "week_start": "2026-02-08",
+   "hours": 24.7,
+   "store": "S2"
+  },
+  {
+   "employee_id": "E006",
+   "week_start": "2026-02-08",
+   "hours": 34.2,
+   "store": "S2"
+  },
+  {
+   "employee_id": "E007",
+   "week_start": "2026-02-08",
+   "hours": 25.3,
+   "store": "S2"
+  },
+  {
+   "employee_id": "E008",
+   "week_start": "2026-02-08",
+   "hours": 35.7,
+   "store": "S2"
+  },
+  {
+   "employee_id": "E009",
+   "week_start": "2026-02-08",
+   "hours": 36.4,
+   "store": "S3"
+  },
+  {
+   "employee_id": "E010",
+   "week_start": "2026-02-08",
+   "hours": 32.2,
+   "store": "S3"
+  },
+  {
+   "employee_id": "E011",
+   "week_start": "2026-02-08",
+   "hours": 24.9,
+   "store": "S3"
+  },
+  {
+   "employee_id": "E012",
+   "week_start": "2026-02-08",
+   "hours": 32.1,
+   "store": "S4"
+  },
+  {
+   "employee_id": "E013",
+   "week_start": "2026-02-08",
+   "hours": 30.0,
+   "store": "S4"
+  },
+  {
+   "employee_id": "E014",
+   "week_start": "2026-02-08",
+   "hours": 39.2,
+   "store": "S4"
+  },
+  {
+   "employee_id": "E015",
+   "week_start": "2026-02-08",
+   "hours": 26.2,
+   "store": "S4"
+  },
+  {
+   "employee_id": "E001",
+   "week_start": "2026-02-15",
+   "hours": 37.7,
+   "store": "S1"
+  },
+  {
+   "employee_id": "E002",
+   "week_start": "2026-02-15",
+   "hours": 39.9,
+   "store": "S1"
+  },
+  {
+   "employee_id": "E003",
+   "week_start": "2026-02-15",
+   "hours": 35.7,
+   "store": "S1"
+  },
+  {
+   "employee_id": "E004",
+   "week_start": "2026-02-15",
+   "hours": 37.0,
+   "store": "S1"
+  },
+  {
+   "employee_id": "E005",
+   "week_start": "2026-02-15",
+   "hours": 27.1,
+   "store": "S2"
+  },
+  {
+   "employee_id": "E006",
+   "week_start": "2026-02-15",
+   "hours": 39.7,
+   "store": "S2"
+  },
+  {
+   "employee_id": "E007",
+   "week_start": "2026-02-15",
+   "hours": 31.9,
+   "store": "S2"
+  },
+  {
+   "employee_id": "E008",
+   "week_start": "2026-02-15",
+   "hours": 39.3,
+   "store": "S2"
+  },
+  {
+   "employee_id": "E009",
+   "week_start": "2026-02-15",
+   "hours": 38.7,
+   "store": "S3"
+  },
+  {
+   "employee_id": "E010",
+   "week_start": "2026-02-15",
+   "hours": 26.6,
+   "store": "S3"
+  },
+  {
+   "employee_id": "E011",
+   "week_start": "2026-02-15",
+   "hours": 36.6,
+   "store": "S3"
+  },
+  {
+   "employee_id": "E012",
+   "week_start": "2026-02-15",
+   "hours": 38.9,
+   "store": "S4"
+  },
+  {
+   "employee_id": "E013",
+   "week_start": "2026-02-15",
+   "hours": 25.0,
+   "store": "S4"
+  },
+  {
+   "employee_id": "E014",
+   "week_start": "2026-02-15",
+   "hours": 29.6,
+   "store": "S4"
+  },
+  {
+   "employee_id": "E015",
+   "week_start": "2026-02-15",
+   "hours": 36.1,
+   "store": "S4"
+  },
+  {
+   "employee_id": "E001",
+   "week_start": "2026-02-22",
+   "hours": 26.5,
+   "store": "S1"
+  },
+  {
+   "employee_id": "E002",
+   "week_start": "2026-02-22",
+   "hours": 38.3,
+   "store": "S1"
+  },
+  {
+   "employee_id": "E003",
+   "week_start": "2026-02-22",
+   "hours": 28.4,
+   "store": "S1"
+  },
+  {
+   "employee_id": "E004",
+   "week_start": "2026-02-22",
+   "hours": 37.1,
+   "store": "S1"
+  },
+  {
+   "employee_id": "E005",
+   "week_start": "2026-02-22",
+   "hours": 26.3,
+   "store": "S2"
+  },
+  {
+   "employee_id": "E006",
+   "week_start": "2026-02-22",
+   "hours": 32.0,
+   "store": "S2"
+  },
+  {
+   "employee_id": "E007",
+   "week_start": "2026-02-22",
+   "hours": 38.7,
+   "store": "S2"
+  },
+  {
+   "employee_id": "E008",
+   "week_start": "2026-02-22",
+   "hours": 27.3,
+   "store": "S2"
+  },
+  {
+   "employee_id": "E009",
+   "week_start": "2026-02-22",
+   "hours": 28.2,
+   "store": "S3"
+  },
+  {
+   "employee_id": "E010",
+   "week_start": "2026-02-22",
+   "hours": 32.1,
+   "store": "S3"
+  },
+  {
+   "employee_id": "E011",
+   "week_start": "2026-02-22",
+   "hours": 29.1,
+   "store": "S3"
+  },
+  {
+   "employee_id": "E012",
+   "week_start": "2026-02-22",
+   "hours": 24.6,
+   "store": "S4"
+  },
+  {
+   "employee_id": "E013",
+   "week_start": "2026-02-22",
+   "hours": 26.9,
+   "store": "S4"
+  },
+  {
+   "employee_id": "E014",
+   "week_start": "2026-02-22",
+   "hours": 26.6,
+   "store": "S4"
+  },
+  {
+   "employee_id": "E015",
+   "week_start": "2026-02-22",
+   "hours": 39.0,
+   "store": "S4"
+  },
+  {
+   "employee_id": "E001",
+   "week_start": "2026-03-01",
+   "hours": 34.9,
+   "store": "S1"
+  },
+  {
+   "employee_id": "E002",
+   "week_start": "2026-03-01",
+   "hours": 38.3,
+   "store": "S1"
+  },
+  {
+   "employee_id": "E003",
+   "week_start": "2026-03-01",
+   "hours": 26.7,
+   "store": "S1"
+  },
+  {
+   "employee_id": "E004",
+   "week_start": "2026-03-01",
+   "hours": 36.6,
+   "store": "S1"
+  },
+  {
+   "employee_id": "E005",
+   "week_start": "2026-03-01",
+   "hours": 25.8,
+   "store": "S2"
+  },
+  {
+   "employee_id": "E006",
+   "week_start": "2026-03-01",
+   "hours": 32.5,
+   "store": "S2"
+  },
+  {
+   "employee_id": "E007",
+   "week_start": "2026-03-01",
+   "hours": 34.2,
+   "store": "S2"
+  },
+  {
+   "employee_id": "E008",
+   "week_start": "2026-03-01",
+   "hours": 29.8,
+   "store": "S2"
+  },
+  {
+   "employee_id": "E009",
+   "week_start": "2026-03-01",
+   "hours": 38.0,
+   "store": "S3"
+  },
+  {
+   "employee_id": "E010",
+   "week_start": "2026-03-01",
+   "hours": 32.9,
+   "store": "S3"
+  },
+  {
+   "employee_id": "E011",
+   "week_start": "2026-03-01",
+   "hours": 33.3,
+   "store": "S3"
+  },
+  {
+   "employee_id": "E012",
+   "week_start": "2026-03-01",
+   "hours": 38.1,
+   "store": "S4"
+  },
+  {
+   "employee_id": "E013",
+   "week_start": "2026-03-01",
+   "hours": 25.7,
+   "store": "S4"
+  },
+  {
+   "employee_id": "E014",
+   "week_start": "2026-03-01",
+   "hours": 39.9,
+   "store": "S4"
+  },
+  {
+   "employee_id": "E015",
+   "week_start": "2026-03-01",
+   "hours": 34.1,
+   "store": "S4"
+  },
+  {
+   "employee_id": "E001",
+   "week_start": "2026-03-08",
+   "hours": 30.3,
+   "store": "S1"
+  },
+  {
+   "employee_id": "E002",
+   "week_start": "2026-03-08",
+   "hours": 36.8,
+   "store": "S1"
+  },
+  {
+   "employee_id": "E003",
+   "week_start": "2026-03-08",
+   "hours": 28.2,
+   "store": "S1"
+  },
+  {
+   "employee_id": "E004",
+   "week_start": "2026-03-08",
+   "hours": 39.8,
+   "store": "S1"
+  },
+  {
+   "employee_id": "E005",
+   "week_start": "2026-03-08",
+   "hours": 33.2,
+   "store": "S2"
+  },
+  {
+   "employee_id": "E006",
+   "week_start": "2026-03-08",
+   "hours": 29.8,
+   "store": "S2"
+  },
+  {
+   "employee_id": "E007",
+   "week_start": "2026-03-08",
+   "hours": 36.2,
+   "store": "S2"
+  },
+  {
+   "employee_id": "E008",
+   "week_start": "2026-03-08",
+   "hours": 31.1,
+   "store": "S2"
+  },
+  {
+   "employee_id": "E009",
+   "week_start": "2026-03-08",
+   "hours": 26.8,
+   "store": "S3"
+  },
+  {
+   "employee_id": "E010",
+   "week_start": "2026-03-08",
+   "hours": 35.9,
+   "store": "S3"
+  },
+  {
+   "employee_id": "E011",
+   "week_start": "2026-03-08",
+   "hours": 24.8,
+   "store": "S3"
+  },
+  {
+   "employee_id": "E012",
+   "week_start": "2026-03-08",
+   "hours": 37.1,
+   "store": "S4"
+  },
+  {
+   "employee_id": "E013",
+   "week_start": "2026-03-08",
+   "hours": 28.1,
+   "store": "S4"
+  },
+  {
+   "employee_id": "E014",
+   "week_start": "2026-03-08",
+   "hours": 34.2,
+   "store": "S4"
+  },
+  {
+   "employee_id": "E015",
+   "week_start": "2026-03-08",
+   "hours": 39.7,
+   "store": "S4"
+  },
+  {
+   "employee_id": "E001",
+   "week_start": "2026-03-15",
+   "hours": 33.4,
+   "store": "S1"
+  },
+  {
+   "employee_id": "E002",
+   "week_start": "2026-03-15",
+   "hours": 34.6,
+   "store": "S1"
+  },
+  {
+   "employee_id": "E003",
+   "week_start": "2026-03-15",
+   "hours": 29.0,
+   "store": "S1"
+  },
+  {
+   "employee_id": "E004",
+   "week_start": "2026-03-15",
+   "hours": 24.0,
+   "store": "S1"
+  },
+  {
+   "employee_id": "E005",
+   "week_start": "2026-03-15",
+   "hours": 24.5,
+   "store": "S2"
+  },
+  {
+   "employee_id": "E006",
+   "week_start": "2026-03-15",
+   "hours": 26.4,
+   "store": "S2"
+  },
+  {
+   "employee_id": "E007",
+   "week_start": "2026-03-15",
+   "hours": 33.9,
+   "store": "S2"
+  },
+  {
+   "employee_id": "E008",
+   "week_start": "2026-03-15",
+   "hours": 30.9,
+   "store": "S2"
+  },
+  {
+   "employee_id": "E009",
+   "week_start": "2026-03-15",
+   "hours": 32.2,
+   "store": "S3"
+  },
+  {
+   "employee_id": "E010",
+   "week_start": "2026-03-15",
+   "hours": 38.3,
+   "store": "S3"
+  },
+  {
+   "employee_id": "E011",
+   "week_start": "2026-03-15",
+   "hours": 26.1,
+   "store": "S3"
+  },
+  {
+   "employee_id": "E012",
+   "week_start": "2026-03-15",
+   "hours": 27.6,
+   "store": "S4"
+  },
+  {
+   "employee_id": "E013",
+   "week_start": "2026-03-15",
+   "hours": 34.4,
+   "store": "S4"
+  },
+  {
+   "employee_id": "E014",
+   "week_start": "2026-03-15",
+   "hours": 24.4,
+   "store": "S4"
+  },
+  {
+   "employee_id": "E015",
+   "week_start": "2026-03-15",
+   "hours": 24.0,
+   "store": "S4"
+  },
+  {
+   "employee_id": "E001",
+   "week_start": "2026-03-22",
+   "hours": 29.7,
+   "store": "S1"
+  },
+  {
+   "employee_id": "E002",
+   "week_start": "2026-03-22",
+   "hours": 25.7,
+   "store": "S1"
+  },
+  {
+   "employee_id": "E003",
+   "week_start": "2026-03-22",
+   "hours": 29.7,
+   "store": "S1"
+  },
+  {
+   "employee_id": "E004",
+   "week_start": "2026-03-22",
+   "hours": 27.6,
+   "store": "S1"
+  },
+  {
+   "employee_id": "E005",
+   "week_start": "2026-03-22",
+   "hours": 33.3,
+   "store": "S2"
+  },
+  {
+   "employee_id": "E006",
+   "week_start": "2026-03-22",
+   "hours": 33.4,
+   "store": "S2"
+  },
+  {
+   "employee_id": "E007",
+   "week_start": "2026-03-22",
+   "hours": 27.3,
+   "store": "S2"
+  },
+  {
+   "employee_id": "E008",
+   "week_start": "2026-03-22",
+   "hours": 34.0,
+   "store": "S2"
+  },
+  {
+   "employee_id": "E009",
+   "week_start": "2026-03-22",
+   "hours": 31.6,
+   "store": "S3"
+  },
+  {
+   "employee_id": "E010",
+   "week_start": "2026-03-22",
+   "hours": 26.2,
+   "store": "S3"
+  },
+  {
+   "employee_id": "E011",
+   "week_start": "2026-03-22",
+   "hours": 39.0,
+   "store": "S3"
+  },
+  {
+   "employee_id": "E012",
+   "week_start": "2026-03-22",
+   "hours": 27.9,
+   "store": "S4"
+  },
+  {
+   "employee_id": "E013",
+   "week_start": "2026-03-22",
+   "hours": 26.4,
+   "store": "S4"
+  },
+  {
+   "employee_id": "E014",
+   "week_start": "2026-03-22",
+   "hours": 25.5,
+   "store": "S4"
+  },
+  {
+   "employee_id": "E015",
+   "week_start": "2026-03-22",
+   "hours": 34.2,
+   "store": "S4"
+  },
+  {
+   "employee_id": "E001",
+   "week_start": "2026-03-29",
+   "hours": 37.9,
+   "store": "S1"
+  },
+  {
+   "employee_id": "E002",
+   "week_start": "2026-03-29",
+   "hours": 36.5,
+   "store": "S1"
+  },
+  {
+   "employee_id": "E003",
+   "week_start": "2026-03-29",
+   "hours": 30.4,
+   "store": "S1"
+  },
+  {
+   "employee_id": "E004",
+   "week_start": "2026-03-29",
+   "hours": 28.2,
+   "store": "S1"
+  },
+  {
+   "employee_id": "E005",
+   "week_start": "2026-03-29",
+   "hours": 24.2,
+   "store": "S2"
+  },
+  {
+   "employee_id": "E006",
+   "week_start": "2026-03-29",
+   "hours": 34.3,
+   "store": "S2"
+  },
+  {
+   "employee_id": "E007",
+   "week_start": "2026-03-29",
+   "hours": 33.0,
+   "store": "S2"
+  },
+  {
+   "employee_id": "E008",
+   "week_start": "2026-03-29",
+   "hours": 29.6,
+   "store": "S2"
+  },
+  {
+   "employee_id": "E009",
+   "week_start": "2026-03-29",
+   "hours": 34.3,
+   "store": "S3"
+  },
+  {
+   "employee_id": "E010",
+   "week_start": "2026-03-29",
+   "hours": 31.1,
+   "store": "S3"
+  },
+  {
+   "employee_id": "E011",
+   "week_start": "2026-03-29",
+   "hours": 39.0,
+   "store": "S3"
+  },
+  {
+   "employee_id": "E012",
+   "week_start": "2026-03-29",
+   "hours": 35.7,
+   "store": "S4"
+  },
+  {
+   "employee_id": "E013",
+   "week_start": "2026-03-29",
+   "hours": 28.0,
+   "store": "S4"
+  },
+  {
+   "employee_id": "E014",
+   "week_start": "2026-03-29",
+   "hours": 38.5,
+   "store": "S4"
+  },
+  {
+   "employee_id": "E015",
+   "week_start": "2026-03-29",
+   "hours": 24.7,
+   "store": "S4"
+  },
+  {
+   "employee_id": "E001",
+   "week_start": "2026-04-05",
+   "hours": 32.5,
+   "store": "S1"
+  },
+  {
+   "employee_id": "E002",
+   "week_start": "2026-04-05",
+   "hours": 30.5,
+   "store": "S1"
+  },
+  {
+   "employee_id": "E003",
+   "week_start": "2026-04-05",
+   "hours": 27.8,
+   "store": "S1"
+  },
+  {
+   "employee_id": "E004",
+   "week_start": "2026-04-05",
+   "hours": 24.9,
+   "store": "S1"
+  },
+  {
+   "employee_id": "E005",
+   "week_start": "2026-04-05",
+   "hours": 36.5,
+   "store": "S2"
+  },
+  {
+   "employee_id": "E006",
+   "week_start": "2026-04-05",
+   "hours": 24.2,
+   "store": "S2"
+  },
+  {
+   "employee_id": "E007",
+   "week_start": "2026-04-05",
+   "hours": 32.8,
+   "store": "S2"
+  },
+  {
+   "employee_id": "E008",
+   "week_start": "2026-04-05",
+   "hours": 39.1,
+   "store": "S2"
+  },
+  {
+   "employee_id": "E009",
+   "week_start": "2026-04-05",
+   "hours": 26.3,
+   "store": "S3"
+  },
+  {
+   "employee_id": "E010",
+   "week_start": "2026-04-05",
+   "hours": 27.2,
+   "store": "S3"
+  },
+  {
+   "employee_id": "E011",
+   "week_start": "2026-04-05",
+   "hours": 33.7,
+   "store": "S3"
+  },
+  {
+   "employee_id": "E012",
+   "week_start": "2026-04-05",
+   "hours": 32.1,
+   "store": "S4"
+  },
+  {
+   "employee_id": "E013",
+   "week_start": "2026-04-05",
+   "hours": 34.3,
+   "store": "S4"
+  },
+  {
+   "employee_id": "E014",
+   "week_start": "2026-04-05",
+   "hours": 37.0,
+   "store": "S4"
+  },
+  {
+   "employee_id": "E015",
+   "week_start": "2026-04-05",
+   "hours": 26.8,
+   "store": "S4"
+  },
+  {
+   "employee_id": "E001",
+   "week_start": "2026-04-12",
+   "hours": 29.0,
+   "store": "S1"
+  },
+  {
+   "employee_id": "E002",
+   "week_start": "2026-04-12",
+   "hours": 28.8,
+   "store": "S1"
+  },
+  {
+   "employee_id": "E003",
+   "week_start": "2026-04-12",
+   "hours": 24.8,
+   "store": "S1"
+  },
+  {
+   "employee_id": "E004",
+   "week_start": "2026-04-12",
+   "hours": 38.2,
+   "store": "S1"
+  },
+  {
+   "employee_id": "E005",
+   "week_start": "2026-04-12",
+   "hours": 36.5,
+   "store": "S2"
+  },
+  {
+   "employee_id": "E006",
+   "week_start": "2026-04-12",
+   "hours": 35.4,
+   "store": "S2"
+  },
+  {
+   "employee_id": "E007",
+   "week_start": "2026-04-12",
+   "hours": 24.1,
+   "store": "S2"
+  },
+  {
+   "employee_id": "E008",
+   "week_start": "2026-04-12",
+   "hours": 37.5,
+   "store": "S2"
+  },
+  {
+   "employee_id": "E009",
+   "week_start": "2026-04-12",
+   "hours": 35.9,
+   "store": "S3"
+  },
+  {
+   "employee_id": "E010",
+   "week_start": "2026-04-12",
+   "hours": 31.4,
+   "store": "S3"
+  },
+  {
+   "employee_id": "E011",
+   "week_start": "2026-04-12",
+   "hours": 35.9,
+   "store": "S3"
+  },
+  {
+   "employee_id": "E012",
+   "week_start": "2026-04-12",
+   "hours": 31.2,
+   "store": "S4"
+  },
+  {
+   "employee_id": "E013",
+   "week_start": "2026-04-12",
+   "hours": 27.6,
+   "store": "S4"
+  },
+  {
+   "employee_id": "E014",
+   "week_start": "2026-04-12",
+   "hours": 25.7,
+   "store": "S4"
+  },
+  {
+   "employee_id": "E015",
+   "week_start": "2026-04-12",
+   "hours": 27.7,
+   "store": "S4"
+  },
+  {
+   "employee_id": "E001",
+   "week_start": "2026-04-19",
+   "hours": 24.6,
+   "store": "S1"
+  },
+  {
+   "employee_id": "E002",
+   "week_start": "2026-04-19",
+   "hours": 29.4,
+   "store": "S1"
+  },
+  {
+   "employee_id": "E003",
+   "week_start": "2026-04-19",
+   "hours": 36.0,
+   "store": "S1"
+  },
+  {
+   "employee_id": "E004",
+   "week_start": "2026-04-19",
+   "hours": 35.1,
+   "store": "S1"
+  },
+  {
+   "employee_id": "E005",
+   "week_start": "2026-04-19",
+   "hours": 37.5,
+   "store": "S2"
+  },
+  {
+   "employee_id": "E006",
+   "week_start": "2026-04-19",
+   "hours": 35.4,
+   "store": "S2"
+  },
+  {
+   "employee_id": "E007",
+   "week_start": "2026-04-19",
+   "hours": 28.3,
+   "store": "S2"
+  },
+  {
+   "employee_id": "E008",
+   "week_start": "2026-04-19",
+   "hours": 32.9,
+   "store": "S2"
+  },
+  {
+   "employee_id": "E009",
+   "week_start": "2026-04-19",
+   "hours": 31.0,
+   "store": "S3"
+  },
+  {
+   "employee_id": "E010",
+   "week_start": "2026-04-19",
+   "hours": 36.6,
+   "store": "S3"
+  },
+  {
+   "employee_id": "E011",
+   "week_start": "2026-04-19",
+   "hours": 32.4,
+   "store": "S3"
+  },
+  {
+   "employee_id": "E012",
+   "week_start": "2026-04-19",
+   "hours": 28.2,
+   "store": "S4"
+  },
+  {
+   "employee_id": "E013",
+   "week_start": "2026-04-19",
+   "hours": 34.3,
+   "store": "S4"
+  },
+  {
+   "employee_id": "E014",
+   "week_start": "2026-04-19",
+   "hours": 39.4,
+   "store": "S4"
+  },
+  {
+   "employee_id": "E015",
+   "week_start": "2026-04-19",
+   "hours": 27.5,
+   "store": "S4"
+  },
+  {
+   "employee_id": "E001",
+   "week_start": "2026-04-26",
+   "hours": 38.1,
+   "store": "S1"
+  },
+  {
+   "employee_id": "E002",
+   "week_start": "2026-04-26",
+   "hours": 24.2,
+   "store": "S1"
+  },
+  {
+   "employee_id": "E003",
+   "week_start": "2026-04-26",
+   "hours": 28.2,
+   "store": "S1"
+  },
+  {
+   "employee_id": "E004",
+   "week_start": "2026-04-26",
+   "hours": 27.8,
+   "store": "S1"
+  },
+  {
+   "employee_id": "E005",
+   "week_start": "2026-04-26",
+   "hours": 35.9,
+   "store": "S2"
+  },
+  {
+   "employee_id": "E006",
+   "week_start": "2026-04-26",
+   "hours": 39.1,
+   "store": "S2"
+  },
+  {
+   "employee_id": "E007",
+   "week_start": "2026-04-26",
+   "hours": 35.9,
+   "store": "S2"
+  },
+  {
+   "employee_id": "E008",
+   "week_start": "2026-04-26",
+   "hours": 29.2,
+   "store": "S2"
+  },
+  {
+   "employee_id": "E009",
+   "week_start": "2026-04-26",
+   "hours": 38.1,
+   "store": "S3"
+  },
+  {
+   "employee_id": "E010",
+   "week_start": "2026-04-26",
+   "hours": 29.3,
+   "store": "S3"
+  },
+  {
+   "employee_id": "E011",
+   "week_start": "2026-04-26",
+   "hours": 27.8,
+   "store": "S3"
+  },
+  {
+   "employee_id": "E012",
+   "week_start": "2026-04-26",
+   "hours": 38.5,
+   "store": "S4"
+  },
+  {
+   "employee_id": "E013",
+   "week_start": "2026-04-26",
+   "hours": 34.1,
+   "store": "S4"
+  },
+  {
+   "employee_id": "E014",
+   "week_start": "2026-04-26",
+   "hours": 35.1,
+   "store": "S4"
+  },
+  {
+   "employee_id": "E015",
+   "week_start": "2026-04-26",
+   "hours": 34.6,
+   "store": "S4"
+  },
+  {
+   "employee_id": "E001",
+   "week_start": "2026-05-03",
+   "hours": 39.7,
+   "store": "S1"
+  },
+  {
+   "employee_id": "E002",
+   "week_start": "2026-05-03",
+   "hours": 31.5,
+   "store": "S1"
+  },
+  {
+   "employee_id": "E003",
+   "week_start": "2026-05-03",
+   "hours": 37.4,
+   "store": "S1"
+  },
+  {
+   "employee_id": "E004",
+   "week_start": "2026-05-03",
+   "hours": 35.2,
+   "store": "S1"
+  },
+  {
+   "employee_id": "E005",
+   "week_start": "2026-05-03",
+   "hours": 37.7,
+   "store": "S2"
+  },
+  {
+   "employee_id": "E006",
+   "week_start": "2026-05-03",
+   "hours": 31.0,
+   "store": "S2"
+  },
+  {
+   "employee_id": "E007",
+   "week_start": "2026-05-03",
+   "hours": 35.6,
+   "store": "S2"
+  },
+  {
+   "employee_id": "E008",
+   "week_start": "2026-05-03",
+   "hours": 33.1,
+   "store": "S2"
+  },
+  {
+   "employee_id": "E009",
+   "week_start": "2026-05-03",
+   "hours": 28.9,
+   "store": "S3"
+  },
+  {
+   "employee_id": "E010",
+   "week_start": "2026-05-03",
+   "hours": 27.4,
+   "store": "S3"
+  },
+  {
+   "employee_id": "E011",
+   "week_start": "2026-05-03",
+   "hours": 34.0,
+   "store": "S3"
+  },
+  {
+   "employee_id": "E012",
+   "week_start": "2026-05-03",
+   "hours": 25.2,
+   "store": "S4"
+  },
+  {
+   "employee_id": "E013",
+   "week_start": "2026-05-03",
+   "hours": 38.6,
+   "store": "S4"
+  },
+  {
+   "employee_id": "E014",
+   "week_start": "2026-05-03",
+   "hours": 26.3,
+   "store": "S4"
+  },
+  {
+   "employee_id": "E015",
+   "week_start": "2026-05-03",
+   "hours": 24.4,
+   "store": "S4"
+  },
+  {
+   "employee_id": "E001",
+   "week_start": "2026-05-10",
+   "hours": 25.7,
+   "store": "S1"
+  },
+  {
+   "employee_id": "E002",
+   "week_start": "2026-05-10",
+   "hours": 38.9,
+   "store": "S1"
+  },
+  {
+   "employee_id": "E003",
+   "week_start": "2026-05-10",
+   "hours": 29.5,
+   "store": "S1"
+  },
+  {
+   "employee_id": "E004",
+   "week_start": "2026-05-10",
+   "hours": 26.3,
+   "store": "S1"
+  },
+  {
+   "employee_id": "E005",
+   "week_start": "2026-05-10",
+   "hours": 24.5,
+   "store": "S2"
+  },
+  {
+   "employee_id": "E006",
+   "week_start": "2026-05-10",
+   "hours": 24.7,
+   "store": "S2"
+  },
+  {
+   "employee_id": "E007",
+   "week_start": "2026-05-10",
+   "hours": 35.1,
+   "store": "S2"
+  },
+  {
+   "employee_id": "E008",
+   "week_start": "2026-05-10",
+   "hours": 34.1,
+   "store": "S2"
+  },
+  {
+   "employee_id": "E009",
+   "week_start": "2026-05-10",
+   "hours": 35.2,
+   "store": "S3"
+  },
+  {
+   "employee_id": "E010",
+   "week_start": "2026-05-10",
+   "hours": 35.8,
+   "store": "S3"
+  },
+  {
+   "employee_id": "E011",
+   "week_start": "2026-05-10",
+   "hours": 25.1,
+   "store": "S3"
+  },
+  {
+   "employee_id": "E012",
+   "week_start": "2026-05-10",
+   "hours": 33.4,
+   "store": "S4"
+  },
+  {
+   "employee_id": "E013",
+   "week_start": "2026-05-10",
+   "hours": 29.8,
+   "store": "S4"
+  },
+  {
+   "employee_id": "E014",
+   "week_start": "2026-05-10",
+   "hours": 37.1,
+   "store": "S4"
+  },
+  {
+   "employee_id": "E015",
+   "week_start": "2026-05-10",
+   "hours": 37.1,
+   "store": "S4"
+  },
+  {
+   "employee_id": "E001",
+   "week_start": "2026-05-17",
+   "hours": 38.3,
+   "store": "S1"
+  },
+  {
+   "employee_id": "E002",
+   "week_start": "2026-05-17",
+   "hours": 25.1,
+   "store": "S1"
+  },
+  {
+   "employee_id": "E003",
+   "week_start": "2026-05-17",
+   "hours": 37.9,
+   "store": "S1"
+  },
+  {
+   "employee_id": "E004",
+   "week_start": "2026-05-17",
+   "hours": 38.6,
+   "store": "S1"
+  },
+  {
+   "employee_id": "E005",
+   "week_start": "2026-05-17",
+   "hours": 39.1,
+   "store": "S2"
+  },
+  {
+   "employee_id": "E006",
+   "week_start": "2026-05-17",
+   "hours": 25.7,
+   "store": "S2"
+  },
+  {
+   "employee_id": "E007",
+   "week_start": "2026-05-17",
+   "hours": 27.3,
+   "store": "S2"
+  },
+  {
+   "employee_id": "E008",
+   "week_start": "2026-05-17",
+   "hours": 25.8,
+   "store": "S2"
+  },
+  {
+   "employee_id": "E009",
+   "week_start": "2026-05-17",
+   "hours": 24.6,
+   "store": "S3"
+  },
+  {
+   "employee_id": "E010",
+   "week_start": "2026-05-17",
+   "hours": 37.6,
+   "store": "S3"
+  },
+  {
+   "employee_id": "E011",
+   "week_start": "2026-05-17",
+   "hours": 37.0,
+   "store": "S3"
+  },
+  {
+   "employee_id": "E012",
+   "week_start": "2026-05-17",
+   "hours": 34.1,
+   "store": "S4"
+  },
+  {
+   "employee_id": "E013",
+   "week_start": "2026-05-17",
+   "hours": 37.2,
+   "store": "S4"
+  },
+  {
+   "employee_id": "E014",
+   "week_start": "2026-05-17",
+   "hours": 34.1,
+   "store": "S4"
+  },
+  {
+   "employee_id": "E015",
+   "week_start": "2026-05-17",
+   "hours": 28.6,
+   "store": "S4"
+  },
+  {
+   "employee_id": "E001",
+   "week_start": "2026-05-24",
+   "hours": 25.6,
+   "store": "S1"
+  },
+  {
+   "employee_id": "E002",
+   "week_start": "2026-05-24",
+   "hours": 25.6,
+   "store": "S1"
+  },
+  {
+   "employee_id": "E003",
+   "week_start": "2026-05-24",
+   "hours": 36.1,
+   "store": "S1"
+  },
+  {
+   "employee_id": "E004",
+   "week_start": "2026-05-24",
+   "hours": 27.3,
+   "store": "S1"
+  },
+  {
+   "employee_id": "E005",
+   "week_start": "2026-05-24",
+   "hours": 29.1,
+   "store": "S2"
+  },
+  {
+   "employee_id": "E006",
+   "week_start": "2026-05-24",
+   "hours": 30.8,
+   "store": "S2"
+  },
+  {
+   "employee_id": "E007",
+   "week_start": "2026-05-24",
+   "hours": 24.3,
+   "store": "S2"
+  },
+  {
+   "employee_id": "E008",
+   "week_start": "2026-05-24",
+   "hours": 28.1,
+   "store": "S2"
+  },
+  {
+   "employee_id": "E009",
+   "week_start": "2026-05-24",
+   "hours": 28.5,
+   "store": "S3"
+  },
+  {
+   "employee_id": "E010",
+   "week_start": "2026-05-24",
+   "hours": 35.5,
+   "store": "S3"
+  },
+  {
+   "employee_id": "E011",
+   "week_start": "2026-05-24",
+   "hours": 29.9,
+   "store": "S3"
+  },
+  {
+   "employee_id": "E012",
+   "week_start": "2026-05-24",
+   "hours": 29.1,
+   "store": "S4"
+  },
+  {
+   "employee_id": "E013",
+   "week_start": "2026-05-24",
+   "hours": 39.4,
+   "store": "S4"
+  },
+  {
+   "employee_id": "E014",
+   "week_start": "2026-05-24",
+   "hours": 32.1,
+   "store": "S4"
+  },
+  {
+   "employee_id": "E015",
+   "week_start": "2026-05-24",
+   "hours": 37.6,
+   "store": "S4"
+  },
+  {
+   "employee_id": "E001",
+   "week_start": "2026-05-31",
+   "hours": 33.9,
+   "store": "S1"
+  },
+  {
+   "employee_id": "E002",
+   "week_start": "2026-05-31",
+   "hours": 24.5,
+   "store": "S1"
+  },
+  {
+   "employee_id": "E003",
+   "week_start": "2026-05-31",
+   "hours": 30.6,
+   "store": "S1"
+  },
+  {
+   "employee_id": "E004",
+   "week_start": "2026-05-31",
+   "hours": 31.0,
+   "store": "S1"
+  },
+  {
+   "employee_id": "E005",
+   "week_start": "2026-05-31",
+   "hours": 36.4,
+   "store": "S2"
+  },
+  {
+   "employee_id": "E006",
+   "week_start": "2026-05-31",
+   "hours": 29.5,
+   "store": "S2"
+  },
+  {
+   "employee_id": "E007",
+   "week_start": "2026-05-31",
+   "hours": 35.3,
+   "store": "S2"
+  },
+  {
+   "employee_id": "E008",
+   "week_start": "2026-05-31",
+   "hours": 32.6,
+   "store": "S2"
+  },
+  {
+   "employee_id": "E009",
+   "week_start": "2026-05-31",
+   "hours": 27.5,
+   "store": "S3"
+  },
+  {
+   "employee_id": "E010",
+   "week_start": "2026-05-31",
+   "hours": 37.8,
+   "store": "S3"
+  },
+  {
+   "employee_id": "E011",
+   "week_start": "2026-05-31",
+   "hours": 25.5,
+   "store": "S3"
+  },
+  {
+   "employee_id": "E012",
+   "week_start": "2026-05-31",
+   "hours": 37.1,
+   "store": "S4"
+  },
+  {
+   "employee_id": "E013",
+   "week_start": "2026-05-31",
+   "hours": 26.7,
+   "store": "S4"
+  },
+  {
+   "employee_id": "E014",
+   "week_start": "2026-05-31",
+   "hours": 24.0,
+   "store": "S4"
+  },
+  {
+   "employee_id": "E015",
+   "week_start": "2026-05-31",
+   "hours": 27.2,
+   "store": "S4"
+  },
+  {
+   "employee_id": "E001",
+   "week_start": "2026-06-07",
+   "hours": 36.2,
+   "store": "S1"
+  },
+  {
+   "employee_id": "E002",
+   "week_start": "2026-06-07",
+   "hours": 39.6,
+   "store": "S1"
+  },
+  {
+   "employee_id": "E003",
+   "week_start": "2026-06-07",
+   "hours": 24.1,
+   "store": "S1"
+  },
+  {
+   "employee_id": "E004",
+   "week_start": "2026-06-07",
+   "hours": 31.9,
+   "store": "S1"
+  },
+  {
+   "employee_id": "E005",
+   "week_start": "2026-06-07",
+   "hours": 31.9,
+   "store": "S2"
+  },
+  {
+   "employee_id": "E006",
+   "week_start": "2026-06-07",
+   "hours": 36.7,
+   "store": "S2"
+  },
+  {
+   "employee_id": "E007",
+   "week_start": "2026-06-07",
+   "hours": 27.0,
+   "store": "S2"
+  },
+  {
+   "employee_id": "E008",
+   "week_start": "2026-06-07",
+   "hours": 31.9,
+   "store": "S2"
+  },
+  {
+   "employee_id": "E009",
+   "week_start": "2026-06-07",
+   "hours": 29.6,
+   "store": "S3"
+  },
+  {
+   "employee_id": "E010",
+   "week_start": "2026-06-07",
+   "hours": 37.3,
+   "store": "S3"
+  },
+  {
+   "employee_id": "E011",
+   "week_start": "2026-06-07",
+   "hours": 28.2,
+   "store": "S3"
+  },
+  {
+   "employee_id": "E012",
+   "week_start": "2026-06-07",
+   "hours": 39.1,
+   "store": "S4"
+  },
+  {
+   "employee_id": "E013",
+   "week_start": "2026-06-07",
+   "hours": 28.5,
+   "store": "S4"
+  },
+  {
+   "employee_id": "E014",
+   "week_start": "2026-06-07",
+   "hours": 27.4,
+   "store": "S4"
+  },
+  {
+   "employee_id": "E015",
+   "week_start": "2026-06-07",
+   "hours": 35.2,
+   "store": "S4"
+  },
+  {
+   "employee_id": "E001",
+   "week_start": "2026-06-14",
+   "hours": 32.0,
+   "store": "S1"
+  },
+  {
+   "employee_id": "E002",
+   "week_start": "2026-06-14",
+   "hours": 25.8,
+   "store": "S1"
+  },
+  {
+   "employee_id": "E003",
+   "week_start": "2026-06-14",
+   "hours": 34.2,
+   "store": "S1"
+  },
+  {
+   "employee_id": "E004",
+   "week_start": "2026-06-14",
+   "hours": 25.3,
+   "store": "S1"
+  },
+  {
+   "employee_id": "E005",
+   "week_start": "2026-06-14",
+   "hours": 36.6,
+   "store": "S2"
+  },
+  {
+   "employee_id": "E006",
+   "week_start": "2026-06-14",
+   "hours": 35.2,
+   "store": "S2"
+  },
+  {
+   "employee_id": "E007",
+   "week_start": "2026-06-14",
+   "hours": 36.6,
+   "store": "S2"
+  },
+  {
+   "employee_id": "E008",
+   "week_start": "2026-06-14",
+   "hours": 34.0,
+   "store": "S2"
+  },
+  {
+   "employee_id": "E009",
+   "week_start": "2026-06-14",
+   "hours": 29.7,
+   "store": "S3"
+  },
+  {
+   "employee_id": "E010",
+   "week_start": "2026-06-14",
+   "hours": 30.4,
+   "store": "S3"
+  },
+  {
+   "employee_id": "E011",
+   "week_start": "2026-06-14",
+   "hours": 30.3,
+   "store": "S3"
+  },
+  {
+   "employee_id": "E012",
+   "week_start": "2026-06-14",
+   "hours": 38.2,
+   "store": "S4"
+  },
+  {
+   "employee_id": "E013",
+   "week_start": "2026-06-14",
+   "hours": 25.4,
+   "store": "S4"
+  },
+  {
+   "employee_id": "E014",
+   "week_start": "2026-06-14",
+   "hours": 38.2,
+   "store": "S4"
+  },
+  {
+   "employee_id": "E015",
+   "week_start": "2026-06-14",
+   "hours": 24.4,
+   "store": "S4"
+  },
+  {
+   "employee_id": "E001",
+   "week_start": "2026-06-21",
+   "hours": 27.3,
+   "store": "S1"
+  },
+  {
+   "employee_id": "E002",
+   "week_start": "2026-06-21",
+   "hours": 28.2,
+   "store": "S1"
+  },
+  {
+   "employee_id": "E003",
+   "week_start": "2026-06-21",
+   "hours": 38.4,
+   "store": "S1"
+  },
+  {
+   "employee_id": "E004",
+   "week_start": "2026-06-21",
+   "hours": 32.0,
+   "store": "S1"
+  },
+  {
+   "employee_id": "E005",
+   "week_start": "2026-06-21",
+   "hours": 30.1,
+   "store": "S2"
+  },
+  {
+   "employee_id": "E006",
+   "week_start": "2026-06-21",
+   "hours": 38.1,
+   "store": "S2"
+  },
+  {
+   "employee_id": "E007",
+   "week_start": "2026-06-21",
+   "hours": 27.7,
+   "store": "S2"
+  },
+  {
+   "employee_id": "E008",
+   "week_start": "2026-06-21",
+   "hours": 31.4,
+   "store": "S2"
+  },
+  {
+   "employee_id": "E009",
+   "week_start": "2026-06-21",
+   "hours": 32.5,
+   "store": "S3"
+  },
+  {
+   "employee_id": "E010",
+   "week_start": "2026-06-21",
+   "hours": 36.1,
+   "store": "S3"
+  },
+  {
+   "employee_id": "E011",
+   "week_start": "2026-06-21",
+   "hours": 36.0,
+   "store": "S3"
+  },
+  {
+   "employee_id": "E012",
+   "week_start": "2026-06-21",
+   "hours": 34.3,
+   "store": "S4"
+  },
+  {
+   "employee_id": "E013",
+   "week_start": "2026-06-21",
+   "hours": 29.6,
+   "store": "S4"
+  },
+  {
+   "employee_id": "E014",
+   "week_start": "2026-06-21",
+   "hours": 29.2,
+   "store": "S4"
+  },
+  {
+   "employee_id": "E015",
+   "week_start": "2026-06-21",
+   "hours": 26.5,
+   "store": "S4"
+  }
+ ],
+ "id_field": "employee_id",
+ "description": "weekly hours by employee and store"
+}

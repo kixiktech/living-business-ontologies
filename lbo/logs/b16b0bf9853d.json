@@ -1,0 +1,1145 @@
+{
+ "firm": "distributor",
+ "arm": "C",
+ "task": "d_reorder_lead_time",
+ "model": "claude-sonnet-5",
+ "date": "2026-09-29",
+ "turns": [
+  {
+   "role": "owner",
+   "kind": "message",
+   "text": "Which product will run out before its supplier can deliver more?",
+   "name": ""
+  },
+  {
+   "role": "agent",
+   "kind": "tool_call",
+   "text": "{}",
+   "name": "describe_schema"
+  },
+  {
+   "role": "tool",
+   "kind": "tool_result",
+   "text": "{\"entities\": [{\"name\": \"party\", \"layer\": \"core\", \"fields\": [\"name\", \"email\", \"phone\"], \"required_by\": [\"customer_questions\", \"identity\"], \"origin\": \"core\"}, {\"name\": \"person\", \"layer\": \"core\", \"fields\": [\"name\", \"role\", \"hourly_cost\", \"employed\"], \"required_by\": [\"labour_questions\", \"credited_to\"], \"origin\": \"core\"}, {\"name\": \"location\", \"layer\": \"core\", \"fields\": [\"name\", \"sqft\"], \"required_by\": [\"sales_per_sqft\", \"reorder\"], \"origin\": \"core\"}, {\"name\": \"product\", \"layer\": \"core\", \"fields\": [\"sku\", \"name\", \"category\", \"unit_cost\", \"list_price\"], \"required_by\": [\"margin\", \"reorder\"], \"origin\": \"core\"}, {\"name\": \"supplier\", \"layer\": \"core\", \"fields\": [\"name\", \"terms\"], \"required_by\": [\"margin_two_hops\"], \"origin\": \"core\"}, {\"name\": \"order\", \"layer\": \"core\", \"fields\": [\"placed_at\", \"channel\"], \"required_by\": [\"sales\", \"customer_questions\"], \"origin\": \"core\"}, {\"name\": \"order_line\", \"layer\": \"core\", \"fields\": [\"qty\", \"unit_price\", \"sold_at\"], \"required_by\": [\"sales\", \"margin\"], \"origin\": \"core\"}, {\"name\": \"invoice\", \"layer\": \"core\", \"fields\": [\"issued_at\", \"due_at\", \"amount\", \"currency\", \"state\", \"gross_profit\", \"chased_on\"], \"required_by\": [\"receivables\", \"sales\"], \"origin\": \"core\"}, {\"name\": \"payment\", \"layer\": \"core\", \"fields\": [\"paid_at\", \"amount\", \"method\"], \"required_by\": [\"cash\", \"receivables\"], \"origin\": \"core\"}, {\"name\": \"schedule\", \"layer\": \"core\", \"fields\": [\"hours\"], \"required_by\": [\"labour_questions\"], \"origin\": \"core\"}, {\"name\": \"metric_definition\", \"layer\": \"meaning\", \"fields\": [\"version\", \"grain\", \"basis\"], \"required_by\": [\"every_measure\"], \"origin\": \"core\"}, {\"name\": \"decision\", \"layer\": \"control\", \"fields\": [\"question\", \"taken_at\"], \"required_by\": [\"journal\"], \"origin\": \"core\"}, {\"name\": \"action\", \"layer\": \"control\", \"fields\": [\"status\"], \"required_by\": [\"journal\"], \"origin\": \"core\"}, {\"name\": \"grant\", \"layer\": \"control\", \"fields\": [\"principal\", \"action\", \"scope\", \"limits\"], \"required_by\": [\"authority\"], \"origin\": \"core\"}, {\"name\": \"message\", \"layer\": \"control\", \"fields\": [\"audience\", \"to\", \"text\", \"sent_on\"], \"required_by\": [\"journal\"], \"origin\": \"core\"}, {\"name\": \"route\", \"layer\": \"extension\", \"fields\": [\"name\", \"weekly_cost\", \"quarter_cost\"], \"required_by\": [\"route_contribution\"], \"origin\": \"distributor\"}, {\"name\": \"credit_terms\", \"layer\": \"extension\", \"fields\": [\"days\", \"limit\"], \"required_by\": [\"credit_hold\"], \"origin\": \"distributor\"}, {\"name\": \"supplier_lead_time\", \"layer\": \"extension\", \"fields\": [\"days\"], \"required_by\": [\"reorder\"], \"origin\": \"distributor\"}, {\"name\": \"stock_position\", \"layer\": \"extension\", \"fields\": [\"qty\", \"daily_demand\"], \"required_by\": [\"reorder\"], \"origin\": \"distributor\"}, {\"name\": \"sales_order\", \"layer\": \"extension\", \"fields\": [\"amount\", \"placed_on\", \"status\"], \"required_by\": [\"credit_hold\"], \"origin\": \"distributor\"}], \"relations\": [{\"name\": \"order.placed_by\", \"source\": \"order\", \"target\": \"party\", \"layer\": \"core\", \"required_by\": [\"customer_questions\"], \"origin\": \"core\"}, {\"name\": \"order_line.of_order\", \"source\": \"order_line\", \"target\": \"order\", \"layer\": \"core\", \"required_by\": [\"sales\"], \"origin\": \"core\"}, {\"name\": \"order_line.of_product\", \"source\": \"order_line\", \"target\": \"product\", \"layer\": \"core\", \"required_by\": [\"sales\", \"margin\"], \"origin\": \"core\"}, {\"name\": \"order_line.rang_up_at\", \"source\": \"order_line\", \"target\": \"location\", \"layer\": \"core\", \"required_by\": [\"manager_bonus\"], \"origin\": \"core\"}, {\"name\": \"order_line.fulfilled_from\", \"source\": \"order_line\", \"target\": \"location\", \"layer\": \"core\", \"required_by\": [\"sales_per_sqft\"], \"origin\": \"core\"}, {\"name\": \"order_line.stock_drawn_from\", \"source\": \"order_line\", \"target\": \"location\", \"layer\": \"core\", \"required_by\": [\"reorder\"], \"origin\": \"core\"}, {\"name\": \"order_line.credited_to\", \"source\": \"order_line\", \"target\": \"person\", \"layer\": \"core\", \"required_by\": [\"commission\"], \"origin\": \"core\"}, {\"name\": \"order_line.counted_in\", \"source\": \"order_line\", \"target\": \"location\", \"layer\": \"core\", \"required_by\": [\"like_for_like\"], \"origin\": \"c",
+   "name": "describe_schema"
+  },
+  {
+   "role": "agent",
+   "kind": "tool_call",
+   "text": "{\"entity_type\": \"stock_position\", \"name_contains\": \"\", \"offset\": \"0\"}",
+   "name": "find_entities"
+  },
+  {
+   "role": "tool",
+   "kind": "tool_result",
+   "text": "<tool_use_error>Error: No such tool available: find_entities</tool_use_error>",
+   "name": "find_entities"
+  },
+  {
+   "role": "agent",
+   "kind": "tool_call",
+   "text": "{\"entity_type\": \"supplier_lead_time\", \"name_contains\": \"\", \"offset\": \"0\"}",
+   "name": "find_entities"
+  },
+  {
+   "role": "tool",
+   "kind": "tool_result",
+   "text": "<tool_use_error>Error: No such tool available: find_entities</tool_use_error>",
+   "name": "find_entities"
+  },
+  {
+   "role": "agent",
+   "kind": "tool_call",
+   "text": "{\"entity_type\": \"product\", \"name_contains\": \"\", \"offset\": \"0\"}",
+   "name": "find_entities"
+  },
+  {
+   "role": "tool",
+   "kind": "tool_result",
+   "text": "<tool_use_error>Error: No such tool available: find_entities</tool_use_error>",
+   "name": "find_entities"
+  },
+  {
+   "role": "agent",
+   "kind": "tool_call",
+   "text": "{\"entity_type\": \"product\", \"name_contains\": \"\", \"offset\": \"0\"}",
+   "name": "find_entities"
+  },
+  {
+   "role": "tool",
+   "kind": "tool_result",
+   "text": "{\"entities\": [{\"id\": \"product:fcfd7cc4\", \"name\": \"Case goods 0\"}, {\"id\": \"product:fe2a0b12\", \"name\": \"Case goods 1\"}, {\"id\": \"product:28c1720a\", \"name\": \"Case goods 2\"}, {\"id\": \"product:83349a0c\", \"name\": \"Case goods 3\"}, {\"id\": \"product:c3b0f288\", \"name\": \"Case goods 4\"}, {\"id\": \"product:6089b150\", \"name\": \"Case goods 5\"}, {\"id\": \"product:003e2a23\", \"name\": \"Case goods 6\"}, {\"id\": \"product:2c2f6fec\", \"name\": \"Case goods 7\"}, {\"id\": \"product:a29ce21e\", \"name\": \"Case goods 8\"}, {\"id\": \"product:80185cb0\", \"name\": \"Case goods 9\"}, {\"id\": \"product:f2db32e1\", \"name\": \"Case goods 10\"}, {\"id\": \"product:61ca5a9e\", \"name\": \"Case goods 11\"}, {\"id\": \"product:8c3d43fe\", \"name\": \"Case goods 12\"}, {\"id\": \"product:7e4bbd48\", \"name\": \"Case goods 13\"}, {\"id\": \"product:c1366e4b\", \"name\": \"Case goods 14\"}, {\"id\": \"product:a2e29d62\", \"name\": \"Case goods 15\"}, {\"id\": \"product:873a827f\", \"name\": \"Case goods 16\"}, {\"id\": \"product:7f54d426\", \"name\": \"Case goods 17\"}, {\"id\": \"product:405e5b6b\", \"name\": \"Case goods 18\"}, {\"id\": \"product:93170520\", \"name\": \"Case goods 19\"}, {\"id\": \"product:fcfdf369\", \"name\": \"Case goods 20\"}, {\"id\": \"product:8a37e6d9\", \"name\": \"Case goods 21\"}, {\"id\": \"product:6c949b89\", \"name\": \"Case goods 22\"}, {\"id\": \"product:c19e034e\", \"name\": \"Case goods 23\"}, {\"id\": \"product:4679737a\", \"name\": \"Case goods 24\"}, {\"id\": \"product:a745f409\", \"name\": \"Case goods 25\"}, {\"id\": \"product:6192fab3\", \"name\": \"Case goods 26\"}, {\"id\": \"product:e3303929\", \"name\": \"Case goods 27\"}, {\"id\": \"product:8f42cdbb\", \"name\": \"Case goods 28\"}, {\"id\": \"product:6d6e8484\", \"name\": \"Case goods 29\"}, {\"id\": \"product:65151782\", \"name\": \"Case goods 30\"}, {\"id\": \"product:f0d854e3\", \"name\": \"Case goods 31\"}, {\"id\": \"product:a1c0f49a\", \"name\": \"Case goods 32\"}, {\"id\": \"product:2723afd2\", \"name\": \"Case goods 33\"}, {\"id\": \"product:a11e7f85\", \"name\": \"Case goods 34\"}, {\"id\": \"product:65e07509\", \"name\": \"Case goods 35\"}, {\"id\": \"product:7453376d\", \"name\": \"Case goods 36\"}, {\"id\": \"product:3997c0b4\", \"name\": \"Case goods 37\"}, {\"id\": \"product:b796de58\", \"name\": \"Case goods 38\"}, {\"id\": \"product:650a34a1\", \"name\": \"Case goods 39\"}], \"count\": 40, \"offset\": 0, \"truncated\": false}",
+   "name": "find_entities"
+  },
+  {
+   "role": "agent",
+   "kind": "tool_call",
+   "text": "{\"entity_type\": \"stock_position\", \"name_contains\": \"\", \"offset\": \"0\"}",
+   "name": "find_entities"
+  },
+  {
+   "role": "tool",
+   "kind": "tool_result",
+   "text": "{\"entities\": [{\"id\": \"stock_position:SKU-D00\"}, {\"id\": \"stock_position:SKU-D01\"}, {\"id\": \"stock_position:SKU-D02\"}, {\"id\": \"stock_position:SKU-D03\"}, {\"id\": \"stock_position:SKU-D04\"}, {\"id\": \"stock_position:SKU-D05\"}, {\"id\": \"stock_position:SKU-D06\"}, {\"id\": \"stock_position:SKU-D07\"}, {\"id\": \"stock_position:SKU-D08\"}, {\"id\": \"stock_position:SKU-D09\"}, {\"id\": \"stock_position:SKU-D10\"}, {\"id\": \"stock_position:SKU-D11\"}, {\"id\": \"stock_position:SKU-D12\"}, {\"id\": \"stock_position:SKU-D13\"}, {\"id\": \"stock_position:SKU-D14\"}, {\"id\": \"stock_position:SKU-D15\"}, {\"id\": \"stock_position:SKU-D16\"}, {\"id\": \"stock_position:SKU-D17\"}, {\"id\": \"stock_position:SKU-D18\"}, {\"id\": \"stock_position:SKU-D19\"}, {\"id\": \"stock_position:SKU-D20\"}, {\"id\": \"stock_position:SKU-D21\"}, {\"id\": \"stock_position:SKU-D22\"}, {\"id\": \"stock_position:SKU-D23\"}, {\"id\": \"stock_position:SKU-D24\"}, {\"id\": \"stock_position:SKU-D25\"}, {\"id\": \"stock_position:SKU-D26\"}, {\"id\": \"stock_position:SKU-D27\"}, {\"id\": \"stock_position:SKU-D28\"}, {\"id\": \"stock_position:SKU-D29\"}, {\"id\": \"stock_position:SKU-D30\"}, {\"id\": \"stock_position:SKU-D31\"}, {\"id\": \"stock_position:SKU-D32\"}, {\"id\": \"stock_position:SKU-D33\"}, {\"id\": \"stock_position:SKU-D34\"}, {\"id\": \"stock_position:SKU-D35\"}, {\"id\": \"stock_position:SKU-D36\"}, {\"id\": \"stock_position:SKU-D37\"}, {\"id\": \"stock_position:SKU-D38\"}, {\"id\": \"stock_position:SKU-D39\"}], \"count\": 40, \"offset\": 0, \"truncated\": false}",
+   "name": "find_entities"
+  },
+  {
+   "role": "agent",
+   "kind": "tool_call",
+   "text": "{\"entity_type\": \"supplier_lead_time\", \"name_contains\": \"\", \"offset\": \"0\"}",
+   "name": "find_entities"
+  },
+  {
+   "role": "tool",
+   "kind": "tool_result",
+   "text": "{\"entities\": [{\"id\": \"supplier_lead_time:SKU-D00\"}, {\"id\": \"supplier_lead_time:SKU-D01\"}, {\"id\": \"supplier_lead_time:SKU-D02\"}, {\"id\": \"supplier_lead_time:SKU-D03\"}, {\"id\": \"supplier_lead_time:SKU-D04\"}, {\"id\": \"supplier_lead_time:SKU-D05\"}, {\"id\": \"supplier_lead_time:SKU-D06\"}, {\"id\": \"supplier_lead_time:SKU-D07\"}, {\"id\": \"supplier_lead_time:SKU-D08\"}, {\"id\": \"supplier_lead_time:SKU-D09\"}, {\"id\": \"supplier_lead_time:SKU-D10\"}, {\"id\": \"supplier_lead_time:SKU-D11\"}, {\"id\": \"supplier_lead_time:SKU-D12\"}, {\"id\": \"supplier_lead_time:SKU-D13\"}, {\"id\": \"supplier_lead_time:SKU-D14\"}, {\"id\": \"supplier_lead_time:SKU-D15\"}, {\"id\": \"supplier_lead_time:SKU-D16\"}, {\"id\": \"supplier_lead_time:SKU-D17\"}, {\"id\": \"supplier_lead_time:SKU-D18\"}, {\"id\": \"supplier_lead_time:SKU-D19\"}, {\"id\": \"supplier_lead_time:SKU-D20\"}, {\"id\": \"supplier_lead_time:SKU-D21\"}, {\"id\": \"supplier_lead_time:SKU-D22\"}, {\"id\": \"supplier_lead_time:SKU-D23\"}, {\"id\": \"supplier_lead_time:SKU-D24\"}, {\"id\": \"supplier_lead_time:SKU-D25\"}, {\"id\": \"supplier_lead_time:SKU-D26\"}, {\"id\": \"supplier_lead_time:SKU-D27\"}, {\"id\": \"supplier_lead_time:SKU-D28\"}, {\"id\": \"supplier_lead_time:SKU-D29\"}, {\"id\": \"supplier_lead_time:SKU-D30\"}, {\"id\": \"supplier_lead_time:SKU-D31\"}, {\"id\": \"supplier_lead_time:SKU-D32\"}, {\"id\": \"supplier_lead_time:SKU-D33\"}, {\"id\": \"supplier_lead_time:SKU-D34\"}, {\"id\": \"supplier_lead_time:SKU-D35\"}, {\"id\": \"supplier_lead_time:SKU-D36\"}, {\"id\": \"supplier_lead_time:SKU-D37\"}, {\"id\": \"supplier_lead_time:SKU-D38\"}, {\"id\": \"supplier_lead_time:SKU-D39\"}], \"count\": 40, \"offset\": 0, \"truncated\": false}",
+   "name": "find_entities"
+  },
+  {
+   "role": "agent",
+   "kind": "tool_call",
+   "text": "{\"subject\": \"stock_position:SKU-D00\", \"predicate\": \"\", \"as_of\": \"\", \"known_at\": \"\", \"offset\": \"0\"}",
+   "name": "get_assertions"
+  },
+  {
+   "role": "tool",
+   "kind": "tool_result",
+   "text": "{\"assertions\": [{\"id\": 656, \"subject\": \"stock_position:SKU-D00\", \"predicate\": \"stock_position.qty\", \"value\": 606, \"valid_from\": \"2026-06-30\", \"valid_to\": null, \"status\": \"observed\", \"evidence\": \"products row SKU-D00 (export 2026-07-01)\", \"recorded_at\": \"2026-07-01T08:00:00\"}, {\"id\": 657, \"subject\": \"stock_position:SKU-D00\", \"predicate\": \"stock_position.daily_demand\", \"value\": 8, \"valid_from\": \"2026-06-30\", \"valid_to\": null, \"status\": \"observed\", \"evidence\": \"products row SKU-D00 (export 2026-07-01)\", \"recorded_at\": \"2026-07-01T08:00:00\"}, {\"id\": 658, \"subject\": \"stock_position:SKU-D00\", \"predicate\": \"stock_position.of_product\", \"value\": \"product:fcfd7cc4\", \"valid_from\": \"2026-06-30\", \"valid_to\": null, \"status\": \"observed\", \"evidence\": \"products row SKU-D00 (export 2026-07-01)\", \"recorded_at\": \"2026-07-01T08:00:00\"}], \"count\": 3, \"offset\": 0, \"truncated\": false}",
+   "name": "get_assertions"
+  },
+  {
+   "role": "agent",
+   "kind": "tool_call",
+   "text": "{\"subject\": \"supplier_lead_time:SKU-D00\", \"predicate\": \"\", \"as_of\": \"\", \"known_at\": \"\", \"offset\": \"0\"}",
+   "name": "get_assertions"
+  },
+  {
+   "role": "tool",
+   "kind": "tool_result",
+   "text": "{\"assertions\": [{\"id\": 1059, \"subject\": \"supplier_lead_time:SKU-D00\", \"predicate\": \"supplier_lead_time.days\", \"value\": 11, \"valid_from\": \"2026-01-01\", \"valid_to\": null, \"status\": \"observed\", \"evidence\": \"supplier_leadtimes row SKU-D00 (export 2026-01-03)\", \"recorded_at\": \"2026-01-03T09:00:00\"}, {\"id\": 1060, \"subject\": \"supplier_lead_time:SKU-D00\", \"predicate\": \"supplier_lead_time.for_product\", \"value\": \"product:fcfd7cc4\", \"valid_from\": \"2026-01-01\", \"valid_to\": null, \"status\": \"observed\", \"evidence\": \"supplier_leadtimes row SKU-D00 (export 2026-01-03)\", \"recorded_at\": \"2026-01-03T09:00:00\"}], \"count\": 2, \"offset\": 0, \"truncated\": false}",
+   "name": "get_assertions"
+  },
+  {
+   "role": "agent",
+   "kind": "tool_call",
+   "text": "{\"subject\": \"stock_position:SKU-D01\", \"predicate\": \"\", \"as_of\": \"\", \"known_at\": \"\", \"offset\": \"0\"}",
+   "name": "get_assertions"
+  },
+  {
+   "role": "tool",
+   "kind": "tool_result",
+   "text": "{\"assertions\": [{\"id\": 668, \"subject\": \"stock_position:SKU-D01\", \"predicate\": \"stock_position.qty\", \"value\": 352, \"valid_from\": \"2026-06-30\", \"valid_to\": null, \"status\": \"observed\", \"evidence\": \"products row SKU-D01 (export 2026-07-01)\", \"recorded_at\": \"2026-07-01T08:00:00\"}, {\"id\": 669, \"subject\": \"stock_position:SKU-D01\", \"predicate\": \"stock_position.daily_demand\", \"value\": 12, \"valid_from\": \"2026-06-30\", \"valid_to\": null, \"status\": \"observed\", \"evidence\": \"products row SKU-D01 (export 2026-07-01)\", \"recorded_at\": \"2026-07-01T08:00:00\"}, {\"id\": 670, \"subject\": \"stock_position:SKU-D01\", \"predicate\": \"stock_position.of_product\", \"value\": \"product:fe2a0b12\", \"valid_from\": \"2026-06-30\", \"valid_to\": null, \"status\": \"observed\", \"evidence\": \"products row SKU-D01 (export 2026-07-01)\", \"recorded_at\": \"2026-07-01T08:00:00\"}], \"count\": 3, \"offset\": 0, \"truncated\": false}",
+   "name": "get_assertions"
+  },
+  {
+   "role": "agent",
+   "kind": "tool_call",
+   "text": "{\"subject\": \"supplier_lead_time:SKU-D01\", \"predicate\": \"\", \"as_of\": \"\", \"known_at\": \"\", \"offset\": \"0\"}",
+   "name": "get_assertions"
+  },
+  {
+   "role": "tool",
+   "kind": "tool_result",
+   "text": "{\"assertions\": [{\"id\": 1061, \"subject\": \"supplier_lead_time:SKU-D01\", \"predicate\": \"supplier_lead_time.days\", \"value\": 5, \"valid_from\": \"2026-01-01\", \"valid_to\": null, \"status\": \"observed\", \"evidence\": \"supplier_leadtimes row SKU-D01 (export 2026-01-03)\", \"recorded_at\": \"2026-01-03T09:00:00\"}, {\"id\": 1062, \"subject\": \"supplier_lead_time:SKU-D01\", \"predicate\": \"supplier_lead_time.for_product\", \"value\": \"product:fe2a0b12\", \"valid_from\": \"2026-01-01\", \"valid_to\": null, \"status\": \"observed\", \"evidence\": \"supplier_leadtimes row SKU-D01 (export 2026-01-03)\", \"recorded_at\": \"2026-01-03T09:00:00\"}], \"count\": 2, \"offset\": 0, \"truncated\": false}",
+   "name": "get_assertions"
+  },
+  {
+   "role": "agent",
+   "kind": "tool_call",
+   "text": "{\"subject\": \"stock_position:SKU-D02\", \"predicate\": \"\", \"as_of\": \"\", \"known_at\": \"\", \"offset\": \"0\"}",
+   "name": "get_assertions"
+  },
+  {
+   "role": "tool",
+   "kind": "tool_result",
+   "text": "{\"assertions\": [{\"id\": 680, \"subject\": \"stock_position:SKU-D02\", \"predicate\": \"stock_position.qty\", \"value\": 505, \"valid_from\": \"2026-06-30\", \"valid_to\": null, \"status\": \"observed\", \"evidence\": \"products row SKU-D02 (export 2026-07-01)\", \"recorded_at\": \"2026-07-01T08:00:00\"}, {\"id\": 681, \"subject\": \"stock_position:SKU-D02\", \"predicate\": \"stock_position.daily_demand\", \"value\": 8, \"valid_from\": \"2026-06-30\", \"valid_to\": null, \"status\": \"observed\", \"evidence\": \"products row SKU-D02 (export 2026-07-01)\", \"recorded_at\": \"2026-07-01T08:00:00\"}, {\"id\": 682, \"subject\": \"stock_position:SKU-D02\", \"predicate\": \"stock_position.of_product\", \"value\": \"product:28c1720a\", \"valid_from\": \"2026-06-30\", \"valid_to\": null, \"status\": \"observed\", \"evidence\": \"products row SKU-D02 (export 2026-07-01)\", \"recorded_at\": \"2026-07-01T08:00:00\"}], \"count\": 3, \"offset\": 0, \"truncated\": false}",
+   "name": "get_assertions"
+  },
+  {
+   "role": "agent",
+   "kind": "tool_call",
+   "text": "{\"subject\": \"supplier_lead_time:SKU-D02\", \"predicate\": \"\", \"as_of\": \"\", \"known_at\": \"\", \"offset\": \"0\"}",
+   "name": "get_assertions"
+  },
+  {
+   "role": "tool",
+   "kind": "tool_result",
+   "text": "{\"assertions\": [{\"id\": 1063, \"subject\": \"supplier_lead_time:SKU-D02\", \"predicate\": \"supplier_lead_time.days\", \"value\": 10, \"valid_from\": \"2026-01-01\", \"valid_to\": null, \"status\": \"observed\", \"evidence\": \"supplier_leadtimes row SKU-D02 (export 2026-01-03)\", \"recorded_at\": \"2026-01-03T09:00:00\"}, {\"id\": 1064, \"subject\": \"supplier_lead_time:SKU-D02\", \"predicate\": \"supplier_lead_time.for_product\", \"value\": \"product:28c1720a\", \"valid_from\": \"2026-01-01\", \"valid_to\": null, \"status\": \"observed\", \"evidence\": \"supplier_leadtimes row SKU-D02 (export 2026-01-03)\", \"recorded_at\": \"2026-01-03T09:00:00\"}], \"count\": 2, \"offset\": 0, \"truncated\": false}",
+   "name": "get_assertions"
+  },
+  {
+   "role": "agent",
+   "kind": "tool_call",
+   "text": "{\"subject\": \"stock_position:SKU-D03\", \"predicate\": \"\", \"as_of\": \"\", \"known_at\": \"\", \"offset\": \"0\"}",
+   "name": "get_assertions"
+  },
+  {
+   "role": "tool",
+   "kind": "tool_result",
+   "text": "{\"assertions\": [{\"id\": 692, \"subject\": \"stock_position:SKU-D03\", \"predicate\": \"stock_position.qty\", \"value\": 288, \"valid_from\": \"2026-06-30\", \"valid_to\": null, \"status\": \"observed\", \"evidence\": \"products row SKU-D03 (export 2026-07-01)\", \"recorded_at\": \"2026-07-01T08:00:00\"}, {\"id\": 693, \"subject\": \"stock_position:SKU-D03\", \"predicate\": \"stock_position.daily_demand\", \"value\": 9, \"valid_from\": \"2026-06-30\", \"valid_to\": null, \"status\": \"observed\", \"evidence\": \"products row SKU-D03 (export 2026-07-01)\", \"recorded_at\": \"2026-07-01T08:00:00\"}, {\"id\": 694, \"subject\": \"stock_position:SKU-D03\", \"predicate\": \"stock_position.of_product\", \"value\": \"product:83349a0c\", \"valid_from\": \"2026-06-30\", \"valid_to\": null, \"status\": \"observed\", \"evidence\": \"products row SKU-D03 (export 2026-07-01)\", \"recorded_at\": \"2026-07-01T08:00:00\"}], \"count\": 3, \"offset\": 0, \"truncated\": false}",
+   "name": "get_assertions"
+  },
+  {
+   "role": "agent",
+   "kind": "tool_call",
+   "text": "{\"subject\": \"supplier_lead_time:SKU-D03\", \"predicate\": \"\", \"as_of\": \"\", \"known_at\": \"\", \"offset\": \"0\"}",
+   "name": "get_assertions"
+  },
+  {
+   "role": "tool",
+   "kind": "tool_result",
+   "text": "{\"assertions\": [{\"id\": 1065, \"subject\": \"supplier_lead_time:SKU-D03\", \"predicate\": \"supplier_lead_time.days\", \"value\": 13, \"valid_from\": \"2026-01-01\", \"valid_to\": null, \"status\": \"observed\", \"evidence\": \"supplier_leadtimes row SKU-D03 (export 2026-01-03)\", \"recorded_at\": \"2026-01-03T09:00:00\"}, {\"id\": 1066, \"subject\": \"supplier_lead_time:SKU-D03\", \"predicate\": \"supplier_lead_time.for_product\", \"value\": \"product:83349a0c\", \"valid_from\": \"2026-01-01\", \"valid_to\": null, \"status\": \"observed\", \"evidence\": \"supplier_leadtimes row SKU-D03 (export 2026-01-03)\", \"recorded_at\": \"2026-01-03T09:00:00\"}], \"count\": 2, \"offset\": 0, \"truncated\": false}",
+   "name": "get_assertions"
+  },
+  {
+   "role": "agent",
+   "kind": "tool_call",
+   "text": "{\"subject\": \"stock_position:SKU-D04\", \"predicate\": \"\", \"as_of\": \"\", \"known_at\": \"\", \"offset\": \"0\"}",
+   "name": "get_assertions"
+  },
+  {
+   "role": "tool",
+   "kind": "tool_result",
+   "text": "{\"assertions\": [{\"id\": 704, \"subject\": \"stock_position:SKU-D04\", \"predicate\": \"stock_position.qty\", \"value\": 253, \"valid_from\": \"2026-06-30\", \"valid_to\": null, \"status\": \"observed\", \"evidence\": \"products row SKU-D04 (export 2026-07-01)\", \"recorded_at\": \"2026-07-01T08:00:00\"}, {\"id\": 705, \"subject\": \"stock_position:SKU-D04\", \"predicate\": \"stock_position.daily_demand\", \"value\": 4, \"valid_from\": \"2026-06-30\", \"valid_to\": null, \"status\": \"observed\", \"evidence\": \"products row SKU-D04 (export 2026-07-01)\", \"recorded_at\": \"2026-07-01T08:00:00\"}, {\"id\": 706, \"subject\": \"stock_position:SKU-D04\", \"predicate\": \"stock_position.of_product\", \"value\": \"product:c3b0f288\", \"valid_from\": \"2026-06-30\", \"valid_to\": null, \"status\": \"observed\", \"evidence\": \"products row SKU-D04 (export 2026-07-01)\", \"recorded_at\": \"2026-07-01T08:00:00\"}], \"count\": 3, \"offset\": 0, \"truncated\": false}",
+   "name": "get_assertions"
+  },
+  {
+   "role": "agent",
+   "kind": "tool_call",
+   "text": "{\"subject\": \"supplier_lead_time:SKU-D04\", \"predicate\": \"\", \"as_of\": \"\", \"known_at\": \"\", \"offset\": \"0\"}",
+   "name": "get_assertions"
+  },
+  {
+   "role": "tool",
+   "kind": "tool_result",
+   "text": "{\"assertions\": [{\"id\": 1067, \"subject\": \"supplier_lead_time:SKU-D04\", \"predicate\": \"supplier_lead_time.days\", \"value\": 9, \"valid_from\": \"2026-01-01\", \"valid_to\": null, \"status\": \"observed\", \"evidence\": \"supplier_leadtimes row SKU-D04 (export 2026-01-03)\", \"recorded_at\": \"2026-01-03T09:00:00\"}, {\"id\": 1068, \"subject\": \"supplier_lead_time:SKU-D04\", \"predicate\": \"supplier_lead_time.for_product\", \"value\": \"product:c3b0f288\", \"valid_from\": \"2026-01-01\", \"valid_to\": null, \"status\": \"observed\", \"evidence\": \"supplier_leadtimes row SKU-D04 (export 2026-01-03)\", \"recorded_at\": \"2026-01-03T09:00:00\"}], \"count\": 2, \"offset\": 0, \"truncated\": false}",
+   "name": "get_assertions"
+  },
+  {
+   "role": "agent",
+   "kind": "tool_call",
+   "text": "{\"subject\": \"stock_position:SKU-D05\", \"predicate\": \"\", \"as_of\": \"\", \"known_at\": \"\", \"offset\": \"0\"}",
+   "name": "get_assertions"
+  },
+  {
+   "role": "tool",
+   "kind": "tool_result",
+   "text": "{\"assertions\": [{\"id\": 716, \"subject\": \"stock_position:SKU-D05\", \"predicate\": \"stock_position.qty\", \"value\": 371, \"valid_from\": \"2026-06-30\", \"valid_to\": null, \"status\": \"observed\", \"evidence\": \"products row SKU-D05 (export 2026-07-01)\", \"recorded_at\": \"2026-07-01T08:00:00\"}, {\"id\": 717, \"subject\": \"stock_position:SKU-D05\", \"predicate\": \"stock_position.daily_demand\", \"value\": 4, \"valid_from\": \"2026-06-30\", \"valid_to\": null, \"status\": \"observed\", \"evidence\": \"products row SKU-D05 (export 2026-07-01)\", \"recorded_at\": \"2026-07-01T08:00:00\"}, {\"id\": 718, \"subject\": \"stock_position:SKU-D05\", \"predicate\": \"stock_position.of_product\", \"value\": \"product:6089b150\", \"valid_from\": \"2026-06-30\", \"valid_to\": null, \"status\": \"observed\", \"evidence\": \"products row SKU-D05 (export 2026-07-01)\", \"recorded_at\": \"2026-07-01T08:00:00\"}], \"count\": 3, \"offset\": 0, \"truncated\": false}",
+   "name": "get_assertions"
+  },
+  {
+   "role": "agent",
+   "kind": "tool_call",
+   "text": "{\"subject\": \"supplier_lead_time:SKU-D05\", \"predicate\": \"\", \"as_of\": \"\", \"known_at\": \"\", \"offset\": \"0\"}",
+   "name": "get_assertions"
+  },
+  {
+   "role": "tool",
+   "kind": "tool_result",
+   "text": "{\"assertions\": [{\"id\": 1069, \"subject\": \"supplier_lead_time:SKU-D05\", \"predicate\": \"supplier_lead_time.days\", \"value\": 7, \"valid_from\": \"2026-01-01\", \"valid_to\": null, \"status\": \"observed\", \"evidence\": \"supplier_leadtimes row SKU-D05 (export 2026-01-03)\", \"recorded_at\": \"2026-01-03T09:00:00\"}, {\"id\": 1070, \"subject\": \"supplier_lead_time:SKU-D05\", \"predicate\": \"supplier_lead_time.for_product\", \"value\": \"product:6089b150\", \"valid_from\": \"2026-01-01\", \"valid_to\": null, \"status\": \"observed\", \"evidence\": \"supplier_leadtimes row SKU-D05 (export 2026-01-03)\", \"recorded_at\": \"2026-01-03T09:00:00\"}], \"count\": 2, \"offset\": 0, \"truncated\": false}",
+   "name": "get_assertions"
+  },
+  {
+   "role": "agent",
+   "kind": "tool_call",
+   "text": "{\"subject\": \"stock_position:SKU-D06\", \"predicate\": \"\", \"as_of\": \"\", \"known_at\": \"\", \"offset\": \"0\"}",
+   "name": "get_assertions"
+  },
+  {
+   "role": "tool",
+   "kind": "tool_result",
+   "text": "{\"assertions\": [{\"id\": 726, \"subject\": \"stock_position:SKU-D06\", \"predicate\": \"stock_position.qty\", \"value\": 309, \"valid_from\": \"2026-06-30\", \"valid_to\": null, \"status\": \"observed\", \"evidence\": \"products row SKU-D06 (export 2026-07-01)\", \"recorded_at\": \"2026-07-01T08:00:00\"}, {\"id\": 727, \"subject\": \"stock_position:SKU-D06\", \"predicate\": \"stock_position.daily_demand\", \"value\": 12, \"valid_from\": \"2026-06-30\", \"valid_to\": null, \"status\": \"observed\", \"evidence\": \"products row SKU-D06 (export 2026-07-01)\", \"recorded_at\": \"2026-07-01T08:00:00\"}, {\"id\": 728, \"subject\": \"stock_position:SKU-D06\", \"predicate\": \"stock_position.of_product\", \"value\": \"product:003e2a23\", \"valid_from\": \"2026-06-30\", \"valid_to\": null, \"status\": \"observed\", \"evidence\": \"products row SKU-D06 (export 2026-07-01)\", \"recorded_at\": \"2026-07-01T08:00:00\"}], \"count\": 3, \"offset\": 0, \"truncated\": false}",
+   "name": "get_assertions"
+  },
+  {
+   "role": "agent",
+   "kind": "tool_call",
+   "text": "{\"subject\": \"supplier_lead_time:SKU-D06\", \"predicate\": \"\", \"as_of\": \"\", \"known_at\": \"\", \"offset\": \"0\"}",
+   "name": "get_assertions"
+  },
+  {
+   "role": "tool",
+   "kind": "tool_result",
+   "text": "{\"assertions\": [{\"id\": 1071, \"subject\": \"supplier_lead_time:SKU-D06\", \"predicate\": \"supplier_lead_time.days\", \"value\": 5, \"valid_from\": \"2026-01-01\", \"valid_to\": null, \"status\": \"observed\", \"evidence\": \"supplier_leadtimes row SKU-D06 (export 2026-01-03)\", \"recorded_at\": \"2026-01-03T09:00:00\"}, {\"id\": 1072, \"subject\": \"supplier_lead_time:SKU-D06\", \"predicate\": \"supplier_lead_time.for_product\", \"value\": \"product:003e2a23\", \"valid_from\": \"2026-01-01\", \"valid_to\": null, \"status\": \"observed\", \"evidence\": \"supplier_leadtimes row SKU-D06 (export 2026-01-03)\", \"recorded_at\": \"2026-01-03T09:00:00\"}], \"count\": 2, \"offset\": 0, \"truncated\": false}",
+   "name": "get_assertions"
+  },
+  {
+   "role": "agent",
+   "kind": "tool_call",
+   "text": "{\"subject\": \"stock_position:SKU-D07\", \"predicate\": \"\", \"as_of\": \"\", \"known_at\": \"\", \"offset\": \"0\"}",
+   "name": "get_assertions"
+  },
+  {
+   "role": "tool",
+   "kind": "tool_result",
+   "text": "{\"assertions\": [{\"id\": 736, \"subject\": \"stock_position:SKU-D07\", \"predicate\": \"stock_position.qty\", \"value\": 477, \"valid_from\": \"2026-06-30\", \"valid_to\": null, \"status\": \"observed\", \"evidence\": \"products row SKU-D07 (export 2026-07-01)\", \"recorded_at\": \"2026-07-01T08:00:00\"}, {\"id\": 737, \"subject\": \"stock_position:SKU-D07\", \"predicate\": \"stock_position.daily_demand\", \"value\": 5, \"valid_from\": \"2026-06-30\", \"valid_to\": null, \"status\": \"observed\", \"evidence\": \"products row SKU-D07 (export 2026-07-01)\", \"recorded_at\": \"2026-07-01T08:00:00\"}, {\"id\": 738, \"subject\": \"stock_position:SKU-D07\", \"predicate\": \"stock_position.of_product\", \"value\": \"product:2c2f6fec\", \"valid_from\": \"2026-06-30\", \"valid_to\": null, \"status\": \"observed\", \"evidence\": \"products row SKU-D07 (export 2026-07-01)\", \"recorded_at\": \"2026-07-01T08:00:00\"}], \"count\": 3, \"offset\": 0, \"truncated\": false}",
+   "name": "get_assertions"
+  },
+  {
+   "role": "agent",
+   "kind": "tool_call",
+   "text": "{\"subject\": \"supplier_lead_time:SKU-D07\", \"predicate\": \"\", \"as_of\": \"\", \"known_at\": \"\", \"offset\": \"0\"}",
+   "name": "get_assertions"
+  },
+  {
+   "role": "tool",
+   "kind": "tool_result",
+   "text": "{\"assertions\": [{\"id\": 1073, \"subject\": \"supplier_lead_time:SKU-D07\", \"predicate\": \"supplier_lead_time.days\", \"value\": 10, \"valid_from\": \"2026-01-01\", \"valid_to\": null, \"status\": \"observed\", \"evidence\": \"supplier_leadtimes row SKU-D07 (export 2026-01-03)\", \"recorded_at\": \"2026-01-03T09:00:00\"}, {\"id\": 1074, \"subject\": \"supplier_lead_time:SKU-D07\", \"predicate\": \"supplier_lead_time.for_product\", \"value\": \"product:2c2f6fec\", \"valid_from\": \"2026-01-01\", \"valid_to\": null, \"status\": \"observed\", \"evidence\": \"supplier_leadtimes row SKU-D07 (export 2026-01-03)\", \"recorded_at\": \"2026-01-03T09:00:00\"}], \"count\": 2, \"offset\": 0, \"truncated\": false}",
+   "name": "get_assertions"
+  },
+  {
+   "role": "agent",
+   "kind": "tool_call",
+   "text": "{\"subject\": \"stock_position:SKU-D08\", \"predicate\": \"\", \"as_of\": \"\", \"known_at\": \"\", \"offset\": \"0\"}",
+   "name": "get_assertions"
+  },
+  {
+   "role": "tool",
+   "kind": "tool_result",
+   "text": "{\"assertions\": [{\"id\": 746, \"subject\": \"stock_position:SKU-D08\", \"predicate\": \"stock_position.qty\", \"value\": 541, \"valid_from\": \"2026-06-30\", \"valid_to\": null, \"status\": \"observed\", \"evidence\": \"products row SKU-D08 (export 2026-07-01)\", \"recorded_at\": \"2026-07-01T08:00:00\"}, {\"id\": 747, \"subject\": \"stock_position:SKU-D08\", \"predicate\": \"stock_position.daily_demand\", \"value\": 10, \"valid_from\": \"2026-06-30\", \"valid_to\": null, \"status\": \"observed\", \"evidence\": \"products row SKU-D08 (export 2026-07-01)\", \"recorded_at\": \"2026-07-01T08:00:00\"}, {\"id\": 748, \"subject\": \"stock_position:SKU-D08\", \"predicate\": \"stock_position.of_product\", \"value\": \"product:a29ce21e\", \"valid_from\": \"2026-06-30\", \"valid_to\": null, \"status\": \"observed\", \"evidence\": \"products row SKU-D08 (export 2026-07-01)\", \"recorded_at\": \"2026-07-01T08:00:00\"}], \"count\": 3, \"offset\": 0, \"truncated\": false}",
+   "name": "get_assertions"
+  },
+  {
+   "role": "agent",
+   "kind": "tool_call",
+   "text": "{\"subject\": \"supplier_lead_time:SKU-D08\", \"predicate\": \"\", \"as_of\": \"\", \"known_at\": \"\", \"offset\": \"0\"}",
+   "name": "get_assertions"
+  },
+  {
+   "role": "tool",
+   "kind": "tool_result",
+   "text": "{\"assertions\": [{\"id\": 1075, \"subject\": \"supplier_lead_time:SKU-D08\", \"predicate\": \"supplier_lead_time.days\", \"value\": 7, \"valid_from\": \"2026-01-01\", \"valid_to\": null, \"status\": \"observed\", \"evidence\": \"supplier_leadtimes row SKU-D08 (export 2026-01-03)\", \"recorded_at\": \"2026-01-03T09:00:00\"}, {\"id\": 1076, \"subject\": \"supplier_lead_time:SKU-D08\", \"predicate\": \"supplier_lead_time.for_product\", \"value\": \"product:a29ce21e\", \"valid_from\": \"2026-01-01\", \"valid_to\": null, \"status\": \"observed\", \"evidence\": \"supplier_leadtimes row SKU-D08 (export 2026-01-03)\", \"recorded_at\": \"2026-01-03T09:00:00\"}], \"count\": 2, \"offset\": 0, \"truncated\": false}",
+   "name": "get_assertions"
+  },
+  {
+   "role": "agent",
+   "kind": "tool_call",
+   "text": "{\"subject\": \"stock_position:SKU-D09\", \"predicate\": \"\", \"as_of\": \"\", \"known_at\": \"\", \"offset\": \"0\"}",
+   "name": "get_assertions"
+  },
+  {
+   "role": "tool",
+   "kind": "tool_result",
+   "text": "{\"assertions\": [{\"id\": 756, \"subject\": \"stock_position:SKU-D09\", \"predicate\": \"stock_position.qty\", \"value\": 364, \"valid_from\": \"2026-06-30\", \"valid_to\": null, \"status\": \"observed\", \"evidence\": \"products row SKU-D09 (export 2026-07-01)\", \"recorded_at\": \"2026-07-01T08:00:00\"}, {\"id\": 757, \"subject\": \"stock_position:SKU-D09\", \"predicate\": \"stock_position.daily_demand\", \"value\": 8, \"valid_from\": \"2026-06-30\", \"valid_to\": null, \"status\": \"observed\", \"evidence\": \"products row SKU-D09 (export 2026-07-01)\", \"recorded_at\": \"2026-07-01T08:00:00\"}, {\"id\": 758, \"subject\": \"stock_position:SKU-D09\", \"predicate\": \"stock_position.of_product\", \"value\": \"product:80185cb0\", \"valid_from\": \"2026-06-30\", \"valid_to\": null, \"status\": \"observed\", \"evidence\": \"products row SKU-D09 (export 2026-07-01)\", \"recorded_at\": \"2026-07-01T08:00:00\"}], \"count\": 3, \"offset\": 0, \"truncated\": false}",
+   "name": "get_assertions"
+  },
+  {
+   "role": "agent",
+   "kind": "tool_call",
+   "text": "{\"subject\": \"supplier_lead_time:SKU-D09\", \"predicate\": \"\", \"as_of\": \"\", \"known_at\": \"\", \"offset\": \"0\"}",
+   "name": "get_assertions"
+  },
+  {
+   "role": "tool",
+   "kind": "tool_result",
+   "text": "{\"assertions\": [{\"id\": 1077, \"subject\": \"supplier_lead_time:SKU-D09\", \"predicate\": \"supplier_lead_time.days\", \"value\": 13, \"valid_from\": \"2026-01-01\", \"valid_to\": null, \"status\": \"observed\", \"evidence\": \"supplier_leadtimes row SKU-D09 (export 2026-01-03)\", \"recorded_at\": \"2026-01-03T09:00:00\"}, {\"id\": 1078, \"subject\": \"supplier_lead_time:SKU-D09\", \"predicate\": \"supplier_lead_time.for_product\", \"value\": \"product:80185cb0\", \"valid_from\": \"2026-01-01\", \"valid_to\": null, \"status\": \"observed\", \"evidence\": \"supplier_leadtimes row SKU-D09 (export 2026-01-03)\", \"recorded_at\": \"2026-01-03T09:00:00\"}], \"count\": 2, \"offset\": 0, \"truncated\": false}",
+   "name": "get_assertions"
+  },
+  {
+   "role": "agent",
+   "kind": "tool_call",
+   "text": "{\"subject\": \"stock_position:SKU-D10\", \"predicate\": \"\", \"as_of\": \"\", \"known_at\": \"\", \"offset\": \"0\"}",
+   "name": "get_assertions"
+  },
+  {
+   "role": "tool",
+   "kind": "tool_result",
+   "text": "{\"assertions\": [{\"id\": 766, \"subject\": \"stock_position:SKU-D10\", \"predicate\": \"stock_position.qty\", \"value\": 241, \"valid_from\": \"2026-06-30\", \"valid_to\": null, \"status\": \"observed\", \"evidence\": \"products row SKU-D10 (export 2026-07-01)\", \"recorded_at\": \"2026-07-01T08:00:00\"}, {\"id\": 767, \"subject\": \"stock_position:SKU-D10\", \"predicate\": \"stock_position.daily_demand\", \"value\": 5, \"valid_from\": \"2026-06-30\", \"valid_to\": null, \"status\": \"observed\", \"evidence\": \"products row SKU-D10 (export 2026-07-01)\", \"recorded_at\": \"2026-07-01T08:00:00\"}, {\"id\": 768, \"subject\": \"stock_position:SKU-D10\", \"predicate\": \"stock_position.of_product\", \"value\": \"product:f2db32e1\", \"valid_from\": \"2026-06-30\", \"valid_to\": null, \"status\": \"observed\", \"evidence\": \"products row SKU-D10 (export 2026-07-01)\", \"recorded_at\": \"2026-07-01T08:00:00\"}], \"count\": 3, \"offset\": 0, \"truncated\": false}",
+   "name": "get_assertions"
+  },
+  {
+   "role": "agent",
+   "kind": "tool_call",
+   "text": "{\"subject\": \"supplier_lead_time:SKU-D10\", \"predicate\": \"\", \"as_of\": \"\", \"known_at\": \"\", \"offset\": \"0\"}",
+   "name": "get_assertions"
+  },
+  {
+   "role": "tool",
+   "kind": "tool_result",
+   "text": "{\"assertions\": [{\"id\": 1079, \"subject\": \"supplier_lead_time:SKU-D10\", \"predicate\": \"supplier_lead_time.days\", \"value\": 7, \"valid_from\": \"2026-01-01\", \"valid_to\": null, \"status\": \"observed\", \"evidence\": \"supplier_leadtimes row SKU-D10 (export 2026-01-03)\", \"recorded_at\": \"2026-01-03T09:00:00\"}, {\"id\": 1080, \"subject\": \"supplier_lead_time:SKU-D10\", \"predicate\": \"supplier_lead_time.for_product\", \"value\": \"product:f2db32e1\", \"valid_from\": \"2026-01-01\", \"valid_to\": null, \"status\": \"observed\", \"evidence\": \"supplier_leadtimes row SKU-D10 (export 2026-01-03)\", \"recorded_at\": \"2026-01-03T09:00:00\"}], \"count\": 2, \"offset\": 0, \"truncated\": false}",
+   "name": "get_assertions"
+  },
+  {
+   "role": "agent",
+   "kind": "tool_call",
+   "text": "{\"subject\": \"stock_position:SKU-D11\", \"predicate\": \"\", \"as_of\": \"\", \"known_at\": \"\", \"offset\": \"0\"}",
+   "name": "get_assertions"
+  },
+  {
+   "role": "tool",
+   "kind": "tool_result",
+   "text": "{\"assertions\": [{\"id\": 776, \"subject\": \"stock_position:SKU-D11\", \"predicate\": \"stock_position.qty\", \"value\": 296, \"valid_from\": \"2026-06-30\", \"valid_to\": null, \"status\": \"observed\", \"evidence\": \"products row SKU-D11 (export 2026-07-01)\", \"recorded_at\": \"2026-07-01T08:00:00\"}, {\"id\": 777, \"subject\": \"stock_position:SKU-D11\", \"predicate\": \"stock_position.daily_demand\", \"value\": 8, \"valid_from\": \"2026-06-30\", \"valid_to\": null, \"status\": \"observed\", \"evidence\": \"products row SKU-D11 (export 2026-07-01)\", \"recorded_at\": \"2026-07-01T08:00:00\"}, {\"id\": 778, \"subject\": \"stock_position:SKU-D11\", \"predicate\": \"stock_position.of_product\", \"value\": \"product:61ca5a9e\", \"valid_from\": \"2026-06-30\", \"valid_to\": null, \"status\": \"observed\", \"evidence\": \"products row SKU-D11 (export 2026-07-01)\", \"recorded_at\": \"2026-07-01T08:00:00\"}], \"count\": 3, \"offset\": 0, \"truncated\": false}",
+   "name": "get_assertions"
+  },
+  {
+   "role": "agent",
+   "kind": "tool_call",
+   "text": "{\"subject\": \"supplier_lead_time:SKU-D11\", \"predicate\": \"\", \"as_of\": \"\", \"known_at\": \"\", \"offset\": \"0\"}",
+   "name": "get_assertions"
+  },
+  {
+   "role": "tool",
+   "kind": "tool_result",
+   "text": "{\"assertions\": [{\"id\": 1081, \"subject\": \"supplier_lead_time:SKU-D11\", \"predicate\": \"supplier_lead_time.days\", \"value\": 5, \"valid_from\": \"2026-01-01\", \"valid_to\": null, \"status\": \"observed\", \"evidence\": \"supplier_leadtimes row SKU-D11 (export 2026-01-03)\", \"recorded_at\": \"2026-01-03T09:00:00\"}, {\"id\": 1082, \"subject\": \"supplier_lead_time:SKU-D11\", \"predicate\": \"supplier_lead_time.for_product\", \"value\": \"product:61ca5a9e\", \"valid_from\": \"2026-01-01\", \"valid_to\": null, \"status\": \"observed\", \"evidence\": \"supplier_leadtimes row SKU-D11 (export 2026-01-03)\", \"recorded_at\": \"2026-01-03T09:00:00\"}], \"count\": 2, \"offset\": 0, \"truncated\": false}",
+   "name": "get_assertions"
+  },
+  {
+   "role": "agent",
+   "kind": "tool_call",
+   "text": "{\"subject\": \"stock_position:SKU-D12\", \"predicate\": \"\", \"as_of\": \"\", \"known_at\": \"\", \"offset\": \"0\"}",
+   "name": "get_assertions"
+  },
+  {
+   "role": "tool",
+   "kind": "tool_result",
+   "text": "{\"assertions\": [{\"id\": 786, \"subject\": \"stock_position:SKU-D12\", \"predicate\": \"stock_position.qty\", \"value\": 615, \"valid_from\": \"2026-06-30\", \"valid_to\": null, \"status\": \"observed\", \"evidence\": \"products row SKU-D12 (export 2026-07-01)\", \"recorded_at\": \"2026-07-01T08:00:00\"}, {\"id\": 787, \"subject\": \"stock_position:SKU-D12\", \"predicate\": \"stock_position.daily_demand\", \"value\": 10, \"valid_from\": \"2026-06-30\", \"valid_to\": null, \"status\": \"observed\", \"evidence\": \"products row SKU-D12 (export 2026-07-01)\", \"recorded_at\": \"2026-07-01T08:00:00\"}, {\"id\": 788, \"subject\": \"stock_position:SKU-D12\", \"predicate\": \"stock_position.of_product\", \"value\": \"product:8c3d43fe\", \"valid_from\": \"2026-06-30\", \"valid_to\": null, \"status\": \"observed\", \"evidence\": \"products row SKU-D12 (export 2026-07-01)\", \"recorded_at\": \"2026-07-01T08:00:00\"}], \"count\": 3, \"offset\": 0, \"truncated\": false}",
+   "name": "get_assertions"
+  },
+  {
+   "role": "agent",
+   "kind": "tool_call",
+   "text": "{\"subject\": \"supplier_lead_time:SKU-D12\", \"predicate\": \"\", \"as_of\": \"\", \"known_at\": \"\", \"offset\": \"0\"}",
+   "name": "get_assertions"
+  },
+  {
+   "role": "tool",
+   "kind": "tool_result",
+   "text": "{\"assertions\": [{\"id\": 1083, \"subject\": \"supplier_lead_time:SKU-D12\", \"predicate\": \"supplier_lead_time.days\", \"value\": 8, \"valid_from\": \"2026-01-01\", \"valid_to\": null, \"status\": \"observed\", \"evidence\": \"supplier_leadtimes row SKU-D12 (export 2026-01-03)\", \"recorded_at\": \"2026-01-03T09:00:00\"}, {\"id\": 1084, \"subject\": \"supplier_lead_time:SKU-D12\", \"predicate\": \"supplier_lead_time.for_product\", \"value\": \"product:8c3d43fe\", \"valid_from\": \"2026-01-01\", \"valid_to\": null, \"status\": \"observed\", \"evidence\": \"supplier_leadtimes row SKU-D12 (export 2026-01-03)\", \"recorded_at\": \"2026-01-03T09:00:00\"}], \"count\": 2, \"offset\": 0, \"truncated\": false}",
+   "name": "get_assertions"
+  },
+  {
+   "role": "agent",
+   "kind": "tool_call",
+   "text": "{\"subject\": \"stock_position:SKU-D13\", \"predicate\": \"\", \"as_of\": \"\", \"known_at\": \"\", \"offset\": \"0\"}",
+   "name": "get_assertions"
+  },
+  {
+   "role": "tool",
+   "kind": "tool_result",
+   "text": "{\"assertions\": [{\"id\": 796, \"subject\": \"stock_position:SKU-D13\", \"predicate\": \"stock_position.qty\", \"value\": 682, \"valid_from\": \"2026-06-30\", \"valid_to\": null, \"status\": \"observed\", \"evidence\": \"products row SKU-D13 (export 2026-07-01)\", \"recorded_at\": \"2026-07-01T08:00:00\"}, {\"id\": 797, \"subject\": \"stock_position:SKU-D13\", \"predicate\": \"stock_position.daily_demand\", \"value\": 10, \"valid_from\": \"2026-06-30\", \"valid_to\": null, \"status\": \"observed\", \"evidence\": \"products row SKU-D13 (export 2026-07-01)\", \"recorded_at\": \"2026-07-01T08:00:00\"}, {\"id\": 798, \"subject\": \"stock_position:SKU-D13\", \"predicate\": \"stock_position.of_product\", \"value\": \"product:7e4bbd48\", \"valid_from\": \"2026-06-30\", \"valid_to\": null, \"status\": \"observed\", \"evidence\": \"products row SKU-D13 (export 2026-07-01)\", \"recorded_at\": \"2026-07-01T08:00:00\"}], \"count\": 3, \"offset\": 0, \"truncated\": false}",
+   "name": "get_assertions"
+  },
+  {
+   "role": "agent",
+   "kind": "message",
+   "text": "API Error: Your computer went to sleep mid-response. The response above may be incomplete.",
+   "name": ""
+  },
+  {
+   "role": "agent",
+   "kind": "tool_call",
+   "text": "{\"subject\": \"supplier_lead_time:SKU-D13\", \"predicate\": \"\", \"as_of\": \"\", \"known_at\": \"\", \"offset\": \"0\"}",
+   "name": "get_assertions"
+  },
+  {
+   "role": "tool",
+   "kind": "tool_result",
+   "text": "{\"assertions\": [{\"id\": 1085, \"subject\": \"supplier_lead_time:SKU-D13\", \"predicate\": \"supplier_lead_time.days\", \"value\": 7, \"valid_from\": \"2026-01-01\", \"valid_to\": null, \"status\": \"observed\", \"evidence\": \"supplier_leadtimes row SKU-D13 (export 2026-01-03)\", \"recorded_at\": \"2026-01-03T09:00:00\"}, {\"id\": 1086, \"subject\": \"supplier_lead_time:SKU-D13\", \"predicate\": \"supplier_lead_time.for_product\", \"value\": \"product:7e4bbd48\", \"valid_from\": \"2026-01-01\", \"valid_to\": null, \"status\": \"observed\", \"evidence\": \"supplier_leadtimes row SKU-D13 (export 2026-01-03)\", \"recorded_at\": \"2026-01-03T09:00:00\"}], \"count\": 2, \"offset\": 0, \"truncated\": false}",
+   "name": "get_assertions"
+  },
+  {
+   "role": "agent",
+   "kind": "tool_call",
+   "text": "{\"subject\": \"stock_position:SKU-D14\", \"predicate\": \"\", \"as_of\": \"\", \"known_at\": \"\", \"offset\": \"0\"}",
+   "name": "get_assertions"
+  },
+  {
+   "role": "agent",
+   "kind": "tool_call",
+   "text": "{\"subject\": \"supplier_lead_time:SKU-D14\", \"predicate\": \"\", \"as_of\": \"\", \"known_at\": \"\", \"offset\": \"0\"}",
+   "name": "get_assertions"
+  },
+  {
+   "role": "agent",
+   "kind": "tool_call",
+   "text": "{\"subject\": \"stock_position:SKU-D15\", \"predicate\": \"\", \"as_of\": \"\", \"known_at\": \"\", \"offset\": \"0\"}",
+   "name": "get_assertions"
+  },
+  {
+   "role": "agent",
+   "kind": "tool_call",
+   "text": "{\"subject\": \"supplier_lead_time:SKU-D15\", \"predicate\": \"\", \"as_of\": \"\", \"known_at\": \"\", \"offset\": \"0\"}",
+   "name": "get_assertions"
+  },
+  {
+   "role": "agent",
+   "kind": "tool_call",
+   "text": "{\"subject\": \"stock_position:SKU-D16\", \"predicate\": \"\", \"as_of\": \"\", \"known_at\": \"\", \"offset\": \"0\"}",
+   "name": "get_assertions"
+  },
+  {
+   "role": "agent",
+   "kind": "tool_call",
+   "text": "{\"subject\": \"supplier_lead_time:SKU-D16\", \"predicate\": \"\", \"as_of\": \"\", \"known_at\": \"\", \"offset\": \"0\"}",
+   "name": "get_assertions"
+  },
+  {
+   "role": "agent",
+   "kind": "tool_call",
+   "text": "{\"subject\": \"stock_position:SKU-D17\", \"predicate\": \"\", \"as_of\": \"\", \"known_at\": \"\", \"offset\": \"0\"}",
+   "name": "get_assertions"
+  },
+  {
+   "role": "agent",
+   "kind": "tool_call",
+   "text": "{\"subject\": \"supplier_lead_time:SKU-D17\", \"predicate\": \"\", \"as_of\": \"\", \"known_at\": \"\", \"offset\": \"0\"}",
+   "name": "get_assertions"
+  },
+  {
+   "role": "agent",
+   "kind": "tool_call",
+   "text": "{\"subject\": \"stock_position:SKU-D18\", \"predicate\": \"\", \"as_of\": \"\", \"known_at\": \"\", \"offset\": \"0\"}",
+   "name": "get_assertions"
+  },
+  {
+   "role": "agent",
+   "kind": "tool_call",
+   "text": "{\"subject\": \"supplier_lead_time:SKU-D18\", \"predicate\": \"\", \"as_of\": \"\", \"known_at\": \"\", \"offset\": \"0\"}",
+   "name": "get_assertions"
+  },
+  {
+   "role": "agent",
+   "kind": "tool_call",
+   "text": "{\"subject\": \"stock_position:SKU-D19\", \"predicate\": \"\", \"as_of\": \"\", \"known_at\": \"\", \"offset\": \"0\"}",
+   "name": "get_assertions"
+  },
+  {
+   "role": "agent",
+   "kind": "tool_call",
+   "text": "{\"subject\": \"supplier_lead_time:SKU-D19\", \"predicate\": \"\", \"as_of\": \"\", \"known_at\": \"\", \"offset\": \"0\"}",
+   "name": "get_assertions"
+  },
+  {
+   "role": "tool",
+   "kind": "tool_result",
+   "text": "{\"assertions\": [{\"id\": 806, \"subject\": \"stock_position:SKU-D14\", \"predicate\": \"stock_position.qty\", \"value\": 160, \"valid_from\": \"2026-06-30\", \"valid_to\": null, \"status\": \"observed\", \"evidence\": \"products row SKU-D14 (export 2026-07-01)\", \"recorded_at\": \"2026-07-01T08:00:00\"}, {\"id\": 807, \"subject\": \"stock_position:SKU-D14\", \"predicate\": \"stock_position.daily_demand\", \"value\": 8, \"valid_from\": \"2026-06-30\", \"valid_to\": null, \"status\": \"observed\", \"evidence\": \"products row SKU-D14 (export 2026-07-01)\", \"recorded_at\": \"2026-07-01T08:00:00\"}, {\"id\": 808, \"subject\": \"stock_position:SKU-D14\", \"predicate\": \"stock_position.of_product\", \"value\": \"product:c1366e4b\", \"valid_from\": \"2026-06-30\", \"valid_to\": null, \"status\": \"observed\", \"evidence\": \"products row SKU-D14 (export 2026-07-01)\", \"recorded_at\": \"2026-07-01T08:00:00\"}], \"count\": 3, \"offset\": 0, \"truncated\": false}",
+   "name": "get_assertions"
+  },
+  {
+   "role": "tool",
+   "kind": "tool_result",
+   "text": "{\"assertions\": [{\"id\": 1087, \"subject\": \"supplier_lead_time:SKU-D14\", \"predicate\": \"supplier_lead_time.days\", \"value\": 45, \"valid_from\": \"2026-01-01\", \"valid_to\": null, \"status\": \"observed\", \"evidence\": \"supplier_leadtimes row SKU-D14 (export 2026-01-03)\", \"recorded_at\": \"2026-01-03T09:00:00\"}, {\"id\": 1088, \"subject\": \"supplier_lead_time:SKU-D14\", \"predicate\": \"supplier_lead_time.for_product\", \"value\": \"product:c1366e4b\", \"valid_from\": \"2026-01-01\", \"valid_to\": null, \"status\": \"observed\", \"evidence\": \"supplier_leadtimes row SKU-D14 (export 2026-01-03)\", \"recorded_at\": \"2026-01-03T09:00:00\"}], \"count\": 2, \"offset\": 0, \"truncated\": false}",
+   "name": "get_assertions"
+  },
+  {
+   "role": "tool",
+   "kind": "tool_result",
+   "text": "{\"assertions\": [{\"id\": 816, \"subject\": \"stock_position:SKU-D15\", \"predicate\": \"stock_position.qty\", \"value\": 474, \"valid_from\": \"2026-06-30\", \"valid_to\": null, \"status\": \"observed\", \"evidence\": \"products row SKU-D15 (export 2026-07-01)\", \"recorded_at\": \"2026-07-01T08:00:00\"}, {\"id\": 817, \"subject\": \"stock_position:SKU-D15\", \"predicate\": \"stock_position.daily_demand\", \"value\": 6, \"valid_from\": \"2026-06-30\", \"valid_to\": null, \"status\": \"observed\", \"evidence\": \"products row SKU-D15 (export 2026-07-01)\", \"recorded_at\": \"2026-07-01T08:00:00\"}, {\"id\": 818, \"subject\": \"stock_position:SKU-D15\", \"predicate\": \"stock_position.of_product\", \"value\": \"product:a2e29d62\", \"valid_from\": \"2026-06-30\", \"valid_to\": null, \"status\": \"observed\", \"evidence\": \"products row SKU-D15 (export 2026-07-01)\", \"recorded_at\": \"2026-07-01T08:00:00\"}], \"count\": 3, \"offset\": 0, \"truncated\": false}",
+   "name": "get_assertions"
+  },
+  {
+   "role": "tool",
+   "kind": "tool_result",
+   "text": "{\"assertions\": [{\"id\": 1089, \"subject\": \"supplier_lead_time:SKU-D15\", \"predicate\": \"supplier_lead_time.days\", \"value\": 6, \"valid_from\": \"2026-01-01\", \"valid_to\": null, \"status\": \"observed\", \"evidence\": \"supplier_leadtimes row SKU-D15 (export 2026-01-03)\", \"recorded_at\": \"2026-01-03T09:00:00\"}, {\"id\": 1090, \"subject\": \"supplier_lead_time:SKU-D15\", \"predicate\": \"supplier_lead_time.for_product\", \"value\": \"product:a2e29d62\", \"valid_from\": \"2026-01-01\", \"valid_to\": null, \"status\": \"observed\", \"evidence\": \"supplier_leadtimes row SKU-D15 (export 2026-01-03)\", \"recorded_at\": \"2026-01-03T09:00:00\"}], \"count\": 2, \"offset\": 0, \"truncated\": false}",
+   "name": "get_assertions"
+  },
+  {
+   "role": "tool",
+   "kind": "tool_result",
+   "text": "{\"assertions\": [{\"id\": 826, \"subject\": \"stock_position:SKU-D16\", \"predicate\": \"stock_position.qty\", \"value\": 353, \"valid_from\": \"2026-06-30\", \"valid_to\": null, \"status\": \"observed\", \"evidence\": \"products row SKU-D16 (export 2026-07-01)\", \"recorded_at\": \"2026-07-01T08:00:00\"}, {\"id\": 827, \"subject\": \"stock_position:SKU-D16\", \"predicate\": \"stock_position.daily_demand\", \"value\": 11, \"valid_from\": \"2026-06-30\", \"valid_to\": null, \"status\": \"observed\", \"evidence\": \"products row SKU-D16 (export 2026-07-01)\", \"recorded_at\": \"2026-07-01T08:00:00\"}, {\"id\": 828, \"subject\": \"stock_position:SKU-D16\", \"predicate\": \"stock_position.of_product\", \"value\": \"product:873a827f\", \"valid_from\": \"2026-06-30\", \"valid_to\": null, \"status\": \"observed\", \"evidence\": \"products row SKU-D16 (export 2026-07-01)\", \"recorded_at\": \"2026-07-01T08:00:00\"}], \"count\": 3, \"offset\": 0, \"truncated\": false}",
+   "name": "get_assertions"
+  },
+  {
+   "role": "tool",
+   "kind": "tool_result",
+   "text": "{\"assertions\": [{\"id\": 1091, \"subject\": \"supplier_lead_time:SKU-D16\", \"predicate\": \"supplier_lead_time.days\", \"value\": 12, \"valid_from\": \"2026-01-01\", \"valid_to\": null, \"status\": \"observed\", \"evidence\": \"supplier_leadtimes row SKU-D16 (export 2026-01-03)\", \"recorded_at\": \"2026-01-03T09:00:00\"}, {\"id\": 1092, \"subject\": \"supplier_lead_time:SKU-D16\", \"predicate\": \"supplier_lead_time.for_product\", \"value\": \"product:873a827f\", \"valid_from\": \"2026-01-01\", \"valid_to\": null, \"status\": \"observed\", \"evidence\": \"supplier_leadtimes row SKU-D16 (export 2026-01-03)\", \"recorded_at\": \"2026-01-03T09:00:00\"}], \"count\": 2, \"offset\": 0, \"truncated\": false}",
+   "name": "get_assertions"
+  },
+  {
+   "role": "tool",
+   "kind": "tool_result",
+   "text": "{\"assertions\": [{\"id\": 836, \"subject\": \"stock_position:SKU-D17\", \"predicate\": \"stock_position.qty\", \"value\": 508, \"valid_from\": \"2026-06-30\", \"valid_to\": null, \"status\": \"observed\", \"evidence\": \"products row SKU-D17 (export 2026-07-01)\", \"recorded_at\": \"2026-07-01T08:00:00\"}, {\"id\": 837, \"subject\": \"stock_position:SKU-D17\", \"predicate\": \"stock_position.daily_demand\", \"value\": 4, \"valid_from\": \"2026-06-30\", \"valid_to\": null, \"status\": \"observed\", \"evidence\": \"products row SKU-D17 (export 2026-07-01)\", \"recorded_at\": \"2026-07-01T08:00:00\"}, {\"id\": 838, \"subject\": \"stock_position:SKU-D17\", \"predicate\": \"stock_position.of_product\", \"value\": \"product:7f54d426\", \"valid_from\": \"2026-06-30\", \"valid_to\": null, \"status\": \"observed\", \"evidence\": \"products row SKU-D17 (export 2026-07-01)\", \"recorded_at\": \"2026-07-01T08:00:00\"}], \"count\": 3, \"offset\": 0, \"truncated\": false}",
+   "name": "get_assertions"
+  },
+  {
+   "role": "tool",
+   "kind": "tool_result",
+   "text": "{\"assertions\": [{\"id\": 1093, \"subject\": \"supplier_lead_time:SKU-D17\", \"predicate\": \"supplier_lead_time.days\", \"value\": 10, \"valid_from\": \"2026-01-01\", \"valid_to\": null, \"status\": \"observed\", \"evidence\": \"supplier_leadtimes row SKU-D17 (export 2026-01-03)\", \"recorded_at\": \"2026-01-03T09:00:00\"}, {\"id\": 1094, \"subject\": \"supplier_lead_time:SKU-D17\", \"predicate\": \"supplier_lead_time.for_product\", \"value\": \"product:7f54d426\", \"valid_from\": \"2026-01-01\", \"valid_to\": null, \"status\": \"observed\", \"evidence\": \"supplier_leadtimes row SKU-D17 (export 2026-01-03)\", \"recorded_at\": \"2026-01-03T09:00:00\"}], \"count\": 2, \"offset\": 0, \"truncated\": false}",
+   "name": "get_assertions"
+  },
+  {
+   "role": "tool",
+   "kind": "tool_result",
+   "text": "{\"assertions\": [{\"id\": 846, \"subject\": \"stock_position:SKU-D18\", \"predicate\": \"stock_position.qty\", \"value\": 738, \"valid_from\": \"2026-06-30\", \"valid_to\": null, \"status\": \"observed\", \"evidence\": \"products row SKU-D18 (export 2026-07-01)\", \"recorded_at\": \"2026-07-01T08:00:00\"}, {\"id\": 847, \"subject\": \"stock_position:SKU-D18\", \"predicate\": \"stock_position.daily_demand\", \"value\": 4, \"valid_from\": \"2026-06-30\", \"valid_to\": null, \"status\": \"observed\", \"evidence\": \"products row SKU-D18 (export 2026-07-01)\", \"recorded_at\": \"2026-07-01T08:00:00\"}, {\"id\": 848, \"subject\": \"stock_position:SKU-D18\", \"predicate\": \"stock_position.of_product\", \"value\": \"product:405e5b6b\", \"valid_from\": \"2026-06-30\", \"valid_to\": null, \"status\": \"observed\", \"evidence\": \"products row SKU-D18 (export 2026-07-01)\", \"recorded_at\": \"2026-07-01T08:00:00\"}], \"count\": 3, \"offset\": 0, \"truncated\": false}",
+   "name": "get_assertions"
+  },
+  {
+   "role": "tool",
+   "kind": "tool_result",
+   "text": "{\"assertions\": [{\"id\": 1095, \"subject\": \"supplier_lead_time:SKU-D18\", \"predicate\": \"supplier_lead_time.days\", \"value\": 6, \"valid_from\": \"2026-01-01\", \"valid_to\": null, \"status\": \"observed\", \"evidence\": \"supplier_leadtimes row SKU-D18 (export 2026-01-03)\", \"recorded_at\": \"2026-01-03T09:00:00\"}, {\"id\": 1096, \"subject\": \"supplier_lead_time:SKU-D18\", \"predicate\": \"supplier_lead_time.for_product\", \"value\": \"product:405e5b6b\", \"valid_from\": \"2026-01-01\", \"valid_to\": null, \"status\": \"observed\", \"evidence\": \"supplier_leadtimes row SKU-D18 (export 2026-01-03)\", \"recorded_at\": \"2026-01-03T09:00:00\"}], \"count\": 2, \"offset\": 0, \"truncated\": false}",
+   "name": "get_assertions"
+  },
+  {
+   "role": "tool",
+   "kind": "tool_result",
+   "text": "{\"assertions\": [{\"id\": 856, \"subject\": \"stock_position:SKU-D19\", \"predicate\": \"stock_position.qty\", \"value\": 744, \"valid_from\": \"2026-06-30\", \"valid_to\": null, \"status\": \"observed\", \"evidence\": \"products row SKU-D19 (export 2026-07-01)\", \"recorded_at\": \"2026-07-01T08:00:00\"}, {\"id\": 857, \"subject\": \"stock_position:SKU-D19\", \"predicate\": \"stock_position.daily_demand\", \"value\": 8, \"valid_from\": \"2026-06-30\", \"valid_to\": null, \"status\": \"observed\", \"evidence\": \"products row SKU-D19 (export 2026-07-01)\", \"recorded_at\": \"2026-07-01T08:00:00\"}, {\"id\": 858, \"subject\": \"stock_position:SKU-D19\", \"predicate\": \"stock_position.of_product\", \"value\": \"product:93170520\", \"valid_from\": \"2026-06-30\", \"valid_to\": null, \"status\": \"observed\", \"evidence\": \"products row SKU-D19 (export 2026-07-01)\", \"recorded_at\": \"2026-07-01T08:00:00\"}], \"count\": 3, \"offset\": 0, \"truncated\": false}",
+   "name": "get_assertions"
+  },
+  {
+   "role": "tool",
+   "kind": "tool_result",
+   "text": "{\"assertions\": [{\"id\": 1097, \"subject\": \"supplier_lead_time:SKU-D19\", \"predicate\": \"supplier_lead_time.days\", \"value\": 10, \"valid_from\": \"2026-01-01\", \"valid_to\": null, \"status\": \"observed\", \"evidence\": \"supplier_leadtimes row SKU-D19 (export 2026-01-03)\", \"recorded_at\": \"2026-01-03T09:00:00\"}, {\"id\": 1098, \"subject\": \"supplier_lead_time:SKU-D19\", \"predicate\": \"supplier_lead_time.for_product\", \"value\": \"product:93170520\", \"valid_from\": \"2026-01-01\", \"valid_to\": null, \"status\": \"observed\", \"evidence\": \"supplier_leadtimes row SKU-D19 (export 2026-01-03)\", \"recorded_at\": \"2026-01-03T09:00:00\"}], \"count\": 2, \"offset\": 0, \"truncated\": false}",
+   "name": "get_assertions"
+  },
+  {
+   "role": "agent",
+   "kind": "tool_call",
+   "text": "{\"subject\": \"stock_position:SKU-D20\", \"predicate\": \"\", \"as_of\": \"\", \"known_at\": \"\", \"offset\": \"0\"}",
+   "name": "get_assertions"
+  },
+  {
+   "role": "tool",
+   "kind": "tool_result",
+   "text": "{\"assertions\": [{\"id\": 866, \"subject\": \"stock_position:SKU-D20\", \"predicate\": \"stock_position.qty\", \"value\": 482, \"valid_from\": \"2026-06-30\", \"valid_to\": null, \"status\": \"observed\", \"evidence\": \"products row SKU-D20 (export 2026-07-01)\", \"recorded_at\": \"2026-07-01T08:00:00\"}, {\"id\": 867, \"subject\": \"stock_position:SKU-D20\", \"predicate\": \"stock_position.daily_demand\", \"value\": 9, \"valid_from\": \"2026-06-30\", \"valid_to\": null, \"status\": \"observed\", \"evidence\": \"products row SKU-D20 (export 2026-07-01)\", \"recorded_at\": \"2026-07-01T08:00:00\"}, {\"id\": 868, \"subject\": \"stock_position:SKU-D20\", \"predicate\": \"stock_position.of_product\", \"value\": \"product:fcfdf369\", \"valid_from\": \"2026-06-30\", \"valid_to\": null, \"status\": \"observed\", \"evidence\": \"products row SKU-D20 (export 2026-07-01)\", \"recorded_at\": \"2026-07-01T08:00:00\"}], \"count\": 3, \"offset\": 0, \"truncated\": false}",
+   "name": "get_assertions"
+  },
+  {
+   "role": "agent",
+   "kind": "tool_call",
+   "text": "{\"subject\": \"supplier_lead_time:SKU-D20\", \"predicate\": \"\", \"as_of\": \"\", \"known_at\": \"\", \"offset\": \"0\"}",
+   "name": "get_assertions"
+  },
+  {
+   "role": "tool",
+   "kind": "tool_result",
+   "text": "{\"assertions\": [{\"id\": 1099, \"subject\": \"supplier_lead_time:SKU-D20\", \"predicate\": \"supplier_lead_time.days\", \"value\": 9, \"valid_from\": \"2026-01-01\", \"valid_to\": null, \"status\": \"observed\", \"evidence\": \"supplier_leadtimes row SKU-D20 (export 2026-01-03)\", \"recorded_at\": \"2026-01-03T09:00:00\"}, {\"id\": 1100, \"subject\": \"supplier_lead_time:SKU-D20\", \"predicate\": \"supplier_lead_time.for_product\", \"value\": \"product:fcfdf369\", \"valid_from\": \"2026-01-01\", \"valid_to\": null, \"status\": \"observed\", \"evidence\": \"supplier_leadtimes row SKU-D20 (export 2026-01-03)\", \"recorded_at\": \"2026-01-03T09:00:00\"}], \"count\": 2, \"offset\": 0, \"truncated\": false}",
+   "name": "get_assertions"
+  },
+  {
+   "role": "agent",
+   "kind": "tool_call",
+   "text": "{\"subject\": \"stock_position:SKU-D21\", \"predicate\": \"\", \"as_of\": \"\", \"known_at\": \"\", \"offset\": \"0\"}",
+   "name": "get_assertions"
+  },
+  {
+   "role": "tool",
+   "kind": "tool_result",
+   "text": "{\"assertions\": [{\"id\": 876, \"subject\": \"stock_position:SKU-D21\", \"predicate\": \"stock_position.qty\", \"value\": 431, \"valid_from\": \"2026-06-30\", \"valid_to\": null, \"status\": \"observed\", \"evidence\": \"products row SKU-D21 (export 2026-07-01)\", \"recorded_at\": \"2026-07-01T08:00:00\"}, {\"id\": 877, \"subject\": \"stock_position:SKU-D21\", \"predicate\": \"stock_position.daily_demand\", \"value\": 7, \"valid_from\": \"2026-06-30\", \"valid_to\": null, \"status\": \"observed\", \"evidence\": \"products row SKU-D21 (export 2026-07-01)\", \"recorded_at\": \"2026-07-01T08:00:00\"}, {\"id\": 878, \"subject\": \"stock_position:SKU-D21\", \"predicate\": \"stock_position.of_product\", \"value\": \"product:8a37e6d9\", \"valid_from\": \"2026-06-30\", \"valid_to\": null, \"status\": \"observed\", \"evidence\": \"products row SKU-D21 (export 2026-07-01)\", \"recorded_at\": \"2026-07-01T08:00:00\"}], \"count\": 3, \"offset\": 0, \"truncated\": false}",
+   "name": "get_assertions"
+  },
+  {
+   "role": "agent",
+   "kind": "tool_call",
+   "text": "{\"subject\": \"supplier_lead_time:SKU-D21\", \"predicate\": \"\", \"as_of\": \"\", \"known_at\": \"\", \"offset\": \"0\"}",
+   "name": "get_assertions"
+  },
+  {
+   "role": "tool",
+   "kind": "tool_result",
+   "text": "{\"assertions\": [{\"id\": 1101, \"subject\": \"supplier_lead_time:SKU-D21\", \"predicate\": \"supplier_lead_time.days\", \"value\": 8, \"valid_from\": \"2026-01-01\", \"valid_to\": null, \"status\": \"observed\", \"evidence\": \"supplier_leadtimes row SKU-D21 (export 2026-01-03)\", \"recorded_at\": \"2026-01-03T09:00:00\"}, {\"id\": 1102, \"subject\": \"supplier_lead_time:SKU-D21\", \"predicate\": \"supplier_lead_time.for_product\", \"value\": \"product:8a37e6d9\", \"valid_from\": \"2026-01-01\", \"valid_to\": null, \"status\": \"observed\", \"evidence\": \"supplier_leadtimes row SKU-D21 (export 2026-01-03)\", \"recorded_at\": \"2026-01-03T09:00:00\"}], \"count\": 2, \"offset\": 0, \"truncated\": false}",
+   "name": "get_assertions"
+  },
+  {
+   "role": "agent",
+   "kind": "tool_call",
+   "text": "{\"subject\": \"stock_position:SKU-D22\", \"predicate\": \"\", \"as_of\": \"\", \"known_at\": \"\", \"offset\": \"0\"}",
+   "name": "get_assertions"
+  },
+  {
+   "role": "tool",
+   "kind": "tool_result",
+   "text": "{\"assertions\": [{\"id\": 886, \"subject\": \"stock_position:SKU-D22\", \"predicate\": \"stock_position.qty\", \"value\": 583, \"valid_from\": \"2026-06-30\", \"valid_to\": null, \"status\": \"observed\", \"evidence\": \"products row SKU-D22 (export 2026-07-01)\", \"recorded_at\": \"2026-07-01T08:00:00\"}, {\"id\": 887, \"subject\": \"stock_position:SKU-D22\", \"predicate\": \"stock_position.daily_demand\", \"value\": 10, \"valid_from\": \"2026-06-30\", \"valid_to\": null, \"status\": \"observed\", \"evidence\": \"products row SKU-D22 (export 2026-07-01)\", \"recorded_at\": \"2026-07-01T08:00:00\"}, {\"id\": 888, \"subject\": \"stock_position:SKU-D22\", \"predicate\": \"stock_position.of_product\", \"value\": \"product:6c949b89\", \"valid_from\": \"2026-06-30\", \"valid_to\": null, \"status\": \"observed\", \"evidence\": \"products row SKU-D22 (export 2026-07-01)\", \"recorded_at\": \"2026-07-01T08:00:00\"}], \"count\": 3, \"offset\": 0, \"truncated\": false}",
+   "name": "get_assertions"
+  },
+  {
+   "role": "agent",
+   "kind": "tool_call",
+   "text": "{\"subject\": \"supplier_lead_time:SKU-D22\", \"predicate\": \"\", \"as_of\": \"\", \"known_at\": \"\", \"offset\": \"0\"}",
+   "name": "get_assertions"
+  },
+  {
+   "role": "tool",
+   "kind": "tool_result",
+   "text": "{\"assertions\": [{\"id\": 1103, \"subject\": \"supplier_lead_time:SKU-D22\", \"predicate\": \"supplier_lead_time.days\", \"value\": 5, \"valid_from\": \"2026-01-01\", \"valid_to\": null, \"status\": \"observed\", \"evidence\": \"supplier_leadtimes row SKU-D22 (export 2026-01-03)\", \"recorded_at\": \"2026-01-03T09:00:00\"}, {\"id\": 1104, \"subject\": \"supplier_lead_time:SKU-D22\", \"predicate\": \"supplier_lead_time.for_product\", \"value\": \"product:6c949b89\", \"valid_from\": \"2026-01-01\", \"valid_to\": null, \"status\": \"observed\", \"evidence\": \"supplier_leadtimes row SKU-D22 (export 2026-01-03)\", \"recorded_at\": \"2026-01-03T09:00:00\"}], \"count\": 2, \"offset\": 0, \"truncated\": false}",
+   "name": "get_assertions"
+  },
+  {
+   "role": "agent",
+   "kind": "tool_call",
+   "text": "{\"subject\": \"stock_position:SKU-D23\", \"predicate\": \"\", \"as_of\": \"\", \"known_at\": \"\", \"offset\": \"0\"}",
+   "name": "get_assertions"
+  },
+  {
+   "role": "tool",
+   "kind": "tool_result",
+   "text": "{\"assertions\": [{\"id\": 896, \"subject\": \"stock_position:SKU-D23\", \"predicate\": \"stock_position.qty\", \"value\": 360, \"valid_from\": \"2026-06-30\", \"valid_to\": null, \"status\": \"observed\", \"evidence\": \"products row SKU-D23 (export 2026-07-01)\", \"recorded_at\": \"2026-07-01T08:00:00\"}, {\"id\": 897, \"subject\": \"stock_position:SKU-D23\", \"predicate\": \"stock_position.daily_demand\", \"value\": 11, \"valid_from\": \"2026-06-30\", \"valid_to\": null, \"status\": \"observed\", \"evidence\": \"products row SKU-D23 (export 2026-07-01)\", \"recorded_at\": \"2026-07-01T08:00:00\"}, {\"id\": 898, \"subject\": \"stock_position:SKU-D23\", \"predicate\": \"stock_position.of_product\", \"value\": \"product:c19e034e\", \"valid_from\": \"2026-06-30\", \"valid_to\": null, \"status\": \"observed\", \"evidence\": \"products row SKU-D23 (export 2026-07-01)\", \"recorded_at\": \"2026-07-01T08:00:00\"}], \"count\": 3, \"offset\": 0, \"truncated\": false}",
+   "name": "get_assertions"
+  },
+  {
+   "role": "agent",
+   "kind": "tool_call",
+   "text": "{\"subject\": \"supplier_lead_time:SKU-D23\", \"predicate\": \"\", \"as_of\": \"\", \"known_at\": \"\", \"offset\": \"0\"}",
+   "name": "get_assertions"
+  },
+  {
+   "role": "tool",
+   "kind": "tool_result",
+   "text": "{\"assertions\": [{\"id\": 1105, \"subject\": \"supplier_lead_time:SKU-D23\", \"predicate\": \"supplier_lead_time.days\", \"value\": 8, \"valid_from\": \"2026-01-01\", \"valid_to\": null, \"status\": \"observed\", \"evidence\": \"supplier_leadtimes row SKU-D23 (export 2026-01-03)\", \"recorded_at\": \"2026-01-03T09:00:00\"}, {\"id\": 1106, \"subject\": \"supplier_lead_time:SKU-D23\", \"predicate\": \"supplier_lead_time.for_product\", \"value\": \"product:c19e034e\", \"valid_from\": \"2026-01-01\", \"valid_to\": null, \"status\": \"observed\", \"evidence\": \"supplier_leadtimes row SKU-D23 (export 2026-01-03)\", \"recorded_at\": \"2026-01-03T09:00:00\"}], \"count\": 2, \"offset\": 0, \"truncated\": false}",
+   "name": "get_assertions"
+  },
+  {
+   "role": "agent",
+   "kind": "tool_call",
+   "text": "{\"subject\": \"stock_position:SKU-D24\", \"predicate\": \"\", \"as_of\": \"\", \"known_at\": \"\", \"offset\": \"0\"}",
+   "name": "get_assertions"
+  },
+  {
+   "role": "tool",
+   "kind": "tool_result",
+   "text": "{\"assertions\": [{\"id\": 906, \"subject\": \"stock_position:SKU-D24\", \"predicate\": \"stock_position.qty\", \"value\": 619, \"valid_from\": \"2026-06-30\", \"valid_to\": null, \"status\": \"observed\", \"evidence\": \"products row SKU-D24 (export 2026-07-01)\", \"recorded_at\": \"2026-07-01T08:00:00\"}, {\"id\": 907, \"subject\": \"stock_position:SKU-D24\", \"predicate\": \"stock_position.daily_demand\", \"value\": 8, \"valid_from\": \"2026-06-30\", \"valid_to\": null, \"status\": \"observed\", \"evidence\": \"products row SKU-D24 (export 2026-07-01)\", \"recorded_at\": \"2026-07-01T08:00:00\"}, {\"id\": 908, \"subject\": \"stock_position:SKU-D24\", \"predicate\": \"stock_position.of_product\", \"value\": \"product:4679737a\", \"valid_from\": \"2026-06-30\", \"valid_to\": null, \"status\": \"observed\", \"evidence\": \"products row SKU-D24 (export 2026-07-01)\", \"recorded_at\": \"2026-07-01T08:00:00\"}], \"count\": 3, \"offset\": 0, \"truncated\": false}",
+   "name": "get_assertions"
+  },
+  {
+   "role": "agent",
+   "kind": "tool_call",
+   "text": "{\"subject\": \"supplier_lead_time:SKU-D24\", \"predicate\": \"\", \"as_of\": \"\", \"known_at\": \"\", \"offset\": \"0\"}",
+   "name": "get_assertions"
+  },
+  {
+   "role": "tool",
+   "kind": "tool_result",
+   "text": "{\"assertions\": [{\"id\": 1107, \"subject\": \"supplier_lead_time:SKU-D24\", \"predicate\": \"supplier_lead_time.days\", \"value\": 8, \"valid_from\": \"2026-01-01\", \"valid_to\": null, \"status\": \"observed\", \"evidence\": \"supplier_leadtimes row SKU-D24 (export 2026-01-03)\", \"recorded_at\": \"2026-01-03T09:00:00\"}, {\"id\": 1108, \"subject\": \"supplier_lead_time:SKU-D24\", \"predicate\": \"supplier_lead_time.for_product\", \"value\": \"product:4679737a\", \"valid_from\": \"2026-01-01\", \"valid_to\": null, \"status\": \"observed\", \"evidence\": \"supplier_leadtimes row SKU-D24 (export 2026-01-03)\", \"recorded_at\": \"2026-01-03T09:00:00\"}], \"count\": 2, \"offset\": 0, \"truncated\": false}",
+   "name": "get_assertions"
+  },
+  {
+   "role": "agent",
+   "kind": "tool_call",
+   "text": "{\"subject\": \"stock_position:SKU-D25\", \"predicate\": \"\", \"as_of\": \"\", \"known_at\": \"\", \"offset\": \"0\"}",
+   "name": "get_assertions"
+  },
+  {
+   "role": "tool",
+   "kind": "tool_result",
+   "text": "{\"assertions\": [{\"id\": 916, \"subject\": \"stock_position:SKU-D25\", \"predicate\": \"stock_position.qty\", \"value\": 358, \"valid_from\": \"2026-06-30\", \"valid_to\": null, \"status\": \"observed\", \"evidence\": \"products row SKU-D25 (export 2026-07-01)\", \"recorded_at\": \"2026-07-01T08:00:00\"}, {\"id\": 917, \"subject\": \"stock_position:SKU-D25\", \"predicate\": \"stock_position.daily_demand\", \"value\": 11, \"valid_from\": \"2026-06-30\", \"valid_to\": null, \"status\": \"observed\", \"evidence\": \"products row SKU-D25 (export 2026-07-01)\", \"recorded_at\": \"2026-07-01T08:00:00\"}, {\"id\": 918, \"subject\": \"stock_position:SKU-D25\", \"predicate\": \"stock_position.of_product\", \"value\": \"product:a745f409\", \"valid_from\": \"2026-06-30\", \"valid_to\": null, \"status\": \"observed\", \"evidence\": \"products row SKU-D25 (export 2026-07-01)\", \"recorded_at\": \"2026-07-01T08:00:00\"}], \"count\": 3, \"offset\": 0, \"truncated\": false}",
+   "name": "get_assertions"
+  },
+  {
+   "role": "agent",
+   "kind": "tool_call",
+   "text": "{\"subject\": \"supplier_lead_time:SKU-D25\", \"predicate\": \"\", \"as_of\": \"\", \"known_at\": \"\", \"offset\": \"0\"}",
+   "name": "get_assertions"
+  },
+  {
+   "role": "tool",
+   "kind": "tool_result",
+   "text": "{\"assertions\": [{\"id\": 1109, \"subject\": \"supplier_lead_time:SKU-D25\", \"predicate\": \"supplier_lead_time.days\", \"value\": 13, \"valid_from\": \"2026-01-01\", \"valid_to\": null, \"status\": \"observed\", \"evidence\": \"supplier_leadtimes row SKU-D25 (export 2026-01-03)\", \"recorded_at\": \"2026-01-03T09:00:00\"}, {\"id\": 1110, \"subject\": \"supplier_lead_time:SKU-D25\", \"predicate\": \"supplier_lead_time.for_product\", \"value\": \"product:a745f409\", \"valid_from\": \"2026-01-01\", \"valid_to\": null, \"status\": \"observed\", \"evidence\": \"supplier_leadtimes row SKU-D25 (export 2026-01-03)\", \"recorded_at\": \"2026-01-03T09:00:00\"}], \"count\": 2, \"offset\": 0, \"truncated\": false}",
+   "name": "get_assertions"
+  },
+  {
+   "role": "agent",
+   "kind": "tool_call",
+   "text": "{\"subject\": \"stock_position:SKU-D26\", \"predicate\": \"\", \"as_of\": \"\", \"known_at\": \"\", \"offset\": \"0\"}",
+   "name": "get_assertions"
+  },
+  {
+   "role": "tool",
+   "kind": "tool_result",
+   "text": "{\"assertions\": [{\"id\": 926, \"subject\": \"stock_position:SKU-D26\", \"predicate\": \"stock_position.qty\", \"value\": 792, \"valid_from\": \"2026-06-30\", \"valid_to\": null, \"status\": \"observed\", \"evidence\": \"products row SKU-D26 (export 2026-07-01)\", \"recorded_at\": \"2026-07-01T08:00:00\"}, {\"id\": 927, \"subject\": \"stock_position:SKU-D26\", \"predicate\": \"stock_position.daily_demand\", \"value\": 12, \"valid_from\": \"2026-06-30\", \"valid_to\": null, \"status\": \"observed\", \"evidence\": \"products row SKU-D26 (export 2026-07-01)\", \"recorded_at\": \"2026-07-01T08:00:00\"}, {\"id\": 928, \"subject\": \"stock_position:SKU-D26\", \"predicate\": \"stock_position.of_product\", \"value\": \"product:6192fab3\", \"valid_from\": \"2026-06-30\", \"valid_to\": null, \"status\": \"observed\", \"evidence\": \"products row SKU-D26 (export 2026-07-01)\", \"recorded_at\": \"2026-07-01T08:00:00\"}], \"count\": 3, \"offset\": 0, \"truncated\": false}",
+   "name": "get_assertions"
+  },
+  {
+   "role": "agent",
+   "kind": "tool_call",
+   "text": "{\"subject\": \"supplier_lead_time:SKU-D26\", \"predicate\": \"\", \"as_of\": \"\", \"known_at\": \"\", \"offset\": \"0\"}",
+   "name": "get_assertions"
+  },
+  {
+   "role": "tool",
+   "kind": "tool_result",
+   "text": "{\"assertions\": [{\"id\": 1111, \"subject\": \"supplier_lead_time:SKU-D26\", \"predicate\": \"supplier_lead_time.days\", \"value\": 12, \"valid_from\": \"2026-01-01\", \"valid_to\": null, \"status\": \"observed\", \"evidence\": \"supplier_leadtimes row SKU-D26 (export 2026-01-03)\", \"recorded_at\": \"2026-01-03T09:00:00\"}, {\"id\": 1112, \"subject\": \"supplier_lead_time:SKU-D26\", \"predicate\": \"supplier_lead_time.for_product\", \"value\": \"product:6192fab3\", \"valid_from\": \"2026-01-01\", \"valid_to\": null, \"status\": \"observed\", \"evidence\": \"supplier_leadtimes row SKU-D26 (export 2026-01-03)\", \"recorded_at\": \"2026-01-03T09:00:00\"}], \"count\": 2, \"offset\": 0, \"truncated\": false}",
+   "name": "get_assertions"
+  },
+  {
+   "role": "agent",
+   "kind": "tool_call",
+   "text": "{\"subject\": \"stock_position:SKU-D27\", \"predicate\": \"\", \"as_of\": \"\", \"known_at\": \"\", \"offset\": \"0\"}",
+   "name": "get_assertions"
+  },
+  {
+   "role": "tool",
+   "kind": "tool_result",
+   "text": "{\"assertions\": [{\"id\": 936, \"subject\": \"stock_position:SKU-D27\", \"predicate\": \"stock_position.qty\", \"value\": 674, \"valid_from\": \"2026-06-30\", \"valid_to\": null, \"status\": \"observed\", \"evidence\": \"products row SKU-D27 (export 2026-07-01)\", \"recorded_at\": \"2026-07-01T08:00:00\"}, {\"id\": 937, \"subject\": \"stock_position:SKU-D27\", \"predicate\": \"stock_position.daily_demand\", \"value\": 7, \"valid_from\": \"2026-06-30\", \"valid_to\": null, \"status\": \"observed\", \"evidence\": \"products row SKU-D27 (export 2026-07-01)\", \"recorded_at\": \"2026-07-01T08:00:00\"}, {\"id\": 938, \"subject\": \"stock_position:SKU-D27\", \"predicate\": \"stock_position.of_product\", \"value\": \"product:e3303929\", \"valid_from\": \"2026-06-30\", \"valid_to\": null, \"status\": \"observed\", \"evidence\": \"products row SKU-D27 (export 2026-07-01)\", \"recorded_at\": \"2026-07-01T08:00:00\"}], \"count\": 3, \"offset\": 0, \"truncated\": false}",
+   "name": "get_assertions"
+  },
+  {
+   "role": "agent",
+   "kind": "tool_call",
+   "text": "{\"subject\": \"supplier_lead_time:SKU-D27\", \"predicate\": \"\", \"as_of\": \"\", \"known_at\": \"\", \"offset\": \"0\"}",
+   "name": "get_assertions"
+  },
+  {
+   "role": "tool",
+   "kind": "tool_result",
+   "text": "{\"assertions\": [{\"id\": 1113, \"subject\": \"supplier_lead_time:SKU-D27\", \"predicate\": \"supplier_lead_time.days\", \"value\": 8, \"valid_from\": \"2026-01-01\", \"valid_to\": null, \"status\": \"observed\", \"evidence\": \"supplier_leadtimes row SKU-D27 (export 2026-01-03)\", \"recorded_at\": \"2026-01-03T09:00:00\"}, {\"id\": 1114, \"subject\": \"supplier_lead_time:SKU-D27\", \"predicate\": \"supplier_lead_time.for_product\", \"value\": \"product:e3303929\", \"valid_from\": \"2026-01-01\", \"valid_to\": null, \"status\": \"observed\", \"evidence\": \"supplier_leadtimes row SKU-D27 (export 2026-01-03)\", \"recorded_at\": \"2026-01-03T09:00:00\"}], \"count\": 2, \"offset\": 0, \"truncated\": false}",
+   "name": "get_assertions"
+  },
+  {
+   "role": "agent",
+   "kind": "tool_call",
+   "text": "{\"subject\": \"stock_position:SKU-D28\", \"predicate\": \"\", \"as_of\": \"\", \"known_at\": \"\", \"offset\": \"0\"}",
+   "name": "get_assertions"
+  },
+  {
+   "role": "tool",
+   "kind": "tool_result",
+   "text": "{\"assertions\": [{\"id\": 946, \"subject\": \"stock_position:SKU-D28\", \"predicate\": \"stock_position.qty\", \"value\": 584, \"valid_from\": \"2026-06-30\", \"valid_to\": null, \"status\": \"observed\", \"evidence\": \"products row SKU-D28 (export 2026-07-01)\", \"recorded_at\": \"2026-07-01T08:00:00\"}, {\"id\": 947, \"subject\": \"stock_position:SKU-D28\", \"predicate\": \"stock_position.daily_demand\", \"value\": 11, \"valid_from\": \"2026-06-30\", \"valid_to\": null, \"status\": \"observed\", \"evidence\": \"products row SKU-D28 (export 2026-07-01)\", \"recorded_at\": \"2026-07-01T08:00:00\"}, {\"id\": 948, \"subject\": \"stock_position:SKU-D28\", \"predicate\": \"stock_position.of_product\", \"value\": \"product:8f42cdbb\", \"valid_from\": \"2026-06-30\", \"valid_to\": null, \"status\": \"observed\", \"evidence\": \"products row SKU-D28 (export 2026-07-01)\", \"recorded_at\": \"2026-07-01T08:00:00\"}], \"count\": 3, \"offset\": 0, \"truncated\": false}",
+   "name": "get_assertions"
+  },
+  {
+   "role": "agent",
+   "kind": "tool_call",
+   "text": "{\"subject\": \"supplier_lead_time:SKU-D28\", \"predicate\": \"\", \"as_of\": \"\", \"known_at\": \"\", \"offset\": \"0\"}",
+   "name": "get_assertions"
+  },
+  {
+   "role": "tool",
+   "kind": "tool_result",
+   "text": "{\"assertions\": [{\"id\": 1115, \"subject\": \"supplier_lead_time:SKU-D28\", \"predicate\": \"supplier_lead_time.days\", \"value\": 14, \"valid_from\": \"2026-01-01\", \"valid_to\": null, \"status\": \"observed\", \"evidence\": \"supplier_leadtimes row SKU-D28 (export 2026-01-03)\", \"recorded_at\": \"2026-01-03T09:00:00\"}, {\"id\": 1116, \"subject\": \"supplier_lead_time:SKU-D28\", \"predicate\": \"supplier_lead_time.for_product\", \"value\": \"product:8f42cdbb\", \"valid_from\": \"2026-01-01\", \"valid_to\": null, \"status\": \"observed\", \"evidence\": \"supplier_leadtimes row SKU-D28 (export 2026-01-03)\", \"recorded_at\": \"2026-01-03T09:00:00\"}], \"count\": 2, \"offset\": 0, \"truncated\": false}",
+   "name": "get_assertions"
+  },
+  {
+   "role": "agent",
+   "kind": "tool_call",
+   "text": "{\"subject\": \"stock_position:SKU-D29\", \"predicate\": \"\", \"as_of\": \"\", \"known_at\": \"\", \"offset\": \"0\"}",
+   "name": "get_assertions"
+  },
+  {
+   "role": "tool",
+   "kind": "tool_result",
+   "text": "{\"assertions\": [{\"id\": 956, \"subject\": \"stock_position:SKU-D29\", \"predicate\": \"stock_position.qty\", \"value\": 395, \"valid_from\": \"2026-06-30\", \"valid_to\": null, \"status\": \"observed\", \"evidence\": \"products row SKU-D29 (export 2026-07-01)\", \"recorded_at\": \"2026-07-01T08:00:00\"}, {\"id\": 957, \"subject\": \"stock_position:SKU-D29\", \"predicate\": \"stock_position.daily_demand\", \"value\": 4, \"valid_from\": \"2026-06-30\", \"valid_to\": null, \"status\": \"observed\", \"evidence\": \"products row SKU-D29 (export 2026-07-01)\", \"recorded_at\": \"2026-07-01T08:00:00\"}, {\"id\": 958, \"subject\": \"stock_position:SKU-D29\", \"predicate\": \"stock_position.of_product\", \"value\": \"product:6d6e8484\", \"valid_from\": \"2026-06-30\", \"valid_to\": null, \"status\": \"observed\", \"evidence\": \"products row SKU-D29 (export 2026-07-01)\", \"recorded_at\": \"2026-07-01T08:00:00\"}], \"count\": 3, \"offset\": 0, \"truncated\": false}",
+   "name": "get_assertions"
+  },
+  {
+   "role": "agent",
+   "kind": "tool_call",
+   "text": "{\"subject\": \"supplier_lead_time:SKU-D29\", \"predicate\": \"\", \"as_of\": \"\", \"known_at\": \"\", \"offset\": \"0\"}",
+   "name": "get_assertions"
+  },
+  {
+   "role": "tool",
+   "kind": "tool_result",
+   "text": "{\"assertions\": [{\"id\": 1117, \"subject\": \"supplier_lead_time:SKU-D29\", \"predicate\": \"supplier_lead_time.days\", \"value\": 11, \"valid_from\": \"2026-01-01\", \"valid_to\": null, \"status\": \"observed\", \"evidence\": \"supplier_leadtimes row SKU-D29 (export 2026-01-03)\", \"recorded_at\": \"2026-01-03T09:00:00\"}, {\"id\": 1118, \"subject\": \"supplier_lead_time:SKU-D29\", \"predicate\": \"supplier_lead_time.for_product\", \"value\": \"product:6d6e8484\", \"valid_from\": \"2026-01-01\", \"valid_to\": null, \"status\": \"observed\", \"evidence\": \"supplier_leadtimes row SKU-D29 (export 2026-01-03)\", \"recorded_at\": \"2026-01-03T09:00:00\"}], \"count\": 2, \"offset\": 0, \"truncated\": false}",
+   "name": "get_assertions"
+  },
+  {
+   "role": "agent",
+   "kind": "tool_call",
+   "text": "{\"subject\": \"stock_position:SKU-D30\", \"predicate\": \"\", \"as_of\": \"\", \"known_at\": \"\", \"offset\": \"0\"}",
+   "name": "get_assertions"
+  },
+  {
+   "role": "tool",
+   "kind": "tool_result",
+   "text": "{\"assertions\": [{\"id\": 966, \"subject\": \"stock_position:SKU-D30\", \"predicate\": \"stock_position.qty\", \"value\": 786, \"valid_from\": \"2026-06-30\", \"valid_to\": null, \"status\": \"observed\", \"evidence\": \"products row SKU-D30 (export 2026-07-01)\", \"recorded_at\": \"2026-07-01T08:00:00\"}, {\"id\": 967, \"subject\": \"stock_position:SKU-D30\", \"predicate\": \"stock_position.daily_demand\", \"value\": 4, \"valid_from\": \"2026-06-30\", \"valid_to\": null, \"status\": \"observed\", \"evidence\": \"products row SKU-D30 (export 2026-07-01)\", \"recorded_at\": \"2026-07-01T08:00:00\"}, {\"id\": 968, \"subject\": \"stock_position:SKU-D30\", \"predicate\": \"stock_position.of_product\", \"value\": \"product:65151782\", \"valid_from\": \"2026-06-30\", \"valid_to\": null, \"status\": \"observed\", \"evidence\": \"products row SKU-D30 (export 2026-07-01)\", \"recorded_at\": \"2026-07-01T08:00:00\"}], \"count\": 3, \"offset\": 0, \"truncated\": false}",
+   "name": "get_assertions"
+  },
+  {
+   "role": "agent",
+   "kind": "tool_call",
+   "text": "{\"subject\": \"supplier_lead_time:SKU-D30\", \"predicate\": \"\", \"as_of\": \"\", \"known_at\": \"\", \"offset\": \"0\"}",
+   "name": "get_assertions"
+  },
+  {
+   "role": "tool",
+   "kind": "tool_result",
+   "text": "{\"assertions\": [{\"id\": 1119, \"subject\": \"supplier_lead_time:SKU-D30\", \"predicate\": \"supplier_lead_time.days\", \"value\": 14, \"valid_from\": \"2026-01-01\", \"valid_to\": null, \"status\": \"observed\", \"evidence\": \"supplier_leadtimes row SKU-D30 (export 2026-01-03)\", \"recorded_at\": \"2026-01-03T09:00:00\"}, {\"id\": 1120, \"subject\": \"supplier_lead_time:SKU-D30\", \"predicate\": \"supplier_lead_time.for_product\", \"value\": \"product:65151782\", \"valid_from\": \"2026-01-01\", \"valid_to\": null, \"status\": \"observed\", \"evidence\": \"supplier_leadtimes row SKU-D30 (export 2026-01-03)\", \"recorded_at\": \"2026-01-03T09:00:00\"}], \"count\": 2, \"offset\": 0, \"truncated\": false}",
+   "name": "get_assertions"
+  },
+  {
+   "role": "agent",
+   "kind": "tool_call",
+   "text": "{\"subject\": \"stock_position:SKU-D31\", \"predicate\": \"\", \"as_of\": \"\", \"known_at\": \"\", \"offset\": \"0\"}",
+   "name": "get_assertions"
+  },
+  {
+   "role": "tool",
+   "kind": "tool_result",
+   "text": "{\"assertions\": [{\"id\": 976, \"subject\": \"stock_position:SKU-D31\", \"predicate\": \"stock_position.qty\", \"value\": 693, \"valid_from\": \"2026-06-30\", \"valid_to\": null, \"status\": \"observed\", \"evidence\": \"products row SKU-D31 (export 2026-07-01)\", \"recorded_at\": \"2026-07-01T08:00:00\"}, {\"id\": 977, \"subject\": \"stock_position:SKU-D31\", \"predicate\": \"stock_position.daily_demand\", \"value\": 12, \"valid_from\": \"2026-06-30\", \"valid_to\": null, \"status\": \"observed\", \"evidence\": \"products row SKU-D31 (export 2026-07-01)\", \"recorded_at\": \"2026-07-01T08:00:00\"}, {\"id\": 978, \"subject\": \"stock_position:SKU-D31\", \"predicate\": \"stock_position.of_product\", \"value\": \"product:f0d854e3\", \"valid_from\": \"2026-06-30\", \"valid_to\": null, \"status\": \"observed\", \"evidence\": \"products row SKU-D31 (export 2026-07-01)\", \"recorded_at\": \"2026-07-01T08:00:00\"}], \"count\": 3, \"offset\": 0, \"truncated\": false}",
+   "name": "get_assertions"
+  },
+  {
+   "role": "agent",
+   "kind": "tool_call",
+   "text": "{\"subject\": \"supplier_lead_time:SKU-D31\", \"predicate\": \"\", \"as_of\": \"\", \"known_at\": \"\", \"offset\": \"0\"}",
+   "name": "get_assertions"
+  },
+  {
+   "role": "tool",
+   "kind": "tool_result",
+   "text": "{\"assertions\": [{\"id\": 1121, \"subject\": \"supplier_lead_time:SKU-D31\", \"predicate\": \"supplier_lead_time.days\", \"value\": 5, \"valid_from\": \"2026-01-01\", \"valid_to\": null, \"status\": \"observed\", \"evidence\": \"supplier_leadtimes row SKU-D31 (export 2026-01-03)\", \"recorded_at\": \"2026-01-03T09:00:00\"}, {\"id\": 1122, \"subject\": \"supplier_lead_time:SKU-D31\", \"predicate\": \"supplier_lead_time.for_product\", \"value\": \"product:f0d854e3\", \"valid_from\": \"2026-01-01\", \"valid_to\": null, \"status\": \"observed\", \"evidence\": \"supplier_leadtimes row SKU-D31 (export 2026-01-03)\", \"recorded_at\": \"2026-01-03T09:00:00\"}], \"count\": 2, \"offset\": 0, \"truncated\": false}",
+   "name": "get_assertions"
+  },
+  {
+   "role": "agent",
+   "kind": "tool_call",
+   "text": "{\"subject\": \"stock_position:SKU-D32\", \"predicate\": \"\", \"as_of\": \"\", \"known_at\": \"\", \"offset\": \"0\"}",
+   "name": "get_assertions"
+  },
+  {
+   "role": "tool",
+   "kind": "tool_result",
+   "text": "{\"assertions\": [{\"id\": 986, \"subject\": \"stock_position:SKU-D32\", \"predicate\": \"stock_position.qty\", \"value\": 383, \"valid_from\": \"2026-06-30\", \"valid_to\": null, \"status\": \"observed\", \"evidence\": \"products row SKU-D32 (export 2026-07-01)\", \"recorded_at\": \"2026-07-01T08:00:00\"}, {\"id\": 987, \"subject\": \"stock_position:SKU-D32\", \"predicate\": \"stock_position.daily_demand\", \"value\": 6, \"valid_from\": \"2026-06-30\", \"valid_to\": null, \"status\": \"observed\", \"evidence\": \"products row SKU-D32 (export 2026-07-01)\", \"recorded_at\": \"2026-07-01T08:00:00\"}, {\"id\": 988, \"subject\": \"stock_position:SKU-D32\", \"predicate\": \"stock_position.of_product\", \"value\": \"product:a1c0f49a\", \"valid_from\": \"2026-06-30\", \"valid_to\": null, \"status\": \"observed\", \"evidence\": \"products row SKU-D32 (export 2026-07-01)\", \"recorded_at\": \"2026-07-01T08:00:00\"}], \"count\": 3, \"offset\": 0, \"truncated\": false}",
+   "name": "get_assertions"
+  },
+  {
+   "role": "agent",
+   "kind": "tool_call",
+   "text": "{\"subject\": \"supplier_lead_time:SKU-D32\", \"predicate\": \"\", \"as_of\": \"\", \"known_at\": \"\", \"offset\": \"0\"}",
+   "name": "get_assertions"
+  },
+  {
+   "role": "tool",
+   "kind": "tool_result",
+   "text": "{\"assertions\": [{\"id\": 1123, \"subject\": \"supplier_lead_time:SKU-D32\", \"predicate\": \"supplier_lead_time.days\", \"value\": 13, \"valid_from\": \"2026-01-01\", \"valid_to\": null, \"status\": \"observed\", \"evidence\": \"supplier_leadtimes row SKU-D32 (export 2026-01-03)\", \"recorded_at\": \"2026-01-03T09:00:00\"}, {\"id\": 1124, \"subject\": \"supplier_lead_time:SKU-D32\", \"predicate\": \"supplier_lead_time.for_product\", \"value\": \"product:a1c0f49a\", \"valid_from\": \"2026-01-01\", \"valid_to\": null, \"status\": \"observed\", \"evidence\": \"supplier_leadtimes row SKU-D32 (export 2026-01-03)\", \"recorded_at\": \"2026-01-03T09:00:00\"}], \"count\": 2, \"offset\": 0, \"truncated\": false}",
+   "name": "get_assertions"
+  },
+  {
+   "role": "agent",
+   "kind": "tool_call",
+   "text": "{\"subject\": \"stock_position:SKU-D33\", \"predicate\": \"\", \"as_of\": \"\", \"known_at\": \"\", \"offset\": \"0\"}",
+   "name": "get_assertions"
+  },
+  {
+   "role": "tool",
+   "kind": "tool_result",
+   "text": "{\"assertions\": [{\"id\": 996, \"subject\": \"stock_position:SKU-D33\", \"predicate\": \"stock_position.qty\", \"value\": 305, \"valid_from\": \"2026-06-30\", \"valid_to\": null, \"status\": \"observed\", \"evidence\": \"products row SKU-D33 (export 2026-07-01)\", \"recorded_at\": \"2026-07-01T08:00:00\"}, {\"id\": 997, \"subject\": \"stock_position:SKU-D33\", \"predicate\": \"stock_position.daily_demand\", \"value\": 4, \"valid_from\": \"2026-06-30\", \"valid_to\": null, \"status\": \"observed\", \"evidence\": \"products row SKU-D33 (export 2026-07-01)\", \"recorded_at\": \"2026-07-01T08:00:00\"}, {\"id\": 998, \"subject\": \"stock_position:SKU-D33\", \"predicate\": \"stock_position.of_product\", \"value\": \"product:2723afd2\", \"valid_from\": \"2026-06-30\", \"valid_to\": null, \"status\": \"observed\", \"evidence\": \"products row SKU-D33 (export 2026-07-01)\", \"recorded_at\": \"2026-07-01T08:00:00\"}], \"count\": 3, \"offset\": 0, \"truncated\": false}",
+   "name": "get_assertions"
+  },
+  {
+   "role": "agent",
+   "kind": "tool_call",
+   "text": "{\"subject\": \"supplier_lead_time:SKU-D33\", \"predicate\": \"\", \"as_of\": \"\", \"known_at\": \"\", \"offset\": \"0\"}",
+   "name": "get_assertions"
+  },
+  {
+   "role": "tool",
+   "kind": "tool_result",
+   "text": "{\"assertions\": [{\"id\": 1125, \"subject\": \"supplier_lead_time:SKU-D33\", \"predicate\": \"supplier_lead_time.days\", \"value\": 5, \"valid_from\": \"2026-01-01\", \"valid_to\": null, \"status\": \"observed\", \"evidence\": \"supplier_leadtimes row SKU-D33 (export 2026-01-03)\", \"recorded_at\": \"2026-01-03T09:00:00\"}, {\"id\": 1126, \"subject\": \"supplier_lead_time:SKU-D33\", \"predicate\": \"supplier_lead_time.for_product\", \"value\": \"product:2723afd2\", \"valid_from\": \"2026-01-01\", \"valid_to\": null, \"status\": \"observed\", \"evidence\": \"supplier_leadtimes row SKU-D33 (export 2026-01-03)\", \"recorded_at\": \"2026-01-03T09:00:00\"}], \"count\": 2, \"offset\": 0, \"truncated\": false}",
+   "name": "get_assertions"
+  },
+  {
+   "role": "agent",
+   "kind": "tool_call",
+   "text": "{\"subject\": \"stock_position:SKU-D34\", \"predicate\": \"\", \"as_of\": \"\", \"known_at\": \"\", \"offset\": \"0\"}",
+   "name": "get_assertions"
+  },
+  {
+   "role": "tool",
+   "kind": "tool_result",
+   "text": "{\"assertions\": [{\"id\": 1006, \"subject\": \"stock_position:SKU-D34\", \"predicate\": \"stock_position.qty\", \"value\": 336, \"valid_from\": \"2026-06-30\", \"valid_to\": null, \"status\": \"observed\", \"evidence\": \"products row SKU-D34 (export 2026-07-01)\", \"recorded_at\": \"2026-07-01T08:00:00\"}, {\"id\": 1007, \"subject\": \"stock_position:SKU-D34\", \"predicate\": \"stock_position.daily_demand\", \"value\": 8, \"valid_from\": \"2026-06-30\", \"valid_to\": null, \"status\": \"observed\", \"evidence\": \"products row SKU-D34 (export 2026-07-01)\", \"recorded_at\": \"2026-07-01T08:00:00\"}, {\"id\": 1008, \"subject\": \"stock_position:SKU-D34\", \"predicate\": \"stock_position.of_product\", \"value\": \"product:a11e7f85\", \"valid_from\": \"2026-06-30\", \"valid_to\": null, \"status\": \"observed\", \"evidence\": \"products row SKU-D34 (export 2026-07-01)\", \"recorded_at\": \"2026-07-01T08:00:00\"}], \"count\": 3, \"offset\": 0, \"truncated\": false}",
+   "name": "get_assertions"
+  },
+  {
+   "role": "agent",
+   "kind": "tool_call",
+   "text": "{\"subject\": \"supplier_lead_time:SKU-D34\", \"predicate\": \"\", \"as_of\": \"\", \"known_at\": \"\", \"offset\": \"0\"}",
+   "name": "get_assertions"
+  },
+  {
+   "role": "tool",
+   "kind": "tool_result",
+   "text": "{\"assertions\": [{\"id\": 1127, \"subject\": \"supplier_lead_time:SKU-D34\", \"predicate\": \"supplier_lead_time.days\", \"value\": 6, \"valid_from\": \"2026-01-01\", \"valid_to\": null, \"status\": \"observed\", \"evidence\": \"supplier_leadtimes row SKU-D34 (export 2026-01-03)\", \"recorded_at\": \"2026-01-03T09:00:00\"}, {\"id\": 1128, \"subject\": \"supplier_lead_time:SKU-D34\", \"predicate\": \"supplier_lead_time.for_product\", \"value\": \"product:a11e7f85\", \"valid_from\": \"2026-01-01\", \"valid_to\": null, \"status\": \"observed\", \"evidence\": \"supplier_leadtimes row SKU-D34 (export 2026-01-03)\", \"recorded_at\": \"2026-01-03T09:00:00\"}], \"count\": 2, \"offset\": 0, \"truncated\": false}",
+   "name": "get_assertions"
+  },
+  {
+   "role": "agent",
+   "kind": "tool_call",
+   "text": "{\"subject\": \"stock_position:SKU-D35\", \"predicate\": \"\", \"as_of\": \"\", \"known_at\": \"\", \"offset\": \"0\"}",
+   "name": "get_assertions"
+  },
+  {
+   "role": "tool",
+   "kind": "tool_result",
+   "text": "{\"assertions\": [{\"id\": 1016, \"subject\": \"stock_position:SKU-D35\", \"predicate\": \"stock_position.qty\", \"value\": 282, \"valid_from\": \"2026-06-30\", \"valid_to\": null, \"status\": \"observed\", \"evidence\": \"products row SKU-D35 (export 2026-07-01)\", \"recorded_at\": \"2026-07-01T08:00:00\"}, {\"id\": 1017, \"subject\": \"stock_position:SKU-D35\", \"predicate\": \"stock_position.daily_demand\", \"value\": 11, \"valid_from\": \"2026-06-30\", \"valid_to\": null, \"status\": \"observed\", \"evidence\": \"products row SKU-D35 (export 2026-07-01)\", \"recorded_at\": \"2026-07-01T08:00:00\"}, {\"id\": 1018, \"subject\": \"stock_position:SKU-D35\", \"predicate\": \"stock_position.of_product\", \"value\": \"product:65e07509\", \"valid_from\": \"2026-06-30\", \"valid_to\": null, \"status\": \"observed\", \"evidence\": \"products row SKU-D35 (export 2026-07-01)\", \"recorded_at\": \"2026-07-01T08:00:00\"}], \"count\": 3, \"offset\": 0, \"truncated\": false}",
+   "name": "get_assertions"
+  },
+  {
+   "role": "agent",
+   "kind": "tool_call",
+   "text": "{\"subject\": \"supplier_lead_time:SKU-D35\", \"predicate\": \"\", \"as_of\": \"\", \"known_at\": \"\", \"offset\": \"0\"}",
+   "name": "get_assertions"
+  },
+  {
+   "role": "tool",
+   "kind": "tool_result",
+   "text": "{\"assertions\": [{\"id\": 1129, \"subject\": \"supplier_lead_time:SKU-D35\", \"predicate\": \"supplier_lead_time.days\", \"value\": 14, \"valid_from\": \"2026-01-01\", \"valid_to\": null, \"status\": \"observed\", \"evidence\": \"supplier_leadtimes row SKU-D35 (export 2026-01-03)\", \"recorded_at\": \"2026-01-03T09:00:00\"}, {\"id\": 1130, \"subject\": \"supplier_lead_time:SKU-D35\", \"predicate\": \"supplier_lead_time.for_product\", \"value\": \"product:65e07509\", \"valid_from\": \"2026-01-01\", \"valid_to\": null, \"status\": \"observed\", \"evidence\": \"supplier_leadtimes row SKU-D35 (export 2026-01-03)\", \"recorded_at\": \"2026-01-03T09:00:00\"}], \"count\": 2, \"offset\": 0, \"truncated\": false}",
+   "name": "get_assertions"
+  },
+  {
+   "role": "agent",
+   "kind": "tool_call",
+   "text": "{\"subject\": \"stock_position:SKU-D36\", \"predicate\": \"\", \"as_of\": \"\", \"known_at\": \"\", \"offset\": \"0\"}",
+   "name": "get_assertions"
+  },
+  {
+   "role": "tool",
+   "kind": "tool_result",
+   "text": "{\"assertions\": [{\"id\": 1026, \"subject\": \"stock_position:SKU-D36\", \"predicate\": \"stock_position.qty\", \"value\": 784, \"valid_from\": \"2026-06-30\", \"valid_to\": null, \"status\": \"observed\", \"evidence\": \"products row SKU-D36 (export 2026-07-01)\", \"recorded_at\": \"2026-07-01T08:00:00\"}, {\"id\": 1027, \"subject\": \"stock_position:SKU-D36\", \"predicate\": \"stock_position.daily_demand\", \"value\": 12, \"valid_from\": \"2026-06-30\", \"valid_to\": null, \"status\": \"observed\", \"evidence\": \"products row SKU-D36 (export 2026-07-01)\", \"recorded_at\": \"2026-07-01T08:00:00\"}, {\"id\": 1028, \"subject\": \"stock_position:SKU-D36\", \"predicate\": \"stock_position.of_product\", \"value\": \"product:7453376d\", \"valid_from\": \"2026-06-30\", \"valid_to\": null, \"status\": \"observed\", \"evidence\": \"products row SKU-D36 (export 2026-07-01)\", \"recorded_at\": \"2026-07-01T08:00:00\"}], \"count\": 3, \"offset\": 0, \"truncated\": false}",
+   "name": "get_assertions"
+  },
+  {
+   "role": "agent",
+   "kind": "tool_call",
+   "text": "{\"subject\": \"supplier_lead_time:SKU-D36\", \"predicate\": \"\", \"as_of\": \"\", \"known_at\": \"\", \"offset\": \"0\"}",
+   "name": "get_assertions"
+  },
+  {
+   "role": "tool",
+   "kind": "tool_result",
+   "text": "{\"assertions\": [{\"id\": 1131, \"subject\": \"supplier_lead_time:SKU-D36\", \"predicate\": \"supplier_lead_time.days\", \"value\": 7, \"valid_from\": \"2026-01-01\", \"valid_to\": null, \"status\": \"observed\", \"evidence\": \"supplier_leadtimes row SKU-D36 (export 2026-01-03)\", \"recorded_at\": \"2026-01-03T09:00:00\"}, {\"id\": 1132, \"subject\": \"supplier_lead_time:SKU-D36\", \"predicate\": \"supplier_lead_time.for_product\", \"value\": \"product:7453376d\", \"valid_from\": \"2026-01-01\", \"valid_to\": null, \"status\": \"observed\", \"evidence\": \"supplier_leadtimes row SKU-D36 (export 2026-01-03)\", \"recorded_at\": \"2026-01-03T09:00:00\"}], \"count\": 2, \"offset\": 0, \"truncated\": false}",
+   "name": "get_assertions"
+  },
+  {
+   "role": "agent",
+   "kind": "tool_call",
+   "text": "{\"subject\": \"stock_position:SKU-D37\", \"predicate\": \"\", \"as_of\": \"\", \"known_at\": \"\", \"offset\": \"0\"}",
+   "name": "get_assertions"
+  },
+  {
+   "role": "tool",
+   "kind": "tool_result",
+   "text": "{\"assertions\": [{\"id\": 1036, \"subject\": \"stock_position:SKU-D37\", \"predicate\": \"stock_position.qty\", \"value\": 256, \"valid_from\": \"2026-06-30\", \"valid_to\": null, \"status\": \"observed\", \"evidence\": \"products row SKU-D37 (export 2026-07-01)\", \"recorded_at\": \"2026-07-01T08:00:00\"}, {\"id\": 1037, \"subject\": \"stock_position:SKU-D37\", \"predicate\": \"stock_position.daily_demand\", \"value\": 7, \"valid_from\": \"2026-06-30\", \"valid_to\": null, \"status\": \"observed\", \"evidence\": \"products row SKU-D37 (export 2026-07-01)\", \"recorded_at\": \"2026-07-01T08:00:00\"}, {\"id\": 1038, \"subject\": \"stock_position:SKU-D37\", \"predicate\": \"stock_position.of_product\", \"value\": \"product:3997c0b4\", \"valid_from\": \"2026-06-30\", \"valid_to\": null, \"status\": \"observed\", \"evidence\": \"products row SKU-D37 (export 2026-07-01)\", \"recorded_at\": \"2026-07-01T08:00:00\"}], \"count\": 3, \"offset\": 0, \"truncated\": false}",
+   "name": "get_assertions"
+  },
+  {
+   "role": "agent",
+   "kind": "tool_call",
+   "text": "{\"subject\": \"supplier_lead_time:SKU-D37\", \"predicate\": \"\", \"as_of\": \"\", \"known_at\": \"\", \"offset\": \"0\"}",
+   "name": "get_assertions"
+  },
+  {
+   "role": "tool",
+   "kind": "tool_result",
+   "text": "{\"assertions\": [{\"id\": 1133, \"subject\": \"supplier_lead_time:SKU-D37\", \"predicate\": \"supplier_lead_time.days\", \"value\": 13, \"valid_from\": \"2026-01-01\", \"valid_to\": null, \"status\": \"observed\", \"evidence\": \"supplier_leadtimes row SKU-D37 (export 2026-01-03)\", \"recorded_at\": \"2026-01-03T09:00:00\"}, {\"id\": 1134, \"subject\": \"supplier_lead_time:SKU-D37\", \"predicate\": \"supplier_lead_time.for_product\", \"value\": \"product:3997c0b4\", \"valid_from\": \"2026-01-01\", \"valid_to\": null, \"status\": \"observed\", \"evidence\": \"supplier_leadtimes row SKU-D37 (export 2026-01-03)\", \"recorded_at\": \"2026-01-03T09:00:00\"}], \"count\": 2, \"offset\": 0, \"truncated\": false}",
+   "name": "get_assertions"
+  },
+  {
+   "role": "agent",
+   "kind": "tool_call",
+   "text": "{\"subject\": \"stock_position:SKU-D38\", \"predicate\": \"\", \"as_of\": \"\", \"known_at\": \"\", \"offset\": \"0\"}",
+   "name": "get_assertions"
+  },
+  {
+   "role": "tool",
+   "kind": "tool_result",
+   "text": "{\"assertions\": [{\"id\": 1046, \"subject\": \"stock_position:SKU-D38\", \"predicate\": \"stock_position.qty\", \"value\": 638, \"valid_from\": \"2026-06-30\", \"valid_to\": null, \"status\": \"observed\", \"evidence\": \"products row SKU-D38 (export 2026-07-01)\", \"recorded_at\": \"2026-07-01T08:00:00\"}, {\"id\": 1047, \"subject\": \"stock_position:SKU-D38\", \"predicate\": \"stock_position.daily_demand\", \"value\": 4, \"valid_from\": \"2026-06-30\", \"valid_to\": null, \"status\": \"observed\", \"evidence\": \"products row SKU-D38 (export 2026-07-01)\", \"recorded_at\": \"2026-07-01T08:00:00\"}, {\"id\": 1048, \"subject\": \"stock_position:SKU-D38\", \"predicate\": \"stock_position.of_product\", \"value\": \"product:b796de58\", \"valid_from\": \"2026-06-30\", \"valid_to\": null, \"status\": \"observed\", \"evidence\": \"products row SKU-D38 (export 2026-07-01)\", \"recorded_at\": \"2026-07-01T08:00:00\"}], \"count\": 3, \"offset\": 0, \"truncated\": false}",
+   "name": "get_assertions"
+  },
+  {
+   "role": "agent",
+   "kind": "tool_call",
+   "text": "{\"subject\": \"supplier_lead_time:SKU-D38\", \"predicate\": \"\", \"as_of\": \"\", \"known_at\": \"\", \"offset\": \"0\"}",
+   "name": "get_assertions"
+  },
+  {
+   "role": "tool",
+   "kind": "tool_result",
+   "text": "{\"assertions\": [{\"id\": 1135, \"subject\": \"supplier_lead_time:SKU-D38\", \"predicate\": \"supplier_lead_time.days\", \"value\": 10, \"valid_from\": \"2026-01-01\", \"valid_to\": null, \"status\": \"observed\", \"evidence\": \"supplier_leadtimes row SKU-D38 (export 2026-01-03)\", \"recorded_at\": \"2026-01-03T09:00:00\"}, {\"id\": 1136, \"subject\": \"supplier_lead_time:SKU-D38\", \"predicate\": \"supplier_lead_time.for_product\", \"value\": \"product:b796de58\", \"valid_from\": \"2026-01-01\", \"valid_to\": null, \"status\": \"observed\", \"evidence\": \"supplier_leadtimes row SKU-D38 (export 2026-01-03)\", \"recorded_at\": \"2026-01-03T09:00:00\"}], \"count\": 2, \"offset\": 0, \"truncated\": false}",
+   "name": "get_assertions"
+  },
+  {
+   "role": "agent",
+   "kind": "tool_call",
+   "text": "{\"subject\": \"stock_position:SKU-D39\", \"predicate\": \"\", \"as_of\": \"\", \"known_at\": \"\", \"offset\": \"0\"}",
+   "name": "get_assertions"
+  },
+  {
+   "role": "tool",
+   "kind": "tool_result",
+   "text": "{\"assertions\": [{\"id\": 1056, \"subject\": \"stock_position:SKU-D39\", \"predicate\": \"stock_position.qty\", \"value\": 744, \"valid_from\": \"2026-06-30\", \"valid_to\": null, \"status\": \"observed\", \"evidence\": \"products row SKU-D39 (export 2026-07-01)\", \"recorded_at\": \"2026-07-01T08:00:00\"}, {\"id\": 1057, \"subject\": \"stock_position:SKU-D39\", \"predicate\": \"stock_position.daily_demand\", \"value\": 4, \"valid_from\": \"2026-06-30\", \"valid_to\": null, \"status\": \"observed\", \"evidence\": \"products row SKU-D39 (export 2026-07-01)\", \"recorded_at\": \"2026-07-01T08:00:00\"}, {\"id\": 1058, \"subject\": \"stock_position:SKU-D39\", \"predicate\": \"stock_position.of_product\", \"value\": \"product:650a34a1\", \"valid_from\": \"2026-06-30\", \"valid_to\": null, \"status\": \"observed\", \"evidence\": \"products row SKU-D39 (export 2026-07-01)\", \"recorded_at\": \"2026-07-01T08:00:00\"}], \"count\": 3, \"offset\": 0, \"truncated\": false}",
+   "name": "get_assertions"
+  },
+  {
+   "role": "agent",
+   "kind": "tool_call",
+   "text": "{\"subject\": \"supplier_lead_time:SKU-D39\", \"predicate\": \"\", \"as_of\": \"\", \"known_at\": \"\", \"offset\": \"0\"}",
+   "name": "get_assertions"
+  },
+  {
+   "role": "tool",
+   "kind": "tool_result",
+   "text": "{\"assertions\": [{\"id\": 1137, \"subject\": \"supplier_lead_time:SKU-D39\", \"predicate\": \"supplier_lead_time.days\", \"value\": 13, \"valid_from\": \"2026-01-01\", \"valid_to\": null, \"status\": \"observed\", \"evidence\": \"supplier_leadtimes row SKU-D39 (export 2026-01-03)\", \"recorded_at\": \"2026-01-03T09:00:00\"}, {\"id\": 1138, \"subject\": \"supplier_lead_time:SKU-D39\", \"predicate\": \"supplier_lead_time.for_product\", \"value\": \"product:650a34a1\", \"valid_from\": \"2026-01-01\", \"valid_to\": null, \"status\": \"observed\", \"evidence\": \"supplier_leadtimes row SKU-D39 (export 2026-01-03)\", \"recorded_at\": \"2026-01-03T09:00:00\"}], \"count\": 2, \"offset\": 0, \"truncated\": false}",
+   "name": "get_assertions"
+  },
+  {
+   "role": "agent",
+   "kind": "tool_call",
+   "text": "{\"subject\": \"product:c1366e4b\", \"predicate\": \"\", \"as_of\": \"\", \"known_at\": \"\", \"offset\": \"0\"}",
+   "name": "get_assertions"
+  },
+  {
+   "role": "tool",
+   "kind": "tool_result",
+   "text": "{\"assertions\": [{\"id\": 799, \"subject\": \"product:c1366e4b\", \"predicate\": \"product.sku\", \"value\": \"SKU-D14\", \"valid_from\": \"2025-01-01\", \"valid_to\": null, \"status\": \"observed\", \"evidence\": \"products row SKU-D14 (export 2026-07-01)\", \"recorded_at\": \"2026-07-01T08:00:00\"}, {\"id\": 800, \"subject\": \"product:c1366e4b\", \"predicate\": \"product.name\", \"value\": \"Case goods 14\", \"valid_from\": \"2025-01-01\", \"valid_to\": null, \"status\": \"observed\", \"evidence\": \"products row SKU-D14 (export 2026-07-01)\", \"recorded_at\": \"2026-07-01T08:00:00\"}, {\"id\": 801, \"subject\": \"product:c1366e4b\", \"predicate\": \"product.category\", \"value\": \"case goods\", \"valid_from\": \"2025-01-01\", \"valid_to\": null, \"status\": \"observed\", \"evidence\": \"products row SKU-D14 (export 2026-07-01)\", \"recorded_at\": \"2026-07-01T08:00:00\"}, {\"id\": 802, \"subject\": \"product:c1366e4b\", \"predicate\": \"product.unit_cost\", \"value\": 11.41, \"valid_from\": \"2025-01-01\", \"valid_to\": null, \"status\": \"observed\", \"evidence\": \"products row SKU-D14 (export 2026-07-01)\", \"recorded_at\": \"2026-07-01T08:00:00\"}, {\"id\": 803, \"subject\": \"product:c1366e4b\", \"predicate\": \"product.list_price\", \"value\": 14.14, \"valid_from\": \"2025-01-01\", \"valid_to\": null, \"status\": \"observed\", \"evidence\": \"products row SKU-D14 (export 2026-07-01)\", \"recorded_at\": \"2026-07-01T08:00:00\"}, {\"id\": 804, \"subject\": \"product:c1366e4b\", \"predicate\": \"identity.source_id\", \"value\": \"products:SKU-D14\", \"valid_from\": \"2025-01-01\", \"valid_to\": null, \"status\": \"observed\", \"evidence\": \"products row SKU-D14 (export 2026-07-01)\", \"recorded_at\": \"2026-07-01T08:00:00\"}, {\"id\": 805, \"subject\": \"product:c1366e4b\", \"predicate\": \"product.supplied_by\", \"value\": \"supplier:4236106a\", \"valid_from\": \"2025-01-01\", \"valid_to\": null, \"status\": \"observed\", \"evidence\": \"products row SKU-D14 (export 2026-07-01)\", \"recorded_at\": \"2026-07-01T08:00:00\"}], \"count\": 7, \"offset\": 0, \"truncated\": false}",
+   "name": "get_assertions"
+  },
+  {
+   "role": "agent",
+   "kind": "message",
+   "text": "I checked stock position and supplier lead time for all 40 products (SKU-D00 through SKU-D39) and compared each product's days-of-stock-remaining (qty ÷ daily_demand) against its supplier's lead time.\n\nOnly one product fails that test: Case goods 14 (SKU-D14, product:c1366e4b), supplied by supplier:4236106a. As of the 2026-07-01 export it has 160 units on hand and daily demand of 8 units/day, giving about 20 days of stock left. Its supplier lead time is 45 days, over twice as long as the stock will last. Every other product has days-of-stock well above (often 3-10x) its lead time, so Case goods 14 is the only one that will run out before a reorder placed today could arrive.\n\nANSWER: Case goods 14 (SKU-D14) is the product that will run out before its supplier can resupply: it has about 20 days of stock left (160 units at 8 units/day demand) but its supplier's lead time is 45 days, roughly 25 days short. No other product in the 40-SKU catalog has this gap; all others carry days-of-stock well above their lead time.\nNUMBERS: {\"SKU-D14_qty\": 160, \"SKU-D14_daily_demand\": 8, \"SKU-D14_days_of_stock\": 20.0, \"SKU-D14_supplier_lead_time_days\": 45, \"shortfall_days\": 25.0}\nEVIDENCE: stock_position:SKU-D14 (assertions 806,807,808), supplier_lead_time:SKU-D14 (assertions 1087,1088), product:c1366e4b (assertions 799-805), plus stock_position/supplier_lead_time for SKU-D00 through SKU-D39 used as comparison baseline\nACTIONS: none",
+   "name": ""
+  },
+  {
+   "role": "reflect",
+   "kind": "verdict",
+   "text": "S=1 P=1 E=1 C=1 R=1 failure=none; ",
+   "name": ""
+  }
+ ],
+ "score": {
+  "S": 1,
+  "P": 1,
+  "E": 1,
+  "C": 1,
+  "R": 1,
+  "failure": "",
+  "notes": []
+ },
+ "meta": {
+  "seed_index": 1,
+  "ablation": "none",
+  "arm": "C",
+  "cost_usd": 0.41547259999999997,
+  "num_turns": 89,
+  "max_turns": 40,
+  "ended_by": "completed",
+  "sdk_version": "0.2.161",
+  "usage": {
+   "input_tokens": 22,
+   "cache_creation_input_tokens": 43512,
+   "cache_read_input_tokens": 282452,
+   "output_tokens": 14006,
+   "output_tokens_details": {
+    "thinking_tokens": 1269
+   },
+   "server_tool_use": {
+    "web_search_requests": 0,
+    "web_fetch_requests": 0
+   },
+   "service_tier": "standard",
+   "cache_creation": {
+    "ephemeral_1h_input_tokens": 43512,
+    "ephemeral_5m_input_tokens": 0
+   },
+   "inference_geo": "not_available",
+   "iterations": [
+    {
+     "input_tokens": 2,
+     "output_tokens": 593,
+     "cache_read_input_tokens": 61408,
+     "cache_creation_input_tokens": 1396,
+     "cache_creation": {
+      "ephemeral_5m_input_tokens": 0,
+      "ephemeral_1h_input_tokens": 1396
+     },
+     "type": "message"
+    }
+   ],
+   "speed": "standard"
+  },
+  "duration_s": 174.44,
+  "executed": [],
+  "approvals_requested": []
+ },
+ "hash": "b16b0bf9853d"
+}

@@ -1,0 +1,1 @@
+pass^k for k = 1 to 2: the share of tasks that pass on every one of k independent trials. The gap between k=1 and k=2 is the cost of inconsistency, 0 points for arm A; 2 points for arm B; 6 points for arm C.

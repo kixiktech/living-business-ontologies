@@ -1,0 +1,36 @@
+{
+ "hash": "84ffea1af2d7",
+ "task": "d_chase_and_aging",
+ "firm": "distributor",
+ "arm": "C",
+ "ablation": "none",
+ "model": "claude-sonnet-5",
+ "seed_index": 1,
+ "score": {
+  "S": 0,
+  "P": 1,
+  "E": 1,
+  "C": 1,
+  "R": 0,
+  "failure": "wrong_number",
+  "notes": [
+   "dso: no reported figure within 0.5 of 41.3, nor two that sum or differ to it"
+  ]
+ },
+ "cost_usd": 0.6974566,
+ "num_turns": 64,
+ "ended_by": "completed",
+ "date": "2026-09-29",
+ "rescored_at": "2026-09-29T13:04:16",
+ "score_before_rescore": {
+  "S": 0,
+  "P": 1,
+  "E": 1,
+  "C": 1,
+  "R": 0,
+  "failure": "wrong_number",
+  "notes": [
+   "dso: no reported figure within 0.5 of 41.3, nor two that sum or differ to it"
+  ]
+ }
+}

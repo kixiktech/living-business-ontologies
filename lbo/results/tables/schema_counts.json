@@ -1,0 +1,48 @@
+{
+ "columns": [
+  "Firm",
+  "Core entity types",
+  "Core relation types",
+  "Extension entity types",
+  "Extension relation types"
+ ],
+ "rows": [
+  [
+   "Retail",
+   15,
+   17,
+   3,
+   5
+  ],
+  [
+   "Field service",
+   15,
+   17,
+   6,
+   9
+  ],
+  [
+   "Distributor",
+   15,
+   17,
+   5,
+   6
+  ],
+  [
+   "All three: core shared, extensions summed",
+   15,
+   17,
+   14,
+   20
+  ]
+ ],
+ "bold": [],
+ "align": [
+  "l",
+  "r",
+  "r",
+  "r",
+  "r"
+ ],
+ "caption": "The schema each firm was built with: the core every firm starts from, and the types its industry extension added. In the last row the core columns count the types present in all three schemas and the extension columns sum the three extensions. The core is shared by construction, since one function emits it for every firm."
+}

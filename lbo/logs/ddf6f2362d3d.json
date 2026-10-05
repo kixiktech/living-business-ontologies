@@ -1,0 +1,155 @@
+{
+ "firm": "retail",
+ "arm": "C",
+ "task": "r_cost_known_at",
+ "model": "claude-sonnet-5",
+ "date": "2026-09-29",
+ "turns": [
+  {
+   "role": "owner",
+   "kind": "message",
+   "text": "On 3 April 2026, what unit cost for the insulated bottle would the books have shown as applying on 2 April 2026? And what do the books show for that same day now?",
+   "name": ""
+  },
+  {
+   "role": "agent",
+   "kind": "tool_call",
+   "text": "{\"entity_type\": \"product\", \"name_contains\": \"insulated bottle\", \"offset\": \"\"}",
+   "name": "find_entities"
+  },
+  {
+   "role": "tool",
+   "kind": "tool_result",
+   "text": "{\"entities\": [{\"id\": \"product:899df3cb\", \"name\": \"Insulated bottle\"}], \"count\": 1, \"offset\": 0, \"truncated\": false}",
+   "name": "find_entities"
+  },
+  {
+   "role": "agent",
+   "kind": "tool_call",
+   "text": "{\"subject\": \"product:899df3cb\", \"predicate\": \"unit_cost\", \"as_of\": \"2026-04-02\", \"known_at\": \"2026-04-03\", \"offset\": \"\"}",
+   "name": "get_assertions"
+  },
+  {
+   "role": "tool",
+   "kind": "tool_result",
+   "text": "{\"assertions\": [], \"count\": 0, \"offset\": 0, \"truncated\": false}",
+   "name": "get_assertions"
+  },
+  {
+   "role": "agent",
+   "kind": "tool_call",
+   "text": "{\"subject\": \"product:899df3cb\", \"predicate\": \"unit_cost\", \"as_of\": \"2026-04-02\", \"known_at\": \"\", \"offset\": \"\"}",
+   "name": "get_assertions"
+  },
+  {
+   "role": "tool",
+   "kind": "tool_result",
+   "text": "{\"assertions\": [], \"count\": 0, \"offset\": 0, \"truncated\": false}",
+   "name": "get_assertions"
+  },
+  {
+   "role": "agent",
+   "kind": "tool_call",
+   "text": "{\"subject\": \"product:899df3cb\", \"predicate\": \"\", \"as_of\": \"\", \"known_at\": \"\", \"offset\": \"\"}",
+   "name": "get_assertions"
+  },
+  {
+   "role": "tool",
+   "kind": "tool_result",
+   "text": "{\"assertions\": [{\"id\": 9, \"subject\": \"product:899df3cb\", \"predicate\": \"product.sku\", \"value\": \"A-100\", \"valid_from\": \"2025-01-01\", \"valid_to\": null, \"status\": \"observed\", \"evidence\": \"product_master row A-100 (export 2026-07-01)\", \"recorded_at\": \"2026-07-01T08:00:00\"}, {\"id\": 10, \"subject\": \"product:899df3cb\", \"predicate\": \"product.name\", \"value\": \"Insulated bottle\", \"valid_from\": \"2025-01-01\", \"valid_to\": null, \"status\": \"observed\", \"evidence\": \"product_master row A-100 (export 2026-07-01)\", \"recorded_at\": \"2026-07-01T08:00:00\"}, {\"id\": 11, \"subject\": \"product:899df3cb\", \"predicate\": \"product.category\", \"value\": \"bottles\", \"valid_from\": \"2025-01-01\", \"valid_to\": null, \"status\": \"observed\", \"evidence\": \"product_master row A-100 (export 2026-07-01)\", \"recorded_at\": \"2026-07-01T08:00:00\"}, {\"id\": 12, \"subject\": \"product:899df3cb\", \"predicate\": \"product.list_price\", \"value\": 30.0, \"valid_from\": \"2025-01-01\", \"valid_to\": null, \"status\": \"observed\", \"evidence\": \"product_master row A-100 (export 2026-07-01)\", \"recorded_at\": \"2026-07-01T08:00:00\"}, {\"id\": 13, \"subject\": \"product:899df3cb\", \"predicate\": \"identity.source_id\", \"value\": \"product_master:A-100\", \"valid_from\": \"2025-01-01\", \"valid_to\": null, \"status\": \"observed\", \"evidence\": \"product_master row A-100 (export 2026-07-01)\", \"recorded_at\": \"2026-07-01T08:00:00\"}, {\"id\": 16, \"subject\": \"product:899df3cb\", \"predicate\": \"product.supplied_by\", \"value\": \"supplier:7d97c31b\", \"valid_from\": \"2025-01-01\", \"valid_to\": null, \"status\": \"observed\", \"evidence\": \"product_master row A-100 (export 2026-07-01)\", \"recorded_at\": \"2026-07-01T08:00:00\"}, {\"id\": 69198, \"subject\": \"product:899df3cb\", \"predicate\": \"product.unit_cost\", \"value\": 15.0, \"valid_from\": \"2025-01-01\", \"valid_to\": \"2025-04-01\", \"status\": \"corrected\", \"evidence\": \"ledger row J00004 (export 2026-07-01)\", \"recorded_at\": \"2025-04-06T00:00:00\"}, {\"id\": 69209, \"subject\": \"product:899df3cb\", \"predicate\": \"product.unit_cost\", \"value\": 15.0, \"valid_from\": \"2025-04-01\", \"valid_to\": \"2025-07-01\", \"status\": \"corrected\", \"evidence\": \"ledger row J00007 (export 2026-07-01)\", \"recorded_at\": \"2025-07-06T00:00:00\"}, {\"id\": 69220, \"subject\": \"product:899df3cb\", \"predicate\": \"product.unit_cost\", \"value\": 15.0, \"valid_from\": \"2025-07-01\", \"valid_to\": \"2025-10-01\", \"status\": \"corrected\", \"evidence\": \"ledger row J00010 (export 2026-07-01)\", \"recorded_at\": \"2025-10-06T00:00:00\"}, {\"id\": 69231, \"subject\": \"product:899df3cb\", \"predicate\": \"product.unit_cost\", \"value\": 15.0, \"valid_from\": \"2025-10-01\", \"valid_to\": \"2026-01-01\", \"status\": \"corrected\", \"evidence\": \"ledger row J00013 (export 2026-07-01)\", \"recorded_at\": \"2026-01-06T00:00:00\"}, {\"id\": 69242, \"subject\": \"product:899df3cb\", \"predicate\": \"product.unit_cost\", \"value\": 15.0, \"valid_from\": \"2026-01-01\", \"valid_to\": \"2026-04-01\", \"status\": \"corrected\", \"evidence\": \"ledger row J00016 (export 2026-07-01)\", \"recorded_at\": \"2026-04-06T00:00:00\"}, {\"id\": 69243, \"subject\": \"product:899df3cb\", \"predicate\": \"product.unit_cost\", \"value\": 18.0, \"valid_from\": \"2026-04-01\", \"valid_to\": null, \"status\": \"observed\", \"evidence\": \"ledger row J00016 (export 2026-07-01)\", \"recorded_at\": \"2026-04-06T00:00:00\"}], \"count\": 12, \"offset\": 0, \"truncated\": false}",
+   "name": "get_assertions"
+  },
+  {
+   "role": "agent",
+   "kind": "tool_call",
+   "text": "{\"subject\": \"product:899df3cb\", \"predicate\": \"product.unit_cost\", \"as_of\": \"2026-04-02\", \"known_at\": \"2026-04-03\", \"offset\": \"\"}",
+   "name": "get_assertions"
+  },
+  {
+   "role": "tool",
+   "kind": "tool_result",
+   "text": "{\"assertions\": [{\"id\": 69232, \"subject\": \"product:899df3cb\", \"predicate\": \"product.unit_cost\", \"value\": 15.0, \"valid_from\": \"2026-01-01\", \"valid_to\": null, \"status\": \"superseded\", \"evidence\": \"ledger row J00013 (export 2026-07-01)\", \"recorded_at\": \"2026-01-06T00:00:00\"}], \"count\": 1, \"offset\": 0, \"truncated\": false}",
+   "name": "get_assertions"
+  },
+  {
+   "role": "agent",
+   "kind": "tool_call",
+   "text": "{\"subject\": \"product:899df3cb\", \"predicate\": \"product.unit_cost\", \"as_of\": \"2026-04-02\", \"known_at\": \"\", \"offset\": \"\"}",
+   "name": "get_assertions"
+  },
+  {
+   "role": "tool",
+   "kind": "tool_result",
+   "text": "{\"assertions\": [{\"id\": 69243, \"subject\": \"product:899df3cb\", \"predicate\": \"product.unit_cost\", \"value\": 18.0, \"valid_from\": \"2026-04-01\", \"valid_to\": null, \"status\": \"observed\", \"evidence\": \"ledger row J00016 (export 2026-07-01)\", \"recorded_at\": \"2026-04-06T00:00:00\"}], \"count\": 1, \"offset\": 0, \"truncated\": false}",
+   "name": "get_assertions"
+  },
+  {
+   "role": "agent",
+   "kind": "message",
+   "text": "On 3 April 2026, the books showed the insulated bottle's unit cost applying on 2 April 2026 as $15.00 (the rate that had been in force since 2026-01-01, per ledger row J00013, recorded 2026-01-06). That figure has since been superseded: the books today show a unit cost of $18.00 applying on 2 April 2026, from a correction posted via ledger row J00016 on 2026-04-06, which set a new rate effective 2026-04-01 onward.\n\nANSWER: As known on 2026-04-03, the books showed the insulated bottle's unit cost on 2026-04-02 as $15.00. As the books stand today, that same day (2026-04-02) shows a unit cost of $18.00, reflecting a retroactive correction (ledger row J00016) posted on 2026-04-06 that set the new rate effective from 2026-04-01.\nNUMBERS: {\"unit_cost_as_known_2026-04-03\": 15.00, \"unit_cost_current\": 18.00, \"effective_date_of_correction\": \"2026-04-01\", \"correction_recorded_at\": \"2026-04-06\"}\nEVIDENCE: product:899df3cb, assertion id 69232 (product.unit_cost, valid_from 2026-01-01, ledger row J00013, recorded 2026-01-06), assertion id 69243 (product.unit_cost, valid_from 2026-04-01, ledger row J00016, recorded 2026-04-06)\nACTIONS: none",
+   "name": ""
+  },
+  {
+   "role": "reflect",
+   "kind": "verdict",
+   "text": "S=1 P=1 E=1 C=1 R=1 failure=none; ",
+   "name": ""
+  }
+ ],
+ "score": {
+  "S": 1,
+  "P": 1,
+  "E": 1,
+  "C": 1,
+  "R": 1,
+  "failure": "",
+  "notes": []
+ },
+ "meta": {
+  "seed_index": 1,
+  "ablation": "none",
+  "arm": "C",
+  "cost_usd": 0.044453599999999996,
+  "num_turns": 7,
+  "max_turns": 40,
+  "ended_by": "completed",
+  "sdk_version": "0.2.161",
+  "usage": {
+   "input_tokens": 10,
+   "cache_creation_input_tokens": 3552,
+   "cache_read_input_tokens": 50743,
+   "output_tokens": 1906,
+   "output_tokens_details": {
+    "thinking_tokens": 488
+   },
+   "server_tool_use": {
+    "web_search_requests": 0,
+    "web_fetch_requests": 0
+   },
+   "service_tier": "standard",
+   "cache_creation": {
+    "ephemeral_1h_input_tokens": 3552,
+    "ephemeral_5m_input_tokens": 0
+   },
+   "inference_geo": "not_available",
+   "iterations": [
+    {
+     "input_tokens": 2,
+     "output_tokens": 752,
+     "cache_read_input_tokens": 12051,
+     "cache_creation_input_tokens": 845,
+     "cache_creation": {
+      "ephemeral_5m_input_tokens": 0,
+      "ephemeral_1h_input_tokens": 845
+     },
+     "type": "message"
+    }
+   ],
+   "speed": "standard"
+  },
+  "duration_s": 26.07,
+  "executed": [],
+  "approvals_requested": []
+ },
+ "hash": "ddf6f2362d3d"
+}

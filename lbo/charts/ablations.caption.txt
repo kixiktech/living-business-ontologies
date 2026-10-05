@@ -1,0 +1,1 @@
+Arm C with one part of the model removed, each paired with the full model on the same probe tasks and ordered by the difference. The largest like-for-like loss is no identity, -33.33 points on its 3 probe tasks; at one trial per task a single run moves a bar by a third or more, so the differences are reported as noise.

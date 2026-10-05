@@ -1,0 +1,136 @@
+{
+ "firm": "retail",
+ "arm": "build",
+ "task": "ingest",
+ "model": "none",
+ "date": "2026-07-01",
+ "turns": [
+  {
+   "role": "tool",
+   "kind": "tool_result",
+   "text": "4 records -> 0 entities, 8 assertions",
+   "name": "store_map"
+  },
+  {
+   "role": "tool",
+   "kind": "tool_result",
+   "text": "120 records -> 128 entities, 853 assertions",
+   "name": "product_master"
+  },
+  {
+   "role": "tool",
+   "kind": "tool_result",
+   "text": "316 records -> 304 entities, 1252 assertions",
+   "name": "customers"
+  },
+  {
+   "role": "tool",
+   "kind": "tool_result",
+   "text": "15 records -> 15 entities, 78 assertions",
+   "name": "staff"
+  },
+  {
+   "role": "tool",
+   "kind": "tool_result",
+   "text": "5583 records -> 0 entities, 55830 assertions",
+   "name": "pos_sales"
+  },
+  {
+   "role": "tool",
+   "kind": "tool_result",
+   "text": "5583 records -> 0 entities, 5583 assertions",
+   "name": "fulfillment"
+  },
+  {
+   "role": "tool",
+   "kind": "tool_result",
+   "text": "5583 records -> 0 entities, 5583 assertions",
+   "name": "inventory_moves"
+  },
+  {
+   "role": "tool",
+   "kind": "tool_result",
+   "text": "1 records -> 1 entities, 1 assertions",
+   "name": "supplier_terms"
+  },
+  {
+   "role": "tool",
+   "kind": "tool_result",
+   "text": "19 records -> 1 entities, 68 assertions",
+   "name": "ledger"
+  },
+  {
+   "role": "tool",
+   "kind": "tool_result",
+   "text": "1051 records -> 0 entities, 1051 assertions",
+   "name": "payroll"
+  },
+  {
+   "role": "reflect",
+   "kind": "message",
+   "text": "party:b97438ce ~ party:ffd2aa28: same name 'Ivo Lund', no key in common\nparty:951b138b ~ party:af6fdf1c: same name 'Jun Lund', no key in common\nparty:aa345494 ~ party:d0aa0a0e: same name 'Kai Lund', no key in common\nparty:b704d3ee ~ party:df32b310: same name 'Lea Lund', no key in common",
+   "name": "identity review"
+  },
+  {
+   "role": "monitor",
+   "kind": "message",
+   "text": "agent may change_price scope={} limits={}\nagent may place_order scope={'supplier_name': 'Meridian Supply'} limits={'max_amount': 2000.0}",
+   "name": "grants"
+  },
+  {
+   "role": "agent",
+   "kind": "message",
+   "text": "Harbor Outfitters: 70315 assertions from 10 sources; 14 relation types in use; 4 identity candidates for review; 0 schema problems",
+   "name": ""
+  }
+ ],
+ "score": {},
+ "meta": {
+  "fingerprint": "4a0c62b85af6"
+ },
+ "hash": "ed46e9d74a2a",
+ "stats": {
+  "assertions": 70315,
+  "assertions_by_subject_type": {
+   "location": 11,
+   "product": 849,
+   "supplier": 17,
+   "party": 1252,
+   "person": 75,
+   "order_line": 55830,
+   "order": 11166,
+   "purchase_order": 43,
+   "payment": 3,
+   "schedule": 1051,
+   "grant": 8
+  },
+  "relation_types_used": 14,
+  "review_queue": 4,
+  "sources": 10,
+  "records_per_source": {
+   "pos_sales": 5583,
+   "fulfillment": 5583,
+   "inventory_moves": 5583,
+   "product_master": 120,
+   "customers": 316,
+   "ledger": 19,
+   "payroll": 1051,
+   "supplier_terms": 1,
+   "store_map": 4,
+   "staff": 15
+  },
+  "schema_counts": {
+   "core": {
+    "entities": 15,
+    "relations": 17
+   },
+   "retail": {
+    "entities": 3,
+    "relations": 5
+   }
+  },
+  "grants": 2,
+  "problems": 0
+ },
+ "problems": []
+}

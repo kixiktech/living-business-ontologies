@@ -1,0 +1,23 @@
+{
+ "name": "routes",
+ "exported_at": "2026-07-01T08:00:00",
+ "records": [
+  {
+   "route": "R1",
+   "name": "North loop",
+   "weekly_cost": 400.0
+  },
+  {
+   "route": "R2",
+   "name": "City",
+   "weekly_cost": 380.0
+  },
+  {
+   "route": "R3",
+   "name": "South loop",
+   "weekly_cost": 500.0
+  }
+ ],
+ "id_field": "route",
+ "description": "delivery routes and weekly cost"
+}

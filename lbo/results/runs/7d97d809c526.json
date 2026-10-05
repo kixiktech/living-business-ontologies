@@ -1,0 +1,32 @@
+{
+ "hash": "7d97d809c526",
+ "task": "f_schedule_refusal",
+ "firm": "fieldservice",
+ "arm": "A",
+ "ablation": "none",
+ "model": "claude-sonnet-5",
+ "seed_index": 0,
+ "score": {
+  "S": 1,
+  "P": 1,
+  "E": 1,
+  "C": 1,
+  "R": 1,
+  "failure": "",
+  "notes": []
+ },
+ "cost_usd": 0.0770132,
+ "num_turns": 7,
+ "ended_by": "completed",
+ "date": "2026-09-29",
+ "rescored_at": "2026-09-29T13:04:16",
+ "score_before_rescore": {
+  "S": 1,
+  "P": 1,
+  "E": 1,
+  "C": 1,
+  "R": 1,
+  "failure": "",
+  "notes": []
+ }
+}

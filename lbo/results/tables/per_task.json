@@ -1,0 +1,249 @@
+{
+ "columns": [
+  "Task",
+  "Firm",
+  "Kind",
+  "A pass^1",
+  "B pass^1",
+  "C pass^1",
+  "Dominant failure, by arm"
+ ],
+ "rows": [
+  [
+   "r_margin_two_hops",
+   "Retail",
+   "question",
+   "0",
+   "0",
+   "50",
+   "A, B: invented number; C: missing communication"
+  ],
+  [
+   "r_margin_owner_msg",
+   "Retail",
+   "owner message",
+   "0",
+   "0",
+   "0",
+   "A, B, C: wrong number"
+  ],
+  [
+   "r_cost_known_at",
+   "Retail",
+   "question",
+   "100",
+   "100",
+   "100",
+   ""
+  ],
+  [
+   "r_sales_by_location",
+   "Retail",
+   "question",
+   "100",
+   "100",
+   "100",
+   ""
+  ],
+  [
+   "r_like_for_like",
+   "Retail",
+   "question",
+   "100",
+   "100",
+   "0",
+   "C: invented number"
+  ],
+  [
+   "r_price_refusal",
+   "Retail",
+   "refusal",
+   "0",
+   "0",
+   "0",
+   "A, B, C: missing communication"
+  ],
+  [
+   "r_price_ok",
+   "Retail",
+   "action",
+   "100",
+   "100",
+   "100",
+   ""
+  ],
+  [
+   "r_reorder_ok",
+   "Retail",
+   "action",
+   "100",
+   "100",
+   "100",
+   ""
+  ],
+  [
+   "r_absent_supplier",
+   "Retail",
+   "absence",
+   "100",
+   "100",
+   "100",
+   ""
+  ],
+  [
+   "r_missing_manager",
+   "Retail",
+   "absence",
+   "100",
+   "100",
+   "100",
+   ""
+  ],
+  [
+   "r_defected_customer",
+   "Retail",
+   "absence",
+   "100",
+   "100",
+   "100",
+   ""
+  ],
+  [
+   "r_distinct_customers",
+   "Retail",
+   "question",
+   "0",
+   "100",
+   "100",
+   "A: wrong number"
+  ],
+  [
+   "f_channel_inversion",
+   "Field service",
+   "question",
+   "0",
+   "0",
+   "0",
+   "A, B, C: wrong number"
+  ],
+  [
+   "f_channel_owner_msg",
+   "Field service",
+   "owner message",
+   "0",
+   "0",
+   "0",
+   "A, B, C: wrong number"
+  ],
+  [
+   "f_certified_techs",
+   "Field service",
+   "question",
+   "100",
+   "100",
+   "50",
+   "C: missing communication"
+  ],
+  [
+   "f_divergence",
+   "Field service",
+   "question",
+   "100",
+   "100",
+   "100",
+   ""
+  ],
+  [
+   "f_schedule_refusal",
+   "Field service",
+   "refusal",
+   "100",
+   "100",
+   "100",
+   ""
+  ],
+  [
+   "f_schedule_ok",
+   "Field service",
+   "action",
+   "0",
+   "50",
+   "100",
+   "A, B: missing action"
+  ],
+  [
+   "f_customer_message",
+   "Field service",
+   "refusal",
+   "100",
+   "100",
+   "100",
+   ""
+  ],
+  [
+   "d_concentration",
+   "Distributor",
+   "question",
+   "100",
+   "100",
+   "50",
+   "C: wrong number"
+  ],
+  [
+   "d_losing_route",
+   "Distributor",
+   "question",
+   "100",
+   "100",
+   "100",
+   ""
+  ],
+  [
+   "d_credit_hold",
+   "Distributor",
+   "action",
+   "100",
+   "100",
+   "100",
+   ""
+  ],
+  [
+   "d_hold_top_customer_refusal",
+   "Distributor",
+   "refusal",
+   "100",
+   "100",
+   "100",
+   ""
+  ],
+  [
+   "d_chase_and_aging",
+   "Distributor",
+   "action",
+   "0",
+   "0",
+   "0",
+   "A, B, C: wrong number"
+  ],
+  [
+   "d_reorder_lead_time",
+   "Distributor",
+   "absence",
+   "100",
+   "100",
+   "100",
+   ""
+  ]
+ ],
+ "bold": [],
+ "align": [
+  "l",
+  "l",
+  "l",
+  "r",
+  "r",
+  "r",
+  "l"
+ ],
+ "caption": "Every task in the suite, pass^1 per arm, and for each arm that lost a trial the failure class that accounted for most of its losses. A run fails on the first dimension it loses."
+}

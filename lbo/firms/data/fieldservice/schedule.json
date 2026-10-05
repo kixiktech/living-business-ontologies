@@ -1,0 +1,1544 @@
+{
+ "name": "schedule",
+ "exported_at": "2026-07-01T08:00:00",
+ "records": [
+  {
+   "entry_id": "S00001",
+   "tech": "T6",
+   "day": "2025-01-06",
+   "hours": 4.0,
+   "entered_on": "2025-01-06",
+   "job_id": "J00001"
+  },
+  {
+   "entry_id": "S00002",
+   "tech": "T1",
+   "day": "2025-01-07",
+   "hours": 6.0,
+   "entered_on": "2025-01-07",
+   "job_id": "J00002"
+  },
+  {
+   "entry_id": "S00003",
+   "tech": "T3",
+   "day": "2025-01-10",
+   "hours": 4.0,
+   "entered_on": "2025-01-10",
+   "job_id": "J00003"
+  },
+  {
+   "entry_id": "S00004",
+   "tech": "T5",
+   "day": "2025-01-15",
+   "hours": 4.0,
+   "entered_on": "2025-01-15",
+   "job_id": "J00004"
+  },
+  {
+   "entry_id": "S00005",
+   "tech": "T5",
+   "day": "2025-01-24",
+   "hours": 6.0,
+   "entered_on": "2025-01-24",
+   "job_id": "J00005"
+  },
+  {
+   "entry_id": "S00006",
+   "tech": "T1",
+   "day": "2025-01-28",
+   "hours": 6.0,
+   "entered_on": "2025-01-28",
+   "job_id": "J00006"
+  },
+  {
+   "entry_id": "S00007",
+   "tech": "T5",
+   "day": "2025-01-31",
+   "hours": 6.0,
+   "entered_on": "2025-01-31",
+   "job_id": "J00007"
+  },
+  {
+   "entry_id": "S00008",
+   "tech": "T5",
+   "day": "2025-02-03",
+   "hours": 6.0,
+   "entered_on": "2025-02-03",
+   "job_id": "J00008"
+  },
+  {
+   "entry_id": "S00009",
+   "tech": "T2",
+   "day": "2025-02-04",
+   "hours": 8.0,
+   "entered_on": "2025-02-04",
+   "job_id": "J00009"
+  },
+  {
+   "entry_id": "S00010",
+   "tech": "T4",
+   "day": "2025-02-10",
+   "hours": 4.0,
+   "entered_on": "2025-02-10",
+   "job_id": "J00010"
+  },
+  {
+   "entry_id": "S00011",
+   "tech": "T2",
+   "day": "2025-02-13",
+   "hours": 8.0,
+   "entered_on": "2025-02-13",
+   "job_id": "J00011"
+  },
+  {
+   "entry_id": "S00012",
+   "tech": "T5",
+   "day": "2025-02-14",
+   "hours": 8.0,
+   "entered_on": "2025-02-14",
+   "job_id": "J00012"
+  },
+  {
+   "entry_id": "S00013",
+   "tech": "T5",
+   "day": "2025-02-17",
+   "hours": 6.0,
+   "entered_on": "2025-02-17",
+   "job_id": "J00013"
+  },
+  {
+   "entry_id": "S00014",
+   "tech": "T2",
+   "day": "2025-02-18",
+   "hours": 4.0,
+   "entered_on": "2025-02-18",
+   "job_id": "J00014"
+  },
+  {
+   "entry_id": "S00015",
+   "tech": "T5",
+   "day": "2025-02-20",
+   "hours": 4.0,
+   "entered_on": "2025-02-20",
+   "job_id": "J00015"
+  },
+  {
+   "entry_id": "S00016",
+   "tech": "T1",
+   "day": "2025-02-25",
+   "hours": 6.0,
+   "entered_on": "2025-02-25",
+   "job_id": "J00016"
+  },
+  {
+   "entry_id": "S00017",
+   "tech": "T2",
+   "day": "2025-03-04",
+   "hours": 8.0,
+   "entered_on": "2025-03-04",
+   "job_id": "J00017"
+  },
+  {
+   "entry_id": "S00018",
+   "tech": "T5",
+   "day": "2025-03-06",
+   "hours": 4.0,
+   "entered_on": "2025-03-06",
+   "job_id": "J00018"
+  },
+  {
+   "entry_id": "S00019",
+   "tech": "T5",
+   "day": "2025-03-07",
+   "hours": 6.0,
+   "entered_on": "2025-03-07",
+   "job_id": "J00019"
+  },
+  {
+   "entry_id": "S00020",
+   "tech": "T4",
+   "day": "2025-03-10",
+   "hours": 8.0,
+   "entered_on": "2025-03-10",
+   "job_id": "J00020"
+  },
+  {
+   "entry_id": "S00021",
+   "tech": "T6",
+   "day": "2025-04-01",
+   "hours": 4.0,
+   "entered_on": "2025-04-01",
+   "job_id": "J00021"
+  },
+  {
+   "entry_id": "S00022",
+   "tech": "T1",
+   "day": "2025-04-03",
+   "hours": 8.0,
+   "entered_on": "2025-04-03",
+   "job_id": "J00022"
+  },
+  {
+   "entry_id": "S00023",
+   "tech": "T5",
+   "day": "2025-04-03",
+   "hours": 6.0,
+   "entered_on": "2025-04-03",
+   "job_id": "J00023"
+  },
+  {
+   "entry_id": "S00024",
+   "tech": "T1",
+   "day": "2025-04-07",
+   "hours": 8.0,
+   "entered_on": "2025-04-07",
+   "job_id": "J00024"
+  },
+  {
+   "entry_id": "S00025",
+   "tech": "T1",
+   "day": "2025-04-08",
+   "hours": 6.0,
+   "entered_on": "2025-04-08",
+   "job_id": "J00025"
+  },
+  {
+   "entry_id": "S00026",
+   "tech": "T1",
+   "day": "2025-04-15",
+   "hours": 4.0,
+   "entered_on": "2025-04-15",
+   "job_id": "J00026"
+  },
+  {
+   "entry_id": "S00027",
+   "tech": "T5",
+   "day": "2025-04-22",
+   "hours": 4.0,
+   "entered_on": "2025-04-22",
+   "job_id": "J00027"
+  },
+  {
+   "entry_id": "S00028",
+   "tech": "T6",
+   "day": "2025-04-24",
+   "hours": 8.0,
+   "entered_on": "2025-04-24",
+   "job_id": "J00028"
+  },
+  {
+   "entry_id": "S00029",
+   "tech": "T5",
+   "day": "2025-04-30",
+   "hours": 4.0,
+   "entered_on": "2025-04-30",
+   "job_id": "J00029"
+  },
+  {
+   "entry_id": "S00030",
+   "tech": "T5",
+   "day": "2025-05-07",
+   "hours": 4.0,
+   "entered_on": "2025-05-07",
+   "job_id": "J00030"
+  },
+  {
+   "entry_id": "S00031",
+   "tech": "T5",
+   "day": "2025-05-26",
+   "hours": 8.0,
+   "entered_on": "2025-05-26",
+   "job_id": "J00031"
+  },
+  {
+   "entry_id": "S00032",
+   "tech": "T3",
+   "day": "2025-05-27",
+   "hours": 4.0,
+   "entered_on": "2025-05-27",
+   "job_id": "J00032"
+  },
+  {
+   "entry_id": "S00033",
+   "tech": "T4",
+   "day": "2025-05-28",
+   "hours": 6.0,
+   "entered_on": "2025-05-28",
+   "job_id": "J00033"
+  },
+  {
+   "entry_id": "S00034",
+   "tech": "T5",
+   "day": "2025-05-30",
+   "hours": 8.0,
+   "entered_on": "2025-05-30",
+   "job_id": "J00034"
+  },
+  {
+   "entry_id": "S00035",
+   "tech": "T2",
+   "day": "2025-06-03",
+   "hours": 8.0,
+   "entered_on": "2025-06-03",
+   "job_id": "J00035"
+  },
+  {
+   "entry_id": "S00036",
+   "tech": "T1",
+   "day": "2025-06-05",
+   "hours": 8.0,
+   "entered_on": "2025-06-05",
+   "job_id": "J00036"
+  },
+  {
+   "entry_id": "S00037",
+   "tech": "T1",
+   "day": "2025-07-01",
+   "hours": 8.0,
+   "entered_on": "2025-07-01",
+   "job_id": "J00037"
+  },
+  {
+   "entry_id": "S00038",
+   "tech": "T6",
+   "day": "2025-07-02",
+   "hours": 8.0,
+   "entered_on": "2025-07-02",
+   "job_id": "J00038"
+  },
+  {
+   "entry_id": "S00039",
+   "tech": "T1",
+   "day": "2025-07-08",
+   "hours": 6.0,
+   "entered_on": "2025-07-08",
+   "job_id": "J00039"
+  },
+  {
+   "entry_id": "S00040",
+   "tech": "T6",
+   "day": "2025-07-10",
+   "hours": 6.0,
+   "entered_on": "2025-07-10",
+   "job_id": "J00040"
+  },
+  {
+   "entry_id": "S00041",
+   "tech": "T3",
+   "day": "2025-07-28",
+   "hours": 8.0,
+   "entered_on": "2025-07-28",
+   "job_id": "J00041"
+  },
+  {
+   "entry_id": "S00042",
+   "tech": "T3",
+   "day": "2025-08-04",
+   "hours": 8.0,
+   "entered_on": "2025-08-04",
+   "job_id": "J00042"
+  },
+  {
+   "entry_id": "S00043",
+   "tech": "T6",
+   "day": "2025-08-12",
+   "hours": 6.0,
+   "entered_on": "2025-08-12",
+   "job_id": "J00043"
+  },
+  {
+   "entry_id": "S00044",
+   "tech": "T2",
+   "day": "2025-08-12",
+   "hours": 6.0,
+   "entered_on": "2025-08-12",
+   "job_id": "J00044"
+  },
+  {
+   "entry_id": "S00045",
+   "tech": "T3",
+   "day": "2025-08-14",
+   "hours": 8.0,
+   "entered_on": "2025-08-14",
+   "job_id": "J00045"
+  },
+  {
+   "entry_id": "S00046",
+   "tech": "T2",
+   "day": "2025-08-15",
+   "hours": 6.0,
+   "entered_on": "2025-08-15",
+   "job_id": "J00046"
+  },
+  {
+   "entry_id": "S00047",
+   "tech": "T6",
+   "day": "2025-08-19",
+   "hours": 8.0,
+   "entered_on": "2025-08-19",
+   "job_id": "J00047"
+  },
+  {
+   "entry_id": "S00048",
+   "tech": "T3",
+   "day": "2025-08-22",
+   "hours": 8.0,
+   "entered_on": "2025-08-22",
+   "job_id": "J00048"
+  },
+  {
+   "entry_id": "S00049",
+   "tech": "T4",
+   "day": "2025-08-29",
+   "hours": 4.0,
+   "entered_on": "2025-08-29",
+   "job_id": "J00049"
+  },
+  {
+   "entry_id": "S00050",
+   "tech": "T1",
+   "day": "2025-09-01",
+   "hours": 8.0,
+   "entered_on": "2025-09-01",
+   "job_id": "J00050"
+  },
+  {
+   "entry_id": "S00051",
+   "tech": "T1",
+   "day": "2025-09-01",
+   "hours": 8.0,
+   "entered_on": "2025-09-01",
+   "job_id": "J00051"
+  },
+  {
+   "entry_id": "S00052",
+   "tech": "T1",
+   "day": "2025-09-03",
+   "hours": 6.0,
+   "entered_on": "2025-09-03",
+   "job_id": "J00052"
+  },
+  {
+   "entry_id": "S00053",
+   "tech": "T4",
+   "day": "2025-09-05",
+   "hours": 4.0,
+   "entered_on": "2025-09-05",
+   "job_id": "J00053"
+  },
+  {
+   "entry_id": "S00054",
+   "tech": "T3",
+   "day": "2025-09-09",
+   "hours": 4.0,
+   "entered_on": "2025-09-09",
+   "job_id": "J00054"
+  },
+  {
+   "entry_id": "S00055",
+   "tech": "T2",
+   "day": "2025-09-10",
+   "hours": 6.0,
+   "entered_on": "2025-09-10",
+   "job_id": "J00055"
+  },
+  {
+   "entry_id": "S00056",
+   "tech": "T5",
+   "day": "2025-09-11",
+   "hours": 4.0,
+   "entered_on": "2025-09-11",
+   "job_id": "J00056"
+  },
+  {
+   "entry_id": "S00057",
+   "tech": "T1",
+   "day": "2025-10-03",
+   "hours": 6.0,
+   "entered_on": "2025-10-03",
+   "job_id": "J00057"
+  },
+  {
+   "entry_id": "S00058",
+   "tech": "T4",
+   "day": "2025-10-08",
+   "hours": 8.0,
+   "entered_on": "2025-10-08",
+   "job_id": "J00058"
+  },
+  {
+   "entry_id": "S00059",
+   "tech": "T4",
+   "day": "2025-10-14",
+   "hours": 4.0,
+   "entered_on": "2025-10-14",
+   "job_id": "J00059"
+  },
+  {
+   "entry_id": "S00060",
+   "tech": "T5",
+   "day": "2025-10-27",
+   "hours": 8.0,
+   "entered_on": "2025-10-27",
+   "job_id": "J00060"
+  },
+  {
+   "entry_id": "S00061",
+   "tech": "T5",
+   "day": "2025-10-28",
+   "hours": 4.0,
+   "entered_on": "2025-10-28",
+   "job_id": "J00061"
+  },
+  {
+   "entry_id": "S00062",
+   "tech": "T1",
+   "day": "2025-11-07",
+   "hours": 6.0,
+   "entered_on": "2025-11-07",
+   "job_id": "J00062"
+  },
+  {
+   "entry_id": "S00063",
+   "tech": "T5",
+   "day": "2025-11-12",
+   "hours": 8.0,
+   "entered_on": "2025-11-12",
+   "job_id": "J00063"
+  },
+  {
+   "entry_id": "S00064",
+   "tech": "T1",
+   "day": "2025-11-17",
+   "hours": 4.0,
+   "entered_on": "2025-11-17",
+   "job_id": "J00064"
+  },
+  {
+   "entry_id": "S00065",
+   "tech": "T6",
+   "day": "2025-11-19",
+   "hours": 6.0,
+   "entered_on": "2025-11-19",
+   "job_id": "J00065"
+  },
+  {
+   "entry_id": "S00066",
+   "tech": "T3",
+   "day": "2025-11-25",
+   "hours": 8.0,
+   "entered_on": "2025-11-25",
+   "job_id": "J00066"
+  },
+  {
+   "entry_id": "S00067",
+   "tech": "T3",
+   "day": "2025-11-27",
+   "hours": 8.0,
+   "entered_on": "2025-11-27",
+   "job_id": "J00067"
+  },
+  {
+   "entry_id": "S00068",
+   "tech": "T6",
+   "day": "2025-11-27",
+   "hours": 6.0,
+   "entered_on": "2025-11-27",
+   "job_id": "J00068"
+  },
+  {
+   "entry_id": "S00069",
+   "tech": "T6",
+   "day": "2025-11-28",
+   "hours": 4.0,
+   "entered_on": "2025-11-28",
+   "job_id": "J00069"
+  },
+  {
+   "entry_id": "S00070",
+   "tech": "T6",
+   "day": "2025-12-01",
+   "hours": 4.0,
+   "entered_on": "2025-12-01",
+   "job_id": "J00070"
+  },
+  {
+   "entry_id": "S00071",
+   "tech": "T6",
+   "day": "2025-12-02",
+   "hours": 4.0,
+   "entered_on": "2025-12-02",
+   "job_id": "J00071"
+  },
+  {
+   "entry_id": "S00072",
+   "tech": "T5",
+   "day": "2025-12-04",
+   "hours": 8.0,
+   "entered_on": "2025-12-04",
+   "job_id": "J00072"
+  },
+  {
+   "entry_id": "S00073",
+   "tech": "T5",
+   "day": "2025-12-12",
+   "hours": 8.0,
+   "entered_on": "2025-12-12",
+   "job_id": "J00073"
+  },
+  {
+   "entry_id": "S00074",
+   "tech": "T3",
+   "day": "2026-01-01",
+   "hours": 6.0,
+   "entered_on": "2026-01-01",
+   "job_id": "J00074"
+  },
+  {
+   "entry_id": "S00075",
+   "tech": "T3",
+   "day": "2026-01-02",
+   "hours": 8.0,
+   "entered_on": "2026-01-02",
+   "job_id": "J00075"
+  },
+  {
+   "entry_id": "S00076",
+   "tech": "T5",
+   "day": "2026-01-05",
+   "hours": 8.0,
+   "entered_on": "2026-01-05",
+   "job_id": "J00076"
+  },
+  {
+   "entry_id": "S00077",
+   "tech": "T3",
+   "day": "2026-01-05",
+   "hours": 8.0,
+   "entered_on": "2026-01-05",
+   "job_id": "J00077"
+  },
+  {
+   "entry_id": "S00078",
+   "tech": "T4",
+   "day": "2026-01-06",
+   "hours": 6.0,
+   "entered_on": "2026-01-06",
+   "job_id": "J00078"
+  },
+  {
+   "entry_id": "S00079",
+   "tech": "T1",
+   "day": "2026-01-07",
+   "hours": 8.0,
+   "entered_on": "2026-01-07",
+   "job_id": "J00079"
+  },
+  {
+   "entry_id": "S00080",
+   "tech": "T5",
+   "day": "2026-01-13",
+   "hours": 6.0,
+   "entered_on": "2026-01-13",
+   "job_id": "J00080"
+  },
+  {
+   "entry_id": "S00081",
+   "tech": "T1",
+   "day": "2026-01-19",
+   "hours": 8.0,
+   "entered_on": "2026-01-19",
+   "job_id": "J00081"
+  },
+  {
+   "entry_id": "S00082",
+   "tech": "T1",
+   "day": "2026-01-21",
+   "hours": 8.0,
+   "entered_on": "2026-01-21",
+   "job_id": "J00082"
+  },
+  {
+   "entry_id": "S00083",
+   "tech": "T4",
+   "day": "2026-01-22",
+   "hours": 6.0,
+   "entered_on": "2026-01-22",
+   "job_id": "J00083"
+  },
+  {
+   "entry_id": "S00084",
+   "tech": "T4",
+   "day": "2026-01-26",
+   "hours": 8.0,
+   "entered_on": "2026-01-26",
+   "job_id": "J00084"
+  },
+  {
+   "entry_id": "S00085",
+   "tech": "T3",
+   "day": "2026-01-30",
+   "hours": 6.0,
+   "entered_on": "2026-01-30",
+   "job_id": "J00085"
+  },
+  {
+   "entry_id": "S00086",
+   "tech": "T3",
+   "day": "2026-02-02",
+   "hours": 8.0,
+   "entered_on": "2026-02-02",
+   "job_id": "J00086"
+  },
+  {
+   "entry_id": "S00087",
+   "tech": "T5",
+   "day": "2026-02-03",
+   "hours": 4.0,
+   "entered_on": "2026-02-03",
+   "job_id": "J00087"
+  },
+  {
+   "entry_id": "S00088",
+   "tech": "T5",
+   "day": "2026-02-05",
+   "hours": 8.0,
+   "entered_on": "2026-02-05",
+   "job_id": "J00088"
+  },
+  {
+   "entry_id": "S00089",
+   "tech": "T1",
+   "day": "2026-02-09",
+   "hours": 8.0,
+   "entered_on": "2026-02-09",
+   "job_id": "J00089"
+  },
+  {
+   "entry_id": "S00090",
+   "tech": "T5",
+   "day": "2026-02-09",
+   "hours": 4.0,
+   "entered_on": "2026-02-09",
+   "job_id": "J00090"
+  },
+  {
+   "entry_id": "S00091",
+   "tech": "T1",
+   "day": "2026-02-10",
+   "hours": 4.0,
+   "entered_on": "2026-02-10",
+   "job_id": "J00091"
+  },
+  {
+   "entry_id": "S00092",
+   "tech": "T5",
+   "day": "2026-02-18",
+   "hours": 4.0,
+   "entered_on": "2026-02-18",
+   "job_id": "J00092"
+  },
+  {
+   "entry_id": "S00093",
+   "tech": "T6",
+   "day": "2026-03-06",
+   "hours": 6.0,
+   "entered_on": "2026-03-06",
+   "job_id": "J00093"
+  },
+  {
+   "entry_id": "S00094",
+   "tech": "T1",
+   "day": "2026-04-01",
+   "hours": 4.0,
+   "entered_on": "2026-04-01",
+   "job_id": "J00094"
+  },
+  {
+   "entry_id": "S00095",
+   "tech": "T2",
+   "day": "2026-04-06",
+   "hours": 4.0,
+   "entered_on": "2026-04-06",
+   "job_id": "J00095"
+  },
+  {
+   "entry_id": "S00096",
+   "tech": "T4",
+   "day": "2026-04-09",
+   "hours": 4.0,
+   "entered_on": "2026-04-09",
+   "job_id": "J00096"
+  },
+  {
+   "entry_id": "S00097",
+   "tech": "T6",
+   "day": "2026-04-14",
+   "hours": 4.0,
+   "entered_on": "2026-04-14",
+   "job_id": "J00097"
+  },
+  {
+   "entry_id": "S00098",
+   "tech": "T1",
+   "day": "2026-04-20",
+   "hours": 4.0,
+   "entered_on": "2026-04-20",
+   "job_id": "J00098"
+  },
+  {
+   "entry_id": "S00099",
+   "tech": "T2",
+   "day": "2026-04-23",
+   "hours": 4.0,
+   "entered_on": "2026-04-23",
+   "job_id": "J00099"
+  },
+  {
+   "entry_id": "S00100",
+   "tech": "T4",
+   "day": "2026-04-28",
+   "hours": 4.0,
+   "entered_on": "2026-04-28",
+   "job_id": "J00100"
+  },
+  {
+   "entry_id": "S00101",
+   "tech": "T6",
+   "day": "2026-05-01",
+   "hours": 4.0,
+   "entered_on": "2026-05-01",
+   "job_id": "J00101"
+  },
+  {
+   "entry_id": "S00102",
+   "tech": "T1",
+   "day": "2026-05-07",
+   "hours": 4.0,
+   "entered_on": "2026-05-07",
+   "job_id": "J00102"
+  },
+  {
+   "entry_id": "S00103",
+   "tech": "T2",
+   "day": "2026-05-12",
+   "hours": 4.0,
+   "entered_on": "2026-05-12",
+   "job_id": "J00103"
+  },
+  {
+   "entry_id": "S00104",
+   "tech": "T4",
+   "day": "2026-05-15",
+   "hours": 4.0,
+   "entered_on": "2026-05-15",
+   "job_id": "J00104"
+  },
+  {
+   "entry_id": "S00105",
+   "tech": "T6",
+   "day": "2026-05-20",
+   "hours": 4.0,
+   "entered_on": "2026-05-20",
+   "job_id": "J00105"
+  },
+  {
+   "entry_id": "S00106",
+   "tech": "T1",
+   "day": "2026-05-26",
+   "hours": 4.0,
+   "entered_on": "2026-05-26",
+   "job_id": "J00106"
+  },
+  {
+   "entry_id": "S00107",
+   "tech": "T2",
+   "day": "2026-05-29",
+   "hours": 4.0,
+   "entered_on": "2026-05-29",
+   "job_id": "J00107"
+  },
+  {
+   "entry_id": "S00108",
+   "tech": "T4",
+   "day": "2026-06-03",
+   "hours": 4.0,
+   "entered_on": "2026-06-03",
+   "job_id": "J00108"
+  },
+  {
+   "entry_id": "S00109",
+   "tech": "T6",
+   "day": "2026-06-08",
+   "hours": 4.0,
+   "entered_on": "2026-06-08",
+   "job_id": "J00109"
+  },
+  {
+   "entry_id": "S00110",
+   "tech": "T1",
+   "day": "2026-06-12",
+   "hours": 4.0,
+   "entered_on": "2026-06-12",
+   "job_id": "J00110"
+  },
+  {
+   "entry_id": "S00111",
+   "tech": "T2",
+   "day": "2026-06-17",
+   "hours": 4.0,
+   "entered_on": "2026-06-17",
+   "job_id": "J00111"
+  },
+  {
+   "entry_id": "S00112",
+   "tech": "T4",
+   "day": "2026-06-22",
+   "hours": 4.0,
+   "entered_on": "2026-06-22",
+   "job_id": "J00112"
+  },
+  {
+   "entry_id": "S00113",
+   "tech": "T6",
+   "day": "2026-06-25",
+   "hours": 4.0,
+   "entered_on": "2026-06-25",
+   "job_id": "J00113"
+  },
+  {
+   "entry_id": "S00114",
+   "tech": "T3",
+   "day": "2026-04-01",
+   "hours": 6.0,
+   "entered_on": "2026-04-01",
+   "job_id": "J00114"
+  },
+  {
+   "entry_id": "S00115",
+   "tech": "T3",
+   "day": "2026-04-06",
+   "hours": 6.0,
+   "entered_on": "2026-04-06",
+   "job_id": "J00115"
+  },
+  {
+   "entry_id": "S00116",
+   "tech": "T3",
+   "day": "2026-04-10",
+   "hours": 6.0,
+   "entered_on": "2026-04-10",
+   "job_id": "J00116"
+  },
+  {
+   "entry_id": "S00117",
+   "tech": "T3",
+   "day": "2026-04-15",
+   "hours": 6.0,
+   "entered_on": "2026-04-15",
+   "job_id": "J00117"
+  },
+  {
+   "entry_id": "S00118",
+   "tech": "T3",
+   "day": "2026-04-21",
+   "hours": 6.0,
+   "entered_on": "2026-04-21",
+   "job_id": "J00118"
+  },
+  {
+   "entry_id": "S00119",
+   "tech": "T3",
+   "day": "2026-04-27",
+   "hours": 6.0,
+   "entered_on": "2026-04-27",
+   "job_id": "J00119"
+  },
+  {
+   "entry_id": "S00120",
+   "tech": "T3",
+   "day": "2026-04-30",
+   "hours": 6.0,
+   "entered_on": "2026-04-30",
+   "job_id": "J00120"
+  },
+  {
+   "entry_id": "S00121",
+   "tech": "T3",
+   "day": "2026-05-06",
+   "hours": 6.0,
+   "entered_on": "2026-05-06",
+   "job_id": "J00121"
+  },
+  {
+   "entry_id": "S00122",
+   "tech": "T3",
+   "day": "2026-05-11",
+   "hours": 6.0,
+   "entered_on": "2026-05-11",
+   "job_id": "J00122"
+  },
+  {
+   "entry_id": "S00123",
+   "tech": "T3",
+   "day": "2026-05-15",
+   "hours": 6.0,
+   "entered_on": "2026-05-15",
+   "job_id": "J00123"
+  },
+  {
+   "entry_id": "S00124",
+   "tech": "T3",
+   "day": "2026-05-21",
+   "hours": 6.0,
+   "entered_on": "2026-05-21",
+   "job_id": "J00124"
+  },
+  {
+   "entry_id": "S00125",
+   "tech": "T3",
+   "day": "2026-05-26",
+   "hours": 6.0,
+   "entered_on": "2026-05-26",
+   "job_id": "J00125"
+  },
+  {
+   "entry_id": "S00126",
+   "tech": "T3",
+   "day": "2026-06-01",
+   "hours": 6.0,
+   "entered_on": "2026-06-01",
+   "job_id": "J00126"
+  },
+  {
+   "entry_id": "S00127",
+   "tech": "T3",
+   "day": "2026-06-04",
+   "hours": 6.0,
+   "entered_on": "2026-06-04",
+   "job_id": "J00127"
+  },
+  {
+   "entry_id": "S00128",
+   "tech": "T3",
+   "day": "2026-06-10",
+   "hours": 6.0,
+   "entered_on": "2026-06-10",
+   "job_id": "J00128"
+  },
+  {
+   "entry_id": "S00129",
+   "tech": "T3",
+   "day": "2026-06-16",
+   "hours": 6.0,
+   "entered_on": "2026-06-16",
+   "job_id": "J00129"
+  },
+  {
+   "entry_id": "S00130",
+   "tech": "T3",
+   "day": "2026-06-19",
+   "hours": 6.0,
+   "entered_on": "2026-06-19",
+   "job_id": "J00130"
+  },
+  {
+   "entry_id": "S00131",
+   "tech": "T3",
+   "day": "2026-06-25",
+   "hours": 6.0,
+   "entered_on": "2026-06-25",
+   "job_id": "J00131"
+  },
+  {
+   "entry_id": "S00132",
+   "tech": "T3",
+   "day": "2026-04-01",
+   "hours": 2.0,
+   "entered_on": "2026-04-01",
+   "job_id": "J00132"
+  },
+  {
+   "entry_id": "S00133",
+   "tech": "T3",
+   "day": "2026-04-02",
+   "hours": 8.0,
+   "entered_on": "2026-04-02",
+   "job_id": "J00133"
+  },
+  {
+   "entry_id": "S00134",
+   "tech": "T3",
+   "day": "2026-04-03",
+   "hours": 8.0,
+   "entered_on": "2026-04-03",
+   "job_id": "J00134"
+  },
+  {
+   "entry_id": "S00135",
+   "tech": "T3",
+   "day": "2026-04-06",
+   "hours": 2.0,
+   "entered_on": "2026-04-06",
+   "job_id": "J00135"
+  },
+  {
+   "entry_id": "S00136",
+   "tech": "T3",
+   "day": "2026-04-07",
+   "hours": 8.0,
+   "entered_on": "2026-04-07",
+   "job_id": "J00136"
+  },
+  {
+   "entry_id": "S00137",
+   "tech": "T3",
+   "day": "2026-04-08",
+   "hours": 8.0,
+   "entered_on": "2026-04-08",
+   "job_id": "J00137"
+  },
+  {
+   "entry_id": "S00138",
+   "tech": "T3",
+   "day": "2026-04-09",
+   "hours": 8.0,
+   "entered_on": "2026-04-09",
+   "job_id": "J00138"
+  },
+  {
+   "entry_id": "S00139",
+   "tech": "T3",
+   "day": "2026-04-10",
+   "hours": 2.0,
+   "entered_on": "2026-04-10",
+   "job_id": "J00139"
+  },
+  {
+   "entry_id": "S00140",
+   "tech": "T3",
+   "day": "2026-04-13",
+   "hours": 8.0,
+   "entered_on": "2026-04-13",
+   "job_id": "J00140"
+  },
+  {
+   "entry_id": "S00141",
+   "tech": "T3",
+   "day": "2026-04-14",
+   "hours": 8.0,
+   "entered_on": "2026-04-14",
+   "job_id": "J00141"
+  },
+  {
+   "entry_id": "S00142",
+   "tech": "T3",
+   "day": "2026-04-15",
+   "hours": 2.0,
+   "entered_on": "2026-04-15",
+   "job_id": "J00142"
+  },
+  {
+   "entry_id": "S00143",
+   "tech": "T3",
+   "day": "2026-04-16",
+   "hours": 8.0,
+   "entered_on": "2026-04-16",
+   "job_id": "J00143"
+  },
+  {
+   "entry_id": "S00144",
+   "tech": "T3",
+   "day": "2026-04-17",
+   "hours": 8.0,
+   "entered_on": "2026-04-17",
+   "job_id": "J00144"
+  },
+  {
+   "entry_id": "S00145",
+   "tech": "T3",
+   "day": "2026-04-20",
+   "hours": 8.0,
+   "entered_on": "2026-04-20",
+   "job_id": "J00145"
+  },
+  {
+   "entry_id": "S00146",
+   "tech": "T3",
+   "day": "2026-04-21",
+   "hours": 2.0,
+   "entered_on": "2026-04-21",
+   "job_id": "J00146"
+  },
+  {
+   "entry_id": "S00147",
+   "tech": "T3",
+   "day": "2026-04-22",
+   "hours": 8.0,
+   "entered_on": "2026-04-22",
+   "job_id": "J00147"
+  },
+  {
+   "entry_id": "S00148",
+   "tech": "T3",
+   "day": "2026-04-23",
+   "hours": 8.0,
+   "entered_on": "2026-04-23",
+   "job_id": "J00148"
+  },
+  {
+   "entry_id": "S00149",
+   "tech": "T3",
+   "day": "2026-04-24",
+   "hours": 8.0,
+   "entered_on": "2026-04-24",
+   "job_id": "J00149"
+  },
+  {
+   "entry_id": "S00150",
+   "tech": "T3",
+   "day": "2026-04-27",
+   "hours": 2.0,
+   "entered_on": "2026-04-27",
+   "job_id": "J00150"
+  },
+  {
+   "entry_id": "S00151",
+   "tech": "T3",
+   "day": "2026-04-28",
+   "hours": 8.0,
+   "entered_on": "2026-04-28",
+   "job_id": "J00151"
+  },
+  {
+   "entry_id": "S00152",
+   "tech": "T3",
+   "day": "2026-04-29",
+   "hours": 8.0,
+   "entered_on": "2026-04-29",
+   "job_id": "J00152"
+  },
+  {
+   "entry_id": "S00153",
+   "tech": "T3",
+   "day": "2026-04-30",
+   "hours": 2.0,
+   "entered_on": "2026-04-30",
+   "job_id": "J00153"
+  },
+  {
+   "entry_id": "S00154",
+   "tech": "T3",
+   "day": "2026-05-01",
+   "hours": 8.0,
+   "entered_on": "2026-05-01",
+   "job_id": "J00154"
+  },
+  {
+   "entry_id": "S00155",
+   "tech": "T3",
+   "day": "2026-05-04",
+   "hours": 8.0,
+   "entered_on": "2026-05-04",
+   "job_id": "J00155"
+  },
+  {
+   "entry_id": "S00156",
+   "tech": "T3",
+   "day": "2026-05-05",
+   "hours": 8.0,
+   "entered_on": "2026-05-05",
+   "job_id": "J00156"
+  },
+  {
+   "entry_id": "S00157",
+   "tech": "T3",
+   "day": "2026-05-06",
+   "hours": 2.0,
+   "entered_on": "2026-05-06",
+   "job_id": "J00157"
+  },
+  {
+   "entry_id": "S00158",
+   "tech": "T3",
+   "day": "2026-05-07",
+   "hours": 8.0,
+   "entered_on": "2026-05-07",
+   "job_id": "J00158"
+  },
+  {
+   "entry_id": "S00159",
+   "tech": "T3",
+   "day": "2026-05-08",
+   "hours": 8.0,
+   "entered_on": "2026-05-08",
+   "job_id": "J00159"
+  },
+  {
+   "entry_id": "S00160",
+   "tech": "T3",
+   "day": "2026-05-11",
+   "hours": 2.0,
+   "entered_on": "2026-05-11",
+   "job_id": "J00160"
+  },
+  {
+   "entry_id": "S00161",
+   "tech": "T3",
+   "day": "2026-05-12",
+   "hours": 8.0,
+   "entered_on": "2026-05-12",
+   "job_id": "J00161"
+  },
+  {
+   "entry_id": "S00162",
+   "tech": "T3",
+   "day": "2026-05-13",
+   "hours": 8.0,
+   "entered_on": "2026-05-13",
+   "job_id": "J00162"
+  },
+  {
+   "entry_id": "S00163",
+   "tech": "T3",
+   "day": "2026-05-14",
+   "hours": 8.0,
+   "entered_on": "2026-05-14",
+   "job_id": "J00163"
+  },
+  {
+   "entry_id": "S00164",
+   "tech": "T3",
+   "day": "2026-05-15",
+   "hours": 2.0,
+   "entered_on": "2026-05-15",
+   "job_id": "J00164"
+  },
+  {
+   "entry_id": "S00165",
+   "tech": "T3",
+   "day": "2026-05-18",
+   "hours": 8.0,
+   "entered_on": "2026-05-18",
+   "job_id": "J00165"
+  },
+  {
+   "entry_id": "S00166",
+   "tech": "T3",
+   "day": "2026-05-19",
+   "hours": 8.0,
+   "entered_on": "2026-05-19",
+   "job_id": "J00166"
+  },
+  {
+   "entry_id": "S00167",
+   "tech": "T3",
+   "day": "2026-05-20",
+   "hours": 8.0,
+   "entered_on": "2026-05-20",
+   "job_id": "J00167"
+  },
+  {
+   "entry_id": "S00168",
+   "tech": "T3",
+   "day": "2026-05-21",
+   "hours": 2.0,
+   "entered_on": "2026-05-21",
+   "job_id": "J00168"
+  },
+  {
+   "entry_id": "S00169",
+   "tech": "T3",
+   "day": "2026-05-22",
+   "hours": 8.0,
+   "entered_on": "2026-05-22",
+   "job_id": "J00169"
+  },
+  {
+   "entry_id": "S00170",
+   "tech": "T3",
+   "day": "2026-05-25",
+   "hours": 8.0,
+   "entered_on": "2026-05-25",
+   "job_id": "J00170"
+  },
+  {
+   "entry_id": "S00171",
+   "tech": "T3",
+   "day": "2026-05-26",
+   "hours": 2.0,
+   "entered_on": "2026-05-26",
+   "job_id": "J00171"
+  },
+  {
+   "entry_id": "S00172",
+   "tech": "T3",
+   "day": "2026-05-27",
+   "hours": 8.0,
+   "entered_on": "2026-05-27",
+   "job_id": "J00172"
+  },
+  {
+   "entry_id": "S00173",
+   "tech": "T3",
+   "day": "2026-05-28",
+   "hours": 8.0,
+   "entered_on": "2026-05-28",
+   "job_id": "J00173"
+  },
+  {
+   "entry_id": "S00174",
+   "tech": "T3",
+   "day": "2026-05-29",
+   "hours": 8.0,
+   "entered_on": "2026-05-29",
+   "job_id": "J00174"
+  },
+  {
+   "entry_id": "S00175",
+   "tech": "T3",
+   "day": "2026-06-01",
+   "hours": 2.0,
+   "entered_on": "2026-06-01",
+   "job_id": "J00175"
+  },
+  {
+   "entry_id": "S00176",
+   "tech": "T3",
+   "day": "2026-06-02",
+   "hours": 8.0,
+   "entered_on": "2026-06-02",
+   "job_id": "J00176"
+  },
+  {
+   "entry_id": "S00177",
+   "tech": "T3",
+   "day": "2026-06-03",
+   "hours": 8.0,
+   "entered_on": "2026-06-03",
+   "job_id": "J00177"
+  },
+  {
+   "entry_id": "S00178",
+   "tech": "T3",
+   "day": "2026-06-04",
+   "hours": 2.0,
+   "entered_on": "2026-06-04",
+   "job_id": "J00178"
+  },
+  {
+   "entry_id": "S00179",
+   "tech": "T3",
+   "day": "2026-06-05",
+   "hours": 8.0,
+   "entered_on": "2026-06-05",
+   "job_id": "J00179"
+  },
+  {
+   "entry_id": "S00180",
+   "tech": "T3",
+   "day": "2026-06-08",
+   "hours": 8.0,
+   "entered_on": "2026-06-08",
+   "job_id": "J00180"
+  },
+  {
+   "entry_id": "S00181",
+   "tech": "T3",
+   "day": "2026-06-09",
+   "hours": 8.0,
+   "entered_on": "2026-06-09",
+   "job_id": "J00181"
+  },
+  {
+   "entry_id": "S00182",
+   "tech": "T3",
+   "day": "2026-06-10",
+   "hours": 2.0,
+   "entered_on": "2026-06-10",
+   "job_id": "J00182"
+  },
+  {
+   "entry_id": "S00183",
+   "tech": "T3",
+   "day": "2026-06-11",
+   "hours": 8.0,
+   "entered_on": "2026-06-11",
+   "job_id": "J00183"
+  },
+  {
+   "entry_id": "S00184",
+   "tech": "T3",
+   "day": "2026-06-12",
+   "hours": 8.0,
+   "entered_on": "2026-06-12",
+   "job_id": "J00184"
+  },
+  {
+   "entry_id": "S00185",
+   "tech": "T3",
+   "day": "2026-06-15",
+   "hours": 8.0,
+   "entered_on": "2026-06-15",
+   "job_id": "J00185"
+  },
+  {
+   "entry_id": "S00186",
+   "tech": "T3",
+   "day": "2026-06-16",
+   "hours": 2.0,
+   "entered_on": "2026-06-16",
+   "job_id": "J00186"
+  },
+  {
+   "entry_id": "S00187",
+   "tech": "T3",
+   "day": "2026-06-17",
+   "hours": 8.0,
+   "entered_on": "2026-06-17",
+   "job_id": "J00187"
+  },
+  {
+   "entry_id": "S00188",
+   "tech": "T3",
+   "day": "2026-06-18",
+   "hours": 8.0,
+   "entered_on": "2026-06-18",
+   "job_id": "J00188"
+  },
+  {
+   "entry_id": "S00189",
+   "tech": "T3",
+   "day": "2026-06-19",
+   "hours": 2.0,
+   "entered_on": "2026-06-19",
+   "job_id": "J00189"
+  },
+  {
+   "entry_id": "S00190",
+   "tech": "T3",
+   "day": "2026-06-22",
+   "hours": 8.0,
+   "entered_on": "2026-06-22",
+   "job_id": "J00190"
+  },
+  {
+   "entry_id": "S00191",
+   "tech": "T3",
+   "day": "2026-06-23",
+   "hours": 8.0,
+   "entered_on": "2026-06-23",
+   "job_id": "J00191"
+  },
+  {
+   "entry_id": "S00192",
+   "tech": "T3",
+   "day": "2026-06-24",
+   "hours": 2.8,
+   "entered_on": "2026-06-24",
+   "job_id": "J00192"
+  }
+ ],
+ "id_field": "entry_id",
+ "description": "technician hours by day"
+}

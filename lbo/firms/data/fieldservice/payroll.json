@@ -1,0 +1,2233 @@
+{
+ "name": "payroll",
+ "exported_at": "2026-07-01T08:00:00",
+ "records": [
+  {
+   "tech": "T1",
+   "week_start": "2025-01-05",
+   "hours": 40.0
+  },
+  {
+   "tech": "T2",
+   "week_start": "2025-01-05",
+   "hours": 40.0
+  },
+  {
+   "tech": "T3",
+   "week_start": "2025-01-05",
+   "hours": 40.0
+  },
+  {
+   "tech": "T4",
+   "week_start": "2025-01-05",
+   "hours": 40.0
+  },
+  {
+   "tech": "T5",
+   "week_start": "2025-01-05",
+   "hours": 40.0
+  },
+  {
+   "tech": "T6",
+   "week_start": "2025-01-05",
+   "hours": 40.0
+  },
+  {
+   "tech": "T1",
+   "week_start": "2025-01-12",
+   "hours": 40.0
+  },
+  {
+   "tech": "T2",
+   "week_start": "2025-01-12",
+   "hours": 40.0
+  },
+  {
+   "tech": "T3",
+   "week_start": "2025-01-12",
+   "hours": 40.0
+  },
+  {
+   "tech": "T4",
+   "week_start": "2025-01-12",
+   "hours": 40.0
+  },
+  {
+   "tech": "T5",
+   "week_start": "2025-01-12",
+   "hours": 40.0
+  },
+  {
+   "tech": "T6",
+   "week_start": "2025-01-12",
+   "hours": 40.0
+  },
+  {
+   "tech": "T1",
+   "week_start": "2025-01-19",
+   "hours": 40.0
+  },
+  {
+   "tech": "T2",
+   "week_start": "2025-01-19",
+   "hours": 40.0
+  },
+  {
+   "tech": "T3",
+   "week_start": "2025-01-19",
+   "hours": 40.0
+  },
+  {
+   "tech": "T4",
+   "week_start": "2025-01-19",
+   "hours": 40.0
+  },
+  {
+   "tech": "T5",
+   "week_start": "2025-01-19",
+   "hours": 40.0
+  },
+  {
+   "tech": "T6",
+   "week_start": "2025-01-19",
+   "hours": 40.0
+  },
+  {
+   "tech": "T1",
+   "week_start": "2025-01-26",
+   "hours": 40.0
+  },
+  {
+   "tech": "T2",
+   "week_start": "2025-01-26",
+   "hours": 40.0
+  },
+  {
+   "tech": "T3",
+   "week_start": "2025-01-26",
+   "hours": 40.0
+  },
+  {
+   "tech": "T4",
+   "week_start": "2025-01-26",
+   "hours": 40.0
+  },
+  {
+   "tech": "T5",
+   "week_start": "2025-01-26",
+   "hours": 40.0
+  },
+  {
+   "tech": "T6",
+   "week_start": "2025-01-26",
+   "hours": 40.0
+  },
+  {
+   "tech": "T1",
+   "week_start": "2025-02-02",
+   "hours": 40.0
+  },
+  {
+   "tech": "T2",
+   "week_start": "2025-02-02",
+   "hours": 40.0
+  },
+  {
+   "tech": "T3",
+   "week_start": "2025-02-02",
+   "hours": 40.0
+  },
+  {
+   "tech": "T4",
+   "week_start": "2025-02-02",
+   "hours": 40.0
+  },
+  {
+   "tech": "T5",
+   "week_start": "2025-02-02",
+   "hours": 40.0
+  },
+  {
+   "tech": "T6",
+   "week_start": "2025-02-02",
+   "hours": 40.0
+  },
+  {
+   "tech": "T1",
+   "week_start": "2025-02-09",
+   "hours": 40.0
+  },
+  {
+   "tech": "T2",
+   "week_start": "2025-02-09",
+   "hours": 40.0
+  },
+  {
+   "tech": "T3",
+   "week_start": "2025-02-09",
+   "hours": 40.0
+  },
+  {
+   "tech": "T4",
+   "week_start": "2025-02-09",
+   "hours": 40.0
+  },
+  {
+   "tech": "T5",
+   "week_start": "2025-02-09",
+   "hours": 40.0
+  },
+  {
+   "tech": "T6",
+   "week_start": "2025-02-09",
+   "hours": 40.0
+  },
+  {
+   "tech": "T1",
+   "week_start": "2025-02-16",
+   "hours": 40.0
+  },
+  {
+   "tech": "T2",
+   "week_start": "2025-02-16",
+   "hours": 40.0
+  },
+  {
+   "tech": "T3",
+   "week_start": "2025-02-16",
+   "hours": 40.0
+  },
+  {
+   "tech": "T4",
+   "week_start": "2025-02-16",
+   "hours": 40.0
+  },
+  {
+   "tech": "T5",
+   "week_start": "2025-02-16",
+   "hours": 40.0
+  },
+  {
+   "tech": "T6",
+   "week_start": "2025-02-16",
+   "hours": 40.0
+  },
+  {
+   "tech": "T1",
+   "week_start": "2025-02-23",
+   "hours": 40.0
+  },
+  {
+   "tech": "T2",
+   "week_start": "2025-02-23",
+   "hours": 40.0
+  },
+  {
+   "tech": "T3",
+   "week_start": "2025-02-23",
+   "hours": 40.0
+  },
+  {
+   "tech": "T4",
+   "week_start": "2025-02-23",
+   "hours": 40.0
+  },
+  {
+   "tech": "T5",
+   "week_start": "2025-02-23",
+   "hours": 40.0
+  },
+  {
+   "tech": "T6",
+   "week_start": "2025-02-23",
+   "hours": 40.0
+  },
+  {
+   "tech": "T1",
+   "week_start": "2025-03-02",
+   "hours": 40.0
+  },
+  {
+   "tech": "T2",
+   "week_start": "2025-03-02",
+   "hours": 40.0
+  },
+  {
+   "tech": "T3",
+   "week_start": "2025-03-02",
+   "hours": 40.0
+  },
+  {
+   "tech": "T4",
+   "week_start": "2025-03-02",
+   "hours": 40.0
+  },
+  {
+   "tech": "T5",
+   "week_start": "2025-03-02",
+   "hours": 40.0
+  },
+  {
+   "tech": "T6",
+   "week_start": "2025-03-02",
+   "hours": 40.0
+  },
+  {
+   "tech": "T1",
+   "week_start": "2025-03-09",
+   "hours": 40.0
+  },
+  {
+   "tech": "T2",
+   "week_start": "2025-03-09",
+   "hours": 40.0
+  },
+  {
+   "tech": "T3",
+   "week_start": "2025-03-09",
+   "hours": 40.0
+  },
+  {
+   "tech": "T4",
+   "week_start": "2025-03-09",
+   "hours": 40.0
+  },
+  {
+   "tech": "T5",
+   "week_start": "2025-03-09",
+   "hours": 40.0
+  },
+  {
+   "tech": "T6",
+   "week_start": "2025-03-09",
+   "hours": 40.0
+  },
+  {
+   "tech": "T1",
+   "week_start": "2025-03-16",
+   "hours": 40.0
+  },
+  {
+   "tech": "T2",
+   "week_start": "2025-03-16",
+   "hours": 40.0
+  },
+  {
+   "tech": "T3",
+   "week_start": "2025-03-16",
+   "hours": 40.0
+  },
+  {
+   "tech": "T4",
+   "week_start": "2025-03-16",
+   "hours": 40.0
+  },
+  {
+   "tech": "T5",
+   "week_start": "2025-03-16",
+   "hours": 40.0
+  },
+  {
+   "tech": "T6",
+   "week_start": "2025-03-16",
+   "hours": 40.0
+  },
+  {
+   "tech": "T1",
+   "week_start": "2025-03-23",
+   "hours": 40.0
+  },
+  {
+   "tech": "T2",
+   "week_start": "2025-03-23",
+   "hours": 40.0
+  },
+  {
+   "tech": "T3",
+   "week_start": "2025-03-23",
+   "hours": 40.0
+  },
+  {
+   "tech": "T4",
+   "week_start": "2025-03-23",
+   "hours": 40.0
+  },
+  {
+   "tech": "T5",
+   "week_start": "2025-03-23",
+   "hours": 40.0
+  },
+  {
+   "tech": "T6",
+   "week_start": "2025-03-23",
+   "hours": 40.0
+  },
+  {
+   "tech": "T1",
+   "week_start": "2025-03-30",
+   "hours": 40.0
+  },
+  {
+   "tech": "T2",
+   "week_start": "2025-03-30",
+   "hours": 40.0
+  },
+  {
+   "tech": "T3",
+   "week_start": "2025-03-30",
+   "hours": 40.0
+  },
+  {
+   "tech": "T4",
+   "week_start": "2025-03-30",
+   "hours": 40.0
+  },
+  {
+   "tech": "T5",
+   "week_start": "2025-03-30",
+   "hours": 40.0
+  },
+  {
+   "tech": "T6",
+   "week_start": "2025-03-30",
+   "hours": 40.0
+  },
+  {
+   "tech": "T1",
+   "week_start": "2025-04-06",
+   "hours": 40.0
+  },
+  {
+   "tech": "T2",
+   "week_start": "2025-04-06",
+   "hours": 40.0
+  },
+  {
+   "tech": "T3",
+   "week_start": "2025-04-06",
+   "hours": 40.0
+  },
+  {
+   "tech": "T4",
+   "week_start": "2025-04-06",
+   "hours": 40.0
+  },
+  {
+   "tech": "T5",
+   "week_start": "2025-04-06",
+   "hours": 40.0
+  },
+  {
+   "tech": "T6",
+   "week_start": "2025-04-06",
+   "hours": 40.0
+  },
+  {
+   "tech": "T1",
+   "week_start": "2025-04-13",
+   "hours": 40.0
+  },
+  {
+   "tech": "T2",
+   "week_start": "2025-04-13",
+   "hours": 40.0
+  },
+  {
+   "tech": "T3",
+   "week_start": "2025-04-13",
+   "hours": 40.0
+  },
+  {
+   "tech": "T4",
+   "week_start": "2025-04-13",
+   "hours": 40.0
+  },
+  {
+   "tech": "T5",
+   "week_start": "2025-04-13",
+   "hours": 40.0
+  },
+  {
+   "tech": "T6",
+   "week_start": "2025-04-13",
+   "hours": 40.0
+  },
+  {
+   "tech": "T1",
+   "week_start": "2025-04-20",
+   "hours": 40.0
+  },
+  {
+   "tech": "T2",
+   "week_start": "2025-04-20",
+   "hours": 40.0
+  },
+  {
+   "tech": "T3",
+   "week_start": "2025-04-20",
+   "hours": 40.0
+  },
+  {
+   "tech": "T4",
+   "week_start": "2025-04-20",
+   "hours": 40.0
+  },
+  {
+   "tech": "T5",
+   "week_start": "2025-04-20",
+   "hours": 40.0
+  },
+  {
+   "tech": "T6",
+   "week_start": "2025-04-20",
+   "hours": 40.0
+  },
+  {
+   "tech": "T1",
+   "week_start": "2025-04-27",
+   "hours": 40.0
+  },
+  {
+   "tech": "T2",
+   "week_start": "2025-04-27",
+   "hours": 40.0
+  },
+  {
+   "tech": "T3",
+   "week_start": "2025-04-27",
+   "hours": 40.0
+  },
+  {
+   "tech": "T4",
+   "week_start": "2025-04-27",
+   "hours": 40.0
+  },
+  {
+   "tech": "T5",
+   "week_start": "2025-04-27",
+   "hours": 40.0
+  },
+  {
+   "tech": "T6",
+   "week_start": "2025-04-27",
+   "hours": 40.0
+  },
+  {
+   "tech": "T1",
+   "week_start": "2025-05-04",
+   "hours": 40.0
+  },
+  {
+   "tech": "T2",
+   "week_start": "2025-05-04",
+   "hours": 40.0
+  },
+  {
+   "tech": "T3",
+   "week_start": "2025-05-04",
+   "hours": 40.0
+  },
+  {
+   "tech": "T4",
+   "week_start": "2025-05-04",
+   "hours": 40.0
+  },
+  {
+   "tech": "T5",
+   "week_start": "2025-05-04",
+   "hours": 40.0
+  },
+  {
+   "tech": "T6",
+   "week_start": "2025-05-04",
+   "hours": 40.0
+  },
+  {
+   "tech": "T1",
+   "week_start": "2025-05-11",
+   "hours": 40.0
+  },
+  {
+   "tech": "T2",
+   "week_start": "2025-05-11",
+   "hours": 40.0
+  },
+  {
+   "tech": "T3",
+   "week_start": "2025-05-11",
+   "hours": 40.0
+  },
+  {
+   "tech": "T4",
+   "week_start": "2025-05-11",
+   "hours": 40.0
+  },
+  {
+   "tech": "T5",
+   "week_start": "2025-05-11",
+   "hours": 40.0
+  },
+  {
+   "tech": "T6",
+   "week_start": "2025-05-11",
+   "hours": 40.0
+  },
+  {
+   "tech": "T1",
+   "week_start": "2025-05-18",
+   "hours": 40.0
+  },
+  {
+   "tech": "T2",
+   "week_start": "2025-05-18",
+   "hours": 40.0
+  },
+  {
+   "tech": "T3",
+   "week_start": "2025-05-18",
+   "hours": 40.0
+  },
+  {
+   "tech": "T4",
+   "week_start": "2025-05-18",
+   "hours": 40.0
+  },
+  {
+   "tech": "T5",
+   "week_start": "2025-05-18",
+   "hours": 40.0
+  },
+  {
+   "tech": "T6",
+   "week_start": "2025-05-18",
+   "hours": 40.0
+  },
+  {
+   "tech": "T1",
+   "week_start": "2025-05-25",
+   "hours": 40.0
+  },
+  {
+   "tech": "T2",
+   "week_start": "2025-05-25",
+   "hours": 40.0
+  },
+  {
+   "tech": "T3",
+   "week_start": "2025-05-25",
+   "hours": 40.0
+  },
+  {
+   "tech": "T4",
+   "week_start": "2025-05-25",
+   "hours": 40.0
+  },
+  {
+   "tech": "T5",
+   "week_start": "2025-05-25",
+   "hours": 40.0
+  },
+  {
+   "tech": "T6",
+   "week_start": "2025-05-25",
+   "hours": 40.0
+  },
+  {
+   "tech": "T1",
+   "week_start": "2025-06-01",
+   "hours": 40.0
+  },
+  {
+   "tech": "T2",
+   "week_start": "2025-06-01",
+   "hours": 40.0
+  },
+  {
+   "tech": "T3",
+   "week_start": "2025-06-01",
+   "hours": 40.0
+  },
+  {
+   "tech": "T4",
+   "week_start": "2025-06-01",
+   "hours": 40.0
+  },
+  {
+   "tech": "T5",
+   "week_start": "2025-06-01",
+   "hours": 40.0
+  },
+  {
+   "tech": "T6",
+   "week_start": "2025-06-01",
+   "hours": 40.0
+  },
+  {
+   "tech": "T1",
+   "week_start": "2025-06-08",
+   "hours": 40.0
+  },
+  {
+   "tech": "T2",
+   "week_start": "2025-06-08",
+   "hours": 40.0
+  },
+  {
+   "tech": "T3",
+   "week_start": "2025-06-08",
+   "hours": 40.0
+  },
+  {
+   "tech": "T4",
+   "week_start": "2025-06-08",
+   "hours": 40.0
+  },
+  {
+   "tech": "T5",
+   "week_start": "2025-06-08",
+   "hours": 40.0
+  },
+  {
+   "tech": "T6",
+   "week_start": "2025-06-08",
+   "hours": 40.0
+  },
+  {
+   "tech": "T1",
+   "week_start": "2025-06-15",
+   "hours": 40.0
+  },
+  {
+   "tech": "T2",
+   "week_start": "2025-06-15",
+   "hours": 40.0
+  },
+  {
+   "tech": "T3",
+   "week_start": "2025-06-15",
+   "hours": 40.0
+  },
+  {
+   "tech": "T4",
+   "week_start": "2025-06-15",
+   "hours": 40.0
+  },
+  {
+   "tech": "T5",
+   "week_start": "2025-06-15",
+   "hours": 40.0
+  },
+  {
+   "tech": "T6",
+   "week_start": "2025-06-15",
+   "hours": 40.0
+  },
+  {
+   "tech": "T1",
+   "week_start": "2025-06-22",
+   "hours": 40.0
+  },
+  {
+   "tech": "T2",
+   "week_start": "2025-06-22",
+   "hours": 40.0
+  },
+  {
+   "tech": "T3",
+   "week_start": "2025-06-22",
+   "hours": 40.0
+  },
+  {
+   "tech": "T4",
+   "week_start": "2025-06-22",
+   "hours": 40.0
+  },
+  {
+   "tech": "T5",
+   "week_start": "2025-06-22",
+   "hours": 40.0
+  },
+  {
+   "tech": "T6",
+   "week_start": "2025-06-22",
+   "hours": 40.0
+  },
+  {
+   "tech": "T1",
+   "week_start": "2025-06-29",
+   "hours": 40.0
+  },
+  {
+   "tech": "T2",
+   "week_start": "2025-06-29",
+   "hours": 40.0
+  },
+  {
+   "tech": "T3",
+   "week_start": "2025-06-29",
+   "hours": 40.0
+  },
+  {
+   "tech": "T4",
+   "week_start": "2025-06-29",
+   "hours": 40.0
+  },
+  {
+   "tech": "T5",
+   "week_start": "2025-06-29",
+   "hours": 40.0
+  },
+  {
+   "tech": "T6",
+   "week_start": "2025-06-29",
+   "hours": 40.0
+  },
+  {
+   "tech": "T1",
+   "week_start": "2025-07-06",
+   "hours": 40.0
+  },
+  {
+   "tech": "T2",
+   "week_start": "2025-07-06",
+   "hours": 40.0
+  },
+  {
+   "tech": "T3",
+   "week_start": "2025-07-06",
+   "hours": 40.0
+  },
+  {
+   "tech": "T4",
+   "week_start": "2025-07-06",
+   "hours": 40.0
+  },
+  {
+   "tech": "T5",
+   "week_start": "2025-07-06",
+   "hours": 40.0
+  },
+  {
+   "tech": "T6",
+   "week_start": "2025-07-06",
+   "hours": 40.0
+  },
+  {
+   "tech": "T1",
+   "week_start": "2025-07-13",
+   "hours": 40.0
+  },
+  {
+   "tech": "T2",
+   "week_start": "2025-07-13",
+   "hours": 40.0
+  },
+  {
+   "tech": "T3",
+   "week_start": "2025-07-13",
+   "hours": 40.0
+  },
+  {
+   "tech": "T4",
+   "week_start": "2025-07-13",
+   "hours": 40.0
+  },
+  {
+   "tech": "T5",
+   "week_start": "2025-07-13",
+   "hours": 40.0
+  },
+  {
+   "tech": "T6",
+   "week_start": "2025-07-13",
+   "hours": 40.0
+  },
+  {
+   "tech": "T1",
+   "week_start": "2025-07-20",
+   "hours": 40.0
+  },
+  {
+   "tech": "T2",
+   "week_start": "2025-07-20",
+   "hours": 40.0
+  },
+  {
+   "tech": "T3",
+   "week_start": "2025-07-20",
+   "hours": 40.0
+  },
+  {
+   "tech": "T4",
+   "week_start": "2025-07-20",
+   "hours": 40.0
+  },
+  {
+   "tech": "T5",
+   "week_start": "2025-07-20",
+   "hours": 40.0
+  },
+  {
+   "tech": "T6",
+   "week_start": "2025-07-20",
+   "hours": 40.0
+  },
+  {
+   "tech": "T1",
+   "week_start": "2025-07-27",
+   "hours": 40.0
+  },
+  {
+   "tech": "T2",
+   "week_start": "2025-07-27",
+   "hours": 40.0
+  },
+  {
+   "tech": "T3",
+   "week_start": "2025-07-27",
+   "hours": 40.0
+  },
+  {
+   "tech": "T4",
+   "week_start": "2025-07-27",
+   "hours": 40.0
+  },
+  {
+   "tech": "T5",
+   "week_start": "2025-07-27",
+   "hours": 40.0
+  },
+  {
+   "tech": "T6",
+   "week_start": "2025-07-27",
+   "hours": 40.0
+  },
+  {
+   "tech": "T1",
+   "week_start": "2025-08-03",
+   "hours": 40.0
+  },
+  {
+   "tech": "T2",
+   "week_start": "2025-08-03",
+   "hours": 40.0
+  },
+  {
+   "tech": "T3",
+   "week_start": "2025-08-03",
+   "hours": 40.0
+  },
+  {
+   "tech": "T4",
+   "week_start": "2025-08-03",
+   "hours": 40.0
+  },
+  {
+   "tech": "T5",
+   "week_start": "2025-08-03",
+   "hours": 40.0
+  },
+  {
+   "tech": "T6",
+   "week_start": "2025-08-03",
+   "hours": 40.0
+  },
+  {
+   "tech": "T1",
+   "week_start": "2025-08-10",
+   "hours": 40.0
+  },
+  {
+   "tech": "T2",
+   "week_start": "2025-08-10",
+   "hours": 40.0
+  },
+  {
+   "tech": "T3",
+   "week_start": "2025-08-10",
+   "hours": 40.0
+  },
+  {
+   "tech": "T4",
+   "week_start": "2025-08-10",
+   "hours": 40.0
+  },
+  {
+   "tech": "T5",
+   "week_start": "2025-08-10",
+   "hours": 40.0
+  },
+  {
+   "tech": "T6",
+   "week_start": "2025-08-10",
+   "hours": 40.0
+  },
+  {
+   "tech": "T1",
+   "week_start": "2025-08-17",
+   "hours": 40.0
+  },
+  {
+   "tech": "T2",
+   "week_start": "2025-08-17",
+   "hours": 40.0
+  },
+  {
+   "tech": "T3",
+   "week_start": "2025-08-17",
+   "hours": 40.0
+  },
+  {
+   "tech": "T4",
+   "week_start": "2025-08-17",
+   "hours": 40.0
+  },
+  {
+   "tech": "T5",
+   "week_start": "2025-08-17",
+   "hours": 40.0
+  },
+  {
+   "tech": "T6",
+   "week_start": "2025-08-17",
+   "hours": 40.0
+  },
+  {
+   "tech": "T1",
+   "week_start": "2025-08-24",
+   "hours": 40.0
+  },
+  {
+   "tech": "T2",
+   "week_start": "2025-08-24",
+   "hours": 40.0
+  },
+  {
+   "tech": "T3",
+   "week_start": "2025-08-24",
+   "hours": 40.0
+  },
+  {
+   "tech": "T4",
+   "week_start": "2025-08-24",
+   "hours": 40.0
+  },
+  {
+   "tech": "T5",
+   "week_start": "2025-08-24",
+   "hours": 40.0
+  },
+  {
+   "tech": "T6",
+   "week_start": "2025-08-24",
+   "hours": 40.0
+  },
+  {
+   "tech": "T1",
+   "week_start": "2025-08-31",
+   "hours": 40.0
+  },
+  {
+   "tech": "T2",
+   "week_start": "2025-08-31",
+   "hours": 40.0
+  },
+  {
+   "tech": "T3",
+   "week_start": "2025-08-31",
+   "hours": 40.0
+  },
+  {
+   "tech": "T4",
+   "week_start": "2025-08-31",
+   "hours": 40.0
+  },
+  {
+   "tech": "T5",
+   "week_start": "2025-08-31",
+   "hours": 40.0
+  },
+  {
+   "tech": "T6",
+   "week_start": "2025-08-31",
+   "hours": 40.0
+  },
+  {
+   "tech": "T1",
+   "week_start": "2025-09-07",
+   "hours": 40.0
+  },
+  {
+   "tech": "T2",
+   "week_start": "2025-09-07",
+   "hours": 40.0
+  },
+  {
+   "tech": "T3",
+   "week_start": "2025-09-07",
+   "hours": 40.0
+  },
+  {
+   "tech": "T4",
+   "week_start": "2025-09-07",
+   "hours": 40.0
+  },
+  {
+   "tech": "T5",
+   "week_start": "2025-09-07",
+   "hours": 40.0
+  },
+  {
+   "tech": "T6",
+   "week_start": "2025-09-07",
+   "hours": 40.0
+  },
+  {
+   "tech": "T1",
+   "week_start": "2025-09-14",
+   "hours": 40.0
+  },
+  {
+   "tech": "T2",
+   "week_start": "2025-09-14",
+   "hours": 40.0
+  },
+  {
+   "tech": "T3",
+   "week_start": "2025-09-14",
+   "hours": 40.0
+  },
+  {
+   "tech": "T4",
+   "week_start": "2025-09-14",
+   "hours": 40.0
+  },
+  {
+   "tech": "T5",
+   "week_start": "2025-09-14",
+   "hours": 40.0
+  },
+  {
+   "tech": "T6",
+   "week_start": "2025-09-14",
+   "hours": 40.0
+  },
+  {
+   "tech": "T1",
+   "week_start": "2025-09-21",
+   "hours": 40.0
+  },
+  {
+   "tech": "T2",
+   "week_start": "2025-09-21",
+   "hours": 40.0
+  },
+  {
+   "tech": "T3",
+   "week_start": "2025-09-21",
+   "hours": 40.0
+  },
+  {
+   "tech": "T4",
+   "week_start": "2025-09-21",
+   "hours": 40.0
+  },
+  {
+   "tech": "T5",
+   "week_start": "2025-09-21",
+   "hours": 40.0
+  },
+  {
+   "tech": "T6",
+   "week_start": "2025-09-21",
+   "hours": 40.0
+  },
+  {
+   "tech": "T1",
+   "week_start": "2025-09-28",
+   "hours": 40.0
+  },
+  {
+   "tech": "T2",
+   "week_start": "2025-09-28",
+   "hours": 40.0
+  },
+  {
+   "tech": "T3",
+   "week_start": "2025-09-28",
+   "hours": 40.0
+  },
+  {
+   "tech": "T4",
+   "week_start": "2025-09-28",
+   "hours": 40.0
+  },
+  {
+   "tech": "T5",
+   "week_start": "2025-09-28",
+   "hours": 40.0
+  },
+  {
+   "tech": "T6",
+   "week_start": "2025-09-28",
+   "hours": 40.0
+  },
+  {
+   "tech": "T1",
+   "week_start": "2025-10-05",
+   "hours": 40.0
+  },
+  {
+   "tech": "T2",
+   "week_start": "2025-10-05",
+   "hours": 40.0
+  },
+  {
+   "tech": "T3",
+   "week_start": "2025-10-05",
+   "hours": 40.0
+  },
+  {
+   "tech": "T4",
+   "week_start": "2025-10-05",
+   "hours": 40.0
+  },
+  {
+   "tech": "T5",
+   "week_start": "2025-10-05",
+   "hours": 40.0
+  },
+  {
+   "tech": "T6",
+   "week_start": "2025-10-05",
+   "hours": 40.0
+  },
+  {
+   "tech": "T1",
+   "week_start": "2025-10-12",
+   "hours": 40.0
+  },
+  {
+   "tech": "T2",
+   "week_start": "2025-10-12",
+   "hours": 40.0
+  },
+  {
+   "tech": "T3",
+   "week_start": "2025-10-12",
+   "hours": 40.0
+  },
+  {
+   "tech": "T4",
+   "week_start": "2025-10-12",
+   "hours": 40.0
+  },
+  {
+   "tech": "T5",
+   "week_start": "2025-10-12",
+   "hours": 40.0
+  },
+  {
+   "tech": "T6",
+   "week_start": "2025-10-12",
+   "hours": 40.0
+  },
+  {
+   "tech": "T1",
+   "week_start": "2025-10-19",
+   "hours": 40.0
+  },
+  {
+   "tech": "T2",
+   "week_start": "2025-10-19",
+   "hours": 40.0
+  },
+  {
+   "tech": "T3",
+   "week_start": "2025-10-19",
+   "hours": 40.0
+  },
+  {
+   "tech": "T4",
+   "week_start": "2025-10-19",
+   "hours": 40.0
+  },
+  {
+   "tech": "T5",
+   "week_start": "2025-10-19",
+   "hours": 40.0
+  },
+  {
+   "tech": "T6",
+   "week_start": "2025-10-19",
+   "hours": 40.0
+  },
+  {
+   "tech": "T1",
+   "week_start": "2025-10-26",
+   "hours": 40.0
+  },
+  {
+   "tech": "T2",
+   "week_start": "2025-10-26",
+   "hours": 40.0
+  },
+  {
+   "tech": "T3",
+   "week_start": "2025-10-26",
+   "hours": 40.0
+  },
+  {
+   "tech": "T4",
+   "week_start": "2025-10-26",
+   "hours": 40.0
+  },
+  {
+   "tech": "T5",
+   "week_start": "2025-10-26",
+   "hours": 40.0
+  },
+  {
+   "tech": "T6",
+   "week_start": "2025-10-26",
+   "hours": 40.0
+  },
+  {
+   "tech": "T1",
+   "week_start": "2025-11-02",
+   "hours": 40.0
+  },
+  {
+   "tech": "T2",
+   "week_start": "2025-11-02",
+   "hours": 40.0
+  },
+  {
+   "tech": "T3",
+   "week_start": "2025-11-02",
+   "hours": 40.0
+  },
+  {
+   "tech": "T4",
+   "week_start": "2025-11-02",
+   "hours": 40.0
+  },
+  {
+   "tech": "T5",
+   "week_start": "2025-11-02",
+   "hours": 40.0
+  },
+  {
+   "tech": "T6",
+   "week_start": "2025-11-02",
+   "hours": 40.0
+  },
+  {
+   "tech": "T1",
+   "week_start": "2025-11-09",
+   "hours": 40.0
+  },
+  {
+   "tech": "T2",
+   "week_start": "2025-11-09",
+   "hours": 40.0
+  },
+  {
+   "tech": "T3",
+   "week_start": "2025-11-09",
+   "hours": 40.0
+  },
+  {
+   "tech": "T4",
+   "week_start": "2025-11-09",
+   "hours": 40.0
+  },
+  {
+   "tech": "T5",
+   "week_start": "2025-11-09",
+   "hours": 40.0
+  },
+  {
+   "tech": "T6",
+   "week_start": "2025-11-09",
+   "hours": 40.0
+  },
+  {
+   "tech": "T1",
+   "week_start": "2025-11-16",
+   "hours": 40.0
+  },
+  {
+   "tech": "T2",
+   "week_start": "2025-11-16",
+   "hours": 40.0
+  },
+  {
+   "tech": "T3",
+   "week_start": "2025-11-16",
+   "hours": 40.0
+  },
+  {
+   "tech": "T4",
+   "week_start": "2025-11-16",
+   "hours": 40.0
+  },
+  {
+   "tech": "T5",
+   "week_start": "2025-11-16",
+   "hours": 40.0
+  },
+  {
+   "tech": "T6",
+   "week_start": "2025-11-16",
+   "hours": 40.0
+  },
+  {
+   "tech": "T1",
+   "week_start": "2025-11-23",
+   "hours": 40.0
+  },
+  {
+   "tech": "T2",
+   "week_start": "2025-11-23",
+   "hours": 40.0
+  },
+  {
+   "tech": "T3",
+   "week_start": "2025-11-23",
+   "hours": 40.0
+  },
+  {
+   "tech": "T4",
+   "week_start": "2025-11-23",
+   "hours": 40.0
+  },
+  {
+   "tech": "T5",
+   "week_start": "2025-11-23",
+   "hours": 40.0
+  },
+  {
+   "tech": "T6",
+   "week_start": "2025-11-23",
+   "hours": 40.0
+  },
+  {
+   "tech": "T1",
+   "week_start": "2025-11-30",
+   "hours": 40.0
+  },
+  {
+   "tech": "T2",
+   "week_start": "2025-11-30",
+   "hours": 40.0
+  },
+  {
+   "tech": "T3",
+   "week_start": "2025-11-30",
+   "hours": 40.0
+  },
+  {
+   "tech": "T4",
+   "week_start": "2025-11-30",
+   "hours": 40.0
+  },
+  {
+   "tech": "T5",
+   "week_start": "2025-11-30",
+   "hours": 40.0
+  },
+  {
+   "tech": "T6",
+   "week_start": "2025-11-30",
+   "hours": 40.0
+  },
+  {
+   "tech": "T1",
+   "week_start": "2025-12-07",
+   "hours": 40.0
+  },
+  {
+   "tech": "T2",
+   "week_start": "2025-12-07",
+   "hours": 40.0
+  },
+  {
+   "tech": "T3",
+   "week_start": "2025-12-07",
+   "hours": 40.0
+  },
+  {
+   "tech": "T4",
+   "week_start": "2025-12-07",
+   "hours": 40.0
+  },
+  {
+   "tech": "T5",
+   "week_start": "2025-12-07",
+   "hours": 40.0
+  },
+  {
+   "tech": "T6",
+   "week_start": "2025-12-07",
+   "hours": 40.0
+  },
+  {
+   "tech": "T1",
+   "week_start": "2025-12-14",
+   "hours": 40.0
+  },
+  {
+   "tech": "T2",
+   "week_start": "2025-12-14",
+   "hours": 40.0
+  },
+  {
+   "tech": "T3",
+   "week_start": "2025-12-14",
+   "hours": 40.0
+  },
+  {
+   "tech": "T4",
+   "week_start": "2025-12-14",
+   "hours": 40.0
+  },
+  {
+   "tech": "T5",
+   "week_start": "2025-12-14",
+   "hours": 40.0
+  },
+  {
+   "tech": "T6",
+   "week_start": "2025-12-14",
+   "hours": 40.0
+  },
+  {
+   "tech": "T1",
+   "week_start": "2025-12-21",
+   "hours": 40.0
+  },
+  {
+   "tech": "T2",
+   "week_start": "2025-12-21",
+   "hours": 40.0
+  },
+  {
+   "tech": "T3",
+   "week_start": "2025-12-21",
+   "hours": 40.0
+  },
+  {
+   "tech": "T4",
+   "week_start": "2025-12-21",
+   "hours": 40.0
+  },
+  {
+   "tech": "T5",
+   "week_start": "2025-12-21",
+   "hours": 40.0
+  },
+  {
+   "tech": "T6",
+   "week_start": "2025-12-21",
+   "hours": 40.0
+  },
+  {
+   "tech": "T1",
+   "week_start": "2025-12-28",
+   "hours": 40.0
+  },
+  {
+   "tech": "T2",
+   "week_start": "2025-12-28",
+   "hours": 40.0
+  },
+  {
+   "tech": "T3",
+   "week_start": "2025-12-28",
+   "hours": 40.0
+  },
+  {
+   "tech": "T4",
+   "week_start": "2025-12-28",
+   "hours": 40.0
+  },
+  {
+   "tech": "T5",
+   "week_start": "2025-12-28",
+   "hours": 40.0
+  },
+  {
+   "tech": "T6",
+   "week_start": "2025-12-28",
+   "hours": 40.0
+  },
+  {
+   "tech": "T1",
+   "week_start": "2026-01-04",
+   "hours": 40.0
+  },
+  {
+   "tech": "T2",
+   "week_start": "2026-01-04",
+   "hours": 40.0
+  },
+  {
+   "tech": "T3",
+   "week_start": "2026-01-04",
+   "hours": 40.0
+  },
+  {
+   "tech": "T4",
+   "week_start": "2026-01-04",
+   "hours": 40.0
+  },
+  {
+   "tech": "T5",
+   "week_start": "2026-01-04",
+   "hours": 40.0
+  },
+  {
+   "tech": "T6",
+   "week_start": "2026-01-04",
+   "hours": 40.0
+  },
+  {
+   "tech": "T1",
+   "week_start": "2026-01-11",
+   "hours": 40.0
+  },
+  {
+   "tech": "T2",
+   "week_start": "2026-01-11",
+   "hours": 40.0
+  },
+  {
+   "tech": "T3",
+   "week_start": "2026-01-11",
+   "hours": 40.0
+  },
+  {
+   "tech": "T4",
+   "week_start": "2026-01-11",
+   "hours": 40.0
+  },
+  {
+   "tech": "T5",
+   "week_start": "2026-01-11",
+   "hours": 40.0
+  },
+  {
+   "tech": "T6",
+   "week_start": "2026-01-11",
+   "hours": 40.0
+  },
+  {
+   "tech": "T1",
+   "week_start": "2026-01-18",
+   "hours": 40.0
+  },
+  {
+   "tech": "T2",
+   "week_start": "2026-01-18",
+   "hours": 40.0
+  },
+  {
+   "tech": "T3",
+   "week_start": "2026-01-18",
+   "hours": 40.0
+  },
+  {
+   "tech": "T4",
+   "week_start": "2026-01-18",
+   "hours": 40.0
+  },
+  {
+   "tech": "T5",
+   "week_start": "2026-01-18",
+   "hours": 40.0
+  },
+  {
+   "tech": "T6",
+   "week_start": "2026-01-18",
+   "hours": 40.0
+  },
+  {
+   "tech": "T1",
+   "week_start": "2026-01-25",
+   "hours": 40.0
+  },
+  {
+   "tech": "T2",
+   "week_start": "2026-01-25",
+   "hours": 40.0
+  },
+  {
+   "tech": "T3",
+   "week_start": "2026-01-25",
+   "hours": 40.0
+  },
+  {
+   "tech": "T4",
+   "week_start": "2026-01-25",
+   "hours": 40.0
+  },
+  {
+   "tech": "T5",
+   "week_start": "2026-01-25",
+   "hours": 40.0
+  },
+  {
+   "tech": "T6",
+   "week_start": "2026-01-25",
+   "hours": 40.0
+  },
+  {
+   "tech": "T1",
+   "week_start": "2026-02-01",
+   "hours": 40.0
+  },
+  {
+   "tech": "T2",
+   "week_start": "2026-02-01",
+   "hours": 40.0
+  },
+  {
+   "tech": "T3",
+   "week_start": "2026-02-01",
+   "hours": 40.0
+  },
+  {
+   "tech": "T4",
+   "week_start": "2026-02-01",
+   "hours": 40.0
+  },
+  {
+   "tech": "T5",
+   "week_start": "2026-02-01",
+   "hours": 40.0
+  },
+  {
+   "tech": "T6",
+   "week_start": "2026-02-01",
+   "hours": 40.0
+  },
+  {
+   "tech": "T1",
+   "week_start": "2026-02-08",
+   "hours": 40.0
+  },
+  {
+   "tech": "T2",
+   "week_start": "2026-02-08",
+   "hours": 40.0
+  },
+  {
+   "tech": "T3",
+   "week_start": "2026-02-08",
+   "hours": 40.0
+  },
+  {
+   "tech": "T4",
+   "week_start": "2026-02-08",
+   "hours": 40.0
+  },
+  {
+   "tech": "T5",
+   "week_start": "2026-02-08",
+   "hours": 40.0
+  },
+  {
+   "tech": "T6",
+   "week_start": "2026-02-08",
+   "hours": 40.0
+  },
+  {
+   "tech": "T1",
+   "week_start": "2026-02-15",
+   "hours": 40.0
+  },
+  {
+   "tech": "T2",
+   "week_start": "2026-02-15",
+   "hours": 40.0
+  },
+  {
+   "tech": "T3",
+   "week_start": "2026-02-15",
+   "hours": 40.0
+  },
+  {
+   "tech": "T4",
+   "week_start": "2026-02-15",
+   "hours": 40.0
+  },
+  {
+   "tech": "T5",
+   "week_start": "2026-02-15",
+   "hours": 40.0
+  },
+  {
+   "tech": "T6",
+   "week_start": "2026-02-15",
+   "hours": 40.0
+  },
+  {
+   "tech": "T1",
+   "week_start": "2026-02-22",
+   "hours": 40.0
+  },
+  {
+   "tech": "T2",
+   "week_start": "2026-02-22",
+   "hours": 40.0
+  },
+  {
+   "tech": "T3",
+   "week_start": "2026-02-22",
+   "hours": 40.0
+  },
+  {
+   "tech": "T4",
+   "week_start": "2026-02-22",
+   "hours": 40.0
+  },
+  {
+   "tech": "T5",
+   "week_start": "2026-02-22",
+   "hours": 40.0
+  },
+  {
+   "tech": "T6",
+   "week_start": "2026-02-22",
+   "hours": 40.0
+  },
+  {
+   "tech": "T1",
+   "week_start": "2026-03-01",
+   "hours": 40.0
+  },
+  {
+   "tech": "T2",
+   "week_start": "2026-03-01",
+   "hours": 40.0
+  },
+  {
+   "tech": "T3",
+   "week_start": "2026-03-01",
+   "hours": 40.0
+  },
+  {
+   "tech": "T4",
+   "week_start": "2026-03-01",
+   "hours": 40.0
+  },
+  {
+   "tech": "T6",
+   "week_start": "2026-03-01",
+   "hours": 40.0
+  },
+  {
+   "tech": "T1",
+   "week_start": "2026-03-08",
+   "hours": 40.0
+  },
+  {
+   "tech": "T2",
+   "week_start": "2026-03-08",
+   "hours": 40.0
+  },
+  {
+   "tech": "T3",
+   "week_start": "2026-03-08",
+   "hours": 40.0
+  },
+  {
+   "tech": "T4",
+   "week_start": "2026-03-08",
+   "hours": 40.0
+  },
+  {
+   "tech": "T6",
+   "week_start": "2026-03-08",
+   "hours": 40.0
+  },
+  {
+   "tech": "T1",
+   "week_start": "2026-03-15",
+   "hours": 40.0
+  },
+  {
+   "tech": "T2",
+   "week_start": "2026-03-15",
+   "hours": 40.0
+  },
+  {
+   "tech": "T3",
+   "week_start": "2026-03-15",
+   "hours": 40.0
+  },
+  {
+   "tech": "T4",
+   "week_start": "2026-03-15",
+   "hours": 40.0
+  },
+  {
+   "tech": "T6",
+   "week_start": "2026-03-15",
+   "hours": 40.0
+  },
+  {
+   "tech": "T1",
+   "week_start": "2026-03-22",
+   "hours": 40.0
+  },
+  {
+   "tech": "T2",
+   "week_start": "2026-03-22",
+   "hours": 40.0
+  },
+  {
+   "tech": "T3",
+   "week_start": "2026-03-22",
+   "hours": 40.0
+  },
+  {
+   "tech": "T4",
+   "week_start": "2026-03-22",
+   "hours": 40.0
+  },
+  {
+   "tech": "T6",
+   "week_start": "2026-03-22",
+   "hours": 40.0
+  },
+  {
+   "tech": "T1",
+   "week_start": "2026-03-29",
+   "hours": 40.0
+  },
+  {
+   "tech": "T2",
+   "week_start": "2026-03-29",
+   "hours": 40.0
+  },
+  {
+   "tech": "T3",
+   "week_start": "2026-03-29",
+   "hours": 40.0
+  },
+  {
+   "tech": "T4",
+   "week_start": "2026-03-29",
+   "hours": 40.0
+  },
+  {
+   "tech": "T6",
+   "week_start": "2026-03-29",
+   "hours": 40.0
+  },
+  {
+   "tech": "T1",
+   "week_start": "2026-04-05",
+   "hours": 40.0
+  },
+  {
+   "tech": "T2",
+   "week_start": "2026-04-05",
+   "hours": 40.0
+  },
+  {
+   "tech": "T3",
+   "week_start": "2026-04-05",
+   "hours": 40.0
+  },
+  {
+   "tech": "T4",
+   "week_start": "2026-04-05",
+   "hours": 40.0
+  },
+  {
+   "tech": "T6",
+   "week_start": "2026-04-05",
+   "hours": 40.0
+  },
+  {
+   "tech": "T1",
+   "week_start": "2026-04-12",
+   "hours": 40.0
+  },
+  {
+   "tech": "T2",
+   "week_start": "2026-04-12",
+   "hours": 40.0
+  },
+  {
+   "tech": "T3",
+   "week_start": "2026-04-12",
+   "hours": 40.0
+  },
+  {
+   "tech": "T4",
+   "week_start": "2026-04-12",
+   "hours": 40.0
+  },
+  {
+   "tech": "T6",
+   "week_start": "2026-04-12",
+   "hours": 40.0
+  },
+  {
+   "tech": "T1",
+   "week_start": "2026-04-19",
+   "hours": 40.0
+  },
+  {
+   "tech": "T2",
+   "week_start": "2026-04-19",
+   "hours": 40.0
+  },
+  {
+   "tech": "T3",
+   "week_start": "2026-04-19",
+   "hours": 40.0
+  },
+  {
+   "tech": "T4",
+   "week_start": "2026-04-19",
+   "hours": 40.0
+  },
+  {
+   "tech": "T6",
+   "week_start": "2026-04-19",
+   "hours": 40.0
+  },
+  {
+   "tech": "T1",
+   "week_start": "2026-04-26",
+   "hours": 40.0
+  },
+  {
+   "tech": "T2",
+   "week_start": "2026-04-26",
+   "hours": 40.0
+  },
+  {
+   "tech": "T3",
+   "week_start": "2026-04-26",
+   "hours": 40.0
+  },
+  {
+   "tech": "T4",
+   "week_start": "2026-04-26",
+   "hours": 40.0
+  },
+  {
+   "tech": "T6",
+   "week_start": "2026-04-26",
+   "hours": 40.0
+  },
+  {
+   "tech": "T1",
+   "week_start": "2026-05-03",
+   "hours": 40.0
+  },
+  {
+   "tech": "T2",
+   "week_start": "2026-05-03",
+   "hours": 40.0
+  },
+  {
+   "tech": "T3",
+   "week_start": "2026-05-03",
+   "hours": 40.0
+  },
+  {
+   "tech": "T4",
+   "week_start": "2026-05-03",
+   "hours": 40.0
+  },
+  {
+   "tech": "T6",
+   "week_start": "2026-05-03",
+   "hours": 40.0
+  },
+  {
+   "tech": "T1",
+   "week_start": "2026-05-10",
+   "hours": 40.0
+  },
+  {
+   "tech": "T2",
+   "week_start": "2026-05-10",
+   "hours": 40.0
+  },
+  {
+   "tech": "T3",
+   "week_start": "2026-05-10",
+   "hours": 40.0
+  },
+  {
+   "tech": "T4",
+   "week_start": "2026-05-10",
+   "hours": 40.0
+  },
+  {
+   "tech": "T6",
+   "week_start": "2026-05-10",
+   "hours": 40.0
+  },
+  {
+   "tech": "T1",
+   "week_start": "2026-05-17",
+   "hours": 40.0
+  },
+  {
+   "tech": "T2",
+   "week_start": "2026-05-17",
+   "hours": 40.0
+  },
+  {
+   "tech": "T3",
+   "week_start": "2026-05-17",
+   "hours": 40.0
+  },
+  {
+   "tech": "T4",
+   "week_start": "2026-05-17",
+   "hours": 40.0
+  },
+  {
+   "tech": "T6",
+   "week_start": "2026-05-17",
+   "hours": 40.0
+  },
+  {
+   "tech": "T1",
+   "week_start": "2026-05-24",
+   "hours": 40.0
+  },
+  {
+   "tech": "T2",
+   "week_start": "2026-05-24",
+   "hours": 40.0
+  },
+  {
+   "tech": "T3",
+   "week_start": "2026-05-24",
+   "hours": 40.0
+  },
+  {
+   "tech": "T4",
+   "week_start": "2026-05-24",
+   "hours": 40.0
+  },
+  {
+   "tech": "T6",
+   "week_start": "2026-05-24",
+   "hours": 40.0
+  },
+  {
+   "tech": "T1",
+   "week_start": "2026-05-31",
+   "hours": 40.0
+  },
+  {
+   "tech": "T2",
+   "week_start": "2026-05-31",
+   "hours": 40.0
+  },
+  {
+   "tech": "T3",
+   "week_start": "2026-05-31",
+   "hours": 40.0
+  },
+  {
+   "tech": "T4",
+   "week_start": "2026-05-31",
+   "hours": 40.0
+  },
+  {
+   "tech": "T6",
+   "week_start": "2026-05-31",
+   "hours": 40.0
+  },
+  {
+   "tech": "T1",
+   "week_start": "2026-06-07",
+   "hours": 40.0
+  },
+  {
+   "tech": "T2",
+   "week_start": "2026-06-07",
+   "hours": 40.0
+  },
+  {
+   "tech": "T3",
+   "week_start": "2026-06-07",
+   "hours": 40.0
+  },
+  {
+   "tech": "T4",
+   "week_start": "2026-06-07",
+   "hours": 40.0
+  },
+  {
+   "tech": "T6",
+   "week_start": "2026-06-07",
+   "hours": 40.0
+  },
+  {
+   "tech": "T1",
+   "week_start": "2026-06-14",
+   "hours": 40.0
+  },
+  {
+   "tech": "T2",
+   "week_start": "2026-06-14",
+   "hours": 40.0
+  },
+  {
+   "tech": "T3",
+   "week_start": "2026-06-14",
+   "hours": 40.0
+  },
+  {
+   "tech": "T4",
+   "week_start": "2026-06-14",
+   "hours": 40.0
+  },
+  {
+   "tech": "T6",
+   "week_start": "2026-06-14",
+   "hours": 40.0
+  },
+  {
+   "tech": "T1",
+   "week_start": "2026-06-21",
+   "hours": 40.0
+  },
+  {
+   "tech": "T2",
+   "week_start": "2026-06-21",
+   "hours": 40.0
+  },
+  {
+   "tech": "T3",
+   "week_start": "2026-06-21",
+   "hours": 40.0
+  },
+  {
+   "tech": "T4",
+   "week_start": "2026-06-21",
+   "hours": 40.0
+  },
+  {
+   "tech": "T6",
+   "week_start": "2026-06-21",
+   "hours": 40.0
+  }
+ ],
+ "id_field": "tech",
+ "description": "weekly paid hours"
+}

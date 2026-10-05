@@ -1,0 +1,125 @@
+{
+ "absent_supplier_sku": "C-777",
+ "break_units": 500,
+ "defected_customer": "cust_0042",
+ "duplicate_email_pairs": [
+  [
+   "cust_0010",
+   "cust_0300"
+  ],
+  [
+   "cust_0011",
+   "cust_0301"
+  ],
+  [
+   "cust_0012",
+   "cust_0302"
+  ],
+  [
+   "cust_0013",
+   "cust_0303"
+  ],
+  [
+   "cust_0014",
+   "cust_0304"
+  ],
+  [
+   "cust_0015",
+   "cust_0305"
+  ],
+  [
+   "cust_0016",
+   "cust_0306"
+  ],
+  [
+   "cust_0017",
+   "cust_0307"
+  ],
+  [
+   "cust_0018",
+   "cust_0308"
+  ],
+  [
+   "cust_0019",
+   "cust_0309"
+  ],
+  [
+   "cust_0020",
+   "cust_0310"
+  ],
+  [
+   "cust_0021",
+   "cust_0311"
+  ]
+ ],
+ "focal_quarter": "2026Q2",
+ "gp_focal": 8200.0,
+ "gp_gap": 1800.0,
+ "gp_prior": 10000.0,
+ "like_for_like_pct_saturday": -19.97,
+ "like_for_like_pct_sunday": -19.66,
+ "location_without_manager": "S3",
+ "margin_focal_pct": 37.27,
+ "margin_prior_pct": 45.45,
+ "price_limit_pct": 5.0,
+ "prior_quarter": "2026Q1",
+ "product_a": "A-100",
+ "product_b": "B-200",
+ "restore_order_cost": 540.0,
+ "same_name_pairs": [
+  [
+   "cust_0050",
+   "cust_0320"
+  ],
+  [
+   "cust_0051",
+   "cust_0321"
+  ],
+  [
+   "cust_0052",
+   "cust_0322"
+  ],
+  [
+   "cust_0053",
+   "cust_0323"
+  ]
+ ],
+ "shortfall_units": 30,
+ "tax_payment": 9800.0,
+ "tax_payment_date": "2026-01-08",
+ "tier_value_per_quarter": 1800.0,
+ "unit_cost_by_quarter": {
+  "2025Q1": {
+   "A-100": 15.0,
+   "B-200": 30.0
+  },
+  "2025Q2": {
+   "A-100": 15.0,
+   "B-200": 30.0
+  },
+  "2025Q3": {
+   "A-100": 15.0,
+   "B-200": 30.0
+  },
+  "2025Q4": {
+   "A-100": 15.0,
+   "B-200": 30.0
+  },
+  "2026Q1": {
+   "A-100": 15.0,
+   "B-200": 30.0
+  },
+  "2026Q2": {
+   "A-100": 18.0,
+   "B-200": 33.0
+  }
+ },
+ "units_ordered_by_quarter": {
+  "2025Q1": 600,
+  "2025Q2": 610,
+  "2025Q3": 620,
+  "2025Q4": 610,
+  "2026Q1": 470,
+  "2026Q2": 480
+ }
+}

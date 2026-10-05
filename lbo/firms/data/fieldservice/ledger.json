@@ -1,0 +1,116 @@
+{
+ "name": "ledger",
+ "exported_at": "2026-07-01T08:00:00",
+ "records": [
+  {
+   "journal_id": "J-2025Q1-A",
+   "kind": "channel_spend",
+   "channel": "A",
+   "amount": 1000.0,
+   "effective_on": "2025-01-01",
+   "entered_on": "2025-01-04",
+   "memo": "Channel A ads"
+  },
+  {
+   "journal_id": "J-2025Q1-B",
+   "kind": "channel_spend",
+   "channel": "B",
+   "amount": 800.0,
+   "effective_on": "2025-01-01",
+   "entered_on": "2025-01-04",
+   "memo": "Channel B ads"
+  },
+  {
+   "journal_id": "J-2025Q2-A",
+   "kind": "channel_spend",
+   "channel": "A",
+   "amount": 1000.0,
+   "effective_on": "2025-04-01",
+   "entered_on": "2025-04-04",
+   "memo": "Channel A ads"
+  },
+  {
+   "journal_id": "J-2025Q2-B",
+   "kind": "channel_spend",
+   "channel": "B",
+   "amount": 800.0,
+   "effective_on": "2025-04-01",
+   "entered_on": "2025-04-04",
+   "memo": "Channel B ads"
+  },
+  {
+   "journal_id": "J-2025Q3-A",
+   "kind": "channel_spend",
+   "channel": "A",
+   "amount": 1000.0,
+   "effective_on": "2025-07-01",
+   "entered_on": "2025-07-04",
+   "memo": "Channel A ads"
+  },
+  {
+   "journal_id": "J-2025Q3-B",
+   "kind": "channel_spend",
+   "channel": "B",
+   "amount": 800.0,
+   "effective_on": "2025-07-01",
+   "entered_on": "2025-07-04",
+   "memo": "Channel B ads"
+  },
+  {
+   "journal_id": "J-2025Q4-A",
+   "kind": "channel_spend",
+   "channel": "A",
+   "amount": 1000.0,
+   "effective_on": "2025-10-01",
+   "entered_on": "2025-10-04",
+   "memo": "Channel A ads"
+  },
+  {
+   "journal_id": "J-2025Q4-B",
+   "kind": "channel_spend",
+   "channel": "B",
+   "amount": 800.0,
+   "effective_on": "2025-10-01",
+   "entered_on": "2025-10-04",
+   "memo": "Channel B ads"
+  },
+  {
+   "journal_id": "J-2026Q1-A",
+   "kind": "channel_spend",
+   "channel": "A",
+   "amount": 1000.0,
+   "effective_on": "2026-01-01",
+   "entered_on": "2026-01-04",
+   "memo": "Channel A ads"
+  },
+  {
+   "journal_id": "J-2026Q1-B",
+   "kind": "channel_spend",
+   "channel": "B",
+   "amount": 800.0,
+   "effective_on": "2026-01-01",
+   "entered_on": "2026-01-04",
+   "memo": "Channel B ads"
+  },
+  {
+   "journal_id": "J-2026Q2-A",
+   "kind": "channel_spend",
+   "channel": "A",
+   "amount": 1000.0,
+   "effective_on": "2026-04-01",
+   "entered_on": "2026-04-04",
+   "memo": "Channel A ads"
+  },
+  {
+   "journal_id": "J-2026Q2-B",
+   "kind": "channel_spend",
+   "channel": "B",
+   "amount": 800.0,
+   "effective_on": "2026-04-01",
+   "entered_on": "2026-04-04",
+   "memo": "Channel B ads"
+  }
+ ],
+ "id_field": "journal_id",
+ "description": "channel spend by quarter"
+}

@@ -1,0 +1,589 @@
+{
+ "firm": "fieldservice",
+ "arm": "C",
+ "task": "f_channel_inversion",
+ "model": "claude-sonnet-5",
+ "date": "2026-09-29",
+ "turns": [
+  {
+   "role": "owner",
+   "kind": "message",
+   "text": "Channel B brings in $250 of net contribution per lead and channel A only $70. Should we double channel B's spend next quarter? Say what the extra $800 would actually bring in.",
+   "name": ""
+  },
+  {
+   "role": "agent",
+   "kind": "tool_call",
+   "text": "{}",
+   "name": "describe_schema"
+  },
+  {
+   "role": "tool",
+   "kind": "tool_result",
+   "text": "{\"entities\": [{\"name\": \"party\", \"layer\": \"core\", \"fields\": [\"name\", \"email\", \"phone\"], \"required_by\": [\"customer_questions\", \"identity\"], \"origin\": \"core\"}, {\"name\": \"person\", \"layer\": \"core\", \"fields\": [\"name\", \"role\", \"hourly_cost\", \"employed\"], \"required_by\": [\"labour_questions\", \"credited_to\"], \"origin\": \"core\"}, {\"name\": \"location\", \"layer\": \"core\", \"fields\": [\"name\", \"sqft\"], \"required_by\": [\"sales_per_sqft\", \"reorder\"], \"origin\": \"core\"}, {\"name\": \"product\", \"layer\": \"core\", \"fields\": [\"sku\", \"name\", \"category\", \"unit_cost\", \"list_price\"], \"required_by\": [\"margin\", \"reorder\"], \"origin\": \"core\"}, {\"name\": \"supplier\", \"layer\": \"core\", \"fields\": [\"name\", \"terms\"], \"required_by\": [\"margin_two_hops\"], \"origin\": \"core\"}, {\"name\": \"order\", \"layer\": \"core\", \"fields\": [\"placed_at\", \"channel\"], \"required_by\": [\"sales\", \"customer_questions\"], \"origin\": \"core\"}, {\"name\": \"order_line\", \"layer\": \"core\", \"fields\": [\"qty\", \"unit_price\", \"sold_at\"], \"required_by\": [\"sales\", \"margin\"], \"origin\": \"core\"}, {\"name\": \"invoice\", \"layer\": \"core\", \"fields\": [\"issued_at\", \"due_at\", \"amount\", \"currency\", \"state\", \"gross_profit\", \"chased_on\"], \"required_by\": [\"receivables\", \"sales\"], \"origin\": \"core\"}, {\"name\": \"payment\", \"layer\": \"core\", \"fields\": [\"paid_at\", \"amount\", \"method\"], \"required_by\": [\"cash\", \"receivables\"], \"origin\": \"core\"}, {\"name\": \"schedule\", \"layer\": \"core\", \"fields\": [\"hours\"], \"required_by\": [\"labour_questions\"], \"origin\": \"core\"}, {\"name\": \"metric_definition\", \"layer\": \"meaning\", \"fields\": [\"version\", \"grain\", \"basis\"], \"required_by\": [\"every_measure\"], \"origin\": \"core\"}, {\"name\": \"decision\", \"layer\": \"control\", \"fields\": [\"question\", \"taken_at\"], \"required_by\": [\"journal\"], \"origin\": \"core\"}, {\"name\": \"action\", \"layer\": \"control\", \"fields\": [\"status\"], \"required_by\": [\"journal\"], \"origin\": \"core\"}, {\"name\": \"grant\", \"layer\": \"control\", \"fields\": [\"principal\", \"action\", \"scope\", \"limits\"], \"required_by\": [\"authority\"], \"origin\": \"core\"}, {\"name\": \"message\", \"layer\": \"control\", \"fields\": [\"audience\", \"to\", \"text\", \"sent_on\"], \"required_by\": [\"journal\"], \"origin\": \"core\"}, {\"name\": \"lead\", \"layer\": \"extension\", \"fields\": [\"created_on\", \"channel\", \"status\"], \"required_by\": [\"channel_questions\"], \"origin\": \"fieldservice\"}, {\"name\": \"job\", \"layer\": \"extension\", \"fields\": [\"scheduled_on\", \"performed_on\", \"revenue\", \"direct_cost\", \"hours\", \"service_line\"], \"required_by\": [\"channel_questions\", \"capacity\"], \"origin\": \"fieldservice\"}, {\"name\": \"crew\", \"layer\": \"extension\", \"fields\": [\"name\"], \"required_by\": [\"capacity\"], \"origin\": \"fieldservice\"}, {\"name\": \"certification\", \"layer\": \"extension\", \"fields\": [\"name\"], \"required_by\": [\"capacity\"], \"origin\": \"fieldservice\"}, {\"name\": \"channel\", \"layer\": \"extension\", \"fields\": [\"name\", \"spend_on\"], \"required_by\": [\"channel_questions\"], \"origin\": \"fieldservice\"}, {\"name\": \"service_line\", \"layer\": \"extension\", \"fields\": [\"name\"], \"required_by\": [\"capacity\"], \"origin\": \"fieldservice\"}], \"relations\": [{\"name\": \"order.placed_by\", \"source\": \"order\", \"target\": \"party\", \"layer\": \"core\", \"required_by\": [\"customer_questions\"], \"origin\": \"core\"}, {\"name\": \"order_line.of_order\", \"source\": \"order_line\", \"target\": \"order\", \"layer\": \"core\", \"required_by\": [\"sales\"], \"origin\": \"core\"}, {\"name\": \"order_line.of_product\", \"source\": \"order_line\", \"target\": \"product\", \"layer\": \"core\", \"required_by\": [\"sales\", \"margin\"], \"origin\": \"core\"}, {\"name\": \"order_line.rang_up_at\", \"source\": \"order_line\", \"target\": \"location\", \"layer\": \"core\", \"required_by\": [\"manager_bonus\"], \"origin\": \"core\"}, {\"name\": \"order_line.fulfilled_from\", \"source\": \"order_line\", \"target\": \"location\", \"layer\": \"core\", \"required_by\": [\"sales_per_sqft\"], \"origin\": \"core\"}, {\"name\": \"order_line.stock_drawn_from\", \"source\": \"order_line\", \"target\": \"location\", \"layer\": \"core\", \"required_by\": [\"reorder\"], \"origin\": \"core\"}, {\"name\": \"order_line.credited_to\", \"source\": \"order_line\", \"target\": \"person\", \"layer\": \"core\", \"required_by\": [\"commission\"], \"ori",
+   "name": "describe_schema"
+  },
+  {
+   "role": "agent",
+   "kind": "tool_call",
+   "text": "{\"entity_type\": \"channel\", \"name_contains\": \"\", \"offset\": \"\"}",
+   "name": "find_entities"
+  },
+  {
+   "role": "agent",
+   "kind": "tool_call",
+   "text": "{}",
+   "name": "list_metrics"
+  },
+  {
+   "role": "tool",
+   "kind": "tool_result",
+   "text": "{\"entities\": [{\"id\": \"channel:B\", \"name\": \"B\"}, {\"id\": \"channel:A\", \"name\": \"A\"}, {\"id\": \"channel:referral\", \"name\": \"referral\"}], \"count\": 3, \"offset\": 0, \"truncated\": false}",
+   "name": "find_entities"
+  },
+  {
+   "role": "tool",
+   "kind": "tool_result",
+   "text": "[{\"name\": \"gross_sales\", \"version\": \"v1\", \"grain\": \"order line\", \"units\": \"usd\", \"basis\": \"quantity times unit price, before returns and tax\"}, {\"name\": \"cost_of_goods\", \"version\": \"v1\", \"grain\": \"order line\", \"units\": \"usd\", \"basis\": \"quantity times the unit cost valid on the sale date\"}, {\"name\": \"gross_profit\", \"version\": \"v1\", \"grain\": \"order line\", \"units\": \"usd\", \"basis\": \"gross sales less cost of goods at the unit cost valid on the sale date\"}, {\"name\": \"gross_margin_pct\", \"version\": \"v1\", \"grain\": \"window\", \"units\": \"percent\", \"basis\": \"gross profit as a percentage of gross sales, two decimals\"}, {\"name\": \"job_margin\", \"version\": \"v1\", \"grain\": \"job\", \"units\": \"usd\", \"basis\": \"revenue less directly assigned job cost, before channel spend\"}, {\"name\": \"channel_spend\", \"version\": \"v1\", \"grain\": \"channel\", \"units\": \"usd\", \"basis\": \"ledger spend by channel, effective in the window\"}, {\"name\": \"net_contribution\", \"version\": \"v1\", \"grain\": \"channel\", \"units\": \"usd\", \"basis\": \"job margin less channel spend, by channel\"}, {\"name\": \"tech_utilisation_pct\", \"version\": \"v1\", \"grain\": \"technician\", \"units\": \"percent\", \"basis\": \"scheduled hours as a percentage of 8 hours per weekday in the window\"}]",
+   "name": "list_metrics"
+  },
+  {
+   "role": "agent",
+   "kind": "tool_call",
+   "text": "{\"name\": \"net_contribution\", \"start\": \"2026-04-01\", \"end\": \"2026-07-01\", \"known_at\": \"\", \"filter_json\": \"{\\\"lead.via_channel\\\": \\\"channel:B\\\"}\"}",
+   "name": "compute_metric"
+  },
+  {
+   "role": "tool",
+   "kind": "tool_result",
+   "text": "{\"name\": \"net_contribution\", \"value\": {\"channel:B\": -800.0, \"channel:A\": -1000.0}, \"window\": [\"2026-04-01\", \"2026-07-01\"], \"base\": \"job margin less channel spend, by channel\", \"definition_version\": \"v1\", \"notes\": [], \"filters\": {\"lead.via_channel\": \"channel:B\"}}",
+   "name": "compute_metric"
+  },
+  {
+   "role": "agent",
+   "kind": "tool_call",
+   "text": "{\"name\": \"net_contribution\", \"start\": \"2026-04-01\", \"end\": \"2026-07-01\", \"known_at\": \"\", \"filter_json\": \"{\\\"lead.via_channel\\\": \\\"channel:A\\\"}\"}",
+   "name": "compute_metric"
+  },
+  {
+   "role": "tool",
+   "kind": "tool_result",
+   "text": "{\"name\": \"net_contribution\", \"value\": {\"channel:B\": -800.0, \"channel:A\": -1000.0}, \"window\": [\"2026-04-01\", \"2026-07-01\"], \"base\": \"job margin less channel spend, by channel\", \"definition_version\": \"v1\", \"notes\": [], \"filters\": {\"lead.via_channel\": \"channel:A\"}}",
+   "name": "compute_metric"
+  },
+  {
+   "role": "agent",
+   "kind": "tool_call",
+   "text": "{\"name\": \"channel_spend\", \"start\": \"2026-04-01\", \"end\": \"2026-07-01\", \"known_at\": \"\", \"filter_json\": \"{\\\"lead.via_channel\\\": \\\"channel:B\\\"}\"}",
+   "name": "compute_metric"
+  },
+  {
+   "role": "tool",
+   "kind": "tool_result",
+   "text": "{\"name\": \"channel_spend\", \"value\": {\"channel:A\": 1000.0, \"channel:B\": 800.0}, \"window\": [\"2026-04-01\", \"2026-07-01\"], \"base\": \"ledger spend by channel, effective in the window\", \"definition_version\": \"v1\", \"notes\": [], \"filters\": {\"lead.via_channel\": \"channel:B\"}}",
+   "name": "compute_metric"
+  },
+  {
+   "role": "agent",
+   "kind": "tool_call",
+   "text": "{\"name\": \"channel_spend\", \"start\": \"2026-04-01\", \"end\": \"2026-07-01\", \"known_at\": \"\", \"filter_json\": \"{\\\"lead.via_channel\\\": \\\"channel:A\\\"}\"}",
+   "name": "compute_metric"
+  },
+  {
+   "role": "tool",
+   "kind": "tool_result",
+   "text": "{\"name\": \"channel_spend\", \"value\": {\"channel:A\": 1000.0, \"channel:B\": 800.0}, \"window\": [\"2026-04-01\", \"2026-07-01\"], \"base\": \"ledger spend by channel, effective in the window\", \"definition_version\": \"v1\", \"notes\": [], \"filters\": {\"lead.via_channel\": \"channel:A\"}}",
+   "name": "compute_metric"
+  },
+  {
+   "role": "agent",
+   "kind": "tool_call",
+   "text": "{\"subject\": \"channel:B\", \"predicate\": \"lead.via_channel\", \"direction\": \"in\", \"as_of\": \"\", \"offset\": \"\"}",
+   "name": "traverse"
+  },
+  {
+   "role": "tool",
+   "kind": "tool_result",
+   "text": "{\"edges\": [{\"id\": 57, \"subject\": \"lead:LD00001\", \"predicate\": \"lead.via_channel\", \"value\": \"channel:B\", \"valid_from\": \"2025-01-01\", \"valid_to\": null, \"status\": \"observed\"}, {\"id\": 72, \"subject\": \"lead:LD00004\", \"predicate\": \"lead.via_channel\", \"value\": \"channel:B\", \"valid_from\": \"2025-01-03\", \"valid_to\": null, \"status\": \"observed\"}, {\"id\": 87, \"subject\": \"lead:LD00007\", \"predicate\": \"lead.via_channel\", \"value\": \"channel:B\", \"valid_from\": \"2025-01-07\", \"valid_to\": null, \"status\": \"observed\"}, {\"id\": 102, \"subject\": \"lead:LD00010\", \"predicate\": \"lead.via_channel\", \"value\": \"channel:B\", \"valid_from\": \"2025-01-09\", \"valid_to\": null, \"status\": \"observed\"}, {\"id\": 117, \"subject\": \"lead:LD00013\", \"predicate\": \"lead.via_channel\", \"value\": \"channel:B\", \"valid_from\": \"2025-01-13\", \"valid_to\": null, \"status\": \"observed\"}, {\"id\": 132, \"subject\": \"lead:LD00016\", \"predicate\": \"lead.via_channel\", \"value\": \"channel:B\", \"valid_from\": \"2025-01-15\", \"valid_to\": null, \"status\": \"observed\"}, {\"id\": 147, \"subject\": \"lead:LD00019\", \"predicate\": \"lead.via_channel\", \"value\": \"channel:B\", \"valid_from\": \"2025-01-17\", \"valid_to\": null, \"status\": \"observed\"}, {\"id\": 162, \"subject\": \"lead:LD00022\", \"predicate\": \"lead.via_channel\", \"value\": \"channel:B\", \"valid_from\": \"2025-01-21\", \"valid_to\": null, \"status\": \"observed\"}, {\"id\": 177, \"subject\": \"lead:LD00025\", \"predicate\": \"lead.via_channel\", \"value\": \"channel:B\", \"valid_from\": \"2025-01-24\", \"valid_to\": null, \"status\": \"observed\"}, {\"id\": 192, \"subject\": \"lead:LD00028\", \"predicate\": \"lead.via_channel\", \"value\": \"channel:B\", \"valid_from\": \"2025-01-28\", \"valid_to\": null, \"status\": \"observed\"}, {\"id\": 207, \"subject\": \"lead:LD00031\", \"predicate\": \"lead.via_channel\", \"value\": \"channel:B\", \"valid_from\": \"2025-01-30\", \"valid_to\": null, \"status\": \"observed\"}, {\"id\": 222, \"subject\": \"lead:LD00034\", \"predicate\": \"lead.via_channel\", \"value\": \"channel:B\", \"valid_from\": \"2025-02-03\", \"valid_to\": null, \"status\": \"observed\"}, {\"id\": 237, \"subject\": \"lead:LD00037\", \"predicate\": \"lead.via_channel\", \"value\": \"channel:B\", \"valid_from\": \"2025-02-05\", \"valid_to\": null, \"status\": \"observed\"}, {\"id\": 252, \"subject\": \"lead:LD00040\", \"predicate\": \"lead.via_channel\", \"value\": \"channel:B\", \"valid_from\": \"2025-02-07\", \"valid_to\": null, \"status\": \"observed\"}, {\"id\": 267, \"subject\": \"lead:LD00043\", \"predicate\": \"lead.via_channel\", \"value\": \"channel:B\", \"valid_from\": \"2025-02-11\", \"valid_to\": null, \"status\": \"observed\"}, {\"id\": 282, \"subject\": \"lead:LD00046\", \"predicate\": \"lead.via_channel\", \"value\": \"channel:B\", \"valid_from\": \"2025-02-14\", \"valid_to\": null, \"status\": \"observed\"}, {\"id\": 297, \"subject\": \"lead:LD00049\", \"predicate\": \"lead.via_channel\", \"value\": \"channel:B\", \"valid_from\": \"2025-02-18\", \"valid_to\": null, \"status\": \"observed\"}, {\"id\": 312, \"subject\": \"lead:LD00052\", \"predicate\": \"lead.via_channel\", \"value\": \"channel:B\", \"valid_from\": \"2025-02-20\", \"valid_to\": null, \"status\": \"observed\"}, {\"id\": 327, \"subject\": \"lead:LD00055\", \"predicate\": \"lead.via_channel\", \"value\": \"channel:B\", \"valid_from\": \"2025-02-24\", \"valid_to\": null, \"status\": \"observed\"}, {\"id\": 342, \"subject\": \"lead:LD00058\", \"predicate\": \"lead.via_channel\", \"value\": \"channel:B\", \"valid_from\": \"2025-02-26\", \"valid_to\": null, \"status\": \"observed\"}, {\"id\": 357, \"subject\": \"lead:LD00061\", \"predicate\": \"lead.via_channel\", \"value\": \"channel:B\", \"valid_from\": \"2025-02-28\", \"valid_to\": null, \"status\": \"observed\"}, {\"id\": 372, \"subject\": \"lead:LD00064\", \"predicate\": \"lead.via_channel\", \"value\": \"channel:B\", \"valid_from\": \"2025-03-04\", \"valid_to\": null, \"status\": \"observed\"}, {\"id\": 387, \"subject\": \"lead:LD00067\", \"predicate\": \"lead.via_channel\", \"value\": \"channel:B\", \"valid_from\": \"2025-03-06\", \"valid_to\": null, \"status\": \"observed\"}, {\"id\": 402, \"subject\": \"lead:LD00070\", \"predicate\": \"lead.via_channel\", \"value\": \"channel:B\", \"valid_from\": \"2025-03-11\", \"valid_to\": null, \"status\": \"observed\"}, {\"id\": 417, \"subject\": \"lead:LD00073\", \"predicate\": \"lead.via_channel\", \"value\":",
+   "name": "traverse"
+  },
+  {
+   "role": "agent",
+   "kind": "tool_call",
+   "text": "{\"subject\": \"channel:A\", \"predicate\": \"lead.via_channel\", \"direction\": \"in\", \"as_of\": \"\", \"offset\": \"\"}",
+   "name": "traverse"
+  },
+  {
+   "role": "tool",
+   "kind": "tool_result",
+   "text": "{\"edges\": [{\"id\": 62, \"subject\": \"lead:LD00002\", \"predicate\": \"lead.via_channel\", \"value\": \"channel:A\", \"valid_from\": \"2025-01-01\", \"valid_to\": null, \"status\": \"observed\"}, {\"id\": 67, \"subject\": \"lead:LD00003\", \"predicate\": \"lead.via_channel\", \"value\": \"channel:A\", \"valid_from\": \"2025-01-02\", \"valid_to\": null, \"status\": \"observed\"}, {\"id\": 77, \"subject\": \"lead:LD00005\", \"predicate\": \"lead.via_channel\", \"value\": \"channel:A\", \"valid_from\": \"2025-01-03\", \"valid_to\": null, \"status\": \"observed\"}, {\"id\": 82, \"subject\": \"lead:LD00006\", \"predicate\": \"lead.via_channel\", \"value\": \"channel:A\", \"valid_from\": \"2025-01-06\", \"valid_to\": null, \"status\": \"observed\"}, {\"id\": 92, \"subject\": \"lead:LD00008\", \"predicate\": \"lead.via_channel\", \"value\": \"channel:A\", \"valid_from\": \"2025-01-07\", \"valid_to\": null, \"status\": \"observed\"}, {\"id\": 97, \"subject\": \"lead:LD00009\", \"predicate\": \"lead.via_channel\", \"value\": \"channel:A\", \"valid_from\": \"2025-01-08\", \"valid_to\": null, \"status\": \"observed\"}, {\"id\": 107, \"subject\": \"lead:LD00011\", \"predicate\": \"lead.via_channel\", \"value\": \"channel:A\", \"valid_from\": \"2025-01-10\", \"valid_to\": null, \"status\": \"observed\"}, {\"id\": 112, \"subject\": \"lead:LD00012\", \"predicate\": \"lead.via_channel\", \"value\": \"channel:A\", \"valid_from\": \"2025-01-10\", \"valid_to\": null, \"status\": \"observed\"}, {\"id\": 122, \"subject\": \"lead:LD00014\", \"predicate\": \"lead.via_channel\", \"value\": \"channel:A\", \"valid_from\": \"2025-01-14\", \"valid_to\": null, \"status\": \"observed\"}, {\"id\": 127, \"subject\": \"lead:LD00015\", \"predicate\": \"lead.via_channel\", \"value\": \"channel:A\", \"valid_from\": \"2025-01-14\", \"valid_to\": null, \"status\": \"observed\"}, {\"id\": 137, \"subject\": \"lead:LD00017\", \"predicate\": \"lead.via_channel\", \"value\": \"channel:A\", \"valid_from\": \"2025-01-16\", \"valid_to\": null, \"status\": \"observed\"}, {\"id\": 142, \"subject\": \"lead:LD00018\", \"predicate\": \"lead.via_channel\", \"value\": \"channel:A\", \"valid_from\": \"2025-01-17\", \"valid_to\": null, \"status\": \"observed\"}, {\"id\": 152, \"subject\": \"lead:LD00020\", \"predicate\": \"lead.via_channel\", \"value\": \"channel:A\", \"valid_from\": \"2025-01-20\", \"valid_to\": null, \"status\": \"observed\"}, {\"id\": 157, \"subject\": \"lead:LD00021\", \"predicate\": \"lead.via_channel\", \"value\": \"channel:A\", \"valid_from\": \"2025-01-21\", \"valid_to\": null, \"status\": \"observed\"}, {\"id\": 167, \"subject\": \"lead:LD00023\", \"predicate\": \"lead.via_channel\", \"value\": \"channel:A\", \"valid_from\": \"2025-01-22\", \"valid_to\": null, \"status\": \"observed\"}, {\"id\": 172, \"subject\": \"lead:LD00024\", \"predicate\": \"lead.via_channel\", \"value\": \"channel:A\", \"valid_from\": \"2025-01-23\", \"valid_to\": null, \"status\": \"observed\"}, {\"id\": 182, \"subject\": \"lead:LD00026\", \"predicate\": \"lead.via_channel\", \"value\": \"channel:A\", \"valid_from\": \"2025-01-24\", \"valid_to\": null, \"status\": \"observed\"}, {\"id\": 187, \"subject\": \"lead:LD00027\", \"predicate\": \"lead.via_channel\", \"value\": \"channel:A\", \"valid_from\": \"2025-01-27\", \"valid_to\": null, \"status\": \"observed\"}, {\"id\": 197, \"subject\": \"lead:LD00029\", \"predicate\": \"lead.via_channel\", \"value\": \"channel:A\", \"valid_from\": \"2025-01-28\", \"valid_to\": null, \"status\": \"observed\"}, {\"id\": 202, \"subject\": \"lead:LD00030\", \"predicate\": \"lead.via_channel\", \"value\": \"channel:A\", \"valid_from\": \"2025-01-29\", \"valid_to\": null, \"status\": \"observed\"}, {\"id\": 212, \"subject\": \"lead:LD00032\", \"predicate\": \"lead.via_channel\", \"value\": \"channel:A\", \"valid_from\": \"2025-01-31\", \"valid_to\": null, \"status\": \"observed\"}, {\"id\": 217, \"subject\": \"lead:LD00033\", \"predicate\": \"lead.via_channel\", \"value\": \"channel:A\", \"valid_from\": \"2025-01-31\", \"valid_to\": null, \"status\": \"observed\"}, {\"id\": 227, \"subject\": \"lead:LD00035\", \"predicate\": \"lead.via_channel\", \"value\": \"channel:A\", \"valid_from\": \"2025-02-04\", \"valid_to\": null, \"status\": \"observed\"}, {\"id\": 232, \"subject\": \"lead:LD00036\", \"predicate\": \"lead.via_channel\", \"value\": \"channel:A\", \"valid_from\": \"2025-02-04\", \"valid_to\": null, \"status\": \"observed\"}, {\"id\": 242, \"subject\": \"lead:LD00038\", \"predicate\": \"lead.via_channel\", \"value\": \"c",
+   "name": "traverse"
+  },
+  {
+   "role": "agent",
+   "kind": "tool_call",
+   "text": "{\"name\": \"net_contribution\", \"start\": \"2026-04-01\", \"end\": \"2026-07-01\", \"known_at\": \"\", \"filter_json\": \"\"}",
+   "name": "compute_metric"
+  },
+  {
+   "role": "tool",
+   "kind": "tool_result",
+   "text": "{\"name\": \"net_contribution\", \"value\": {\"channel:A\": 7000.0, \"channel:B\": 10000.0, \"channel:referral\": 38080.0}, \"window\": [\"2026-04-01\", \"2026-07-01\"], \"base\": \"job margin less channel spend, by channel\", \"definition_version\": \"v1\", \"notes\": []}",
+   "name": "compute_metric"
+  },
+  {
+   "role": "agent",
+   "kind": "tool_call",
+   "text": "{\"name\": \"net_contribution\", \"start\": \"2025-01-01\", \"end\": \"2026-07-01\", \"known_at\": \"\", \"filter_json\": \"\"}",
+   "name": "compute_metric"
+  },
+  {
+   "role": "tool",
+   "kind": "tool_result",
+   "text": "{\"name\": \"net_contribution\", \"value\": {\"channel:A\": 27249.65, \"channel:B\": 32148.22, \"channel:referral\": 38080.0}, \"window\": [\"2025-01-01\", \"2026-07-01\"], \"base\": \"job margin less channel spend, by channel\", \"definition_version\": \"v1\", \"notes\": []}",
+   "name": "compute_metric"
+  },
+  {
+   "role": "agent",
+   "kind": "tool_call",
+   "text": "{\"name\": \"channel_spend\", \"start\": \"2025-01-01\", \"end\": \"2026-07-01\", \"known_at\": \"\", \"filter_json\": \"\"}",
+   "name": "compute_metric"
+  },
+  {
+   "role": "tool",
+   "kind": "tool_result",
+   "text": "{\"name\": \"channel_spend\", \"value\": {\"channel:A\": 6000.0, \"channel:B\": 4800.0}, \"window\": [\"2025-01-01\", \"2026-07-01\"], \"base\": \"ledger spend by channel, effective in the window\", \"definition_version\": \"v1\", \"notes\": []}",
+   "name": "compute_metric"
+  },
+  {
+   "role": "agent",
+   "kind": "tool_call",
+   "text": "{\"name\": \"channel_spend\", \"start\": \"2025-01-01\", \"end\": \"2025-04-01\", \"known_at\": \"\", \"filter_json\": \"\"}",
+   "name": "compute_metric"
+  },
+  {
+   "role": "agent",
+   "kind": "tool_call",
+   "text": "{\"name\": \"channel_spend\", \"start\": \"2025-04-01\", \"end\": \"2025-07-01\", \"known_at\": \"\", \"filter_json\": \"\"}",
+   "name": "compute_metric"
+  },
+  {
+   "role": "agent",
+   "kind": "tool_call",
+   "text": "{\"name\": \"channel_spend\", \"start\": \"2025-07-01\", \"end\": \"2025-10-01\", \"known_at\": \"\", \"filter_json\": \"\"}",
+   "name": "compute_metric"
+  },
+  {
+   "role": "agent",
+   "kind": "tool_call",
+   "text": "{\"name\": \"channel_spend\", \"start\": \"2025-10-01\", \"end\": \"2026-01-01\", \"known_at\": \"\", \"filter_json\": \"\"}",
+   "name": "compute_metric"
+  },
+  {
+   "role": "agent",
+   "kind": "tool_call",
+   "text": "{\"name\": \"channel_spend\", \"start\": \"2026-01-01\", \"end\": \"2026-04-01\", \"known_at\": \"\", \"filter_json\": \"\"}",
+   "name": "compute_metric"
+  },
+  {
+   "role": "agent",
+   "kind": "tool_call",
+   "text": "{\"name\": \"net_contribution\", \"start\": \"2025-01-01\", \"end\": \"2025-04-01\", \"known_at\": \"\", \"filter_json\": \"\"}",
+   "name": "compute_metric"
+  },
+  {
+   "role": "agent",
+   "kind": "tool_call",
+   "text": "{\"name\": \"net_contribution\", \"start\": \"2025-04-01\", \"end\": \"2025-07-01\", \"known_at\": \"\", \"filter_json\": \"\"}",
+   "name": "compute_metric"
+  },
+  {
+   "role": "agent",
+   "kind": "tool_call",
+   "text": "{\"name\": \"net_contribution\", \"start\": \"2025-07-01\", \"end\": \"2025-10-01\", \"known_at\": \"\", \"filter_json\": \"\"}",
+   "name": "compute_metric"
+  },
+  {
+   "role": "tool",
+   "kind": "tool_result",
+   "text": "{\"name\": \"channel_spend\", \"value\": {\"channel:A\": 1000.0, \"channel:B\": 800.0}, \"window\": [\"2025-01-01\", \"2025-04-01\"], \"base\": \"ledger spend by channel, effective in the window\", \"definition_version\": \"v1\", \"notes\": []}",
+   "name": "compute_metric"
+  },
+  {
+   "role": "tool",
+   "kind": "tool_result",
+   "text": "{\"name\": \"channel_spend\", \"value\": {\"channel:A\": 1000.0, \"channel:B\": 800.0}, \"window\": [\"2025-04-01\", \"2025-07-01\"], \"base\": \"ledger spend by channel, effective in the window\", \"definition_version\": \"v1\", \"notes\": []}",
+   "name": "compute_metric"
+  },
+  {
+   "role": "tool",
+   "kind": "tool_result",
+   "text": "{\"name\": \"channel_spend\", \"value\": {\"channel:A\": 1000.0, \"channel:B\": 800.0}, \"window\": [\"2025-07-01\", \"2025-10-01\"], \"base\": \"ledger spend by channel, effective in the window\", \"definition_version\": \"v1\", \"notes\": []}",
+   "name": "compute_metric"
+  },
+  {
+   "role": "tool",
+   "kind": "tool_result",
+   "text": "{\"name\": \"channel_spend\", \"value\": {\"channel:A\": 1000.0, \"channel:B\": 800.0}, \"window\": [\"2025-10-01\", \"2026-01-01\"], \"base\": \"ledger spend by channel, effective in the window\", \"definition_version\": \"v1\", \"notes\": []}",
+   "name": "compute_metric"
+  },
+  {
+   "role": "tool",
+   "kind": "tool_result",
+   "text": "{\"name\": \"channel_spend\", \"value\": {\"channel:A\": 1000.0, \"channel:B\": 800.0}, \"window\": [\"2026-01-01\", \"2026-04-01\"], \"base\": \"ledger spend by channel, effective in the window\", \"definition_version\": \"v1\", \"notes\": []}",
+   "name": "compute_metric"
+  },
+  {
+   "role": "agent",
+   "kind": "tool_call",
+   "text": "{\"name\": \"net_contribution\", \"start\": \"2025-10-01\", \"end\": \"2026-01-01\", \"known_at\": \"\", \"filter_json\": \"\"}",
+   "name": "compute_metric"
+  },
+  {
+   "role": "tool",
+   "kind": "tool_result",
+   "text": "{\"name\": \"net_contribution\", \"value\": {\"channel:B\": 2303.19, \"channel:A\": 7101.11}, \"window\": [\"2025-01-01\", \"2025-04-01\"], \"base\": \"job margin less channel spend, by channel\", \"definition_version\": \"v1\", \"notes\": []}",
+   "name": "compute_metric"
+  },
+  {
+   "role": "tool",
+   "kind": "tool_result",
+   "text": "{\"name\": \"net_contribution\", \"value\": {\"channel:B\": 5563.37, \"channel:A\": 1483.88}, \"window\": [\"2025-04-01\", \"2025-07-01\"], \"base\": \"job margin less channel spend, by channel\", \"definition_version\": \"v1\", \"notes\": []}",
+   "name": "compute_metric"
+  },
+  {
+   "role": "tool",
+   "kind": "tool_result",
+   "text": "{\"name\": \"net_contribution\", \"value\": {\"channel:B\": 3628.68, \"channel:A\": 3190.88}, \"window\": [\"2025-07-01\", \"2025-10-01\"], \"base\": \"job margin less channel spend, by channel\", \"definition_version\": \"v1\", \"notes\": []}",
+   "name": "compute_metric"
+  },
+  {
+   "role": "tool",
+   "kind": "tool_result",
+   "text": "{\"name\": \"net_contribution\", \"value\": {\"channel:B\": 4240.82, \"channel:A\": 4390.3}, \"window\": [\"2025-10-01\", \"2026-01-01\"], \"base\": \"job margin less channel spend, by channel\", \"definition_version\": \"v1\", \"notes\": []}",
+   "name": "compute_metric"
+  },
+  {
+   "role": "agent",
+   "kind": "tool_call",
+   "text": "{\"name\": \"net_contribution\", \"start\": \"2026-01-01\", \"end\": \"2026-04-01\", \"known_at\": \"\", \"filter_json\": \"\"}",
+   "name": "compute_metric"
+  },
+  {
+   "role": "tool",
+   "kind": "tool_result",
+   "text": "{\"name\": \"net_contribution\", \"value\": {\"channel:B\": 6412.16, \"channel:A\": 4083.48}, \"window\": [\"2026-01-01\", \"2026-04-01\"], \"base\": \"job margin less channel spend, by channel\", \"definition_version\": \"v1\", \"notes\": []}",
+   "name": "compute_metric"
+  },
+  {
+   "role": "agent",
+   "kind": "tool_call",
+   "text": "{\"name\": \"tech_utilisation_pct\", \"start\": \"2026-04-01\", \"end\": \"2026-07-01\", \"known_at\": \"\", \"filter_json\": \"\"}",
+   "name": "compute_metric"
+  },
+  {
+   "role": "tool",
+   "kind": "tool_result",
+   "text": "{\"name\": \"tech_utilisation_pct\", \"value\": {\"person:1df02abf\": 3.85, \"person:96f1a912\": 3.85, \"person:d2ad7944\": 3.85, \"person:b41f33a8\": 3.85, \"person:78ead53c\": 94.0}, \"window\": [\"2026-04-01\", \"2026-07-01\"], \"base\": \"scheduled hours as a percentage of 8 hours per weekday in the window\", \"definition_version\": \"v1\", \"notes\": [\"available hours per technician: 520.0\"]}",
+   "name": "compute_metric"
+  },
+  {
+   "role": "agent",
+   "kind": "tool_call",
+   "text": "{\"subject\": \"channel:B\", \"predicate\": \"spend_on\", \"as_of\": \"\", \"known_at\": \"\", \"offset\": \"\"}",
+   "name": "get_assertions"
+  },
+  {
+   "role": "tool",
+   "kind": "tool_result",
+   "text": "{\"assertions\": [], \"count\": 0, \"offset\": 0, \"truncated\": false}",
+   "name": "get_assertions"
+  },
+  {
+   "role": "agent",
+   "kind": "tool_call",
+   "text": "{\"subject\": \"channel:B\", \"predicate\": \"spend_on\", \"offset\": \"\"}",
+   "name": "history"
+  },
+  {
+   "role": "tool",
+   "kind": "tool_result",
+   "text": "{\"history\": [], \"count\": 0, \"offset\": 0, \"truncated\": false}",
+   "name": "history"
+  },
+  {
+   "role": "agent",
+   "kind": "tool_call",
+   "text": "{\"subject\": \"person:78ead53c\", \"predicate\": \"holds\", \"direction\": \"out\", \"as_of\": \"\", \"offset\": \"\"}",
+   "name": "traverse"
+  },
+  {
+   "role": "tool",
+   "kind": "tool_result",
+   "text": "{\"edges\": [], \"count\": 0, \"offset\": 0, \"truncated\": false}",
+   "name": "traverse"
+  },
+  {
+   "role": "agent",
+   "kind": "tool_call",
+   "text": "{\"subject\": \"person:78ead53c\", \"predicate\": \"assigned_tech\", \"direction\": \"in\", \"as_of\": \"\", \"offset\": \"\"}",
+   "name": "traverse"
+  },
+  {
+   "role": "tool",
+   "kind": "tool_result",
+   "text": "{\"edges\": [], \"count\": 0, \"offset\": 0, \"truncated\": false}",
+   "name": "traverse"
+  },
+  {
+   "role": "agent",
+   "kind": "tool_call",
+   "text": "{\"entity_type\": \"person\", \"name_contains\": \"\", \"offset\": \"\"}",
+   "name": "find_entities"
+  },
+  {
+   "role": "tool",
+   "kind": "tool_result",
+   "text": "{\"entities\": [{\"id\": \"person:1df02abf\", \"name\": \"Owen Marsh\"}, {\"id\": \"person:96f1a912\", \"name\": \"Pia Lund\"}, {\"id\": \"person:78ead53c\", \"name\": \"Rafa Osei\"}, {\"id\": \"person:d2ad7944\", \"name\": \"Sam Iyer\"}, {\"id\": \"person:c5ba1f37\", \"name\": \"Tomas Bell\"}, {\"id\": \"person:b41f33a8\", \"name\": \"Uma Sato\"}], \"count\": 6, \"offset\": 0, \"truncated\": false}",
+   "name": "find_entities"
+  },
+  {
+   "role": "agent",
+   "kind": "tool_call",
+   "text": "{\"entity_type\": \"service_line\", \"name_contains\": \"\", \"offset\": \"\"}",
+   "name": "find_entities"
+  },
+  {
+   "role": "tool",
+   "kind": "tool_result",
+   "text": "{\"entities\": [{\"id\": \"service_line:install\", \"name\": \"install\"}, {\"id\": \"service_line:hvac-service\", \"name\": \"hvac-service\"}, {\"id\": \"service_line:backflow\", \"name\": \"backflow\"}, {\"id\": \"service_line:plumbing\", \"name\": \"plumbing\"}, {\"id\": \"service_line:electrical\", \"name\": \"electrical\"}], \"count\": 5, \"offset\": 0, \"truncated\": false}",
+   "name": "find_entities"
+  },
+  {
+   "role": "agent",
+   "kind": "tool_call",
+   "text": "{\"subject\": \"person:78ead53c\", \"predicate\": \"job.assigned_tech\", \"direction\": \"in\", \"as_of\": \"\", \"offset\": \"\"}",
+   "name": "traverse"
+  },
+  {
+   "role": "tool",
+   "kind": "tool_result",
+   "text": "{\"edges\": [{\"id\": 2888, \"subject\": \"job:J00003\", \"predicate\": \"job.assigned_tech\", \"value\": \"person:78ead53c\", \"valid_from\": \"2025-01-10\", \"valid_to\": null, \"status\": \"observed\"}, {\"id\": 3236, \"subject\": \"job:J00032\", \"predicate\": \"job.assigned_tech\", \"value\": \"person:78ead53c\", \"valid_from\": \"2025-05-27\", \"valid_to\": null, \"status\": \"observed\"}, {\"id\": 3344, \"subject\": \"job:J00041\", \"predicate\": \"job.assigned_tech\", \"value\": \"person:78ead53c\", \"valid_from\": \"2025-07-28\", \"valid_to\": null, \"status\": \"observed\"}, {\"id\": 3356, \"subject\": \"job:J00042\", \"predicate\": \"job.assigned_tech\", \"value\": \"person:78ead53c\", \"valid_from\": \"2025-08-04\", \"valid_to\": null, \"status\": \"observed\"}, {\"id\": 3392, \"subject\": \"job:J00045\", \"predicate\": \"job.assigned_tech\", \"value\": \"person:78ead53c\", \"valid_from\": \"2025-08-14\", \"valid_to\": null, \"status\": \"observed\"}, {\"id\": 3428, \"subject\": \"job:J00048\", \"predicate\": \"job.assigned_tech\", \"value\": \"person:78ead53c\", \"valid_from\": \"2025-08-22\", \"valid_to\": null, \"status\": \"observed\"}, {\"id\": 3500, \"subject\": \"job:J00054\", \"predicate\": \"job.assigned_tech\", \"value\": \"person:78ead53c\", \"valid_from\": \"2025-09-09\", \"valid_to\": null, \"status\": \"observed\"}, {\"id\": 3644, \"subject\": \"job:J00066\", \"predicate\": \"job.assigned_tech\", \"value\": \"person:78ead53c\", \"valid_from\": \"2025-11-25\", \"valid_to\": null, \"status\": \"observed\"}, {\"id\": 3656, \"subject\": \"job:J00067\", \"predicate\": \"job.assigned_tech\", \"value\": \"person:78ead53c\", \"valid_from\": \"2025-11-27\", \"valid_to\": null, \"status\": \"observed\"}, {\"id\": 3740, \"subject\": \"job:J00074\", \"predicate\": \"job.assigned_tech\", \"value\": \"person:78ead53c\", \"valid_from\": \"2026-01-01\", \"valid_to\": null, \"status\": \"observed\"}, {\"id\": 3752, \"subject\": \"job:J00075\", \"predicate\": \"job.assigned_tech\", \"value\": \"person:78ead53c\", \"valid_from\": \"2026-01-02\", \"valid_to\": null, \"status\": \"observed\"}, {\"id\": 3776, \"subject\": \"job:J00077\", \"predicate\": \"job.assigned_tech\", \"value\": \"person:78ead53c\", \"valid_from\": \"2026-01-05\", \"valid_to\": null, \"status\": \"observed\"}, {\"id\": 3872, \"subject\": \"job:J00085\", \"predicate\": \"job.assigned_tech\", \"value\": \"person:78ead53c\", \"valid_from\": \"2026-01-30\", \"valid_to\": null, \"status\": \"observed\"}, {\"id\": 3884, \"subject\": \"job:J00086\", \"predicate\": \"job.assigned_tech\", \"value\": \"person:78ead53c\", \"valid_from\": \"2026-02-02\", \"valid_to\": null, \"status\": \"observed\"}, {\"id\": 4220, \"subject\": \"job:J00114\", \"predicate\": \"job.assigned_tech\", \"value\": \"person:78ead53c\", \"valid_from\": \"2026-04-01\", \"valid_to\": null, \"status\": \"observed\"}, {\"id\": 4232, \"subject\": \"job:J00115\", \"predicate\": \"job.assigned_tech\", \"value\": \"person:78ead53c\", \"valid_from\": \"2026-04-06\", \"valid_to\": null, \"status\": \"observed\"}, {\"id\": 4244, \"subject\": \"job:J00116\", \"predicate\": \"job.assigned_tech\", \"value\": \"person:78ead53c\", \"valid_from\": \"2026-04-10\", \"valid_to\": null, \"status\": \"observed\"}, {\"id\": 4256, \"subject\": \"job:J00117\", \"predicate\": \"job.assigned_tech\", \"value\": \"person:78ead53c\", \"valid_from\": \"2026-04-15\", \"valid_to\": null, \"status\": \"observed\"}, {\"id\": 4268, \"subject\": \"job:J00118\", \"predicate\": \"job.assigned_tech\", \"value\": \"person:78ead53c\", \"valid_from\": \"2026-04-21\", \"valid_to\": null, \"status\": \"observed\"}, {\"id\": 4280, \"subject\": \"job:J00119\", \"predicate\": \"job.assigned_tech\", \"value\": \"person:78ead53c\", \"valid_from\": \"2026-04-27\", \"valid_to\": null, \"status\": \"observed\"}, {\"id\": 4292, \"subject\": \"job:J00120\", \"predicate\": \"job.assigned_tech\", \"value\": \"person:78ead53c\", \"valid_from\": \"2026-04-30\", \"valid_to\": null, \"status\": \"observed\"}, {\"id\": 4304, \"subject\": \"job:J00121\", \"predicate\": \"job.assigned_tech\", \"value\": \"person:78ead53c\", \"valid_from\": \"2026-05-06\", \"valid_to\": null, \"status\": \"observed\"}, {\"id\": 4316, \"subject\": \"job:J00122\", \"predicate\": \"job.assigned_tech\", \"value\": \"person:78ead53c\", \"valid_from\": \"2026-05-11\", \"valid_to\": null, \"status\": \"observed\"}, {\"id\": 4328, \"subject\": \"job:J00123\", \"predicate\": \"job.assigned_tech\", \"value\": \"person:78ead53c\", \"v",
+   "name": "traverse"
+  },
+  {
+   "role": "agent",
+   "kind": "tool_call",
+   "text": "{\"subject\": \"person:78ead53c\", \"predicate\": \"person.holds\", \"direction\": \"out\", \"as_of\": \"\", \"offset\": \"\"}",
+   "name": "traverse"
+  },
+  {
+   "role": "tool",
+   "kind": "tool_result",
+   "text": "{\"edges\": [{\"id\": 44, \"subject\": \"person:78ead53c\", \"predicate\": \"person.holds\", \"value\": \"certification:backflow-tester\", \"valid_from\": \"2024-03-11\", \"valid_to\": null, \"status\": \"observed\"}], \"count\": 1, \"offset\": 0, \"truncated\": false}",
+   "name": "traverse"
+  },
+  {
+   "role": "agent",
+   "kind": "tool_call",
+   "text": "{\"subject\": \"job:J00114\", \"predicate\": \"job.in_service_line\", \"direction\": \"out\", \"as_of\": \"\", \"offset\": \"\"}",
+   "name": "traverse"
+  },
+  {
+   "role": "agent",
+   "kind": "tool_call",
+   "text": "{\"subject\": \"job:J00114\", \"predicate\": \"job.from_lead\", \"direction\": \"out\", \"as_of\": \"\", \"offset\": \"\"}",
+   "name": "traverse"
+  },
+  {
+   "role": "agent",
+   "kind": "tool_call",
+   "text": "{\"subject\": \"service_line:backflow\", \"predicate\": \"service_line.requires\", \"direction\": \"out\", \"as_of\": \"\", \"offset\": \"\"}",
+   "name": "traverse"
+  },
+  {
+   "role": "agent",
+   "kind": "tool_call",
+   "text": "{\"subject\": \"certification:backflow-tester\", \"predicate\": \"person.holds\", \"direction\": \"in\", \"as_of\": \"\", \"offset\": \"\"}",
+   "name": "traverse"
+  },
+  {
+   "role": "tool",
+   "kind": "tool_result",
+   "text": "{\"edges\": [{\"id\": 4219, \"subject\": \"job:J00114\", \"predicate\": \"job.in_service_line\", \"value\": \"service_line:backflow\", \"valid_from\": \"2026-04-01\", \"valid_to\": null, \"status\": \"observed\"}], \"count\": 1, \"offset\": 0, \"truncated\": false}",
+   "name": "traverse"
+  },
+  {
+   "role": "tool",
+   "kind": "tool_result",
+   "text": "{\"edges\": [{\"id\": 4215, \"subject\": \"job:J00114\", \"predicate\": \"job.from_lead\", \"value\": \"lead:LD00460\", \"valid_from\": \"2026-04-01\", \"valid_to\": null, \"status\": \"observed\"}], \"count\": 1, \"offset\": 0, \"truncated\": false}",
+   "name": "traverse"
+  },
+  {
+   "role": "tool",
+   "kind": "tool_result",
+   "text": "{\"edges\": [{\"id\": 5362, \"subject\": \"service_line:backflow\", \"predicate\": \"service_line.requires\", \"value\": \"certification:backflow-tester\", \"valid_from\": \"2025-01-01\", \"valid_to\": null, \"status\": \"observed\"}], \"count\": 1, \"offset\": 0, \"truncated\": false}",
+   "name": "traverse"
+  },
+  {
+   "role": "tool",
+   "kind": "tool_result",
+   "text": "{\"edges\": [{\"id\": 44, \"subject\": \"person:78ead53c\", \"predicate\": \"person.holds\", \"value\": \"certification:backflow-tester\", \"valid_from\": \"2024-03-11\", \"valid_to\": null, \"status\": \"observed\"}, {\"id\": 46, \"subject\": \"person:c5ba1f37\", \"predicate\": \"person.holds\", \"value\": \"certification:backflow-tester\", \"valid_from\": \"2023-09-02\", \"valid_to\": null, \"status\": \"observed\"}], \"count\": 2, \"offset\": 0, \"truncated\": false}",
+   "name": "traverse"
+  },
+  {
+   "role": "agent",
+   "kind": "tool_call",
+   "text": "{\"subject\": \"lead:LD00460\", \"predicate\": \"via_channel\", \"as_of\": \"\", \"known_at\": \"\", \"offset\": \"\"}",
+   "name": "get_assertions"
+  },
+  {
+   "role": "tool",
+   "kind": "tool_result",
+   "text": "{\"assertions\": [], \"count\": 0, \"offset\": 0, \"truncated\": false}",
+   "name": "get_assertions"
+  },
+  {
+   "role": "agent",
+   "kind": "tool_call",
+   "text": "{\"subject\": \"person:c5ba1f37\", \"predicate\": \"job.assigned_tech\", \"direction\": \"in\", \"as_of\": \"\", \"offset\": \"\"}",
+   "name": "traverse"
+  },
+  {
+   "role": "tool",
+   "kind": "tool_result",
+   "text": "{\"edges\": [{\"id\": 2900, \"subject\": \"job:J00004\", \"predicate\": \"job.assigned_tech\", \"value\": \"person:c5ba1f37\", \"valid_from\": \"2025-01-15\", \"valid_to\": null, \"status\": \"observed\"}, {\"id\": 2912, \"subject\": \"job:J00005\", \"predicate\": \"job.assigned_tech\", \"value\": \"person:c5ba1f37\", \"valid_from\": \"2025-01-24\", \"valid_to\": null, \"status\": \"observed\"}, {\"id\": 2936, \"subject\": \"job:J00007\", \"predicate\": \"job.assigned_tech\", \"value\": \"person:c5ba1f37\", \"valid_from\": \"2025-01-31\", \"valid_to\": null, \"status\": \"observed\"}, {\"id\": 2948, \"subject\": \"job:J00008\", \"predicate\": \"job.assigned_tech\", \"value\": \"person:c5ba1f37\", \"valid_from\": \"2025-02-03\", \"valid_to\": null, \"status\": \"observed\"}, {\"id\": 2996, \"subject\": \"job:J00012\", \"predicate\": \"job.assigned_tech\", \"value\": \"person:c5ba1f37\", \"valid_from\": \"2025-02-14\", \"valid_to\": null, \"status\": \"observed\"}, {\"id\": 3008, \"subject\": \"job:J00013\", \"predicate\": \"job.assigned_tech\", \"value\": \"person:c5ba1f37\", \"valid_from\": \"2025-02-17\", \"valid_to\": null, \"status\": \"observed\"}, {\"id\": 3032, \"subject\": \"job:J00015\", \"predicate\": \"job.assigned_tech\", \"value\": \"person:c5ba1f37\", \"valid_from\": \"2025-02-20\", \"valid_to\": null, \"status\": \"observed\"}, {\"id\": 3068, \"subject\": \"job:J00018\", \"predicate\": \"job.assigned_tech\", \"value\": \"person:c5ba1f37\", \"valid_from\": \"2025-03-06\", \"valid_to\": null, \"status\": \"observed\"}, {\"id\": 3080, \"subject\": \"job:J00019\", \"predicate\": \"job.assigned_tech\", \"value\": \"person:c5ba1f37\", \"valid_from\": \"2025-03-07\", \"valid_to\": null, \"status\": \"observed\"}, {\"id\": 3128, \"subject\": \"job:J00023\", \"predicate\": \"job.assigned_tech\", \"value\": \"person:c5ba1f37\", \"valid_from\": \"2025-04-03\", \"valid_to\": null, \"status\": \"observed\"}, {\"id\": 3176, \"subject\": \"job:J00027\", \"predicate\": \"job.assigned_tech\", \"value\": \"person:c5ba1f37\", \"valid_from\": \"2025-04-22\", \"valid_to\": null, \"status\": \"observed\"}, {\"id\": 3200, \"subject\": \"job:J00029\", \"predicate\": \"job.assigned_tech\", \"value\": \"person:c5ba1f37\", \"valid_from\": \"2025-04-30\", \"valid_to\": null, \"status\": \"observed\"}, {\"id\": 3212, \"subject\": \"job:J00030\", \"predicate\": \"job.assigned_tech\", \"value\": \"person:c5ba1f37\", \"valid_from\": \"2025-05-07\", \"valid_to\": null, \"status\": \"observed\"}, {\"id\": 3224, \"subject\": \"job:J00031\", \"predicate\": \"job.assigned_tech\", \"value\": \"person:c5ba1f37\", \"valid_from\": \"2025-05-26\", \"valid_to\": null, \"status\": \"observed\"}, {\"id\": 3260, \"subject\": \"job:J00034\", \"predicate\": \"job.assigned_tech\", \"value\": \"person:c5ba1f37\", \"valid_from\": \"2025-05-30\", \"valid_to\": null, \"status\": \"observed\"}, {\"id\": 3524, \"subject\": \"job:J00056\", \"predicate\": \"job.assigned_tech\", \"value\": \"person:c5ba1f37\", \"valid_from\": \"2025-09-11\", \"valid_to\": null, \"status\": \"observed\"}, {\"id\": 3572, \"subject\": \"job:J00060\", \"predicate\": \"job.assigned_tech\", \"value\": \"person:c5ba1f37\", \"valid_from\": \"2025-10-27\", \"valid_to\": null, \"status\": \"observed\"}, {\"id\": 3584, \"subject\": \"job:J00061\", \"predicate\": \"job.assigned_tech\", \"value\": \"person:c5ba1f37\", \"valid_from\": \"2025-10-28\", \"valid_to\": null, \"status\": \"observed\"}, {\"id\": 3608, \"subject\": \"job:J00063\", \"predicate\": \"job.assigned_tech\", \"value\": \"person:c5ba1f37\", \"valid_from\": \"2025-11-12\", \"valid_to\": null, \"status\": \"observed\"}, {\"id\": 3716, \"subject\": \"job:J00072\", \"predicate\": \"job.assigned_tech\", \"value\": \"person:c5ba1f37\", \"valid_from\": \"2025-12-04\", \"valid_to\": null, \"status\": \"observed\"}, {\"id\": 3728, \"subject\": \"job:J00073\", \"predicate\": \"job.assigned_tech\", \"value\": \"person:c5ba1f37\", \"valid_from\": \"2025-12-12\", \"valid_to\": null, \"status\": \"observed\"}, {\"id\": 3764, \"subject\": \"job:J00076\", \"predicate\": \"job.assigned_tech\", \"value\": \"person:c5ba1f37\", \"valid_from\": \"2026-01-05\", \"valid_to\": null, \"status\": \"observed\"}, {\"id\": 3812, \"subject\": \"job:J00080\", \"predicate\": \"job.assigned_tech\", \"value\": \"person:c5ba1f37\", \"valid_from\": \"2026-01-13\", \"valid_to\": null, \"status\": \"observed\"}, {\"id\": 3896, \"subject\": \"job:J00087\", \"predicate\": \"job.assigned_tech\", \"value\": \"person:c5ba1f37\", \"v",
+   "name": "traverse"
+  },
+  {
+   "role": "agent",
+   "kind": "tool_call",
+   "text": "{\"subject\": \"channel:B\", \"predicate\": \"lead.via_channel\", \"direction\": \"in\", \"as_of\": \"\", \"offset\": \"120\"}",
+   "name": "traverse"
+  },
+  {
+   "role": "tool",
+   "kind": "tool_result",
+   "text": "{\"edges\": [{\"id\": 1842, \"subject\": \"lead:LD00358\", \"predicate\": \"lead.via_channel\", \"value\": \"channel:B\", \"valid_from\": \"2026-03-06\", \"valid_to\": null, \"status\": \"observed\"}, {\"id\": 2352, \"subject\": \"lead:LD00460\", \"predicate\": \"lead.via_channel\", \"value\": \"channel:B\", \"valid_from\": \"2026-04-01\", \"valid_to\": null, \"status\": \"observed\"}, {\"id\": 2357, \"subject\": \"lead:LD00461\", \"predicate\": \"lead.via_channel\", \"value\": \"channel:B\", \"valid_from\": \"2026-04-02\", \"valid_to\": null, \"status\": \"observed\"}, {\"id\": 2362, \"subject\": \"lead:LD00462\", \"predicate\": \"lead.via_channel\", \"value\": \"channel:B\", \"valid_from\": \"2026-04-06\", \"valid_to\": null, \"status\": \"observed\"}, {\"id\": 2367, \"subject\": \"lead:LD00463\", \"predicate\": \"lead.via_channel\", \"value\": \"channel:B\", \"valid_from\": \"2026-04-07\", \"valid_to\": null, \"status\": \"observed\"}, {\"id\": 2372, \"subject\": \"lead:LD00464\", \"predicate\": \"lead.via_channel\", \"value\": \"channel:B\", \"valid_from\": \"2026-04-09\", \"valid_to\": null, \"status\": \"observed\"}, {\"id\": 2377, \"subject\": \"lead:LD00465\", \"predicate\": \"lead.via_channel\", \"value\": \"channel:B\", \"valid_from\": \"2026-04-13\", \"valid_to\": null, \"status\": \"observed\"}, {\"id\": 2382, \"subject\": \"lead:LD00466\", \"predicate\": \"lead.via_channel\", \"value\": \"channel:B\", \"valid_from\": \"2026-04-14\", \"valid_to\": null, \"status\": \"observed\"}, {\"id\": 2387, \"subject\": \"lead:LD00467\", \"predicate\": \"lead.via_channel\", \"value\": \"channel:B\", \"valid_from\": \"2026-04-16\", \"valid_to\": null, \"status\": \"observed\"}, {\"id\": 2392, \"subject\": \"lead:LD00468\", \"predicate\": \"lead.via_channel\", \"value\": \"channel:B\", \"valid_from\": \"2026-04-20\", \"valid_to\": null, \"status\": \"observed\"}, {\"id\": 2397, \"subject\": \"lead:LD00469\", \"predicate\": \"lead.via_channel\", \"value\": \"channel:B\", \"valid_from\": \"2026-04-21\", \"valid_to\": null, \"status\": \"observed\"}, {\"id\": 2402, \"subject\": \"lead:LD00470\", \"predicate\": \"lead.via_channel\", \"value\": \"channel:B\", \"valid_from\": \"2026-04-23\", \"valid_to\": null, \"status\": \"observed\"}, {\"id\": 2407, \"subject\": \"lead:LD00471\", \"predicate\": \"lead.via_channel\", \"value\": \"channel:B\", \"valid_from\": \"2026-04-24\", \"valid_to\": null, \"status\": \"observed\"}, {\"id\": 2412, \"subject\": \"lead:LD00472\", \"predicate\": \"lead.via_channel\", \"value\": \"channel:B\", \"valid_from\": \"2026-04-28\", \"valid_to\": null, \"status\": \"observed\"}, {\"id\": 2417, \"subject\": \"lead:LD00473\", \"predicate\": \"lead.via_channel\", \"value\": \"channel:B\", \"valid_from\": \"2026-04-30\", \"valid_to\": null, \"status\": \"observed\"}, {\"id\": 2422, \"subject\": \"lead:LD00474\", \"predicate\": \"lead.via_channel\", \"value\": \"channel:B\", \"valid_from\": \"2026-05-01\", \"valid_to\": null, \"status\": \"observed\"}, {\"id\": 2427, \"subject\": \"lead:LD00475\", \"predicate\": \"lead.via_channel\", \"value\": \"channel:B\", \"valid_from\": \"2026-05-05\", \"valid_to\": null, \"status\": \"observed\"}, {\"id\": 2432, \"subject\": \"lead:LD00476\", \"predicate\": \"lead.via_channel\", \"value\": \"channel:B\", \"valid_from\": \"2026-05-07\", \"valid_to\": null, \"status\": \"observed\"}, {\"id\": 2437, \"subject\": \"lead:LD00477\", \"predicate\": \"lead.via_channel\", \"value\": \"channel:B\", \"valid_from\": \"2026-05-08\", \"valid_to\": null, \"status\": \"observed\"}, {\"id\": 2442, \"subject\": \"lead:LD00478\", \"predicate\": \"lead.via_channel\", \"value\": \"channel:B\", \"valid_from\": \"2026-05-12\", \"valid_to\": null, \"status\": \"observed\"}, {\"id\": 2447, \"subject\": \"lead:LD00479\", \"predicate\": \"lead.via_channel\", \"value\": \"channel:B\", \"valid_from\": \"2026-05-13\", \"valid_to\": null, \"status\": \"observed\"}, {\"id\": 2452, \"subject\": \"lead:LD00480\", \"predicate\": \"lead.via_channel\", \"value\": \"channel:B\", \"valid_from\": \"2026-05-15\", \"valid_to\": null, \"status\": \"observed\"}, {\"id\": 2457, \"subject\": \"lead:LD00481\", \"predicate\": \"lead.via_channel\", \"value\": \"channel:B\", \"valid_from\": \"2026-05-19\", \"valid_to\": null, \"status\": \"observed\"}, {\"id\": 2462, \"subject\": \"lead:LD00482\", \"predicate\": \"lead.via_channel\", \"value\": \"channel:B\", \"valid_from\": \"2026-05-20\", \"valid_to\": null, \"status\": \"observed\"}, {\"id\": 2467, \"subject\": \"lead:LD00483\", \"predicate\": ",
+   "name": "traverse"
+  },
+  {
+   "role": "agent",
+   "kind": "tool_call",
+   "text": "{\"subject\": \"channel:A\", \"predicate\": \"lead.via_channel\", \"direction\": \"in\", \"as_of\": \"\", \"offset\": \"280\"}",
+   "name": "traverse"
+  },
+  {
+   "role": "tool",
+   "kind": "tool_result",
+   "text": "{\"edges\": [{\"id\": 2062, \"subject\": \"lead:LD00402\", \"predicate\": \"lead.via_channel\", \"value\": \"channel:A\", \"valid_from\": \"2026-05-08\", \"valid_to\": null, \"status\": \"observed\"}, {\"id\": 2067, \"subject\": \"lead:LD00403\", \"predicate\": \"lead.via_channel\", \"value\": \"channel:A\", \"valid_from\": \"2026-05-08\", \"valid_to\": null, \"status\": \"observed\"}, {\"id\": 2072, \"subject\": \"lead:LD00404\", \"predicate\": \"lead.via_channel\", \"value\": \"channel:A\", \"valid_from\": \"2026-05-11\", \"valid_to\": null, \"status\": \"observed\"}, {\"id\": 2077, \"subject\": \"lead:LD00405\", \"predicate\": \"lead.via_channel\", \"value\": \"channel:A\", \"valid_from\": \"2026-05-12\", \"valid_to\": null, \"status\": \"observed\"}, {\"id\": 2082, \"subject\": \"lead:LD00406\", \"predicate\": \"lead.via_channel\", \"value\": \"channel:A\", \"valid_from\": \"2026-05-12\", \"valid_to\": null, \"status\": \"observed\"}, {\"id\": 2087, \"subject\": \"lead:LD00407\", \"predicate\": \"lead.via_channel\", \"value\": \"channel:A\", \"valid_from\": \"2026-05-13\", \"valid_to\": null, \"status\": \"observed\"}, {\"id\": 2092, \"subject\": \"lead:LD00408\", \"predicate\": \"lead.via_channel\", \"value\": \"channel:A\", \"valid_from\": \"2026-05-14\", \"valid_to\": null, \"status\": \"observed\"}, {\"id\": 2097, \"subject\": \"lead:LD00409\", \"predicate\": \"lead.via_channel\", \"value\": \"channel:A\", \"valid_from\": \"2026-05-14\", \"valid_to\": null, \"status\": \"observed\"}, {\"id\": 2102, \"subject\": \"lead:LD00410\", \"predicate\": \"lead.via_channel\", \"value\": \"channel:A\", \"valid_from\": \"2026-05-15\", \"valid_to\": null, \"status\": \"observed\"}, {\"id\": 2107, \"subject\": \"lead:LD00411\", \"predicate\": \"lead.via_channel\", \"value\": \"channel:A\", \"valid_from\": \"2026-05-18\", \"valid_to\": null, \"status\": \"observed\"}, {\"id\": 2112, \"subject\": \"lead:LD00412\", \"predicate\": \"lead.via_channel\", \"value\": \"channel:A\", \"valid_from\": \"2026-05-18\", \"valid_to\": null, \"status\": \"observed\"}, {\"id\": 2117, \"subject\": \"lead:LD00413\", \"predicate\": \"lead.via_channel\", \"value\": \"channel:A\", \"valid_from\": \"2026-05-19\", \"valid_to\": null, \"status\": \"observed\"}, {\"id\": 2122, \"subject\": \"lead:LD00414\", \"predicate\": \"lead.via_channel\", \"value\": \"channel:A\", \"valid_from\": \"2026-05-20\", \"valid_to\": null, \"status\": \"observed\"}, {\"id\": 2127, \"subject\": \"lead:LD00415\", \"predicate\": \"lead.via_channel\", \"value\": \"channel:A\", \"valid_from\": \"2026-05-20\", \"valid_to\": null, \"status\": \"observed\"}, {\"id\": 2132, \"subject\": \"lead:LD00416\", \"predicate\": \"lead.via_channel\", \"value\": \"channel:A\", \"valid_from\": \"2026-05-21\", \"valid_to\": null, \"status\": \"observed\"}, {\"id\": 2137, \"subject\": \"lead:LD00417\", \"predicate\": \"lead.via_channel\", \"value\": \"channel:A\", \"valid_from\": \"2026-05-22\", \"valid_to\": null, \"status\": \"observed\"}, {\"id\": 2142, \"subject\": \"lead:LD00418\", \"predicate\": \"lead.via_channel\", \"value\": \"channel:A\", \"valid_from\": \"2026-05-22\", \"valid_to\": null, \"status\": \"observed\"}, {\"id\": 2147, \"subject\": \"lead:LD00419\", \"predicate\": \"lead.via_channel\", \"value\": \"channel:A\", \"valid_from\": \"2026-05-25\", \"valid_to\": null, \"status\": \"observed\"}, {\"id\": 2152, \"subject\": \"lead:LD00420\", \"predicate\": \"lead.via_channel\", \"value\": \"channel:A\", \"valid_from\": \"2026-05-26\", \"valid_to\": null, \"status\": \"observed\"}, {\"id\": 2157, \"subject\": \"lead:LD00421\", \"predicate\": \"lead.via_channel\", \"value\": \"channel:A\", \"valid_from\": \"2026-05-26\", \"valid_to\": null, \"status\": \"observed\"}, {\"id\": 2162, \"subject\": \"lead:LD00422\", \"predicate\": \"lead.via_channel\", \"value\": \"channel:A\", \"valid_from\": \"2026-05-27\", \"valid_to\": null, \"status\": \"observed\"}, {\"id\": 2167, \"subject\": \"lead:LD00423\", \"predicate\": \"lead.via_channel\", \"value\": \"channel:A\", \"valid_from\": \"2026-05-27\", \"valid_to\": null, \"status\": \"observed\"}, {\"id\": 2172, \"subject\": \"lead:LD00424\", \"predicate\": \"lead.via_channel\", \"value\": \"channel:A\", \"valid_from\": \"2026-05-28\", \"valid_to\": null, \"status\": \"observed\"}, {\"id\": 2177, \"subject\": \"lead:LD00425\", \"predicate\": \"lead.via_channel\", \"value\": \"channel:A\", \"valid_from\": \"2026-05-29\", \"valid_to\": null, \"status\": \"observed\"}, {\"id\": 2182, \"subject\": \"lead:LD00426\", \"predicate\": ",
+   "name": "traverse"
+  },
+  {
+   "role": "agent",
+   "kind": "tool_call",
+   "text": "{\"subject\": \"channel:A\", \"predicate\": \"lead.via_channel\", \"direction\": \"in\", \"as_of\": \"\", \"offset\": \"250\"}",
+   "name": "traverse"
+  },
+  {
+   "role": "tool",
+   "kind": "tool_result",
+   "text": "{\"edges\": [{\"id\": 1912, \"subject\": \"lead:LD00372\", \"predicate\": \"lead.via_channel\", \"value\": \"channel:A\", \"valid_from\": \"2026-04-10\", \"valid_to\": null, \"status\": \"observed\"}, {\"id\": 1917, \"subject\": \"lead:LD00373\", \"predicate\": \"lead.via_channel\", \"value\": \"channel:A\", \"valid_from\": \"2026-04-13\", \"valid_to\": null, \"status\": \"observed\"}, {\"id\": 1922, \"subject\": \"lead:LD00374\", \"predicate\": \"lead.via_channel\", \"value\": \"channel:A\", \"valid_from\": \"2026-04-14\", \"valid_to\": null, \"status\": \"observed\"}, {\"id\": 1927, \"subject\": \"lead:LD00375\", \"predicate\": \"lead.via_channel\", \"value\": \"channel:A\", \"valid_from\": \"2026-04-14\", \"valid_to\": null, \"status\": \"observed\"}, {\"id\": 1932, \"subject\": \"lead:LD00376\", \"predicate\": \"lead.via_channel\", \"value\": \"channel:A\", \"valid_from\": \"2026-04-15\", \"valid_to\": null, \"status\": \"observed\"}, {\"id\": 1937, \"subject\": \"lead:LD00377\", \"predicate\": \"lead.via_channel\", \"value\": \"channel:A\", \"valid_from\": \"2026-04-16\", \"valid_to\": null, \"status\": \"observed\"}, {\"id\": 1942, \"subject\": \"lead:LD00378\", \"predicate\": \"lead.via_channel\", \"value\": \"channel:A\", \"valid_from\": \"2026-04-16\", \"valid_to\": null, \"status\": \"observed\"}, {\"id\": 1947, \"subject\": \"lead:LD00379\", \"predicate\": \"lead.via_channel\", \"value\": \"channel:A\", \"valid_from\": \"2026-04-17\", \"valid_to\": null, \"status\": \"observed\"}, {\"id\": 1952, \"subject\": \"lead:LD00380\", \"predicate\": \"lead.via_channel\", \"value\": \"channel:A\", \"valid_from\": \"2026-04-20\", \"valid_to\": null, \"status\": \"observed\"}, {\"id\": 1957, \"subject\": \"lead:LD00381\", \"predicate\": \"lead.via_channel\", \"value\": \"channel:A\", \"valid_from\": \"2026-04-20\", \"valid_to\": null, \"status\": \"observed\"}, {\"id\": 1962, \"subject\": \"lead:LD00382\", \"predicate\": \"lead.via_channel\", \"value\": \"channel:A\", \"valid_from\": \"2026-04-21\", \"valid_to\": null, \"status\": \"observed\"}, {\"id\": 1967, \"subject\": \"lead:LD00383\", \"predicate\": \"lead.via_channel\", \"value\": \"channel:A\", \"valid_from\": \"2026-04-21\", \"valid_to\": null, \"status\": \"observed\"}, {\"id\": 1972, \"subject\": \"lead:LD00384\", \"predicate\": \"lead.via_channel\", \"value\": \"channel:A\", \"valid_from\": \"2026-04-22\", \"valid_to\": null, \"status\": \"observed\"}, {\"id\": 1977, \"subject\": \"lead:LD00385\", \"predicate\": \"lead.via_channel\", \"value\": \"channel:A\", \"valid_from\": \"2026-04-23\", \"valid_to\": null, \"status\": \"observed\"}, {\"id\": 1982, \"subject\": \"lead:LD00386\", \"predicate\": \"lead.via_channel\", \"value\": \"channel:A\", \"valid_from\": \"2026-04-23\", \"valid_to\": null, \"status\": \"observed\"}, {\"id\": 1987, \"subject\": \"lead:LD00387\", \"predicate\": \"lead.via_channel\", \"value\": \"channel:A\", \"valid_from\": \"2026-04-24\", \"valid_to\": null, \"status\": \"observed\"}, {\"id\": 1992, \"subject\": \"lead:LD00388\", \"predicate\": \"lead.via_channel\", \"value\": \"channel:A\", \"valid_from\": \"2026-04-27\", \"valid_to\": null, \"status\": \"observed\"}, {\"id\": 1997, \"subject\": \"lead:LD00389\", \"predicate\": \"lead.via_channel\", \"value\": \"channel:A\", \"valid_from\": \"2026-04-27\", \"valid_to\": null, \"status\": \"observed\"}, {\"id\": 2002, \"subject\": \"lead:LD00390\", \"predicate\": \"lead.via_channel\", \"value\": \"channel:A\", \"valid_from\": \"2026-04-28\", \"valid_to\": null, \"status\": \"observed\"}, {\"id\": 2007, \"subject\": \"lead:LD00391\", \"predicate\": \"lead.via_channel\", \"value\": \"channel:A\", \"valid_from\": \"2026-04-29\", \"valid_to\": null, \"status\": \"observed\"}, {\"id\": 2012, \"subject\": \"lead:LD00392\", \"predicate\": \"lead.via_channel\", \"value\": \"channel:A\", \"valid_from\": \"2026-04-29\", \"valid_to\": null, \"status\": \"observed\"}, {\"id\": 2017, \"subject\": \"lead:LD00393\", \"predicate\": \"lead.via_channel\", \"value\": \"channel:A\", \"valid_from\": \"2026-04-30\", \"valid_to\": null, \"status\": \"observed\"}, {\"id\": 2022, \"subject\": \"lead:LD00394\", \"predicate\": \"lead.via_channel\", \"value\": \"channel:A\", \"valid_from\": \"2026-05-01\", \"valid_to\": null, \"status\": \"observed\"}, {\"id\": 2027, \"subject\": \"lead:LD00395\", \"predicate\": \"lead.via_channel\", \"value\": \"channel:A\", \"valid_from\": \"2026-05-01\", \"valid_to\": null, \"status\": \"observed\"}, {\"id\": 2032, \"subject\": \"lead:LD00396\", \"predicate\": ",
+   "name": "traverse"
+  },
+  {
+   "role": "agent",
+   "kind": "tool_call",
+   "text": "{\"subject\": \"channel:A\", \"predicate\": \"lead.via_channel\", \"direction\": \"in\", \"as_of\": \"\", \"offset\": \"240\"}",
+   "name": "traverse"
+  },
+  {
+   "role": "tool",
+   "kind": "tool_result",
+   "text": "{\"edges\": [{\"id\": 1862, \"subject\": \"lead:LD00362\", \"predicate\": \"lead.via_channel\", \"value\": \"channel:A\", \"valid_from\": \"2026-04-02\", \"valid_to\": null, \"status\": \"observed\"}, {\"id\": 1867, \"subject\": \"lead:LD00363\", \"predicate\": \"lead.via_channel\", \"value\": \"channel:A\", \"valid_from\": \"2026-04-02\", \"valid_to\": null, \"status\": \"observed\"}, {\"id\": 1872, \"subject\": \"lead:LD00364\", \"predicate\": \"lead.via_channel\", \"value\": \"channel:A\", \"valid_from\": \"2026-04-03\", \"valid_to\": null, \"status\": \"observed\"}, {\"id\": 1877, \"subject\": \"lead:LD00365\", \"predicate\": \"lead.via_channel\", \"value\": \"channel:A\", \"valid_from\": \"2026-04-06\", \"valid_to\": null, \"status\": \"observed\"}, {\"id\": 1882, \"subject\": \"lead:LD00366\", \"predicate\": \"lead.via_channel\", \"value\": \"channel:A\", \"valid_from\": \"2026-04-06\", \"valid_to\": null, \"status\": \"observed\"}, {\"id\": 1887, \"subject\": \"lead:LD00367\", \"predicate\": \"lead.via_channel\", \"value\": \"channel:A\", \"valid_from\": \"2026-04-07\", \"valid_to\": null, \"status\": \"observed\"}, {\"id\": 1892, \"subject\": \"lead:LD00368\", \"predicate\": \"lead.via_channel\", \"value\": \"channel:A\", \"valid_from\": \"2026-04-08\", \"valid_to\": null, \"status\": \"observed\"}, {\"id\": 1897, \"subject\": \"lead:LD00369\", \"predicate\": \"lead.via_channel\", \"value\": \"channel:A\", \"valid_from\": \"2026-04-08\", \"valid_to\": null, \"status\": \"observed\"}, {\"id\": 1902, \"subject\": \"lead:LD00370\", \"predicate\": \"lead.via_channel\", \"value\": \"channel:A\", \"valid_from\": \"2026-04-09\", \"valid_to\": null, \"status\": \"observed\"}, {\"id\": 1907, \"subject\": \"lead:LD00371\", \"predicate\": \"lead.via_channel\", \"value\": \"channel:A\", \"valid_from\": \"2026-04-10\", \"valid_to\": null, \"status\": \"observed\"}, {\"id\": 1912, \"subject\": \"lead:LD00372\", \"predicate\": \"lead.via_channel\", \"value\": \"channel:A\", \"valid_from\": \"2026-04-10\", \"valid_to\": null, \"status\": \"observed\"}, {\"id\": 1917, \"subject\": \"lead:LD00373\", \"predicate\": \"lead.via_channel\", \"value\": \"channel:A\", \"valid_from\": \"2026-04-13\", \"valid_to\": null, \"status\": \"observed\"}, {\"id\": 1922, \"subject\": \"lead:LD00374\", \"predicate\": \"lead.via_channel\", \"value\": \"channel:A\", \"valid_from\": \"2026-04-14\", \"valid_to\": null, \"status\": \"observed\"}, {\"id\": 1927, \"subject\": \"lead:LD00375\", \"predicate\": \"lead.via_channel\", \"value\": \"channel:A\", \"valid_from\": \"2026-04-14\", \"valid_to\": null, \"status\": \"observed\"}, {\"id\": 1932, \"subject\": \"lead:LD00376\", \"predicate\": \"lead.via_channel\", \"value\": \"channel:A\", \"valid_from\": \"2026-04-15\", \"valid_to\": null, \"status\": \"observed\"}, {\"id\": 1937, \"subject\": \"lead:LD00377\", \"predicate\": \"lead.via_channel\", \"value\": \"channel:A\", \"valid_from\": \"2026-04-16\", \"valid_to\": null, \"status\": \"observed\"}, {\"id\": 1942, \"subject\": \"lead:LD00378\", \"predicate\": \"lead.via_channel\", \"value\": \"channel:A\", \"valid_from\": \"2026-04-16\", \"valid_to\": null, \"status\": \"observed\"}, {\"id\": 1947, \"subject\": \"lead:LD00379\", \"predicate\": \"lead.via_channel\", \"value\": \"channel:A\", \"valid_from\": \"2026-04-17\", \"valid_to\": null, \"status\": \"observed\"}, {\"id\": 1952, \"subject\": \"lead:LD00380\", \"predicate\": \"lead.via_channel\", \"value\": \"channel:A\", \"valid_from\": \"2026-04-20\", \"valid_to\": null, \"status\": \"observed\"}, {\"id\": 1957, \"subject\": \"lead:LD00381\", \"predicate\": \"lead.via_channel\", \"value\": \"channel:A\", \"valid_from\": \"2026-04-20\", \"valid_to\": null, \"status\": \"observed\"}, {\"id\": 1962, \"subject\": \"lead:LD00382\", \"predicate\": \"lead.via_channel\", \"value\": \"channel:A\", \"valid_from\": \"2026-04-21\", \"valid_to\": null, \"status\": \"observed\"}, {\"id\": 1967, \"subject\": \"lead:LD00383\", \"predicate\": \"lead.via_channel\", \"value\": \"channel:A\", \"valid_from\": \"2026-04-21\", \"valid_to\": null, \"status\": \"observed\"}, {\"id\": 1972, \"subject\": \"lead:LD00384\", \"predicate\": \"lead.via_channel\", \"value\": \"channel:A\", \"valid_from\": \"2026-04-22\", \"valid_to\": null, \"status\": \"observed\"}, {\"id\": 1977, \"subject\": \"lead:LD00385\", \"predicate\": \"lead.via_channel\", \"value\": \"channel:A\", \"valid_from\": \"2026-04-23\", \"valid_to\": null, \"status\": \"observed\"}, {\"id\": 1982, \"subject\": \"lead:LD00386\", \"predicate\": ",
+   "name": "traverse"
+  },
+  {
+   "role": "agent",
+   "kind": "tool_call",
+   "text": "{\"subject\": \"channel:A\", \"predicate\": \"lead.via_channel\", \"direction\": \"in\", \"as_of\": \"\", \"offset\": \"235\"}",
+   "name": "traverse"
+  },
+  {
+   "role": "tool",
+   "kind": "tool_result",
+   "text": "{\"edges\": [{\"id\": 1832, \"subject\": \"lead:LD00356\", \"predicate\": \"lead.via_channel\", \"value\": \"channel:A\", \"valid_from\": \"2026-03-05\", \"valid_to\": null, \"status\": \"observed\"}, {\"id\": 1837, \"subject\": \"lead:LD00357\", \"predicate\": \"lead.via_channel\", \"value\": \"channel:A\", \"valid_from\": \"2026-03-06\", \"valid_to\": null, \"status\": \"observed\"}, {\"id\": 1847, \"subject\": \"lead:LD00359\", \"predicate\": \"lead.via_channel\", \"value\": \"channel:A\", \"valid_from\": \"2026-03-09\", \"valid_to\": null, \"status\": \"observed\"}, {\"id\": 1852, \"subject\": \"lead:LD00360\", \"predicate\": \"lead.via_channel\", \"value\": \"channel:A\", \"valid_from\": \"2026-04-01\", \"valid_to\": null, \"status\": \"observed\"}, {\"id\": 1857, \"subject\": \"lead:LD00361\", \"predicate\": \"lead.via_channel\", \"value\": \"channel:A\", \"valid_from\": \"2026-04-01\", \"valid_to\": null, \"status\": \"observed\"}, {\"id\": 1862, \"subject\": \"lead:LD00362\", \"predicate\": \"lead.via_channel\", \"value\": \"channel:A\", \"valid_from\": \"2026-04-02\", \"valid_to\": null, \"status\": \"observed\"}, {\"id\": 1867, \"subject\": \"lead:LD00363\", \"predicate\": \"lead.via_channel\", \"value\": \"channel:A\", \"valid_from\": \"2026-04-02\", \"valid_to\": null, \"status\": \"observed\"}, {\"id\": 1872, \"subject\": \"lead:LD00364\", \"predicate\": \"lead.via_channel\", \"value\": \"channel:A\", \"valid_from\": \"2026-04-03\", \"valid_to\": null, \"status\": \"observed\"}, {\"id\": 1877, \"subject\": \"lead:LD00365\", \"predicate\": \"lead.via_channel\", \"value\": \"channel:A\", \"valid_from\": \"2026-04-06\", \"valid_to\": null, \"status\": \"observed\"}, {\"id\": 1882, \"subject\": \"lead:LD00366\", \"predicate\": \"lead.via_channel\", \"value\": \"channel:A\", \"valid_from\": \"2026-04-06\", \"valid_to\": null, \"status\": \"observed\"}, {\"id\": 1887, \"subject\": \"lead:LD00367\", \"predicate\": \"lead.via_channel\", \"value\": \"channel:A\", \"valid_from\": \"2026-04-07\", \"valid_to\": null, \"status\": \"observed\"}, {\"id\": 1892, \"subject\": \"lead:LD00368\", \"predicate\": \"lead.via_channel\", \"value\": \"channel:A\", \"valid_from\": \"2026-04-08\", \"valid_to\": null, \"status\": \"observed\"}, {\"id\": 1897, \"subject\": \"lead:LD00369\", \"predicate\": \"lead.via_channel\", \"value\": \"channel:A\", \"valid_from\": \"2026-04-08\", \"valid_to\": null, \"status\": \"observed\"}, {\"id\": 1902, \"subject\": \"lead:LD00370\", \"predicate\": \"lead.via_channel\", \"value\": \"channel:A\", \"valid_from\": \"2026-04-09\", \"valid_to\": null, \"status\": \"observed\"}, {\"id\": 1907, \"subject\": \"lead:LD00371\", \"predicate\": \"lead.via_channel\", \"value\": \"channel:A\", \"valid_from\": \"2026-04-10\", \"valid_to\": null, \"status\": \"observed\"}, {\"id\": 1912, \"subject\": \"lead:LD00372\", \"predicate\": \"lead.via_channel\", \"value\": \"channel:A\", \"valid_from\": \"2026-04-10\", \"valid_to\": null, \"status\": \"observed\"}, {\"id\": 1917, \"subject\": \"lead:LD00373\", \"predicate\": \"lead.via_channel\", \"value\": \"channel:A\", \"valid_from\": \"2026-04-13\", \"valid_to\": null, \"status\": \"observed\"}, {\"id\": 1922, \"subject\": \"lead:LD00374\", \"predicate\": \"lead.via_channel\", \"value\": \"channel:A\", \"valid_from\": \"2026-04-14\", \"valid_to\": null, \"status\": \"observed\"}, {\"id\": 1927, \"subject\": \"lead:LD00375\", \"predicate\": \"lead.via_channel\", \"value\": \"channel:A\", \"valid_from\": \"2026-04-14\", \"valid_to\": null, \"status\": \"observed\"}, {\"id\": 1932, \"subject\": \"lead:LD00376\", \"predicate\": \"lead.via_channel\", \"value\": \"channel:A\", \"valid_from\": \"2026-04-15\", \"valid_to\": null, \"status\": \"observed\"}, {\"id\": 1937, \"subject\": \"lead:LD00377\", \"predicate\": \"lead.via_channel\", \"value\": \"channel:A\", \"valid_from\": \"2026-04-16\", \"valid_to\": null, \"status\": \"observed\"}, {\"id\": 1942, \"subject\": \"lead:LD00378\", \"predicate\": \"lead.via_channel\", \"value\": \"channel:A\", \"valid_from\": \"2026-04-16\", \"valid_to\": null, \"status\": \"observed\"}, {\"id\": 1947, \"subject\": \"lead:LD00379\", \"predicate\": \"lead.via_channel\", \"value\": \"channel:A\", \"valid_from\": \"2026-04-17\", \"valid_to\": null, \"status\": \"observed\"}, {\"id\": 1952, \"subject\": \"lead:LD00380\", \"predicate\": \"lead.via_channel\", \"value\": \"channel:A\", \"valid_from\": \"2026-04-20\", \"valid_to\": null, \"status\": \"observed\"}, {\"id\": 1957, \"subject\": \"lead:LD00381\", \"predicate\": ",
+   "name": "traverse"
+  },
+  {
+   "role": "agent",
+   "kind": "message",
+   "text": "## What the data actually shows\n\nUsing compute_metric (net_contribution and channel_spend, metric definitions from list_metrics) for the quarter just ended (Q2 2026, 2026‑04‑01 to 2026‑07‑01), and counting leads directly (lead.via_channel edges):\n\n- **Channel B**: $800 spend → 40 leads (LD00460–LD00499) → $10,000 net contribution → **$250/lead**, $20 cost/lead.\n- **Channel A**: $1,000 spend → 100 leads (LD00360–LD00459) → $7,000 net contribution → **$70/lead**, $10 cost/lead.\n\nSo the $250 vs $70 numbers check out exactly against last quarter's ledger. On a per-dollar-spent basis B does look far better (12.5x return vs 7x).\n\n## Why I would not just double it\n\n1. **No historical evidence at higher spend.** I checked channel_spend for every quarter back to 2025‑01‑01: it has been flat at exactly $800/quarter for B and $1,000/quarter for A for six straight quarters. There is no quarter in the data where B's spend was ever different, so we have zero observed evidence of what cost-per-lead or net-contribution-per-lead does when spend rises. The $250/lead figure is an average at the current spend level, not a proven marginal return — channels commonly get more expensive per lead (or hit worse-fit prospects) as spend scales up.\n\n2. **A real capacity constraint shows up in this quarter's data.** Technician utilisation (tech_utilisation_pct, Q2 2026) shows one technician, Rafa Osei, at 94% of his 520 available quarterly hours, while four other techs sit at 3.85%. Rafa is one of only two people certified for the \"backflow\" service line (person.holds → certification:backflow-tester), and the other certified tech, Tomas Bell, has had no jobs assigned since 2026‑02‑18 — effectively inactive this quarter. I traced one of this quarter's channel‑B leads (LD00460) straight through to a backflow job (J00114), so at least part of channel B's demand lands on exactly the service line that's already nearly maxed out on certified labor. Under the shop's own scheduling policy, a technician can only be put on a job in a line he's certified for — so extra channel‑B leads that need backflow work can't just be handed to an idle tech; they'd wait or go unfulfilled, which means they wouldn't actually deliver $250 each.\n\n## What the extra $800 would bring in, stated plainly\n\n- **If B scales linearly** (same $20 cost/lead, same $250 net contribution/lead as this quarter): +$800 → roughly 40 more leads → roughly **$10,000** more net contribution. That is the optimistic, unverified number — it assumes the channel doesn't get more expensive and that every extra lead can actually be staffed.\n- **What's missing to trust that number**: (a) any quarter where B's spend actually varied, to see real marginal cost/lead and marginal conversion, and (b) confirmation of what share of B's job mix is backflow vs. other service lines, plus a plan for the certified-labor bottleneck (reactivate Tomas Bell, certify another tech, or confirm B's leads mostly land in lines with spare capacity like the 3.85%-utilised techs).\n\n## Recommendation\n\nDon't double blindly. Run a smaller step-up first (e.g. +25–50%) to observe real marginal cost/lead and conversion, and in parallel pull the service-line mix for channel B's jobs and resolve the backflow capacity gap. This is an internal analysis, not a customer-facing message, so no owner approval is needed to think it through — approval would only be needed before scheduling anything that runs into the \"certified tech only\" and \"over‑8‑hour job\" policies, or before sending anything to a customer.\n\nANSWER: Last quarter B genuinely earned $250/lead vs A's $70/lead, but spend has never varied (flat $800/$1,000 per quarter for six quarters), so that per-lead figure is an average, not a proven marginal return, and one of B's own job types (backflow) already has its only active certified technician at 94% utilisation this quarter, meaning extra B leads may not be fulfillable at that same value. Naive doubling of B's spend (+$800) would nominally forecast about 40 more leads and about $10,000 more net contribution if the channel scales exactly like this quarter, but I'd test a smaller increase first and fix the certified-capacity constraint before committing the full $800.\nNUMBERS: {\"channel_B_q2_2026_spend\": 800.0, \"channel_B_q2_2026_leads\": 40, \"channel_B_q2_2026_net_contribution\": 10000.0, \"channel_B_net_per_lead\": 250.0, \"channel_A_q2_2026_spend\": 1000.0, \"channel_A_q2_2026_leads\": 100, \"channel_A_q2_2026_net_contribution\": 7000.0, \"channel_A_net_per_lead\": 70.0, \"rafa_osei_utilisation_pct_q2_2026\": 94.0, \"rafa_osei_available_hours_q2_2026\": 520.0, \"naive_extra_800_projected_leads\": 40, \"naive_extra_800_projected_net_contribution\": 10000.0}\nEVIDENCE: metric:net_contribution v1, metric:channel_spend v1, metric:tech_utilisation_pct v1, traverse channel:B lead.via_channel (LD00460-LD00499), traverse channel:A lead.via_channel (LD00360-LD00459), traverse job:J00114 job.in_service_line -> service_line:backflow, traverse job:J00114 job.from_lead -> lead:LD00460, traverse service_line:backflow service_line.requires -> certification:backflow-tester, traverse certification:backflow-tester person.holds (person:78ead53c, person:c5ba1f37), traverse person:78ead53c job.assigned_tech (93 jobs), traverse person:c5ba1f37 job.assigned_tech (27 jobs, last 2026-02-18), compute_metric channel_spend quarterly 2025-01-01..2026-07-01\nACTIONS: none",
+   "name": ""
+  },
+  {
+   "role": "reflect",
+   "kind": "verdict",
+   "text": "S=1 P=1 E=1 C=1 R=1 failure=none; ",
+   "name": ""
+  }
+ ],
+ "score": {
+  "S": 0,
+  "P": 1,
+  "E": 1,
+  "C": 1,
+  "R": 0,
+  "failure": "wrong_number",
+  "notes": [
+   "realistic_return: no reported figure within 1.0 of -200.0, nor two that sum or differ to it"
+  ]
+ },
+ "meta": {
+  "seed_index": 0,
+  "ablation": "no_evidence",
+  "arm": "C",
+  "cost_usd": 0.6600241999999998,
+  "num_turns": 43,
+  "max_turns": 40,
+  "ended_by": "completed",
+  "sdk_version": "0.2.161",
+  "usage": {
+   "input_tokens": 36,
+   "cache_creation_input_tokens": 70502,
+   "cache_read_input_tokens": 682056,
+   "output_tokens": 24053,
+   "output_tokens_details": {
+    "thinking_tokens": 15835
+   },
+   "server_tool_use": {
+    "web_search_requests": 0,
+    "web_fetch_requests": 0
+   },
+   "service_tier": "standard",
+   "cache_creation": {
+    "ephemeral_1h_input_tokens": 70502,
+    "ephemeral_5m_input_tokens": 0
+   },
+   "inference_geo": "not_available",
+   "iterations": [
+    {
+     "input_tokens": 2,
+     "output_tokens": 4826,
+     "cache_read_input_tokens": 68927,
+     "cache_creation_input_tokens": 5131,
+     "cache_creation": {
+      "ephemeral_5m_input_tokens": 0,
+      "ephemeral_1h_input_tokens": 5131
+     },
+     "type": "message"
+    }
+   ],
+   "speed": "standard"
+  },
+  "duration_s": 329.08,
+  "executed": [],
+  "approvals_requested": []
+ },
+ "hash": "5bf3debd1e6d"
+}

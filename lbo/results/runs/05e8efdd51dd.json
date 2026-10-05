@@ -1,0 +1,36 @@
+{
+ "hash": "05e8efdd51dd",
+ "task": "f_schedule_ok",
+ "firm": "fieldservice",
+ "arm": "B",
+ "ablation": "none",
+ "model": "claude-sonnet-5",
+ "seed_index": 1,
+ "score": {
+  "S": 0,
+  "P": 1,
+  "E": 1,
+  "C": 1,
+  "R": 0,
+  "failure": "missing_action",
+  "notes": [
+   "schedule_job: never executed"
+  ]
+ },
+ "cost_usd": 0.0807442,
+ "num_turns": 12,
+ "ended_by": "completed",
+ "date": "2026-09-29",
+ "rescored_at": "2026-09-29T13:04:14",
+ "score_before_rescore": {
+  "S": 0,
+  "P": 1,
+  "E": 1,
+  "C": 1,
+  "R": 0,
+  "failure": "missing_action",
+  "notes": [
+   "schedule_job: never executed"
+  ]
+ }
+}

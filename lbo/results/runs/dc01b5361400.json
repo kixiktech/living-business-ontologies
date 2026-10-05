@@ -1,0 +1,36 @@
+{
+ "hash": "dc01b5361400",
+ "task": "d_concentration",
+ "firm": "distributor",
+ "arm": "C",
+ "ablation": "none",
+ "model": "claude-sonnet-5",
+ "seed_index": 0,
+ "score": {
+  "S": 0,
+  "P": 1,
+  "E": 1,
+  "C": 1,
+  "R": 0,
+  "failure": "wrong_number",
+  "notes": [
+   "avg_days: no reported figure within 1.0 of 62.0, nor two that sum or differ to it"
+  ]
+ },
+ "cost_usd": 0.22877540000000002,
+ "num_turns": 22,
+ "ended_by": "completed",
+ "date": "2026-09-29",
+ "rescored_at": "2026-09-29T13:04:16",
+ "score_before_rescore": {
+  "S": 0,
+  "P": 1,
+  "E": 1,
+  "C": 1,
+  "R": 0,
+  "failure": "wrong_number",
+  "notes": [
+   "avg_days: no reported figure within 1.0 of 62.0, nor two that sum or differ to it"
+  ]
+ }
+}

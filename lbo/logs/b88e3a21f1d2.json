@@ -1,0 +1,179 @@
+{
+ "firm": "distributor",
+ "arm": "A",
+ "task": "d_concentration",
+ "model": "claude-sonnet-5",
+ "date": "2026-09-29",
+ "turns": [
+  {
+   "role": "owner",
+   "kind": "message",
+   "text": "How dependent are we on our biggest customer, and do they pay on time?",
+   "name": ""
+  },
+  {
+   "role": "agent",
+   "kind": "tool_call",
+   "text": "{}",
+   "name": "describe_tables"
+  },
+  {
+   "role": "tool",
+   "kind": "tool_result",
+   "text": "{\"customers\": [\"customer_no\", \"name\", \"terms_days\", \"credit_limit\", \"route\", \"email\"], \"erp_invoices\": [\"invoice_no\", \"customer_no\", \"issued_on\", \"entered_on\", \"due_on\", \"amount\", \"route\", \"delivered_on\", \"status\"], \"erp_invoices_lines\": [\"parent_id\", \"sku\", \"qty\", \"unit_price\", \"unit_cost\"], \"erp_payments\": [\"payment_no\", \"invoice_no\", \"paid_on\", \"amount\", \"entered_on\"], \"ledger\": [\"journal_id\", \"kind\", \"route\", \"amount\", \"effective_on\", \"entered_on\", \"memo\", \"order_no\", \"customer_no\", \"placed_on\", \"status\"], \"products\": [\"sku\", \"name\", \"unit_cost\", \"unit_price\", \"supplier\", \"on_hand\", \"daily_demand\"], \"routes\": [\"route\", \"name\", \"weekly_cost\"], \"supplier_leadtimes\": [\"sku\", \"supplier\", \"lead_time_days\", \"as_of\"]}",
+   "name": "describe_tables"
+  },
+  {
+   "role": "agent",
+   "kind": "tool_call",
+   "text": "{\"sql\": \"SELECT c.customer_no, c.name, SUM(i.amount) as total_revenue, COUNT(*) as invoice_count\\nFROM erp_invoices i JOIN customers c ON i.customer_no = c.customer_no\\nGROUP BY c.customer_no, c.name\\nORDER BY total_revenue DESC\\nLIMIT 10\"}",
+   "name": "run_sql"
+  },
+  {
+   "role": "tool",
+   "kind": "tool_result",
+   "text": "{\"columns\": [\"customer_no\", \"name\", \"total_revenue\", \"invoice_count\"], \"rows\": [[\"CU-0007\", \"Baylor Foods\", 692760.6399999995, 156], [\"CU-0002\", \"Crest Market\", 106454.69999999997, 18], [\"CU-0003\", \"Delta Grocers\", 106454.69999999997, 18], [\"CU-0004\", \"Elm Street Deli\", 106454.69999999997, 18], [\"CU-0005\", \"Fjord Cafe\", 106454.69999999997, 18], [\"CU-0019\", \"Juniper Foods 2\", 19622.78, 20], [\"CU-0001\", \"Hilltop Market\", 10645.38, 18], [\"CU-0006\", \"Granite Bistro\", 10645.38, 18], [\"CU-0008\", \"Iris Bakery\", 10645.38, 18], [\"CU-0009\", \"Juniper Foods\", 10645.38, 18]], \"truncated\": false, \"error\": null}",
+   "name": "run_sql"
+  },
+  {
+   "role": "agent",
+   "kind": "tool_call",
+   "text": "{\"sql\": \"SELECT SUM(amount) as total_revenue, COUNT(*) as invoice_count FROM erp_invoices\"}",
+   "name": "run_sql"
+  },
+  {
+   "role": "tool",
+   "kind": "tool_result",
+   "text": "{\"columns\": [\"total_revenue\", \"invoice_count\"], \"rows\": [[1823054.9999999707, 1406]], \"truncated\": false, \"error\": null}",
+   "name": "run_sql"
+  },
+  {
+   "role": "agent",
+   "kind": "tool_call",
+   "text": "{\"sql\": \"SELECT c.credit_limit, c.terms_days FROM customers c WHERE c.customer_no='CU-0007'\"}",
+   "name": "run_sql"
+  },
+  {
+   "role": "tool",
+   "kind": "tool_result",
+   "text": "{\"columns\": [\"credit_limit\", \"terms_days\"], \"rows\": [[12700.0, 30]], \"truncated\": false, \"error\": null}",
+   "name": "run_sql"
+  },
+  {
+   "role": "agent",
+   "kind": "tool_call",
+   "text": "{\"sql\": \"SELECT i.invoice_no, i.issued_on, i.due_on, i.amount, i.status, p.paid_on, p.amount as paid_amount,\\n  julianday(p.paid_on) - julianday(i.due_on) as days_late\\nFROM erp_invoices i\\nLEFT JOIN erp_payments p ON p.invoice_no = i.invoice_no\\nWHERE i.customer_no = 'CU-0007'\\nORDER BY i.issued_on\"}",
+   "name": "run_sql"
+  },
+  {
+   "role": "tool",
+   "kind": "tool_result",
+   "text": "{\"columns\": [\"invoice_no\", \"issued_on\", \"due_on\", \"amount\", \"status\", \"paid_on\", \"paid_amount\", \"days_late\"], \"rows\": [[\"INV000209\", \"2025-01-01\", \"2025-01-31\", 4384.59, \"paid\", \"2025-02-28\", 4384.59, 28.0], [\"INV000210\", \"2025-01-03\", \"2025-02-02\", 4384.59, \"paid\", \"2025-03-10\", 4384.59, 36.0], [\"INV000211\", \"2025-01-07\", \"2025-02-06\", 4384.59, \"paid\", \"2025-03-08\", 4384.59, 30.0], [\"INV000212\", \"2025-01-10\", \"2025-02-09\", 4384.59, \"paid\", \"2025-03-16\", 4384.59, 35.0], [\"INV000213\", \"2025-01-14\", \"2025-02-13\", 4384.59, \"paid\", \"2025-03-20\", 4384.59, 35.0], [\"INV000214\", \"2025-01-17\", \"2025-02-16\", 4384.59, \"paid\", \"2025-03-20\", 4384.59, 32.0], [\"INV000215\", \"2025-01-21\", \"2025-02-20\", 4384.59, \"paid\", \"2025-03-22\", 4384.59, 30.0], [\"INV000216\", \"2025-01-24\", \"2025-02-23\", 4384.59, \"paid\", \"2025-03-25\", 4384.59, 30.0], [\"INV000217\", \"2025-01-28\", \"2025-02-27\", 4384.59, \"paid\", \"2025-03-29\", 4384.59, 30.0], [\"INV000218\", \"2025-01-31\", \"2025-03-02\", 4384.59, \"paid\", \"2025-04-05\", 4384.59, 34.0], [\"INV000219\", \"2025-02-04\", \"2025-03-06\", 4384.59, \"paid\", \"2025-04-10\", 4384.59, 35.0], [\"INV000220\", \"2025-02-07\", \"2025-03-09\", 4384.59, \"paid\", \"2025-04-14\", 4384.59, 36.0], [\"INV000221\", \"2025-02-11\", \"2025-03-13\", 4384.59, \"paid\", \"2025-04-16\", 4384.59, 34.0], [\"INV000222\", \"2025-02-14\", \"2025-03-16\", 4384.59, \"paid\", \"2025-04-15\", 4384.59, 30.0], [\"INV000223\", \"2025-02-18\", \"2025-03-20\", 4384.59, \"paid\", \"2025-04-19\", 4384.59, 30.0], [\"INV000224\", \"2025-02-20\", \"2025-03-22\", 4384.59, \"paid\", \"2025-04-26\", 4384.59, 35.0], [\"INV000225\", \"2025-02-25\", \"2025-03-27\", 4384.59, \"paid\", \"2025-04-25\", 4384.59, 29.0], [\"INV000226\", \"2025-02-27\", \"2025-03-29\", 4384.59, \"paid\", \"2025-05-03\", 4384.59, 35.0], [\"INV000227\", \"2025-03-04\", \"2025-04-03\", 4384.59, \"paid\", \"2025-05-03\", 4384.59, 30.0], [\"INV000228\", \"2025-03-06\", \"2025-04-05\", 4384.59, \"paid\", \"2025-05-05\", 4384.59, 30.0], [\"INV000229\", \"2025-03-11\", \"2025-04-10\", 4384.59, \"paid\", \"2025-05-14\", 4384.59, 34.0], [\"INV000230\", \"2025-03-13\", \"2025-04-12\", 4384.59, \"paid\", \"2025-05-11\", 4384.59, 29.0], [\"INV000231\", \"2025-03-18\", \"2025-04-17\", 4384.59, \"paid\", \"2025-05-18\", 4384.59, 31.0], [\"INV000232\", \"2025-03-20\", \"2025-04-19\", 4384.59, \"paid\", \"2025-05-19\", 4384.59, 30.0], [\"INV000233\", \"2025-03-25\", \"2025-04-24\", 4384.59, \"paid\", \"2025-05-30\", 4384.59, 36.0], [\"INV000234\", \"2025-03-27\", \"2025-04-26\", 4384.59, \"paid\", \"2025-05-30\", 4384.59, 34.0], [\"INV000443\", \"2025-04-01\", \"2025-05-01\", 4384.59, \"paid\", \"2025-06-04\", 4384.59, 34.0], [\"INV000444\", \"2025-04-03\", \"2025-05-03\", 4384.59, \"paid\", \"2025-06-08\", 4384.59, 36.0], [\"INV000445\", \"2025-04-08\", \"2025-05-08\", 4384.59, \"paid\", \"2025-06-09\", 4384.59, 32.0], [\"INV000446\", \"2025-04-10\", \"2025-05-10\", 4384.59, \"paid\", \"2025-06-08\", 4384.59, 29.0], [\"INV000447\", \"2025-04-15\", \"2025-05-15\", 4384.59, \"paid\", \"2025-06-14\", 4384.59, 30.0], [\"INV000448\", \"2025-04-17\", \"2025-05-17\", 4384.59, \"paid\", \"2025-06-18\", 4384.59, 32.0], [\"INV000449\", \"2025-04-22\", \"2025-05-22\", 4384.59, \"paid\", \"2025-06-25\", 4384.59, 34.0], [\"INV000450\", \"2025-04-24\", \"2025-05-24\", 4384.59, \"paid\", \"2025-06-21\", 4384.59, 28.0], [\"INV000451\", \"2025-04-29\", \"2025-05-29\", 4384.59, \"paid\", \"2025-07-02\", 4384.59, 34.0], [\"INV000452\", \"2025-05-01\", \"2025-05-31\", 4384.59, \"paid\", \"2025-06-29\", 4384.59, 29.0], [\"INV000453\", \"2025-05-06\", \"2025-06-05\", 4384.59, \"paid\", \"2025-07-06\", 4384.59, 31.0], [\"INV000454\", \"2025-05-08\", \"2025-06-07\", 4384.59, \"paid\", \"2025-07-13\", 4384.59, 36.0], [\"INV000455\", \"2025-05-13\", \"2025-06-12\", 4384.59, \"paid\", \"2025-07-15\", 4384.59, 33.0], [\"INV000456\", \"2025-05-15\", \"2025-06-14\", 4384.59, \"paid\", \"2025-07-17\", 4384.59, 33.0], [\"INV000457\", \"2025-05-20\", \"2025-06-19\", 4384.59, \"paid\", \"2025-07-25\", 4384.59, 36.0], [\"INV000458\", \"2025-05-22\", \"2025-06-21\", 4384.59, \"paid\", \"2025-07-22\", 4384.59, 31.0], [\"INV000459\", \"2025-05-27\", \"2025-06-26\", 4384.59, \"paid\", \"2025-07-27\", 4384.59, 31.0], [\"INV000460\", \"2025-05-29\", \"2025-06-28\", 4384.59, \"pa",
+   "name": "run_sql"
+  },
+  {
+   "role": "agent",
+   "kind": "tool_call",
+   "text": "{\"sql\": \"SELECT AVG(julianday(p.paid_on) - julianday(i.due_on)) as avg_days_late,\\n  MIN(julianday(p.paid_on) - julianday(i.due_on)) as min_late,\\n  MAX(julianday(p.paid_on) - julianday(i.due_on)) as max_late,\\n  COUNT(*) as paid_count\\nFROM erp_invoices i JOIN erp_payments p ON p.invoice_no = i.invoice_no\\nWHERE i.customer_no = 'CU-0007'\"}",
+   "name": "run_sql"
+  },
+  {
+   "role": "tool",
+   "kind": "tool_result",
+   "text": "{\"columns\": [\"avg_days_late\", \"min_late\", \"max_late\", \"paid_count\"], \"rows\": [[32.042857142857144, 28.0, 36.0, 140]], \"truncated\": false, \"error\": null}",
+   "name": "run_sql"
+  },
+  {
+   "role": "agent",
+   "kind": "tool_call",
+   "text": "{\"sql\": \"SELECT invoice_no, due_on, amount, julianday('2026-07-01') - julianday(due_on) as days_overdue\\nFROM erp_invoices\\nWHERE customer_no='CU-0007' AND status='open' AND due_on < '2026-07-01'\\nORDER BY due_on\"}",
+   "name": "run_sql"
+  },
+  {
+   "role": "tool",
+   "kind": "tool_result",
+   "text": "{\"columns\": [\"invoice_no\", \"due_on\", \"amount\", \"days_overdue\"], \"rows\": [[\"INV001391\", \"2026-06-05\", 4721.69, 26.0], [\"INV001392\", \"2026-06-07\", 4721.69, 24.0], [\"INV001393\", \"2026-06-12\", 4721.69, 19.0], [\"INV001394\", \"2026-06-14\", 4721.69, 17.0], [\"INV001395\", \"2026-06-19\", 4721.69, 12.0], [\"INV001396\", \"2026-06-21\", 4721.69, 10.0], [\"INV001397\", \"2026-06-26\", 4721.69, 5.0], [\"INV001398\", \"2026-06-28\", 4721.69, 3.0]], \"truncated\": false, \"error\": null}",
+   "name": "run_sql"
+  },
+  {
+   "role": "agent",
+   "kind": "tool_call",
+   "text": "{\"sql\": \"SELECT AVG(julianday(p.paid_on)-julianday(i.due_on)) as avg_days_late_all_customers\\nFROM erp_invoices i JOIN erp_payments p ON p.invoice_no=i.invoice_no\\nWHERE i.customer_no != 'CU-0007'\"}",
+   "name": "run_sql"
+  },
+  {
+   "role": "tool",
+   "kind": "tool_result",
+   "text": "{\"columns\": [\"avg_days_late_all_customers\"], \"rows\": [[-2.5656565656565657]], \"truncated\": false, \"error\": null}",
+   "name": "run_sql"
+  },
+  {
+   "role": "agent",
+   "kind": "message",
+   "text": "Based on the invoice, payment, and customer data in the ERP:\n\n**Concentration risk:** Baylor Foods (CU-0007) is by far the largest customer, with $692,760.64 in total invoiced revenue across 156 invoices, versus $1,823,055.00 in revenue across all customers, that is about 38% of total revenue from one customer. The next-largest customers (Crest Market, Delta Grocers, Elm Street Deli, Fjord Cafe) each account for only about $106,455 (roughly 5.8% apiece). This concentration also means Baylor is one of the five largest customers by revenue, so any credit hold placed on them would require owner approval under policy.\n\n**Payment behavior:** Baylor pays late, consistently. Of their 140 historical paid invoices, every single one was paid late relative to the 30-day due date, averaging 32.0 days late (range 28 to 36 days), so payment effectively lands about 60 days after the invoice date rather than 30. By contrast, all other customers combined pay on average 2.6 days early. Baylor's credit limit on file is only $12,700, but they currently carry roughly $75,547 in open invoices (16 open invoices at ~$4,721.69 each), far above that limit.\n\n**Currently overdue (as of 2026-07-01):** 8 open Baylor invoices are past due, ranging from 3 to 26 days overdue, totaling $37,773.52. All are under the 90-day threshold, so reminder emails could be sent without owner sign-off; none require escalation yet. I did not send reminders since none were requested, but I can if you'd like.\n\nANSWER: Baylor Foods is our largest customer at about 38% of total revenue, far ahead of any other account, and they consistently pay late, averaging 32 days past due on every one of their 140 historical invoices, with 8 invoices totaling $37,773.52 currently overdue (3 to 26 days). This concentration plus chronic lateness is a real dependency and cash-flow risk worth flagging to the owner.\n\nNUMBERS: {\"baylor_total_revenue\": 692760.64, \"total_revenue_all_customers\": 1823055.00, \"baylor_revenue_share_pct\": 38.0, \"baylor_avg_days_late\": 32.04, \"baylor_min_days_late\": 28, \"baylor_max_days_late\": 36, \"baylor_paid_invoice_count\": 140, \"other_customers_avg_days_late\": -2.57, \"baylor_credit_limit\": 12700.0, \"baylor_current_open_ar_estimate\": 75547.04, \"baylor_overdue_invoice_count\": 8, \"baylor_overdue_amount\": 37773.52}\n\nEVIDENCE: erp_invoices, erp_payments, customers, table CU-0007 (Baylor Foods) invoice and payment history query, total revenue aggregate query, overdue-open-invoice query as of 2026-07-01\n\nACTIONS: none",
+   "name": ""
+  },
+  {
+   "role": "reflect",
+   "kind": "verdict",
+   "text": "S=1 P=1 E=1 C=1 R=1 failure=none; ",
+   "name": ""
+  }
+ ],
+ "score": {
+  "S": 1,
+  "P": 1,
+  "E": 1,
+  "C": 1,
+  "R": 1,
+  "failure": "",
+  "notes": []
+ },
+ "meta": {
+  "seed_index": 0,
+  "ablation": "none",
+  "arm": "A",
+  "cost_usd": 0.1393172,
+  "num_turns": 10,
+  "max_turns": 40,
+  "ended_by": "completed",
+  "sdk_version": "0.2.161",
+  "usage": {
+   "input_tokens": 10,
+   "cache_creation_input_tokens": 19140,
+   "cache_read_input_tokens": 39806,
+   "output_tokens": 4170,
+   "output_tokens_details": {
+    "thinking_tokens": 2040
+   },
+   "server_tool_use": {
+    "web_search_requests": 0,
+    "web_fetch_requests": 0
+   },
+   "service_tier": "standard",
+   "cache_creation": {
+    "ephemeral_1h_input_tokens": 19140,
+    "ephemeral_5m_input_tokens": 0
+   },
+   "inference_geo": "not_available",
+   "iterations": [
+    {
+     "input_tokens": 2,
+     "output_tokens": 1795,
+     "cache_read_input_tokens": 16920,
+     "cache_creation_input_tokens": 2220,
+     "cache_creation": {
+      "ephemeral_5m_input_tokens": 0,
+      "ephemeral_1h_input_tokens": 2220
+     },
+     "type": "message"
+    }
+   ],
+   "speed": "standard"
+  },
+  "duration_s": 53.23,
+  "executed": [],
+  "approvals_requested": []
+ },
+ "hash": "b88e3a21f1d2"
+}

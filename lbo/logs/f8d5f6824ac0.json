@@ -1,0 +1,301 @@
+{
+ "firm": "fieldservice",
+ "arm": "B",
+ "task": "f_channel_inversion",
+ "model": "claude-sonnet-5",
+ "date": "2026-09-29",
+ "turns": [
+  {
+   "role": "owner",
+   "kind": "message",
+   "text": "Channel B brings in $250 of net contribution per lead and channel A only $70. Should we double channel B's spend next quarter? Say what the extra $800 would actually bring in.",
+   "name": ""
+  },
+  {
+   "role": "agent",
+   "kind": "tool_call",
+   "text": "{}",
+   "name": "describe_tables"
+  },
+  {
+   "role": "agent",
+   "kind": "tool_call",
+   "text": "{}",
+   "name": "list_metrics"
+  },
+  {
+   "role": "tool",
+   "kind": "tool_result",
+   "text": "{\"certifications\": [\"tech\", \"certification\", \"issued_on\"], \"crm_leads\": [\"lead_id\", \"created_on\", \"entered_on\", \"channel\", \"status\"], \"jobs\": [\"job_id\", \"lead_id\", \"channel\", \"service_line\", \"tech\", \"scheduled_crew\", \"performed_crew\", \"scheduled_on\", \"performed_on\", \"entered_on\", \"revenue\", \"direct_cost\", \"hours\"], \"jobs_n\": [\"job_id\", \"lead_id\", \"channel\", \"service_line\", \"tech\", \"scheduled_crew\", \"performed_crew\", \"scheduled_on\", \"performed_on\", \"entered_on\", \"revenue\", \"direct_cost\", \"hours\", \"lead_created_on\", \"lead_status\", \"job_margin\"], \"ledger\": [\"journal_id\", \"kind\", \"channel\", \"amount\", \"effective_on\", \"entered_on\", \"memo\"], \"payroll\": [\"tech\", \"week_start\", \"hours\"], \"schedule\": [\"entry_id\", \"tech\", \"day\", \"hours\", \"entered_on\", \"job_id\"], \"technicians\": [\"tech_id\", \"name\", \"crew\", \"hourly_cost\", \"hired_on\", \"left_on\"]}",
+   "name": "describe_tables"
+  },
+  {
+   "role": "tool",
+   "kind": "tool_result",
+   "text": "[{\"name\": \"gross_sales\", \"version\": \"v1\", \"grain\": \"order line\", \"units\": \"usd\", \"basis\": \"quantity times unit price, before returns and tax\"}, {\"name\": \"cost_of_goods\", \"version\": \"v1\", \"grain\": \"order line\", \"units\": \"usd\", \"basis\": \"quantity times the unit cost valid on the sale date\"}, {\"name\": \"gross_profit\", \"version\": \"v1\", \"grain\": \"order line\", \"units\": \"usd\", \"basis\": \"gross sales less cost of goods at the unit cost valid on the sale date\"}, {\"name\": \"gross_margin_pct\", \"version\": \"v1\", \"grain\": \"window\", \"units\": \"percent\", \"basis\": \"gross profit as a percentage of gross sales, two decimals\"}, {\"name\": \"job_margin\", \"version\": \"v1\", \"grain\": \"job\", \"units\": \"usd\", \"basis\": \"revenue less directly assigned job cost, before channel spend\"}, {\"name\": \"channel_spend\", \"version\": \"v1\", \"grain\": \"channel\", \"units\": \"usd\", \"basis\": \"ledger spend by channel, effective in the window\"}, {\"name\": \"net_contribution\", \"version\": \"v1\", \"grain\": \"channel\", \"units\": \"usd\", \"basis\": \"job margin less channel spend, by channel\"}, {\"name\": \"tech_utilisation_pct\", \"version\": \"v1\", \"grain\": \"technician\", \"units\": \"percent\", \"basis\": \"scheduled hours as a percentage of 8 hours per weekday in the window\"}]",
+   "name": "list_metrics"
+  },
+  {
+   "role": "agent",
+   "kind": "tool_call",
+   "text": "{\"sql\": \"SELECT channel, count(*) as leads, min(created_on) as first_lead, max(created_on) as last_lead FROM crm_leads GROUP BY channel\"}",
+   "name": "run_sql"
+  },
+  {
+   "role": "tool",
+   "kind": "tool_result",
+   "text": "{\"columns\": [\"channel\", \"leads\", \"first_lead\", \"last_lead\"], \"rows\": [[\"A\", 338, \"2025-01-01\", \"2026-06-30\"], [\"B\", 161, \"2025-01-01\", \"2026-06-29\"], [\"referral\", 61, \"2026-04-01\", \"2026-06-24\"]], \"truncated\": false, \"error\": null}",
+   "name": "run_sql"
+  },
+  {
+   "role": "agent",
+   "kind": "tool_call",
+   "text": "{\"sql\": \"SELECT channel, kind, count(*), sum(amount), min(effective_on), max(effective_on) FROM ledger GROUP BY channel, kind\"}",
+   "name": "run_sql"
+  },
+  {
+   "role": "tool",
+   "kind": "tool_result",
+   "text": "{\"columns\": [\"channel\", \"kind\", \"count(*)\", \"sum(amount)\", \"min(effective_on)\", \"max(effective_on)\"], \"rows\": [[\"A\", \"channel_spend\", 6, 6000.0, \"2025-01-01\", \"2026-04-01\"], [\"B\", \"channel_spend\", 6, 4800.0, \"2025-01-01\", \"2026-04-01\"]], \"truncated\": false, \"error\": null}",
+   "name": "run_sql"
+  },
+  {
+   "role": "agent",
+   "kind": "tool_call",
+   "text": "{\"sql\": \"SELECT channel, effective_on, amount FROM ledger WHERE kind='channel_spend' ORDER BY channel, effective_on\"}",
+   "name": "run_sql"
+  },
+  {
+   "role": "tool",
+   "kind": "tool_result",
+   "text": "{\"columns\": [\"channel\", \"effective_on\", \"amount\"], \"rows\": [[\"A\", \"2025-01-01\", 1000.0], [\"A\", \"2025-04-01\", 1000.0], [\"A\", \"2025-07-01\", 1000.0], [\"A\", \"2025-10-01\", 1000.0], [\"A\", \"2026-01-01\", 1000.0], [\"A\", \"2026-04-01\", 1000.0], [\"B\", \"2025-01-01\", 800.0], [\"B\", \"2025-04-01\", 800.0], [\"B\", \"2025-07-01\", 800.0], [\"B\", \"2025-10-01\", 800.0], [\"B\", \"2026-01-01\", 800.0], [\"B\", \"2026-04-01\", 800.0]], \"truncated\": false, \"error\": null}",
+   "name": "run_sql"
+  },
+  {
+   "role": "agent",
+   "kind": "tool_call",
+   "text": "{\"sql\": \"SELECT channel, strftime('%Y-Q', created_on) as yr, count(*) as leads FROM crm_leads WHERE channel IN ('A','B') GROUP BY channel, strftime('%Y', created_on), ((cast(strftime('%m',created_on) as integer)-1)/3) ORDER BY channel, yr\"}",
+   "name": "run_sql"
+  },
+  {
+   "role": "tool",
+   "kind": "tool_result",
+   "text": "{\"columns\": [\"channel\", \"yr\", \"leads\"], \"rows\": [[\"A\", \"2025-Q\", 49], [\"A\", \"2025-Q\", 46], [\"A\", \"2025-Q\", 49], [\"A\", \"2025-Q\", 49], [\"A\", \"2026-Q\", 45], [\"A\", \"2026-Q\", 100], [\"B\", \"2025-Q\", 25], [\"B\", \"2025-Q\", 23], [\"B\", \"2025-Q\", 25], [\"B\", \"2025-Q\", 25], [\"B\", \"2026-Q\", 23], [\"B\", \"2026-Q\", 40]], \"truncated\": false, \"error\": null}",
+   "name": "run_sql"
+  },
+  {
+   "role": "agent",
+   "kind": "tool_call",
+   "text": "{\"name\": \"net_contribution\", \"start\": \"2026-04-01\", \"end\": \"2026-07-01\"}",
+   "name": "compute_metric"
+  },
+  {
+   "role": "tool",
+   "kind": "tool_result",
+   "text": "{\"name\": \"net_contribution\", \"value\": {\"channel:referral\": 38080.0, \"channel:B\": 10000.0, \"channel:A\": 7000.0}, \"window\": [\"2026-04-01\", \"2026-07-01\"], \"base\": \"job margin less channel spend, by channel\", \"definition_version\": \"v1\", \"notes\": [], \"inputs\": [3975, 1852, 3971, 3972, 3987, 1877, 3983, 3984, 3999, 1902, 3995, 3996, 4011, 1927, 4007, 4008, 4023, 1952, 4019, 4020, 4035, 1977, 4031, 4032, 4047, 2002, 4043, 4044, 4059, 2027, 4055, 4056, 4071, 2052, 4067, 4068, 4083, 2077, 4079, 4080, 4095, 2102, 4091, 4092, 4107, 2127, 4103, 4104, 4119, 2152], \"inputs_count\": 398}",
+   "name": "compute_metric"
+  },
+  {
+   "role": "agent",
+   "kind": "tool_call",
+   "text": "{\"name\": \"channel_spend\", \"start\": \"2026-04-01\", \"end\": \"2026-07-01\"}",
+   "name": "compute_metric"
+  },
+  {
+   "role": "tool",
+   "kind": "tool_result",
+   "text": "{\"name\": \"channel_spend\", \"value\": {\"channel:A\": 1000.0, \"channel:B\": 800.0}, \"window\": [\"2026-04-01\", \"2026-07-01\"], \"base\": \"ledger spend by channel, effective in the window\", \"definition_version\": \"v1\", \"notes\": [], \"inputs\": [5359, 5360], \"inputs_count\": 2}",
+   "name": "compute_metric"
+  },
+  {
+   "role": "agent",
+   "kind": "tool_call",
+   "text": "{\"name\": \"tech_utilisation_pct\", \"start\": \"2026-04-01\", \"end\": \"2026-07-01\"}",
+   "name": "compute_metric"
+  },
+  {
+   "role": "tool",
+   "kind": "tool_result",
+   "text": "{\"name\": \"tech_utilisation_pct\", \"value\": {\"person:1df02abf\": 3.85, \"person:96f1a912\": 3.85, \"person:d2ad7944\": 3.85, \"person:b41f33a8\": 3.85, \"person:78ead53c\": 94.0}, \"window\": [\"2026-04-01\", \"2026-07-01\"], \"base\": \"scheduled hours as a percentage of 8 hours per weekday in the window\", \"definition_version\": \"v1\", \"notes\": [\"available hours per technician: 520.0\"], \"inputs\": [5250, 5251, 5252, 5253, 5254, 5255, 5256, 5257, 5258, 5259, 5260, 5261, 5262, 5263, 5264, 5265, 5266, 5267, 5268, 5269, 5270, 5271, 5272, 5273, 5274, 5275, 5276, 5277, 5278, 5279, 5280, 5281, 5282, 5283, 5284, 5285, 5286, 5287, 5288, 5289, 5290, 5291, 5292, 5293, 5294, 5295, 5296, 5297, 5298, 5299], \"inputs_count\": 99}",
+   "name": "compute_metric"
+  },
+  {
+   "role": "agent",
+   "kind": "tool_call",
+   "text": "{\"sql\": \"SELECT channel, count(*) jobs, avg(hours) avg_hours, sum(hours) total_hours, avg(job_margin) avg_margin FROM jobs_n WHERE lead_created_on >= '2026-04-01' AND lead_created_on < '2026-07-01' GROUP BY channel\"}",
+   "name": "run_sql"
+  },
+  {
+   "role": "tool",
+   "kind": "tool_result",
+   "text": "{\"columns\": [\"channel\", \"jobs\", \"avg_hours\", \"total_hours\", \"avg_margin\"], \"rows\": [[\"A\", 20, 4.0, 80.0, 400.0], [\"B\", 18, 6.0, 108.0, 600.0], [\"referral\", 61, 6.242622950819673, 380.8, 624.2622950819672]], \"truncated\": false, \"error\": null}",
+   "name": "run_sql"
+  },
+  {
+   "role": "agent",
+   "kind": "tool_call",
+   "text": "{\"sql\": \"SELECT service_line, count(*), sum(hours) FROM jobs_n WHERE channel='B' AND lead_created_on >= '2026-04-01' AND lead_created_on < '2026-07-01' GROUP BY service_line\"}",
+   "name": "run_sql"
+  },
+  {
+   "role": "tool",
+   "kind": "tool_result",
+   "text": "{\"columns\": [\"service_line\", \"count(*)\", \"sum(hours)\"], \"rows\": [[\"backflow\", 18, 108.0]], \"truncated\": false, \"error\": null}",
+   "name": "run_sql"
+  },
+  {
+   "role": "agent",
+   "kind": "tool_call",
+   "text": "{\"sql\": \"SELECT tech, sum(hours) FROM schedule WHERE day >= '2026-04-01' AND day < '2026-07-01' GROUP BY tech\"}",
+   "name": "run_sql"
+  },
+  {
+   "role": "tool",
+   "kind": "tool_result",
+   "text": "{\"columns\": [\"tech\", \"sum(hours)\"], \"rows\": [[\"T1\", 20.0], [\"T2\", 20.0], [\"T3\", 488.8], [\"T4\", 20.0], [\"T6\", 20.0]], \"truncated\": false, \"error\": null}",
+   "name": "run_sql"
+  },
+  {
+   "role": "agent",
+   "kind": "tool_call",
+   "text": "{\"sql\": \"SELECT tech, certification FROM certifications\"}",
+   "name": "run_sql"
+  },
+  {
+   "role": "tool",
+   "kind": "tool_result",
+   "text": "{\"columns\": [\"tech\", \"certification\"], \"rows\": [[\"T3\", \"backflow-tester\"], [\"T5\", \"backflow-tester\"], [\"T1\", \"epa-608\"], [\"T2\", \"epa-608\"], [\"T4\", \"journeyman-electrician\"]], \"truncated\": false, \"error\": null}",
+   "name": "run_sql"
+  },
+  {
+   "role": "agent",
+   "kind": "tool_call",
+   "text": "{\"sql\": \"SELECT tech_id, name FROM technicians WHERE left_on IS NULL\"}",
+   "name": "run_sql"
+  },
+  {
+   "role": "tool",
+   "kind": "tool_result",
+   "text": "{\"columns\": [\"tech_id\", \"name\"], \"rows\": [[\"T1\", \"Owen Marsh\"], [\"T2\", \"Pia Lund\"], [\"T3\", \"Rafa Osei\"], [\"T4\", \"Sam Iyer\"], [\"T6\", \"Uma Sato\"]], \"truncated\": false, \"error\": null}",
+   "name": "run_sql"
+  },
+  {
+   "role": "agent",
+   "kind": "tool_call",
+   "text": "{\"sql\": \"SELECT * FROM technicians\"}",
+   "name": "run_sql"
+  },
+  {
+   "role": "tool",
+   "kind": "tool_result",
+   "text": "{\"columns\": [\"tech_id\", \"name\", \"crew\", \"hourly_cost\", \"hired_on\", \"left_on\"], \"rows\": [[\"T1\", \"Owen Marsh\", \"C1\", 38.0, \"2023-05-01\", null], [\"T2\", \"Pia Lund\", \"C1\", 38.0, \"2023-05-01\", null], [\"T3\", \"Rafa Osei\", \"C2\", 38.0, \"2023-05-01\", null], [\"T4\", \"Sam Iyer\", \"C2\", 38.0, \"2023-05-01\", null], [\"T5\", \"Tomas Bell\", \"C1\", 38.0, \"2023-05-01\", \"2026-02-28\"], [\"T6\", \"Uma Sato\", \"C2\", 38.0, \"2023-05-01\", null]], \"truncated\": false, \"error\": null}",
+   "name": "run_sql"
+  },
+  {
+   "role": "agent",
+   "kind": "tool_call",
+   "text": "{\"sql\": \"SELECT * FROM certifications WHERE tech='T5'\"}",
+   "name": "run_sql"
+  },
+  {
+   "role": "tool",
+   "kind": "tool_result",
+   "text": "{\"columns\": [\"tech\", \"certification\", \"issued_on\"], \"rows\": [[\"T5\", \"backflow-tester\", \"2023-09-02\"]], \"truncated\": false, \"error\": null}",
+   "name": "run_sql"
+  },
+  {
+   "role": "agent",
+   "kind": "tool_call",
+   "text": "{\"sql\": \"SELECT tech, performed_crew, count(*) FROM jobs_n WHERE channel='B' AND lead_created_on >= '2026-04-01' AND lead_created_on < '2026-07-01' GROUP BY tech, performed_crew\"}",
+   "name": "run_sql"
+  },
+  {
+   "role": "tool",
+   "kind": "tool_result",
+   "text": "{\"columns\": [\"tech\", \"performed_crew\", \"count(*)\"], \"rows\": [[\"T3\", \"C2\", 18]], \"truncated\": false, \"error\": null}",
+   "name": "run_sql"
+  },
+  {
+   "role": "agent",
+   "kind": "tool_call",
+   "text": "{\"sql\": \"SELECT tech, sum(hours) FROM schedule s JOIN jobs j ON s.job_id=j.job_id WHERE j.channel='B' AND s.day >= '2026-04-01' AND s.day < '2026-07-01' GROUP BY tech\"}",
+   "name": "run_sql"
+  },
+  {
+   "role": "tool",
+   "kind": "tool_result",
+   "text": "{\"columns\": [], \"rows\": [], \"truncated\": false, \"error\": \"ambiguous column name: tech\"}",
+   "name": "run_sql"
+  },
+  {
+   "role": "agent",
+   "kind": "message",
+   "text": "Confirmed: all 18 channel B (backflow) jobs last quarter were performed by T3, the only currently active backflow-certified technician, who is already scheduled at 94% utilisation (488.8 of 520 available hours, leaving only ~31 hours of slack this quarter). This is enough evidence to answer.\n\n## Answer\n\n**The averages are real but doubling spend won't get you the naive $2,000.**\n\nBasis: quarter 2026-04-01 to 2026-07-01 (job margin less channel spend, per lead), computed from `net_contribution`, `channel_spend`, and `crm_leads`/`jobs_n`.\n\n- Channel A: $7,000 net contribution / 100 leads = $70/lead\n- Channel B: $10,000 net contribution / 40 leads = $250/lead\n\nThose numbers check out. But two things break the \"just double it\" math:\n\n**1. No evidence spend drives B's lead volume.** Channel B spend has been flat at $800/quarter for six straight quarters (2025-01-01 through 2026-04-01, `ledger` channel_spend), while B's lead count bounced between 23 and 40 leads with no correlation to spend. There's no historical data point where B spend ever moved, so there's no basis in this data for assuming an extra $800 buys any particular number of additional leads, let alone the same $250/lead rate.\n\n**2. Even if it did, you can't deliver the work.** Every channel B job last quarter was backflow testing, and every one of the 18 jobs was performed by a single technician, T3 (Rafa Osei), per `jobs_n` and `schedule`. T5 (Tomas Bell), the other backflow-certified tech, left on 2026-02-28 (`technicians`, `certifications`). T3 is already at 94% utilisation this quarter (488.8 of 520 available hours, `tech_utilisation_pct`), leaving roughly 31 hours of slack, worth about 5 more backflow jobs at the current 6-hour average, not the ~18 additional jobs doubled spend would imply. No other active tech holds the backflow-tester certification, so extra B leads beyond that would sit unfilled or need overtime/hiring/subcontracting, which isn't in this ledger.\n\n**What I'd actually recommend instead of doubling B spend:** get a second technician backflow-certified (or verify/re-cert one), then revisit the spend increase once there's capacity to work the leads it would generate. I can't take that as an action, certifying a tech isn't something this system does, but I can draft an internal note for you if useful.\n\nANSWER: Channel B's $250/lead and channel A's $70/lead are both real, from Q2 2026 net contribution divided by lead count, but doubling B's spend is not supported: B's spend has never varied in six quarters so there's no evidence more spend buys more leads, and even if it did, the sole active backflow-certified technician is already at 94% utilisation with only about 5 jobs' worth of slack capacity left this quarter.\nNUMBERS: {\"channel_A_net_contribution_q2_2026\": 7000.0, \"channel_A_leads_q2_2026\": 100, \"channel_A_per_lead\": 70.0, \"channel_B_net_contribution_q2_2026\": 10000.0, \"channel_B_leads_q2_2026\": 40, \"channel_B_per_lead\": 250.0, \"channel_B_spend_q2_2026\": 800.0, \"T3_utilisation_pct\": 94.0, \"T3_available_hours\": 520.0, \"T3_scheduled_hours\": 488.8, \"T3_slack_hours\": 31.2, \"avg_backflow_job_hours\": 6.0}\nEVIDENCE: net_contribution(2026-04-01,2026-07-01), channel_spend(2026-04-01,2026-07-01), crm_leads, jobs_n, tech_utilisation_pct(2026-04-01,2026-07-01), schedule, certifications, technicians, ledger\nACTIONS: none",
+   "name": ""
+  },
+  {
+   "role": "reflect",
+   "kind": "verdict",
+   "text": "S=0 P=1 E=1 C=1 R=0 failure=wrong_number; realistic_return: no reported figure within 1.0 of -200.0, nor two that sum or differ to it",
+   "name": ""
+  }
+ ],
+ "score": {
+  "S": 0,
+  "P": 1,
+  "E": 1,
+  "C": 1,
+  "R": 0,
+  "failure": "wrong_number",
+  "notes": [
+   "realistic_return: no reported figure within 1.0 of -200.0, nor two that sum or differ to it"
+  ]
+ },
+ "meta": {
+  "seed_index": 1,
+  "ablation": "none",
+  "arm": "B",
+  "cost_usd": 0.11448,
+  "num_turns": 19,
+  "max_turns": 40,
+  "ended_by": "completed",
+  "sdk_version": "0.2.161",
+  "usage": {
+   "input_tokens": 16,
+   "cache_creation_input_tokens": 9128,
+   "cache_read_input_tokens": 87365,
+   "output_tokens": 5947,
+   "output_tokens_details": {
+    "thinking_tokens": 2754
+   },
+   "server_tool_use": {
+    "web_search_requests": 0,
+    "web_fetch_requests": 0
+   },
+   "service_tier": "standard",
+   "cache_creation": {
+    "ephemeral_1h_input_tokens": 9128,
+    "ephemeral_5m_input_tokens": 0
+   },
+   "inference_geo": "not_available",
+   "iterations": [
+    {
+     "input_tokens": 2,
+     "output_tokens": 1326,
+     "cache_read_input_tokens": 15327,
+     "cache_creation_input_tokens": 1127,
+     "cache_creation": {
+      "ephemeral_5m_input_tokens": 0,
+      "ephemeral_1h_input_tokens": 1127
+     },
+     "type": "message"
+    }
+   ],
+   "speed": "standard"
+  },
+  "duration_s": 65.23,
+  "executed": [],
+  "approvals_requested": []
+ },
+ "hash": "f8d5f6824ac0"
+}

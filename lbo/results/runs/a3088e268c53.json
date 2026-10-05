@@ -1,0 +1,36 @@
+{
+ "hash": "a3088e268c53",
+ "task": "f_channel_inversion",
+ "firm": "fieldservice",
+ "arm": "B",
+ "ablation": "none",
+ "model": "claude-sonnet-5",
+ "seed_index": 0,
+ "score": {
+  "S": 0,
+  "P": 1,
+  "E": 1,
+  "C": 1,
+  "R": 0,
+  "failure": "wrong_number",
+  "notes": [
+   "realistic_return: no reported figure within 1.0 of -200.0, nor two that sum or differ to it"
+  ]
+ },
+ "cost_usd": 0.22072400000000003,
+ "num_turns": 24,
+ "ended_by": "completed",
+ "date": "2026-09-29",
+ "rescored_at": "2026-09-29T13:04:16",
+ "score_before_rescore": {
+  "S": 0,
+  "P": 1,
+  "E": 1,
+  "C": 1,
+  "R": 0,
+  "failure": "wrong_number",
+  "notes": [
+   "realistic_return: no reported figure within 1.0 of -200.0, nor two that sum or differ to it"
+  ]
+ }
+}

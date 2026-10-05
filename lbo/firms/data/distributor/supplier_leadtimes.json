@@ -1,0 +1,248 @@
+{
+ "name": "supplier_leadtimes",
+ "exported_at": "2026-01-03T09:00:00",
+ "records": [
+  {
+   "sku": "SKU-D00",
+   "supplier": "Supplier 0",
+   "lead_time_days": 11,
+   "as_of": "2026-01-01"
+  },
+  {
+   "sku": "SKU-D01",
+   "supplier": "Supplier 1",
+   "lead_time_days": 5,
+   "as_of": "2026-01-01"
+  },
+  {
+   "sku": "SKU-D02",
+   "supplier": "Supplier 2",
+   "lead_time_days": 10,
+   "as_of": "2026-01-01"
+  },
+  {
+   "sku": "SKU-D03",
+   "supplier": "Supplier 3",
+   "lead_time_days": 13,
+   "as_of": "2026-01-01"
+  },
+  {
+   "sku": "SKU-D04",
+   "supplier": "Supplier 4",
+   "lead_time_days": 9,
+   "as_of": "2026-01-01"
+  },
+  {
+   "sku": "SKU-D05",
+   "supplier": "Supplier 5",
+   "lead_time_days": 7,
+   "as_of": "2026-01-01"
+  },
+  {
+   "sku": "SKU-D06",
+   "supplier": "Supplier 0",
+   "lead_time_days": 5,
+   "as_of": "2026-01-01"
+  },
+  {
+   "sku": "SKU-D07",
+   "supplier": "Supplier 1",
+   "lead_time_days": 10,
+   "as_of": "2026-01-01"
+  },
+  {
+   "sku": "SKU-D08",
+   "supplier": "Supplier 2",
+   "lead_time_days": 7,
+   "as_of": "2026-01-01"
+  },
+  {
+   "sku": "SKU-D09",
+   "supplier": "Supplier 3",
+   "lead_time_days": 13,
+   "as_of": "2026-01-01"
+  },
+  {
+   "sku": "SKU-D10",
+   "supplier": "Supplier 4",
+   "lead_time_days": 7,
+   "as_of": "2026-01-01"
+  },
+  {
+   "sku": "SKU-D11",
+   "supplier": "Supplier 5",
+   "lead_time_days": 5,
+   "as_of": "2026-01-01"
+  },
+  {
+   "sku": "SKU-D12",
+   "supplier": "Supplier 0",
+   "lead_time_days": 8,
+   "as_of": "2026-01-01"
+  },
+  {
+   "sku": "SKU-D13",
+   "supplier": "Supplier 1",
+   "lead_time_days": 7,
+   "as_of": "2026-01-01"
+  },
+  {
+   "sku": "SKU-D14",
+   "supplier": "Supplier 2",
+   "lead_time_days": 45,
+   "as_of": "2026-01-01"
+  },
+  {
+   "sku": "SKU-D15",
+   "supplier": "Supplier 3",
+   "lead_time_days": 6,
+   "as_of": "2026-01-01"
+  },
+  {
+   "sku": "SKU-D16",
+   "supplier": "Supplier 4",
+   "lead_time_days": 12,
+   "as_of": "2026-01-01"
+  },
+  {
+   "sku": "SKU-D17",
+   "supplier": "Supplier 5",
+   "lead_time_days": 10,
+   "as_of": "2026-01-01"
+  },
+  {
+   "sku": "SKU-D18",
+   "supplier": "Supplier 0",
+   "lead_time_days": 6,
+   "as_of": "2026-01-01"
+  },
+  {
+   "sku": "SKU-D19",
+   "supplier": "Supplier 1",
+   "lead_time_days": 10,
+   "as_of": "2026-01-01"
+  },
+  {
+   "sku": "SKU-D20",
+   "supplier": "Supplier 2",
+   "lead_time_days": 9,
+   "as_of": "2026-01-01"
+  },
+  {
+   "sku": "SKU-D21",
+   "supplier": "Supplier 3",
+   "lead_time_days": 8,
+   "as_of": "2026-01-01"
+  },
+  {
+   "sku": "SKU-D22",
+   "supplier": "Supplier 4",
+   "lead_time_days": 5,
+   "as_of": "2026-01-01"
+  },
+  {
+   "sku": "SKU-D23",
+   "supplier": "Supplier 5",
+   "lead_time_days": 8,
+   "as_of": "2026-01-01"
+  },
+  {
+   "sku": "SKU-D24",
+   "supplier": "Supplier 0",
+   "lead_time_days": 8,
+   "as_of": "2026-01-01"
+  },
+  {
+   "sku": "SKU-D25",
+   "supplier": "Supplier 1",
+   "lead_time_days": 13,
+   "as_of": "2026-01-01"
+  },
+  {
+   "sku": "SKU-D26",
+   "supplier": "Supplier 2",
+   "lead_time_days": 12,
+   "as_of": "2026-01-01"
+  },
+  {
+   "sku": "SKU-D27",
+   "supplier": "Supplier 3",
+   "lead_time_days": 8,
+   "as_of": "2026-01-01"
+  },
+  {
+   "sku": "SKU-D28",
+   "supplier": "Supplier 4",
+   "lead_time_days": 14,
+   "as_of": "2026-01-01"
+  },
+  {
+   "sku": "SKU-D29",
+   "supplier": "Supplier 5",
+   "lead_time_days": 11,
+   "as_of": "2026-01-01"
+  },
+  {
+   "sku": "SKU-D30",
+   "supplier": "Supplier 0",
+   "lead_time_days": 14,
+   "as_of": "2026-01-01"
+  },
+  {
+   "sku": "SKU-D31",
+   "supplier": "Supplier 1",
+   "lead_time_days": 5,
+   "as_of": "2026-01-01"
+  },
+  {
+   "sku": "SKU-D32",
+   "supplier": "Supplier 2",
+   "lead_time_days": 13,
+   "as_of": "2026-01-01"
+  },
+  {
+   "sku": "SKU-D33",
+   "supplier": "Supplier 3",
+   "lead_time_days": 5,
+   "as_of": "2026-01-01"
+  },
+  {
+   "sku": "SKU-D34",
+   "supplier": "Supplier 4",
+   "lead_time_days": 6,
+   "as_of": "2026-01-01"
+  },
+  {
+   "sku": "SKU-D35",
+   "supplier": "Supplier 5",
+   "lead_time_days": 14,
+   "as_of": "2026-01-01"
+  },
+  {
+   "sku": "SKU-D36",
+   "supplier": "Supplier 0",
+   "lead_time_days": 7,
+   "as_of": "2026-01-01"
+  },
+  {
+   "sku": "SKU-D37",
+   "supplier": "Supplier 1",
+   "lead_time_days": 13,
+   "as_of": "2026-01-01"
+  },
+  {
+   "sku": "SKU-D38",
+   "supplier": "Supplier 2",
+   "lead_time_days": 10,
+   "as_of": "2026-01-01"
+  },
+  {
+   "sku": "SKU-D39",
+   "supplier": "Supplier 3",
+   "lead_time_days": 13,
+   "as_of": "2026-01-01"
+  }
+ ],
+ "id_field": "sku",
+ "description": "supplier lead times by product"
+}

@@ -1,0 +1,209 @@
+{
+ "firm": "fieldservice",
+ "arm": "A",
+ "task": "f_channel_inversion",
+ "model": "claude-sonnet-5",
+ "date": "2026-09-29",
+ "turns": [
+  {
+   "role": "owner",
+   "kind": "message",
+   "text": "Channel B brings in $250 of net contribution per lead and channel A only $70. Should we double channel B's spend next quarter? Say what the extra $800 would actually bring in.",
+   "name": ""
+  },
+  {
+   "role": "agent",
+   "kind": "tool_call",
+   "text": "{}",
+   "name": "describe_tables"
+  },
+  {
+   "role": "tool",
+   "kind": "tool_result",
+   "text": "{\"certifications\": [\"tech\", \"certification\", \"issued_on\"], \"crm_leads\": [\"lead_id\", \"created_on\", \"entered_on\", \"channel\", \"status\"], \"jobs\": [\"job_id\", \"lead_id\", \"channel\", \"service_line\", \"tech\", \"scheduled_crew\", \"performed_crew\", \"scheduled_on\", \"performed_on\", \"entered_on\", \"revenue\", \"direct_cost\", \"hours\"], \"ledger\": [\"journal_id\", \"kind\", \"channel\", \"amount\", \"effective_on\", \"entered_on\", \"memo\"], \"payroll\": [\"tech\", \"week_start\", \"hours\"], \"schedule\": [\"entry_id\", \"tech\", \"day\", \"hours\", \"entered_on\", \"job_id\"], \"technicians\": [\"tech_id\", \"name\", \"crew\", \"hourly_cost\", \"hired_on\", \"left_on\"]}",
+   "name": "describe_tables"
+  },
+  {
+   "role": "agent",
+   "kind": "tool_call",
+   "text": "{\"sql\": \"SELECT channel, COUNT(*) AS leads, MIN(created_on) AS first, MAX(created_on) AS last FROM crm_leads GROUP BY channel\"}",
+   "name": "run_sql"
+  },
+  {
+   "role": "tool",
+   "kind": "tool_result",
+   "text": "{\"columns\": [\"channel\", \"leads\", \"first\", \"last\"], \"rows\": [[\"A\", 338, \"2025-01-01\", \"2026-06-30\"], [\"B\", 161, \"2025-01-01\", \"2026-06-29\"], [\"referral\", 61, \"2026-04-01\", \"2026-06-24\"]], \"truncated\": false, \"error\": null}",
+   "name": "run_sql"
+  },
+  {
+   "role": "agent",
+   "kind": "tool_call",
+   "text": "{\"sql\": \"SELECT channel, kind, COUNT(*) n, SUM(amount) total, MIN(effective_on) first, MAX(effective_on) last FROM ledger GROUP BY channel, kind ORDER BY channel, kind\"}",
+   "name": "run_sql"
+  },
+  {
+   "role": "tool",
+   "kind": "tool_result",
+   "text": "{\"columns\": [\"channel\", \"kind\", \"n\", \"total\", \"first\", \"last\"], \"rows\": [[\"A\", \"channel_spend\", 6, 6000.0, \"2025-01-01\", \"2026-04-01\"], [\"B\", \"channel_spend\", 6, 4800.0, \"2025-01-01\", \"2026-04-01\"]], \"truncated\": false, \"error\": null}",
+   "name": "run_sql"
+  },
+  {
+   "role": "agent",
+   "kind": "tool_call",
+   "text": "{\"sql\": \"SELECT channel, COUNT(*) jobs, SUM(revenue) rev, SUM(direct_cost) cost FROM jobs GROUP BY channel\"}",
+   "name": "run_sql"
+  },
+  {
+   "role": "tool",
+   "kind": "tool_result",
+   "text": "{\"columns\": [\"channel\", \"jobs\", \"rev\", \"cost\"], \"rows\": [[\"A\", 67, 77061.48000000001, 43811.829999999994], [\"B\", 64, 85379.74000000002, 48431.52], [\"referral\", 61, 95200.0, 57120.0]], \"truncated\": false, \"error\": null}",
+   "name": "run_sql"
+  },
+  {
+   "role": "agent",
+   "kind": "tool_call",
+   "text": "{\"sql\": \"SELECT channel, effective_on, amount FROM ledger WHERE kind='channel_spend' ORDER BY channel, effective_on\"}",
+   "name": "run_sql"
+  },
+  {
+   "role": "tool",
+   "kind": "tool_result",
+   "text": "{\"columns\": [\"channel\", \"effective_on\", \"amount\"], \"rows\": [[\"A\", \"2025-01-01\", 1000.0], [\"A\", \"2025-04-01\", 1000.0], [\"A\", \"2025-07-01\", 1000.0], [\"A\", \"2025-10-01\", 1000.0], [\"A\", \"2026-01-01\", 1000.0], [\"A\", \"2026-04-01\", 1000.0], [\"B\", \"2025-01-01\", 800.0], [\"B\", \"2025-04-01\", 800.0], [\"B\", \"2025-07-01\", 800.0], [\"B\", \"2025-10-01\", 800.0], [\"B\", \"2026-01-01\", 800.0], [\"B\", \"2026-04-01\", 800.0]], \"truncated\": false, \"error\": null}",
+   "name": "run_sql"
+  },
+  {
+   "role": "agent",
+   "kind": "tool_call",
+   "text": "{\"sql\": \"SELECT channel, strftime('%Y-%m', created_on) AS mo, COUNT(*) AS leads FROM crm_leads WHERE channel IN ('A','B') GROUP BY channel, mo ORDER BY channel, mo\"}",
+   "name": "run_sql"
+  },
+  {
+   "role": "tool",
+   "kind": "tool_result",
+   "text": "{\"columns\": [\"channel\", \"mo\", \"leads\"], \"rows\": [[\"A\", \"2025-01\", 22], [\"A\", \"2025-02\", 18], [\"A\", \"2025-03\", 9], [\"A\", \"2025-04\", 20], [\"A\", \"2025-05\", 20], [\"A\", \"2025-06\", 6], [\"A\", \"2025-07\", 21], [\"A\", \"2025-08\", 19], [\"A\", \"2025-09\", 9], [\"A\", \"2025-10\", 21], [\"A\", \"2025-11\", 18], [\"A\", \"2025-12\", 10], [\"A\", \"2026-01\", 20], [\"A\", \"2026-02\", 20], [\"A\", \"2026-03\", 5], [\"A\", \"2026-04\", 34], [\"A\", \"2026-05\", 33], [\"A\", \"2026-06\", 33], [\"B\", \"2025-01\", 11], [\"B\", \"2025-02\", 10], [\"B\", \"2025-03\", 4], [\"B\", \"2025-04\", 11], [\"B\", \"2025-05\", 10], [\"B\", \"2025-06\", 2], [\"B\", \"2025-07\", 11], [\"B\", \"2025-08\", 9], [\"B\", \"2025-09\", 5], [\"B\", \"2025-10\", 11], [\"B\", \"2025-11\", 9], [\"B\", \"2025-12\", 5], [\"B\", \"2026-01\", 11], [\"B\", \"2026-02\", 9], [\"B\", \"2026-03\", 3], [\"B\", \"2026-04\", 14], [\"B\", \"2026-05\", 13], [\"B\", \"2026-06\", 13]], \"truncated\": false, \"error\": null}",
+   "name": "run_sql"
+  },
+  {
+   "role": "agent",
+   "kind": "tool_call",
+   "text": "{\"sql\": \"SELECT l.channel, COUNT(DISTINCT j.job_id) AS jobs, COUNT(DISTINCT l.lead_id) AS leads FROM crm_leads l LEFT JOIN jobs j ON j.lead_id=l.lead_id WHERE l.channel IN ('A','B') GROUP BY l.channel\"}",
+   "name": "run_sql"
+  },
+  {
+   "role": "tool",
+   "kind": "tool_result",
+   "text": "{\"columns\": [\"channel\", \"jobs\", \"leads\"], \"rows\": [[\"A\", 67, 338], [\"B\", 64, 161]], \"truncated\": false, \"error\": null}",
+   "name": "run_sql"
+  },
+  {
+   "role": "agent",
+   "kind": "tool_call",
+   "text": "{\"sql\": \"SELECT strftime('%Y-%m', j.performed_on) mo, SUM(j.hours) job_hours, COUNT(*) jobs FROM jobs j GROUP BY mo ORDER BY mo DESC LIMIT 6\"}",
+   "name": "run_sql"
+  },
+  {
+   "role": "tool",
+   "kind": "tool_result",
+   "text": "{\"columns\": [\"mo\", \"job_hours\", \"jobs\"], \"rows\": [[\"2026-06\", 168.8, 30], [\"2026-05\", 196.0, 33], [\"2026-04\", 204.0, 36], [\"2026-03\", 6.0, 1], [\"2026-02\", 40.0, 7], [\"2026-01\", 86.0, 12]], \"truncated\": false, \"error\": null}",
+   "name": "run_sql"
+  },
+  {
+   "role": "agent",
+   "kind": "tool_call",
+   "text": "{\"sql\": \"SELECT strftime('%Y-%m', week_start) mo, SUM(hours) payroll_hours FROM payroll GROUP BY mo ORDER BY mo DESC LIMIT 6\"}",
+   "name": "run_sql"
+  },
+  {
+   "role": "tool",
+   "kind": "tool_result",
+   "text": "{\"columns\": [\"mo\", \"payroll_hours\"], \"rows\": [[\"2026-06\", 600.0], [\"2026-05\", 1000.0], [\"2026-04\", 800.0], [\"2026-03\", 1000.0], [\"2026-02\", 960.0], [\"2026-01\", 960.0]], \"truncated\": false, \"error\": null}",
+   "name": "run_sql"
+  },
+  {
+   "role": "agent",
+   "kind": "tool_call",
+   "text": "{\"sql\": \"SELECT channel, MIN(created_on), MAX(created_on), COUNT(*) FROM crm_leads WHERE channel='B'\"}",
+   "name": "run_sql"
+  },
+  {
+   "role": "tool",
+   "kind": "tool_result",
+   "text": "{\"columns\": [\"channel\", \"MIN(created_on)\", \"MAX(created_on)\", \"COUNT(*)\"], \"rows\": [[\"B\", \"2025-01-01\", \"2026-06-29\", 161]], \"truncated\": false, \"error\": null}",
+   "name": "run_sql"
+  },
+  {
+   "role": "agent",
+   "kind": "message",
+   "text": "## What the data actually shows\n\n**Historical spend has never varied**, so there is no direct evidence of how channel B's lead volume responds to spend. Channel B has run at exactly $800/quarter for the last 6 quarters (Jan 2025–Apr 2026, total $4,800), producing 161 leads and 64 converted jobs. Channel A has run at exactly $1,000/quarter, producing 338 leads and 67 jobs.\n\n**Net contribution per lead, from actuals (revenue − direct cost, over full 18‑month window):**\n- Channel B: revenue $85,379.74 − direct cost $48,431.52 = gross profit $36,948.22 → **$229.5/lead** gross, or **$199.7/lead** after allocating channel spend ($4,800/161 leads).\n- Channel A: revenue $77,061.48 − direct cost $43,811.83 = gross profit $33,249.65 → **$98.4/lead** gross, or **$80.6/lead** after spend.\n\nThese are directionally consistent with the $250 vs $70 figures you quoted (B is roughly 2.5–3.5x more valuable per lead than A), though my computed numbers land somewhat lower than $250 for B. Worth reconciling where the $250 figure came from before acting on it.\n\n**Capacity check:** technicians are running well under capacity (job hours were only ~25–30% of payroll hours in April–June 2026), so absorbing more B-driven jobs is not a bottleneck.\n\n## What the extra $800 would bring in\n\nDoubling B's quarterly spend from $800 to $1,600 is an extra $800/quarter. If B's historical lead-per-dollar rate holds (161 leads ÷ $4,800 = ~0.0335 leads/$), that extra $800 would nominally buy about **27 incremental leads**, worth roughly **$6,150 in gross profit** (27 × $229.5/lead), or **~$5,350 net of the extra $800 spend**.\n\n**The catch:** that projection assumes the marginal lead costs the same as the average lead so far. We have zero data to support that assumption, because B's spend has never moved. Ad and marketing channels typically show diminishing returns once you push past the easy-to-reach audience, so this number is likely an upper bound, not a forecast.\n\n## Recommendation\n\nDon't jump straight to doubling on this data. Either:\n1. Run a smaller test tranche first (e.g. +$400, a 50% increase, for one quarter) and measure the actual lead response, or\n2. Double for one quarter explicitly as a measured experiment, with the understanding that this is generating the elasticity data we currently lack, not executing a proven playbook.\n\nEither way, capacity is not a constraint, so the business can absorb the volume if the leads materialize.\n\nANSWER: Channel B is meaningfully more valuable per lead than A (about $200-230 net contribution per lead vs $80-98 for A, based on actuals), but B's spend has been flat at $800/quarter for 18 months with no variation, so there is no historical evidence of how its lead volume responds to a spend increase. Assuming the marginal lead costs the same as the historical average, an extra $800/quarter would buy roughly 27 incremental leads worth about $5,350 net, but that assumption is unverified and likely optimistic; recommend a smaller test tranche or a measured one-quarter doubling rather than a full commitment.\nNUMBERS: {\"channel_B_leads_18mo\": 161, \"channel_B_jobs_18mo\": 64, \"channel_B_revenue\": 85379.74, \"channel_B_direct_cost\": 48431.52, \"channel_B_gross_profit\": 36948.22, \"channel_B_total_spend_18mo\": 4800.0, \"channel_B_gp_per_lead\": 229.5, \"channel_B_net_contribution_per_lead\": 199.7, \"channel_A_leads_18mo\": 338, \"channel_A_jobs_18mo\": 67, \"channel_A_revenue\": 77061.48, \"channel_A_direct_cost\": 43811.83, \"channel_A_gross_profit\": 33249.65, \"channel_A_total_spend_18mo\": 6000.0, \"channel_A_gp_per_lead\": 98.4, \"channel_A_net_contribution_per_lead\": 80.6, \"extra_quarterly_spend_if_doubled\": 800, \"projected_incremental_leads_if_linear\": 26.8, \"projected_incremental_gross_profit\": 6150, \"projected_incremental_net_contribution\": 5350}\nEVIDENCE: crm_leads (channel A/B lead counts and dates), ledger (kind=channel_spend, per-channel quarterly amounts), jobs (revenue, direct_cost, hours by channel), payroll (monthly hours) for capacity check\nACTIONS: none",
+   "name": ""
+  },
+  {
+   "role": "reflect",
+   "kind": "verdict",
+   "text": "S=1 P=1 E=1 C=0 R=0 failure=missing_communication; says none of ['certif']; says none of ['Rafa Osei', 'T3']",
+   "name": ""
+  }
+ ],
+ "score": {
+  "S": 0,
+  "P": 1,
+  "E": 1,
+  "C": 0,
+  "R": 0,
+  "failure": "wrong_number",
+  "notes": [
+   "net_per_lead_b: no reported figure within 0.01 of 250.0, nor two that sum or differ to it",
+   "utilisation: no reported figure within 0.5 of 94.0, nor two that sum or differ to it",
+   "realistic_return: no reported figure within 1.0 of -200.0, nor two that sum or differ to it",
+   "says none of ['certif']",
+   "says none of ['Rafa Osei', 'T3']"
+  ]
+ },
+ "meta": {
+  "seed_index": 0,
+  "ablation": "none",
+  "arm": "A",
+  "cost_usd": 0.1303858,
+  "num_turns": 11,
+  "max_turns": 40,
+  "ended_by": "completed",
+  "sdk_version": "0.2.161",
+  "usage": {
+   "input_tokens": 12,
+   "cache_creation_input_tokens": 12979,
+   "cache_read_input_tokens": 46964,
+   "output_tokens": 6806,
+   "output_tokens_details": {
+    "thinking_tokens": 4042
+   },
+   "server_tool_use": {
+    "web_search_requests": 0,
+    "web_fetch_requests": 0
+   },
+   "service_tier": "standard",
+   "cache_creation": {
+    "ephemeral_1h_input_tokens": 12979,
+    "ephemeral_5m_input_tokens": 0
+   },
+   "inference_geo": "not_available",
+   "iterations": [
+    {
+     "input_tokens": 2,
+     "output_tokens": 3314,
+     "cache_read_input_tokens": 12979,
+     "cache_creation_input_tokens": 0,
+     "cache_creation": {
+      "ephemeral_5m_input_tokens": 0,
+      "ephemeral_1h_input_tokens": 0
+     },
+     "type": "message"
+    }
+   ],
+   "speed": "standard"
+  },
+  "duration_s": 82.05,
+  "executed": [],
+  "approvals_requested": []
+ },
+ "hash": "20b401b4a97f"
+}

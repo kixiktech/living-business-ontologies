@@ -1,0 +1,368 @@
+{
+ "name": "products",
+ "exported_at": "2026-07-01T08:00:00",
+ "records": [
+  {
+   "sku": "SKU-D00",
+   "name": "Case goods 0",
+   "unit_cost": 29.31,
+   "unit_price": 36.06,
+   "supplier": "Supplier 0",
+   "on_hand": 606,
+   "daily_demand": 8
+  },
+  {
+   "sku": "SKU-D01",
+   "name": "Case goods 1",
+   "unit_cost": 20.48,
+   "unit_price": 24.28,
+   "supplier": "Supplier 1",
+   "on_hand": 352,
+   "daily_demand": 12
+  },
+  {
+   "sku": "SKU-D02",
+   "name": "Case goods 2",
+   "unit_cost": 23.35,
+   "unit_price": 29.54,
+   "supplier": "Supplier 2",
+   "on_hand": 505,
+   "daily_demand": 8
+  },
+  {
+   "sku": "SKU-D03",
+   "name": "Case goods 3",
+   "unit_cost": 11.08,
+   "unit_price": 14.79,
+   "supplier": "Supplier 3",
+   "on_hand": 288,
+   "daily_demand": 9
+  },
+  {
+   "sku": "SKU-D04",
+   "name": "Case goods 4",
+   "unit_cost": 20.81,
+   "unit_price": 27.17,
+   "supplier": "Supplier 4",
+   "on_hand": 253,
+   "daily_demand": 4
+  },
+  {
+   "sku": "SKU-D05",
+   "name": "Case goods 5",
+   "unit_cost": 19.94,
+   "unit_price": 24.4,
+   "supplier": "Supplier 5",
+   "on_hand": 371,
+   "daily_demand": 4
+  },
+  {
+   "sku": "SKU-D06",
+   "name": "Case goods 6",
+   "unit_cost": 20.19,
+   "unit_price": 26.17,
+   "supplier": "Supplier 0",
+   "on_hand": 309,
+   "daily_demand": 12
+  },
+  {
+   "sku": "SKU-D07",
+   "name": "Case goods 7",
+   "unit_cost": 14.62,
+   "unit_price": 19.36,
+   "supplier": "Supplier 1",
+   "on_hand": 477,
+   "daily_demand": 5
+  },
+  {
+   "sku": "SKU-D08",
+   "name": "Case goods 8",
+   "unit_cost": 23.46,
+   "unit_price": 28.71,
+   "supplier": "Supplier 2",
+   "on_hand": 541,
+   "daily_demand": 10
+  },
+  {
+   "sku": "SKU-D09",
+   "name": "Case goods 9",
+   "unit_cost": 14.19,
+   "unit_price": 18.16,
+   "supplier": "Supplier 3",
+   "on_hand": 364,
+   "daily_demand": 8
+  },
+  {
+   "sku": "SKU-D10",
+   "name": "Case goods 10",
+   "unit_cost": 13.09,
+   "unit_price": 16.24,
+   "supplier": "Supplier 4",
+   "on_hand": 241,
+   "daily_demand": 5
+  },
+  {
+   "sku": "SKU-D11",
+   "name": "Case goods 11",
+   "unit_cost": 9.95,
+   "unit_price": 12.15,
+   "supplier": "Supplier 5",
+   "on_hand": 296,
+   "daily_demand": 8
+  },
+  {
+   "sku": "SKU-D12",
+   "name": "Case goods 12",
+   "unit_cost": 22.42,
+   "unit_price": 27.55,
+   "supplier": "Supplier 0",
+   "on_hand": 615,
+   "daily_demand": 10
+  },
+  {
+   "sku": "SKU-D13",
+   "name": "Case goods 13",
+   "unit_cost": 8.69,
+   "unit_price": 10.56,
+   "supplier": "Supplier 1",
+   "on_hand": 682,
+   "daily_demand": 10
+  },
+  {
+   "sku": "SKU-D14",
+   "name": "Case goods 14",
+   "unit_cost": 11.41,
+   "unit_price": 14.14,
+   "supplier": "Supplier 2",
+   "on_hand": 160,
+   "daily_demand": 8
+  },
+  {
+   "sku": "SKU-D15",
+   "name": "Case goods 15",
+   "unit_cost": 7.66,
+   "unit_price": 9.09,
+   "supplier": "Supplier 3",
+   "on_hand": 474,
+   "daily_demand": 6
+  },
+  {
+   "sku": "SKU-D16",
+   "name": "Case goods 16",
+   "unit_cost": 21.44,
+   "unit_price": 26.75,
+   "supplier": "Supplier 4",
+   "on_hand": 353,
+   "daily_demand": 11
+  },
+  {
+   "sku": "SKU-D17",
+   "name": "Case goods 17",
+   "unit_cost": 19.35,
+   "unit_price": 23.12,
+   "supplier": "Supplier 5",
+   "on_hand": 508,
+   "daily_demand": 4
+  },
+  {
+   "sku": "SKU-D18",
+   "name": "Case goods 18",
+   "unit_cost": 19.04,
+   "unit_price": 24.92,
+   "supplier": "Supplier 0",
+   "on_hand": 738,
+   "daily_demand": 4
+  },
+  {
+   "sku": "SKU-D19",
+   "name": "Case goods 19",
+   "unit_cost": 6.93,
+   "unit_price": 8.88,
+   "supplier": "Supplier 1",
+   "on_hand": 744,
+   "daily_demand": 8
+  },
+  {
+   "sku": "SKU-D20",
+   "name": "Case goods 20",
+   "unit_cost": 16.55,
+   "unit_price": 19.54,
+   "supplier": "Supplier 2",
+   "on_hand": 482,
+   "daily_demand": 9
+  },
+  {
+   "sku": "SKU-D21",
+   "name": "Case goods 21",
+   "unit_cost": 14.23,
+   "unit_price": 18.66,
+   "supplier": "Supplier 3",
+   "on_hand": 431,
+   "daily_demand": 7
+  },
+  {
+   "sku": "SKU-D22",
+   "name": "Case goods 22",
+   "unit_cost": 8.22,
+   "unit_price": 9.97,
+   "supplier": "Supplier 4",
+   "on_hand": 583,
+   "daily_demand": 10
+  },
+  {
+   "sku": "SKU-D23",
+   "name": "Case goods 23",
+   "unit_cost": 6.07,
+   "unit_price": 7.66,
+   "supplier": "Supplier 5",
+   "on_hand": 360,
+   "daily_demand": 11
+  },
+  {
+   "sku": "SKU-D24",
+   "name": "Case goods 24",
+   "unit_cost": 29.95,
+   "unit_price": 38.16,
+   "supplier": "Supplier 0",
+   "on_hand": 619,
+   "daily_demand": 8
+  },
+  {
+   "sku": "SKU-D25",
+   "name": "Case goods 25",
+   "unit_cost": 8.92,
+   "unit_price": 11.03,
+   "supplier": "Supplier 1",
+   "on_hand": 358,
+   "daily_demand": 11
+  },
+  {
+   "sku": "SKU-D26",
+   "name": "Case goods 26",
+   "unit_cost": 13.24,
+   "unit_price": 16.27,
+   "supplier": "Supplier 2",
+   "on_hand": 792,
+   "daily_demand": 12
+  },
+  {
+   "sku": "SKU-D27",
+   "name": "Case goods 27",
+   "unit_cost": 12.45,
+   "unit_price": 15.61,
+   "supplier": "Supplier 3",
+   "on_hand": 674,
+   "daily_demand": 7
+  },
+  {
+   "sku": "SKU-D28",
+   "name": "Case goods 28",
+   "unit_cost": 20.33,
+   "unit_price": 24.46,
+   "supplier": "Supplier 4",
+   "on_hand": 584,
+   "daily_demand": 11
+  },
+  {
+   "sku": "SKU-D29",
+   "name": "Case goods 29",
+   "unit_cost": 7.86,
+   "unit_price": 10.43,
+   "supplier": "Supplier 5",
+   "on_hand": 395,
+   "daily_demand": 4
+  },
+  {
+   "sku": "SKU-D30",
+   "name": "Case goods 30",
+   "unit_cost": 17.28,
+   "unit_price": 20.72,
+   "supplier": "Supplier 0",
+   "on_hand": 786,
+   "daily_demand": 4
+  },
+  {
+   "sku": "SKU-D31",
+   "name": "Case goods 31",
+   "unit_cost": 14.8,
+   "unit_price": 19.54,
+   "supplier": "Supplier 1",
+   "on_hand": 693,
+   "daily_demand": 12
+  },
+  {
+   "sku": "SKU-D32",
+   "name": "Case goods 32",
+   "unit_cost": 26.03,
+   "unit_price": 31.68,
+   "supplier": "Supplier 2",
+   "on_hand": 383,
+   "daily_demand": 6
+  },
+  {
+   "sku": "SKU-D33",
+   "name": "Case goods 33",
+   "unit_cost": 6.14,
+   "unit_price": 7.56,
+   "supplier": "Supplier 3",
+   "on_hand": 305,
+   "daily_demand": 4
+  },
+  {
+   "sku": "SKU-D34",
+   "name": "Case goods 34",
+   "unit_cost": 14.03,
+   "unit_price": 17.48,
+   "supplier": "Supplier 4",
+   "on_hand": 336,
+   "daily_demand": 8
+  },
+  {
+   "sku": "SKU-D35",
+   "name": "Case goods 35",
+   "unit_cost": 17.92,
+   "unit_price": 21.25,
+   "supplier": "Supplier 5",
+   "on_hand": 282,
+   "daily_demand": 11
+  },
+  {
+   "sku": "SKU-D36",
+   "name": "Case goods 36",
+   "unit_cost": 29.27,
+   "unit_price": 35.18,
+   "supplier": "Supplier 0",
+   "on_hand": 784,
+   "daily_demand": 12
+  },
+  {
+   "sku": "SKU-D37",
+   "name": "Case goods 37",
+   "unit_cost": 18.4,
+   "unit_price": 22.84,
+   "supplier": "Supplier 1",
+   "on_hand": 256,
+   "daily_demand": 7
+  },
+  {
+   "sku": "SKU-D38",
+   "name": "Case goods 38",
+   "unit_cost": 17.38,
+   "unit_price": 21.81,
+   "supplier": "Supplier 2",
+   "on_hand": 638,
+   "daily_demand": 4
+  },
+  {
+   "sku": "SKU-D39",
+   "name": "Case goods 39",
+   "unit_cost": 22.07,
+   "unit_price": 29.33,
+   "supplier": "Supplier 3",
+   "on_hand": 744,
+   "daily_demand": 4
+  }
+ ],
+ "id_field": "sku",
+ "description": "products with cost, price, stock and demand"
+}

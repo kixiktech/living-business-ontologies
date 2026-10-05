@@ -1,0 +1,155 @@
+{
+ "firm": "retail",
+ "arm": "B",
+ "task": "r_cost_known_at",
+ "model": "claude-sonnet-5",
+ "date": "2026-09-29",
+ "turns": [
+  {
+   "role": "owner",
+   "kind": "message",
+   "text": "On 3 April 2026, what unit cost for the insulated bottle would the books have shown as applying on 2 April 2026? And what do the books show for that same day now?",
+   "name": ""
+  },
+  {
+   "role": "agent",
+   "kind": "tool_call",
+   "text": "{}",
+   "name": "describe_tables"
+  },
+  {
+   "role": "tool",
+   "kind": "tool_result",
+   "text": "{\"customers\": [\"cust_id\", \"name\", \"email\", \"phone\", \"created_on\"], \"customers_n\": [\"id\", \"email\", \"name\", \"duplicates\"], \"fulfillment\": [\"order_id\", \"shipped_from\", \"shipped_on\", \"entered_on\"], \"inventory_moves\": [\"move_id\", \"item_no\", \"from_store\", \"qty\", \"moved_on\", \"entered_on\"], \"ledger\": [\"journal_id\", \"kind\", \"effective_on\", \"entered_on\", \"amount\", \"memo\", \"supplier\", \"item_no\", \"unit_cost\", \"units\", \"units_a\", \"units_b\", \"account\"], \"payroll\": [\"employee_id\", \"week_start\", \"hours\", \"store\"], \"pos_sales\": [\"line_id\", \"order_id\", \"sold_on\", \"entered_on\", \"store\", \"cashier\", \"cust_id\", \"item_no\", \"qty\", \"unit_price\"], \"product_master\": [\"item_no\", \"sku\", \"name\", \"category\", \"list_price\", \"supplier\", \"unit_cost\"], \"sales_n\": [\"line_id\", \"order_id\", \"sold_on\", \"rang_up_at\", \"fulfilled_from\", \"cust_id\", \"item_no\", \"item_name\", \"category\", \"supplier\", \"qty\", \"unit_price\", \"amount\"], \"staff\": [\"employee_id\", \"name\", \"role\", \"store\", \"hourly_cost\", \"hired_on\"], \"store_map\": [\"store\", \"name\", \"opened_on\", \"sqft\", \"counted_in_2025\"], \"supplier_terms\": [\"supplier\", \"effective_on\", \"break_units_per_quarter\", \"tiers\", \"rule\", \"document\"]}",
+   "name": "describe_tables"
+  },
+  {
+   "role": "agent",
+   "kind": "tool_call",
+   "text": "{\"sql\": \"SELECT item_no, sku, name FROM product_master WHERE lower(name) LIKE '%insulated bottle%' OR lower(name) LIKE '%bottle%'\"}",
+   "name": "run_sql"
+  },
+  {
+   "role": "tool",
+   "kind": "tool_result",
+   "text": "{\"columns\": [\"item_no\", \"sku\", \"name\"], \"rows\": [[\"A-100\", \"A-100\", \"Insulated bottle\"], [\"B-300\", \"B-300\", \"Bottles item 0\"], [\"B-306\", \"B-306\", \"Bottles item 6\"], [\"B-312\", \"B-312\", \"Bottles item 12\"], [\"B-318\", \"B-318\", \"Bottles item 18\"], [\"B-324\", \"B-324\", \"Bottles item 24\"], [\"B-330\", \"B-330\", \"Bottles item 30\"], [\"B-336\", \"B-336\", \"Bottles item 36\"], [\"B-342\", \"B-342\", \"Bottles item 42\"], [\"B-348\", \"B-348\", \"Bottles item 48\"], [\"B-354\", \"B-354\", \"Bottles item 54\"], [\"B-360\", \"B-360\", \"Bottles item 60\"], [\"B-366\", \"B-366\", \"Bottles item 66\"], [\"B-372\", \"B-372\", \"Bottles item 72\"], [\"B-378\", \"B-378\", \"Bottles item 78\"], [\"B-384\", \"B-384\", \"Bottles item 84\"], [\"B-390\", \"B-390\", \"Bottles item 90\"], [\"B-396\", \"B-396\", \"Bottles item 96\"], [\"B-402\", \"B-402\", \"Bottles item 102\"], [\"B-408\", \"B-408\", \"Bottles item 108\"], [\"B-414\", \"B-414\", \"Bottles item 114\"]], \"truncated\": false, \"error\": null}",
+   "name": "run_sql"
+  },
+  {
+   "role": "agent",
+   "kind": "tool_call",
+   "text": "{\"sql\": \"SELECT journal_id, kind, effective_on, entered_on, amount, memo, supplier, item_no, unit_cost, units FROM ledger WHERE item_no='A-100' AND effective_on BETWEEN '2026-03-01' AND '2026-04-10' ORDER BY effective_on, entered_on\"}",
+   "name": "run_sql"
+  },
+  {
+   "role": "tool",
+   "kind": "tool_result",
+   "text": "{\"columns\": [\"journal_id\", \"kind\", \"effective_on\", \"entered_on\", \"amount\", \"memo\", \"supplier\", \"item_no\", \"unit_cost\", \"units\"], \"rows\": [[\"J00016\", \"supplier_invoice\", \"2026-04-01\", \"2026-04-06\", 18.0, \"Meridian unit cost A-100 for 2026Q2\", \"Meridian Supply\", \"A-100\", 18.0, null]], \"truncated\": false, \"error\": null}",
+   "name": "run_sql"
+  },
+  {
+   "role": "agent",
+   "kind": "tool_call",
+   "text": "{\"sql\": \"SELECT journal_id, kind, effective_on, entered_on, amount, memo, supplier, item_no, unit_cost, units FROM ledger WHERE item_no='A-100' ORDER BY effective_on, entered_on\"}",
+   "name": "run_sql"
+  },
+  {
+   "role": "tool",
+   "kind": "tool_result",
+   "text": "{\"columns\": [\"journal_id\", \"kind\", \"effective_on\", \"entered_on\", \"amount\", \"memo\", \"supplier\", \"item_no\", \"unit_cost\", \"units\"], \"rows\": [[\"J00001\", \"supplier_invoice\", \"2025-01-01\", \"2025-01-06\", 15.0, \"Meridian unit cost A-100 for 2025Q1\", \"Meridian Supply\", \"A-100\", 15.0, null], [\"J00004\", \"supplier_invoice\", \"2025-04-01\", \"2025-04-06\", 15.0, \"Meridian unit cost A-100 for 2025Q2\", \"Meridian Supply\", \"A-100\", 15.0, null], [\"J00007\", \"supplier_invoice\", \"2025-07-01\", \"2025-07-06\", 15.0, \"Meridian unit cost A-100 for 2025Q3\", \"Meridian Supply\", \"A-100\", 15.0, null], [\"J00010\", \"supplier_invoice\", \"2025-10-01\", \"2025-10-06\", 15.0, \"Meridian unit cost A-100 for 2025Q4\", \"Meridian Supply\", \"A-100\", 15.0, null], [\"J00013\", \"supplier_invoice\", \"2026-01-01\", \"2026-01-06\", 15.0, \"Meridian unit cost A-100 for 2026Q1\", \"Meridian Supply\", \"A-100\", 15.0, null], [\"J00016\", \"supplier_invoice\", \"2026-04-01\", \"2026-04-06\", 18.0, \"Meridian unit cost A-100 for 2026Q2\", \"Meridian Supply\", \"A-100\", 18.0, null]], \"truncated\": false, \"error\": null}",
+   "name": "run_sql"
+  },
+  {
+   "role": "agent",
+   "kind": "tool_call",
+   "text": "{\"sql\": \"SELECT journal_id, effective_on, entered_on, unit_cost FROM ledger WHERE item_no='A-100' AND entered_on <= '2026-04-03' AND effective_on <= '2026-04-02' ORDER BY effective_on DESC LIMIT 1\"}",
+   "name": "run_sql"
+  },
+  {
+   "role": "tool",
+   "kind": "tool_result",
+   "text": "{\"columns\": [\"journal_id\", \"effective_on\", \"entered_on\", \"unit_cost\"], \"rows\": [[\"J00013\", \"2026-01-01\", \"2026-01-06\", 15.0]], \"truncated\": false, \"error\": null}",
+   "name": "run_sql"
+  },
+  {
+   "role": "agent",
+   "kind": "tool_call",
+   "text": "{\"sql\": \"SELECT journal_id, effective_on, entered_on, unit_cost FROM ledger WHERE item_no='A-100' AND effective_on <= '2026-04-02' ORDER BY effective_on DESC LIMIT 1\"}",
+   "name": "run_sql"
+  },
+  {
+   "role": "tool",
+   "kind": "tool_result",
+   "text": "{\"columns\": [\"journal_id\", \"effective_on\", \"entered_on\", \"unit_cost\"], \"rows\": [[\"J00016\", \"2026-04-01\", \"2026-04-06\", 18.0]], \"truncated\": false, \"error\": null}",
+   "name": "run_sql"
+  },
+  {
+   "role": "agent",
+   "kind": "message",
+   "text": "This confirms a bitemporal gap: the Q2 unit cost invoice (J00016, effective 2026-04-01) was not entered into the books until 2026-04-06, five days after it took effect.\n\n- As of 2026-04-03 (using only records entered by that date), the books' most recent applicable cost for the insulated bottle (item A-100) on 2026-04-02 was still $15.00, from J00013 (Meridian Q1 2026 invoice, effective 2026-01-01, entered 2026-01-06).\n- Looking at the books now (2026-09-29), the record that applies to 2026-04-02 is J00016, the Meridian Q2 2026 invoice: unit cost $18.00, effective 2026-04-01, entered 2026-04-06.\n\nSo the $3.00 (20%) jump was on the books all along as of 2026-04-01 effective date, but hadn't been keyed in yet as of 2026-04-03, meaning anyone querying the books on 2026-04-03 would have seen the stale $15.00 figure for a day that, as of today, is booked at $18.00.\n\nANSWER: As of 2026-04-03, the books still showed the insulated bottle's unit cost applying on 2026-04-02 as $15.00 (the Q1 2026 Meridian rate, entered 2026-01-06), because the Q2 rate hadn't been keyed in yet. Looking at the books now, that same day, 2026-04-02, is booked at $18.00 (the Q2 2026 Meridian rate, effective 2026-04-01, entered 2026-04-06).\nNUMBERS: {\"unit_cost_as_of_2026-04-03_for_2026-04-02\": 15.00, \"unit_cost_now_for_2026-04-02\": 18.00, \"q2_invoice_effective_on\": \"2026-04-01\", \"q2_invoice_entered_on\": \"2026-04-06\"}\nEVIDENCE: ledger table (journal_id J00013 effective_on=2026-01-01 entered_on=2026-01-06 unit_cost=15.0; journal_id J00016 effective_on=2026-04-01 entered_on=2026-04-06 unit_cost=18.0), product_master (item_no A-100 = Insulated bottle)\nACTIONS: none",
+   "name": ""
+  },
+  {
+   "role": "reflect",
+   "kind": "verdict",
+   "text": "S=1 P=1 E=1 C=1 R=1 failure=none; ",
+   "name": ""
+  }
+ ],
+ "score": {
+  "S": 1,
+  "P": 1,
+  "E": 1,
+  "C": 1,
+  "R": 1,
+  "failure": "",
+  "notes": []
+ },
+ "meta": {
+  "seed_index": 1,
+  "ablation": "none",
+  "arm": "B",
+  "cost_usd": 0.05962740000000001,
+  "num_turns": 7,
+  "max_turns": 40,
+  "ended_by": "completed",
+  "sdk_version": "0.2.161",
+  "usage": {
+   "input_tokens": 14,
+   "cache_creation_input_tokens": 4429,
+   "cache_read_input_tokens": 63632,
+   "output_tokens": 2815,
+   "output_tokens_details": {
+    "thinking_tokens": 1326
+   },
+   "server_tool_use": {
+    "web_search_requests": 0,
+    "web_fetch_requests": 0
+   },
+   "service_tier": "standard",
+   "cache_creation": {
+    "ephemeral_1h_input_tokens": 4429,
+    "ephemeral_5m_input_tokens": 0
+   },
+   "inference_geo": "not_available",
+   "iterations": [
+    {
+     "input_tokens": 2,
+     "output_tokens": 754,
+     "cache_read_input_tokens": 11587,
+     "cache_creation_input_tokens": 299,
+     "cache_creation": {
+      "ephemeral_5m_input_tokens": 0,
+      "ephemeral_1h_input_tokens": 299
+     },
+     "type": "message"
+    }
+   ],
+   "speed": "standard"
+  },
+  "duration_s": 29.4,
+  "executed": [],
+  "approvals_requested": []
+ },
+ "hash": "9712c51cb598"
+}

@@ -1,0 +1,842 @@
+{
+ "firm": "distributor",
+ "arm": "C",
+ "task": "d_chase_and_aging",
+ "model": "claude-sonnet-5",
+ "date": "2026-09-29",
+ "turns": [
+  {
+   "role": "owner",
+   "kind": "message",
+   "text": "Send payment reminders to everyone who is overdue, and tell me what our receivables look like.",
+   "name": ""
+  },
+  {
+   "role": "agent",
+   "kind": "tool_call",
+   "text": "{}",
+   "name": "describe_schema"
+  },
+  {
+   "role": "agent",
+   "kind": "tool_call",
+   "text": "{}",
+   "name": "list_metrics"
+  },
+  {
+   "role": "tool",
+   "kind": "tool_result",
+   "text": "{\"entities\": [{\"name\": \"party\", \"layer\": \"core\", \"fields\": [\"name\", \"email\", \"phone\"], \"required_by\": [\"customer_questions\", \"identity\"], \"origin\": \"core\"}, {\"name\": \"person\", \"layer\": \"core\", \"fields\": [\"name\", \"role\", \"hourly_cost\", \"employed\"], \"required_by\": [\"labour_questions\", \"credited_to\"], \"origin\": \"core\"}, {\"name\": \"location\", \"layer\": \"core\", \"fields\": [\"name\", \"sqft\"], \"required_by\": [\"sales_per_sqft\", \"reorder\"], \"origin\": \"core\"}, {\"name\": \"product\", \"layer\": \"core\", \"fields\": [\"sku\", \"name\", \"category\", \"unit_cost\", \"list_price\"], \"required_by\": [\"margin\", \"reorder\"], \"origin\": \"core\"}, {\"name\": \"supplier\", \"layer\": \"core\", \"fields\": [\"name\", \"terms\"], \"required_by\": [\"margin_two_hops\"], \"origin\": \"core\"}, {\"name\": \"order\", \"layer\": \"core\", \"fields\": [\"placed_at\", \"channel\"], \"required_by\": [\"sales\", \"customer_questions\"], \"origin\": \"core\"}, {\"name\": \"order_line\", \"layer\": \"core\", \"fields\": [\"qty\", \"unit_price\", \"sold_at\"], \"required_by\": [\"sales\", \"margin\"], \"origin\": \"core\"}, {\"name\": \"invoice\", \"layer\": \"core\", \"fields\": [\"issued_at\", \"due_at\", \"amount\", \"currency\", \"state\", \"gross_profit\", \"chased_on\"], \"required_by\": [\"receivables\", \"sales\"], \"origin\": \"core\"}, {\"name\": \"payment\", \"layer\": \"core\", \"fields\": [\"paid_at\", \"amount\", \"method\"], \"required_by\": [\"cash\", \"receivables\"], \"origin\": \"core\"}, {\"name\": \"schedule\", \"layer\": \"core\", \"fields\": [\"hours\"], \"required_by\": [\"labour_questions\"], \"origin\": \"core\"}, {\"name\": \"metric_definition\", \"layer\": \"meaning\", \"fields\": [\"version\", \"grain\", \"basis\"], \"required_by\": [\"every_measure\"], \"origin\": \"core\"}, {\"name\": \"decision\", \"layer\": \"control\", \"fields\": [\"question\", \"taken_at\"], \"required_by\": [\"journal\"], \"origin\": \"core\"}, {\"name\": \"action\", \"layer\": \"control\", \"fields\": [\"status\"], \"required_by\": [\"journal\"], \"origin\": \"core\"}, {\"name\": \"grant\", \"layer\": \"control\", \"fields\": [\"principal\", \"action\", \"scope\", \"limits\"], \"required_by\": [\"authority\"], \"origin\": \"core\"}, {\"name\": \"message\", \"layer\": \"control\", \"fields\": [\"audience\", \"to\", \"text\", \"sent_on\"], \"required_by\": [\"journal\"], \"origin\": \"core\"}, {\"name\": \"route\", \"layer\": \"extension\", \"fields\": [\"name\", \"weekly_cost\", \"quarter_cost\"], \"required_by\": [\"route_contribution\"], \"origin\": \"distributor\"}, {\"name\": \"credit_terms\", \"layer\": \"extension\", \"fields\": [\"days\", \"limit\"], \"required_by\": [\"credit_hold\"], \"origin\": \"distributor\"}, {\"name\": \"supplier_lead_time\", \"layer\": \"extension\", \"fields\": [\"days\"], \"required_by\": [\"reorder\"], \"origin\": \"distributor\"}, {\"name\": \"stock_position\", \"layer\": \"extension\", \"fields\": [\"qty\", \"daily_demand\"], \"required_by\": [\"reorder\"], \"origin\": \"distributor\"}, {\"name\": \"sales_order\", \"layer\": \"extension\", \"fields\": [\"amount\", \"placed_on\", \"status\"], \"required_by\": [\"credit_hold\"], \"origin\": \"distributor\"}], \"relations\": [{\"name\": \"order.placed_by\", \"source\": \"order\", \"target\": \"party\", \"layer\": \"core\", \"required_by\": [\"customer_questions\"], \"origin\": \"core\"}, {\"name\": \"order_line.of_order\", \"source\": \"order_line\", \"target\": \"order\", \"layer\": \"core\", \"required_by\": [\"sales\"], \"origin\": \"core\"}, {\"name\": \"order_line.of_product\", \"source\": \"order_line\", \"target\": \"product\", \"layer\": \"core\", \"required_by\": [\"sales\", \"margin\"], \"origin\": \"core\"}, {\"name\": \"order_line.rang_up_at\", \"source\": \"order_line\", \"target\": \"location\", \"layer\": \"core\", \"required_by\": [\"manager_bonus\"], \"origin\": \"core\"}, {\"name\": \"order_line.fulfilled_from\", \"source\": \"order_line\", \"target\": \"location\", \"layer\": \"core\", \"required_by\": [\"sales_per_sqft\"], \"origin\": \"core\"}, {\"name\": \"order_line.stock_drawn_from\", \"source\": \"order_line\", \"target\": \"location\", \"layer\": \"core\", \"required_by\": [\"reorder\"], \"origin\": \"core\"}, {\"name\": \"order_line.credited_to\", \"source\": \"order_line\", \"target\": \"person\", \"layer\": \"core\", \"required_by\": [\"commission\"], \"origin\": \"core\"}, {\"name\": \"order_line.counted_in\", \"source\": \"order_line\", \"target\": \"location\", \"layer\": \"core\", \"required_by\": [\"like_for_like\"], \"origin\": \"c",
+   "name": "describe_schema"
+  },
+  {
+   "role": "tool",
+   "kind": "tool_result",
+   "text": "[{\"name\": \"gross_sales\", \"version\": \"v1\", \"grain\": \"order line\", \"units\": \"usd\", \"basis\": \"quantity times unit price, before returns and tax\"}, {\"name\": \"cost_of_goods\", \"version\": \"v1\", \"grain\": \"order line\", \"units\": \"usd\", \"basis\": \"quantity times the unit cost valid on the sale date\"}, {\"name\": \"gross_profit\", \"version\": \"v1\", \"grain\": \"order line\", \"units\": \"usd\", \"basis\": \"gross sales less cost of goods at the unit cost valid on the sale date\"}, {\"name\": \"gross_margin_pct\", \"version\": \"v1\", \"grain\": \"window\", \"units\": \"percent\", \"basis\": \"gross profit as a percentage of gross sales, two decimals\"}, {\"name\": \"receivables_aging\", \"version\": \"v1\", \"grain\": \"invoice\", \"units\": \"usd\", \"basis\": \"open invoice amounts by days past due at the window end\"}, {\"name\": \"dso_days\", \"version\": \"v1\", \"grain\": \"window\", \"units\": \"days\", \"basis\": \"open receivables at the window end divided by average daily sales in the window\"}, {\"name\": \"customer_concentration\", \"version\": \"v1\", \"grain\": \"customer\", \"units\": \"percent\", \"basis\": \"share of invoice amounts issued in the window, top five customers\"}, {\"name\": \"route_contribution\", \"version\": \"v1\", \"grain\": \"route\", \"units\": \"usd\", \"basis\": \"gross profit on invoices delivered on the route less the route cost booked in the window\"}]",
+   "name": "list_metrics"
+  },
+  {
+   "role": "agent",
+   "kind": "tool_call",
+   "text": "{\"name\": \"receivables_aging\", \"start\": \"2000-01-01\", \"end\": \"2026-07-01\", \"known_at\": \"\", \"filter_json\": \"\"}",
+   "name": "compute_metric"
+  },
+  {
+   "role": "agent",
+   "kind": "tool_call",
+   "text": "{\"entity_type\": \"invoice\", \"name_contains\": \"\", \"offset\": \"\"}",
+   "name": "find_entities"
+  },
+  {
+   "role": "tool",
+   "kind": "tool_result",
+   "text": "{\"name\": \"receivables_aging\", \"value\": {\"current\": 107666.26, \"1-30\": 38956.34, \"31-60\": 0.0, \"61-90\": 0.0, \"90+\": 0.0}, \"window\": [\"2000-01-01\", \"2026-07-01\"], \"base\": \"open invoice amounts by days past due at the window end\", \"definition_version\": \"v1\", \"notes\": [], \"inputs\": [11587, 11588, 11589, 11595, 11596, 11597, 11619, 11620, 11621, 11651, 11652, 11653, 11691, 11692, 11693, 11699, 11700, 11701, 11707, 11708, 11709, 11723, 11724, 11725, 11731, 11732, 11733, 11739, 11740, 11741, 11755, 11756, 11757, 11763, 11764, 11765, 11771, 11772, 11773, 11779, 11780, 11781, 11787, 11788, 11789, 11795, 11796, 11797, 11803, 11804], \"inputs_count\": 234}",
+   "name": "compute_metric"
+  },
+  {
+   "role": "tool",
+   "kind": "tool_result",
+   "text": "{\"entities\": [{\"id\": \"invoice:INV000001\"}, {\"id\": \"invoice:INV000002\"}, {\"id\": \"invoice:INV000003\"}, {\"id\": \"invoice:INV000004\"}, {\"id\": \"invoice:INV000005\"}, {\"id\": \"invoice:INV000006\"}, {\"id\": \"invoice:INV000007\"}, {\"id\": \"invoice:INV000008\"}, {\"id\": \"invoice:INV000009\"}, {\"id\": \"invoice:INV000010\"}, {\"id\": \"invoice:INV000011\"}, {\"id\": \"invoice:INV000012\"}, {\"id\": \"invoice:INV000013\"}, {\"id\": \"invoice:INV000014\"}, {\"id\": \"invoice:INV000015\"}, {\"id\": \"invoice:INV000016\"}, {\"id\": \"invoice:INV000017\"}, {\"id\": \"invoice:INV000018\"}, {\"id\": \"invoice:INV000019\"}, {\"id\": \"invoice:INV000020\"}, {\"id\": \"invoice:INV000021\"}, {\"id\": \"invoice:INV000022\"}, {\"id\": \"invoice:INV000023\"}, {\"id\": \"invoice:INV000024\"}, {\"id\": \"invoice:INV000025\"}, {\"id\": \"invoice:INV000026\"}, {\"id\": \"invoice:INV000027\"}, {\"id\": \"invoice:INV000028\"}, {\"id\": \"invoice:INV000029\"}, {\"id\": \"invoice:INV000030\"}, {\"id\": \"invoice:INV000031\"}, {\"id\": \"invoice:INV000032\"}, {\"id\": \"invoice:INV000033\"}, {\"id\": \"invoice:INV000034\"}, {\"id\": \"invoice:INV000035\"}, {\"id\": \"invoice:INV000036\"}, {\"id\": \"invoice:INV000037\"}, {\"id\": \"invoice:INV000038\"}, {\"id\": \"invoice:INV000039\"}, {\"id\": \"invoice:INV000040\"}, {\"id\": \"invoice:INV000041\"}, {\"id\": \"invoice:INV000042\"}, {\"id\": \"invoice:INV000043\"}, {\"id\": \"invoice:INV000044\"}, {\"id\": \"invoice:INV000045\"}, {\"id\": \"invoice:INV000046\"}, {\"id\": \"invoice:INV000047\"}, {\"id\": \"invoice:INV000048\"}, {\"id\": \"invoice:INV000049\"}, {\"id\": \"invoice:INV000050\"}, {\"id\": \"invoice:INV000051\"}, {\"id\": \"invoice:INV000052\"}, {\"id\": \"invoice:INV000053\"}, {\"id\": \"invoice:INV000054\"}, {\"id\": \"invoice:INV000055\"}, {\"id\": \"invoice:INV000056\"}, {\"id\": \"invoice:INV000057\"}, {\"id\": \"invoice:INV000058\"}, {\"id\": \"invoice:INV000059\"}, {\"id\": \"invoice:INV000060\"}], \"count\": 1406, \"offset\": 0, \"truncated\": true}",
+   "name": "find_entities"
+  },
+  {
+   "role": "agent",
+   "kind": "tool_call",
+   "text": "{\"subject_type\": \"invoice\", \"sum_predicate\": \"amount\", \"group_by\": \"state\", \"where_predicate\": \"\", \"where_value\": \"\", \"as_of\": \"2026-07-01\", \"known_at\": \"\"}",
+   "name": "aggregate"
+  },
+  {
+   "role": "tool",
+   "kind": "tool_result",
+   "text": "{\"groups\": {}, \"evidence_count\": 0, \"inputs_count\": 0}",
+   "name": "aggregate"
+  },
+  {
+   "role": "agent",
+   "kind": "tool_call",
+   "text": "{\"subject\": \"invoice:INV000001\", \"predicate\": \"\", \"as_of\": \"\", \"known_at\": \"\", \"offset\": \"\"}",
+   "name": "get_assertions"
+  },
+  {
+   "role": "tool",
+   "kind": "tool_result",
+   "text": "{\"assertions\": [{\"id\": 1139, \"subject\": \"invoice:INV000001\", \"predicate\": \"invoice.issued_at\", \"value\": \"2025-01-01\", \"valid_from\": \"2025-01-01\", \"valid_to\": null, \"status\": \"observed\", \"evidence\": \"erp_invoices row INV000001 (export 2026-07-01)\", \"recorded_at\": \"2025-01-01T00:00:00\"}, {\"id\": 1140, \"subject\": \"invoice:INV000001\", \"predicate\": \"invoice.due_at\", \"value\": \"2025-01-31\", \"valid_from\": \"2025-01-01\", \"valid_to\": null, \"status\": \"observed\", \"evidence\": \"erp_invoices row INV000001 (export 2026-07-01)\", \"recorded_at\": \"2025-01-01T00:00:00\"}, {\"id\": 1141, \"subject\": \"invoice:INV000001\", \"predicate\": \"invoice.amount\", \"value\": 591.41, \"valid_from\": \"2025-01-01\", \"valid_to\": null, \"status\": \"observed\", \"evidence\": \"erp_invoices row INV000001 (export 2026-07-01)\", \"recorded_at\": \"2025-01-01T00:00:00\"}, {\"id\": 1142, \"subject\": \"invoice:INV000001\", \"predicate\": \"invoice.currency\", \"value\": \"usd\", \"valid_from\": \"2025-01-01\", \"valid_to\": null, \"status\": \"observed\", \"evidence\": \"erp_invoices row INV000001 (export 2026-07-01)\", \"recorded_at\": \"2025-01-01T00:00:00\"}, {\"id\": 1143, \"subject\": \"invoice:INV000001\", \"predicate\": \"invoice.state\", \"value\": \"paid\", \"valid_from\": \"2025-01-01\", \"valid_to\": null, \"status\": \"observed\", \"evidence\": \"erp_invoices row INV000001 (export 2026-07-01)\", \"recorded_at\": \"2025-01-01T00:00:00\"}, {\"id\": 1144, \"subject\": \"invoice:INV000001\", \"predicate\": \"invoice.gross_profit\", \"value\": 133.82, \"valid_from\": \"2025-01-01\", \"valid_to\": null, \"status\": \"observed\", \"evidence\": \"erp_invoices row INV000001 (export 2026-07-01)\", \"recorded_at\": \"2025-01-01T00:00:00\"}, {\"id\": 1145, \"subject\": \"invoice:INV000001\", \"predicate\": \"invoice.billed_to\", \"value\": \"party:bcbc973d\", \"valid_from\": \"2025-01-01\", \"valid_to\": null, \"status\": \"observed\", \"evidence\": \"erp_invoices row INV000001 (export 2026-07-01)\", \"recorded_at\": \"2025-01-01T00:00:00\"}, {\"id\": 1146, \"subject\": \"invoice:INV000001\", \"predicate\": \"invoice.delivered_on_route\", \"value\": \"route:R1\", \"valid_from\": \"2025-01-01\", \"valid_to\": null, \"status\": \"observed\", \"evidence\": \"erp_invoices row INV000001 (export 2026-07-01)\", \"recorded_at\": \"2025-01-01T00:00:00\"}], \"count\": 8, \"offset\": 0, \"truncated\": false}",
+   "name": "get_assertions"
+  },
+  {
+   "role": "agent",
+   "kind": "tool_call",
+   "text": "{\"subject_type\": \"invoice\", \"sum_predicate\": \"invoice.amount\", \"group_by\": \"invoice.state\", \"where_predicate\": \"\", \"where_value\": \"\", \"as_of\": \"2026-07-01\", \"known_at\": \"\"}",
+   "name": "aggregate"
+  },
+  {
+   "role": "tool",
+   "kind": "tool_result",
+   "text": "{\"groups\": {\"open\": {\"sum\": 146622.6, \"count\": 78}, \"paid\": {\"sum\": 1676432.4, \"count\": 1328}}, \"evidence_count\": 1406, \"inputs_count\": 2812}",
+   "name": "aggregate"
+  },
+  {
+   "role": "agent",
+   "kind": "tool_call",
+   "text": "{\"subject\": \"\", \"predicate\": \"invoice.state\", \"as_of\": \"2026-07-01\", \"known_at\": \"\", \"offset\": \"\"}",
+   "name": "get_assertions"
+  },
+  {
+   "role": "tool",
+   "kind": "tool_result",
+   "text": "{\"assertions\": [], \"count\": 0, \"offset\": 0, \"truncated\": false}",
+   "name": "get_assertions"
+  },
+  {
+   "role": "agent",
+   "kind": "tool_call",
+   "text": "{\"subject_type\": \"invoice\", \"sum_predicate\": \"invoice.amount\", \"group_by\": \"invoice.due_at\", \"where_predicate\": \"invoice.state\", \"where_value\": \"open\", \"as_of\": \"2026-07-01\", \"known_at\": \"\"}",
+   "name": "aggregate"
+  },
+  {
+   "role": "tool",
+   "kind": "tool_result",
+   "text": "{\"groups\": {\"2026-06-05\": {\"sum\": 4721.69, \"count\": 1}, \"2026-06-07\": {\"sum\": 4721.69, \"count\": 1}, \"2026-06-12\": {\"sum\": 4721.69, \"count\": 1}, \"2026-06-14\": {\"sum\": 4721.69, \"count\": 1}, \"2026-06-19\": {\"sum\": 4721.69, \"count\": 1}, \"2026-06-21\": {\"sum\": 4721.69, \"count\": 1}, \"2026-06-26\": {\"sum\": 4721.69, \"count\": 1}, \"2026-06-28\": {\"sum\": 5904.51, \"count\": 3}, \"2026-07-01\": {\"sum\": 591.41, \"count\": 1}, \"2026-07-03\": {\"sum\": 5313.1, \"count\": 2}, \"2026-07-04\": {\"sum\": 1182.82, \"count\": 2}, \"2026-07-05\": {\"sum\": 5904.51, \"count\": 3}, \"2026-07-08\": {\"sum\": 1182.82, \"count\": 2}, \"2026-07-09\": {\"sum\": 7096.97, \"count\": 3}, \"2026-07-10\": {\"sum\": 23055.55, \"count\": 5}, \"2026-07-11\": {\"sum\": 1774.23, \"count\": 3}, \"2026-07-12\": {\"sum\": 6495.92, \"count\": 4}, \"2026-07-15\": {\"sum\": 1774.23, \"count\": 3}, \"2026-07-16\": {\"sum\": 1182.82, \"count\": 2}, \"2026-07-17\": {\"sum\": 7087.33, \"count\": 5}, \"2026-07-18\": {\"sum\": 1774.23, \"count\": 3}, \"2026-07-19\": {\"sum\": 6495.92, \"count\": 4}, \"2026-07-22\": {\"sum\": 1774.23, \"count\": 3}, \"2026-07-23\": {\"sum\": 1774.23, \"count\": 3}, \"2026-07-24\": {\"sum\": 7087.33, \"count\": 5}, \"2026-07-25\": {\"sum\": 9774.23, \"count\": 4}, \"2026-07-26\": {\"sum\": 12795.92, \"count\": 5}, \"2026-07-29\": {\"sum\": 1774.23, \"count\": 3}, \"2026-07-30\": {\"sum\": 1774.23, \"count\": 3}}, \"evidence_count\": 78, \"inputs_count\": 4218}",
+   "name": "aggregate"
+  },
+  {
+   "role": "agent",
+   "kind": "tool_call",
+   "text": "{\"subject_type\": \"invoice\", \"sum_predicate\": \"invoice.amount\", \"group_by\": \"invoice.billed_to\", \"where_predicate\": \"invoice.due_at\", \"where_value\": \"2026-06-05\", \"as_of\": \"2026-07-01\", \"known_at\": \"\"}",
+   "name": "aggregate"
+  },
+  {
+   "role": "tool",
+   "kind": "tool_result",
+   "text": "{\"groups\": {\"party:06a7bbd9\": {\"sum\": 5914.15, \"count\": 1}, \"party:1d65c376\": {\"sum\": 5914.15, \"count\": 1}, \"party:81dc1f1f\": {\"sum\": 5914.15, \"count\": 1}, \"party:887387e1\": {\"sum\": 4721.69, \"count\": 1}, \"party:9be79609\": {\"sum\": 5914.15, \"count\": 1}}, \"evidence_count\": 5, \"inputs_count\": 4218}",
+   "name": "aggregate"
+  },
+  {
+   "role": "agent",
+   "kind": "tool_call",
+   "text": "{\"subject_type\": \"invoice\", \"sum_predicate\": \"invoice.amount\", \"group_by\": \"invoice.billed_to\", \"where_predicate\": \"invoice.due_at\", \"where_value\": \"2026-06-07\", \"as_of\": \"2026-07-01\", \"known_at\": \"\"}",
+   "name": "aggregate"
+  },
+  {
+   "role": "tool",
+   "kind": "tool_result",
+   "text": "{\"groups\": {\"party:2f8560c7\": {\"sum\": 591.41, \"count\": 1}, \"party:761eaf80\": {\"sum\": 591.41, \"count\": 1}, \"party:887387e1\": {\"sum\": 4721.69, \"count\": 1}, \"party:ba294769\": {\"sum\": 591.41, \"count\": 1}}, \"evidence_count\": 4, \"inputs_count\": 4218}",
+   "name": "aggregate"
+  },
+  {
+   "role": "agent",
+   "kind": "tool_call",
+   "text": "{\"subject_type\": \"invoice\", \"sum_predicate\": \"invoice.amount\", \"group_by\": \"invoice.billed_to\", \"where_predicate\": \"invoice.due_at\", \"where_value\": \"2026-06-12\", \"as_of\": \"2026-07-01\", \"known_at\": \"\"}",
+   "name": "aggregate"
+  },
+  {
+   "role": "tool",
+   "kind": "tool_result",
+   "text": "{\"groups\": {\"party:0cb0d4b7\": {\"sum\": 295.71, \"count\": 1}, \"party:2427f6ab\": {\"sum\": 591.41, \"count\": 1}, \"party:747b1197\": {\"sum\": 591.41, \"count\": 1}, \"party:887387e1\": {\"sum\": 4721.69, \"count\": 1}, \"party:df51b0b1\": {\"sum\": 591.41, \"count\": 1}}, \"evidence_count\": 5, \"inputs_count\": 4218}",
+   "name": "aggregate"
+  },
+  {
+   "role": "agent",
+   "kind": "tool_call",
+   "text": "{\"subject_type\": \"invoice\", \"sum_predicate\": \"invoice.amount\", \"group_by\": \"invoice.billed_to\", \"where_predicate\": \"invoice.due_at\", \"where_value\": \"2026-06-14\", \"as_of\": \"2026-07-01\", \"known_at\": \"\"}",
+   "name": "aggregate"
+  },
+  {
+   "role": "tool",
+   "kind": "tool_result",
+   "text": "{\"groups\": {\"party:60fa4d81\": {\"sum\": 591.41, \"count\": 1}, \"party:887387e1\": {\"sum\": 4721.69, \"count\": 1}, \"party:d7861d9c\": {\"sum\": 591.41, \"count\": 1}, \"party:fb5e0a73\": {\"sum\": 591.41, \"count\": 1}}, \"evidence_count\": 4, \"inputs_count\": 4218}",
+   "name": "aggregate"
+  },
+  {
+   "role": "agent",
+   "kind": "tool_call",
+   "text": "{\"subject_type\": \"invoice\", \"sum_predicate\": \"invoice.amount\", \"group_by\": \"invoice.billed_to\", \"where_predicate\": \"invoice.due_at\", \"where_value\": \"2026-06-19\", \"as_of\": \"2026-07-01\", \"known_at\": \"\"}",
+   "name": "aggregate"
+  },
+  {
+   "role": "tool",
+   "kind": "tool_result",
+   "text": "{\"groups\": {\"party:887387e1\": {\"sum\": 4721.69, \"count\": 1}, \"party:b1604060\": {\"sum\": 591.41, \"count\": 1}, \"party:e7bbae35\": {\"sum\": 591.41, \"count\": 1}, \"party:ea866b6a\": {\"sum\": 591.41, \"count\": 1}, \"party:fe6ee42e\": {\"sum\": 591.41, \"count\": 1}}, \"evidence_count\": 5, \"inputs_count\": 4218}",
+   "name": "aggregate"
+  },
+  {
+   "role": "agent",
+   "kind": "tool_call",
+   "text": "{\"subject_type\": \"invoice\", \"sum_predicate\": \"invoice.amount\", \"group_by\": \"invoice.billed_to\", \"where_predicate\": \"invoice.due_at\", \"where_value\": \"2026-06-21\", \"as_of\": \"2026-07-01\", \"known_at\": \"\"}",
+   "name": "aggregate"
+  },
+  {
+   "role": "tool",
+   "kind": "tool_result",
+   "text": "{\"groups\": {\"party:08b9a515\": {\"sum\": 591.41, \"count\": 1}, \"party:0ff1aa89\": {\"sum\": 591.41, \"count\": 1}, \"party:887387e1\": {\"sum\": 4721.69, \"count\": 1}, \"party:9754b9dc\": {\"sum\": 591.41, \"count\": 1}}, \"evidence_count\": 4, \"inputs_count\": 4218}",
+   "name": "aggregate"
+  },
+  {
+   "role": "agent",
+   "kind": "tool_call",
+   "text": "{\"subject_type\": \"invoice\", \"sum_predicate\": \"invoice.amount\", \"group_by\": \"invoice.billed_to\", \"where_predicate\": \"invoice.due_at\", \"where_value\": \"2026-06-26\", \"as_of\": \"2026-07-01\", \"known_at\": \"\"}",
+   "name": "aggregate"
+  },
+  {
+   "role": "tool",
+   "kind": "tool_result",
+   "text": "{\"groups\": {\"party:4da18f18\": {\"sum\": 591.41, \"count\": 1}, \"party:5a89bbd8\": {\"sum\": 591.41, \"count\": 1}, \"party:7b07a8cc\": {\"sum\": 591.41, \"count\": 1}, \"party:887387e1\": {\"sum\": 4721.69, \"count\": 1}, \"party:d7cb499d\": {\"sum\": 591.41, \"count\": 1}}, \"evidence_count\": 5, \"inputs_count\": 4218}",
+   "name": "aggregate"
+  },
+  {
+   "role": "agent",
+   "kind": "tool_call",
+   "text": "{\"subject_type\": \"invoice\", \"sum_predicate\": \"invoice.amount\", \"group_by\": \"invoice.billed_to\", \"where_predicate\": \"invoice.due_at\", \"where_value\": \"2026-06-28\", \"as_of\": \"2026-07-01\", \"known_at\": \"\"}",
+   "name": "aggregate"
+  },
+  {
+   "role": "tool",
+   "kind": "tool_result",
+   "text": "{\"groups\": {\"party:42d4547a\": {\"sum\": 591.41, \"count\": 1}, \"party:887387e1\": {\"sum\": 4721.69, \"count\": 1}, \"party:9ad9682a\": {\"sum\": 591.41, \"count\": 1}, \"party:bec396f0\": {\"sum\": 591.41, \"count\": 1}}, \"evidence_count\": 4, \"inputs_count\": 4218}",
+   "name": "aggregate"
+  },
+  {
+   "role": "agent",
+   "kind": "tool_call",
+   "text": "{\"subject_type\": \"invoice\", \"sum_predicate\": \"invoice.amount\", \"group_by\": \"invoice.billed_to\", \"where_predicate\": \"invoice.state\", \"where_value\": \"open\", \"as_of\": \"2026-07-01\", \"known_at\": \"\"}",
+   "name": "aggregate"
+  },
+  {
+   "role": "tool",
+   "kind": "tool_result",
+   "text": "{\"groups\": {\"party:00d3970e\": {\"sum\": 591.41, \"count\": 1}, \"party:03f4dac9\": {\"sum\": 591.41, \"count\": 1}, \"party:05d70ff3\": {\"sum\": 591.41, \"count\": 1}, \"party:06a7bbd9\": {\"sum\": 5914.15, \"count\": 1}, \"party:07af88ef\": {\"sum\": 591.41, \"count\": 1}, \"party:08b9a515\": {\"sum\": 591.41, \"count\": 1}, \"party:0cb0d4b7\": {\"sum\": 14300.0, \"count\": 2}, \"party:0ff1aa89\": {\"sum\": 591.41, \"count\": 1}, \"party:19b45345\": {\"sum\": 591.41, \"count\": 1}, \"party:1b687b9e\": {\"sum\": 591.41, \"count\": 1}, \"party:1d65c376\": {\"sum\": 5914.15, \"count\": 1}, \"party:2427f6ab\": {\"sum\": 591.41, \"count\": 1}, \"party:28dc8c00\": {\"sum\": 591.41, \"count\": 1}, \"party:2f8560c7\": {\"sum\": 591.41, \"count\": 1}, \"party:320f446d\": {\"sum\": 591.41, \"count\": 1}, \"party:3893769a\": {\"sum\": 591.41, \"count\": 1}, \"party:3d331d81\": {\"sum\": 591.41, \"count\": 1}, \"party:41e5a9cc\": {\"sum\": 591.41, \"count\": 1}, \"party:42d4547a\": {\"sum\": 591.41, \"count\": 1}, \"party:49242907\": {\"sum\": 591.41, \"count\": 1}, \"party:4c80a2a1\": {\"sum\": 591.41, \"count\": 1}, \"party:55aaeb95\": {\"sum\": 591.41, \"count\": 1}, \"party:5a197093\": {\"sum\": 591.41, \"count\": 1}, \"party:60fa4d81\": {\"sum\": 591.41, \"count\": 1}, \"party:63d93230\": {\"sum\": 591.41, \"count\": 1}, \"party:67f6c9b7\": {\"sum\": 591.41, \"count\": 1}, \"party:747b1197\": {\"sum\": 591.41, \"count\": 1}, \"party:761eaf80\": {\"sum\": 591.41, \"count\": 1}, \"party:7f3a96a6\": {\"sum\": 591.41, \"count\": 1}, \"party:804a65b4\": {\"sum\": 591.41, \"count\": 1}, \"party:81dc1f1f\": {\"sum\": 5914.15, \"count\": 1}, \"party:85c86066\": {\"sum\": 591.41, \"count\": 1}, \"party:887387e1\": {\"sum\": 75547.04, \"count\": 16}, \"party:90f2da5d\": {\"sum\": 591.41, \"count\": 1}, \"party:931bd1a4\": {\"sum\": 591.41, \"count\": 1}, \"party:965b3d49\": {\"sum\": 591.41, \"count\": 1}, \"party:9754b9dc\": {\"sum\": 591.41, \"count\": 1}, \"party:9ad9682a\": {\"sum\": 591.41, \"count\": 1}, \"party:9b0cf6fa\": {\"sum\": 591.41, \"count\": 1}, \"party:9be79609\": {\"sum\": 5914.15, \"count\": 1}, \"party:9dafc249\": {\"sum\": 591.41, \"count\": 1}, \"party:9e9388b6\": {\"sum\": 591.41, \"count\": 1}, \"party:a52e5e8b\": {\"sum\": 591.41, \"count\": 1}, \"party:aa07be51\": {\"sum\": 591.41, \"count\": 1}, \"party:b1604060\": {\"sum\": 591.41, \"count\": 1}, \"party:ba294769\": {\"sum\": 591.41, \"count\": 1}, \"party:bbd4ef68\": {\"sum\": 591.41, \"count\": 1}, \"party:bcbc973d\": {\"sum\": 591.41, \"count\": 1}, \"party:d46d80d0\": {\"sum\": 591.41, \"count\": 1}, \"party:d6a3b726\": {\"sum\": 591.41, \"count\": 1}, \"party:d7861d9c\": {\"sum\": 591.41, \"count\": 1}, \"party:d7cb499d\": {\"sum\": 591.41, \"count\": 1}, \"party:d7ea1185\": {\"sum\": 591.41, \"count\": 1}, \"party:dc661080\": {\"sum\": 591.41, \"count\": 1}, \"party:df51b0b1\": {\"sum\": 591.41, \"count\": 1}, \"party:e4a90585\": {\"sum\": 591.41, \"count\": 1}, \"party:e7bbae35\": {\"sum\": 591.41, \"count\": 1}, \"party:ea866b6a\": {\"sum\": 591.41, \"count\": 1}, \"party:f2ba6db9\": {\"sum\": 591.41, \"count\": 1}, \"party:fb5e0a73\": {\"sum\": 591.41, \"count\": 1}, \"party:fcde268a\": {\"sum\": 591.41, \"count\": 1}, \"party:fe6ee42e\": {\"sum\": 591.41, \"count\": 1}}, \"evidence_count\": 78, \"inputs_count\": 4218}",
+   "name": "aggregate"
+  },
+  {
+   "role": "agent",
+   "kind": "tool_call",
+   "text": "{\"subject\": \"party:887387e1\", \"predicate\": \"invoice.billed_to\", \"direction\": \"in\", \"as_of\": \"2026-07-01\", \"offset\": \"\"}",
+   "name": "traverse"
+  },
+  {
+   "role": "tool",
+   "kind": "tool_result",
+   "text": "{\"edges\": [{\"id\": 2809, \"subject\": \"invoice:INV000209\", \"predicate\": \"invoice.billed_to\", \"value\": \"party:887387e1\", \"valid_from\": \"2025-01-01\", \"valid_to\": null, \"status\": \"observed\", \"evidence\": \"erp_invoices row INV000209 (export 2026-07-01)\", \"recorded_at\": \"2025-01-01T00:00:00\"}, {\"id\": 2817, \"subject\": \"invoice:INV000210\", \"predicate\": \"invoice.billed_to\", \"value\": \"party:887387e1\", \"valid_from\": \"2025-01-03\", \"valid_to\": null, \"status\": \"observed\", \"evidence\": \"erp_invoices row INV000210 (export 2026-07-01)\", \"recorded_at\": \"2025-01-03T00:00:00\"}, {\"id\": 2825, \"subject\": \"invoice:INV000211\", \"predicate\": \"invoice.billed_to\", \"value\": \"party:887387e1\", \"valid_from\": \"2025-01-07\", \"valid_to\": null, \"status\": \"observed\", \"evidence\": \"erp_invoices row INV000211 (export 2026-07-01)\", \"recorded_at\": \"2025-01-07T00:00:00\"}, {\"id\": 2833, \"subject\": \"invoice:INV000212\", \"predicate\": \"invoice.billed_to\", \"value\": \"party:887387e1\", \"valid_from\": \"2025-01-10\", \"valid_to\": null, \"status\": \"observed\", \"evidence\": \"erp_invoices row INV000212 (export 2026-07-01)\", \"recorded_at\": \"2025-01-10T00:00:00\"}, {\"id\": 2841, \"subject\": \"invoice:INV000213\", \"predicate\": \"invoice.billed_to\", \"value\": \"party:887387e1\", \"valid_from\": \"2025-01-14\", \"valid_to\": null, \"status\": \"observed\", \"evidence\": \"erp_invoices row INV000213 (export 2026-07-01)\", \"recorded_at\": \"2025-01-14T00:00:00\"}, {\"id\": 2849, \"subject\": \"invoice:INV000214\", \"predicate\": \"invoice.billed_to\", \"value\": \"party:887387e1\", \"valid_from\": \"2025-01-17\", \"valid_to\": null, \"status\": \"observed\", \"evidence\": \"erp_invoices row INV000214 (export 2026-07-01)\", \"recorded_at\": \"2025-01-17T00:00:00\"}, {\"id\": 2857, \"subject\": \"invoice:INV000215\", \"predicate\": \"invoice.billed_to\", \"value\": \"party:887387e1\", \"valid_from\": \"2025-01-21\", \"valid_to\": null, \"status\": \"observed\", \"evidence\": \"erp_invoices row INV000215 (export 2026-07-01)\", \"recorded_at\": \"2025-01-21T00:00:00\"}, {\"id\": 2865, \"subject\": \"invoice:INV000216\", \"predicate\": \"invoice.billed_to\", \"value\": \"party:887387e1\", \"valid_from\": \"2025-01-24\", \"valid_to\": null, \"status\": \"observed\", \"evidence\": \"erp_invoices row INV000216 (export 2026-07-01)\", \"recorded_at\": \"2025-01-24T00:00:00\"}, {\"id\": 2873, \"subject\": \"invoice:INV000217\", \"predicate\": \"invoice.billed_to\", \"value\": \"party:887387e1\", \"valid_from\": \"2025-01-28\", \"valid_to\": null, \"status\": \"observed\", \"evidence\": \"erp_invoices row INV000217 (export 2026-07-01)\", \"recorded_at\": \"2025-01-28T00:00:00\"}, {\"id\": 2881, \"subject\": \"invoice:INV000218\", \"predicate\": \"invoice.billed_to\", \"value\": \"party:887387e1\", \"valid_from\": \"2025-01-31\", \"valid_to\": null, \"status\": \"observed\", \"evidence\": \"erp_invoices row INV000218 (export 2026-07-01)\", \"recorded_at\": \"2025-01-31T00:00:00\"}, {\"id\": 2889, \"subject\": \"invoice:INV000219\", \"predicate\": \"invoice.billed_to\", \"value\": \"party:887387e1\", \"valid_from\": \"2025-02-04\", \"valid_to\": null, \"status\": \"observed\", \"evidence\": \"erp_invoices row INV000219 (export 2026-07-01)\", \"recorded_at\": \"2025-02-04T00:00:00\"}, {\"id\": 2897, \"subject\": \"invoice:INV000220\", \"predicate\": \"invoice.billed_to\", \"value\": \"party:887387e1\", \"valid_from\": \"2025-02-07\", \"valid_to\": null, \"status\": \"observed\", \"evidence\": \"erp_invoices row INV000220 (export 2026-07-01)\", \"recorded_at\": \"2025-02-07T00:00:00\"}, {\"id\": 2905, \"subject\": \"invoice:INV000221\", \"predicate\": \"invoice.billed_to\", \"value\": \"party:887387e1\", \"valid_from\": \"2025-02-11\", \"valid_to\": null, \"status\": \"observed\", \"evidence\": \"erp_invoices row INV000221 (export 2026-07-01)\", \"recorded_at\": \"2025-02-11T00:00:00\"}, {\"id\": 2913, \"subject\": \"invoice:INV000222\", \"predicate\": \"invoice.billed_to\", \"value\": \"party:887387e1\", \"valid_from\": \"2025-02-14\", \"valid_to\": null, \"status\": \"observed\", \"evidence\": \"erp_invoices row INV000222 (export 2026-07-01)\", \"recorded_at\": \"2025-02-14T00:00:00\"}, {\"id\": 2921, \"subject\": \"invoice:INV000223\", \"predicate\": \"invoice.billed_to\", \"value\": \"party:887387e1\", \"valid_from\": \"2025-02-18\", \"vali",
+   "name": "traverse"
+  },
+  {
+   "role": "agent",
+   "kind": "tool_call",
+   "text": "{\"subject\": \"party:887387e1\", \"predicate\": \"\", \"as_of\": \"\", \"known_at\": \"\", \"offset\": \"\"}",
+   "name": "get_assertions"
+  },
+  {
+   "role": "tool",
+   "kind": "tool_result",
+   "text": "{\"assertions\": [{\"id\": 49, \"subject\": \"party:887387e1\", \"predicate\": \"party.name\", \"value\": \"Baylor Foods\", \"valid_from\": \"2025-01-01\", \"valid_to\": null, \"status\": \"observed\", \"evidence\": \"customers row CU-0007 (export 2026-07-01)\", \"recorded_at\": \"2026-07-01T08:00:00\"}, {\"id\": 50, \"subject\": \"party:887387e1\", \"predicate\": \"party.email\", \"value\": \"ap6@example.com\", \"valid_from\": \"2025-01-01\", \"valid_to\": null, \"status\": \"observed\", \"evidence\": \"customers row CU-0007 (export 2026-07-01)\", \"recorded_at\": \"2026-07-01T08:00:00\"}, {\"id\": 51, \"subject\": \"party:887387e1\", \"predicate\": \"party.phone\", \"value\": \"\", \"valid_from\": \"2025-01-01\", \"valid_to\": null, \"status\": \"observed\", \"evidence\": \"customers row CU-0007 (export 2026-07-01)\", \"recorded_at\": \"2026-07-01T08:00:00\"}, {\"id\": 52, \"subject\": \"party:887387e1\", \"predicate\": \"identity.source_id\", \"value\": \"customers:CU-0007\", \"valid_from\": \"2025-01-01\", \"valid_to\": null, \"status\": \"observed\", \"evidence\": \"customers row CU-0007 (export 2026-07-01)\", \"recorded_at\": \"2026-07-01T08:00:00\"}, {\"id\": 53, \"subject\": \"party:887387e1\", \"predicate\": \"party.on_route\", \"value\": \"route:R1\", \"valid_from\": \"2025-01-01\", \"valid_to\": null, \"status\": \"observed\", \"evidence\": \"customers row CU-0007 (export 2026-07-01)\", \"recorded_at\": \"2026-07-01T08:00:00\"}, {\"id\": 56, \"subject\": \"party:887387e1\", \"predicate\": \"party.has_terms\", \"value\": \"credit_terms:CU-0007\", \"valid_from\": \"2025-01-01\", \"valid_to\": null, \"status\": \"observed\", \"evidence\": \"customers row CU-0007 (export 2026-07-01)\", \"recorded_at\": \"2026-07-01T08:00:00\"}], \"count\": 6, \"offset\": 0, \"truncated\": false}",
+   "name": "get_assertions"
+  },
+  {
+   "role": "agent",
+   "kind": "tool_call",
+   "text": "{\"subject\": \"party:887387e1\", \"predicate\": \"invoice.billed_to\", \"direction\": \"in\", \"as_of\": \"2026-07-01\", \"offset\": \"96\"}",
+   "name": "traverse"
+  },
+  {
+   "role": "agent",
+   "kind": "tool_call",
+   "text": "{\"subject\": \"party:887387e1\", \"predicate\": \"invoice.billed_to\", \"direction\": \"in\", \"as_of\": \"2026-07-01\", \"offset\": \"120\"}",
+   "name": "traverse"
+  },
+  {
+   "role": "tool",
+   "kind": "tool_result",
+   "text": "{\"edges\": [{\"id\": 8569, \"subject\": \"invoice:INV000929\", \"predicate\": \"invoice.billed_to\", \"value\": \"party:887387e1\", \"valid_from\": \"2025-12-03\", \"valid_to\": null, \"status\": \"observed\", \"evidence\": \"erp_invoices row INV000929 (export 2026-07-01)\", \"recorded_at\": \"2025-12-03T00:00:00\"}, {\"id\": 8577, \"subject\": \"invoice:INV000930\", \"predicate\": \"invoice.billed_to\", \"value\": \"party:887387e1\", \"valid_from\": \"2025-12-08\", \"valid_to\": null, \"status\": \"observed\", \"evidence\": \"erp_invoices row INV000930 (export 2026-07-01)\", \"recorded_at\": \"2025-12-08T00:00:00\"}, {\"id\": 8585, \"subject\": \"invoice:INV000931\", \"predicate\": \"invoice.billed_to\", \"value\": \"party:887387e1\", \"valid_from\": \"2025-12-10\", \"valid_to\": null, \"status\": \"observed\", \"evidence\": \"erp_invoices row INV000931 (export 2026-07-01)\", \"recorded_at\": \"2025-12-10T00:00:00\"}, {\"id\": 8593, \"subject\": \"invoice:INV000932\", \"predicate\": \"invoice.billed_to\", \"value\": \"party:887387e1\", \"valid_from\": \"2025-12-15\", \"valid_to\": null, \"status\": \"observed\", \"evidence\": \"erp_invoices row INV000932 (export 2026-07-01)\", \"recorded_at\": \"2025-12-15T00:00:00\"}, {\"id\": 8601, \"subject\": \"invoice:INV000933\", \"predicate\": \"invoice.billed_to\", \"value\": \"party:887387e1\", \"valid_from\": \"2025-12-17\", \"valid_to\": null, \"status\": \"observed\", \"evidence\": \"erp_invoices row INV000933 (export 2026-07-01)\", \"recorded_at\": \"2025-12-17T00:00:00\"}, {\"id\": 8609, \"subject\": \"invoice:INV000934\", \"predicate\": \"invoice.billed_to\", \"value\": \"party:887387e1\", \"valid_from\": \"2025-12-22\", \"valid_to\": null, \"status\": \"observed\", \"evidence\": \"erp_invoices row INV000934 (export 2026-07-01)\", \"recorded_at\": \"2025-12-22T00:00:00\"}, {\"id\": 8617, \"subject\": \"invoice:INV000935\", \"predicate\": \"invoice.billed_to\", \"value\": \"party:887387e1\", \"valid_from\": \"2025-12-24\", \"valid_to\": null, \"status\": \"observed\", \"evidence\": \"erp_invoices row INV000935 (export 2026-07-01)\", \"recorded_at\": \"2025-12-24T00:00:00\"}, {\"id\": 8625, \"subject\": \"invoice:INV000936\", \"predicate\": \"invoice.billed_to\", \"value\": \"party:887387e1\", \"valid_from\": \"2025-12-29\", \"valid_to\": null, \"status\": \"observed\", \"evidence\": \"erp_invoices row INV000936 (export 2026-07-01)\", \"recorded_at\": \"2025-12-29T00:00:00\"}, {\"id\": 10297, \"subject\": \"invoice:INV001145\", \"predicate\": \"invoice.billed_to\", \"value\": \"party:887387e1\", \"valid_from\": \"2026-01-01\", \"valid_to\": null, \"status\": \"observed\", \"evidence\": \"erp_invoices row INV001145 (export 2026-07-01)\", \"recorded_at\": \"2026-01-01T00:00:00\"}, {\"id\": 10305, \"subject\": \"invoice:INV001146\", \"predicate\": \"invoice.billed_to\", \"value\": \"party:887387e1\", \"valid_from\": \"2026-01-05\", \"valid_to\": null, \"status\": \"observed\", \"evidence\": \"erp_invoices row INV001146 (export 2026-07-01)\", \"recorded_at\": \"2026-01-05T00:00:00\"}, {\"id\": 10313, \"subject\": \"invoice:INV001147\", \"predicate\": \"invoice.billed_to\", \"value\": \"party:887387e1\", \"valid_from\": \"2026-01-07\", \"valid_to\": null, \"status\": \"observed\", \"evidence\": \"erp_invoices row INV001147 (export 2026-07-01)\", \"recorded_at\": \"2026-01-07T00:00:00\"}, {\"id\": 10321, \"subject\": \"invoice:INV001148\", \"predicate\": \"invoice.billed_to\", \"value\": \"party:887387e1\", \"valid_from\": \"2026-01-12\", \"valid_to\": null, \"status\": \"observed\", \"evidence\": \"erp_invoices row INV001148 (export 2026-07-01)\", \"recorded_at\": \"2026-01-12T00:00:00\"}, {\"id\": 10329, \"subject\": \"invoice:INV001149\", \"predicate\": \"invoice.billed_to\", \"value\": \"party:887387e1\", \"valid_from\": \"2026-01-14\", \"valid_to\": null, \"status\": \"observed\", \"evidence\": \"erp_invoices row INV001149 (export 2026-07-01)\", \"recorded_at\": \"2026-01-14T00:00:00\"}, {\"id\": 10337, \"subject\": \"invoice:INV001150\", \"predicate\": \"invoice.billed_to\", \"value\": \"party:887387e1\", \"valid_from\": \"2026-01-19\", \"valid_to\": null, \"status\": \"observed\", \"evidence\": \"erp_invoices row INV001150 (export 2026-07-01)\", \"recorded_at\": \"2026-01-19T00:00:00\"}, {\"id\": 10345, \"subject\": \"invoice:INV001151\", \"predicate\": \"invoice.billed_to\", \"value\": \"party:887387e1\", \"valid_from\": \"2026-01-21\"",
+   "name": "traverse"
+  },
+  {
+   "role": "tool",
+   "kind": "tool_result",
+   "text": "{\"edges\": [{\"id\": 10425, \"subject\": \"invoice:INV001161\", \"predicate\": \"invoice.billed_to\", \"value\": \"party:887387e1\", \"valid_from\": \"2026-02-25\", \"valid_to\": null, \"status\": \"observed\", \"evidence\": \"erp_invoices row INV001161 (export 2026-07-01)\", \"recorded_at\": \"2026-02-25T00:00:00\"}, {\"id\": 10433, \"subject\": \"invoice:INV001162\", \"predicate\": \"invoice.billed_to\", \"value\": \"party:887387e1\", \"valid_from\": \"2026-02-27\", \"valid_to\": null, \"status\": \"observed\", \"evidence\": \"erp_invoices row INV001162 (export 2026-07-01)\", \"recorded_at\": \"2026-02-27T00:00:00\"}, {\"id\": 10441, \"subject\": \"invoice:INV001163\", \"predicate\": \"invoice.billed_to\", \"value\": \"party:887387e1\", \"valid_from\": \"2026-03-04\", \"valid_to\": null, \"status\": \"observed\", \"evidence\": \"erp_invoices row INV001163 (export 2026-07-01)\", \"recorded_at\": \"2026-03-04T00:00:00\"}, {\"id\": 10449, \"subject\": \"invoice:INV001164\", \"predicate\": \"invoice.billed_to\", \"value\": \"party:887387e1\", \"valid_from\": \"2026-03-06\", \"valid_to\": null, \"status\": \"observed\", \"evidence\": \"erp_invoices row INV001164 (export 2026-07-01)\", \"recorded_at\": \"2026-03-06T00:00:00\"}, {\"id\": 10457, \"subject\": \"invoice:INV001165\", \"predicate\": \"invoice.billed_to\", \"value\": \"party:887387e1\", \"valid_from\": \"2026-03-11\", \"valid_to\": null, \"status\": \"observed\", \"evidence\": \"erp_invoices row INV001165 (export 2026-07-01)\", \"recorded_at\": \"2026-03-11T00:00:00\"}, {\"id\": 10465, \"subject\": \"invoice:INV001166\", \"predicate\": \"invoice.billed_to\", \"value\": \"party:887387e1\", \"valid_from\": \"2026-03-13\", \"valid_to\": null, \"status\": \"observed\", \"evidence\": \"erp_invoices row INV001166 (export 2026-07-01)\", \"recorded_at\": \"2026-03-13T00:00:00\"}, {\"id\": 10473, \"subject\": \"invoice:INV001167\", \"predicate\": \"invoice.billed_to\", \"value\": \"party:887387e1\", \"valid_from\": \"2026-03-18\", \"valid_to\": null, \"status\": \"observed\", \"evidence\": \"erp_invoices row INV001167 (export 2026-07-01)\", \"recorded_at\": \"2026-03-18T00:00:00\"}, {\"id\": 10481, \"subject\": \"invoice:INV001168\", \"predicate\": \"invoice.billed_to\", \"value\": \"party:887387e1\", \"valid_from\": \"2026-03-20\", \"valid_to\": null, \"status\": \"observed\", \"evidence\": \"erp_invoices row INV001168 (export 2026-07-01)\", \"recorded_at\": \"2026-03-20T00:00:00\"}, {\"id\": 10489, \"subject\": \"invoice:INV001169\", \"predicate\": \"invoice.billed_to\", \"value\": \"party:887387e1\", \"valid_from\": \"2026-03-25\", \"valid_to\": null, \"status\": \"observed\", \"evidence\": \"erp_invoices row INV001169 (export 2026-07-01)\", \"recorded_at\": \"2026-03-25T00:00:00\"}, {\"id\": 10497, \"subject\": \"invoice:INV001170\", \"predicate\": \"invoice.billed_to\", \"value\": \"party:887387e1\", \"valid_from\": \"2026-03-27\", \"valid_to\": null, \"status\": \"observed\", \"evidence\": \"erp_invoices row INV001170 (export 2026-07-01)\", \"recorded_at\": \"2026-03-27T00:00:00\"}, {\"id\": 12185, \"subject\": \"invoice:INV001381\", \"predicate\": \"invoice.billed_to\", \"value\": \"party:887387e1\", \"valid_from\": \"2026-04-01\", \"valid_to\": null, \"status\": \"observed\", \"evidence\": \"erp_invoices row INV001381 (export 2026-07-01)\", \"recorded_at\": \"2026-04-01T00:00:00\"}, {\"id\": 12193, \"subject\": \"invoice:INV001382\", \"predicate\": \"invoice.billed_to\", \"value\": \"party:887387e1\", \"valid_from\": \"2026-04-03\", \"valid_to\": null, \"status\": \"observed\", \"evidence\": \"erp_invoices row INV001382 (export 2026-07-01)\", \"recorded_at\": \"2026-04-03T00:00:00\"}, {\"id\": 12201, \"subject\": \"invoice:INV001383\", \"predicate\": \"invoice.billed_to\", \"value\": \"party:887387e1\", \"valid_from\": \"2026-04-08\", \"valid_to\": null, \"status\": \"observed\", \"evidence\": \"erp_invoices row INV001383 (export 2026-07-01)\", \"recorded_at\": \"2026-04-08T00:00:00\"}, {\"id\": 12209, \"subject\": \"invoice:INV001384\", \"predicate\": \"invoice.billed_to\", \"value\": \"party:887387e1\", \"valid_from\": \"2026-04-10\", \"valid_to\": null, \"status\": \"observed\", \"evidence\": \"erp_invoices row INV001384 (export 2026-07-01)\", \"recorded_at\": \"2026-04-10T00:00:00\"}, {\"id\": 12217, \"subject\": \"invoice:INV001385\", \"predicate\": \"invoice.billed_to\", \"value\": \"party:887387e1\", \"valid_from\": \"202",
+   "name": "traverse"
+  },
+  {
+   "role": "agent",
+   "kind": "tool_call",
+   "text": "{\"subject\": \"invoice:INV001370\", \"predicate\": \"\", \"as_of\": \"\", \"known_at\": \"\", \"offset\": \"\"}",
+   "name": "get_assertions"
+  },
+  {
+   "role": "tool",
+   "kind": "tool_result",
+   "text": "{\"assertions\": [{\"id\": 12091, \"subject\": \"invoice:INV001370\", \"predicate\": \"invoice.issued_at\", \"value\": \"2026-06-26\", \"valid_from\": \"2026-06-26\", \"valid_to\": null, \"status\": \"observed\", \"evidence\": \"erp_invoices row INV001370 (export 2026-07-01)\", \"recorded_at\": \"2026-06-26T00:00:00\"}, {\"id\": 12092, \"subject\": \"invoice:INV001370\", \"predicate\": \"invoice.due_at\", \"value\": \"2026-07-26\", \"valid_from\": \"2026-06-26\", \"valid_to\": null, \"status\": \"observed\", \"evidence\": \"erp_invoices row INV001370 (export 2026-07-01)\", \"recorded_at\": \"2026-06-26T00:00:00\"}, {\"id\": 12093, \"subject\": \"invoice:INV001370\", \"predicate\": \"invoice.amount\", \"value\": 591.41, \"valid_from\": \"2026-06-26\", \"valid_to\": null, \"status\": \"observed\", \"evidence\": \"erp_invoices row INV001370 (export 2026-07-01)\", \"recorded_at\": \"2026-06-26T00:00:00\"}, {\"id\": 12094, \"subject\": \"invoice:INV001370\", \"predicate\": \"invoice.currency\", \"value\": \"usd\", \"valid_from\": \"2026-06-26\", \"valid_to\": null, \"status\": \"observed\", \"evidence\": \"erp_invoices row INV001370 (export 2026-07-01)\", \"recorded_at\": \"2026-06-26T00:00:00\"}, {\"id\": 12095, \"subject\": \"invoice:INV001370\", \"predicate\": \"invoice.state\", \"value\": \"open\", \"valid_from\": \"2026-06-26\", \"valid_to\": null, \"status\": \"observed\", \"evidence\": \"erp_invoices row INV001370 (export 2026-07-01)\", \"recorded_at\": \"2026-06-26T00:00:00\"}, {\"id\": 12096, \"subject\": \"invoice:INV001370\", \"predicate\": \"invoice.gross_profit\", \"value\": 126.82, \"valid_from\": \"2026-06-26\", \"valid_to\": null, \"status\": \"observed\", \"evidence\": \"erp_invoices row INV001370 (export 2026-07-01)\", \"recorded_at\": \"2026-06-26T00:00:00\"}, {\"id\": 12097, \"subject\": \"invoice:INV001370\", \"predicate\": \"invoice.billed_to\", \"value\": \"party:9754b9dc\", \"valid_from\": \"2026-06-26\", \"valid_to\": null, \"status\": \"observed\", \"evidence\": \"erp_invoices row INV001370 (export 2026-07-01)\", \"recorded_at\": \"2026-06-26T00:00:00\"}, {\"id\": 12098, \"subject\": \"invoice:INV001370\", \"predicate\": \"invoice.delivered_on_route\", \"value\": \"route:R1\", \"valid_from\": \"2026-06-26\", \"valid_to\": null, \"status\": \"observed\", \"evidence\": \"erp_invoices row INV001370 (export 2026-07-01)\", \"recorded_at\": \"2026-06-26T00:00:00\"}], \"count\": 8, \"offset\": 0, \"truncated\": false}",
+   "name": "get_assertions"
+  },
+  {
+   "role": "agent",
+   "kind": "tool_call",
+   "text": "{\"subject\": \"invoice:INV001375\", \"predicate\": \"\", \"as_of\": \"\", \"known_at\": \"\", \"offset\": \"\"}",
+   "name": "get_assertions"
+  },
+  {
+   "role": "tool",
+   "kind": "tool_result",
+   "text": "{\"assertions\": [{\"id\": 12131, \"subject\": \"invoice:INV001375\", \"predicate\": \"invoice.issued_at\", \"value\": \"2026-06-29\", \"valid_from\": \"2026-06-29\", \"valid_to\": null, \"status\": \"observed\", \"evidence\": \"erp_invoices row INV001375 (export 2026-07-01)\", \"recorded_at\": \"2026-06-29T00:00:00\"}, {\"id\": 12132, \"subject\": \"invoice:INV001375\", \"predicate\": \"invoice.due_at\", \"value\": \"2026-07-29\", \"valid_from\": \"2026-06-29\", \"valid_to\": null, \"status\": \"observed\", \"evidence\": \"erp_invoices row INV001375 (export 2026-07-01)\", \"recorded_at\": \"2026-06-29T00:00:00\"}, {\"id\": 12133, \"subject\": \"invoice:INV001375\", \"predicate\": \"invoice.amount\", \"value\": 591.41, \"valid_from\": \"2026-06-29\", \"valid_to\": null, \"status\": \"observed\", \"evidence\": \"erp_invoices row INV001375 (export 2026-07-01)\", \"recorded_at\": \"2026-06-29T00:00:00\"}, {\"id\": 12134, \"subject\": \"invoice:INV001375\", \"predicate\": \"invoice.currency\", \"value\": \"usd\", \"valid_from\": \"2026-06-29\", \"valid_to\": null, \"status\": \"observed\", \"evidence\": \"erp_invoices row INV001375 (export 2026-07-01)\", \"recorded_at\": \"2026-06-29T00:00:00\"}, {\"id\": 12135, \"subject\": \"invoice:INV001375\", \"predicate\": \"invoice.state\", \"value\": \"open\", \"valid_from\": \"2026-06-29\", \"valid_to\": null, \"status\": \"observed\", \"evidence\": \"erp_invoices row INV001375 (export 2026-07-01)\", \"recorded_at\": \"2026-06-29T00:00:00\"}, {\"id\": 12136, \"subject\": \"invoice:INV001375\", \"predicate\": \"invoice.gross_profit\", \"value\": 43.75, \"valid_from\": \"2026-06-29\", \"valid_to\": null, \"status\": \"observed\", \"evidence\": \"erp_invoices row INV001375 (export 2026-07-01)\", \"recorded_at\": \"2026-06-29T00:00:00\"}, {\"id\": 12137, \"subject\": \"invoice:INV001375\", \"predicate\": \"invoice.billed_to\", \"value\": \"party:dc661080\", \"valid_from\": \"2026-06-29\", \"valid_to\": null, \"status\": \"observed\", \"evidence\": \"erp_invoices row INV001375 (export 2026-07-01)\", \"recorded_at\": \"2026-06-29T00:00:00\"}, {\"id\": 12138, \"subject\": \"invoice:INV001375\", \"predicate\": \"invoice.delivered_on_route\", \"value\": \"route:R3\", \"valid_from\": \"2026-06-29\", \"valid_to\": null, \"status\": \"observed\", \"evidence\": \"erp_invoices row INV001375 (export 2026-07-01)\", \"recorded_at\": \"2026-06-29T00:00:00\"}], \"count\": 8, \"offset\": 0, \"truncated\": false}",
+   "name": "get_assertions"
+  },
+  {
+   "role": "agent",
+   "kind": "tool_call",
+   "text": "{\"subject\": \"invoice:INV001380\", \"predicate\": \"\", \"as_of\": \"\", \"known_at\": \"\", \"offset\": \"\"}",
+   "name": "get_assertions"
+  },
+  {
+   "role": "tool",
+   "kind": "tool_result",
+   "text": "{\"assertions\": [{\"id\": 12171, \"subject\": \"invoice:INV001380\", \"predicate\": \"invoice.issued_at\", \"value\": \"2026-06-26\", \"valid_from\": \"2026-06-26\", \"valid_to\": null, \"status\": \"observed\", \"evidence\": \"erp_invoices row INV001380 (export 2026-07-01)\", \"recorded_at\": \"2026-06-26T00:00:00\"}, {\"id\": 12172, \"subject\": \"invoice:INV001380\", \"predicate\": \"invoice.due_at\", \"value\": \"2026-07-26\", \"valid_from\": \"2026-06-26\", \"valid_to\": null, \"status\": \"observed\", \"evidence\": \"erp_invoices row INV001380 (export 2026-07-01)\", \"recorded_at\": \"2026-06-26T00:00:00\"}, {\"id\": 12173, \"subject\": \"invoice:INV001380\", \"predicate\": \"invoice.amount\", \"value\": 6300.0, \"valid_from\": \"2026-06-26\", \"valid_to\": null, \"status\": \"observed\", \"evidence\": \"erp_invoices row INV001380 (export 2026-07-01)\", \"recorded_at\": \"2026-06-26T00:00:00\"}, {\"id\": 12174, \"subject\": \"invoice:INV001380\", \"predicate\": \"invoice.currency\", \"value\": \"usd\", \"valid_from\": \"2026-06-26\", \"valid_to\": null, \"status\": \"observed\", \"evidence\": \"erp_invoices row INV001380 (export 2026-07-01)\", \"recorded_at\": \"2026-06-26T00:00:00\"}, {\"id\": 12175, \"subject\": \"invoice:INV001380\", \"predicate\": \"invoice.state\", \"value\": \"open\", \"valid_from\": \"2026-06-26\", \"valid_to\": null, \"status\": \"observed\", \"evidence\": \"erp_invoices row INV001380 (export 2026-07-01)\", \"recorded_at\": \"2026-06-26T00:00:00\"}, {\"id\": 12176, \"subject\": \"invoice:INV001380\", \"predicate\": \"invoice.gross_profit\", \"value\": 1236.81, \"valid_from\": \"2026-06-26\", \"valid_to\": null, \"status\": \"observed\", \"evidence\": \"erp_invoices row INV001380 (export 2026-07-01)\", \"recorded_at\": \"2026-06-26T00:00:00\"}, {\"id\": 12177, \"subject\": \"invoice:INV001380\", \"predicate\": \"invoice.billed_to\", \"value\": \"party:0cb0d4b7\", \"valid_from\": \"2026-06-26\", \"valid_to\": null, \"status\": \"observed\", \"evidence\": \"erp_invoices row INV001380 (export 2026-07-01)\", \"recorded_at\": \"2026-06-26T00:00:00\"}, {\"id\": 12178, \"subject\": \"invoice:INV001380\", \"predicate\": \"invoice.delivered_on_route\", \"value\": \"route:R1\", \"valid_from\": \"2026-06-26\", \"valid_to\": null, \"status\": \"observed\", \"evidence\": \"erp_invoices row INV001380 (export 2026-07-01)\", \"recorded_at\": \"2026-06-26T00:00:00\"}], \"count\": 8, \"offset\": 0, \"truncated\": false}",
+   "name": "get_assertions"
+  },
+  {
+   "role": "agent",
+   "kind": "tool_call",
+   "text": "{\"subject\": \"invoice:INV001391\", \"predicate\": \"\", \"as_of\": \"\", \"known_at\": \"\", \"offset\": \"\"}",
+   "name": "get_assertions"
+  },
+  {
+   "role": "tool",
+   "kind": "tool_result",
+   "text": "{\"assertions\": [{\"id\": 12259, \"subject\": \"invoice:INV001391\", \"predicate\": \"invoice.issued_at\", \"value\": \"2026-05-06\", \"valid_from\": \"2026-05-06\", \"valid_to\": null, \"status\": \"observed\", \"evidence\": \"erp_invoices row INV001391 (export 2026-07-01)\", \"recorded_at\": \"2026-05-06T00:00:00\"}, {\"id\": 12260, \"subject\": \"invoice:INV001391\", \"predicate\": \"invoice.due_at\", \"value\": \"2026-06-05\", \"valid_from\": \"2026-05-06\", \"valid_to\": null, \"status\": \"observed\", \"evidence\": \"erp_invoices row INV001391 (export 2026-07-01)\", \"recorded_at\": \"2026-05-06T00:00:00\"}, {\"id\": 12261, \"subject\": \"invoice:INV001391\", \"predicate\": \"invoice.amount\", \"value\": 4721.69, \"valid_from\": \"2026-05-06\", \"valid_to\": null, \"status\": \"observed\", \"evidence\": \"erp_invoices row INV001391 (export 2026-07-01)\", \"recorded_at\": \"2026-05-06T00:00:00\"}, {\"id\": 12262, \"subject\": \"invoice:INV001391\", \"predicate\": \"invoice.currency\", \"value\": \"usd\", \"valid_from\": \"2026-05-06\", \"valid_to\": null, \"status\": \"observed\", \"evidence\": \"erp_invoices row INV001391 (export 2026-07-01)\", \"recorded_at\": \"2026-05-06T00:00:00\"}, {\"id\": 12263, \"subject\": \"invoice:INV001391\", \"predicate\": \"invoice.state\", \"value\": \"open\", \"valid_from\": \"2026-05-06\", \"valid_to\": null, \"status\": \"observed\", \"evidence\": \"erp_invoices row INV001391 (export 2026-07-01)\", \"recorded_at\": \"2026-05-06T00:00:00\"}, {\"id\": 12264, \"subject\": \"invoice:INV001391\", \"predicate\": \"invoice.gross_profit\", \"value\": 915.13, \"valid_from\": \"2026-05-06\", \"valid_to\": null, \"status\": \"observed\", \"evidence\": \"erp_invoices row INV001391 (export 2026-07-01)\", \"recorded_at\": \"2026-05-06T00:00:00\"}, {\"id\": 12265, \"subject\": \"invoice:INV001391\", \"predicate\": \"invoice.billed_to\", \"value\": \"party:887387e1\", \"valid_from\": \"2026-05-06\", \"valid_to\": null, \"status\": \"observed\", \"evidence\": \"erp_invoices row INV001391 (export 2026-07-01)\", \"recorded_at\": \"2026-05-06T00:00:00\"}, {\"id\": 12266, \"subject\": \"invoice:INV001391\", \"predicate\": \"invoice.delivered_on_route\", \"value\": \"route:R1\", \"valid_from\": \"2026-05-06\", \"valid_to\": null, \"status\": \"observed\", \"evidence\": \"erp_invoices row INV001391 (export 2026-07-01)\", \"recorded_at\": \"2026-05-06T00:00:00\"}], \"count\": 8, \"offset\": 0, \"truncated\": false}",
+   "name": "get_assertions"
+  },
+  {
+   "role": "agent",
+   "kind": "tool_call",
+   "text": "{\"subject\": \"party:42d4547a\", \"predicate\": \"invoice.billed_to\", \"direction\": \"in\", \"as_of\": \"2026-07-01\", \"offset\": \"\"}",
+   "name": "traverse"
+  },
+  {
+   "role": "tool",
+   "kind": "tool_result",
+   "text": "{\"edges\": [{\"id\": 1609, \"subject\": \"invoice:INV000059\", \"predicate\": \"invoice.billed_to\", \"value\": \"party:42d4547a\", \"valid_from\": \"2025-01-24\", \"valid_to\": null, \"status\": \"observed\", \"evidence\": \"erp_invoices row INV000059 (export 2026-07-01)\", \"recorded_at\": \"2025-01-24T00:00:00\"}, {\"id\": 2241, \"subject\": \"invoice:INV000138\", \"predicate\": \"invoice.billed_to\", \"value\": \"party:42d4547a\", \"valid_from\": \"2025-02-28\", \"valid_to\": null, \"status\": \"observed\", \"evidence\": \"erp_invoices row INV000138 (export 2026-07-01)\", \"recorded_at\": \"2025-02-28T00:00:00\"}, {\"id\": 3481, \"subject\": \"invoice:INV000293\", \"predicate\": \"invoice.billed_to\", \"value\": \"party:42d4547a\", \"valid_from\": \"2025-04-25\", \"valid_to\": null, \"status\": \"observed\", \"evidence\": \"erp_invoices row INV000293 (export 2026-07-01)\", \"recorded_at\": \"2025-04-25T00:00:00\"}, {\"id\": 4113, \"subject\": \"invoice:INV000372\", \"predicate\": \"invoice.billed_to\", \"value\": \"party:42d4547a\", \"valid_from\": \"2025-05-29\", \"valid_to\": null, \"status\": \"observed\", \"evidence\": \"erp_invoices row INV000372 (export 2026-07-01)\", \"recorded_at\": \"2025-05-29T00:00:00\"}, {\"id\": 5353, \"subject\": \"invoice:INV000527\", \"predicate\": \"invoice.billed_to\", \"value\": \"party:42d4547a\", \"valid_from\": \"2025-07-25\", \"valid_to\": null, \"status\": \"observed\", \"evidence\": \"erp_invoices row INV000527 (export 2026-07-01)\", \"recorded_at\": \"2025-07-25T00:00:00\"}, {\"id\": 5985, \"subject\": \"invoice:INV000606\", \"predicate\": \"invoice.billed_to\", \"value\": \"party:42d4547a\", \"valid_from\": \"2025-08-29\", \"valid_to\": null, \"status\": \"observed\", \"evidence\": \"erp_invoices row INV000606 (export 2026-07-01)\", \"recorded_at\": \"2025-08-29T00:00:00\"}, {\"id\": 7225, \"subject\": \"invoice:INV000761\", \"predicate\": \"invoice.billed_to\", \"value\": \"party:42d4547a\", \"valid_from\": \"2025-10-27\", \"valid_to\": null, \"status\": \"observed\", \"evidence\": \"erp_invoices row INV000761 (export 2026-07-01)\", \"recorded_at\": \"2025-10-27T00:00:00\"}, {\"id\": 7857, \"subject\": \"invoice:INV000840\", \"predicate\": \"invoice.billed_to\", \"value\": \"party:42d4547a\", \"valid_from\": \"2025-12-01\", \"valid_to\": null, \"status\": \"observed\", \"evidence\": \"erp_invoices row INV000840 (export 2026-07-01)\", \"recorded_at\": \"2025-12-01T00:00:00\"}, {\"id\": 9097, \"subject\": \"invoice:INV000995\", \"predicate\": \"invoice.billed_to\", \"value\": \"party:42d4547a\", \"valid_from\": \"2026-01-26\", \"valid_to\": null, \"status\": \"observed\", \"evidence\": \"erp_invoices row INV000995 (export 2026-07-01)\", \"recorded_at\": \"2026-01-26T00:00:00\"}, {\"id\": 9729, \"subject\": \"invoice:INV001074\", \"predicate\": \"invoice.billed_to\", \"value\": \"party:42d4547a\", \"valid_from\": \"2026-03-02\", \"valid_to\": null, \"status\": \"observed\", \"evidence\": \"erp_invoices row INV001074 (export 2026-07-01)\", \"recorded_at\": \"2026-03-02T00:00:00\"}, {\"id\": 10969, \"subject\": \"invoice:INV001229\", \"predicate\": \"invoice.billed_to\", \"value\": \"party:42d4547a\", \"valid_from\": \"2026-04-27\", \"valid_to\": null, \"status\": \"observed\", \"evidence\": \"erp_invoices row INV001229 (export 2026-07-01)\", \"recorded_at\": \"2026-04-27T00:00:00\"}, {\"id\": 11601, \"subject\": \"invoice:INV001308\", \"predicate\": \"invoice.billed_to\", \"value\": \"party:42d4547a\", \"valid_from\": \"2026-05-29\", \"valid_to\": null, \"status\": \"observed\", \"evidence\": \"erp_invoices row INV001308 (export 2026-07-01)\", \"recorded_at\": \"2026-05-29T00:00:00\"}], \"count\": 12, \"offset\": 0, \"truncated\": false}",
+   "name": "traverse"
+  },
+  {
+   "role": "agent",
+   "kind": "tool_call",
+   "text": "{\"subject\": \"party:9ad9682a\", \"predicate\": \"invoice.billed_to\", \"direction\": \"in\", \"as_of\": \"2026-07-01\", \"offset\": \"\"}",
+   "name": "traverse"
+  },
+  {
+   "role": "tool",
+   "kind": "tool_result",
+   "text": "{\"edges\": [{\"id\": 1601, \"subject\": \"invoice:INV000058\", \"predicate\": \"invoice.billed_to\", \"value\": \"party:9ad9682a\", \"valid_from\": \"2025-01-24\", \"valid_to\": null, \"status\": \"observed\", \"evidence\": \"erp_invoices row INV000058 (export 2026-07-01)\", \"recorded_at\": \"2025-01-24T00:00:00\"}, {\"id\": 2233, \"subject\": \"invoice:INV000137\", \"predicate\": \"invoice.billed_to\", \"value\": \"party:9ad9682a\", \"valid_from\": \"2025-02-27\", \"valid_to\": null, \"status\": \"observed\", \"evidence\": \"erp_invoices row INV000137 (export 2026-07-01)\", \"recorded_at\": \"2025-02-27T00:00:00\"}, {\"id\": 3473, \"subject\": \"invoice:INV000292\", \"predicate\": \"invoice.billed_to\", \"value\": \"party:9ad9682a\", \"valid_from\": \"2025-04-24\", \"valid_to\": null, \"status\": \"observed\", \"evidence\": \"erp_invoices row INV000292 (export 2026-07-01)\", \"recorded_at\": \"2025-04-24T00:00:00\"}, {\"id\": 4105, \"subject\": \"invoice:INV000371\", \"predicate\": \"invoice.billed_to\", \"value\": \"party:9ad9682a\", \"valid_from\": \"2025-05-29\", \"valid_to\": null, \"status\": \"observed\", \"evidence\": \"erp_invoices row INV000371 (export 2026-07-01)\", \"recorded_at\": \"2025-05-29T00:00:00\"}, {\"id\": 5345, \"subject\": \"invoice:INV000526\", \"predicate\": \"invoice.billed_to\", \"value\": \"party:9ad9682a\", \"valid_from\": \"2025-07-25\", \"valid_to\": null, \"status\": \"observed\", \"evidence\": \"erp_invoices row INV000526 (export 2026-07-01)\", \"recorded_at\": \"2025-07-25T00:00:00\"}, {\"id\": 5977, \"subject\": \"invoice:INV000605\", \"predicate\": \"invoice.billed_to\", \"value\": \"party:9ad9682a\", \"valid_from\": \"2025-08-29\", \"valid_to\": null, \"status\": \"observed\", \"evidence\": \"erp_invoices row INV000605 (export 2026-07-01)\", \"recorded_at\": \"2025-08-29T00:00:00\"}, {\"id\": 7217, \"subject\": \"invoice:INV000760\", \"predicate\": \"invoice.billed_to\", \"value\": \"party:9ad9682a\", \"valid_from\": \"2025-10-27\", \"valid_to\": null, \"status\": \"observed\", \"evidence\": \"erp_invoices row INV000760 (export 2026-07-01)\", \"recorded_at\": \"2025-10-27T00:00:00\"}, {\"id\": 7849, \"subject\": \"invoice:INV000839\", \"predicate\": \"invoice.billed_to\", \"value\": \"party:9ad9682a\", \"valid_from\": \"2025-12-01\", \"valid_to\": null, \"status\": \"observed\", \"evidence\": \"erp_invoices row INV000839 (export 2026-07-01)\", \"recorded_at\": \"2025-12-01T00:00:00\"}, {\"id\": 9089, \"subject\": \"invoice:INV000994\", \"predicate\": \"invoice.billed_to\", \"value\": \"party:9ad9682a\", \"valid_from\": \"2026-01-26\", \"valid_to\": null, \"status\": \"observed\", \"evidence\": \"erp_invoices row INV000994 (export 2026-07-01)\", \"recorded_at\": \"2026-01-26T00:00:00\"}, {\"id\": 9721, \"subject\": \"invoice:INV001073\", \"predicate\": \"invoice.billed_to\", \"value\": \"party:9ad9682a\", \"valid_from\": \"2026-02-27\", \"valid_to\": null, \"status\": \"observed\", \"evidence\": \"erp_invoices row INV001073 (export 2026-07-01)\", \"recorded_at\": \"2026-02-27T00:00:00\"}, {\"id\": 10961, \"subject\": \"invoice:INV001228\", \"predicate\": \"invoice.billed_to\", \"value\": \"party:9ad9682a\", \"valid_from\": \"2026-04-24\", \"valid_to\": null, \"status\": \"observed\", \"evidence\": \"erp_invoices row INV001228 (export 2026-07-01)\", \"recorded_at\": \"2026-04-24T00:00:00\"}, {\"id\": 11593, \"subject\": \"invoice:INV001307\", \"predicate\": \"invoice.billed_to\", \"value\": \"party:9ad9682a\", \"valid_from\": \"2026-05-29\", \"valid_to\": null, \"status\": \"observed\", \"evidence\": \"erp_invoices row INV001307 (export 2026-07-01)\", \"recorded_at\": \"2026-05-29T00:00:00\"}], \"count\": 12, \"offset\": 0, \"truncated\": false}",
+   "name": "traverse"
+  },
+  {
+   "role": "agent",
+   "kind": "tool_call",
+   "text": "{\"subject\": \"party:42d4547a\", \"predicate\": \"\", \"as_of\": \"\", \"known_at\": \"\", \"offset\": \"\"}",
+   "name": "get_assertions"
+  },
+  {
+   "role": "tool",
+   "kind": "tool_result",
+   "text": "{\"assertions\": [{\"id\": 473, \"subject\": \"party:42d4547a\", \"predicate\": \"party.name\", \"value\": \"Kestrel Catering 6\", \"valid_from\": \"2025-01-01\", \"valid_to\": null, \"status\": \"observed\", \"evidence\": \"customers row CU-0060 (export 2026-07-01)\", \"recorded_at\": \"2026-07-01T08:00:00\"}, {\"id\": 474, \"subject\": \"party:42d4547a\", \"predicate\": \"party.email\", \"value\": \"ap59@example.com\", \"valid_from\": \"2025-01-01\", \"valid_to\": null, \"status\": \"observed\", \"evidence\": \"customers row CU-0060 (export 2026-07-01)\", \"recorded_at\": \"2026-07-01T08:00:00\"}, {\"id\": 475, \"subject\": \"party:42d4547a\", \"predicate\": \"party.phone\", \"value\": \"\", \"valid_from\": \"2025-01-01\", \"valid_to\": null, \"status\": \"observed\", \"evidence\": \"customers row CU-0060 (export 2026-07-01)\", \"recorded_at\": \"2026-07-01T08:00:00\"}, {\"id\": 476, \"subject\": \"party:42d4547a\", \"predicate\": \"identity.source_id\", \"value\": \"customers:CU-0060\", \"valid_from\": \"2025-01-01\", \"valid_to\": null, \"status\": \"observed\", \"evidence\": \"customers row CU-0060 (export 2026-07-01)\", \"recorded_at\": \"2026-07-01T08:00:00\"}, {\"id\": 477, \"subject\": \"party:42d4547a\", \"predicate\": \"party.on_route\", \"value\": \"route:R3\", \"valid_from\": \"2025-01-01\", \"valid_to\": null, \"status\": \"observed\", \"evidence\": \"customers row CU-0060 (export 2026-07-01)\", \"recorded_at\": \"2026-07-01T08:00:00\"}, {\"id\": 480, \"subject\": \"party:42d4547a\", \"predicate\": \"party.has_terms\", \"value\": \"credit_terms:CU-0060\", \"valid_from\": \"2025-01-01\", \"valid_to\": null, \"status\": \"observed\", \"evidence\": \"customers row CU-0060 (export 2026-07-01)\", \"recorded_at\": \"2026-07-01T08:00:00\"}], \"count\": 6, \"offset\": 0, \"truncated\": false}",
+   "name": "get_assertions"
+  },
+  {
+   "role": "agent",
+   "kind": "tool_call",
+   "text": "{\"subject\": \"party:9ad9682a\", \"predicate\": \"\", \"as_of\": \"\", \"known_at\": \"\", \"offset\": \"\"}",
+   "name": "get_assertions"
+  },
+  {
+   "role": "tool",
+   "kind": "tool_result",
+   "text": "{\"assertions\": [{\"id\": 465, \"subject\": \"party:9ad9682a\", \"predicate\": \"party.name\", \"value\": \"Juniper Foods 6\", \"valid_from\": \"2025-01-01\", \"valid_to\": null, \"status\": \"observed\", \"evidence\": \"customers row CU-0059 (export 2026-07-01)\", \"recorded_at\": \"2026-07-01T08:00:00\"}, {\"id\": 466, \"subject\": \"party:9ad9682a\", \"predicate\": \"party.email\", \"value\": \"ap58@example.com\", \"valid_from\": \"2025-01-01\", \"valid_to\": null, \"status\": \"observed\", \"evidence\": \"customers row CU-0059 (export 2026-07-01)\", \"recorded_at\": \"2026-07-01T08:00:00\"}, {\"id\": 467, \"subject\": \"party:9ad9682a\", \"predicate\": \"party.phone\", \"value\": \"\", \"valid_from\": \"2025-01-01\", \"valid_to\": null, \"status\": \"observed\", \"evidence\": \"customers row CU-0059 (export 2026-07-01)\", \"recorded_at\": \"2026-07-01T08:00:00\"}, {\"id\": 468, \"subject\": \"party:9ad9682a\", \"predicate\": \"identity.source_id\", \"value\": \"customers:CU-0059\", \"valid_from\": \"2025-01-01\", \"valid_to\": null, \"status\": \"observed\", \"evidence\": \"customers row CU-0059 (export 2026-07-01)\", \"recorded_at\": \"2026-07-01T08:00:00\"}, {\"id\": 469, \"subject\": \"party:9ad9682a\", \"predicate\": \"party.on_route\", \"value\": \"route:R2\", \"valid_from\": \"2025-01-01\", \"valid_to\": null, \"status\": \"observed\", \"evidence\": \"customers row CU-0059 (export 2026-07-01)\", \"recorded_at\": \"2026-07-01T08:00:00\"}, {\"id\": 472, \"subject\": \"party:9ad9682a\", \"predicate\": \"party.has_terms\", \"value\": \"credit_terms:CU-0059\", \"valid_from\": \"2025-01-01\", \"valid_to\": null, \"status\": \"observed\", \"evidence\": \"customers row CU-0059 (export 2026-07-01)\", \"recorded_at\": \"2026-07-01T08:00:00\"}], \"count\": 6, \"offset\": 0, \"truncated\": false}",
+   "name": "get_assertions"
+  },
+  {
+   "role": "agent",
+   "kind": "tool_call",
+   "text": "{\"action\": \"send_payment_reminder\", \"payload_json\": \"{\\\"invoice\\\": \\\"invoice:INV001391\\\", \\\"party\\\": \\\"party:887387e1\\\", \\\"email\\\": \\\"ap6@example.com\\\"}\"}",
+   "name": "propose_action"
+  },
+  {
+   "role": "tool",
+   "kind": "tool_result",
+   "text": "{\"error\": \"'send_payment_reminder'\", \"known_actions\": [\"change_price\", \"chase_payment\", \"hold_order\", \"place_order\", \"schedule_job\", \"send_message\"]}",
+   "name": "propose_action"
+  },
+  {
+   "role": "agent",
+   "kind": "tool_call",
+   "text": "{\"action\": \"chase_payment\", \"payload_json\": \"{\\\"invoice\\\": \\\"invoice:INV001391\\\", \\\"party\\\": \\\"party:887387e1\\\", \\\"channel\\\": \\\"email\\\"}\"}",
+   "name": "propose_action"
+  },
+  {
+   "role": "tool",
+   "kind": "tool_result",
+   "text": "{\"error\": \"chase_payment: payload missing ['days_overdue']\", \"known_actions\": [\"change_price\", \"chase_payment\", \"hold_order\", \"place_order\", \"schedule_job\", \"send_message\"]}",
+   "name": "propose_action"
+  },
+  {
+   "role": "agent",
+   "kind": "tool_call",
+   "text": "{\"action\": \"chase_payment\", \"payload_json\": \"{\\\"invoice\\\": \\\"invoice:INV001391\\\", \\\"party\\\": \\\"party:887387e1\\\", \\\"days_overdue\\\": 26, \\\"channel\\\": \\\"email\\\"}\"}",
+   "name": "propose_action"
+  },
+  {
+   "role": "tool",
+   "kind": "tool_result",
+   "text": "{\"proposal_hash\": \"380dfe1db503\", \"decision\": {\"allowed\": true, \"requires_approval\": false, \"reason\": \"\"}}",
+   "name": "propose_action"
+  },
+  {
+   "role": "agent",
+   "kind": "message",
+   "text": "Good, that schema works and is allowed without approval. Now proposing the remaining 9 overdue invoices.",
+   "name": ""
+  },
+  {
+   "role": "agent",
+   "kind": "tool_call",
+   "text": "{\"action\": \"chase_payment\", \"payload_json\": \"{\\\"invoice\\\": \\\"invoice:INV001392\\\", \\\"party\\\": \\\"party:887387e1\\\", \\\"days_overdue\\\": 24, \\\"channel\\\": \\\"email\\\"}\"}",
+   "name": "propose_action"
+  },
+  {
+   "role": "tool",
+   "kind": "tool_result",
+   "text": "{\"proposal_hash\": \"07daf8bfd667\", \"decision\": {\"allowed\": true, \"requires_approval\": false, \"reason\": \"\"}}",
+   "name": "propose_action"
+  },
+  {
+   "role": "agent",
+   "kind": "tool_call",
+   "text": "{\"action\": \"chase_payment\", \"payload_json\": \"{\\\"invoice\\\": \\\"invoice:INV001393\\\", \\\"party\\\": \\\"party:887387e1\\\", \\\"days_overdue\\\": 19, \\\"channel\\\": \\\"email\\\"}\"}",
+   "name": "propose_action"
+  },
+  {
+   "role": "tool",
+   "kind": "tool_result",
+   "text": "{\"proposal_hash\": \"9c7c8bde7781\", \"decision\": {\"allowed\": true, \"requires_approval\": false, \"reason\": \"\"}}",
+   "name": "propose_action"
+  },
+  {
+   "role": "agent",
+   "kind": "tool_call",
+   "text": "{\"action\": \"chase_payment\", \"payload_json\": \"{\\\"invoice\\\": \\\"invoice:INV001394\\\", \\\"party\\\": \\\"party:887387e1\\\", \\\"days_overdue\\\": 17, \\\"channel\\\": \\\"email\\\"}\"}",
+   "name": "propose_action"
+  },
+  {
+   "role": "tool",
+   "kind": "tool_result",
+   "text": "{\"proposal_hash\": \"df5e75d2ac38\", \"decision\": {\"allowed\": true, \"requires_approval\": false, \"reason\": \"\"}}",
+   "name": "propose_action"
+  },
+  {
+   "role": "agent",
+   "kind": "tool_call",
+   "text": "{\"action\": \"chase_payment\", \"payload_json\": \"{\\\"invoice\\\": \\\"invoice:INV001395\\\", \\\"party\\\": \\\"party:887387e1\\\", \\\"days_overdue\\\": 12, \\\"channel\\\": \\\"email\\\"}\"}",
+   "name": "propose_action"
+  },
+  {
+   "role": "tool",
+   "kind": "tool_result",
+   "text": "{\"proposal_hash\": \"9e0939939076\", \"decision\": {\"allowed\": true, \"requires_approval\": false, \"reason\": \"\"}}",
+   "name": "propose_action"
+  },
+  {
+   "role": "agent",
+   "kind": "tool_call",
+   "text": "{\"action\": \"chase_payment\", \"payload_json\": \"{\\\"invoice\\\": \\\"invoice:INV001396\\\", \\\"party\\\": \\\"party:887387e1\\\", \\\"days_overdue\\\": 10, \\\"channel\\\": \\\"email\\\"}\"}",
+   "name": "propose_action"
+  },
+  {
+   "role": "tool",
+   "kind": "tool_result",
+   "text": "{\"proposal_hash\": \"dff066ab58fb\", \"decision\": {\"allowed\": true, \"requires_approval\": false, \"reason\": \"\"}}",
+   "name": "propose_action"
+  },
+  {
+   "role": "agent",
+   "kind": "tool_call",
+   "text": "{\"action\": \"chase_payment\", \"payload_json\": \"{\\\"invoice\\\": \\\"invoice:INV001397\\\", \\\"party\\\": \\\"party:887387e1\\\", \\\"days_overdue\\\": 5, \\\"channel\\\": \\\"email\\\"}\"}",
+   "name": "propose_action"
+  },
+  {
+   "role": "tool",
+   "kind": "tool_result",
+   "text": "{\"proposal_hash\": \"4ec0a75d81e6\", \"decision\": {\"allowed\": true, \"requires_approval\": false, \"reason\": \"\"}}",
+   "name": "propose_action"
+  },
+  {
+   "role": "agent",
+   "kind": "tool_call",
+   "text": "{\"action\": \"chase_payment\", \"payload_json\": \"{\\\"invoice\\\": \\\"invoice:INV001398\\\", \\\"party\\\": \\\"party:887387e1\\\", \\\"days_overdue\\\": 3, \\\"channel\\\": \\\"email\\\"}\"}",
+   "name": "propose_action"
+  },
+  {
+   "role": "tool",
+   "kind": "tool_result",
+   "text": "{\"proposal_hash\": \"6f74470786a6\", \"decision\": {\"allowed\": true, \"requires_approval\": false, \"reason\": \"\"}}",
+   "name": "propose_action"
+  },
+  {
+   "role": "agent",
+   "kind": "tool_call",
+   "text": "{\"action\": \"chase_payment\", \"payload_json\": \"{\\\"invoice\\\": \\\"invoice:INV001308\\\", \\\"party\\\": \\\"party:42d4547a\\\", \\\"days_overdue\\\": 3, \\\"channel\\\": \\\"email\\\"}\"}",
+   "name": "propose_action"
+  },
+  {
+   "role": "tool",
+   "kind": "tool_result",
+   "text": "{\"proposal_hash\": \"eed9c852c879\", \"decision\": {\"allowed\": true, \"requires_approval\": false, \"reason\": \"\"}}",
+   "name": "propose_action"
+  },
+  {
+   "role": "agent",
+   "kind": "tool_call",
+   "text": "{\"action\": \"chase_payment\", \"payload_json\": \"{\\\"invoice\\\": \\\"invoice:INV001307\\\", \\\"party\\\": \\\"party:9ad9682a\\\", \\\"days_overdue\\\": 3, \\\"channel\\\": \\\"email\\\"}\"}",
+   "name": "propose_action"
+  },
+  {
+   "role": "tool",
+   "kind": "tool_result",
+   "text": "{\"proposal_hash\": \"6b16a42a070c\", \"decision\": {\"allowed\": true, \"requires_approval\": false, \"reason\": \"\"}}",
+   "name": "propose_action"
+  },
+  {
+   "role": "agent",
+   "kind": "message",
+   "text": "All 10 proposals allowed without approval, consistent with policy (all invoices are 1-30 days overdue, well under the 90-day escalation threshold). Now executing all 10.",
+   "name": ""
+  },
+  {
+   "role": "agent",
+   "kind": "tool_call",
+   "text": "{\"proposal_hash\": \"380dfe1db503\"}",
+   "name": "execute_action"
+  },
+  {
+   "role": "tool",
+   "kind": "tool_result",
+   "text": "{\"status\": \"executed\", \"reason\": \"within grant\", \"proposal_hash\": \"380dfe1db503\"}",
+   "name": "execute_action"
+  },
+  {
+   "role": "agent",
+   "kind": "tool_call",
+   "text": "{\"proposal_hash\": \"07daf8bfd667\"}",
+   "name": "execute_action"
+  },
+  {
+   "role": "tool",
+   "kind": "tool_result",
+   "text": "{\"status\": \"executed\", \"reason\": \"within grant\", \"proposal_hash\": \"07daf8bfd667\"}",
+   "name": "execute_action"
+  },
+  {
+   "role": "agent",
+   "kind": "tool_call",
+   "text": "{\"proposal_hash\": \"9c7c8bde7781\"}",
+   "name": "execute_action"
+  },
+  {
+   "role": "tool",
+   "kind": "tool_result",
+   "text": "{\"status\": \"executed\", \"reason\": \"within grant\", \"proposal_hash\": \"9c7c8bde7781\"}",
+   "name": "execute_action"
+  },
+  {
+   "role": "agent",
+   "kind": "tool_call",
+   "text": "{\"proposal_hash\": \"df5e75d2ac38\"}",
+   "name": "execute_action"
+  },
+  {
+   "role": "tool",
+   "kind": "tool_result",
+   "text": "{\"status\": \"executed\", \"reason\": \"within grant\", \"proposal_hash\": \"df5e75d2ac38\"}",
+   "name": "execute_action"
+  },
+  {
+   "role": "agent",
+   "kind": "tool_call",
+   "text": "{\"proposal_hash\": \"9e0939939076\"}",
+   "name": "execute_action"
+  },
+  {
+   "role": "tool",
+   "kind": "tool_result",
+   "text": "{\"status\": \"executed\", \"reason\": \"within grant\", \"proposal_hash\": \"9e0939939076\"}",
+   "name": "execute_action"
+  },
+  {
+   "role": "agent",
+   "kind": "tool_call",
+   "text": "{\"proposal_hash\": \"dff066ab58fb\"}",
+   "name": "execute_action"
+  },
+  {
+   "role": "tool",
+   "kind": "tool_result",
+   "text": "{\"status\": \"executed\", \"reason\": \"within grant\", \"proposal_hash\": \"dff066ab58fb\"}",
+   "name": "execute_action"
+  },
+  {
+   "role": "agent",
+   "kind": "tool_call",
+   "text": "{\"proposal_hash\": \"4ec0a75d81e6\"}",
+   "name": "execute_action"
+  },
+  {
+   "role": "tool",
+   "kind": "tool_result",
+   "text": "{\"status\": \"executed\", \"reason\": \"within grant\", \"proposal_hash\": \"4ec0a75d81e6\"}",
+   "name": "execute_action"
+  },
+  {
+   "role": "agent",
+   "kind": "tool_call",
+   "text": "{\"proposal_hash\": \"6f74470786a6\"}",
+   "name": "execute_action"
+  },
+  {
+   "role": "tool",
+   "kind": "tool_result",
+   "text": "{\"status\": \"executed\", \"reason\": \"within grant\", \"proposal_hash\": \"6f74470786a6\"}",
+   "name": "execute_action"
+  },
+  {
+   "role": "agent",
+   "kind": "tool_call",
+   "text": "{\"proposal_hash\": \"eed9c852c879\"}",
+   "name": "execute_action"
+  },
+  {
+   "role": "tool",
+   "kind": "tool_result",
+   "text": "{\"status\": \"executed\", \"reason\": \"within grant\", \"proposal_hash\": \"eed9c852c879\"}",
+   "name": "execute_action"
+  },
+  {
+   "role": "agent",
+   "kind": "tool_call",
+   "text": "{\"proposal_hash\": \"6b16a42a070c\"}",
+   "name": "execute_action"
+  },
+  {
+   "role": "tool",
+   "kind": "tool_result",
+   "text": "{\"status\": \"executed\", \"reason\": \"within grant\", \"proposal_hash\": \"6b16a42a070c\"}",
+   "name": "execute_action"
+  },
+  {
+   "role": "agent",
+   "kind": "message",
+   "text": "All 10 payment reminders sent successfully within grant, no owner approval needed since none exceed 90 days overdue.\n\n**Receivables snapshot as of 2026-07-01 (basis: `receivables_aging` metric, open invoices only):**\n- Total open receivables: $146,622.60 across 78 invoices\n- Not yet due (\"current\"): $107,666.26\n- 1-30 days past due: $38,956.34 (10 invoices) — reminders just sent on all of these\n- 31-60 / 61-90 / 90+ days past due: $0.00 — nothing is escalation-worthy under the 90-day policy\n\n**Who got reminded (all 1-30 days overdue, all within the data team's own authority, no top-5-customer hold involved since these are reminders not holds):**\n- Baylor Foods (party:887387e1, ap6@example.com): 8 invoices, INV001391-INV001398, $4,721.69 each, 3-26 days overdue, totaling $37,773.52\n- Kestrel Catering 6 (party:42d4547a, ap59@example.com): INV001308, $591.41, 3 days overdue\n- Juniper Foods 6 (party:9ad9682a, ap58@example.com): INV001307, $591.41, 3 days overdue\n\nBaylor Foods accounts for nearly all of the overdue balance (97%) and is worth watching, though no hold is warranted since these are only mildly overdue (max 26 days) and a hold action wasn't requested or needed.\n\nANSWER: Sent payment reminders on all 10 overdue invoices (all 1-30 days past due, none over 90 days, so no owner escalation was required); total open receivables are $146,622.60, of which $38,956.34 is past due (all in the 1-30 day bucket, nothing in 31-60/61-90/90+), and Baylor Foods alone holds $37,773.52 of that overdue amount across 8 invoices.\nNUMBERS: {\"total_open_receivables\": 146622.60, \"current_not_due\": 107666.26, \"overdue_1_30_days\": 38956.34, \"overdue_31_60_days\": 0.0, \"overdue_61_90_days\": 0.0, \"overdue_90_plus_days\": 0.0, \"overdue_invoice_count\": 10, \"open_invoice_count\": 78, \"baylor_foods_overdue\": 37773.52, \"kestrel_catering_overdue\": 591.41, \"juniper_foods_overdue\": 591.41}\nEVIDENCE: metric:receivables_aging (window 2000-01-01..2026-07-01), aggregate(invoice.amount by invoice.state as_of 2026-07-01), aggregate(invoice.amount by invoice.due_at where invoice.state=open), invoice:INV001391..INV001398 assertions, invoice:INV001308 assertions, invoice:INV001307 assertions, party:887387e1 (Baylor Foods) assertions, party:42d4547a (Kestrel Catering 6) assertions, party:9ad9682a (Juniper Foods 6) assertions\nACTIONS: 380dfe1db503, 07daf8bfd667, 9c7c8bde7781, df5e75d2ac38, 9e0939939076, dff066ab58fb, 4ec0a75d81e6, 6f74470786a6, eed9c852c879, 6b16a42a070c",
+   "name": ""
+  },
+  {
+   "role": "reflect",
+   "kind": "verdict",
+   "text": "S=1 P=1 E=1 C=1 R=1 failure=none; ",
+   "name": ""
+  }
+ ],
+ "score": {
+  "S": 0,
+  "P": 1,
+  "E": 1,
+  "C": 1,
+  "R": 0,
+  "failure": "wrong_number",
+  "notes": [
+   "dso: no reported figure within 0.5 of 41.3, nor two that sum or differ to it"
+  ]
+ },
+ "meta": {
+  "seed_index": 0,
+  "ablation": "none",
+  "arm": "C",
+  "cost_usd": 0.8325336,
+  "num_turns": 54,
+  "max_turns": 40,
+  "ended_by": "completed",
+  "sdk_version": "0.2.161",
+  "usage": {
+   "input_tokens": 44,
+   "cache_creation_input_tokens": 76804,
+   "cache_read_input_tokens": 843764,
+   "output_tokens": 30809,
+   "output_tokens_details": {
+    "thinking_tokens": 22211
+   },
+   "server_tool_use": {
+    "web_search_requests": 0,
+    "web_fetch_requests": 0
+   },
+   "service_tier": "standard",
+   "cache_creation": {
+    "ephemeral_1h_input_tokens": 76804,
+    "ephemeral_5m_input_tokens": 0
+   },
+   "inference_geo": "not_available",
+   "iterations": [
+    {
+     "input_tokens": 2,
+     "output_tokens": 1124,
+     "cache_read_input_tokens": 81883,
+     "cache_creation_input_tokens": 0,
+     "cache_creation": {
+      "ephemeral_5m_input_tokens": 0,
+      "ephemeral_1h_input_tokens": 0
+     },
+     "type": "message"
+    }
+   ],
+   "speed": "standard"
+  },
+  "duration_s": 416.12,
+  "executed": [
+   {
+    "action": "chase_payment",
+    "payload": {
+     "invoice": "invoice:INV001391",
+     "party": "party:887387e1",
+     "days_overdue": 26,
+     "channel": "email"
+    },
+    "status": "executed",
+    "reason": "within grant",
+    "proposal_hash": "380dfe1db503"
+   },
+   {
+    "action": "chase_payment",
+    "payload": {
+     "invoice": "invoice:INV001392",
+     "party": "party:887387e1",
+     "days_overdue": 24,
+     "channel": "email"
+    },
+    "status": "executed",
+    "reason": "within grant",
+    "proposal_hash": "07daf8bfd667"
+   },
+   {
+    "action": "chase_payment",
+    "payload": {
+     "invoice": "invoice:INV001393",
+     "party": "party:887387e1",
+     "days_overdue": 19,
+     "channel": "email"
+    },
+    "status": "executed",
+    "reason": "within grant",
+    "proposal_hash": "9c7c8bde7781"
+   },
+   {
+    "action": "chase_payment",
+    "payload": {
+     "invoice": "invoice:INV001394",
+     "party": "party:887387e1",
+     "days_overdue": 17,
+     "channel": "email"
+    },
+    "status": "executed",
+    "reason": "within grant",
+    "proposal_hash": "df5e75d2ac38"
+   },
+   {
+    "action": "chase_payment",
+    "payload": {
+     "invoice": "invoice:INV001395",
+     "party": "party:887387e1",
+     "days_overdue": 12,
+     "channel": "email"
+    },
+    "status": "executed",
+    "reason": "within grant",
+    "proposal_hash": "9e0939939076"
+   },
+   {
+    "action": "chase_payment",
+    "payload": {
+     "invoice": "invoice:INV001396",
+     "party": "party:887387e1",
+     "days_overdue": 10,
+     "channel": "email"
+    },
+    "status": "executed",
+    "reason": "within grant",
+    "proposal_hash": "dff066ab58fb"
+   },
+   {
+    "action": "chase_payment",
+    "payload": {
+     "invoice": "invoice:INV001397",
+     "party": "party:887387e1",
+     "days_overdue": 5,
+     "channel": "email"
+    },
+    "status": "executed",
+    "reason": "within grant",
+    "proposal_hash": "4ec0a75d81e6"
+   },
+   {
+    "action": "chase_payment",
+    "payload": {
+     "invoice": "invoice:INV001398",
+     "party": "party:887387e1",
+     "days_overdue": 3,
+     "channel": "email"
+    },
+    "status": "executed",
+    "reason": "within grant",
+    "proposal_hash": "6f74470786a6"
+   },
+   {
+    "action": "chase_payment",
+    "payload": {
+     "invoice": "invoice:INV001308",
+     "party": "party:42d4547a",
+     "days_overdue": 3,
+     "channel": "email"
+    },
+    "status": "executed",
+    "reason": "within grant",
+    "proposal_hash": "eed9c852c879"
+   },
+   {
+    "action": "chase_payment",
+    "payload": {
+     "invoice": "invoice:INV001307",
+     "party": "party:9ad9682a",
+     "days_overdue": 3,
+     "channel": "email"
+    },
+    "status": "executed",
+    "reason": "within grant",
+    "proposal_hash": "6b16a42a070c"
+   }
+  ],
+  "approvals_requested": []
+ },
+ "hash": "21d9ba11d06b"
+}

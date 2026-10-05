@@ -1,0 +1,9 @@
+# The model itself (lbo/store.py through lbo/ingest.py) is standard library only.
+claude-agent-sdk      # lbo.harness and lbo.tools: running the experiment
+matplotlib            # lbo.report: the charts
+numpy
+pygments              # paper_kit: code listings
+markdown-it-py        # paper_kit: Markdown to HTML
+pypdf                 # paper_kit: metadata, page checks
+reportlab             # paper_kit: running head and folio overlay
+pytest

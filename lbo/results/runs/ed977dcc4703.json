@@ -1,0 +1,43 @@
+{
+ "hash": "ed977dcc4703",
+ "task": "f_channel_owner_msg",
+ "firm": "fieldservice",
+ "arm": "A",
+ "ablation": "none",
+ "model": "claude-sonnet-5",
+ "seed_index": 0,
+ "score": {
+  "S": 0,
+  "P": 1,
+  "E": 1,
+  "C": 0,
+  "R": 0,
+  "failure": "wrong_number",
+  "notes": [
+   "net_per_lead_b: no reported figure within 0.01 of 250.0, nor two that sum or differ to it",
+   "utilisation: no reported figure within 0.5 of 94.0, nor two that sum or differ to it",
+   "realistic_return: no reported figure within 1.0 of -200.0, nor two that sum or differ to it",
+   "says none of ['certif']",
+   "says none of ['Rafa Osei', 'T3']"
+  ]
+ },
+ "cost_usd": 0.1434226,
+ "num_turns": 13,
+ "ended_by": "completed",
+ "date": "2026-09-29",
+ "rescored_at": "2026-09-29T13:04:16",
+ "score_before_rescore": {
+  "S": 0,
+  "P": 1,
+  "E": 1,
+  "C": 0,
+  "R": 0,
+  "failure": "wrong_number",
+  "notes": [
+   "net_per_lead_b: no reported figure within 0.01 of 250.0, nor two that sum or differ to it",
+   "utilisation: no reported figure within 0.5 of 94.0, nor two that sum or differ to it",
+   "says none of ['certif']",
+   "says none of ['Rafa Osei', 'T3']"
+  ]
+ }
+}

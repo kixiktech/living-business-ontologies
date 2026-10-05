@@ -1,0 +1,1086 @@
+{
+ "name": "product_master",
+ "exported_at": "2026-07-01T08:00:00",
+ "records": [
+  {
+   "item_no": "A-100",
+   "sku": "A-100",
+   "name": "Insulated bottle",
+   "category": "bottles",
+   "list_price": 30.0,
+   "supplier": "Meridian Supply"
+  },
+  {
+   "item_no": "B-200",
+   "sku": "B-200",
+   "name": "Field jacket",
+   "category": "outerwear",
+   "list_price": 50.0,
+   "supplier": "Meridian Supply"
+  },
+  {
+   "item_no": "B-300",
+   "sku": "B-300",
+   "name": "Bottles item 0",
+   "category": "bottles",
+   "list_price": 38.08,
+   "supplier": "Northline Goods",
+   "unit_cost": 22.13
+  },
+  {
+   "item_no": "O-301",
+   "sku": "O-301",
+   "name": "Outerwear item 1",
+   "category": "outerwear",
+   "list_price": 67.06,
+   "supplier": "Cascade Imports",
+   "unit_cost": 40.45
+  },
+  {
+   "item_no": "F-302",
+   "sku": "F-302",
+   "name": "Footwear item 2",
+   "category": "footwear",
+   "list_price": 64.37,
+   "supplier": "Harbor Wholesale",
+   "unit_cost": 34.01
+  },
+  {
+   "item_no": "P-303",
+   "sku": "P-303",
+   "name": "Packs item 3",
+   "category": "packs",
+   "list_price": 14.54,
+   "supplier": "Pinecrest Ltd",
+   "unit_cost": 7.25
+  },
+  {
+   "item_no": "T-304",
+   "sku": "T-304",
+   "name": "Tools item 4",
+   "category": "tools",
+   "list_price": 11.88,
+   "supplier": "Atlas Trading",
+   "unit_cost": 6.1
+  },
+  {
+   "item_no": "C-305",
+   "sku": "C-305",
+   "name": "Camp item 5",
+   "category": "camp",
+   "list_price": 13.23,
+   "supplier": "Bluewater Co",
+   "unit_cost": 7.91
+  },
+  {
+   "item_no": "B-306",
+   "sku": "B-306",
+   "name": "Bottles item 6",
+   "category": "bottles",
+   "list_price": 62.8,
+   "supplier": "Summit Supply",
+   "unit_cost": 27.77
+  },
+  {
+   "item_no": "O-307",
+   "sku": "O-307",
+   "name": "Outerwear item 7",
+   "category": "outerwear",
+   "list_price": 19.44,
+   "supplier": "Northline Goods",
+   "unit_cost": 10.93
+  },
+  {
+   "item_no": "F-308",
+   "sku": "F-308",
+   "name": "Footwear item 8",
+   "category": "footwear",
+   "list_price": 92.3,
+   "supplier": "Cascade Imports",
+   "unit_cost": 39.14
+  },
+  {
+   "item_no": "P-309",
+   "sku": "P-309",
+   "name": "Packs item 9",
+   "category": "packs",
+   "list_price": 69.64,
+   "supplier": "Harbor Wholesale",
+   "unit_cost": 36.32
+  },
+  {
+   "item_no": "T-310",
+   "sku": "T-310",
+   "name": "Tools item 10",
+   "category": "tools",
+   "list_price": 96.06,
+   "supplier": "Pinecrest Ltd",
+   "unit_cost": 58.67
+  },
+  {
+   "item_no": "C-311",
+   "sku": "C-311",
+   "name": "Camp item 11",
+   "category": "camp",
+   "list_price": 95.38,
+   "supplier": "Atlas Trading",
+   "unit_cost": 52.07
+  },
+  {
+   "item_no": "B-312",
+   "sku": "B-312",
+   "name": "Bottles item 12",
+   "category": "bottles",
+   "list_price": 20.47,
+   "supplier": "Bluewater Co",
+   "unit_cost": 12.08
+  },
+  {
+   "item_no": "O-313",
+   "sku": "O-313",
+   "name": "Outerwear item 13",
+   "category": "outerwear",
+   "list_price": 47.92,
+   "supplier": "Summit Supply",
+   "unit_cost": 21.27
+  },
+  {
+   "item_no": "F-314",
+   "sku": "F-314",
+   "name": "Footwear item 14",
+   "category": "footwear",
+   "list_price": 29.16,
+   "supplier": "Northline Goods",
+   "unit_cost": 14.12
+  },
+  {
+   "item_no": "P-315",
+   "sku": "P-315",
+   "name": "Packs item 15",
+   "category": "packs",
+   "list_price": 75.5,
+   "supplier": "Cascade Imports",
+   "unit_cost": 39.78
+  },
+  {
+   "item_no": "T-316",
+   "sku": "T-316",
+   "name": "Tools item 16",
+   "category": "tools",
+   "list_price": 57.21,
+   "supplier": "Harbor Wholesale",
+   "unit_cost": 34.67
+  },
+  {
+   "item_no": "C-317",
+   "sku": "C-317",
+   "name": "Camp item 17",
+   "category": "camp",
+   "list_price": 12.95,
+   "supplier": "Pinecrest Ltd",
+   "unit_cost": 7.34
+  },
+  {
+   "item_no": "B-318",
+   "sku": "B-318",
+   "name": "Bottles item 18",
+   "category": "bottles",
+   "list_price": 81.76,
+   "supplier": "Atlas Trading",
+   "unit_cost": 42.1
+  },
+  {
+   "item_no": "O-319",
+   "sku": "O-319",
+   "name": "Outerwear item 19",
+   "category": "outerwear",
+   "list_price": 44.66,
+   "supplier": "Bluewater Co",
+   "unit_cost": 21.59
+  },
+  {
+   "item_no": "F-320",
+   "sku": "F-320",
+   "name": "Footwear item 20",
+   "category": "footwear",
+   "list_price": 54.05,
+   "supplier": "Summit Supply",
+   "unit_cost": 29.38
+  },
+  {
+   "item_no": "P-321",
+   "sku": "P-321",
+   "name": "Packs item 21",
+   "category": "packs",
+   "list_price": 104.7,
+   "supplier": "Northline Goods",
+   "unit_cost": 48.49
+  },
+  {
+   "item_no": "T-322",
+   "sku": "T-322",
+   "name": "Tools item 22",
+   "category": "tools",
+   "list_price": 36.39,
+   "supplier": "Cascade Imports",
+   "unit_cost": 17.67
+  },
+  {
+   "item_no": "C-323",
+   "sku": "C-323",
+   "name": "Camp item 23",
+   "category": "camp",
+   "list_price": 76.85,
+   "supplier": "Harbor Wholesale",
+   "unit_cost": 33.41
+  },
+  {
+   "item_no": "B-324",
+   "sku": "B-324",
+   "name": "Bottles item 24",
+   "category": "bottles",
+   "list_price": 82.09,
+   "supplier": "Pinecrest Ltd",
+   "unit_cost": 44.85
+  },
+  {
+   "item_no": "O-325",
+   "sku": "O-325",
+   "name": "Outerwear item 25",
+   "category": "outerwear",
+   "list_price": 99.79,
+   "supplier": "Atlas Trading",
+   "unit_cost": 58.89
+  },
+  {
+   "item_no": "F-326",
+   "sku": "F-326",
+   "name": "Footwear item 26",
+   "category": "footwear",
+   "list_price": 60.46,
+   "supplier": "Bluewater Co",
+   "unit_cost": 27.41
+  },
+  {
+   "item_no": "P-327",
+   "sku": "P-327",
+   "name": "Packs item 27",
+   "category": "packs",
+   "list_price": 24.91,
+   "supplier": "Summit Supply",
+   "unit_cost": 12.51
+  },
+  {
+   "item_no": "T-328",
+   "sku": "T-328",
+   "name": "Tools item 28",
+   "category": "tools",
+   "list_price": 13.23,
+   "supplier": "Northline Goods",
+   "unit_cost": 6.2
+  },
+  {
+   "item_no": "C-329",
+   "sku": "C-329",
+   "name": "Camp item 29",
+   "category": "camp",
+   "list_price": 96.38,
+   "supplier": "Cascade Imports",
+   "unit_cost": 46.82
+  },
+  {
+   "item_no": "B-330",
+   "sku": "B-330",
+   "name": "Bottles item 30",
+   "category": "bottles",
+   "list_price": 98.16,
+   "supplier": "Harbor Wholesale",
+   "unit_cost": 53.03
+  },
+  {
+   "item_no": "O-331",
+   "sku": "O-331",
+   "name": "Outerwear item 31",
+   "category": "outerwear",
+   "list_price": 89.12,
+   "supplier": "Pinecrest Ltd",
+   "unit_cost": 42.94
+  },
+  {
+   "item_no": "F-332",
+   "sku": "F-332",
+   "name": "Footwear item 32",
+   "category": "footwear",
+   "list_price": 71.66,
+   "supplier": "Atlas Trading",
+   "unit_cost": 36.47
+  },
+  {
+   "item_no": "P-333",
+   "sku": "P-333",
+   "name": "Packs item 33",
+   "category": "packs",
+   "list_price": 120.24,
+   "supplier": "Bluewater Co",
+   "unit_cost": 51.04
+  },
+  {
+   "item_no": "T-334",
+   "sku": "T-334",
+   "name": "Tools item 34",
+   "category": "tools",
+   "list_price": 65.11,
+   "supplier": "Summit Supply",
+   "unit_cost": 30.55
+  },
+  {
+   "item_no": "C-335",
+   "sku": "C-335",
+   "name": "Camp item 35",
+   "category": "camp",
+   "list_price": 15.99,
+   "supplier": "Northline Goods",
+   "unit_cost": 7.4
+  },
+  {
+   "item_no": "B-336",
+   "sku": "B-336",
+   "name": "Bottles item 36",
+   "category": "bottles",
+   "list_price": 96.35,
+   "supplier": "Cascade Imports",
+   "unit_cost": 40.24
+  },
+  {
+   "item_no": "O-337",
+   "sku": "O-337",
+   "name": "Outerwear item 37",
+   "category": "outerwear",
+   "list_price": 91.44,
+   "supplier": "Harbor Wholesale",
+   "unit_cost": 50.03
+  },
+  {
+   "item_no": "F-338",
+   "sku": "F-338",
+   "name": "Footwear item 38",
+   "category": "footwear",
+   "list_price": 54.65,
+   "supplier": "Pinecrest Ltd",
+   "unit_cost": 25.6
+  },
+  {
+   "item_no": "P-339",
+   "sku": "P-339",
+   "name": "Packs item 39",
+   "category": "packs",
+   "list_price": 10.36,
+   "supplier": "Atlas Trading",
+   "unit_cost": 5.26
+  },
+  {
+   "item_no": "T-340",
+   "sku": "T-340",
+   "name": "Tools item 40",
+   "category": "tools",
+   "list_price": 22.71,
+   "supplier": "Bluewater Co",
+   "unit_cost": 13.41
+  },
+  {
+   "item_no": "C-341",
+   "sku": "C-341",
+   "name": "Camp item 41",
+   "category": "camp",
+   "list_price": 16.17,
+   "supplier": "Summit Supply",
+   "unit_cost": 7.3
+  },
+  {
+   "item_no": "B-342",
+   "sku": "B-342",
+   "name": "Bottles item 42",
+   "category": "bottles",
+   "list_price": 20.21,
+   "supplier": "Northline Goods",
+   "unit_cost": 11.24
+  },
+  {
+   "item_no": "O-343",
+   "sku": "O-343",
+   "name": "Outerwear item 43",
+   "category": "outerwear",
+   "list_price": 59.47,
+   "supplier": "Cascade Imports",
+   "unit_cost": 25.89
+  },
+  {
+   "item_no": "F-344",
+   "sku": "F-344",
+   "name": "Footwear item 44",
+   "category": "footwear",
+   "list_price": 16.67,
+   "supplier": "Harbor Wholesale",
+   "unit_cost": 8.51
+  },
+  {
+   "item_no": "P-345",
+   "sku": "P-345",
+   "name": "Packs item 45",
+   "category": "packs",
+   "list_price": 80.2,
+   "supplier": "Pinecrest Ltd",
+   "unit_cost": 34.77
+  },
+  {
+   "item_no": "T-346",
+   "sku": "T-346",
+   "name": "Tools item 46",
+   "category": "tools",
+   "list_price": 114.28,
+   "supplier": "Atlas Trading",
+   "unit_cost": 49.88
+  },
+  {
+   "item_no": "C-347",
+   "sku": "C-347",
+   "name": "Camp item 47",
+   "category": "camp",
+   "list_price": 37.85,
+   "supplier": "Bluewater Co",
+   "unit_cost": 19.59
+  },
+  {
+   "item_no": "B-348",
+   "sku": "B-348",
+   "name": "Bottles item 48",
+   "category": "bottles",
+   "list_price": 55.58,
+   "supplier": "Summit Supply",
+   "unit_cost": 24.09
+  },
+  {
+   "item_no": "O-349",
+   "sku": "O-349",
+   "name": "Outerwear item 49",
+   "category": "outerwear",
+   "list_price": 99.17,
+   "supplier": "Northline Goods",
+   "unit_cost": 57.63
+  },
+  {
+   "item_no": "F-350",
+   "sku": "F-350",
+   "name": "Footwear item 50",
+   "category": "footwear",
+   "list_price": 24.77,
+   "supplier": "Cascade Imports",
+   "unit_cost": 13.87
+  },
+  {
+   "item_no": "P-351",
+   "sku": "P-351",
+   "name": "Packs item 51",
+   "category": "packs",
+   "list_price": 33.93,
+   "supplier": "Harbor Wholesale",
+   "unit_cost": 17.07
+  },
+  {
+   "item_no": "T-352",
+   "sku": "T-352",
+   "name": "Tools item 52",
+   "category": "tools",
+   "list_price": 66.96,
+   "supplier": "Pinecrest Ltd",
+   "unit_cost": 36.99
+  },
+  {
+   "item_no": "C-353",
+   "sku": "C-353",
+   "name": "Camp item 53",
+   "category": "camp",
+   "list_price": 8.19,
+   "supplier": "Atlas Trading",
+   "unit_cost": 4.23
+  },
+  {
+   "item_no": "B-354",
+   "sku": "B-354",
+   "name": "Bottles item 54",
+   "category": "bottles",
+   "list_price": 50.67,
+   "supplier": "Bluewater Co",
+   "unit_cost": 24.68
+  },
+  {
+   "item_no": "O-355",
+   "sku": "O-355",
+   "name": "Outerwear item 55",
+   "category": "outerwear",
+   "list_price": 123.48,
+   "supplier": "Summit Supply",
+   "unit_cost": 57.37
+  },
+  {
+   "item_no": "F-356",
+   "sku": "F-356",
+   "name": "Footwear item 56",
+   "category": "footwear",
+   "list_price": 68.83,
+   "supplier": "Northline Goods",
+   "unit_cost": 32.87
+  },
+  {
+   "item_no": "P-357",
+   "sku": "P-357",
+   "name": "Packs item 57",
+   "category": "packs",
+   "list_price": 68.8,
+   "supplier": "Cascade Imports",
+   "unit_cost": 41.87
+  },
+  {
+   "item_no": "T-358",
+   "sku": "T-358",
+   "name": "Tools item 58",
+   "category": "tools",
+   "list_price": 120.92,
+   "supplier": "Harbor Wholesale",
+   "unit_cost": 54.37
+  },
+  {
+   "item_no": "C-359",
+   "sku": "C-359",
+   "name": "Camp item 59",
+   "category": "camp",
+   "list_price": 118.56,
+   "supplier": "Pinecrest Ltd",
+   "unit_cost": 52.97
+  },
+  {
+   "item_no": "B-360",
+   "sku": "B-360",
+   "name": "Bottles item 60",
+   "category": "bottles",
+   "list_price": 49.84,
+   "supplier": "Atlas Trading",
+   "unit_cost": 25.97
+  },
+  {
+   "item_no": "O-361",
+   "sku": "O-361",
+   "name": "Outerwear item 61",
+   "category": "outerwear",
+   "list_price": 20.65,
+   "supplier": "Bluewater Co",
+   "unit_cost": 9.8
+  },
+  {
+   "item_no": "F-362",
+   "sku": "F-362",
+   "name": "Footwear item 62",
+   "category": "footwear",
+   "list_price": 12.39,
+   "supplier": "Summit Supply",
+   "unit_cost": 7.49
+  },
+  {
+   "item_no": "P-363",
+   "sku": "P-363",
+   "name": "Packs item 63",
+   "category": "packs",
+   "list_price": 27.14,
+   "supplier": "Northline Goods",
+   "unit_cost": 15.69
+  },
+  {
+   "item_no": "T-364",
+   "sku": "T-364",
+   "name": "Tools item 64",
+   "category": "tools",
+   "list_price": 37.83,
+   "supplier": "Cascade Imports",
+   "unit_cost": 23.04
+  },
+  {
+   "item_no": "C-365",
+   "sku": "C-365",
+   "name": "Camp item 65",
+   "category": "camp",
+   "list_price": 6.9,
+   "supplier": "Harbor Wholesale",
+   "unit_cost": 4.01
+  },
+  {
+   "item_no": "B-366",
+   "sku": "B-366",
+   "name": "Bottles item 66",
+   "category": "bottles",
+   "list_price": 18.3,
+   "supplier": "Pinecrest Ltd",
+   "unit_cost": 9.68
+  },
+  {
+   "item_no": "O-367",
+   "sku": "O-367",
+   "name": "Outerwear item 67",
+   "category": "outerwear",
+   "list_price": 12.49,
+   "supplier": "Atlas Trading",
+   "unit_cost": 5.43
+  },
+  {
+   "item_no": "F-368",
+   "sku": "F-368",
+   "name": "Footwear item 68",
+   "category": "footwear",
+   "list_price": 65.99,
+   "supplier": "Bluewater Co",
+   "unit_cost": 38.39
+  },
+  {
+   "item_no": "P-369",
+   "sku": "P-369",
+   "name": "Packs item 69",
+   "category": "packs",
+   "list_price": 34.05,
+   "supplier": "Summit Supply",
+   "unit_cost": 18.13
+  },
+  {
+   "item_no": "T-370",
+   "sku": "T-370",
+   "name": "Tools item 70",
+   "category": "tools",
+   "list_price": 41.42,
+   "supplier": "Northline Goods",
+   "unit_cost": 24.39
+  },
+  {
+   "item_no": "C-371",
+   "sku": "C-371",
+   "name": "Camp item 71",
+   "category": "camp",
+   "list_price": 123.41,
+   "supplier": "Cascade Imports",
+   "unit_cost": 51.54
+  },
+  {
+   "item_no": "B-372",
+   "sku": "B-372",
+   "name": "Bottles item 72",
+   "category": "bottles",
+   "list_price": 59.81,
+   "supplier": "Harbor Wholesale",
+   "unit_cost": 30.1
+  },
+  {
+   "item_no": "O-373",
+   "sku": "O-373",
+   "name": "Outerwear item 73",
+   "category": "outerwear",
+   "list_price": 14.82,
+   "supplier": "Pinecrest Ltd",
+   "unit_cost": 8.81
+  },
+  {
+   "item_no": "F-374",
+   "sku": "F-374",
+   "name": "Footwear item 74",
+   "category": "footwear",
+   "list_price": 42.02,
+   "supplier": "Atlas Trading",
+   "unit_cost": 23.19
+  },
+  {
+   "item_no": "P-375",
+   "sku": "P-375",
+   "name": "Packs item 75",
+   "category": "packs",
+   "list_price": 87.18,
+   "supplier": "Bluewater Co",
+   "unit_cost": 50.42
+  },
+  {
+   "item_no": "T-376",
+   "sku": "T-376",
+   "name": "Tools item 76",
+   "category": "tools",
+   "list_price": 12.49,
+   "supplier": "Summit Supply",
+   "unit_cost": 5.29
+  },
+  {
+   "item_no": "C-777",
+   "sku": "C-777",
+   "name": "Camp item 77",
+   "category": "camp",
+   "list_price": 57.67,
+   "supplier": null,
+   "unit_cost": 33.58
+  },
+  {
+   "item_no": "B-378",
+   "sku": "B-378",
+   "name": "Bottles item 78",
+   "category": "bottles",
+   "list_price": 55.82,
+   "supplier": "Cascade Imports",
+   "unit_cost": 34.42
+  },
+  {
+   "item_no": "O-379",
+   "sku": "O-379",
+   "name": "Outerwear item 79",
+   "category": "outerwear",
+   "list_price": 79.99,
+   "supplier": "Harbor Wholesale",
+   "unit_cost": 33.57
+  },
+  {
+   "item_no": "F-380",
+   "sku": "F-380",
+   "name": "Footwear item 80",
+   "category": "footwear",
+   "list_price": 112.92,
+   "supplier": "Pinecrest Ltd",
+   "unit_cost": 52.35
+  },
+  {
+   "item_no": "P-381",
+   "sku": "P-381",
+   "name": "Packs item 81",
+   "category": "packs",
+   "list_price": 35.25,
+   "supplier": "Atlas Trading",
+   "unit_cost": 18.62
+  },
+  {
+   "item_no": "T-382",
+   "sku": "T-382",
+   "name": "Tools item 82",
+   "category": "tools",
+   "list_price": 29.6,
+   "supplier": "Bluewater Co",
+   "unit_cost": 13.35
+  },
+  {
+   "item_no": "C-383",
+   "sku": "C-383",
+   "name": "Camp item 83",
+   "category": "camp",
+   "list_price": 75.21,
+   "supplier": "Summit Supply",
+   "unit_cost": 33.83
+  },
+  {
+   "item_no": "B-384",
+   "sku": "B-384",
+   "name": "Bottles item 84",
+   "category": "bottles",
+   "list_price": 39.94,
+   "supplier": "Northline Goods",
+   "unit_cost": 22.46
+  },
+  {
+   "item_no": "O-385",
+   "sku": "O-385",
+   "name": "Outerwear item 85",
+   "category": "outerwear",
+   "list_price": 118.06,
+   "supplier": "Cascade Imports",
+   "unit_cost": 49.44
+  },
+  {
+   "item_no": "F-386",
+   "sku": "F-386",
+   "name": "Footwear item 86",
+   "category": "footwear",
+   "list_price": 116.17,
+   "supplier": "Harbor Wholesale",
+   "unit_cost": 51.75
+  },
+  {
+   "item_no": "P-387",
+   "sku": "P-387",
+   "name": "Packs item 87",
+   "category": "packs",
+   "list_price": 109.22,
+   "supplier": "Pinecrest Ltd",
+   "unit_cost": 49.83
+  },
+  {
+   "item_no": "T-388",
+   "sku": "T-388",
+   "name": "Tools item 88",
+   "category": "tools",
+   "list_price": 33.64,
+   "supplier": "Atlas Trading",
+   "unit_cost": 16.7
+  },
+  {
+   "item_no": "C-389",
+   "sku": "C-389",
+   "name": "Camp item 89",
+   "category": "camp",
+   "list_price": 38.81,
+   "supplier": "Bluewater Co",
+   "unit_cost": 23.91
+  },
+  {
+   "item_no": "B-390",
+   "sku": "B-390",
+   "name": "Bottles item 90",
+   "category": "bottles",
+   "list_price": 10.14,
+   "supplier": "Summit Supply",
+   "unit_cost": 5.56
+  },
+  {
+   "item_no": "O-391",
+   "sku": "O-391",
+   "name": "Outerwear item 91",
+   "category": "outerwear",
+   "list_price": 39.87,
+   "supplier": "Northline Goods",
+   "unit_cost": 18.51
+  },
+  {
+   "item_no": "F-392",
+   "sku": "F-392",
+   "name": "Footwear item 92",
+   "category": "footwear",
+   "list_price": 112.69,
+   "supplier": "Cascade Imports",
+   "unit_cost": 57.56
+  },
+  {
+   "item_no": "P-393",
+   "sku": "P-393",
+   "name": "Packs item 93",
+   "category": "packs",
+   "list_price": 134.99,
+   "supplier": "Harbor Wholesale",
+   "unit_cost": 56.47
+  },
+  {
+   "item_no": "T-394",
+   "sku": "T-394",
+   "name": "Tools item 94",
+   "category": "tools",
+   "list_price": 108.74,
+   "supplier": "Pinecrest Ltd",
+   "unit_cost": 57.48
+  },
+  {
+   "item_no": "C-395",
+   "sku": "C-395",
+   "name": "Camp item 95",
+   "category": "camp",
+   "list_price": 29.13,
+   "supplier": "Atlas Trading",
+   "unit_cost": 16.35
+  },
+  {
+   "item_no": "B-396",
+   "sku": "B-396",
+   "name": "Bottles item 96",
+   "category": "bottles",
+   "list_price": 26.49,
+   "supplier": "Bluewater Co",
+   "unit_cost": 15.02
+  },
+  {
+   "item_no": "O-397",
+   "sku": "O-397",
+   "name": "Outerwear item 97",
+   "category": "outerwear",
+   "list_price": 90.37,
+   "supplier": "Summit Supply",
+   "unit_cost": 38.95
+  },
+  {
+   "item_no": "F-398",
+   "sku": "F-398",
+   "name": "Footwear item 98",
+   "category": "footwear",
+   "list_price": 101.28,
+   "supplier": "Northline Goods",
+   "unit_cost": 51.06
+  },
+  {
+   "item_no": "P-399",
+   "sku": "P-399",
+   "name": "Packs item 99",
+   "category": "packs",
+   "list_price": 90.87,
+   "supplier": "Cascade Imports",
+   "unit_cost": 40.57
+  },
+  {
+   "item_no": "T-400",
+   "sku": "T-400",
+   "name": "Tools item 100",
+   "category": "tools",
+   "list_price": 18.62,
+   "supplier": "Harbor Wholesale",
+   "unit_cost": 8.75
+  },
+  {
+   "item_no": "C-401",
+   "sku": "C-401",
+   "name": "Camp item 101",
+   "category": "camp",
+   "list_price": 122.31,
+   "supplier": "Pinecrest Ltd",
+   "unit_cost": 54.95
+  },
+  {
+   "item_no": "B-402",
+   "sku": "B-402",
+   "name": "Bottles item 102",
+   "category": "bottles",
+   "list_price": 91.21,
+   "supplier": "Atlas Trading",
+   "unit_cost": 46.01
+  },
+  {
+   "item_no": "O-403",
+   "sku": "O-403",
+   "name": "Outerwear item 103",
+   "category": "outerwear",
+   "list_price": 31.24,
+   "supplier": "Bluewater Co",
+   "unit_cost": 14.0
+  },
+  {
+   "item_no": "F-404",
+   "sku": "F-404",
+   "name": "Footwear item 104",
+   "category": "footwear",
+   "list_price": 50.68,
+   "supplier": "Summit Supply",
+   "unit_cost": 22.62
+  },
+  {
+   "item_no": "P-405",
+   "sku": "P-405",
+   "name": "Packs item 105",
+   "category": "packs",
+   "list_price": 111.95,
+   "supplier": "Northline Goods",
+   "unit_cost": 58.41
+  },
+  {
+   "item_no": "T-406",
+   "sku": "T-406",
+   "name": "Tools item 106",
+   "category": "tools",
+   "list_price": 62.42,
+   "supplier": "Cascade Imports",
+   "unit_cost": 26.48
+  },
+  {
+   "item_no": "C-407",
+   "sku": "C-407",
+   "name": "Camp item 107",
+   "category": "camp",
+   "list_price": 77.41,
+   "supplier": "Harbor Wholesale",
+   "unit_cost": 44.59
+  },
+  {
+   "item_no": "B-408",
+   "sku": "B-408",
+   "name": "Bottles item 108",
+   "category": "bottles",
+   "list_price": 19.12,
+   "supplier": "Pinecrest Ltd",
+   "unit_cost": 11.11
+  },
+  {
+   "item_no": "O-409",
+   "sku": "O-409",
+   "name": "Outerwear item 109",
+   "category": "outerwear",
+   "list_price": 122.75,
+   "supplier": "Atlas Trading",
+   "unit_cost": 54.67
+  },
+  {
+   "item_no": "F-410",
+   "sku": "F-410",
+   "name": "Footwear item 110",
+   "category": "footwear",
+   "list_price": 27.56,
+   "supplier": "Bluewater Co",
+   "unit_cost": 12.19
+  },
+  {
+   "item_no": "P-411",
+   "sku": "P-411",
+   "name": "Packs item 111",
+   "category": "packs",
+   "list_price": 125.21,
+   "supplier": "Summit Supply",
+   "unit_cost": 58.9
+  },
+  {
+   "item_no": "T-412",
+   "sku": "T-412",
+   "name": "Tools item 112",
+   "category": "tools",
+   "list_price": 48.16,
+   "supplier": "Northline Goods",
+   "unit_cost": 23.62
+  },
+  {
+   "item_no": "C-413",
+   "sku": "C-413",
+   "name": "Camp item 113",
+   "category": "camp",
+   "list_price": 18.27,
+   "supplier": "Cascade Imports",
+   "unit_cost": 11.34
+  },
+  {
+   "item_no": "B-414",
+   "sku": "B-414",
+   "name": "Bottles item 114",
+   "category": "bottles",
+   "list_price": 123.73,
+   "supplier": "Harbor Wholesale",
+   "unit_cost": 58.37
+  },
+  {
+   "item_no": "O-415",
+   "sku": "O-415",
+   "name": "Outerwear item 115",
+   "category": "outerwear",
+   "list_price": 78.6,
+   "supplier": "Pinecrest Ltd",
+   "unit_cost": 33.49
+  },
+  {
+   "item_no": "F-416",
+   "sku": "F-416",
+   "name": "Footwear item 116",
+   "category": "footwear",
+   "list_price": 64.99,
+   "supplier": "Atlas Trading",
+   "unit_cost": 28.29
+  },
+  {
+   "item_no": "P-417",
+   "sku": "P-417",
+   "name": "Packs item 117",
+   "category": "packs",
+   "list_price": 88.9,
+   "supplier": "Bluewater Co",
+   "unit_cost": 50.26
+  }
+ ],
+ "id_field": "item_no",
+ "description": "the retailer's item master from its point of sale; one cost per item, no history"
+}

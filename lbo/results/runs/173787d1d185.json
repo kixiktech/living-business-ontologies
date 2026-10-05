@@ -1,0 +1,40 @@
+{
+ "hash": "173787d1d185",
+ "task": "r_margin_owner_msg",
+ "firm": "retail",
+ "arm": "A",
+ "ablation": "none",
+ "model": "claude-sonnet-5",
+ "seed_index": 0,
+ "score": {
+  "S": 0,
+  "P": 1,
+  "E": 1,
+  "C": 0,
+  "R": 0,
+  "failure": "wrong_number",
+  "notes": [
+   "gp_prior: no reported figure within 1.0 of 10000.0, nor two that sum or differ to it",
+   "gp_focal: no reported figure within 1.0 of 8200.0, nor two that sum or differ to it",
+   "says none of ['tax', 'cash']"
+  ]
+ },
+ "cost_usd": 0.19290859999999999,
+ "num_turns": 13,
+ "ended_by": "completed",
+ "date": "2026-09-29",
+ "rescored_at": "2026-09-29T13:04:14",
+ "score_before_rescore": {
+  "S": 0,
+  "P": 1,
+  "E": 1,
+  "C": 0,
+  "R": 0,
+  "failure": "wrong_number",
+  "notes": [
+   "gp_prior: no reported figure within 1.0 of 10000.0, nor two that sum or differ to it",
+   "gp_focal: no reported figure within 1.0 of 8200.0, nor two that sum or differ to it",
+   "says none of ['tax', 'cash']"
+  ]
+ }
+}

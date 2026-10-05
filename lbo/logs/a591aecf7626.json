@@ -1,0 +1,119 @@
+{
+ "firm": "retail",
+ "arm": "B",
+ "task": "r_defected_customer",
+ "model": "claude-sonnet-5",
+ "date": "2026-09-29",
+ "turns": [
+  {
+   "role": "owner",
+   "kind": "message",
+   "text": "Which customers bought in every quarter of 2025 and have not bought at all in 2026?",
+   "name": ""
+  },
+  {
+   "role": "agent",
+   "kind": "tool_call",
+   "text": "{}",
+   "name": "describe_tables"
+  },
+  {
+   "role": "tool",
+   "kind": "tool_result",
+   "text": "{\"customers\": [\"cust_id\", \"name\", \"email\", \"phone\", \"created_on\"], \"customers_n\": [\"id\", \"email\", \"name\", \"duplicates\"], \"fulfillment\": [\"order_id\", \"shipped_from\", \"shipped_on\", \"entered_on\"], \"inventory_moves\": [\"move_id\", \"item_no\", \"from_store\", \"qty\", \"moved_on\", \"entered_on\"], \"ledger\": [\"journal_id\", \"kind\", \"effective_on\", \"entered_on\", \"amount\", \"memo\", \"supplier\", \"item_no\", \"unit_cost\", \"units\", \"units_a\", \"units_b\", \"account\"], \"payroll\": [\"employee_id\", \"week_start\", \"hours\", \"store\"], \"pos_sales\": [\"line_id\", \"order_id\", \"sold_on\", \"entered_on\", \"store\", \"cashier\", \"cust_id\", \"item_no\", \"qty\", \"unit_price\"], \"product_master\": [\"item_no\", \"sku\", \"name\", \"category\", \"list_price\", \"supplier\", \"unit_cost\"], \"sales_n\": [\"line_id\", \"order_id\", \"sold_on\", \"rang_up_at\", \"fulfilled_from\", \"cust_id\", \"item_no\", \"item_name\", \"category\", \"supplier\", \"qty\", \"unit_price\", \"amount\"], \"staff\": [\"employee_id\", \"name\", \"role\", \"store\", \"hourly_cost\", \"hired_on\"], \"store_map\": [\"store\", \"name\", \"opened_on\", \"sqft\", \"counted_in_2025\"], \"supplier_terms\": [\"supplier\", \"effective_on\", \"break_units_per_quarter\", \"tiers\", \"rule\", \"document\"]}",
+   "name": "describe_tables"
+  },
+  {
+   "role": "agent",
+   "kind": "tool_call",
+   "text": "{\"sql\": \"\\nWITH q2025 AS (\\n  SELECT cust_id,\\n    CASE\\n      WHEN sold_on >= '2025-01-01' AND sold_on < '2025-04-01' THEN 'Q1'\\n      WHEN sold_on >= '2025-04-01' AND sold_on < '2025-07-01' THEN 'Q2'\\n      WHEN sold_on >= '2025-07-01' AND sold_on < '2025-10-01' THEN 'Q3'\\n      WHEN sold_on >= '2025-10-01' AND sold_on < '2026-01-01' THEN 'Q4'\\n    END AS quarter\\n  FROM pos_sales\\n  WHERE sold_on >= '2025-01-01' AND sold_on < '2026-01-01' AND cust_id IS NOT NULL\\n),\\nq_counts AS (\\n  SELECT cust_id, COUNT(DISTINCT quarter) AS nq\\n  FROM q2025\\n  WHERE quarter IS NOT NULL\\n  GROUP BY cust_id\\n),\\nall4 AS (\\n  SELECT cust_id FROM q_counts WHERE nq = 4\\n),\\nbought_2026 AS (\\n  SELECT DISTINCT cust_id FROM pos_sales WHERE sold_on >= '2026-01-01' AND cust_id IS NOT NULL\\n)\\nSELECT a.cust_id, c.name, c.email\\nFROM all4 a\\nLEFT JOIN bought_2026 b ON a.cust_id = b.cust_id\\nLEFT JOIN customers c ON a.cust_id = c.cust_id\\nWHERE b.cust_id IS NULL\\nORDER BY a.cust_id;\\n\"}",
+   "name": "run_sql"
+  },
+  {
+   "role": "tool",
+   "kind": "tool_result",
+   "text": "{\"columns\": [\"cust_id\", \"name\", \"email\"], \"rows\": [[\"cust_0042\", \"Ana Lund\", \"ana.lund42@example.com\"], [\"cust_0100\", \"Cara Novak\", \"cara.novak100@example.com\"]], \"truncated\": false, \"error\": null}",
+   "name": "run_sql"
+  },
+  {
+   "role": "agent",
+   "kind": "tool_call",
+   "text": "{\"sql\": \"SELECT MIN(sold_on), MAX(sold_on) FROM pos_sales;\"}",
+   "name": "run_sql"
+  },
+  {
+   "role": "tool",
+   "kind": "tool_result",
+   "text": "{\"columns\": [\"MIN(sold_on)\", \"MAX(sold_on)\"], \"rows\": [[\"2025-01-01\", \"2026-06-30\"]], \"truncated\": false, \"error\": null}",
+   "name": "run_sql"
+  },
+  {
+   "role": "agent",
+   "kind": "message",
+   "text": "Data covers pos_sales from 2025-01-01 through 2026-06-30, so the 2026 window checked is complete for what's available.\n\nANSWER: Two customers bought in all four quarters of 2025 (Q1 through Q4, calendar quarters) and have zero purchases recorded from 2026-01-01 through the latest data available (2026-06-30): Ana Lund (cust_0042) and Cara Novak (cust_0100).\nNUMBERS: {\"customers_all_4q_2025_zero_2026\": 2, \"data_range_end\": \"2026-06-30\"}\nEVIDENCE: pos_sales, customers\nACTIONS: none",
+   "name": ""
+  },
+  {
+   "role": "reflect",
+   "kind": "verdict",
+   "text": "S=1 P=1 E=1 C=1 R=1 failure=none; ",
+   "name": ""
+  }
+ ],
+ "score": {
+  "S": 1,
+  "P": 1,
+  "E": 1,
+  "C": 1,
+  "R": 1,
+  "failure": "",
+  "notes": []
+ },
+ "meta": {
+  "seed_index": 0,
+  "ablation": "none",
+  "arm": "B",
+  "cost_usd": 0.051148200000000005,
+  "num_turns": 5,
+  "max_turns": 40,
+  "ended_by": "completed",
+  "sdk_version": "0.2.161",
+  "usage": {
+   "input_tokens": 8,
+   "cache_creation_input_tokens": 7469,
+   "cache_read_input_tokens": 26363,
+   "output_tokens": 1083,
+   "output_tokens_details": {
+    "thinking_tokens": 114
+   },
+   "server_tool_use": {
+    "web_search_requests": 0,
+    "web_fetch_requests": 0
+   },
+   "service_tier": "standard",
+   "cache_creation": {
+    "ephemeral_1h_input_tokens": 7469,
+    "ephemeral_5m_input_tokens": 0
+   },
+   "inference_geo": "not_available",
+   "iterations": [
+    {
+     "input_tokens": 2,
+     "output_tokens": 219,
+     "cache_read_input_tokens": 8991,
+     "cache_creation_input_tokens": 283,
+     "cache_creation": {
+      "ephemeral_5m_input_tokens": 0,
+      "ephemeral_1h_input_tokens": 283
+     },
+     "type": "message"
+    }
+   ],
+   "speed": "standard"
+  },
+  "duration_s": 18.29,
+  "executed": [],
+  "approvals_requested": []
+ },
+ "hash": "a591aecf7626"
+}

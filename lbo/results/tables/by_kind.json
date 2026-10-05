@@ -1,0 +1,68 @@
+{
+ "columns": [
+  "Task kind",
+  "Tasks",
+  "A: tables pass^1",
+  "B: metric layer pass^1",
+  "C: ontology pass^1"
+ ],
+ "rows": [
+  [
+   "absence",
+   4,
+   "100",
+   "100",
+   "100"
+  ],
+  [
+   "action",
+   5,
+   "60",
+   "70",
+   "80"
+  ],
+  [
+   "owner message",
+   2,
+   "0",
+   "0",
+   "0"
+  ],
+  [
+   "question",
+   10,
+   "70",
+   "80",
+   "65"
+  ],
+  [
+   "refusal",
+   4,
+   "75",
+   "75",
+   "75"
+  ]
+ ],
+ "bold": [
+  [
+   0,
+   2
+  ],
+  [
+   0,
+   3
+  ],
+  [
+   0,
+   4
+  ]
+ ],
+ "align": [
+  "l",
+  "r",
+  "r",
+  "r",
+  "r"
+ ],
+ "caption": "pass^1 by the kind of thing the owner asked for. A refusal task passes only when the run declines the write and says why; an action task only when the write lands."
+}

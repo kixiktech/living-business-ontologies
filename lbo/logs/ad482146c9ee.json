@@ -1,0 +1,203 @@
+{
+ "firm": "distributor",
+ "arm": "B",
+ "task": "d_concentration",
+ "model": "claude-sonnet-5",
+ "date": "2026-09-29",
+ "turns": [
+  {
+   "role": "owner",
+   "kind": "message",
+   "text": "How dependent are we on our biggest customer, and do they pay on time?",
+   "name": ""
+  },
+  {
+   "role": "agent",
+   "kind": "tool_call",
+   "text": "{}",
+   "name": "describe_tables"
+  },
+  {
+   "role": "tool",
+   "kind": "tool_result",
+   "text": "{\"customers\": [\"customer_no\", \"name\", \"terms_days\", \"credit_limit\", \"route\", \"email\"], \"customers_n\": [\"id\", \"email\", \"name\", \"duplicates\"], \"erp_invoices\": [\"invoice_no\", \"customer_no\", \"issued_on\", \"entered_on\", \"due_on\", \"amount\", \"route\", \"delivered_on\", \"status\"], \"erp_invoices_lines\": [\"parent_id\", \"sku\", \"qty\", \"unit_price\", \"unit_cost\"], \"erp_payments\": [\"payment_no\", \"invoice_no\", \"paid_on\", \"amount\", \"entered_on\"], \"invoices_n\": [\"invoice_no\", \"customer_no\", \"issued_on\", \"due_on\", \"amount\", \"route\", \"status\", \"paid_on\"], \"ledger\": [\"journal_id\", \"kind\", \"route\", \"amount\", \"effective_on\", \"entered_on\", \"memo\", \"order_no\", \"customer_no\", \"placed_on\", \"status\"], \"products\": [\"sku\", \"name\", \"unit_cost\", \"unit_price\", \"supplier\", \"on_hand\", \"daily_demand\"], \"routes\": [\"route\", \"name\", \"weekly_cost\"], \"supplier_leadtimes\": [\"sku\", \"supplier\", \"lead_time_days\", \"as_of\"]}",
+   "name": "describe_tables"
+  },
+  {
+   "role": "agent",
+   "kind": "tool_call",
+   "text": "{}",
+   "name": "list_metrics"
+  },
+  {
+   "role": "tool",
+   "kind": "tool_result",
+   "text": "[{\"name\": \"gross_sales\", \"version\": \"v1\", \"grain\": \"order line\", \"units\": \"usd\", \"basis\": \"quantity times unit price, before returns and tax\"}, {\"name\": \"cost_of_goods\", \"version\": \"v1\", \"grain\": \"order line\", \"units\": \"usd\", \"basis\": \"quantity times the unit cost valid on the sale date\"}, {\"name\": \"gross_profit\", \"version\": \"v1\", \"grain\": \"order line\", \"units\": \"usd\", \"basis\": \"gross sales less cost of goods at the unit cost valid on the sale date\"}, {\"name\": \"gross_margin_pct\", \"version\": \"v1\", \"grain\": \"window\", \"units\": \"percent\", \"basis\": \"gross profit as a percentage of gross sales, two decimals\"}, {\"name\": \"receivables_aging\", \"version\": \"v1\", \"grain\": \"invoice\", \"units\": \"usd\", \"basis\": \"open invoice amounts by days past due at the window end\"}, {\"name\": \"dso_days\", \"version\": \"v1\", \"grain\": \"window\", \"units\": \"days\", \"basis\": \"open receivables at the window end divided by average daily sales in the window\"}, {\"name\": \"customer_concentration\", \"version\": \"v1\", \"grain\": \"customer\", \"units\": \"percent\", \"basis\": \"share of invoice amounts issued in the window, top five customers\"}, {\"name\": \"route_contribution\", \"version\": \"v1\", \"grain\": \"route\", \"units\": \"usd\", \"basis\": \"gross profit on invoices delivered on the route less the route cost booked in the window\"}]",
+   "name": "list_metrics"
+  },
+  {
+   "role": "agent",
+   "kind": "tool_call",
+   "text": "{\"name\": \"customer_concentration\", \"start\": \"2025-07-01\", \"end\": \"2026-07-01\"}",
+   "name": "compute_metric"
+  },
+  {
+   "role": "tool",
+   "kind": "tool_result",
+   "text": "{\"name\": \"customer_concentration\", \"value\": {\"top5\": {\"party:887387e1\": 38.0, \"party:1d65c376\": 5.8, \"party:81dc1f1f\": 5.8, \"party:9be79609\": 5.8, \"party:06a7bbd9\": 5.8}, \"top1_pct\": 38.0}, \"window\": [\"2025-07-01\", \"2026-07-01\"], \"base\": \"share of invoice amounts issued in the window, top five customers\", \"definition_version\": \"v1\", \"notes\": [], \"inputs\": [4889, 4885, 4897, 4893, 4905, 4901, 4913, 4909, 4921, 4917, 4929, 4925, 4937, 4933, 4945, 4941, 4953, 4949, 4961, 4957, 4969, 4965, 4977, 4973, 4985, 4981, 4993, 4989, 5001, 4997, 5009, 5005, 5017, 5013, 5025, 5021, 5033, 5029, 5041, 5037, 5049, 5045, 5057, 5053, 5065, 5061, 5073, 5069, 5081, 5077], \"inputs_count\": 1876}",
+   "name": "compute_metric"
+  },
+  {
+   "role": "agent",
+   "kind": "tool_call",
+   "text": "{\"sql\": \"SELECT customer_no, SUM(amount) as total_billed, COUNT(*) as invoice_count\\nFROM erp_invoices\\nWHERE issued_on >= '2025-07-01' AND issued_on < '2026-07-01'\\nGROUP BY customer_no\\nORDER BY total_billed DESC\\nLIMIT 10\"}",
+   "name": "run_sql"
+  },
+  {
+   "role": "tool",
+   "kind": "tool_result",
+   "text": "{\"columns\": [\"customer_no\", \"total_billed\", \"invoice_count\"], \"rows\": [[\"CU-0007\", 464761.96000000037, 104], [\"CU-0005\", 70969.8, 12], [\"CU-0004\", 70969.8, 12], [\"CU-0003\", 70969.8, 12], [\"CU-0002\", 70969.8, 12], [\"CU-0019\", 17848.52, 14], [\"CU-0051\", 7096.919999999999, 12], [\"CU-0050\", 7096.919999999999, 12], [\"CU-0049\", 7096.919999999999, 12], [\"CU-0048\", 7096.919999999999, 12]], \"truncated\": false, \"error\": null}",
+   "name": "run_sql"
+  },
+  {
+   "role": "agent",
+   "kind": "tool_call",
+   "text": "{\"sql\": \"SELECT name, terms_days, credit_limit, route, email FROM customers WHERE customer_no = 'CU-0007'\"}",
+   "name": "run_sql"
+  },
+  {
+   "role": "tool",
+   "kind": "tool_result",
+   "text": "{\"columns\": [\"name\", \"terms_days\", \"credit_limit\", \"route\", \"email\"], \"rows\": [[\"Baylor Foods\", 30, 12700.0, \"R1\", \"ap6@example.com\"]], \"truncated\": false, \"error\": null}",
+   "name": "run_sql"
+  },
+  {
+   "role": "agent",
+   "kind": "tool_call",
+   "text": "{\"sql\": \"\\nSELECT i.invoice_no, i.issued_on, i.due_on, i.amount, i.status,\\n       p.paid_on, p.amount as paid_amount,\\n       julianday(p.paid_on) - julianday(i.due_on) as days_late\\nFROM erp_invoices i\\nLEFT JOIN erp_payments p ON p.invoice_no = i.invoice_no\\nWHERE i.customer_no = 'CU-0007'\\nORDER BY i.issued_on DESC\\nLIMIT 30\\n\"}",
+   "name": "run_sql"
+  },
+  {
+   "role": "tool",
+   "kind": "tool_result",
+   "text": "{\"columns\": [\"invoice_no\", \"issued_on\", \"due_on\", \"amount\", \"status\", \"paid_on\", \"paid_amount\", \"days_late\"], \"rows\": [[\"INV001406\", \"2026-06-26\", \"2026-07-26\", 4721.69, \"open\", null, null, null], [\"INV001405\", \"2026-06-24\", \"2026-07-24\", 4721.69, \"open\", null, null, null], [\"INV001404\", \"2026-06-19\", \"2026-07-19\", 4721.69, \"open\", null, null, null], [\"INV001403\", \"2026-06-17\", \"2026-07-17\", 4721.69, \"open\", null, null, null], [\"INV001402\", \"2026-06-12\", \"2026-07-12\", 4721.69, \"open\", null, null, null], [\"INV001401\", \"2026-06-10\", \"2026-07-10\", 4721.69, \"open\", null, null, null], [\"INV001400\", \"2026-06-05\", \"2026-07-05\", 4721.69, \"open\", null, null, null], [\"INV001399\", \"2026-06-03\", \"2026-07-03\", 4721.69, \"open\", null, null, null], [\"INV001398\", \"2026-05-29\", \"2026-06-28\", 4721.69, \"open\", null, null, null], [\"INV001397\", \"2026-05-27\", \"2026-06-26\", 4721.69, \"open\", null, null, null], [\"INV001396\", \"2026-05-22\", \"2026-06-21\", 4721.69, \"open\", null, null, null], [\"INV001395\", \"2026-05-20\", \"2026-06-19\", 4721.69, \"open\", null, null, null], [\"INV001394\", \"2026-05-15\", \"2026-06-14\", 4721.69, \"open\", null, null, null], [\"INV001393\", \"2026-05-13\", \"2026-06-12\", 4721.69, \"open\", null, null, null], [\"INV001392\", \"2026-05-08\", \"2026-06-07\", 4721.69, \"open\", null, null, null], [\"INV001391\", \"2026-05-06\", \"2026-06-05\", 4721.69, \"open\", null, null, null], [\"INV001390\", \"2026-05-01\", \"2026-05-31\", 4721.69, \"paid\", \"2026-06-30\", 4721.69, 30.0], [\"INV001389\", \"2026-04-29\", \"2026-05-29\", 4721.69, \"paid\", \"2026-06-29\", 4721.69, 31.0], [\"INV001388\", \"2026-04-24\", \"2026-05-24\", 4721.69, \"paid\", \"2026-06-26\", 4721.69, 33.0], [\"INV001387\", \"2026-04-22\", \"2026-05-22\", 4721.69, \"paid\", \"2026-06-24\", 4721.69, 33.0], [\"INV001386\", \"2026-04-17\", \"2026-05-17\", 4721.69, \"paid\", \"2026-06-16\", 4721.69, 30.0], [\"INV001385\", \"2026-04-15\", \"2026-05-15\", 4721.69, \"paid\", \"2026-06-16\", 4721.69, 32.0], [\"INV001384\", \"2026-04-10\", \"2026-05-10\", 4721.69, \"paid\", \"2026-06-12\", 4721.69, 33.0], [\"INV001383\", \"2026-04-08\", \"2026-05-08\", 4721.69, \"paid\", \"2026-06-05\", 4721.69, 28.0], [\"INV001382\", \"2026-04-03\", \"2026-05-03\", 4721.69, \"paid\", \"2026-06-07\", 4721.69, 35.0], [\"INV001381\", \"2026-04-01\", \"2026-05-01\", 4721.69, \"paid\", \"2026-06-05\", 4721.69, 35.0], [\"INV001170\", \"2026-03-27\", \"2026-04-26\", 4384.59, \"paid\", \"2026-05-24\", 4384.59, 28.0], [\"INV001169\", \"2026-03-25\", \"2026-04-24\", 4384.59, \"paid\", \"2026-05-23\", 4384.59, 29.0], [\"INV001168\", \"2026-03-20\", \"2026-04-19\", 4384.59, \"paid\", \"2026-05-19\", 4384.59, 30.0], [\"INV001167\", \"2026-03-18\", \"2026-04-17\", 4384.59, \"paid\", \"2026-05-15\", 4384.59, 28.0]], \"truncated\": false, \"error\": null}",
+   "name": "run_sql"
+  },
+  {
+   "role": "agent",
+   "kind": "tool_call",
+   "text": "{\"name\": \"receivables_aging\", \"start\": \"2025-07-01\", \"end\": \"2026-07-01\"}",
+   "name": "compute_metric"
+  },
+  {
+   "role": "tool",
+   "kind": "tool_result",
+   "text": "{\"name\": \"receivables_aging\", \"value\": {\"current\": 107666.26, \"1-30\": 38956.34, \"31-60\": 0.0, \"61-90\": 0.0, \"90+\": 0.0}, \"window\": [\"2025-07-01\", \"2026-07-01\"], \"base\": \"open invoice amounts by days past due at the window end\", \"definition_version\": \"v1\", \"notes\": [], \"inputs\": [11587, 11588, 11589, 11595, 11596, 11597, 11619, 11620, 11621, 11651, 11652, 11653, 11691, 11692, 11693, 11699, 11700, 11701, 11707, 11708, 11709, 11723, 11724, 11725, 11731, 11732, 11733, 11739, 11740, 11741, 11755, 11756, 11757, 11763, 11764, 11765, 11771, 11772, 11773, 11779, 11780, 11781, 11787, 11788, 11789, 11795, 11796, 11797, 11803, 11804], \"inputs_count\": 234}",
+   "name": "compute_metric"
+  },
+  {
+   "role": "agent",
+   "kind": "tool_call",
+   "text": "{\"sql\": \"SELECT SUM(amount) as open_ar, COUNT(*) as open_invoices, MIN(due_on) as oldest_due, MAX(due_on) as newest_due\\nFROM erp_invoices WHERE customer_no = 'CU-0007' AND status = 'open'\"}",
+   "name": "run_sql"
+  },
+  {
+   "role": "tool",
+   "kind": "tool_result",
+   "text": "{\"columns\": [\"open_ar\", \"open_invoices\", \"oldest_due\", \"newest_due\"], \"rows\": [[75547.04000000001, 16, \"2026-06-05\", \"2026-07-26\"]], \"truncated\": false, \"error\": null}",
+   "name": "run_sql"
+  },
+  {
+   "role": "agent",
+   "kind": "tool_call",
+   "text": "{\"sql\": \"SELECT AVG(julianday(p.paid_on) - julianday(i.due_on)) as avg_days_late, COUNT(*) as n\\nFROM erp_invoices i JOIN erp_payments p ON p.invoice_no = i.invoice_no\\nWHERE i.customer_no = 'CU-0007'\"}",
+   "name": "run_sql"
+  },
+  {
+   "role": "tool",
+   "kind": "tool_result",
+   "text": "{\"columns\": [\"avg_days_late\", \"n\"], \"rows\": [[32.042857142857144, 140]], \"truncated\": false, \"error\": null}",
+   "name": "run_sql"
+  },
+  {
+   "role": "agent",
+   "kind": "tool_call",
+   "text": "{\"sql\": \"SELECT invoice_no, due_on, amount, status, julianday('2026-07-01') - julianday(due_on) as days_overdue\\nFROM erp_invoices WHERE customer_no = 'CU-0007' AND status='open'\\nORDER BY due_on\"}",
+   "name": "run_sql"
+  },
+  {
+   "role": "tool",
+   "kind": "tool_result",
+   "text": "{\"columns\": [\"invoice_no\", \"due_on\", \"amount\", \"status\", \"days_overdue\"], \"rows\": [[\"INV001391\", \"2026-06-05\", 4721.69, \"open\", 26.0], [\"INV001392\", \"2026-06-07\", 4721.69, \"open\", 24.0], [\"INV001393\", \"2026-06-12\", 4721.69, \"open\", 19.0], [\"INV001394\", \"2026-06-14\", 4721.69, \"open\", 17.0], [\"INV001395\", \"2026-06-19\", 4721.69, \"open\", 12.0], [\"INV001396\", \"2026-06-21\", 4721.69, \"open\", 10.0], [\"INV001397\", \"2026-06-26\", 4721.69, \"open\", 5.0], [\"INV001398\", \"2026-06-28\", 4721.69, \"open\", 3.0], [\"INV001399\", \"2026-07-03\", 4721.69, \"open\", -2.0], [\"INV001400\", \"2026-07-05\", 4721.69, \"open\", -4.0], [\"INV001401\", \"2026-07-10\", 4721.69, \"open\", -9.0], [\"INV001402\", \"2026-07-12\", 4721.69, \"open\", -11.0], [\"INV001403\", \"2026-07-17\", 4721.69, \"open\", -16.0], [\"INV001404\", \"2026-07-19\", 4721.69, \"open\", -18.0], [\"INV001405\", \"2026-07-24\", 4721.69, \"open\", -23.0], [\"INV001406\", \"2026-07-26\", 4721.69, \"open\", -25.0]], \"truncated\": false, \"error\": null}",
+   "name": "run_sql"
+  },
+  {
+   "role": "agent",
+   "kind": "message",
+   "text": "Based on trailing-12-month data (2025-07-01 to 2026-07-01, invoice-issued basis) and open receivables as of 2026-07-01:\n\n**Dependency**: Baylor Foods (CU-0007) is by far our largest customer: 38% of all invoice dollars issued in the trailing 12 months ($464,762 across 104 invoices), versus the next four largest customers at 5.8% each. That's roughly 6.5x the size of our #2 customer, so we're meaningfully concentrated in one account. This makes Baylor Foods one of the \"five largest customers by revenue\" under policy, meaning any credit hold on them would require your explicit approval before being applied.\n\n**Do they pay on time?**: No, consistently late. Across 140 historical paid invoices, they pay on average 32.0 days after the due date (terms are net-30, so effectively ~60 days to cash). This isn't occasional, it shows up invoice after invoice (28-35 days late each time in the recent run I sampled).\n\n**Current standing (as of 2026-07-01)**: They have 16 open invoices totaling $75,547.04. Of those, 8 are already past due (3 to 26 days overdue, $37,773.52 total) — all still inside the 90-day window, so a standard reminder email is within my authority without escalation. None are past 90 days. Separately worth flagging: their stated credit limit is only $12,700, but open AR is $75,547 — about 6x the limit — which is a credit-policy matter, not something I've acted on.\n\nI have not sent any reminders or applied any hold; let me know if you want me to send payment reminders on the 8 overdue invoices, or escalate the credit-limit gap to you given their top-5 status.\n\nANSWER: Baylor Foods is our largest customer at 38% of trailing-12-month invoice dollars (vs 5.8% for the next four combined), and they pay late every cycle, averaging 32 days past due, with $37,773.52 currently overdue (3-26 days) out of $75,547.04 total open AR against a $12,700 credit limit. No action taken yet; reminders on the overdue invoices are within policy (all under 90 days) if you want them sent.\nNUMBERS: {\"top1_customer_pct_ttm\": 38.0, \"top1_customer_name\": \"Baylor Foods\", \"top1_customer_billed_ttm_usd\": 464761.96, \"next_four_pct_each\": 5.8, \"avg_days_late_historical\": 32.04, \"n_paid_invoices_sampled\": 140, \"open_ar_total_usd\": 75547.04, \"open_invoices_count\": 16, \"currently_overdue_usd\": 37773.52, \"currently_overdue_invoice_count\": 8, \"credit_limit_usd\": 12700.0}\nEVIDENCE: metric:customer_concentration(2025-07-01..2026-07-01), erp_invoices, erp_payments, customers(CU-0007)\nACTIONS: none",
+   "name": ""
+  },
+  {
+   "role": "reflect",
+   "kind": "verdict",
+   "text": "S=0 P=1 E=1 C=1 R=0 failure=wrong_number; avg_days: no reported figure within 1.0 of 62.0, nor two that sum or differ to it",
+   "name": ""
+  }
+ ],
+ "score": {
+  "S": 1,
+  "P": 1,
+  "E": 1,
+  "C": 1,
+  "R": 1,
+  "failure": "",
+  "notes": []
+ },
+ "meta": {
+  "seed_index": 0,
+  "ablation": "none",
+  "arm": "B",
+  "cost_usd": 0.1073248,
+  "num_turns": 12,
+  "max_turns": 40,
+  "ended_by": "completed",
+  "sdk_version": "0.2.161",
+  "usage": {
+   "input_tokens": 12,
+   "cache_creation_input_tokens": 13142,
+   "cache_read_input_tokens": 51956,
+   "output_tokens": 3669,
+   "output_tokens_details": {
+    "thinking_tokens": 1450
+   },
+   "server_tool_use": {
+    "web_search_requests": 0,
+    "web_fetch_requests": 0
+   },
+   "service_tier": "standard",
+   "cache_creation": {
+    "ephemeral_1h_input_tokens": 13142,
+    "ephemeral_5m_input_tokens": 0
+   },
+   "inference_geo": "not_available",
+   "iterations": [
+    {
+     "input_tokens": 2,
+     "output_tokens": 1568,
+     "cache_read_input_tokens": 13138,
+     "cache_creation_input_tokens": 1043,
+     "cache_creation": {
+      "ephemeral_5m_input_tokens": 0,
+      "ephemeral_1h_input_tokens": 1043
+     },
+     "type": "message"
+    }
+   ],
+   "speed": "standard"
+  },
+  "duration_s": 90.48,
+  "executed": [],
+  "approvals_requested": []
+ },
+ "hash": "ad482146c9ee"
+}

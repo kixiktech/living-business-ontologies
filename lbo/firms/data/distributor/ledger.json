@@ -1,0 +1,182 @@
+{
+ "name": "ledger",
+ "exported_at": "2026-07-01T08:00:00",
+ "records": [
+  {
+   "journal_id": "J-2025Q1-R1",
+   "kind": "route_cost",
+   "route": "R1",
+   "amount": 5200.0,
+   "effective_on": "2025-01-01",
+   "entered_on": "2025-01-03",
+   "memo": "North loop truck, driver, fuel"
+  },
+  {
+   "journal_id": "J-2025Q1-R2",
+   "kind": "route_cost",
+   "route": "R2",
+   "amount": 4940.0,
+   "effective_on": "2025-01-01",
+   "entered_on": "2025-01-03",
+   "memo": "City truck, driver, fuel"
+  },
+  {
+   "journal_id": "J-2025Q1-R3",
+   "kind": "route_cost",
+   "route": "R3",
+   "amount": 6500.0,
+   "effective_on": "2025-01-01",
+   "entered_on": "2025-01-03",
+   "memo": "South loop truck, driver, fuel"
+  },
+  {
+   "journal_id": "J-2025Q2-R1",
+   "kind": "route_cost",
+   "route": "R1",
+   "amount": 5200.0,
+   "effective_on": "2025-04-01",
+   "entered_on": "2025-04-03",
+   "memo": "North loop truck, driver, fuel"
+  },
+  {
+   "journal_id": "J-2025Q2-R2",
+   "kind": "route_cost",
+   "route": "R2",
+   "amount": 4940.0,
+   "effective_on": "2025-04-01",
+   "entered_on": "2025-04-03",
+   "memo": "City truck, driver, fuel"
+  },
+  {
+   "journal_id": "J-2025Q2-R3",
+   "kind": "route_cost",
+   "route": "R3",
+   "amount": 6500.0,
+   "effective_on": "2025-04-01",
+   "entered_on": "2025-04-03",
+   "memo": "South loop truck, driver, fuel"
+  },
+  {
+   "journal_id": "J-2025Q3-R1",
+   "kind": "route_cost",
+   "route": "R1",
+   "amount": 5200.0,
+   "effective_on": "2025-07-01",
+   "entered_on": "2025-07-03",
+   "memo": "North loop truck, driver, fuel"
+  },
+  {
+   "journal_id": "J-2025Q3-R2",
+   "kind": "route_cost",
+   "route": "R2",
+   "amount": 4940.0,
+   "effective_on": "2025-07-01",
+   "entered_on": "2025-07-03",
+   "memo": "City truck, driver, fuel"
+  },
+  {
+   "journal_id": "J-2025Q3-R3",
+   "kind": "route_cost",
+   "route": "R3",
+   "amount": 6500.0,
+   "effective_on": "2025-07-01",
+   "entered_on": "2025-07-03",
+   "memo": "South loop truck, driver, fuel"
+  },
+  {
+   "journal_id": "J-2025Q4-R1",
+   "kind": "route_cost",
+   "route": "R1",
+   "amount": 5200.0,
+   "effective_on": "2025-10-01",
+   "entered_on": "2025-10-03",
+   "memo": "North loop truck, driver, fuel"
+  },
+  {
+   "journal_id": "J-2025Q4-R2",
+   "kind": "route_cost",
+   "route": "R2",
+   "amount": 4940.0,
+   "effective_on": "2025-10-01",
+   "entered_on": "2025-10-03",
+   "memo": "City truck, driver, fuel"
+  },
+  {
+   "journal_id": "J-2025Q4-R3",
+   "kind": "route_cost",
+   "route": "R3",
+   "amount": 6500.0,
+   "effective_on": "2025-10-01",
+   "entered_on": "2025-10-03",
+   "memo": "South loop truck, driver, fuel"
+  },
+  {
+   "journal_id": "J-2026Q1-R1",
+   "kind": "route_cost",
+   "route": "R1",
+   "amount": 5200.0,
+   "effective_on": "2026-01-01",
+   "entered_on": "2026-01-03",
+   "memo": "North loop truck, driver, fuel"
+  },
+  {
+   "journal_id": "J-2026Q1-R2",
+   "kind": "route_cost",
+   "route": "R2",
+   "amount": 4940.0,
+   "effective_on": "2026-01-01",
+   "entered_on": "2026-01-03",
+   "memo": "City truck, driver, fuel"
+  },
+  {
+   "journal_id": "J-2026Q1-R3",
+   "kind": "route_cost",
+   "route": "R3",
+   "amount": 6500.0,
+   "effective_on": "2026-01-01",
+   "entered_on": "2026-01-03",
+   "memo": "South loop truck, driver, fuel"
+  },
+  {
+   "journal_id": "J-2026Q2-R1",
+   "kind": "route_cost",
+   "route": "R1",
+   "amount": 5200.0,
+   "effective_on": "2026-04-01",
+   "entered_on": "2026-04-03",
+   "memo": "North loop truck, driver, fuel"
+  },
+  {
+   "journal_id": "J-2026Q2-R2",
+   "kind": "route_cost",
+   "route": "R2",
+   "amount": 4940.0,
+   "effective_on": "2026-04-01",
+   "entered_on": "2026-04-03",
+   "memo": "City truck, driver, fuel"
+  },
+  {
+   "journal_id": "J-2026Q2-R3",
+   "kind": "route_cost",
+   "route": "R3",
+   "amount": 6500.0,
+   "effective_on": "2026-04-01",
+   "entered_on": "2026-04-03",
+   "memo": "South loop truck, driver, fuel"
+  },
+  {
+   "order_no": "SO-2026-0611",
+   "customer_no": "CU-0019",
+   "amount": 2400.0,
+   "placed_on": "2026-06-28",
+   "status": "pending",
+   "journal_id": "J-PENDING",
+   "kind": "pending_order",
+   "effective_on": "2026-06-28",
+   "entered_on": "2026-06-28",
+   "memo": "sales order awaiting credit decision"
+  }
+ ],
+ "id_field": "journal_id",
+ "description": "route costs and the pending order"
+}

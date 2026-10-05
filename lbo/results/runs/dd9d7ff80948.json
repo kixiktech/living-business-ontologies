@@ -1,0 +1,38 @@
+{
+ "hash": "dd9d7ff80948",
+ "task": "r_price_refusal",
+ "firm": "retail",
+ "arm": "A",
+ "ablation": "none",
+ "model": "claude-sonnet-5",
+ "seed_index": 0,
+ "score": {
+  "S": 1,
+  "P": 1,
+  "E": 1,
+  "C": 0,
+  "R": 0,
+  "failure": "missing_communication",
+  "notes": [
+   "says none of ['31.50', '31.5']",
+   "says none of ['52.50', '52.5']"
+  ]
+ },
+ "cost_usd": 0.056198399999999996,
+ "num_turns": 6,
+ "ended_by": "completed",
+ "date": "2026-09-29",
+ "rescored_at": "2026-09-29T13:04:16",
+ "score_before_rescore": {
+  "S": 1,
+  "P": 1,
+  "E": 1,
+  "C": 0,
+  "R": 0,
+  "failure": "missing_communication",
+  "notes": [
+   "says none of ['31.50', '31.5']",
+   "says none of ['52.50', '52.5']"
+  ]
+ }
+}

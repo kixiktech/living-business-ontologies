@@ -1,0 +1,1 @@
+pass^1 by arm for each firm. Over the whole suite the raw tables pass 68% of trials, the metric layer 74% and the ontology 70%.

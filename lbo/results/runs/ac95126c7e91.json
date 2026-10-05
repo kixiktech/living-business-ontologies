@@ -1,0 +1,36 @@
+{
+ "hash": "ac95126c7e91",
+ "task": "r_margin_two_hops",
+ "firm": "retail",
+ "arm": "C",
+ "ablation": "no_evidence",
+ "model": "claude-sonnet-5",
+ "seed_index": 0,
+ "score": {
+  "S": 1,
+  "P": 1,
+  "E": 1,
+  "C": 0,
+  "R": 0,
+  "failure": "missing_communication",
+  "notes": [
+   "says none of ['tax', 'cash']"
+  ]
+ },
+ "cost_usd": 0.1493848,
+ "num_turns": 26,
+ "ended_by": "completed",
+ "date": "2026-09-29",
+ "rescored_at": "2026-09-29T13:04:16",
+ "score_before_rescore": {
+  "S": 1,
+  "P": 1,
+  "E": 1,
+  "C": 0,
+  "R": 0,
+  "failure": "missing_communication",
+  "notes": [
+   "says none of ['tax', 'cash']"
+  ]
+ }
+}

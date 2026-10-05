@@ -1,0 +1,25 @@
+{
+ "name": "supplier_terms",
+ "exported_at": "2025-01-06T09:00:00",
+ "records": [
+  {
+   "supplier": "Meridian Supply",
+   "effective_on": "2025-01-01",
+   "break_units_per_quarter": 500,
+   "tiers": {
+    "A-100": {
+     "at_or_above": 15.0,
+     "below": 18.0
+    },
+    "B-200": {
+     "at_or_above": 30.0,
+     "below": 33.0
+    }
+   },
+   "rule": "tier earned by a quarter's orders sets next quarter's unit cost",
+   "document": "meridian-terms-2025.pdf"
+  }
+ ],
+ "id_field": "supplier",
+ "description": "supplier terms, transcribed from a PDF the owner keeps in email"
+}

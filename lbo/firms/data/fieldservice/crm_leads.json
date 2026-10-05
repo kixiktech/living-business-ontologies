@@ -1,0 +1,3928 @@
+{
+ "name": "crm_leads",
+ "exported_at": "2026-07-01T08:00:00",
+ "records": [
+  {
+   "lead_id": "LD00001",
+   "created_on": "2025-01-01",
+   "entered_on": "2025-01-01",
+   "channel": "B",
+   "status": "lost"
+  },
+  {
+   "lead_id": "LD00002",
+   "created_on": "2025-01-01",
+   "entered_on": "2025-01-01",
+   "channel": "A",
+   "status": "lost"
+  },
+  {
+   "lead_id": "LD00003",
+   "created_on": "2025-01-02",
+   "entered_on": "2025-01-02",
+   "channel": "A",
+   "status": "lost"
+  },
+  {
+   "lead_id": "LD00004",
+   "created_on": "2025-01-03",
+   "entered_on": "2025-01-03",
+   "channel": "B",
+   "status": "lost"
+  },
+  {
+   "lead_id": "LD00005",
+   "created_on": "2025-01-03",
+   "entered_on": "2025-01-03",
+   "channel": "A",
+   "status": "lost"
+  },
+  {
+   "lead_id": "LD00006",
+   "created_on": "2025-01-06",
+   "entered_on": "2025-01-06",
+   "channel": "A",
+   "status": "won"
+  },
+  {
+   "lead_id": "LD00007",
+   "created_on": "2025-01-07",
+   "entered_on": "2025-01-07",
+   "channel": "B",
+   "status": "lost"
+  },
+  {
+   "lead_id": "LD00008",
+   "created_on": "2025-01-07",
+   "entered_on": "2025-01-07",
+   "channel": "A",
+   "status": "won"
+  },
+  {
+   "lead_id": "LD00009",
+   "created_on": "2025-01-08",
+   "entered_on": "2025-01-08",
+   "channel": "A",
+   "status": "lost"
+  },
+  {
+   "lead_id": "LD00010",
+   "created_on": "2025-01-09",
+   "entered_on": "2025-01-09",
+   "channel": "B",
+   "status": "lost"
+  },
+  {
+   "lead_id": "LD00011",
+   "created_on": "2025-01-10",
+   "entered_on": "2025-01-10",
+   "channel": "A",
+   "status": "won"
+  },
+  {
+   "lead_id": "LD00012",
+   "created_on": "2025-01-10",
+   "entered_on": "2025-01-10",
+   "channel": "A",
+   "status": "lost"
+  },
+  {
+   "lead_id": "LD00013",
+   "created_on": "2025-01-13",
+   "entered_on": "2025-01-13",
+   "channel": "B",
+   "status": "lost"
+  },
+  {
+   "lead_id": "LD00014",
+   "created_on": "2025-01-14",
+   "entered_on": "2025-01-14",
+   "channel": "A",
+   "status": "lost"
+  },
+  {
+   "lead_id": "LD00015",
+   "created_on": "2025-01-14",
+   "entered_on": "2025-01-14",
+   "channel": "A",
+   "status": "lost"
+  },
+  {
+   "lead_id": "LD00016",
+   "created_on": "2025-01-15",
+   "entered_on": "2025-01-15",
+   "channel": "B",
+   "status": "won"
+  },
+  {
+   "lead_id": "LD00017",
+   "created_on": "2025-01-16",
+   "entered_on": "2025-01-16",
+   "channel": "A",
+   "status": "lost"
+  },
+  {
+   "lead_id": "LD00018",
+   "created_on": "2025-01-17",
+   "entered_on": "2025-01-17",
+   "channel": "A",
+   "status": "lost"
+  },
+  {
+   "lead_id": "LD00019",
+   "created_on": "2025-01-17",
+   "entered_on": "2025-01-17",
+   "channel": "B",
+   "status": "lost"
+  },
+  {
+   "lead_id": "LD00020",
+   "created_on": "2025-01-20",
+   "entered_on": "2025-01-20",
+   "channel": "A",
+   "status": "lost"
+  },
+  {
+   "lead_id": "LD00021",
+   "created_on": "2025-01-21",
+   "entered_on": "2025-01-21",
+   "channel": "A",
+   "status": "lost"
+  },
+  {
+   "lead_id": "LD00022",
+   "created_on": "2025-01-21",
+   "entered_on": "2025-01-21",
+   "channel": "B",
+   "status": "lost"
+  },
+  {
+   "lead_id": "LD00023",
+   "created_on": "2025-01-22",
+   "entered_on": "2025-01-22",
+   "channel": "A",
+   "status": "lost"
+  },
+  {
+   "lead_id": "LD00024",
+   "created_on": "2025-01-23",
+   "entered_on": "2025-01-23",
+   "channel": "A",
+   "status": "lost"
+  },
+  {
+   "lead_id": "LD00025",
+   "created_on": "2025-01-24",
+   "entered_on": "2025-01-24",
+   "channel": "B",
+   "status": "won"
+  },
+  {
+   "lead_id": "LD00026",
+   "created_on": "2025-01-24",
+   "entered_on": "2025-01-24",
+   "channel": "A",
+   "status": "lost"
+  },
+  {
+   "lead_id": "LD00027",
+   "created_on": "2025-01-27",
+   "entered_on": "2025-01-27",
+   "channel": "A",
+   "status": "lost"
+  },
+  {
+   "lead_id": "LD00028",
+   "created_on": "2025-01-28",
+   "entered_on": "2025-01-28",
+   "channel": "B",
+   "status": "lost"
+  },
+  {
+   "lead_id": "LD00029",
+   "created_on": "2025-01-28",
+   "entered_on": "2025-01-28",
+   "channel": "A",
+   "status": "won"
+  },
+  {
+   "lead_id": "LD00030",
+   "created_on": "2025-01-29",
+   "entered_on": "2025-01-29",
+   "channel": "A",
+   "status": "lost"
+  },
+  {
+   "lead_id": "LD00031",
+   "created_on": "2025-01-30",
+   "entered_on": "2025-01-30",
+   "channel": "B",
+   "status": "lost"
+  },
+  {
+   "lead_id": "LD00032",
+   "created_on": "2025-01-31",
+   "entered_on": "2025-01-31",
+   "channel": "A",
+   "status": "won"
+  },
+  {
+   "lead_id": "LD00033",
+   "created_on": "2025-01-31",
+   "entered_on": "2025-01-31",
+   "channel": "A",
+   "status": "lost"
+  },
+  {
+   "lead_id": "LD00034",
+   "created_on": "2025-02-03",
+   "entered_on": "2025-02-03",
+   "channel": "B",
+   "status": "won"
+  },
+  {
+   "lead_id": "LD00035",
+   "created_on": "2025-02-04",
+   "entered_on": "2025-02-04",
+   "channel": "A",
+   "status": "won"
+  },
+  {
+   "lead_id": "LD00036",
+   "created_on": "2025-02-04",
+   "entered_on": "2025-02-04",
+   "channel": "A",
+   "status": "lost"
+  },
+  {
+   "lead_id": "LD00037",
+   "created_on": "2025-02-05",
+   "entered_on": "2025-02-05",
+   "channel": "B",
+   "status": "lost"
+  },
+  {
+   "lead_id": "LD00038",
+   "created_on": "2025-02-06",
+   "entered_on": "2025-02-06",
+   "channel": "A",
+   "status": "lost"
+  },
+  {
+   "lead_id": "LD00039",
+   "created_on": "2025-02-07",
+   "entered_on": "2025-02-07",
+   "channel": "A",
+   "status": "lost"
+  },
+  {
+   "lead_id": "LD00040",
+   "created_on": "2025-02-07",
+   "entered_on": "2025-02-07",
+   "channel": "B",
+   "status": "lost"
+  },
+  {
+   "lead_id": "LD00041",
+   "created_on": "2025-02-10",
+   "entered_on": "2025-02-10",
+   "channel": "A",
+   "status": "won"
+  },
+  {
+   "lead_id": "LD00042",
+   "created_on": "2025-02-11",
+   "entered_on": "2025-02-11",
+   "channel": "A",
+   "status": "lost"
+  },
+  {
+   "lead_id": "LD00043",
+   "created_on": "2025-02-11",
+   "entered_on": "2025-02-11",
+   "channel": "B",
+   "status": "lost"
+  },
+  {
+   "lead_id": "LD00044",
+   "created_on": "2025-02-12",
+   "entered_on": "2025-02-12",
+   "channel": "A",
+   "status": "lost"
+  },
+  {
+   "lead_id": "LD00045",
+   "created_on": "2025-02-13",
+   "entered_on": "2025-02-13",
+   "channel": "A",
+   "status": "won"
+  },
+  {
+   "lead_id": "LD00046",
+   "created_on": "2025-02-14",
+   "entered_on": "2025-02-14",
+   "channel": "B",
+   "status": "won"
+  },
+  {
+   "lead_id": "LD00047",
+   "created_on": "2025-02-14",
+   "entered_on": "2025-02-14",
+   "channel": "A",
+   "status": "lost"
+  },
+  {
+   "lead_id": "LD00048",
+   "created_on": "2025-02-17",
+   "entered_on": "2025-02-17",
+   "channel": "A",
+   "status": "won"
+  },
+  {
+   "lead_id": "LD00049",
+   "created_on": "2025-02-18",
+   "entered_on": "2025-02-18",
+   "channel": "B",
+   "status": "lost"
+  },
+  {
+   "lead_id": "LD00050",
+   "created_on": "2025-02-18",
+   "entered_on": "2025-02-18",
+   "channel": "A",
+   "status": "won"
+  },
+  {
+   "lead_id": "LD00051",
+   "created_on": "2025-02-19",
+   "entered_on": "2025-02-19",
+   "channel": "A",
+   "status": "lost"
+  },
+  {
+   "lead_id": "LD00052",
+   "created_on": "2025-02-20",
+   "entered_on": "2025-02-20",
+   "channel": "B",
+   "status": "won"
+  },
+  {
+   "lead_id": "LD00053",
+   "created_on": "2025-02-20",
+   "entered_on": "2025-02-20",
+   "channel": "A",
+   "status": "lost"
+  },
+  {
+   "lead_id": "LD00054",
+   "created_on": "2025-02-21",
+   "entered_on": "2025-02-21",
+   "channel": "A",
+   "status": "lost"
+  },
+  {
+   "lead_id": "LD00055",
+   "created_on": "2025-02-24",
+   "entered_on": "2025-02-24",
+   "channel": "B",
+   "status": "lost"
+  },
+  {
+   "lead_id": "LD00056",
+   "created_on": "2025-02-25",
+   "entered_on": "2025-02-25",
+   "channel": "A",
+   "status": "won"
+  },
+  {
+   "lead_id": "LD00057",
+   "created_on": "2025-02-25",
+   "entered_on": "2025-02-25",
+   "channel": "A",
+   "status": "lost"
+  },
+  {
+   "lead_id": "LD00058",
+   "created_on": "2025-02-26",
+   "entered_on": "2025-02-26",
+   "channel": "B",
+   "status": "lost"
+  },
+  {
+   "lead_id": "LD00059",
+   "created_on": "2025-02-27",
+   "entered_on": "2025-02-27",
+   "channel": "A",
+   "status": "lost"
+  },
+  {
+   "lead_id": "LD00060",
+   "created_on": "2025-02-27",
+   "entered_on": "2025-02-27",
+   "channel": "A",
+   "status": "lost"
+  },
+  {
+   "lead_id": "LD00061",
+   "created_on": "2025-02-28",
+   "entered_on": "2025-02-28",
+   "channel": "B",
+   "status": "lost"
+  },
+  {
+   "lead_id": "LD00062",
+   "created_on": "2025-03-03",
+   "entered_on": "2025-03-03",
+   "channel": "A",
+   "status": "lost"
+  },
+  {
+   "lead_id": "LD00063",
+   "created_on": "2025-03-04",
+   "entered_on": "2025-03-04",
+   "channel": "A",
+   "status": "won"
+  },
+  {
+   "lead_id": "LD00064",
+   "created_on": "2025-03-04",
+   "entered_on": "2025-03-04",
+   "channel": "B",
+   "status": "lost"
+  },
+  {
+   "lead_id": "LD00065",
+   "created_on": "2025-03-05",
+   "entered_on": "2025-03-05",
+   "channel": "A",
+   "status": "lost"
+  },
+  {
+   "lead_id": "LD00066",
+   "created_on": "2025-03-06",
+   "entered_on": "2025-03-06",
+   "channel": "A",
+   "status": "lost"
+  },
+  {
+   "lead_id": "LD00067",
+   "created_on": "2025-03-06",
+   "entered_on": "2025-03-06",
+   "channel": "B",
+   "status": "won"
+  },
+  {
+   "lead_id": "LD00068",
+   "created_on": "2025-03-07",
+   "entered_on": "2025-03-07",
+   "channel": "A",
+   "status": "won"
+  },
+  {
+   "lead_id": "LD00069",
+   "created_on": "2025-03-10",
+   "entered_on": "2025-03-10",
+   "channel": "A",
+   "status": "won"
+  },
+  {
+   "lead_id": "LD00070",
+   "created_on": "2025-03-11",
+   "entered_on": "2025-03-11",
+   "channel": "B",
+   "status": "lost"
+  },
+  {
+   "lead_id": "LD00071",
+   "created_on": "2025-03-11",
+   "entered_on": "2025-03-11",
+   "channel": "A",
+   "status": "lost"
+  },
+  {
+   "lead_id": "LD00072",
+   "created_on": "2025-03-12",
+   "entered_on": "2025-03-12",
+   "channel": "A",
+   "status": "lost"
+  },
+  {
+   "lead_id": "LD00073",
+   "created_on": "2025-03-13",
+   "entered_on": "2025-03-13",
+   "channel": "B",
+   "status": "lost"
+  },
+  {
+   "lead_id": "LD00074",
+   "created_on": "2025-03-13",
+   "entered_on": "2025-03-13",
+   "channel": "A",
+   "status": "lost"
+  },
+  {
+   "lead_id": "LD00075",
+   "created_on": "2025-04-01",
+   "entered_on": "2025-04-01",
+   "channel": "B",
+   "status": "lost"
+  },
+  {
+   "lead_id": "LD00076",
+   "created_on": "2025-04-01",
+   "entered_on": "2025-04-01",
+   "channel": "A",
+   "status": "won"
+  },
+  {
+   "lead_id": "LD00077",
+   "created_on": "2025-04-02",
+   "entered_on": "2025-04-02",
+   "channel": "A",
+   "status": "lost"
+  },
+  {
+   "lead_id": "LD00078",
+   "created_on": "2025-04-03",
+   "entered_on": "2025-04-03",
+   "channel": "B",
+   "status": "won"
+  },
+  {
+   "lead_id": "LD00079",
+   "created_on": "2025-04-03",
+   "entered_on": "2025-04-03",
+   "channel": "A",
+   "status": "won"
+  },
+  {
+   "lead_id": "LD00080",
+   "created_on": "2025-04-04",
+   "entered_on": "2025-04-04",
+   "channel": "A",
+   "status": "lost"
+  },
+  {
+   "lead_id": "LD00081",
+   "created_on": "2025-04-07",
+   "entered_on": "2025-04-07",
+   "channel": "B",
+   "status": "won"
+  },
+  {
+   "lead_id": "LD00082",
+   "created_on": "2025-04-08",
+   "entered_on": "2025-04-08",
+   "channel": "A",
+   "status": "won"
+  },
+  {
+   "lead_id": "LD00083",
+   "created_on": "2025-04-08",
+   "entered_on": "2025-04-08",
+   "channel": "A",
+   "status": "lost"
+  },
+  {
+   "lead_id": "LD00084",
+   "created_on": "2025-04-09",
+   "entered_on": "2025-04-09",
+   "channel": "B",
+   "status": "lost"
+  },
+  {
+   "lead_id": "LD00085",
+   "created_on": "2025-04-10",
+   "entered_on": "2025-04-10",
+   "channel": "A",
+   "status": "lost"
+  },
+  {
+   "lead_id": "LD00086",
+   "created_on": "2025-04-10",
+   "entered_on": "2025-04-10",
+   "channel": "A",
+   "status": "lost"
+  },
+  {
+   "lead_id": "LD00087",
+   "created_on": "2025-04-11",
+   "entered_on": "2025-04-11",
+   "channel": "B",
+   "status": "lost"
+  },
+  {
+   "lead_id": "LD00088",
+   "created_on": "2025-04-14",
+   "entered_on": "2025-04-14",
+   "channel": "A",
+   "status": "lost"
+  },
+  {
+   "lead_id": "LD00089",
+   "created_on": "2025-04-15",
+   "entered_on": "2025-04-15",
+   "channel": "A",
+   "status": "lost"
+  },
+  {
+   "lead_id": "LD00090",
+   "created_on": "2025-04-15",
+   "entered_on": "2025-04-15",
+   "channel": "B",
+   "status": "won"
+  },
+  {
+   "lead_id": "LD00091",
+   "created_on": "2025-04-16",
+   "entered_on": "2025-04-16",
+   "channel": "A",
+   "status": "lost"
+  },
+  {
+   "lead_id": "LD00092",
+   "created_on": "2025-04-17",
+   "entered_on": "2025-04-17",
+   "channel": "A",
+   "status": "lost"
+  },
+  {
+   "lead_id": "LD00093",
+   "created_on": "2025-04-18",
+   "entered_on": "2025-04-18",
+   "channel": "B",
+   "status": "lost"
+  },
+  {
+   "lead_id": "LD00094",
+   "created_on": "2025-04-18",
+   "entered_on": "2025-04-18",
+   "channel": "A",
+   "status": "lost"
+  },
+  {
+   "lead_id": "LD00095",
+   "created_on": "2025-04-21",
+   "entered_on": "2025-04-21",
+   "channel": "A",
+   "status": "lost"
+  },
+  {
+   "lead_id": "LD00096",
+   "created_on": "2025-04-22",
+   "entered_on": "2025-04-22",
+   "channel": "B",
+   "status": "won"
+  },
+  {
+   "lead_id": "LD00097",
+   "created_on": "2025-04-22",
+   "entered_on": "2025-04-22",
+   "channel": "A",
+   "status": "lost"
+  },
+  {
+   "lead_id": "LD00098",
+   "created_on": "2025-04-23",
+   "entered_on": "2025-04-23",
+   "channel": "A",
+   "status": "lost"
+  },
+  {
+   "lead_id": "LD00099",
+   "created_on": "2025-04-24",
+   "entered_on": "2025-04-24",
+   "channel": "B",
+   "status": "won"
+  },
+  {
+   "lead_id": "LD00100",
+   "created_on": "2025-04-25",
+   "entered_on": "2025-04-25",
+   "channel": "A",
+   "status": "lost"
+  },
+  {
+   "lead_id": "LD00101",
+   "created_on": "2025-04-25",
+   "entered_on": "2025-04-25",
+   "channel": "A",
+   "status": "lost"
+  },
+  {
+   "lead_id": "LD00102",
+   "created_on": "2025-04-28",
+   "entered_on": "2025-04-28",
+   "channel": "B",
+   "status": "lost"
+  },
+  {
+   "lead_id": "LD00103",
+   "created_on": "2025-04-29",
+   "entered_on": "2025-04-29",
+   "channel": "A",
+   "status": "lost"
+  },
+  {
+   "lead_id": "LD00104",
+   "created_on": "2025-04-29",
+   "entered_on": "2025-04-29",
+   "channel": "A",
+   "status": "lost"
+  },
+  {
+   "lead_id": "LD00105",
+   "created_on": "2025-04-30",
+   "entered_on": "2025-04-30",
+   "channel": "B",
+   "status": "won"
+  },
+  {
+   "lead_id": "LD00106",
+   "created_on": "2025-05-01",
+   "entered_on": "2025-05-01",
+   "channel": "A",
+   "status": "lost"
+  },
+  {
+   "lead_id": "LD00107",
+   "created_on": "2025-05-02",
+   "entered_on": "2025-05-02",
+   "channel": "A",
+   "status": "lost"
+  },
+  {
+   "lead_id": "LD00108",
+   "created_on": "2025-05-02",
+   "entered_on": "2025-05-02",
+   "channel": "B",
+   "status": "lost"
+  },
+  {
+   "lead_id": "LD00109",
+   "created_on": "2025-05-05",
+   "entered_on": "2025-05-05",
+   "channel": "A",
+   "status": "lost"
+  },
+  {
+   "lead_id": "LD00110",
+   "created_on": "2025-05-06",
+   "entered_on": "2025-05-06",
+   "channel": "A",
+   "status": "lost"
+  },
+  {
+   "lead_id": "LD00111",
+   "created_on": "2025-05-07",
+   "entered_on": "2025-05-07",
+   "channel": "B",
+   "status": "won"
+  },
+  {
+   "lead_id": "LD00112",
+   "created_on": "2025-05-07",
+   "entered_on": "2025-05-07",
+   "channel": "A",
+   "status": "lost"
+  },
+  {
+   "lead_id": "LD00113",
+   "created_on": "2025-05-08",
+   "entered_on": "2025-05-08",
+   "channel": "A",
+   "status": "lost"
+  },
+  {
+   "lead_id": "LD00114",
+   "created_on": "2025-05-09",
+   "entered_on": "2025-05-09",
+   "channel": "B",
+   "status": "lost"
+  },
+  {
+   "lead_id": "LD00115",
+   "created_on": "2025-05-09",
+   "entered_on": "2025-05-09",
+   "channel": "A",
+   "status": "lost"
+  },
+  {
+   "lead_id": "LD00116",
+   "created_on": "2025-05-12",
+   "entered_on": "2025-05-12",
+   "channel": "A",
+   "status": "lost"
+  },
+  {
+   "lead_id": "LD00117",
+   "created_on": "2025-05-13",
+   "entered_on": "2025-05-13",
+   "channel": "B",
+   "status": "lost"
+  },
+  {
+   "lead_id": "LD00118",
+   "created_on": "2025-05-14",
+   "entered_on": "2025-05-14",
+   "channel": "A",
+   "status": "lost"
+  },
+  {
+   "lead_id": "LD00119",
+   "created_on": "2025-05-14",
+   "entered_on": "2025-05-14",
+   "channel": "A",
+   "status": "lost"
+  },
+  {
+   "lead_id": "LD00120",
+   "created_on": "2025-05-15",
+   "entered_on": "2025-05-15",
+   "channel": "B",
+   "status": "lost"
+  },
+  {
+   "lead_id": "LD00121",
+   "created_on": "2025-05-16",
+   "entered_on": "2025-05-16",
+   "channel": "A",
+   "status": "lost"
+  },
+  {
+   "lead_id": "LD00122",
+   "created_on": "2025-05-16",
+   "entered_on": "2025-05-16",
+   "channel": "A",
+   "status": "lost"
+  },
+  {
+   "lead_id": "LD00123",
+   "created_on": "2025-05-19",
+   "entered_on": "2025-05-19",
+   "channel": "B",
+   "status": "lost"
+  },
+  {
+   "lead_id": "LD00124",
+   "created_on": "2025-05-20",
+   "entered_on": "2025-05-20",
+   "channel": "A",
+   "status": "lost"
+  },
+  {
+   "lead_id": "LD00125",
+   "created_on": "2025-05-21",
+   "entered_on": "2025-05-21",
+   "channel": "A",
+   "status": "lost"
+  },
+  {
+   "lead_id": "LD00126",
+   "created_on": "2025-05-21",
+   "entered_on": "2025-05-21",
+   "channel": "B",
+   "status": "lost"
+  },
+  {
+   "lead_id": "LD00127",
+   "created_on": "2025-05-22",
+   "entered_on": "2025-05-22",
+   "channel": "A",
+   "status": "lost"
+  },
+  {
+   "lead_id": "LD00128",
+   "created_on": "2025-05-23",
+   "entered_on": "2025-05-23",
+   "channel": "A",
+   "status": "lost"
+  },
+  {
+   "lead_id": "LD00129",
+   "created_on": "2025-05-26",
+   "entered_on": "2025-05-26",
+   "channel": "B",
+   "status": "lost"
+  },
+  {
+   "lead_id": "LD00130",
+   "created_on": "2025-05-26",
+   "entered_on": "2025-05-26",
+   "channel": "A",
+   "status": "won"
+  },
+  {
+   "lead_id": "LD00131",
+   "created_on": "2025-05-27",
+   "entered_on": "2025-05-27",
+   "channel": "A",
+   "status": "won"
+  },
+  {
+   "lead_id": "LD00132",
+   "created_on": "2025-05-28",
+   "entered_on": "2025-05-28",
+   "channel": "B",
+   "status": "lost"
+  },
+  {
+   "lead_id": "LD00133",
+   "created_on": "2025-05-28",
+   "entered_on": "2025-05-28",
+   "channel": "A",
+   "status": "won"
+  },
+  {
+   "lead_id": "LD00134",
+   "created_on": "2025-05-29",
+   "entered_on": "2025-05-29",
+   "channel": "A",
+   "status": "lost"
+  },
+  {
+   "lead_id": "LD00135",
+   "created_on": "2025-05-30",
+   "entered_on": "2025-05-30",
+   "channel": "B",
+   "status": "won"
+  },
+  {
+   "lead_id": "LD00136",
+   "created_on": "2025-06-02",
+   "entered_on": "2025-06-02",
+   "channel": "A",
+   "status": "lost"
+  },
+  {
+   "lead_id": "LD00137",
+   "created_on": "2025-06-02",
+   "entered_on": "2025-06-02",
+   "channel": "A",
+   "status": "lost"
+  },
+  {
+   "lead_id": "LD00138",
+   "created_on": "2025-06-03",
+   "entered_on": "2025-06-03",
+   "channel": "B",
+   "status": "won"
+  },
+  {
+   "lead_id": "LD00139",
+   "created_on": "2025-06-04",
+   "entered_on": "2025-06-04",
+   "channel": "A",
+   "status": "lost"
+  },
+  {
+   "lead_id": "LD00140",
+   "created_on": "2025-06-04",
+   "entered_on": "2025-06-04",
+   "channel": "A",
+   "status": "lost"
+  },
+  {
+   "lead_id": "LD00141",
+   "created_on": "2025-06-05",
+   "entered_on": "2025-06-05",
+   "channel": "B",
+   "status": "won"
+  },
+  {
+   "lead_id": "LD00142",
+   "created_on": "2025-06-06",
+   "entered_on": "2025-06-06",
+   "channel": "A",
+   "status": "lost"
+  },
+  {
+   "lead_id": "LD00143",
+   "created_on": "2025-06-09",
+   "entered_on": "2025-06-09",
+   "channel": "A",
+   "status": "lost"
+  },
+  {
+   "lead_id": "LD00144",
+   "created_on": "2025-07-01",
+   "entered_on": "2025-07-01",
+   "channel": "B",
+   "status": "won"
+  },
+  {
+   "lead_id": "LD00145",
+   "created_on": "2025-07-01",
+   "entered_on": "2025-07-01",
+   "channel": "A",
+   "status": "lost"
+  },
+  {
+   "lead_id": "LD00146",
+   "created_on": "2025-07-02",
+   "entered_on": "2025-07-02",
+   "channel": "A",
+   "status": "won"
+  },
+  {
+   "lead_id": "LD00147",
+   "created_on": "2025-07-03",
+   "entered_on": "2025-07-03",
+   "channel": "B",
+   "status": "lost"
+  },
+  {
+   "lead_id": "LD00148",
+   "created_on": "2025-07-03",
+   "entered_on": "2025-07-03",
+   "channel": "A",
+   "status": "lost"
+  },
+  {
+   "lead_id": "LD00149",
+   "created_on": "2025-07-04",
+   "entered_on": "2025-07-04",
+   "channel": "A",
+   "status": "lost"
+  },
+  {
+   "lead_id": "LD00150",
+   "created_on": "2025-07-07",
+   "entered_on": "2025-07-07",
+   "channel": "B",
+   "status": "lost"
+  },
+  {
+   "lead_id": "LD00151",
+   "created_on": "2025-07-08",
+   "entered_on": "2025-07-08",
+   "channel": "A",
+   "status": "won"
+  },
+  {
+   "lead_id": "LD00152",
+   "created_on": "2025-07-08",
+   "entered_on": "2025-07-08",
+   "channel": "A",
+   "status": "lost"
+  },
+  {
+   "lead_id": "LD00153",
+   "created_on": "2025-07-09",
+   "entered_on": "2025-07-09",
+   "channel": "B",
+   "status": "lost"
+  },
+  {
+   "lead_id": "LD00154",
+   "created_on": "2025-07-10",
+   "entered_on": "2025-07-10",
+   "channel": "A",
+   "status": "won"
+  },
+  {
+   "lead_id": "LD00155",
+   "created_on": "2025-07-11",
+   "entered_on": "2025-07-11",
+   "channel": "A",
+   "status": "lost"
+  },
+  {
+   "lead_id": "LD00156",
+   "created_on": "2025-07-11",
+   "entered_on": "2025-07-11",
+   "channel": "B",
+   "status": "lost"
+  },
+  {
+   "lead_id": "LD00157",
+   "created_on": "2025-07-14",
+   "entered_on": "2025-07-14",
+   "channel": "A",
+   "status": "lost"
+  },
+  {
+   "lead_id": "LD00158",
+   "created_on": "2025-07-15",
+   "entered_on": "2025-07-15",
+   "channel": "A",
+   "status": "lost"
+  },
+  {
+   "lead_id": "LD00159",
+   "created_on": "2025-07-16",
+   "entered_on": "2025-07-16",
+   "channel": "B",
+   "status": "lost"
+  },
+  {
+   "lead_id": "LD00160",
+   "created_on": "2025-07-16",
+   "entered_on": "2025-07-16",
+   "channel": "A",
+   "status": "lost"
+  },
+  {
+   "lead_id": "LD00161",
+   "created_on": "2025-07-17",
+   "entered_on": "2025-07-17",
+   "channel": "A",
+   "status": "lost"
+  },
+  {
+   "lead_id": "LD00162",
+   "created_on": "2025-07-18",
+   "entered_on": "2025-07-18",
+   "channel": "B",
+   "status": "lost"
+  },
+  {
+   "lead_id": "LD00163",
+   "created_on": "2025-07-18",
+   "entered_on": "2025-07-18",
+   "channel": "A",
+   "status": "lost"
+  },
+  {
+   "lead_id": "LD00164",
+   "created_on": "2025-07-21",
+   "entered_on": "2025-07-21",
+   "channel": "A",
+   "status": "lost"
+  },
+  {
+   "lead_id": "LD00165",
+   "created_on": "2025-07-22",
+   "entered_on": "2025-07-22",
+   "channel": "B",
+   "status": "lost"
+  },
+  {
+   "lead_id": "LD00166",
+   "created_on": "2025-07-23",
+   "entered_on": "2025-07-23",
+   "channel": "A",
+   "status": "lost"
+  },
+  {
+   "lead_id": "LD00167",
+   "created_on": "2025-07-23",
+   "entered_on": "2025-07-23",
+   "channel": "A",
+   "status": "lost"
+  },
+  {
+   "lead_id": "LD00168",
+   "created_on": "2025-07-24",
+   "entered_on": "2025-07-24",
+   "channel": "B",
+   "status": "lost"
+  },
+  {
+   "lead_id": "LD00169",
+   "created_on": "2025-07-25",
+   "entered_on": "2025-07-25",
+   "channel": "A",
+   "status": "lost"
+  },
+  {
+   "lead_id": "LD00170",
+   "created_on": "2025-07-28",
+   "entered_on": "2025-07-28",
+   "channel": "A",
+   "status": "lost"
+  },
+  {
+   "lead_id": "LD00171",
+   "created_on": "2025-07-28",
+   "entered_on": "2025-07-28",
+   "channel": "B",
+   "status": "won"
+  },
+  {
+   "lead_id": "LD00172",
+   "created_on": "2025-07-29",
+   "entered_on": "2025-07-29",
+   "channel": "A",
+   "status": "lost"
+  },
+  {
+   "lead_id": "LD00173",
+   "created_on": "2025-07-30",
+   "entered_on": "2025-07-30",
+   "channel": "A",
+   "status": "lost"
+  },
+  {
+   "lead_id": "LD00174",
+   "created_on": "2025-07-31",
+   "entered_on": "2025-07-31",
+   "channel": "B",
+   "status": "lost"
+  },
+  {
+   "lead_id": "LD00175",
+   "created_on": "2025-07-31",
+   "entered_on": "2025-07-31",
+   "channel": "A",
+   "status": "lost"
+  },
+  {
+   "lead_id": "LD00176",
+   "created_on": "2025-08-01",
+   "entered_on": "2025-08-01",
+   "channel": "A",
+   "status": "lost"
+  },
+  {
+   "lead_id": "LD00177",
+   "created_on": "2025-08-04",
+   "entered_on": "2025-08-04",
+   "channel": "B",
+   "status": "won"
+  },
+  {
+   "lead_id": "LD00178",
+   "created_on": "2025-08-04",
+   "entered_on": "2025-08-04",
+   "channel": "A",
+   "status": "lost"
+  },
+  {
+   "lead_id": "LD00179",
+   "created_on": "2025-08-05",
+   "entered_on": "2025-08-05",
+   "channel": "A",
+   "status": "lost"
+  },
+  {
+   "lead_id": "LD00180",
+   "created_on": "2025-08-06",
+   "entered_on": "2025-08-06",
+   "channel": "B",
+   "status": "lost"
+  },
+  {
+   "lead_id": "LD00181",
+   "created_on": "2025-08-07",
+   "entered_on": "2025-08-07",
+   "channel": "A",
+   "status": "lost"
+  },
+  {
+   "lead_id": "LD00182",
+   "created_on": "2025-08-07",
+   "entered_on": "2025-08-07",
+   "channel": "A",
+   "status": "lost"
+  },
+  {
+   "lead_id": "LD00183",
+   "created_on": "2025-08-08",
+   "entered_on": "2025-08-08",
+   "channel": "B",
+   "status": "lost"
+  },
+  {
+   "lead_id": "LD00184",
+   "created_on": "2025-08-11",
+   "entered_on": "2025-08-11",
+   "channel": "A",
+   "status": "lost"
+  },
+  {
+   "lead_id": "LD00185",
+   "created_on": "2025-08-12",
+   "entered_on": "2025-08-12",
+   "channel": "A",
+   "status": "won"
+  },
+  {
+   "lead_id": "LD00186",
+   "created_on": "2025-08-12",
+   "entered_on": "2025-08-12",
+   "channel": "B",
+   "status": "won"
+  },
+  {
+   "lead_id": "LD00187",
+   "created_on": "2025-08-13",
+   "entered_on": "2025-08-13",
+   "channel": "A",
+   "status": "lost"
+  },
+  {
+   "lead_id": "LD00188",
+   "created_on": "2025-08-14",
+   "entered_on": "2025-08-14",
+   "channel": "A",
+   "status": "won"
+  },
+  {
+   "lead_id": "LD00189",
+   "created_on": "2025-08-15",
+   "entered_on": "2025-08-15",
+   "channel": "B",
+   "status": "lost"
+  },
+  {
+   "lead_id": "LD00190",
+   "created_on": "2025-08-15",
+   "entered_on": "2025-08-15",
+   "channel": "A",
+   "status": "won"
+  },
+  {
+   "lead_id": "LD00191",
+   "created_on": "2025-08-18",
+   "entered_on": "2025-08-18",
+   "channel": "A",
+   "status": "lost"
+  },
+  {
+   "lead_id": "LD00192",
+   "created_on": "2025-08-19",
+   "entered_on": "2025-08-19",
+   "channel": "B",
+   "status": "won"
+  },
+  {
+   "lead_id": "LD00193",
+   "created_on": "2025-08-19",
+   "entered_on": "2025-08-19",
+   "channel": "A",
+   "status": "lost"
+  },
+  {
+   "lead_id": "LD00194",
+   "created_on": "2025-08-20",
+   "entered_on": "2025-08-20",
+   "channel": "A",
+   "status": "lost"
+  },
+  {
+   "lead_id": "LD00195",
+   "created_on": "2025-08-21",
+   "entered_on": "2025-08-21",
+   "channel": "B",
+   "status": "lost"
+  },
+  {
+   "lead_id": "LD00196",
+   "created_on": "2025-08-22",
+   "entered_on": "2025-08-22",
+   "channel": "A",
+   "status": "lost"
+  },
+  {
+   "lead_id": "LD00197",
+   "created_on": "2025-08-22",
+   "entered_on": "2025-08-22",
+   "channel": "A",
+   "status": "won"
+  },
+  {
+   "lead_id": "LD00198",
+   "created_on": "2025-08-25",
+   "entered_on": "2025-08-25",
+   "channel": "B",
+   "status": "lost"
+  },
+  {
+   "lead_id": "LD00199",
+   "created_on": "2025-08-26",
+   "entered_on": "2025-08-26",
+   "channel": "A",
+   "status": "lost"
+  },
+  {
+   "lead_id": "LD00200",
+   "created_on": "2025-08-27",
+   "entered_on": "2025-08-27",
+   "channel": "A",
+   "status": "lost"
+  },
+  {
+   "lead_id": "LD00201",
+   "created_on": "2025-08-27",
+   "entered_on": "2025-08-27",
+   "channel": "B",
+   "status": "lost"
+  },
+  {
+   "lead_id": "LD00202",
+   "created_on": "2025-08-28",
+   "entered_on": "2025-08-28",
+   "channel": "A",
+   "status": "lost"
+  },
+  {
+   "lead_id": "LD00203",
+   "created_on": "2025-08-29",
+   "entered_on": "2025-08-29",
+   "channel": "A",
+   "status": "won"
+  },
+  {
+   "lead_id": "LD00204",
+   "created_on": "2025-09-01",
+   "entered_on": "2025-09-01",
+   "channel": "B",
+   "status": "won"
+  },
+  {
+   "lead_id": "LD00205",
+   "created_on": "2025-09-01",
+   "entered_on": "2025-09-01",
+   "channel": "A",
+   "status": "won"
+  },
+  {
+   "lead_id": "LD00206",
+   "created_on": "2025-09-02",
+   "entered_on": "2025-09-02",
+   "channel": "A",
+   "status": "lost"
+  },
+  {
+   "lead_id": "LD00207",
+   "created_on": "2025-09-03",
+   "entered_on": "2025-09-03",
+   "channel": "B",
+   "status": "won"
+  },
+  {
+   "lead_id": "LD00208",
+   "created_on": "2025-09-03",
+   "entered_on": "2025-09-03",
+   "channel": "A",
+   "status": "lost"
+  },
+  {
+   "lead_id": "LD00209",
+   "created_on": "2025-09-04",
+   "entered_on": "2025-09-04",
+   "channel": "A",
+   "status": "lost"
+  },
+  {
+   "lead_id": "LD00210",
+   "created_on": "2025-09-05",
+   "entered_on": "2025-09-05",
+   "channel": "B",
+   "status": "won"
+  },
+  {
+   "lead_id": "LD00211",
+   "created_on": "2025-09-08",
+   "entered_on": "2025-09-08",
+   "channel": "A",
+   "status": "lost"
+  },
+  {
+   "lead_id": "LD00212",
+   "created_on": "2025-09-08",
+   "entered_on": "2025-09-08",
+   "channel": "A",
+   "status": "lost"
+  },
+  {
+   "lead_id": "LD00213",
+   "created_on": "2025-09-09",
+   "entered_on": "2025-09-09",
+   "channel": "B",
+   "status": "won"
+  },
+  {
+   "lead_id": "LD00214",
+   "created_on": "2025-09-10",
+   "entered_on": "2025-09-10",
+   "channel": "A",
+   "status": "won"
+  },
+  {
+   "lead_id": "LD00215",
+   "created_on": "2025-09-11",
+   "entered_on": "2025-09-11",
+   "channel": "A",
+   "status": "lost"
+  },
+  {
+   "lead_id": "LD00216",
+   "created_on": "2025-09-11",
+   "entered_on": "2025-09-11",
+   "channel": "B",
+   "status": "won"
+  },
+  {
+   "lead_id": "LD00217",
+   "created_on": "2025-09-12",
+   "entered_on": "2025-09-12",
+   "channel": "A",
+   "status": "lost"
+  },
+  {
+   "lead_id": "LD00218",
+   "created_on": "2025-10-01",
+   "entered_on": "2025-10-01",
+   "channel": "B",
+   "status": "lost"
+  },
+  {
+   "lead_id": "LD00219",
+   "created_on": "2025-10-01",
+   "entered_on": "2025-10-01",
+   "channel": "A",
+   "status": "lost"
+  },
+  {
+   "lead_id": "LD00220",
+   "created_on": "2025-10-02",
+   "entered_on": "2025-10-02",
+   "channel": "A",
+   "status": "lost"
+  },
+  {
+   "lead_id": "LD00221",
+   "created_on": "2025-10-03",
+   "entered_on": "2025-10-03",
+   "channel": "B",
+   "status": "won"
+  },
+  {
+   "lead_id": "LD00222",
+   "created_on": "2025-10-03",
+   "entered_on": "2025-10-03",
+   "channel": "A",
+   "status": "lost"
+  },
+  {
+   "lead_id": "LD00223",
+   "created_on": "2025-10-06",
+   "entered_on": "2025-10-06",
+   "channel": "A",
+   "status": "lost"
+  },
+  {
+   "lead_id": "LD00224",
+   "created_on": "2025-10-07",
+   "entered_on": "2025-10-07",
+   "channel": "B",
+   "status": "lost"
+  },
+  {
+   "lead_id": "LD00225",
+   "created_on": "2025-10-08",
+   "entered_on": "2025-10-08",
+   "channel": "A",
+   "status": "lost"
+  },
+  {
+   "lead_id": "LD00226",
+   "created_on": "2025-10-08",
+   "entered_on": "2025-10-08",
+   "channel": "A",
+   "status": "won"
+  },
+  {
+   "lead_id": "LD00227",
+   "created_on": "2025-10-09",
+   "entered_on": "2025-10-09",
+   "channel": "B",
+   "status": "lost"
+  },
+  {
+   "lead_id": "LD00228",
+   "created_on": "2025-10-10",
+   "entered_on": "2025-10-10",
+   "channel": "A",
+   "status": "lost"
+  },
+  {
+   "lead_id": "LD00229",
+   "created_on": "2025-10-13",
+   "entered_on": "2025-10-13",
+   "channel": "A",
+   "status": "lost"
+  },
+  {
+   "lead_id": "LD00230",
+   "created_on": "2025-10-13",
+   "entered_on": "2025-10-13",
+   "channel": "B",
+   "status": "lost"
+  },
+  {
+   "lead_id": "LD00231",
+   "created_on": "2025-10-14",
+   "entered_on": "2025-10-14",
+   "channel": "A",
+   "status": "won"
+  },
+  {
+   "lead_id": "LD00232",
+   "created_on": "2025-10-15",
+   "entered_on": "2025-10-15",
+   "channel": "A",
+   "status": "lost"
+  },
+  {
+   "lead_id": "LD00233",
+   "created_on": "2025-10-16",
+   "entered_on": "2025-10-16",
+   "channel": "B",
+   "status": "lost"
+  },
+  {
+   "lead_id": "LD00234",
+   "created_on": "2025-10-16",
+   "entered_on": "2025-10-16",
+   "channel": "A",
+   "status": "lost"
+  },
+  {
+   "lead_id": "LD00235",
+   "created_on": "2025-10-17",
+   "entered_on": "2025-10-17",
+   "channel": "A",
+   "status": "lost"
+  },
+  {
+   "lead_id": "LD00236",
+   "created_on": "2025-10-20",
+   "entered_on": "2025-10-20",
+   "channel": "B",
+   "status": "lost"
+  },
+  {
+   "lead_id": "LD00237",
+   "created_on": "2025-10-20",
+   "entered_on": "2025-10-20",
+   "channel": "A",
+   "status": "lost"
+  },
+  {
+   "lead_id": "LD00238",
+   "created_on": "2025-10-21",
+   "entered_on": "2025-10-21",
+   "channel": "A",
+   "status": "lost"
+  },
+  {
+   "lead_id": "LD00239",
+   "created_on": "2025-10-22",
+   "entered_on": "2025-10-22",
+   "channel": "B",
+   "status": "lost"
+  },
+  {
+   "lead_id": "LD00240",
+   "created_on": "2025-10-23",
+   "entered_on": "2025-10-23",
+   "channel": "A",
+   "status": "lost"
+  },
+  {
+   "lead_id": "LD00241",
+   "created_on": "2025-10-23",
+   "entered_on": "2025-10-23",
+   "channel": "A",
+   "status": "lost"
+  },
+  {
+   "lead_id": "LD00242",
+   "created_on": "2025-10-24",
+   "entered_on": "2025-10-24",
+   "channel": "B",
+   "status": "lost"
+  },
+  {
+   "lead_id": "LD00243",
+   "created_on": "2025-10-27",
+   "entered_on": "2025-10-27",
+   "channel": "A",
+   "status": "won"
+  },
+  {
+   "lead_id": "LD00244",
+   "created_on": "2025-10-28",
+   "entered_on": "2025-10-28",
+   "channel": "A",
+   "status": "lost"
+  },
+  {
+   "lead_id": "LD00245",
+   "created_on": "2025-10-28",
+   "entered_on": "2025-10-28",
+   "channel": "B",
+   "status": "won"
+  },
+  {
+   "lead_id": "LD00246",
+   "created_on": "2025-10-29",
+   "entered_on": "2025-10-29",
+   "channel": "A",
+   "status": "lost"
+  },
+  {
+   "lead_id": "LD00247",
+   "created_on": "2025-10-30",
+   "entered_on": "2025-10-30",
+   "channel": "A",
+   "status": "lost"
+  },
+  {
+   "lead_id": "LD00248",
+   "created_on": "2025-10-31",
+   "entered_on": "2025-10-31",
+   "channel": "B",
+   "status": "lost"
+  },
+  {
+   "lead_id": "LD00249",
+   "created_on": "2025-10-31",
+   "entered_on": "2025-10-31",
+   "channel": "A",
+   "status": "lost"
+  },
+  {
+   "lead_id": "LD00250",
+   "created_on": "2025-11-03",
+   "entered_on": "2025-11-03",
+   "channel": "A",
+   "status": "lost"
+  },
+  {
+   "lead_id": "LD00251",
+   "created_on": "2025-11-04",
+   "entered_on": "2025-11-04",
+   "channel": "B",
+   "status": "lost"
+  },
+  {
+   "lead_id": "LD00252",
+   "created_on": "2025-11-04",
+   "entered_on": "2025-11-04",
+   "channel": "A",
+   "status": "lost"
+  },
+  {
+   "lead_id": "LD00253",
+   "created_on": "2025-11-05",
+   "entered_on": "2025-11-05",
+   "channel": "A",
+   "status": "lost"
+  },
+  {
+   "lead_id": "LD00254",
+   "created_on": "2025-11-06",
+   "entered_on": "2025-11-06",
+   "channel": "B",
+   "status": "lost"
+  },
+  {
+   "lead_id": "LD00255",
+   "created_on": "2025-11-07",
+   "entered_on": "2025-11-07",
+   "channel": "A",
+   "status": "won"
+  },
+  {
+   "lead_id": "LD00256",
+   "created_on": "2025-11-07",
+   "entered_on": "2025-11-07",
+   "channel": "A",
+   "status": "lost"
+  },
+  {
+   "lead_id": "LD00257",
+   "created_on": "2025-11-10",
+   "entered_on": "2025-11-10",
+   "channel": "B",
+   "status": "lost"
+  },
+  {
+   "lead_id": "LD00258",
+   "created_on": "2025-11-11",
+   "entered_on": "2025-11-11",
+   "channel": "A",
+   "status": "lost"
+  },
+  {
+   "lead_id": "LD00259",
+   "created_on": "2025-11-12",
+   "entered_on": "2025-11-12",
+   "channel": "A",
+   "status": "won"
+  },
+  {
+   "lead_id": "LD00260",
+   "created_on": "2025-11-12",
+   "entered_on": "2025-11-12",
+   "channel": "B",
+   "status": "lost"
+  },
+  {
+   "lead_id": "LD00261",
+   "created_on": "2025-11-13",
+   "entered_on": "2025-11-13",
+   "channel": "A",
+   "status": "lost"
+  },
+  {
+   "lead_id": "LD00262",
+   "created_on": "2025-11-14",
+   "entered_on": "2025-11-14",
+   "channel": "A",
+   "status": "lost"
+  },
+  {
+   "lead_id": "LD00263",
+   "created_on": "2025-11-17",
+   "entered_on": "2025-11-17",
+   "channel": "B",
+   "status": "won"
+  },
+  {
+   "lead_id": "LD00264",
+   "created_on": "2025-11-17",
+   "entered_on": "2025-11-17",
+   "channel": "A",
+   "status": "lost"
+  },
+  {
+   "lead_id": "LD00265",
+   "created_on": "2025-11-18",
+   "entered_on": "2025-11-18",
+   "channel": "A",
+   "status": "lost"
+  },
+  {
+   "lead_id": "LD00266",
+   "created_on": "2025-11-19",
+   "entered_on": "2025-11-19",
+   "channel": "B",
+   "status": "won"
+  },
+  {
+   "lead_id": "LD00267",
+   "created_on": "2025-11-19",
+   "entered_on": "2025-11-19",
+   "channel": "A",
+   "status": "lost"
+  },
+  {
+   "lead_id": "LD00268",
+   "created_on": "2025-11-20",
+   "entered_on": "2025-11-20",
+   "channel": "A",
+   "status": "lost"
+  },
+  {
+   "lead_id": "LD00269",
+   "created_on": "2025-11-21",
+   "entered_on": "2025-11-21",
+   "channel": "B",
+   "status": "lost"
+  },
+  {
+   "lead_id": "LD00270",
+   "created_on": "2025-11-24",
+   "entered_on": "2025-11-24",
+   "channel": "A",
+   "status": "lost"
+  },
+  {
+   "lead_id": "LD00271",
+   "created_on": "2025-11-24",
+   "entered_on": "2025-11-24",
+   "channel": "A",
+   "status": "lost"
+  },
+  {
+   "lead_id": "LD00272",
+   "created_on": "2025-11-25",
+   "entered_on": "2025-11-25",
+   "channel": "B",
+   "status": "won"
+  },
+  {
+   "lead_id": "LD00273",
+   "created_on": "2025-11-26",
+   "entered_on": "2025-11-26",
+   "channel": "A",
+   "status": "lost"
+  },
+  {
+   "lead_id": "LD00274",
+   "created_on": "2025-11-27",
+   "entered_on": "2025-11-27",
+   "channel": "A",
+   "status": "won"
+  },
+  {
+   "lead_id": "LD00275",
+   "created_on": "2025-11-27",
+   "entered_on": "2025-11-27",
+   "channel": "B",
+   "status": "won"
+  },
+  {
+   "lead_id": "LD00276",
+   "created_on": "2025-11-28",
+   "entered_on": "2025-11-28",
+   "channel": "A",
+   "status": "won"
+  },
+  {
+   "lead_id": "LD00277",
+   "created_on": "2025-12-01",
+   "entered_on": "2025-12-01",
+   "channel": "A",
+   "status": "won"
+  },
+  {
+   "lead_id": "LD00278",
+   "created_on": "2025-12-02",
+   "entered_on": "2025-12-02",
+   "channel": "B",
+   "status": "lost"
+  },
+  {
+   "lead_id": "LD00279",
+   "created_on": "2025-12-02",
+   "entered_on": "2025-12-02",
+   "channel": "A",
+   "status": "won"
+  },
+  {
+   "lead_id": "LD00280",
+   "created_on": "2025-12-03",
+   "entered_on": "2025-12-03",
+   "channel": "A",
+   "status": "lost"
+  },
+  {
+   "lead_id": "LD00281",
+   "created_on": "2025-12-04",
+   "entered_on": "2025-12-04",
+   "channel": "B",
+   "status": "won"
+  },
+  {
+   "lead_id": "LD00282",
+   "created_on": "2025-12-04",
+   "entered_on": "2025-12-04",
+   "channel": "A",
+   "status": "lost"
+  },
+  {
+   "lead_id": "LD00283",
+   "created_on": "2025-12-05",
+   "entered_on": "2025-12-05",
+   "channel": "A",
+   "status": "lost"
+  },
+  {
+   "lead_id": "LD00284",
+   "created_on": "2025-12-08",
+   "entered_on": "2025-12-08",
+   "channel": "B",
+   "status": "lost"
+  },
+  {
+   "lead_id": "LD00285",
+   "created_on": "2025-12-09",
+   "entered_on": "2025-12-09",
+   "channel": "A",
+   "status": "lost"
+  },
+  {
+   "lead_id": "LD00286",
+   "created_on": "2025-12-09",
+   "entered_on": "2025-12-09",
+   "channel": "A",
+   "status": "lost"
+  },
+  {
+   "lead_id": "LD00287",
+   "created_on": "2025-12-10",
+   "entered_on": "2025-12-10",
+   "channel": "B",
+   "status": "lost"
+  },
+  {
+   "lead_id": "LD00288",
+   "created_on": "2025-12-11",
+   "entered_on": "2025-12-11",
+   "channel": "A",
+   "status": "lost"
+  },
+  {
+   "lead_id": "LD00289",
+   "created_on": "2025-12-12",
+   "entered_on": "2025-12-12",
+   "channel": "A",
+   "status": "lost"
+  },
+  {
+   "lead_id": "LD00290",
+   "created_on": "2025-12-12",
+   "entered_on": "2025-12-12",
+   "channel": "B",
+   "status": "won"
+  },
+  {
+   "lead_id": "LD00291",
+   "created_on": "2025-12-15",
+   "entered_on": "2025-12-15",
+   "channel": "A",
+   "status": "lost"
+  },
+  {
+   "lead_id": "LD00292",
+   "created_on": "2026-01-01",
+   "entered_on": "2026-01-01",
+   "channel": "B",
+   "status": "won"
+  },
+  {
+   "lead_id": "LD00293",
+   "created_on": "2026-01-01",
+   "entered_on": "2026-01-01",
+   "channel": "A",
+   "status": "lost"
+  },
+  {
+   "lead_id": "LD00294",
+   "created_on": "2026-01-02",
+   "entered_on": "2026-01-02",
+   "channel": "A",
+   "status": "won"
+  },
+  {
+   "lead_id": "LD00295",
+   "created_on": "2026-01-05",
+   "entered_on": "2026-01-05",
+   "channel": "B",
+   "status": "won"
+  },
+  {
+   "lead_id": "LD00296",
+   "created_on": "2026-01-05",
+   "entered_on": "2026-01-05",
+   "channel": "A",
+   "status": "won"
+  },
+  {
+   "lead_id": "LD00297",
+   "created_on": "2026-01-06",
+   "entered_on": "2026-01-06",
+   "channel": "A",
+   "status": "won"
+  },
+  {
+   "lead_id": "LD00298",
+   "created_on": "2026-01-07",
+   "entered_on": "2026-01-07",
+   "channel": "B",
+   "status": "won"
+  },
+  {
+   "lead_id": "LD00299",
+   "created_on": "2026-01-07",
+   "entered_on": "2026-01-07",
+   "channel": "A",
+   "status": "lost"
+  },
+  {
+   "lead_id": "LD00300",
+   "created_on": "2026-01-08",
+   "entered_on": "2026-01-08",
+   "channel": "A",
+   "status": "lost"
+  },
+  {
+   "lead_id": "LD00301",
+   "created_on": "2026-01-09",
+   "entered_on": "2026-01-09",
+   "channel": "B",
+   "status": "lost"
+  },
+  {
+   "lead_id": "LD00302",
+   "created_on": "2026-01-12",
+   "entered_on": "2026-01-12",
+   "channel": "A",
+   "status": "lost"
+  },
+  {
+   "lead_id": "LD00303",
+   "created_on": "2026-01-12",
+   "entered_on": "2026-01-12",
+   "channel": "A",
+   "status": "lost"
+  },
+  {
+   "lead_id": "LD00304",
+   "created_on": "2026-01-13",
+   "entered_on": "2026-01-13",
+   "channel": "B",
+   "status": "won"
+  },
+  {
+   "lead_id": "LD00305",
+   "created_on": "2026-01-14",
+   "entered_on": "2026-01-14",
+   "channel": "A",
+   "status": "lost"
+  },
+  {
+   "lead_id": "LD00306",
+   "created_on": "2026-01-14",
+   "entered_on": "2026-01-14",
+   "channel": "A",
+   "status": "lost"
+  },
+  {
+   "lead_id": "LD00307",
+   "created_on": "2026-01-15",
+   "entered_on": "2026-01-15",
+   "channel": "B",
+   "status": "lost"
+  },
+  {
+   "lead_id": "LD00308",
+   "created_on": "2026-01-16",
+   "entered_on": "2026-01-16",
+   "channel": "A",
+   "status": "lost"
+  },
+  {
+   "lead_id": "LD00309",
+   "created_on": "2026-01-19",
+   "entered_on": "2026-01-19",
+   "channel": "A",
+   "status": "lost"
+  },
+  {
+   "lead_id": "LD00310",
+   "created_on": "2026-01-19",
+   "entered_on": "2026-01-19",
+   "channel": "B",
+   "status": "won"
+  },
+  {
+   "lead_id": "LD00311",
+   "created_on": "2026-01-20",
+   "entered_on": "2026-01-20",
+   "channel": "A",
+   "status": "lost"
+  },
+  {
+   "lead_id": "LD00312",
+   "created_on": "2026-01-21",
+   "entered_on": "2026-01-21",
+   "channel": "A",
+   "status": "lost"
+  },
+  {
+   "lead_id": "LD00313",
+   "created_on": "2026-01-21",
+   "entered_on": "2026-01-21",
+   "channel": "B",
+   "status": "won"
+  },
+  {
+   "lead_id": "LD00314",
+   "created_on": "2026-01-22",
+   "entered_on": "2026-01-22",
+   "channel": "A",
+   "status": "won"
+  },
+  {
+   "lead_id": "LD00315",
+   "created_on": "2026-01-23",
+   "entered_on": "2026-01-23",
+   "channel": "A",
+   "status": "lost"
+  },
+  {
+   "lead_id": "LD00316",
+   "created_on": "2026-01-26",
+   "entered_on": "2026-01-26",
+   "channel": "B",
+   "status": "won"
+  },
+  {
+   "lead_id": "LD00317",
+   "created_on": "2026-01-26",
+   "entered_on": "2026-01-26",
+   "channel": "A",
+   "status": "lost"
+  },
+  {
+   "lead_id": "LD00318",
+   "created_on": "2026-01-27",
+   "entered_on": "2026-01-27",
+   "channel": "A",
+   "status": "lost"
+  },
+  {
+   "lead_id": "LD00319",
+   "created_on": "2026-01-28",
+   "entered_on": "2026-01-28",
+   "channel": "B",
+   "status": "lost"
+  },
+  {
+   "lead_id": "LD00320",
+   "created_on": "2026-01-28",
+   "entered_on": "2026-01-28",
+   "channel": "A",
+   "status": "lost"
+  },
+  {
+   "lead_id": "LD00321",
+   "created_on": "2026-01-29",
+   "entered_on": "2026-01-29",
+   "channel": "A",
+   "status": "lost"
+  },
+  {
+   "lead_id": "LD00322",
+   "created_on": "2026-01-30",
+   "entered_on": "2026-01-30",
+   "channel": "B",
+   "status": "won"
+  },
+  {
+   "lead_id": "LD00323",
+   "created_on": "2026-02-02",
+   "entered_on": "2026-02-02",
+   "channel": "A",
+   "status": "won"
+  },
+  {
+   "lead_id": "LD00324",
+   "created_on": "2026-02-02",
+   "entered_on": "2026-02-02",
+   "channel": "A",
+   "status": "lost"
+  },
+  {
+   "lead_id": "LD00325",
+   "created_on": "2026-02-03",
+   "entered_on": "2026-02-03",
+   "channel": "B",
+   "status": "won"
+  },
+  {
+   "lead_id": "LD00326",
+   "created_on": "2026-02-04",
+   "entered_on": "2026-02-04",
+   "channel": "A",
+   "status": "lost"
+  },
+  {
+   "lead_id": "LD00327",
+   "created_on": "2026-02-04",
+   "entered_on": "2026-02-04",
+   "channel": "A",
+   "status": "lost"
+  },
+  {
+   "lead_id": "LD00328",
+   "created_on": "2026-02-05",
+   "entered_on": "2026-02-05",
+   "channel": "B",
+   "status": "won"
+  },
+  {
+   "lead_id": "LD00329",
+   "created_on": "2026-02-06",
+   "entered_on": "2026-02-06",
+   "channel": "A",
+   "status": "lost"
+  },
+  {
+   "lead_id": "LD00330",
+   "created_on": "2026-02-09",
+   "entered_on": "2026-02-09",
+   "channel": "A",
+   "status": "won"
+  },
+  {
+   "lead_id": "LD00331",
+   "created_on": "2026-02-09",
+   "entered_on": "2026-02-09",
+   "channel": "B",
+   "status": "won"
+  },
+  {
+   "lead_id": "LD00332",
+   "created_on": "2026-02-10",
+   "entered_on": "2026-02-10",
+   "channel": "A",
+   "status": "won"
+  },
+  {
+   "lead_id": "LD00333",
+   "created_on": "2026-02-11",
+   "entered_on": "2026-02-11",
+   "channel": "A",
+   "status": "lost"
+  },
+  {
+   "lead_id": "LD00334",
+   "created_on": "2026-02-11",
+   "entered_on": "2026-02-11",
+   "channel": "B",
+   "status": "lost"
+  },
+  {
+   "lead_id": "LD00335",
+   "created_on": "2026-02-12",
+   "entered_on": "2026-02-12",
+   "channel": "A",
+   "status": "lost"
+  },
+  {
+   "lead_id": "LD00336",
+   "created_on": "2026-02-13",
+   "entered_on": "2026-02-13",
+   "channel": "A",
+   "status": "lost"
+  },
+  {
+   "lead_id": "LD00337",
+   "created_on": "2026-02-16",
+   "entered_on": "2026-02-16",
+   "channel": "B",
+   "status": "lost"
+  },
+  {
+   "lead_id": "LD00338",
+   "created_on": "2026-02-16",
+   "entered_on": "2026-02-16",
+   "channel": "A",
+   "status": "lost"
+  },
+  {
+   "lead_id": "LD00339",
+   "created_on": "2026-02-17",
+   "entered_on": "2026-02-17",
+   "channel": "A",
+   "status": "lost"
+  },
+  {
+   "lead_id": "LD00340",
+   "created_on": "2026-02-18",
+   "entered_on": "2026-02-18",
+   "channel": "B",
+   "status": "won"
+  },
+  {
+   "lead_id": "LD00341",
+   "created_on": "2026-02-18",
+   "entered_on": "2026-02-18",
+   "channel": "A",
+   "status": "lost"
+  },
+  {
+   "lead_id": "LD00342",
+   "created_on": "2026-02-19",
+   "entered_on": "2026-02-19",
+   "channel": "A",
+   "status": "lost"
+  },
+  {
+   "lead_id": "LD00343",
+   "created_on": "2026-02-20",
+   "entered_on": "2026-02-20",
+   "channel": "B",
+   "status": "lost"
+  },
+  {
+   "lead_id": "LD00344",
+   "created_on": "2026-02-20",
+   "entered_on": "2026-02-20",
+   "channel": "A",
+   "status": "lost"
+  },
+  {
+   "lead_id": "LD00345",
+   "created_on": "2026-02-23",
+   "entered_on": "2026-02-23",
+   "channel": "A",
+   "status": "lost"
+  },
+  {
+   "lead_id": "LD00346",
+   "created_on": "2026-02-24",
+   "entered_on": "2026-02-24",
+   "channel": "B",
+   "status": "lost"
+  },
+  {
+   "lead_id": "LD00347",
+   "created_on": "2026-02-25",
+   "entered_on": "2026-02-25",
+   "channel": "A",
+   "status": "lost"
+  },
+  {
+   "lead_id": "LD00348",
+   "created_on": "2026-02-25",
+   "entered_on": "2026-02-25",
+   "channel": "A",
+   "status": "lost"
+  },
+  {
+   "lead_id": "LD00349",
+   "created_on": "2026-02-26",
+   "entered_on": "2026-02-26",
+   "channel": "B",
+   "status": "lost"
+  },
+  {
+   "lead_id": "LD00350",
+   "created_on": "2026-02-27",
+   "entered_on": "2026-02-27",
+   "channel": "A",
+   "status": "lost"
+  },
+  {
+   "lead_id": "LD00351",
+   "created_on": "2026-02-27",
+   "entered_on": "2026-02-27",
+   "channel": "A",
+   "status": "lost"
+  },
+  {
+   "lead_id": "LD00352",
+   "created_on": "2026-03-02",
+   "entered_on": "2026-03-02",
+   "channel": "B",
+   "status": "lost"
+  },
+  {
+   "lead_id": "LD00353",
+   "created_on": "2026-03-03",
+   "entered_on": "2026-03-03",
+   "channel": "A",
+   "status": "lost"
+  },
+  {
+   "lead_id": "LD00354",
+   "created_on": "2026-03-04",
+   "entered_on": "2026-03-04",
+   "channel": "A",
+   "status": "lost"
+  },
+  {
+   "lead_id": "LD00355",
+   "created_on": "2026-03-04",
+   "entered_on": "2026-03-04",
+   "channel": "B",
+   "status": "lost"
+  },
+  {
+   "lead_id": "LD00356",
+   "created_on": "2026-03-05",
+   "entered_on": "2026-03-05",
+   "channel": "A",
+   "status": "lost"
+  },
+  {
+   "lead_id": "LD00357",
+   "created_on": "2026-03-06",
+   "entered_on": "2026-03-06",
+   "channel": "A",
+   "status": "won"
+  },
+  {
+   "lead_id": "LD00358",
+   "created_on": "2026-03-06",
+   "entered_on": "2026-03-06",
+   "channel": "B",
+   "status": "lost"
+  },
+  {
+   "lead_id": "LD00359",
+   "created_on": "2026-03-09",
+   "entered_on": "2026-03-09",
+   "channel": "A",
+   "status": "lost"
+  },
+  {
+   "lead_id": "LD00360",
+   "created_on": "2026-04-01",
+   "entered_on": "2026-04-01",
+   "channel": "A",
+   "status": "won"
+  },
+  {
+   "lead_id": "LD00361",
+   "created_on": "2026-04-01",
+   "entered_on": "2026-04-01",
+   "channel": "A",
+   "status": "lost"
+  },
+  {
+   "lead_id": "LD00362",
+   "created_on": "2026-04-02",
+   "entered_on": "2026-04-02",
+   "channel": "A",
+   "status": "lost"
+  },
+  {
+   "lead_id": "LD00363",
+   "created_on": "2026-04-02",
+   "entered_on": "2026-04-02",
+   "channel": "A",
+   "status": "lost"
+  },
+  {
+   "lead_id": "LD00364",
+   "created_on": "2026-04-03",
+   "entered_on": "2026-04-03",
+   "channel": "A",
+   "status": "lost"
+  },
+  {
+   "lead_id": "LD00365",
+   "created_on": "2026-04-06",
+   "entered_on": "2026-04-06",
+   "channel": "A",
+   "status": "won"
+  },
+  {
+   "lead_id": "LD00366",
+   "created_on": "2026-04-06",
+   "entered_on": "2026-04-06",
+   "channel": "A",
+   "status": "lost"
+  },
+  {
+   "lead_id": "LD00367",
+   "created_on": "2026-04-07",
+   "entered_on": "2026-04-07",
+   "channel": "A",
+   "status": "lost"
+  },
+  {
+   "lead_id": "LD00368",
+   "created_on": "2026-04-08",
+   "entered_on": "2026-04-08",
+   "channel": "A",
+   "status": "lost"
+  },
+  {
+   "lead_id": "LD00369",
+   "created_on": "2026-04-08",
+   "entered_on": "2026-04-08",
+   "channel": "A",
+   "status": "lost"
+  },
+  {
+   "lead_id": "LD00370",
+   "created_on": "2026-04-09",
+   "entered_on": "2026-04-09",
+   "channel": "A",
+   "status": "won"
+  },
+  {
+   "lead_id": "LD00371",
+   "created_on": "2026-04-10",
+   "entered_on": "2026-04-10",
+   "channel": "A",
+   "status": "lost"
+  },
+  {
+   "lead_id": "LD00372",
+   "created_on": "2026-04-10",
+   "entered_on": "2026-04-10",
+   "channel": "A",
+   "status": "lost"
+  },
+  {
+   "lead_id": "LD00373",
+   "created_on": "2026-04-13",
+   "entered_on": "2026-04-13",
+   "channel": "A",
+   "status": "lost"
+  },
+  {
+   "lead_id": "LD00374",
+   "created_on": "2026-04-14",
+   "entered_on": "2026-04-14",
+   "channel": "A",
+   "status": "lost"
+  },
+  {
+   "lead_id": "LD00375",
+   "created_on": "2026-04-14",
+   "entered_on": "2026-04-14",
+   "channel": "A",
+   "status": "won"
+  },
+  {
+   "lead_id": "LD00376",
+   "created_on": "2026-04-15",
+   "entered_on": "2026-04-15",
+   "channel": "A",
+   "status": "lost"
+  },
+  {
+   "lead_id": "LD00377",
+   "created_on": "2026-04-16",
+   "entered_on": "2026-04-16",
+   "channel": "A",
+   "status": "lost"
+  },
+  {
+   "lead_id": "LD00378",
+   "created_on": "2026-04-16",
+   "entered_on": "2026-04-16",
+   "channel": "A",
+   "status": "lost"
+  },
+  {
+   "lead_id": "LD00379",
+   "created_on": "2026-04-17",
+   "entered_on": "2026-04-17",
+   "channel": "A",
+   "status": "lost"
+  },
+  {
+   "lead_id": "LD00380",
+   "created_on": "2026-04-20",
+   "entered_on": "2026-04-20",
+   "channel": "A",
+   "status": "won"
+  },
+  {
+   "lead_id": "LD00381",
+   "created_on": "2026-04-20",
+   "entered_on": "2026-04-20",
+   "channel": "A",
+   "status": "lost"
+  },
+  {
+   "lead_id": "LD00382",
+   "created_on": "2026-04-21",
+   "entered_on": "2026-04-21",
+   "channel": "A",
+   "status": "lost"
+  },
+  {
+   "lead_id": "LD00383",
+   "created_on": "2026-04-21",
+   "entered_on": "2026-04-21",
+   "channel": "A",
+   "status": "lost"
+  },
+  {
+   "lead_id": "LD00384",
+   "created_on": "2026-04-22",
+   "entered_on": "2026-04-22",
+   "channel": "A",
+   "status": "lost"
+  },
+  {
+   "lead_id": "LD00385",
+   "created_on": "2026-04-23",
+   "entered_on": "2026-04-23",
+   "channel": "A",
+   "status": "won"
+  },
+  {
+   "lead_id": "LD00386",
+   "created_on": "2026-04-23",
+   "entered_on": "2026-04-23",
+   "channel": "A",
+   "status": "lost"
+  },
+  {
+   "lead_id": "LD00387",
+   "created_on": "2026-04-24",
+   "entered_on": "2026-04-24",
+   "channel": "A",
+   "status": "lost"
+  },
+  {
+   "lead_id": "LD00388",
+   "created_on": "2026-04-27",
+   "entered_on": "2026-04-27",
+   "channel": "A",
+   "status": "lost"
+  },
+  {
+   "lead_id": "LD00389",
+   "created_on": "2026-04-27",
+   "entered_on": "2026-04-27",
+   "channel": "A",
+   "status": "lost"
+  },
+  {
+   "lead_id": "LD00390",
+   "created_on": "2026-04-28",
+   "entered_on": "2026-04-28",
+   "channel": "A",
+   "status": "won"
+  },
+  {
+   "lead_id": "LD00391",
+   "created_on": "2026-04-29",
+   "entered_on": "2026-04-29",
+   "channel": "A",
+   "status": "lost"
+  },
+  {
+   "lead_id": "LD00392",
+   "created_on": "2026-04-29",
+   "entered_on": "2026-04-29",
+   "channel": "A",
+   "status": "lost"
+  },
+  {
+   "lead_id": "LD00393",
+   "created_on": "2026-04-30",
+   "entered_on": "2026-04-30",
+   "channel": "A",
+   "status": "lost"
+  },
+  {
+   "lead_id": "LD00394",
+   "created_on": "2026-05-01",
+   "entered_on": "2026-05-01",
+   "channel": "A",
+   "status": "lost"
+  },
+  {
+   "lead_id": "LD00395",
+   "created_on": "2026-05-01",
+   "entered_on": "2026-05-01",
+   "channel": "A",
+   "status": "won"
+  },
+  {
+   "lead_id": "LD00396",
+   "created_on": "2026-05-04",
+   "entered_on": "2026-05-04",
+   "channel": "A",
+   "status": "lost"
+  },
+  {
+   "lead_id": "LD00397",
+   "created_on": "2026-05-05",
+   "entered_on": "2026-05-05",
+   "channel": "A",
+   "status": "lost"
+  },
+  {
+   "lead_id": "LD00398",
+   "created_on": "2026-05-05",
+   "entered_on": "2026-05-05",
+   "channel": "A",
+   "status": "lost"
+  },
+  {
+   "lead_id": "LD00399",
+   "created_on": "2026-05-06",
+   "entered_on": "2026-05-06",
+   "channel": "A",
+   "status": "lost"
+  },
+  {
+   "lead_id": "LD00400",
+   "created_on": "2026-05-07",
+   "entered_on": "2026-05-07",
+   "channel": "A",
+   "status": "won"
+  },
+  {
+   "lead_id": "LD00401",
+   "created_on": "2026-05-07",
+   "entered_on": "2026-05-07",
+   "channel": "A",
+   "status": "lost"
+  },
+  {
+   "lead_id": "LD00402",
+   "created_on": "2026-05-08",
+   "entered_on": "2026-05-08",
+   "channel": "A",
+   "status": "lost"
+  },
+  {
+   "lead_id": "LD00403",
+   "created_on": "2026-05-08",
+   "entered_on": "2026-05-08",
+   "channel": "A",
+   "status": "lost"
+  },
+  {
+   "lead_id": "LD00404",
+   "created_on": "2026-05-11",
+   "entered_on": "2026-05-11",
+   "channel": "A",
+   "status": "lost"
+  },
+  {
+   "lead_id": "LD00405",
+   "created_on": "2026-05-12",
+   "entered_on": "2026-05-12",
+   "channel": "A",
+   "status": "won"
+  },
+  {
+   "lead_id": "LD00406",
+   "created_on": "2026-05-12",
+   "entered_on": "2026-05-12",
+   "channel": "A",
+   "status": "lost"
+  },
+  {
+   "lead_id": "LD00407",
+   "created_on": "2026-05-13",
+   "entered_on": "2026-05-13",
+   "channel": "A",
+   "status": "lost"
+  },
+  {
+   "lead_id": "LD00408",
+   "created_on": "2026-05-14",
+   "entered_on": "2026-05-14",
+   "channel": "A",
+   "status": "lost"
+  },
+  {
+   "lead_id": "LD00409",
+   "created_on": "2026-05-14",
+   "entered_on": "2026-05-14",
+   "channel": "A",
+   "status": "lost"
+  },
+  {
+   "lead_id": "LD00410",
+   "created_on": "2026-05-15",
+   "entered_on": "2026-05-15",
+   "channel": "A",
+   "status": "won"
+  },
+  {
+   "lead_id": "LD00411",
+   "created_on": "2026-05-18",
+   "entered_on": "2026-05-18",
+   "channel": "A",
+   "status": "lost"
+  },
+  {
+   "lead_id": "LD00412",
+   "created_on": "2026-05-18",
+   "entered_on": "2026-05-18",
+   "channel": "A",
+   "status": "lost"
+  },
+  {
+   "lead_id": "LD00413",
+   "created_on": "2026-05-19",
+   "entered_on": "2026-05-19",
+   "channel": "A",
+   "status": "lost"
+  },
+  {
+   "lead_id": "LD00414",
+   "created_on": "2026-05-20",
+   "entered_on": "2026-05-20",
+   "channel": "A",
+   "status": "lost"
+  },
+  {
+   "lead_id": "LD00415",
+   "created_on": "2026-05-20",
+   "entered_on": "2026-05-20",
+   "channel": "A",
+   "status": "won"
+  },
+  {
+   "lead_id": "LD00416",
+   "created_on": "2026-05-21",
+   "entered_on": "2026-05-21",
+   "channel": "A",
+   "status": "lost"
+  },
+  {
+   "lead_id": "LD00417",
+   "created_on": "2026-05-22",
+   "entered_on": "2026-05-22",
+   "channel": "A",
+   "status": "lost"
+  },
+  {
+   "lead_id": "LD00418",
+   "created_on": "2026-05-22",
+   "entered_on": "2026-05-22",
+   "channel": "A",
+   "status": "lost"
+  },
+  {
+   "lead_id": "LD00419",
+   "created_on": "2026-05-25",
+   "entered_on": "2026-05-25",
+   "channel": "A",
+   "status": "lost"
+  },
+  {
+   "lead_id": "LD00420",
+   "created_on": "2026-05-26",
+   "entered_on": "2026-05-26",
+   "channel": "A",
+   "status": "won"
+  },
+  {
+   "lead_id": "LD00421",
+   "created_on": "2026-05-26",
+   "entered_on": "2026-05-26",
+   "channel": "A",
+   "status": "lost"
+  },
+  {
+   "lead_id": "LD00422",
+   "created_on": "2026-05-27",
+   "entered_on": "2026-05-27",
+   "channel": "A",
+   "status": "lost"
+  },
+  {
+   "lead_id": "LD00423",
+   "created_on": "2026-05-27",
+   "entered_on": "2026-05-27",
+   "channel": "A",
+   "status": "lost"
+  },
+  {
+   "lead_id": "LD00424",
+   "created_on": "2026-05-28",
+   "entered_on": "2026-05-28",
+   "channel": "A",
+   "status": "lost"
+  },
+  {
+   "lead_id": "LD00425",
+   "created_on": "2026-05-29",
+   "entered_on": "2026-05-29",
+   "channel": "A",
+   "status": "won"
+  },
+  {
+   "lead_id": "LD00426",
+   "created_on": "2026-05-29",
+   "entered_on": "2026-05-29",
+   "channel": "A",
+   "status": "lost"
+  },
+  {
+   "lead_id": "LD00427",
+   "created_on": "2026-06-01",
+   "entered_on": "2026-06-01",
+   "channel": "A",
+   "status": "lost"
+  },
+  {
+   "lead_id": "LD00428",
+   "created_on": "2026-06-02",
+   "entered_on": "2026-06-02",
+   "channel": "A",
+   "status": "lost"
+  },
+  {
+   "lead_id": "LD00429",
+   "created_on": "2026-06-02",
+   "entered_on": "2026-06-02",
+   "channel": "A",
+   "status": "lost"
+  },
+  {
+   "lead_id": "LD00430",
+   "created_on": "2026-06-03",
+   "entered_on": "2026-06-03",
+   "channel": "A",
+   "status": "won"
+  },
+  {
+   "lead_id": "LD00431",
+   "created_on": "2026-06-04",
+   "entered_on": "2026-06-04",
+   "channel": "A",
+   "status": "lost"
+  },
+  {
+   "lead_id": "LD00432",
+   "created_on": "2026-06-04",
+   "entered_on": "2026-06-04",
+   "channel": "A",
+   "status": "lost"
+  },
+  {
+   "lead_id": "LD00433",
+   "created_on": "2026-06-05",
+   "entered_on": "2026-06-05",
+   "channel": "A",
+   "status": "lost"
+  },
+  {
+   "lead_id": "LD00434",
+   "created_on": "2026-06-08",
+   "entered_on": "2026-06-08",
+   "channel": "A",
+   "status": "lost"
+  },
+  {
+   "lead_id": "LD00435",
+   "created_on": "2026-06-08",
+   "entered_on": "2026-06-08",
+   "channel": "A",
+   "status": "won"
+  },
+  {
+   "lead_id": "LD00436",
+   "created_on": "2026-06-09",
+   "entered_on": "2026-06-09",
+   "channel": "A",
+   "status": "lost"
+  },
+  {
+   "lead_id": "LD00437",
+   "created_on": "2026-06-10",
+   "entered_on": "2026-06-10",
+   "channel": "A",
+   "status": "lost"
+  },
+  {
+   "lead_id": "LD00438",
+   "created_on": "2026-06-10",
+   "entered_on": "2026-06-10",
+   "channel": "A",
+   "status": "lost"
+  },
+  {
+   "lead_id": "LD00439",
+   "created_on": "2026-06-11",
+   "entered_on": "2026-06-11",
+   "channel": "A",
+   "status": "lost"
+  },
+  {
+   "lead_id": "LD00440",
+   "created_on": "2026-06-12",
+   "entered_on": "2026-06-12",
+   "channel": "A",
+   "status": "won"
+  },
+  {
+   "lead_id": "LD00441",
+   "created_on": "2026-06-12",
+   "entered_on": "2026-06-12",
+   "channel": "A",
+   "status": "lost"
+  },
+  {
+   "lead_id": "LD00442",
+   "created_on": "2026-06-15",
+   "entered_on": "2026-06-15",
+   "channel": "A",
+   "status": "lost"
+  },
+  {
+   "lead_id": "LD00443",
+   "created_on": "2026-06-15",
+   "entered_on": "2026-06-15",
+   "channel": "A",
+   "status": "lost"
+  },
+  {
+   "lead_id": "LD00444",
+   "created_on": "2026-06-16",
+   "entered_on": "2026-06-16",
+   "channel": "A",
+   "status": "lost"
+  },
+  {
+   "lead_id": "LD00445",
+   "created_on": "2026-06-17",
+   "entered_on": "2026-06-17",
+   "channel": "A",
+   "status": "won"
+  },
+  {
+   "lead_id": "LD00446",
+   "created_on": "2026-06-17",
+   "entered_on": "2026-06-17",
+   "channel": "A",
+   "status": "lost"
+  },
+  {
+   "lead_id": "LD00447",
+   "created_on": "2026-06-18",
+   "entered_on": "2026-06-18",
+   "channel": "A",
+   "status": "lost"
+  },
+  {
+   "lead_id": "LD00448",
+   "created_on": "2026-06-19",
+   "entered_on": "2026-06-19",
+   "channel": "A",
+   "status": "lost"
+  },
+  {
+   "lead_id": "LD00449",
+   "created_on": "2026-06-19",
+   "entered_on": "2026-06-19",
+   "channel": "A",
+   "status": "lost"
+  },
+  {
+   "lead_id": "LD00450",
+   "created_on": "2026-06-22",
+   "entered_on": "2026-06-22",
+   "channel": "A",
+   "status": "won"
+  },
+  {
+   "lead_id": "LD00451",
+   "created_on": "2026-06-23",
+   "entered_on": "2026-06-23",
+   "channel": "A",
+   "status": "lost"
+  },
+  {
+   "lead_id": "LD00452",
+   "created_on": "2026-06-23",
+   "entered_on": "2026-06-23",
+   "channel": "A",
+   "status": "lost"
+  },
+  {
+   "lead_id": "LD00453",
+   "created_on": "2026-06-24",
+   "entered_on": "2026-06-24",
+   "channel": "A",
+   "status": "lost"
+  },
+  {
+   "lead_id": "LD00454",
+   "created_on": "2026-06-25",
+   "entered_on": "2026-06-25",
+   "channel": "A",
+   "status": "lost"
+  },
+  {
+   "lead_id": "LD00455",
+   "created_on": "2026-06-25",
+   "entered_on": "2026-06-25",
+   "channel": "A",
+   "status": "won"
+  },
+  {
+   "lead_id": "LD00456",
+   "created_on": "2026-06-26",
+   "entered_on": "2026-06-26",
+   "channel": "A",
+   "status": "lost"
+  },
+  {
+   "lead_id": "LD00457",
+   "created_on": "2026-06-29",
+   "entered_on": "2026-06-29",
+   "channel": "A",
+   "status": "lost"
+  },
+  {
+   "lead_id": "LD00458",
+   "created_on": "2026-06-29",
+   "entered_on": "2026-06-29",
+   "channel": "A",
+   "status": "lost"
+  },
+  {
+   "lead_id": "LD00459",
+   "created_on": "2026-06-30",
+   "entered_on": "2026-06-30",
+   "channel": "A",
+   "status": "lost"
+  },
+  {
+   "lead_id": "LD00460",
+   "created_on": "2026-04-01",
+   "entered_on": "2026-04-01",
+   "channel": "B",
+   "status": "won"
+  },
+  {
+   "lead_id": "LD00461",
+   "created_on": "2026-04-02",
+   "entered_on": "2026-04-02",
+   "channel": "B",
+   "status": "won"
+  },
+  {
+   "lead_id": "LD00462",
+   "created_on": "2026-04-06",
+   "entered_on": "2026-04-06",
+   "channel": "B",
+   "status": "won"
+  },
+  {
+   "lead_id": "LD00463",
+   "created_on": "2026-04-07",
+   "entered_on": "2026-04-07",
+   "channel": "B",
+   "status": "won"
+  },
+  {
+   "lead_id": "LD00464",
+   "created_on": "2026-04-09",
+   "entered_on": "2026-04-09",
+   "channel": "B",
+   "status": "won"
+  },
+  {
+   "lead_id": "LD00465",
+   "created_on": "2026-04-13",
+   "entered_on": "2026-04-13",
+   "channel": "B",
+   "status": "won"
+  },
+  {
+   "lead_id": "LD00466",
+   "created_on": "2026-04-14",
+   "entered_on": "2026-04-14",
+   "channel": "B",
+   "status": "won"
+  },
+  {
+   "lead_id": "LD00467",
+   "created_on": "2026-04-16",
+   "entered_on": "2026-04-16",
+   "channel": "B",
+   "status": "won"
+  },
+  {
+   "lead_id": "LD00468",
+   "created_on": "2026-04-20",
+   "entered_on": "2026-04-20",
+   "channel": "B",
+   "status": "won"
+  },
+  {
+   "lead_id": "LD00469",
+   "created_on": "2026-04-21",
+   "entered_on": "2026-04-21",
+   "channel": "B",
+   "status": "won"
+  },
+  {
+   "lead_id": "LD00470",
+   "created_on": "2026-04-23",
+   "entered_on": "2026-04-23",
+   "channel": "B",
+   "status": "won"
+  },
+  {
+   "lead_id": "LD00471",
+   "created_on": "2026-04-24",
+   "entered_on": "2026-04-24",
+   "channel": "B",
+   "status": "won"
+  },
+  {
+   "lead_id": "LD00472",
+   "created_on": "2026-04-28",
+   "entered_on": "2026-04-28",
+   "channel": "B",
+   "status": "won"
+  },
+  {
+   "lead_id": "LD00473",
+   "created_on": "2026-04-30",
+   "entered_on": "2026-04-30",
+   "channel": "B",
+   "status": "won"
+  },
+  {
+   "lead_id": "LD00474",
+   "created_on": "2026-05-01",
+   "entered_on": "2026-05-01",
+   "channel": "B",
+   "status": "won"
+  },
+  {
+   "lead_id": "LD00475",
+   "created_on": "2026-05-05",
+   "entered_on": "2026-05-05",
+   "channel": "B",
+   "status": "won"
+  },
+  {
+   "lead_id": "LD00476",
+   "created_on": "2026-05-07",
+   "entered_on": "2026-05-07",
+   "channel": "B",
+   "status": "won"
+  },
+  {
+   "lead_id": "LD00477",
+   "created_on": "2026-05-08",
+   "entered_on": "2026-05-08",
+   "channel": "B",
+   "status": "won"
+  },
+  {
+   "lead_id": "LD00478",
+   "created_on": "2026-05-12",
+   "entered_on": "2026-05-12",
+   "channel": "B",
+   "status": "lost"
+  },
+  {
+   "lead_id": "LD00479",
+   "created_on": "2026-05-13",
+   "entered_on": "2026-05-13",
+   "channel": "B",
+   "status": "lost"
+  },
+  {
+   "lead_id": "LD00480",
+   "created_on": "2026-05-15",
+   "entered_on": "2026-05-15",
+   "channel": "B",
+   "status": "lost"
+  },
+  {
+   "lead_id": "LD00481",
+   "created_on": "2026-05-19",
+   "entered_on": "2026-05-19",
+   "channel": "B",
+   "status": "lost"
+  },
+  {
+   "lead_id": "LD00482",
+   "created_on": "2026-05-20",
+   "entered_on": "2026-05-20",
+   "channel": "B",
+   "status": "lost"
+  },
+  {
+   "lead_id": "LD00483",
+   "created_on": "2026-05-22",
+   "entered_on": "2026-05-22",
+   "channel": "B",
+   "status": "lost"
+  },
+  {
+   "lead_id": "LD00484",
+   "created_on": "2026-05-26",
+   "entered_on": "2026-05-26",
+   "channel": "B",
+   "status": "lost"
+  },
+  {
+   "lead_id": "LD00485",
+   "created_on": "2026-05-27",
+   "entered_on": "2026-05-27",
+   "channel": "B",
+   "status": "lost"
+  },
+  {
+   "lead_id": "LD00486",
+   "created_on": "2026-05-29",
+   "entered_on": "2026-05-29",
+   "channel": "B",
+   "status": "lost"
+  },
+  {
+   "lead_id": "LD00487",
+   "created_on": "2026-06-01",
+   "entered_on": "2026-06-01",
+   "channel": "B",
+   "status": "lost"
+  },
+  {
+   "lead_id": "LD00488",
+   "created_on": "2026-06-03",
+   "entered_on": "2026-06-03",
+   "channel": "B",
+   "status": "lost"
+  },
+  {
+   "lead_id": "LD00489",
+   "created_on": "2026-06-05",
+   "entered_on": "2026-06-05",
+   "channel": "B",
+   "status": "lost"
+  },
+  {
+   "lead_id": "LD00490",
+   "created_on": "2026-06-08",
+   "entered_on": "2026-06-08",
+   "channel": "B",
+   "status": "lost"
+  },
+  {
+   "lead_id": "LD00491",
+   "created_on": "2026-06-10",
+   "entered_on": "2026-06-10",
+   "channel": "B",
+   "status": "lost"
+  },
+  {
+   "lead_id": "LD00492",
+   "created_on": "2026-06-12",
+   "entered_on": "2026-06-12",
+   "channel": "B",
+   "status": "lost"
+  },
+  {
+   "lead_id": "LD00493",
+   "created_on": "2026-06-15",
+   "entered_on": "2026-06-15",
+   "channel": "B",
+   "status": "lost"
+  },
+  {
+   "lead_id": "LD00494",
+   "created_on": "2026-06-17",
+   "entered_on": "2026-06-17",
+   "channel": "B",
+   "status": "lost"
+  },
+  {
+   "lead_id": "LD00495",
+   "created_on": "2026-06-18",
+   "entered_on": "2026-06-18",
+   "channel": "B",
+   "status": "lost"
+  },
+  {
+   "lead_id": "LD00496",
+   "created_on": "2026-06-22",
+   "entered_on": "2026-06-22",
+   "channel": "B",
+   "status": "lost"
+  },
+  {
+   "lead_id": "LD00497",
+   "created_on": "2026-06-24",
+   "entered_on": "2026-06-24",
+   "channel": "B",
+   "status": "lost"
+  },
+  {
+   "lead_id": "LD00498",
+   "created_on": "2026-06-25",
+   "entered_on": "2026-06-25",
+   "channel": "B",
+   "status": "lost"
+  },
+  {
+   "lead_id": "LD00499",
+   "created_on": "2026-06-29",
+   "entered_on": "2026-06-29",
+   "channel": "B",
+   "status": "lost"
+  },
+  {
+   "lead_id": "LD00500",
+   "created_on": "2026-04-01",
+   "entered_on": "2026-04-01",
+   "channel": "referral",
+   "status": "won"
+  },
+  {
+   "lead_id": "LD00501",
+   "created_on": "2026-04-02",
+   "entered_on": "2026-04-02",
+   "channel": "referral",
+   "status": "won"
+  },
+  {
+   "lead_id": "LD00502",
+   "created_on": "2026-04-03",
+   "entered_on": "2026-04-03",
+   "channel": "referral",
+   "status": "won"
+  },
+  {
+   "lead_id": "LD00503",
+   "created_on": "2026-04-06",
+   "entered_on": "2026-04-06",
+   "channel": "referral",
+   "status": "won"
+  },
+  {
+   "lead_id": "LD00504",
+   "created_on": "2026-04-07",
+   "entered_on": "2026-04-07",
+   "channel": "referral",
+   "status": "won"
+  },
+  {
+   "lead_id": "LD00505",
+   "created_on": "2026-04-08",
+   "entered_on": "2026-04-08",
+   "channel": "referral",
+   "status": "won"
+  },
+  {
+   "lead_id": "LD00506",
+   "created_on": "2026-04-09",
+   "entered_on": "2026-04-09",
+   "channel": "referral",
+   "status": "won"
+  },
+  {
+   "lead_id": "LD00507",
+   "created_on": "2026-04-10",
+   "entered_on": "2026-04-10",
+   "channel": "referral",
+   "status": "won"
+  },
+  {
+   "lead_id": "LD00508",
+   "created_on": "2026-04-13",
+   "entered_on": "2026-04-13",
+   "channel": "referral",
+   "status": "won"
+  },
+  {
+   "lead_id": "LD00509",
+   "created_on": "2026-04-14",
+   "entered_on": "2026-04-14",
+   "channel": "referral",
+   "status": "won"
+  },
+  {
+   "lead_id": "LD00510",
+   "created_on": "2026-04-15",
+   "entered_on": "2026-04-15",
+   "channel": "referral",
+   "status": "won"
+  },
+  {
+   "lead_id": "LD00511",
+   "created_on": "2026-04-16",
+   "entered_on": "2026-04-16",
+   "channel": "referral",
+   "status": "won"
+  },
+  {
+   "lead_id": "LD00512",
+   "created_on": "2026-04-17",
+   "entered_on": "2026-04-17",
+   "channel": "referral",
+   "status": "won"
+  },
+  {
+   "lead_id": "LD00513",
+   "created_on": "2026-04-20",
+   "entered_on": "2026-04-20",
+   "channel": "referral",
+   "status": "won"
+  },
+  {
+   "lead_id": "LD00514",
+   "created_on": "2026-04-21",
+   "entered_on": "2026-04-21",
+   "channel": "referral",
+   "status": "won"
+  },
+  {
+   "lead_id": "LD00515",
+   "created_on": "2026-04-22",
+   "entered_on": "2026-04-22",
+   "channel": "referral",
+   "status": "won"
+  },
+  {
+   "lead_id": "LD00516",
+   "created_on": "2026-04-23",
+   "entered_on": "2026-04-23",
+   "channel": "referral",
+   "status": "won"
+  },
+  {
+   "lead_id": "LD00517",
+   "created_on": "2026-04-24",
+   "entered_on": "2026-04-24",
+   "channel": "referral",
+   "status": "won"
+  },
+  {
+   "lead_id": "LD00518",
+   "created_on": "2026-04-27",
+   "entered_on": "2026-04-27",
+   "channel": "referral",
+   "status": "won"
+  },
+  {
+   "lead_id": "LD00519",
+   "created_on": "2026-04-28",
+   "entered_on": "2026-04-28",
+   "channel": "referral",
+   "status": "won"
+  },
+  {
+   "lead_id": "LD00520",
+   "created_on": "2026-04-29",
+   "entered_on": "2026-04-29",
+   "channel": "referral",
+   "status": "won"
+  },
+  {
+   "lead_id": "LD00521",
+   "created_on": "2026-04-30",
+   "entered_on": "2026-04-30",
+   "channel": "referral",
+   "status": "won"
+  },
+  {
+   "lead_id": "LD00522",
+   "created_on": "2026-05-01",
+   "entered_on": "2026-05-01",
+   "channel": "referral",
+   "status": "won"
+  },
+  {
+   "lead_id": "LD00523",
+   "created_on": "2026-05-04",
+   "entered_on": "2026-05-04",
+   "channel": "referral",
+   "status": "won"
+  },
+  {
+   "lead_id": "LD00524",
+   "created_on": "2026-05-05",
+   "entered_on": "2026-05-05",
+   "channel": "referral",
+   "status": "won"
+  },
+  {
+   "lead_id": "LD00525",
+   "created_on": "2026-05-06",
+   "entered_on": "2026-05-06",
+   "channel": "referral",
+   "status": "won"
+  },
+  {
+   "lead_id": "LD00526",
+   "created_on": "2026-05-07",
+   "entered_on": "2026-05-07",
+   "channel": "referral",
+   "status": "won"
+  },
+  {
+   "lead_id": "LD00527",
+   "created_on": "2026-05-08",
+   "entered_on": "2026-05-08",
+   "channel": "referral",
+   "status": "won"
+  },
+  {
+   "lead_id": "LD00528",
+   "created_on": "2026-05-11",
+   "entered_on": "2026-05-11",
+   "channel": "referral",
+   "status": "won"
+  },
+  {
+   "lead_id": "LD00529",
+   "created_on": "2026-05-12",
+   "entered_on": "2026-05-12",
+   "channel": "referral",
+   "status": "won"
+  },
+  {
+   "lead_id": "LD00530",
+   "created_on": "2026-05-13",
+   "entered_on": "2026-05-13",
+   "channel": "referral",
+   "status": "won"
+  },
+  {
+   "lead_id": "LD00531",
+   "created_on": "2026-05-14",
+   "entered_on": "2026-05-14",
+   "channel": "referral",
+   "status": "won"
+  },
+  {
+   "lead_id": "LD00532",
+   "created_on": "2026-05-15",
+   "entered_on": "2026-05-15",
+   "channel": "referral",
+   "status": "won"
+  },
+  {
+   "lead_id": "LD00533",
+   "created_on": "2026-05-18",
+   "entered_on": "2026-05-18",
+   "channel": "referral",
+   "status": "won"
+  },
+  {
+   "lead_id": "LD00534",
+   "created_on": "2026-05-19",
+   "entered_on": "2026-05-19",
+   "channel": "referral",
+   "status": "won"
+  },
+  {
+   "lead_id": "LD00535",
+   "created_on": "2026-05-20",
+   "entered_on": "2026-05-20",
+   "channel": "referral",
+   "status": "won"
+  },
+  {
+   "lead_id": "LD00536",
+   "created_on": "2026-05-21",
+   "entered_on": "2026-05-21",
+   "channel": "referral",
+   "status": "won"
+  },
+  {
+   "lead_id": "LD00537",
+   "created_on": "2026-05-22",
+   "entered_on": "2026-05-22",
+   "channel": "referral",
+   "status": "won"
+  },
+  {
+   "lead_id": "LD00538",
+   "created_on": "2026-05-25",
+   "entered_on": "2026-05-25",
+   "channel": "referral",
+   "status": "won"
+  },
+  {
+   "lead_id": "LD00539",
+   "created_on": "2026-05-26",
+   "entered_on": "2026-05-26",
+   "channel": "referral",
+   "status": "won"
+  },
+  {
+   "lead_id": "LD00540",
+   "created_on": "2026-05-27",
+   "entered_on": "2026-05-27",
+   "channel": "referral",
+   "status": "won"
+  },
+  {
+   "lead_id": "LD00541",
+   "created_on": "2026-05-28",
+   "entered_on": "2026-05-28",
+   "channel": "referral",
+   "status": "won"
+  },
+  {
+   "lead_id": "LD00542",
+   "created_on": "2026-05-29",
+   "entered_on": "2026-05-29",
+   "channel": "referral",
+   "status": "won"
+  },
+  {
+   "lead_id": "LD00543",
+   "created_on": "2026-06-01",
+   "entered_on": "2026-06-01",
+   "channel": "referral",
+   "status": "won"
+  },
+  {
+   "lead_id": "LD00544",
+   "created_on": "2026-06-02",
+   "entered_on": "2026-06-02",
+   "channel": "referral",
+   "status": "won"
+  },
+  {
+   "lead_id": "LD00545",
+   "created_on": "2026-06-03",
+   "entered_on": "2026-06-03",
+   "channel": "referral",
+   "status": "won"
+  },
+  {
+   "lead_id": "LD00546",
+   "created_on": "2026-06-04",
+   "entered_on": "2026-06-04",
+   "channel": "referral",
+   "status": "won"
+  },
+  {
+   "lead_id": "LD00547",
+   "created_on": "2026-06-05",
+   "entered_on": "2026-06-05",
+   "channel": "referral",
+   "status": "won"
+  },
+  {
+   "lead_id": "LD00548",
+   "created_on": "2026-06-08",
+   "entered_on": "2026-06-08",
+   "channel": "referral",
+   "status": "won"
+  },
+  {
+   "lead_id": "LD00549",
+   "created_on": "2026-06-09",
+   "entered_on": "2026-06-09",
+   "channel": "referral",
+   "status": "won"
+  },
+  {
+   "lead_id": "LD00550",
+   "created_on": "2026-06-10",
+   "entered_on": "2026-06-10",
+   "channel": "referral",
+   "status": "won"
+  },
+  {
+   "lead_id": "LD00551",
+   "created_on": "2026-06-11",
+   "entered_on": "2026-06-11",
+   "channel": "referral",
+   "status": "won"
+  },
+  {
+   "lead_id": "LD00552",
+   "created_on": "2026-06-12",
+   "entered_on": "2026-06-12",
+   "channel": "referral",
+   "status": "won"
+  },
+  {
+   "lead_id": "LD00553",
+   "created_on": "2026-06-15",
+   "entered_on": "2026-06-15",
+   "channel": "referral",
+   "status": "won"
+  },
+  {
+   "lead_id": "LD00554",
+   "created_on": "2026-06-16",
+   "entered_on": "2026-06-16",
+   "channel": "referral",
+   "status": "won"
+  },
+  {
+   "lead_id": "LD00555",
+   "created_on": "2026-06-17",
+   "entered_on": "2026-06-17",
+   "channel": "referral",
+   "status": "won"
+  },
+  {
+   "lead_id": "LD00556",
+   "created_on": "2026-06-18",
+   "entered_on": "2026-06-18",
+   "channel": "referral",
+   "status": "won"
+  },
+  {
+   "lead_id": "LD00557",
+   "created_on": "2026-06-19",
+   "entered_on": "2026-06-19",
+   "channel": "referral",
+   "status": "won"
+  },
+  {
+   "lead_id": "LD00558",
+   "created_on": "2026-06-22",
+   "entered_on": "2026-06-22",
+   "channel": "referral",
+   "status": "won"
+  },
+  {
+   "lead_id": "LD00559",
+   "created_on": "2026-06-23",
+   "entered_on": "2026-06-23",
+   "channel": "referral",
+   "status": "won"
+  },
+  {
+   "lead_id": "LD00560",
+   "created_on": "2026-06-24",
+   "entered_on": "2026-06-24",
+   "channel": "referral",
+   "status": "won"
+  }
+ ],
+ "id_field": "lead_id",
+ "description": "leads from the CRM with channel and outcome"
+}

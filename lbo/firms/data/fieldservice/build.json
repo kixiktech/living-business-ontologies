@@ -1,0 +1,113 @@
+{
+ "firm": "fieldservice",
+ "arm": "build",
+ "task": "ingest",
+ "model": "none",
+ "date": "2026-07-01",
+ "turns": [
+  {
+   "role": "tool",
+   "kind": "tool_result",
+   "text": "6 records -> 6 entities, 42 assertions",
+   "name": "technicians"
+  },
+  {
+   "role": "tool",
+   "kind": "tool_result",
+   "text": "5 records -> 0 entities, 10 assertions",
+   "name": "certifications"
+  },
+  {
+   "role": "tool",
+   "kind": "tool_result",
+   "text": "560 records -> 0 entities, 2800 assertions",
+   "name": "crm_leads"
+  },
+  {
+   "role": "tool",
+   "kind": "tool_result",
+   "text": "192 records -> 0 entities, 2304 assertions",
+   "name": "jobs"
+  },
+  {
+   "role": "tool",
+   "kind": "tool_result",
+   "text": "192 records -> 0 entities, 192 assertions",
+   "name": "schedule"
+  },
+  {
+   "role": "tool",
+   "kind": "tool_result",
+   "text": "12 records -> 0 entities, 12 assertions",
+   "name": "ledger"
+  },
+  {
+   "role": "tool",
+   "kind": "tool_result",
+   "text": "445 records -> 0 entities, 0 assertions",
+   "name": "payroll"
+  },
+  {
+   "role": "reflect",
+   "kind": "message",
+   "text": "no ambiguous matches",
+   "name": "identity review"
+  },
+  {
+   "role": "monitor",
+   "kind": "message",
+   "text": "agent may send_message scope={'audience': 'internal'} limits={}\nagent may schedule_job scope={} limits={'max_hours': 8.0}",
+   "name": "grants"
+  },
+  {
+   "role": "agent",
+   "kind": "message",
+   "text": "Ridgeline Mechanical: 5370 assertions from 7 sources; 10 relation types in use; 0 identity candidates for review; 0 schema problems",
+   "name": ""
+  }
+ ],
+ "score": {},
+ "meta": {
+  "fingerprint": "d25853156ff8"
+ },
+ "hash": "6188e78ae8ae",
+ "stats": {
+  "assertions": 5370,
+  "assertions_by_subject_type": {
+   "person": 41,
+   "crew": 6,
+   "certification": 5,
+   "lead": 2240,
+   "channel": 572,
+   "job": 2112,
+   "service_line": 194,
+   "schedule": 192,
+   "grant": 8
+  },
+  "relation_types_used": 10,
+  "review_queue": 0,
+  "sources": 7,
+  "records_per_source": {
+   "crm_leads": 560,
+   "jobs": 192,
+   "schedule": 192,
+   "technicians": 6,
+   "certifications": 5,
+   "ledger": 12,
+   "payroll": 445
+  },
+  "schema_counts": {
+   "core": {
+    "entities": 15,
+    "relations": 17
+   },
+   "fieldservice": {
+    "entities": 6,
+    "relations": 9
+   }
+  },
+  "grants": 2,
+  "problems": 0
+ },
+ "problems": []
+}

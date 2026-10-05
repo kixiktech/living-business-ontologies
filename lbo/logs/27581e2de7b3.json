@@ -1,0 +1,191 @@
+{
+ "firm": "retail",
+ "arm": "B",
+ "task": "r_defected_customer",
+ "model": "claude-sonnet-5",
+ "date": "2026-09-29",
+ "turns": [
+  {
+   "role": "owner",
+   "kind": "message",
+   "text": "Which customers bought in every quarter of 2025 and have not bought at all in 2026?",
+   "name": ""
+  },
+  {
+   "role": "agent",
+   "kind": "tool_call",
+   "text": "{}",
+   "name": "describe_tables"
+  },
+  {
+   "role": "tool",
+   "kind": "tool_result",
+   "text": "{\"customers\": [\"cust_id\", \"name\", \"email\", \"phone\", \"created_on\"], \"customers_n\": [\"id\", \"email\", \"name\", \"duplicates\"], \"fulfillment\": [\"order_id\", \"shipped_from\", \"shipped_on\", \"entered_on\"], \"inventory_moves\": [\"move_id\", \"item_no\", \"from_store\", \"qty\", \"moved_on\", \"entered_on\"], \"ledger\": [\"journal_id\", \"kind\", \"effective_on\", \"entered_on\", \"amount\", \"memo\", \"supplier\", \"item_no\", \"unit_cost\", \"units\", \"units_a\", \"units_b\", \"account\"], \"payroll\": [\"employee_id\", \"week_start\", \"hours\", \"store\"], \"pos_sales\": [\"line_id\", \"order_id\", \"sold_on\", \"entered_on\", \"store\", \"cashier\", \"cust_id\", \"item_no\", \"qty\", \"unit_price\"], \"product_master\": [\"item_no\", \"sku\", \"name\", \"category\", \"list_price\", \"supplier\", \"unit_cost\"], \"sales_n\": [\"line_id\", \"order_id\", \"sold_on\", \"rang_up_at\", \"fulfilled_from\", \"cust_id\", \"item_no\", \"item_name\", \"category\", \"supplier\", \"qty\", \"unit_price\", \"amount\"], \"staff\": [\"employee_id\", \"name\", \"role\", \"store\", \"hourly_cost\", \"hired_on\"], \"store_map\": [\"store\", \"name\", \"opened_on\", \"sqft\", \"counted_in_2025\"], \"supplier_terms\": [\"supplier\", \"effective_on\", \"break_units_per_quarter\", \"tiers\", \"rule\", \"document\"]}",
+   "name": "describe_tables"
+  },
+  {
+   "role": "agent",
+   "kind": "tool_call",
+   "text": "{\"sql\": \"SELECT MIN(sold_on), MAX(sold_on), COUNT(*) FROM pos_sales\"}",
+   "name": "run_sql"
+  },
+  {
+   "role": "tool",
+   "kind": "tool_result",
+   "text": "{\"columns\": [\"MIN(sold_on)\", \"MAX(sold_on)\", \"COUNT(*)\"], \"rows\": [[\"2025-01-01\", \"2026-06-30\", 5583]], \"truncated\": false, \"error\": null}",
+   "name": "run_sql"
+  },
+  {
+   "role": "agent",
+   "kind": "tool_call",
+   "text": "{\"sql\": \"SELECT MIN(sold_on), MAX(sold_on), COUNT(*) FROM sales_n\"}",
+   "name": "run_sql"
+  },
+  {
+   "role": "tool",
+   "kind": "tool_result",
+   "text": "{\"columns\": [\"MIN(sold_on)\", \"MAX(sold_on)\", \"COUNT(*)\"], \"rows\": [[\"2025-01-01\", \"2026-06-30\", 5583]], \"truncated\": false, \"error\": null}",
+   "name": "run_sql"
+  },
+  {
+   "role": "agent",
+   "kind": "tool_call",
+   "text": "{\"sql\": \"SELECT * FROM customers_n LIMIT 5\"}",
+   "name": "run_sql"
+  },
+  {
+   "role": "tool",
+   "kind": "tool_result",
+   "text": "{\"columns\": [\"id\", \"email\", \"name\", \"duplicates\"], \"rows\": [[\"cust_0210\", \"ana.abara210@example.com\", \"Ana Abara\", 1], [\"cust_0112\", \"ana.bell112@example.com\", \"Ana Bell\", 1], [\"cust_0084\", \"ana.cole84@example.com\", \"Ana Cole\", 1], [\"cust_0140\", \"ana.diaz140@example.com\", \"Ana Diaz\", 1], [\"cust_0224\", \"ana.feng224@example.com\", \"Ana Feng\", 1]], \"truncated\": false, \"error\": null}",
+   "name": "run_sql"
+  },
+  {
+   "role": "agent",
+   "kind": "tool_call",
+   "text": "{\"sql\": \"SELECT * FROM customers LIMIT 5\"}",
+   "name": "run_sql"
+  },
+  {
+   "role": "tool",
+   "kind": "tool_result",
+   "text": "{\"columns\": [\"cust_id\", \"name\", \"email\", \"phone\", \"created_on\"], \"rows\": [[\"cust_0000\", \"Ana Ruiz\", \"ana.ruiz0@example.com\", \"555-0100\", \"2025-01-01\"], [\"cust_0001\", \"Ben Ruiz\", \"ben.ruiz1@example.com\", \"555-0101\", \"2025-01-01\"], [\"cust_0002\", \"Cara Ruiz\", \"cara.ruiz2@example.com\", \"555-0102\", \"2025-01-01\"], [\"cust_0003\", \"Dev Ruiz\", \"dev.ruiz3@example.com\", \"555-0103\", \"2025-01-01\"], [\"cust_0004\", \"Eli Ruiz\", \"eli.ruiz4@example.com\", \"555-0104\", \"2025-01-01\"]], \"truncated\": false, \"error\": null}",
+   "name": "run_sql"
+  },
+  {
+   "role": "agent",
+   "kind": "tool_call",
+   "text": "{\"sql\": \"SELECT COUNT(*) FROM pos_sales WHERE cust_id IS NULL\"}",
+   "name": "run_sql"
+  },
+  {
+   "role": "tool",
+   "kind": "tool_result",
+   "text": "{\"columns\": [\"COUNT(*)\"], \"rows\": [[0]], \"truncated\": false, \"error\": null}",
+   "name": "run_sql"
+  },
+  {
+   "role": "agent",
+   "kind": "tool_call",
+   "text": "{\"sql\": \"\\nWITH q AS (\\n  SELECT cust_id,\\n    CASE WHEN sold_on < '2025-04-01' THEN 'Q1'\\n         WHEN sold_on < '2025-07-01' THEN 'Q2'\\n         WHEN sold_on < '2025-10-01' THEN 'Q3'\\n         ELSE 'Q4' END AS qtr\\n  FROM pos_sales\\n  WHERE sold_on >= '2025-01-01' AND sold_on < '2026-01-01'\\n),\\nall4 AS (\\n  SELECT cust_id FROM q GROUP BY cust_id HAVING COUNT(DISTINCT qtr) = 4\\n),\\ny2026 AS (\\n  SELECT DISTINCT cust_id FROM pos_sales WHERE sold_on >= '2026-01-01'\\n)\\nSELECT c.cust_id, cu.name, cu.email\\nFROM all4 c\\nLEFT JOIN y2026 y ON c.cust_id = y.cust_id\\nJOIN customers cu ON cu.cust_id = c.cust_id\\nWHERE y.cust_id IS NULL\\nORDER BY cu.name;\\n\"}",
+   "name": "run_sql"
+  },
+  {
+   "role": "tool",
+   "kind": "tool_result",
+   "text": "{\"columns\": [\"cust_id\", \"name\", \"email\"], \"rows\": [[\"cust_0042\", \"Ana Lund\", \"ana.lund42@example.com\"], [\"cust_0100\", \"Cara Novak\", \"cara.novak100@example.com\"]], \"truncated\": false, \"error\": null}",
+   "name": "run_sql"
+  },
+  {
+   "role": "agent",
+   "kind": "tool_call",
+   "text": "{\"sql\": \"\\nWITH q AS (\\n  SELECT cust_id,\\n    CASE WHEN sold_on < '2025-04-01' THEN 'Q1'\\n         WHEN sold_on < '2025-07-01' THEN 'Q2'\\n         WHEN sold_on < '2025-10-01' THEN 'Q3'\\n         ELSE 'Q4' END AS qtr\\n  FROM pos_sales\\n  WHERE sold_on >= '2025-01-01' AND sold_on < '2026-01-01'\\n)\\nSELECT COUNT(DISTINCT cust_id) FROM q;\\n\"}",
+   "name": "run_sql"
+  },
+  {
+   "role": "tool",
+   "kind": "tool_result",
+   "text": "{\"columns\": [\"COUNT(DISTINCT cust_id)\"], \"rows\": [[300]], \"truncated\": false, \"error\": null}",
+   "name": "run_sql"
+  },
+  {
+   "role": "agent",
+   "kind": "tool_call",
+   "text": "{\"sql\": \"\\nWITH q AS (\\n  SELECT cust_id,\\n    CASE WHEN sold_on < '2025-04-01' THEN 'Q1'\\n         WHEN sold_on < '2025-07-01' THEN 'Q2'\\n         WHEN sold_on < '2025-10-01' THEN 'Q3'\\n         ELSE 'Q4' END AS qtr\\n  FROM pos_sales\\n  WHERE sold_on >= '2025-01-01' AND sold_on < '2026-01-01'\\n)\\nSELECT COUNT(*) FROM (SELECT cust_id FROM q GROUP BY cust_id HAVING COUNT(DISTINCT qtr)=4);\\n\"}",
+   "name": "run_sql"
+  },
+  {
+   "role": "tool",
+   "kind": "tool_result",
+   "text": "{\"columns\": [\"COUNT(*)\"], \"rows\": [[253]], \"truncated\": false, \"error\": null}",
+   "name": "run_sql"
+  },
+  {
+   "role": "agent",
+   "kind": "message",
+   "text": "253 out of 300 total 2025 customers bought in all four 2025 quarters, and of those, only 2 have made no purchase in the 2026 data window (Jan through Jun 2026, which is the latest data available).\n\nANSWER: Using pos_sales (grain: sale line, date basis sold_on), two customers bought in every quarter of 2025 (Q1 through Q4) and show zero purchases in 2026: Ana Lund (cust_0042) and Cara Novak (cust_0100). Note the sales data only extends through 2026-06-30, so \"no 2026 purchases\" covers January through June 2026, not the full year.\n\nNUMBERS: {\"customers_all_4_quarters_2025\": 253, \"of_which_zero_2026_purchases\": 2, \"data_max_date\": \"2026-06-30\"}\nEVIDENCE: pos_sales, customers\nACTIONS: none",
+   "name": ""
+  },
+  {
+   "role": "reflect",
+   "kind": "verdict",
+   "text": "S=1 P=1 E=1 C=1 R=1 failure=none; ",
+   "name": ""
+  }
+ ],
+ "score": {
+  "S": 1,
+  "P": 1,
+  "E": 1,
+  "C": 1,
+  "R": 1,
+  "failure": "",
+  "notes": []
+ },
+ "meta": {
+  "seed_index": 1,
+  "ablation": "none",
+  "arm": "B",
+  "cost_usd": 0.04986600000000001,
+  "num_turns": 10,
+  "max_turns": 40,
+  "ended_by": "completed",
+  "sdk_version": "0.2.161",
+  "usage": {
+   "input_tokens": 12,
+   "cache_creation_input_tokens": 3984,
+   "cache_read_input_tokens": 51985,
+   "output_tokens": 2247,
+   "output_tokens_details": {
+    "thinking_tokens": 513
+   },
+   "server_tool_use": {
+    "web_search_requests": 0,
+    "web_fetch_requests": 0
+   },
+   "service_tier": "standard",
+   "cache_creation": {
+    "ephemeral_1h_input_tokens": 3984,
+    "ephemeral_5m_input_tokens": 0
+   },
+   "inference_geo": "not_available",
+   "iterations": [
+    {
+     "input_tokens": 2,
+     "output_tokens": 295,
+     "cache_read_input_tokens": 10554,
+     "cache_creation_input_tokens": 863,
+     "cache_creation": {
+      "ephemeral_5m_input_tokens": 0,
+      "ephemeral_1h_input_tokens": 863
+     },
+     "type": "message"
+    }
+   ],
+   "speed": "standard"
+  },
+  "duration_s": 22.56,
+  "executed": [],
+  "approvals_requested": []
+ },
+ "hash": "27581e2de7b3"
+}

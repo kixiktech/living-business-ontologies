@@ -1,0 +1,259 @@
+{
+ "firm": "retail",
+ "arm": "A",
+ "task": "r_distinct_customers",
+ "model": "claude-sonnet-5",
+ "date": "2026-09-29",
+ "turns": [
+  {
+   "role": "owner",
+   "kind": "message",
+   "text": "How many distinct customers do we have, and are any records ambiguous?",
+   "name": ""
+  },
+  {
+   "role": "agent",
+   "kind": "tool_call",
+   "text": "{}",
+   "name": "describe_tables"
+  },
+  {
+   "role": "tool",
+   "kind": "tool_result",
+   "text": "{\"customers\": [\"cust_id\", \"name\", \"email\", \"phone\", \"created_on\"], \"fulfillment\": [\"order_id\", \"shipped_from\", \"shipped_on\", \"entered_on\"], \"inventory_moves\": [\"move_id\", \"item_no\", \"from_store\", \"qty\", \"moved_on\", \"entered_on\"], \"ledger\": [\"journal_id\", \"kind\", \"effective_on\", \"entered_on\", \"amount\", \"memo\", \"supplier\", \"item_no\", \"unit_cost\", \"units\", \"units_a\", \"units_b\", \"account\"], \"payroll\": [\"employee_id\", \"week_start\", \"hours\", \"store\"], \"pos_sales\": [\"line_id\", \"order_id\", \"sold_on\", \"entered_on\", \"store\", \"cashier\", \"cust_id\", \"item_no\", \"qty\", \"unit_price\"], \"product_master\": [\"item_no\", \"sku\", \"name\", \"category\", \"list_price\", \"supplier\", \"unit_cost\"], \"staff\": [\"employee_id\", \"name\", \"role\", \"store\", \"hourly_cost\", \"hired_on\"], \"store_map\": [\"store\", \"name\", \"opened_on\", \"sqft\", \"counted_in_2025\"], \"supplier_terms\": [\"supplier\", \"effective_on\", \"break_units_per_quarter\", \"tiers\", \"rule\", \"document\"]}",
+   "name": "describe_tables"
+  },
+  {
+   "role": "agent",
+   "kind": "tool_call",
+   "text": "{\"sql\": \"SELECT COUNT(*) AS total_rows, COUNT(DISTINCT cust_id) AS distinct_cust_id, COUNT(DISTINCT email) AS distinct_email, COUNT(DISTINCT phone) AS distinct_phone, COUNT(DISTINCT name) AS distinct_name FROM customers\"}",
+   "name": "run_sql"
+  },
+  {
+   "role": "tool",
+   "kind": "tool_result",
+   "text": "{\"columns\": [\"total_rows\", \"distinct_cust_id\", \"distinct_email\", \"distinct_phone\", \"distinct_name\"], \"rows\": [[316, 316, 316, 101, 300]], \"truncated\": false, \"error\": null}",
+   "name": "run_sql"
+  },
+  {
+   "role": "agent",
+   "kind": "tool_call",
+   "text": "{\"sql\": \"SELECT phone, COUNT(*) c FROM customers GROUP BY phone ORDER BY c DESC LIMIT 10\"}",
+   "name": "run_sql"
+  },
+  {
+   "role": "tool",
+   "kind": "tool_result",
+   "text": "{\"columns\": [\"phone\", \"c\"], \"rows\": [[\"\", 216], [\"555-0199\", 1], [\"555-0198\", 1], [\"555-0197\", 1], [\"555-0196\", 1], [\"555-0195\", 1], [\"555-0194\", 1], [\"555-0193\", 1], [\"555-0192\", 1], [\"555-0191\", 1]], \"truncated\": false, \"error\": null}",
+   "name": "run_sql"
+  },
+  {
+   "role": "agent",
+   "kind": "tool_call",
+   "text": "{\"sql\": \"SELECT name, COUNT(*) c FROM customers GROUP BY name HAVING c>1 ORDER BY c DESC LIMIT 20\"}",
+   "name": "run_sql"
+  },
+  {
+   "role": "tool",
+   "kind": "tool_result",
+   "text": "{\"columns\": [\"name\", \"c\"], \"rows\": [[\"Nia Ruiz\", 2], [\"Mo Ruiz\", 2], [\"Lea Ruiz\", 2], [\"Lea Lund\", 2], [\"Kai Ruiz\", 2], [\"Kai Lund\", 2], [\"Jun Lund\", 2], [\"Ivo Lund\", 2], [\"Hana Park\", 2], [\"Gus Park\", 2], [\"Fay Park\", 2], [\"Eli Park\", 2], [\"Dev Park\", 2], [\"Cara Park\", 2], [\"Ben Park\", 2], [\"Ana Park\", 2]], \"truncated\": false, \"error\": null}",
+   "name": "run_sql"
+  },
+  {
+   "role": "agent",
+   "kind": "tool_call",
+   "text": "{\"sql\": \"SELECT lower(trim(email)) e, COUNT(*) c FROM customers GROUP BY e HAVING c>1 ORDER BY c DESC LIMIT 20\"}",
+   "name": "run_sql"
+  },
+  {
+   "role": "tool",
+   "kind": "tool_result",
+   "text": "{\"columns\": [\"e\", \"c\"], \"rows\": [[\"nia.ruiz13@example.com\", 2], [\"mo.ruiz12@example.com\", 2], [\"lea.ruiz11@example.com\", 2], [\"kai.ruiz10@example.com\", 2], [\"hana.park21@example.com\", 2], [\"gus.park20@example.com\", 2], [\"fay.park19@example.com\", 2], [\"eli.park18@example.com\", 2], [\"dev.park17@example.com\", 2], [\"cara.park16@example.com\", 2], [\"ben.park15@example.com\", 2], [\"ana.park14@example.com\", 2]], \"truncated\": false, \"error\": null}",
+   "name": "run_sql"
+  },
+  {
+   "role": "agent",
+   "kind": "tool_call",
+   "text": "{\"sql\": \"SELECT cust_id, name, email, phone, created_on FROM customers WHERE lower(trim(email)) IN ('nia.ruiz13@example.com','mo.ruiz12@example.com','lea.ruiz11@example.com','kai.ruiz10@example.com','hana.park21@example.com') ORDER BY email, cust_id\"}",
+   "name": "run_sql"
+  },
+  {
+   "role": "tool",
+   "kind": "tool_result",
+   "text": "{\"columns\": [\"cust_id\", \"name\", \"email\", \"phone\", \"created_on\"], \"rows\": [[\"cust_0311\", \"Hana Park\", \"HANA.PARK21@EXAMPLE.COM\", \"\", \"2025-01-01\"], [\"cust_0300\", \"Kai Ruiz\", \"KAI.RUIZ10@EXAMPLE.COM\", \"\", \"2025-01-01\"], [\"cust_0301\", \"Lea Ruiz\", \"LEA.RUIZ11@EXAMPLE.COM\", \"\", \"2025-01-01\"], [\"cust_0302\", \"Mo Ruiz\", \"MO.RUIZ12@EXAMPLE.COM\", \"\", \"2025-01-01\"], [\"cust_0303\", \"Nia Ruiz\", \"NIA.RUIZ13@EXAMPLE.COM\", \"\", \"2025-01-01\"], [\"cust_0021\", \"Hana Park\", \"hana.park21@example.com\", \"555-0121\", \"2025-01-01\"], [\"cust_0010\", \"Kai Ruiz\", \"kai.ruiz10@example.com\", \"555-0110\", \"2025-01-01\"], [\"cust_0011\", \"Lea Ruiz\", \"lea.ruiz11@example.com\", \"555-0111\", \"2025-01-01\"], [\"cust_0012\", \"Mo Ruiz\", \"mo.ruiz12@example.com\", \"555-0112\", \"2025-01-01\"], [\"cust_0013\", \"Nia Ruiz\", \"nia.ruiz13@example.com\", \"555-0113\", \"2025-01-01\"]], \"truncated\": false, \"error\": null}",
+   "name": "run_sql"
+  },
+  {
+   "role": "agent",
+   "kind": "tool_call",
+   "text": "{\"sql\": \"SELECT cust_id, name, email, phone, created_on FROM customers WHERE name IN ('Lea Lund','Kai Lund','Jun Lund','Ivo Lund') ORDER BY name, cust_id\"}",
+   "name": "run_sql"
+  },
+  {
+   "role": "tool",
+   "kind": "tool_result",
+   "text": "{\"columns\": [\"cust_id\", \"name\", \"email\", \"phone\", \"created_on\"], \"rows\": [[\"cust_0050\", \"Ivo Lund\", \"ivo.lund50@example.com\", \"555-0150\", \"2025-01-01\"], [\"cust_0320\", \"Ivo Lund\", \"ivo.other0@example.net\", \"\", \"2025-01-01\"], [\"cust_0051\", \"Jun Lund\", \"jun.lund51@example.com\", \"555-0151\", \"2025-01-01\"], [\"cust_0321\", \"Jun Lund\", \"jun.other1@example.net\", \"\", \"2025-01-01\"], [\"cust_0052\", \"Kai Lund\", \"kai.lund52@example.com\", \"555-0152\", \"2025-01-01\"], [\"cust_0322\", \"Kai Lund\", \"kai.other2@example.net\", \"\", \"2025-01-01\"], [\"cust_0053\", \"Lea Lund\", \"lea.lund53@example.com\", \"555-0153\", \"2025-01-01\"], [\"cust_0323\", \"Lea Lund\", \"lea.other3@example.net\", \"\", \"2025-01-01\"]], \"truncated\": false, \"error\": null}",
+   "name": "run_sql"
+  },
+  {
+   "role": "agent",
+   "kind": "tool_call",
+   "text": "{\"sql\": \"SELECT COUNT(*) AS dup_email_pairs FROM (SELECT lower(trim(email)) e FROM customers GROUP BY e HAVING COUNT(*)>1)\"}",
+   "name": "run_sql"
+  },
+  {
+   "role": "tool",
+   "kind": "tool_result",
+   "text": "{\"columns\": [\"dup_email_pairs\"], \"rows\": [[12]], \"truncated\": false, \"error\": null}",
+   "name": "run_sql"
+  },
+  {
+   "role": "agent",
+   "kind": "tool_call",
+   "text": "{\"sql\": \"SELECT COUNT(*) AS dup_name_pairs FROM (SELECT name FROM customers GROUP BY name HAVING COUNT(*)>1)\"}",
+   "name": "run_sql"
+  },
+  {
+   "role": "tool",
+   "kind": "tool_result",
+   "text": "{\"columns\": [\"dup_name_pairs\"], \"rows\": [[16]], \"truncated\": false, \"error\": null}",
+   "name": "run_sql"
+  },
+  {
+   "role": "agent",
+   "kind": "tool_call",
+   "text": "{\"sql\": \"SELECT COUNT(*) AS name_email_both_dup FROM (\\n  SELECT c.cust_id FROM customers c\\n  JOIN (SELECT lower(trim(email)) e FROM customers GROUP BY e HAVING COUNT(*)>1) de ON lower(trim(c.email))=de.e\\n)\"}",
+   "name": "run_sql"
+  },
+  {
+   "role": "tool",
+   "kind": "tool_result",
+   "text": "{\"columns\": [\"name_email_both_dup\"], \"rows\": [[24]], \"truncated\": false, \"error\": null}",
+   "name": "run_sql"
+  },
+  {
+   "role": "agent",
+   "kind": "tool_call",
+   "text": "{\"sql\": \"SELECT cust_id, COUNT(*) n FROM pos_sales WHERE cust_id IN ('cust_0300','cust_0010','cust_0301','cust_0011','cust_0311','cust_0021') GROUP BY cust_id\"}",
+   "name": "run_sql"
+  },
+  {
+   "role": "tool",
+   "kind": "tool_result",
+   "text": "{\"columns\": [\"cust_id\", \"n\"], \"rows\": [[\"cust_0010\", 21], [\"cust_0011\", 22], [\"cust_0021\", 19]], \"truncated\": false, \"error\": null}",
+   "name": "run_sql"
+  },
+  {
+   "role": "agent",
+   "kind": "tool_call",
+   "text": "{\"sql\": \"SELECT c.cust_id, c.name, (SELECT COUNT(*) FROM pos_sales p WHERE p.cust_id=c.cust_id) AS sales_ct\\nFROM customers c\\nJOIN (SELECT lower(trim(email)) e FROM customers GROUP BY e HAVING COUNT(*)>1) de ON lower(trim(c.email))=de.e\\nORDER BY c.name, c.cust_id\"}",
+   "name": "run_sql"
+  },
+  {
+   "role": "tool",
+   "kind": "tool_result",
+   "text": "{\"columns\": [\"cust_id\", \"name\", \"sales_ct\"], \"rows\": [[\"cust_0014\", \"Ana Park\", 17], [\"cust_0304\", \"Ana Park\", 0], [\"cust_0015\", \"Ben Park\", 13], [\"cust_0305\", \"Ben Park\", 0], [\"cust_0016\", \"Cara Park\", 16], [\"cust_0306\", \"Cara Park\", 0], [\"cust_0017\", \"Dev Park\", 18], [\"cust_0307\", \"Dev Park\", 0], [\"cust_0018\", \"Eli Park\", 17], [\"cust_0308\", \"Eli Park\", 0], [\"cust_0019\", \"Fay Park\", 15], [\"cust_0309\", \"Fay Park\", 0], [\"cust_0020\", \"Gus Park\", 16], [\"cust_0310\", \"Gus Park\", 0], [\"cust_0021\", \"Hana Park\", 19], [\"cust_0311\", \"Hana Park\", 0], [\"cust_0010\", \"Kai Ruiz\", 21], [\"cust_0300\", \"Kai Ruiz\", 0], [\"cust_0011\", \"Lea Ruiz\", 22], [\"cust_0301\", \"Lea Ruiz\", 0], [\"cust_0012\", \"Mo Ruiz\", 19], [\"cust_0302\", \"Mo Ruiz\", 0], [\"cust_0013\", \"Nia Ruiz\", 24], [\"cust_0303\", \"Nia Ruiz\", 0]], \"truncated\": false, \"error\": null}",
+   "name": "run_sql"
+  },
+  {
+   "role": "agent",
+   "kind": "message",
+   "text": "This confirms the pattern cleanly across all 12 pairs: the cust_00xx records (phone on file, lowercase email) carry all the sales history, while the cust_03xx records (blank phone, uppercase-cased email, same name) have zero sales, so they are inactive duplicate records for the same person, distinguishable only by case-formatting of the email.\n\nI also checked the 4 \"Lund\" family name collisions (Ivo, Jun, Kai, Lea Lund): these share only a name, not email, so they look like distinct people who happen to share a name rather than duplicate records.",
+   "name": ""
+  },
+  {
+   "role": "agent",
+   "kind": "tool_call",
+   "text": "{\"sql\": \"SELECT c.cust_id, c.name, c.email, (SELECT COUNT(*) FROM pos_sales p WHERE p.cust_id=c.cust_id) AS sales_ct\\nFROM customers c WHERE c.name IN ('Lea Lund','Kai Lund','Jun Lund','Ivo Lund') ORDER BY c.name, c.cust_id\"}",
+   "name": "run_sql"
+  },
+  {
+   "role": "tool",
+   "kind": "tool_result",
+   "text": "{\"columns\": [\"cust_id\", \"name\", \"email\", \"sales_ct\"], \"rows\": [[\"cust_0050\", \"Ivo Lund\", \"ivo.lund50@example.com\", 16], [\"cust_0320\", \"Ivo Lund\", \"ivo.other0@example.net\", 0], [\"cust_0051\", \"Jun Lund\", \"jun.lund51@example.com\", 13], [\"cust_0321\", \"Jun Lund\", \"jun.other1@example.net\", 0], [\"cust_0052\", \"Kai Lund\", \"kai.lund52@example.com\", 18], [\"cust_0322\", \"Kai Lund\", \"kai.other2@example.net\", 0], [\"cust_0053\", \"Lea Lund\", \"lea.lund53@example.com\", 13], [\"cust_0323\", \"Lea Lund\", \"lea.other3@example.net\", 0]], \"truncated\": false, \"error\": null}",
+   "name": "run_sql"
+  },
+  {
+   "role": "agent",
+   "kind": "tool_call",
+   "text": "{\"sql\": \"SELECT \\n  (SELECT COUNT(*) FROM customers) AS total_customers,\\n  (SELECT COUNT(DISTINCT cust_id) FROM pos_sales) AS customers_with_sales,\\n  (SELECT COUNT(*) FROM customers c WHERE NOT EXISTS (SELECT 1 FROM pos_sales p WHERE p.cust_id=c.cust_id)) AS customers_no_sales\"}",
+   "name": "run_sql"
+  },
+  {
+   "role": "tool",
+   "kind": "tool_result",
+   "text": "{\"columns\": [\"total_customers\", \"customers_with_sales\", \"customers_no_sales\"], \"rows\": [[316, 300, 16]], \"truncated\": false, \"error\": null}",
+   "name": "run_sql"
+  },
+  {
+   "role": "agent",
+   "kind": "message",
+   "text": "This confirms it exactly: all 16 customers with zero sales are precisely the 16 shadow/duplicate records identified above (same name as an active customer, either a case-variant of the same email or a different email, always missing phone), and every other customer (300 of them) has purchase history under a single cust_id.\n\nANSWER: The customers table has 316 rows with 316 distinct cust_id values (no primary-key duplication), but 16 of those rows are ambiguous duplicate person-records: each shares a name with another customer and has zero recorded sales, a blank phone, and either a case-variant of the other record's email (12 cases, e.g. Nia Ruiz / Kai Ruiz / Park family) or a different email domain entirely (4 cases, the Lund family), while the matching active record carries all the purchase history. Net, there are 300 customers who actually appear in pos_sales (one cust_id each), so the clean count of real, transacting customers is 300, with 16 rows flagged as likely duplicate/junk entries worth merging or deleting.\n\nNUMBERS: {\"total_customer_rows\": 316, \"distinct_cust_id\": 316, \"distinct_name\": 300, \"customers_with_sales\": 300, \"customers_no_sales_ambiguous\": 16, \"exact_email_case_duplicate_pairs\": 12, \"same_name_different_email_pairs\": 4}\nEVIDENCE: customers table (cust_id, name, email, phone), pos_sales table (cust_id sales linkage), query: dup_email_pairs=12, dup_name_pairs=16, name_email_both_dup=24, customers_no_sales=16 all matching the 16 flagged duplicate names\nACTIONS: none",
+   "name": ""
+  },
+  {
+   "role": "reflect",
+   "kind": "verdict",
+   "text": "S=1 P=1 E=1 C=1 R=1 failure=none; ",
+   "name": ""
+  }
+ ],
+ "score": {
+  "S": 0,
+  "P": 1,
+  "E": 1,
+  "C": 1,
+  "R": 0,
+  "failure": "wrong_number",
+  "notes": [
+   "distinct: no reported figure within 0.0 of 304.0, nor two that sum or differ to it"
+  ]
+ },
+ "meta": {
+  "seed_index": 0,
+  "ablation": "none",
+  "arm": "A",
+  "cost_usd": 0.11653960000000001,
+  "num_turns": 15,
+  "max_turns": 40,
+  "ended_by": "completed",
+  "sdk_version": "0.2.161",
+  "usage": {
+   "input_tokens": 20,
+   "cache_creation_input_tokens": 13376,
+   "cache_read_input_tokens": 96568,
+   "output_tokens": 4270,
+   "output_tokens_details": {
+    "thinking_tokens": 1566
+   },
+   "server_tool_use": {
+    "web_search_requests": 0,
+    "web_fetch_requests": 0
+   },
+   "service_tier": "standard",
+   "cache_creation": {
+    "ephemeral_1h_input_tokens": 13376,
+    "ephemeral_5m_input_tokens": 0
+   },
+   "inference_geo": "not_available",
+   "iterations": [
+    {
+     "input_tokens": 2,
+     "output_tokens": 560,
+     "cache_read_input_tokens": 14143,
+     "cache_creation_input_tokens": 798,
+     "cache_creation": {
+      "ephemeral_5m_input_tokens": 0,
+      "ephemeral_1h_input_tokens": 798
+     },
+     "type": "message"
+    }
+   ],
+   "speed": "standard"
+  },
+  "duration_s": 53.13,
+  "executed": [],
+  "approvals_requested": []
+ },
+ "hash": "4e2d80329abd"
+}
